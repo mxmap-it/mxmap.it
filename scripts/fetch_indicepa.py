@@ -10,10 +10,14 @@ Filtering rules per docs/countries/ITALY.md:
 - Drop consorzi/associazioni/unioni/comunità montane via name regex
 - Encode level in the `id` prefix (IT-REG / IT-PRO / IT-CMM / IT-COM)
 
-osm_relation_id is left null in this script — the ISTAT→OSM crosswalk is
-built separately and patched in by a follow-up step.
+If `data/it_istat_osm_crosswalk.json` exists (built by
+`scripts/build_istat_osm_crosswalk.py`), `osm_relation_id` is populated by
+joining first on Codice_IPA (P6832 in Wikidata) and falling back to the
+ISTAT code. Otherwise the field is left null.
 
-Usage: uv run python3 scripts/fetch_indicepa.py
+Usage:
+    uv run python3 scripts/build_istat_osm_crosswalk.py   # one-time, before
+    uv run python3 scripts/fetch_indicepa.py
 """
 
 from __future__ import annotations
@@ -34,6 +38,8 @@ DATA = ROOT / "data"
 CKAN_BASE = "https://indicepa.gov.it/ipa-dati/api/3/action"
 RESOURCE_ID = "d09adf99-dc10-4349-8c53-27b1e5aa97b6"  # enti dataset
 
+CROSSWALK_PATH = ROOT / "data" / "it_istat_osm_crosswalk.json"
+
 # Codice_Categoria → (level prefix, human-readable label)
 LEVEL_MAP = {
     "L4": ("IT-REG", "Regione / Provincia Autonoma"),
@@ -43,13 +49,59 @@ LEVEL_MAP = {
 }
 
 # Names matching this regex are consorzi / associazioni / unioni — no polygon,
-# excluded from v1 scope. Case-insensitive.
+# excluded from v1 scope. Case-insensitive. Used as the L6 (comuni) filter.
 NON_TERRITORIAL_NAME_RE = re.compile(
     r"\b(consorzio|associazione|unione\s+(?:dei|di|del)\s+comuni|"
     r"unione\s+montana|unione\s+territoriale|"
     r"comunit[aà]\s+montana|comunit[aà]\s+collinare|comunit[aà]\s+isolana)\b",
     re.IGNORECASE,
 )
+
+# Positive name patterns per level — IPA labels its categories L4/L5/L45 loosely
+# (a "Regione" category includes interregional consortia, agencies, etc.). We
+# accept ONLY entries whose Denominazione_ente clearly identifies the entity
+# type. Case-insensitive. Pre-compiled.
+LEVEL_NAME_RE = {
+    "L4":  re.compile(r"^\s*(regione\b|provincia\s+autonoma\s+(di|del)\b)", re.IGNORECASE),
+    "L5":  re.compile(r"^\s*(provincia\b|libero\s+consorzio\s+comunale\b)", re.IGNORECASE),
+    "L45": re.compile(r"^\s*citt[aà]'?\s+metropolitana\b", re.IGNORECASE),
+    "L6":  None,  # no positive filter; NON_TERRITORIAL_NAME_RE handles drops
+}
+
+# Italian regioni: IPA Codice_IPA → ISTAT 2-digit region code. Hand-curated;
+# 22 entries (20 regioni + 2 province autonome). Used to look up the OSM
+# relation via crosswalk.by_istat_region. Province autonome (Bolzano, Trento)
+# are mapped via PROV_AUTONOME_IPA_TO_PROVINCE_ISTAT instead because their
+# OSM relation lives at admin_level=6 (province), not admin_level=4 (region).
+REGIONI_IPA_TO_ISTAT2 = {
+    "r_piemon": "01",
+    "r_vda":    "02",
+    "r_lombar": "03",
+    "r_trenti": "04",
+    "r_veneto": "05",
+    "r_friuve": "06",
+    "r_liguri": "07",
+    "r_emiro":  "08",
+    "r_toscan": "09",
+    "r_umbria": "10",
+    "r_marche": "11",
+    "r_lazio":  "12",
+    "r_abruzz": "13",
+    "r_molise": "14",
+    "r_campan": "15",
+    "r_puglia": "16",
+    "r_basili": "17",
+    "regcal":   "18",  # Calabria — note no r_ prefix in IPA
+    "r_sicili": "19",
+    "r_sardeg": "20",
+}
+
+# Province autonome: IPA → 3-digit province ISTAT code (look up in
+# crosswalk.by_istat_province since their OSM lives at admin_level=6).
+PROV_AUTONOME_IPA_TO_PROVINCE_ISTAT = {
+    "p_bz": "021",  # Provincia Autonoma di Bolzano
+    "p_TN": "022",  # Provincia Autonoma di Trento
+}
 
 # Permissive hostname validation — used to reject obviously-broken Sito_istituzionale
 # entries (typos, "n.d.", "in fase di attivazione", etc.). We accept any TLD,
@@ -130,10 +182,21 @@ def extract_domain(sito: str | None) -> str | None:
     return host
 
 
-def is_territorial(name: str) -> bool:
-    """Return False if the name looks like a consorzio/associazione/unione."""
+def is_territorial(name: str, codice_categoria: str) -> bool:
+    """Return True only for territorial entities at the right level.
+
+    L4/L5/L45 use a positive name pattern (must start with "Regione" /
+    "Provincia" / "Città Metropolitana") so that interregional consortia,
+    regional agencies, and other non-territorial enti sharing the category
+    are dropped.
+    L6 uses a negative pattern (drop consorzi/unioni/comunità montane).
+    """
     if not name:
         return False
+    pos = LEVEL_NAME_RE.get(codice_categoria)
+    if pos is not None:
+        return bool(pos.match(name))
+    # L6 fallback: negative match
     return NON_TERRITORIAL_NAME_RE.search(name) is None
 
 
@@ -153,14 +216,84 @@ def build_id(prefix: str, codice_istat: Any, codice_comune_istat: Any) -> str | 
     return f"{prefix}-{str(codice_comune_istat).strip().zfill(6)}"
 
 
-def transform(row: dict[str, Any], codice_categoria: str) -> dict[str, Any] | None:
+def load_crosswalk() -> dict[str, Any] | None:
+    """Load data/it_istat_osm_crosswalk.json if present; return None otherwise."""
+    if not CROSSWALK_PATH.exists():
+        return None
+    with open(CROSSWALK_PATH, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def lookup_osm(
+    crosswalk: dict[str, Any] | None,
+    *,
+    codice_ipa: str | None,
+    codice_categoria: str,
+    codice_istat: str | None,
+    codice_comune_istat: str | None,
+) -> int | None:
+    """Resolve osm_relation_id from the crosswalk per level-specific strategy.
+
+    L6 (comuni): IPA key (Wikidata P6832) → ISTAT comune (6-digit) fallback.
+    L5 (province): Codice_comune_ISTAT[:3] → by_istat_province (Italian ISTAT
+        comune codes are PPP+CCC; first 3 digits are the province code).
+    L45 (città metropolitane): same as L5 — CMs share the province ISTAT
+        code-space; their OSM relation is at admin_level=6.
+    L4 (regioni): hand-curated REGIONI_IPA_TO_ISTAT2 → by_istat_region.
+        Province autonome (p_bz, p_TN) are looked up as province (admin_level=6).
+    """
+    if crosswalk is None:
+        return None
+
+    if codice_categoria == "L6":
+        # Codice_IPA → P6832 join (preferred); ISTAT comune fallback.
+        if codice_ipa:
+            v = crosswalk.get("by_ipa", {}).get(codice_ipa)
+            if v is not None:
+                return int(v)
+        if codice_comune_istat:
+            v = crosswalk.get("by_istat_comune", {}).get(str(codice_comune_istat).strip().zfill(6))
+            if v is not None:
+                return int(v)
+        return None
+
+    if codice_categoria in ("L5", "L45"):
+        if codice_comune_istat:
+            prov_code = str(codice_comune_istat).strip().zfill(6)[:3]
+            v = crosswalk.get("by_istat_province", {}).get(prov_code)
+            if v is not None:
+                return int(v)
+        return None
+
+    if codice_categoria == "L4":
+        if codice_ipa in PROV_AUTONOME_IPA_TO_PROVINCE_ISTAT:
+            prov_code = PROV_AUTONOME_IPA_TO_PROVINCE_ISTAT[codice_ipa]
+            v = crosswalk.get("by_istat_province", {}).get(prov_code)
+            if v is not None:
+                return int(v)
+            return None
+        if codice_ipa in REGIONI_IPA_TO_ISTAT2:
+            istat2 = REGIONI_IPA_TO_ISTAT2[codice_ipa]
+            v = crosswalk.get("by_istat_region", {}).get(istat2)
+            if v is not None:
+                return int(v)
+        return None
+
+    return None
+
+
+def transform(
+    row: dict[str, Any],
+    codice_categoria: str,
+    crosswalk: dict[str, Any] | None,
+) -> dict[str, Any] | None:
     """Map an IndicePA row to mxmap seed format. Returns None if filtered out."""
     if (row.get("Ente_in_liquidazione") or "").strip().upper() == "S":
         return None
     name = (row.get("Denominazione_ente") or "").strip()
     if not name:
         return None
-    if not is_territorial(name):
+    if not is_territorial(name, codice_categoria):
         return None
     domain = extract_domain(row.get("Sito_istituzionale"))
     if not domain:
@@ -169,6 +302,18 @@ def transform(row: dict[str, Any], codice_categoria: str) -> dict[str, Any] | No
     entity_id = build_id(prefix, row.get("Codice_ISTAT"), row.get("Codice_comune_ISTAT"))
     if entity_id is None:
         return None
+
+    codice_ipa = (row.get("Codice_IPA") or "").strip() or None
+    codice_istat_str = str(row.get("Codice_ISTAT") or "").strip() or None
+    codice_comune_istat_str = str(row.get("Codice_comune_ISTAT") or "").strip() or None
+    osm_id = lookup_osm(
+        crosswalk,
+        codice_ipa=codice_ipa,
+        codice_categoria=codice_categoria,
+        codice_istat=codice_istat_str,
+        codice_comune_istat=codice_comune_istat_str,
+    )
+
     return {
         "id": entity_id,
         "name": name,
@@ -177,13 +322,13 @@ def transform(row: dict[str, Any], codice_categoria: str) -> dict[str, Any] | No
         # leaving as None here keeps this script free of external lookups.
         "region": None,
         "domain": domain,
-        "osm_relation_id": None,  # filled by the ISTAT→OSM crosswalk script
+        "osm_relation_id": osm_id,
         # IndicePA bookkeeping (kept for downstream joins / audits — mxmap will
         # ignore unknown keys)
-        "ipa_codice_ipa": (row.get("Codice_IPA") or "").strip() or None,
+        "ipa_codice_ipa": codice_ipa,
         "ipa_codice_categoria": codice_categoria,
-        "ipa_codice_istat": (str(row.get("Codice_ISTAT") or "").strip() or None),
-        "ipa_codice_comune_istat": (str(row.get("Codice_comune_ISTAT") or "").strip() or None),
+        "ipa_codice_istat": codice_istat_str,
+        "ipa_codice_comune_istat": codice_comune_istat_str,
     }
 
 
@@ -193,6 +338,17 @@ def main() -> int:
     entries: list[dict[str, Any]] = []
     seen_ids: set[str] = set()
 
+    crosswalk = load_crosswalk()
+    if crosswalk is None:
+        print(f"WARNING: {CROSSWALK_PATH} not found — osm_relation_id will be null.")
+        print("         Run scripts/build_istat_osm_crosswalk.py first for full data.\n")
+    else:
+        print(f"Loaded crosswalk: "
+              f"{len(crosswalk.get('by_istat_region', {}))} regioni, "
+              f"{len(crosswalk.get('by_istat_province', {}))} province, "
+              f"{len(crosswalk.get('by_istat_comune', {}))} comuni, "
+              f"{len(crosswalk.get('by_ipa', {}))} IPA-keyed")
+
     for codice_categoria, (prefix, label) in LEVEL_MAP.items():
         print(f"\n=== {codice_categoria} — {label} ({prefix}) ===")
         rows = fetch_category(codice_categoria)
@@ -201,8 +357,9 @@ def main() -> int:
 
         kept = 0
         dropped_dup = 0
+        with_osm = 0
         for row in rows:
-            entity = transform(row, codice_categoria)
+            entity = transform(row, codice_categoria, crosswalk)
             if entity is None:
                 continue
             if entity["id"] in seen_ids:
@@ -211,20 +368,27 @@ def main() -> int:
             seen_ids.add(entity["id"])
             entries.append(entity)
             kept += 1
+            if entity.get("osm_relation_id") is not None:
+                with_osm += 1
         kept_counts[codice_categoria] = kept
-        print(f"  Kept: {kept}  Dropped (filter): {len(rows) - kept - dropped_dup}  Duplicates: {dropped_dup}")
+        print(
+            f"  Kept: {kept}  with_osm: {with_osm}  "
+            f"dropped(filter): {len(rows) - kept - dropped_dup}  duplicates: {dropped_dup}"
+        )
 
     out_path = DATA / "municipalities_it.json"
     DATA.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(entries, f, ensure_ascii=False, indent=2)
 
+    total_with_osm = sum(1 for e in entries if e.get("osm_relation_id") is not None)
     print("\n=== Summary ===")
     for code, (prefix, label) in LEVEL_MAP.items():
         print(f"  {code} {label:<32} raw={raw_counts.get(code, 0):>6}  kept={kept_counts.get(code, 0):>6}")
-    print(f"  TOTAL                              kept={len(entries):>6}")
+    print(f"  TOTAL kept={len(entries):>6}  with_osm={total_with_osm:>6}")
     print(f"\nWritten: {out_path}")
-    print("Note: osm_relation_id is null — run the ISTAT→OSM crosswalk script next.")
+    if crosswalk is None:
+        print("Note: osm_relation_id is null — run scripts/build_istat_osm_crosswalk.py and re-run this script.")
     return 0
 
 
