@@ -31,10 +31,13 @@ from fetch_boundaries import (  # noqa: E402
     DATA_DIR,
     TOPO_DIR,
     annotate_geojson,
-    create_topojson,
     osm_to_geojson,
     overpass_query,
 )
+# Note: NOT importing create_topojson — it has a bug that joins
+# `format=topojson` and `quantization=5000` into a single string arg, which
+# mapshaper rejects with "Unsupported output format: topojson quantization=5000".
+# We invoke mapshaper directly below with proper separate args.
 
 # Italy mainland + islands bounding box (Pantelleria/Lampedusa to South Tyrol).
 IT_BBOX = [6.6, 35.4, 18.6, 47.1]
@@ -132,19 +135,30 @@ def main() -> int:
 
             annotated_path = annotate_geojson(geo_path, "IT", seed_data)
 
-            # Use the existing helper, but override the output filename for
-            # province (admin_level=6) since create_topojson hardcodes "{cc}_{level}".
-            if admin_level == 6:
-                # Replicate create_topojson but with our preferred filename.
-                out_path = str(TOPO_DIR / "it_province.topo.json")
-                cmd = [
-                    "mapshaper", annotated_path,
-                    "-simplify", "10%", "keep-shapes",
-                    "-o", out_path, "format=topojson quantization=5000",
-                ]
-                subprocess.run(cmd, check=True, capture_output=True)
-            else:
-                out_path = create_topojson(annotated_path, "IT", level_slot)
+            # Per-level mapshaper config:
+            #   admin_level=4 (region):       8% simplify, quantization=5000
+            #   admin_level=6 (province/CM): 10% simplify, quantization=5000
+            #   admin_level=8 (comune):     15% simplify, no quantization
+            simplify = {4: "8%", 6: "10%", 8: "15%"}[admin_level]
+            out_path = str(TOPO_DIR / out_filename)
+            cmd = [
+                "mapshaper", annotated_path,
+                "-simplify", simplify, "keep-shapes",
+                "-o", out_path,
+                "format=topojson",
+            ]
+            if admin_level != 8:
+                cmd.append("quantization=5000")
+            print(f"  mapshaper: {' '.join(cmd)}")
+            r = subprocess.run(cmd, capture_output=True, text=True)
+            if r.returncode != 0:
+                print(f"  mapshaper failed (rc={r.returncode}):")
+                print(f"    stdout: {r.stdout[:500]}")
+                print(f"    stderr: {r.stderr[:1500]}")
+                continue
+            if r.stderr:
+                # mapshaper writes informational lines to stderr; surface
+                print(f"  mapshaper note: {r.stderr.strip()}")
 
             size = Path(out_path).stat().st_size
             sizes[out_filename] = size

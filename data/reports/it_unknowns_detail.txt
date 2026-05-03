@@ -1,0 +1,424 @@
+====================================================================================================
+Italian comuni still classified as UNKNOWN after full pipeline (81 entries)
+====================================================================================================
+
+Categories:
+  PEC_ONLY                    81
+
+Categories explained:
+  FALLBACKS_NO_MX   — IndicePA has non-PEC emails but their domains have no MX
+                      (likely all defunct; could try website scrape but user opted out)
+  PEC_ONLY          — only PEC emails in IndicePA (deliberately skipped per ITALY.md)
+                      MAY want to relax PEC-skip rule for these specific cases
+  NO_EMAIL_AT_ALL   — IndicePA has neither non-PEC nor PEC emails (rare)
+  NO_FALLBACK       — no domain_fallbacks in seed (defunct upstream)
+
+====================================================================================================
+
+
+### PEC_ONLY (81 entries)
+
+  IT-COM-001161  Comune di Montanaro
+    ipa=c_f422  istat=001161  primary_domain=comune.montanaro.to.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.montanaro.to@legalmail.it [pec]
+
+  IT-COM-001223  Comune di Romano Canavese
+    ipa=c_h511  istat=001223  primary_domain=comune.romanocanavese.to.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=romanocanavese@postemailcertificata.it [pec]
+
+  IT-COM-001242  Comune di San Germano Chisone
+    ipa=c_h862  istat=001242  primary_domain=comune.sangermanochisone.to.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune@cert.comune.sangermanochisone.to.it [pec] | Mail2=anagrafe@cert.comune.sangermanochisone.to.it [pec] | Mail3=ragioneria@cert.comune.sangermanochisone.to.it [pec] | Mail4=tecnico@cert.comune.sangermanochisone.to.it [pec]
+
+  IT-COM-001275  Comune di Torre Pellice
+    ipa=c_l277  istat=001275  primary_domain=comune.torrepellice.to.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comunetorrepellice.it [pec]
+
+  IT-COM-001286  Comune di Vallo Torinese
+    ipa=c_l629  istat=001286  primary_domain=vallo-torinese.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=vallo.torinese@cert.ruparpiemonte.it [pec]
+
+  IT-COM-002068  Comune di Lenta
+    ipa=c_e528  istat=002068  primary_domain=comune.lenta.vc.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=lenta@cert.ruparpiemonte.it [pec]
+
+  IT-COM-003025  Comune di Borgo Ticino
+    ipa=c_b043  istat=003025  primary_domain=comuneborgoticino.no.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.borgoticino@legalmail.it [pec]
+
+  IT-COM-003058  Comune di Cureggio
+    ipa=c_d216  istat=003058  primary_domain=comune.cureggio.no.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.cureggio@cert.ruparpiemonte.it [pec] | Mail2=protocollo@comune.cureggio.no.it [altro] | Mail3=segreteria@comune.cureggio.no.it [altro]
+
+  IT-COM-005082  Comune di Passerano Marmorito
+    ipa=c_g358  istat=005082  primary_domain=comune.passeranomarmorito.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=passerano.marmorito@cert.ruparpiemonte.it [pec]
+
+  IT-COM-006081  Comune di Gavi
+    ipa=c_d944  istat=006081  primary_domain=comune.gavi.al.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=ragioneria@pec.comunegavi.it [pec] | Mail2=lavoripubblici@pec.comunegavi.it [pec] | Mail3=poliziamunicipale@pec.comunegavi.it [pec] | Mail4=segreteriasindaco.gavi@cert.ruparpiemonte.it [pec] | Mail5=servizidemografici@pec.comunegavi.it [pec]
+
+  IT-COM-009034  Comune di Loano
+    ipa=c_e632  istat=009034  primary_domain=comune.loano.sv.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=loano@peccomuneloano.it [pec] | Mail2=ccu@peccomuneloano.it [pec]
+
+  IT-COM-009051  Comune di Pontinvrea
+    ipa=c_g866  istat=009051  primary_domain=comune.pontinvrea.sv.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.pontinvrea@pec.it [pec]
+
+  IT-COM-016004  Comune di Albino
+    ipa=c_a163  istat=016004  primary_domain=comune.albino.bg.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.albino@cert.saga.it [pec]
+
+  IT-COM-022047  Comune di Castello-Molina di Fiemme
+    ipa=c_c194  istat=022047  primary_domain=comune.castellomolinadifiemme.tn.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune@pec.comune.castellomolina.tn.it [pec]
+
+  IT-COM-022247  Comune di Tre Ville
+    ipa=c_m361  istat=022247  primary_domain=comune.treville.tn.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune@pec.comunetreville.tn.it [pec]
+
+  IT-COM-022250  San Giovanni di Fassa-Sen Jan
+    ipa=c_m390  istat=022250  primary_domain=comune.sangiovannidifassasenjan.tn.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.senjandifassa.tn.it [pec]
+
+  IT-COM-025047  Comune di San Pietro di Cadore
+    ipa=c_I088  istat=025047  primary_domain=comune.sanpietrodicadore.bl.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.sanpietrodicadore@pec.it [pec]
+
+  IT-COM-025066  Comune di Vodo Cadore
+    ipa=c_m108  istat=025066  primary_domain=comune.vodo.bl.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=vodocadore.bl@cert.ip-veneto.net [pec]
+
+  IT-COM-026006  Comune di Caerano di San Marco
+    ipa=c_b349  istat=026006  primary_domain=comune.caerano-di-san-marco.tv.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.comune.caerano.tv@pecveneto.it [pec]
+
+  IT-COM-035033  Comune di Reggio Emilia
+    ipa=c_h223  istat=035033  primary_domain=comune.reggioemilia.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.reggioemilia@pec.municipio.re.it [pec]
+
+  IT-COM-045008  Comune di Fosdinovo
+    ipa=c_d735  istat=045008  primary_domain=comunefosdinovo.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.fosdinovo@postacert.toscana.it [pec]
+
+  IT-COM-047024  Comune di San Marcello Piteglio
+    ipa=cdsmpi  istat=047024  primary_domain=comune-sanmarcellopiteglio.info
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comunedisanmarcellopiteglio@pec.it [pec]
+
+  IT-COM-052010  Comune di Chiusdino
+    ipa=c_c661  istat=052010  primary_domain=comune.chiusdino.si.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.chiusdino@pec.consorzioterrecablate.it [pec]
+
+  IT-COM-054031  Comune di Monteleone di Spoleto
+    ipa=c_f540  istat=054031  primary_domain=comune.monteleone-di-spoleto.pg.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.monteleonedispoleto@postacert.umbria.it [pec]
+
+  IT-COM-057003  Comune di Antrodoco
+    ipa=c_a315  istat=057003  primary_domain=comune.antrodoco.ri.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comunediantrodoco@legalmail.it [pec] | Mail2=affarigeneralicomuneantrodoco@pec.it [pec] | Mail3=areacontabilecomuneantrodoco@pec.it [pec] | Mail4=areademograficacomuneantrodoco@pec.it [pec] | Mail5=areatecnicaantrodoco@pec.it [pec]
+
+  IT-COM-057022  Comune di Colli sul Velino
+    ipa=c_c880  istat=057022  primary_domain=comune.collisulvelino.ri.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comunecollisulvelino@pec.it [pec]
+
+  IT-COM-058009  Comune di Ariccia
+    ipa=c_a401  istat=058009  primary_domain=comune.ariccia.rm.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comunediariccia.it [pec]
+
+  IT-COM-058122  Comune di Fonte Nuova
+    ipa=c_m309  istat=058122  primary_domain=comune.fontenuova.rm.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@cert.fonte-nuova.it [pec]
+
+  IT-COM-059021  Comune di Roccagorga
+    ipa=c_h413  istat=059021  primary_domain=comuneroccagorga.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollogenerale@comuneroccagorga.telecompost.it [pec] | Mail2=areacontabile@comuneroccagorga.telecompost.it [pec] | Mail3=areatecnica@comuneroccagorga.telecompost.it [pec] | Mail4=areavigilanza@comuneroccagorga.telecompost.it [pec] | Mail5=servizidemografici@comuneroccagorga.telecompost.it [pec]
+
+  IT-COM-061044  Comune di Letino
+    ipa=c_e554  istat=061044  primary_domain=letino.gov.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=letino.gov@pec.it [pec] | Mail2=comune@letino.gov.it [altro]
+
+  IT-COM-061070  Comune di Roccamonfina
+    ipa=c_h423  istat=061070  primary_domain=roccamonfina.asmenet.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.roccamonfina@asmepec.it [pec] | Mail2=segretario.roccamonfina@asmepec.it [pec]
+
+  IT-COM-062016  Comune di Castelfranco In Miscano
+    ipa=c_c106  istat=062016  primary_domain=comune.castefrancoinmiscano.bn.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.castelfrancoinmiscano@asmepec.it [pec] | Mail2=info@comune.castefrancoinmiscano.bn.it [altro]
+
+  IT-COM-063024  Comune di Castellammare di Stabia
+    ipa=c_c129  istat=063024  primary_domain=comune.castellammare-di-stabia.napoli.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.stabia@asmepec.it [pec]
+
+  IT-COM-063067  Comune di San Giorgio a Cremano
+    ipa=c_h892  istat=063067  primary_domain=comune.sangiorgioacremano.na.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.generale@cremano.telecompost.it [pec]
+
+  IT-COM-063070  Comune di San Sebastiano al Vesuvio
+    ipa=c_i151  istat=063070  primary_domain=comunesansebastiano.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@comunesansebastianoalvesuvio.legalmailpa.it [pec] | Mail2=a.raho@comunesansebastianoalvesuvio.legalmailpa.it [pec] | Mail3=segretariogenerale@comunesansebastianoalvesuvio.legalmailpa.it [pec]
+
+  IT-COM-063086  Comune di Vico Equense
+    ipa=c_l845  istat=063086  primary_domain=comune.vicoequense.na.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comunevicoequense.it [pec]
+
+  IT-COM-064040  Comune di Guardia Lombardi
+    ipa=c_e245  istat=064040  primary_domain=comuneguardialombardi.gov.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.guardialombardi.av.it [pec]
+
+  IT-COM-064093  Comune di Santa Paolina
+    ipa=c_i301  istat=064093  primary_domain=comunesantapaolina.gov.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comunesantapaolina@pec.it [pec]
+
+  IT-COM-064115  Comune di Vallesaccarda
+    ipa=c_l616  istat=064115  primary_domain=comune.vallesaccarda.av.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune-vallesaccarda.it [pec] | Mail2=rag@pec.comune-vallesaccarda.it [pec] | Mail3=statocivile@pec.comune-vallesaccarda.it [pec] | Mail4=tributi@pec.comune-vallesaccarda.it [pec] | Mail5=utc@pec.comune-vallesaccarda.it [pec]
+
+  IT-COM-065032  Comune di Castelnuovo Cilento
+    ipa=c_c231  istat=065032  primary_domain=castelnuovocilento.eu
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.castelnuovocilento.sa.it [pec] | Mail2=s.ciardo@pec.comune.castelnuovocilento.sa.it [pec] | Mail3=sindaco.castelnuovocilento@pec.it [pec]
+
+  IT-COM-065058  Comune di Giungano
+    ipa=c_e060  istat=065058  primary_domain=comune.giungano.sa.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.comune.giungano@pec.it [pec]
+
+  IT-COM-065096  Comune di Pisciotta
+    ipa=c_g707  istat=065096  primary_domain=pisciotta.comune.sa.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.pisciotta@pec.it [pec]
+
+  IT-COM-065101  Comune di Postiglione
+    ipa=c_g939  istat=065101  primary_domain=postiglione.gov.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comunepostiglione.sa.it [pec] | Mail2=protocollo@postiglione.gov.it [altro] | Mail3=ragioneria@pec.comunepostiglione.sa.it [pec] | Mail4=ragioneria@postiglione.gov.it [altro] | Mail5=utc@postiglione.gov.it [altro]
+
+  IT-COM-065145  Comune di Stio
+    ipa=c_i960  istat=065145  primary_domain=comune.stio.sa.gov.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.stio.sa.it [pec]
+
+  IT-COM-066093  Comune di Scanno
+    ipa=c_i501  istat=066093  primary_domain=comune.scanno.aq.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.scanno.aq.it [pec] | Mail2=protocollo@comune.scanno.aq.it [altro]
+
+  IT-COM-067015  Comune di Cellino Attanasio
+    ipa=c_3rhm  istat=067015  primary_domain=comunecellinoattanasio.te.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=postacert@pec.comune.cellinoattanasio.te.it [pec]
+
+  IT-COM-067021  Comune di Corropoli
+    ipa=c_d043  istat=067021  primary_domain=comune.corropoli.te.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comunecorropoli.it [pec] | Mail2=anagrafe@pec.comunecorropoli.it [pec] | Mail3=notifichepl.corropoli@pec.it [pec] | Mail4=suap@pec.comunecorropoli.it [pec] | Mail5=tributi@pec.comunecorropoli.it [pec]
+
+  IT-COM-067025  Azienda Speciale Consortile Ambito Sociale Tordino
+    ipa=ascast  istat=067025  primary_domain=ambitosocialetordino.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=fpaconsorzioast@legalmail.it [pec]
+
+  IT-COM-068046  Comune di Villa Celiera
+    ipa=c_l922  istat=068046  primary_domain=ww.comune.villaceliera.pe.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=info@pec.comune.villaceliera.pe.it [pec] | Mail2=franco.ciota@comune.villaceliera.pe.it [altro] | Mail3=mauro.mantini@comune.villaceliera.pe.it [altro] | Mail4=servizidemografici@comune.villaceliera.pe.it [altro]
+
+  IT-COM-069050  Comune di Miglianico
+    ipa=c_f196  istat=069050  primary_domain=miglianico.gov.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=miglianico@pec.it [pec] | Mail2=protocollo@miglianico.gov.it [altro]
+
+  IT-COM-075013  Comune di Caprarica di Lecce
+    ipa=c_b690  istat=075013  primary_domain=comune.caprarica.lecce.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=uff_tecnico.comune.caprarica.le@pec.rupar.puglia.it [pec] | Mail2=uff_ragioneria.comune.caprarica.le@pec.rupar.puglia.it [pec]
+
+  IT-COM-075017  Comune di Castri di Lecce
+    ipa=c_c334  istat=075017  primary_domain=comune.castri.le.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comunecastridilecce@pec.rupar.puglia.it [pec] | Mail2=ufficiotecnico.comunecastridilecce@pec.rupar.puglia.it [pec]
+
+  IT-COM-076048  Comune di Melfi
+    ipa=c_f104  istat=076048  primary_domain=comune.melfi.pz.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comunemelfi.it [pec] | Mail2=areacittadinanza@pec.comunemelfi.it [pec] | Mail3=arealavoripubblici@pec.comunemelfi.it [pec] | Mail4=areaserviziamministrativi@pec.comunemelfi.it [pec] | Mail5=statocivile@pec.comunemelfi.it [pec]
+
+  IT-COM-076075  Comune di San Costantino Albanese
+    ipa=c_h808  istat=076075  primary_domain=comunesancostantinoalbanese.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comunesancostantinoalbanese@pec.it [pec]
+
+  IT-COM-078014  Comune di Belsito
+    ipa=c_a768  istat=078014  primary_domain=belsito.asmenet.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=sindaco.belsito@asmepec.it [pec] | Mail2=finanziario.belsito@asmepec.it [pec]
+
+  IT-COM-078132  Comune di Santa Maria del Cedro
+    ipa=c_c717  istat=078132  primary_domain=santamariadelcedro.asmenet.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=affarigenerali.santamariadelcedro@asmepec.it [pec] | Mail2=segretario.santamariadelcedro@asmepec.it [pec]
+
+  IT-COM-079077  Comune di Miglierina
+    ipa=c_f200  istat=079077  primary_domain=miglierina.asmenet.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comune.miglierina@asmepec.it [pec]
+
+  IT-COM-080075  Comune di San Pietro di Carida'
+    ipa=c_i102  istat=080075  primary_domain=sanpietrodicarida.asmenet.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comunesanpietrodicarida@asmepec.it [pec]
+
+  IT-COM-080087  Comune di Serrata
+    ipa=c_oa0d  istat=080087  primary_domain=comune.serrata.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.serrata@asmepec.it [pec]
+
+  IT-COM-080095  Comune di Varapodio
+    ipa=c_l673  istat=080095  primary_domain=comune.varapodio.rc.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comunevarapodio.it [pec] | Mail2=anagrafe@pec.comunevarapodio.it [pec] | Mail3=segreteria@pec.comunevarapodio.it [pec] | Mail4=uffin@pec.comunevarapodio.it [pec] | Mail5=ufftecn@pec.comunevarapodio.it [pec]
+
+  IT-COM-080097  Comune di San Ferdinando
+    ipa=c_m277  istat=080097  primary_domain=comunesanferdinando.rc.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.sanferdinando@asmepec.it [pec]
+
+  IT-COM-082008  Comune di Baucina
+    ipa=c_a719  istat=082008  primary_domain=egov.comune.baucina.pa.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.baucina.pa.it [pec]
+
+  IT-COM-083054  Comune di Monforte San Giorgio
+    ipa=c_f359  istat=083054  primary_domain=monfortesangiorgio.me.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.monfortesangiorgio.me.it [pec]
+
+  IT-COM-083101  Comune di Tusa
+    ipa=c_l478  istat=083101  primary_domain=comune.tusa.me.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=comuneditusa@pec.it [pec]
+
+  IT-COM-084037  Comune di Santa Elisabetta
+    ipa=c_i185  istat=084037  primary_domain=comune.santaelisabetta.ag.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=santaelisabetta.servizifinanziari@pec.it [pec] | Mail2=santaelisabetta.protocollo@pec.it [pec] | Mail3=santaelisabetta.statocivile@pec.it [pec]
+
+  IT-COM-090020  Comune di Burgos
+    ipa=c_b276  istat=090020  primary_domain=comuneburgos.gov.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comuneburgos.it [pec] | Mail2=tributi.burgos@pec.comunas.it [pec]
+
+  IT-COM-090086  Comune di Tergu
+    ipa=c_m282  istat=090086  primary_domain=comune.tergu.ss.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.tergu@legalmail.it [pec] | Mail2=protocollo@pec.comuneditergu.it [pec]
+
+  IT-COM-092051  Comune di Quartu Sant'Elena
+    ipa=c_h118  istat=092051  primary_domain=comune.quartu.ca.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.quartusantelena.ca.it [pec] | Mail2=suap@pec.comune.quartusantelena.ca.it [pec]
+
+  IT-COM-095006  Comune di Arborea
+    ipa=c_a357  istat=095006  primary_domain=comune.arborea.or.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comunearborea.it [pec]
+
+  IT-COM-095007  Comune di Ardauli
+    ipa=c_a380  istat=095007  primary_domain=comune.ardauli.or.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comuneardauli.it [pec] | Mail2=amministrativo.ardauli@pec.it [pec] | Mail3=ragioneria.ardauli@pec.it [pec] | Mail4=sociale.ardauli@pec.it [pec] | Mail5=tecnico.ardauli@pec.it [pec]
+
+  IT-COM-096012  Comune di Candelo
+    ipa=c_b586  istat=096012  primary_domain=comune.candelo.bi.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=candelo@pec.ptbiellese.it [pec]
+
+  IT-COM-096050  Comune di Pray
+    ipa=c_g974  istat=096050  primary_domain=comune.pray.bi.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=pray@pec.ptbiellese.it [pec]
+
+  IT-COM-096057  Comune di Sala Biellese
+    ipa=c_h681  istat=096057  primary_domain=comune.salabiellese.bi.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=sala.biellese@pec.ptbiellese.it [pec]
+
+  IT-COM-098021  Comune di Cornegliano Laudense
+    ipa=c_d021  istat=098021  primary_domain=comune.cornegliano.laudense.lo.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=corneglianolaudense@cert.elaus2002.net [pec]
+
+  IT-COM-102048  Comune di Zaccanopoli
+    ipa=c_m138  istat=102048  primary_domain=zaccanopolicomune.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protzaccanopoli@asmepec.it [pec]
+
+  IT-COM-111041  Comune di Monastir
+    ipa=c_f333  istat=111041  primary_domain=comune.monastir.su.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo.monastir@legalmail.it [pec] | Mail2=vigilanza.monastir@legalmail.it [pec]
+
+  IT-COM-111075  Comune di Senorbi'
+    ipa=c_i615  istat=111075  primary_domain=comune.senorbi.su.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.senorbi.ca.it [pec]
+
+  IT-COM-113025  Comune di Tempio Pausania
+    ipa=c_l093  istat=113025  primary_domain=comune.tempiopausania.ss.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@pec.comune.tempiopausania.ot.it [pec]
+
+  IT-PRO-123395  Provincia di Verona
+    ipa=p_vr  istat=023091  primary_domain=web.provincia.vr.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=provincia.verona@pecveneto.it [pec] | Mail2=urp.provincia.vr@pecveneto.it [pec]
+
+  IT-PRO-35510666 Provincia del Sulcis Iglesiente
+    ipa=7U0QFN0C  istat=111009  primary_domain=provinciasulcisiglesiente.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=protocollo@cert.provincia.sulcisiglesiente.it [pec]
+
+  IT-PRO-699570  Provincia di Macerata
+    ipa=p_mc  istat=043023  primary_domain=istituzionale.provincia.mc.it
+    domain_fallbacks: (none)
+    IPA raw mails: Mail1=provincia.macerata@legalmail.it [pec]
