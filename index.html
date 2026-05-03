@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossorigin>
 <link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossorigin>
 <link rel="preconnect" href="https://d.basemaps.cartocdn.com" crossorigin>
-<title>MX Map — Email Sovereignty Map</title>
-<meta name="description" content="Interactive map showing where ~23,000 municipalities across 55 countries host their official email, based on DNS analysis of MX, SPF, and DKIM records.">
+<title>MXmap.it — Sovranità Email della PA Italiana</title>
+<meta name="description" content="Mappa interattiva dei provider email dei comuni, province e regioni italiane (~8.000 enti) — basata su analisi DNS dei record MX, SPF, CNAME, DKIM. Visualizza la dipendenza della Pubblica Amministrazione italiana da hyperscaler statunitensi (Microsoft, Google, AWS) soggetti al CLOUD Act.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='7' width='28' height='18' rx='2' fill='%231a1a2e'/%3E%3Cpath d='M2 9l14 9 14-9' fill='none' stroke='%2316a34a' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
@@ -200,30 +200,30 @@
 <body>
 <header id="header">
   <div class="header-left">
-    <h1 class="brand">MX Map</h1>
+    <h1 class="brand">MXmap.it</h1>
     <span class="separator">|</span>
-    <span class="tagline">Email Sovereignty Map</span>
+    <span class="tagline">Sovranità email della Pubblica Amministrazione italiana</span>
   </div>
   <div class="header-right">
     <span class="updated" id="generated"></span>
-    <button class="toggle-info" id="toggle-stats" aria-expanded="false" aria-controls="stats-bar">Statistics &#9662;</button>
-    <button class="toggle-info" id="toggle-info" aria-expanded="false" aria-controls="info-bar">About &#9662;</button>
+    <button class="toggle-info" id="toggle-stats" aria-expanded="false" aria-controls="stats-bar">Statistiche &#9662;</button>
+    <button class="toggle-info" id="toggle-info" aria-expanded="false" aria-controls="info-bar">Informazioni &#9662;</button>
   </div>
 </header>
 <section id="info-bar" class="collapsed" aria-label="About this project">
-  <h2 class="info-title">Email Sovereignty Map</h2>
+  <h2 class="info-title">MXmap.it — Sovranità email della PA italiana</h2>
   <div class="info-grid">
     <div class="info-card">
-      <h3>What is this?</h3>
-      <p>A map showing which provider handles official email for municipalities worldwide — based on public DNS records. US-based providers (Microsoft, Google, AWS) are subject to the <strong>US CLOUD Act</strong>, which allows US authorities to request stored data regardless of where it is hosted. This raises data sovereignty concerns across jurisdictions.</p>
+      <h3>Cos'è questa mappa?</h3>
+      <p>Una mappa interattiva che mostra quale provider gestisce la posta elettronica ufficiale di <strong>regioni, province e comuni italiani</strong> (~8.000 enti, fonte: <a href="https://indicepa.gov.it/" target="_blank" rel="noopener">IndicePA</a>) — basata su analisi pubblica dei record DNS. I provider statunitensi (Microsoft 365, Google Workspace, AWS) sono soggetti al <strong>CLOUD Act</strong>, che consente alle autorità USA di richiedere dati archiviati indipendentemente dalla loro localizzazione fisica. Questo solleva preoccupazioni concrete di sovranità digitale per la PA italiana.</p>
     </div>
     <div class="info-card">
-      <h3>How does it work?</h3>
-      <p>For each municipality domain, DNS records (MX, SPF, CNAME, DKIM, autodiscover, TXT) are queried and classified in priority order: <strong>MX hostname</strong> or <strong>CNAME</strong> matching a known provider; <strong>gateway look-through</strong> via SPF, autodiscover, DKIM, and TXT verification tokens when MX points to a security gateway (FortiMail, Barracuda, Hornetsecurity, etc.) — SPF is only trusted when exactly one backend provider is found, and TXT tokens (e.g., <code>MS=</code>, <code>google-site-verification=</code>) are only used as a last resort behind gateways; <strong>DKIM check</strong> for unrecognized MX hosts to detect hidden backends (e.g., self-hosted MX with Microsoft 365 DKIM); <strong>local provider</strong> by matching MX server ASN to known local ISPs, government mail infrastructure, and municipal IT cooperatives; or <strong>self-hosted</strong> if no known provider or ISP is detected. DKIM is the most reliable signal — a CNAME proving a provider signs mail for the domain is definitive proof of mail hosting.</p>
+      <h3>Come funziona?</h3>
+      <p>Per ogni dominio di un ente pubblico italiano interroghiamo i record DNS pubblici (MX, SPF, CNAME, DKIM, autodiscover, TXT) e classifichiamo in ordine di priorità: <strong>MX o CNAME</strong> che matchano un provider noto; <strong>look-through dei gateway</strong> via SPF/autodiscover/DKIM/TXT quando l'MX punta a un'appliance di sicurezza email; <strong>controllo DKIM</strong> per individuare il backend reale dietro server self-hosted; <strong>ASN locali</strong> per ISP italiani noti; oppure <strong>self-hosted</strong>. Quando il dominio del sito non ha MX, recuperiamo via le email IndicePA non-PEC, via Wikidata P856, via scraping della homepage, o via motore di ricerca. ASMEL/ASMECAL/ASMECAM/Lepida/ARIA/CSI Piemonte/Insiel/Sogei e simili sono classificati come <em>infrastruttura pubblica regionale</em> (in-house consortile o di proprietà regionale).</p>
     </div>
     <div class="info-card">
-      <h3>Open source &amp; open data</h3>
-      <p>Inspired by <a href="https://mxmap.ch" target="_blank">mxmap.ch</a>. Code and data on <a href="https://github.com/livenson/mxmap" target="_blank">GitHub</a>.</p>
+      <h3>Open source &amp; dati aperti</h3>
+      <p>Ispirato da <a href="https://mxmap.ch" target="_blank" rel="noopener">mxmap.ch</a>. Codice e dati su <a href="https://github.com/fpietrosanti/mxmap.it" target="_blank" rel="noopener">GitHub</a>. Fonti: <a href="https://indicepa.gov.it/ipa-dati/dataset/enti" target="_blank" rel="noopener">IndicePA (AgID)</a>, <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>, <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a>.</p>
     </div>
   </div>
 </section>
@@ -233,255 +233,14 @@
 <main id="map" role="application" aria-label="Interactive map of municipal email providers">
   <div id="map-loading" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000;background:rgba(255,255,255,0.85);font-size:15px;color:#555;">Loading map data&hellip;</div>
   <div class="map-controls">
-    <button class="country-toggle" id="country-toggle">Countries &#9662;</button>
+    <button class="country-toggle" id="country-toggle" style="display:none">Countries &#9662;</button>
     <div class="country-filters" id="country-filters">
-      <div class="region-group">
-        <button class="region-label" data-region="nordic">Nordic</button>
-        <button class="country-btn active" data-country="FI">FI</button>
-        <button class="country-btn active" data-country="SE">SE</button>
-        <button class="country-btn active" data-country="NO">NO</button>
-        <button class="country-btn active" data-country="DK">DK</button>
-        <button class="country-btn active" data-country="IS">IS</button>
-        <button class="country-btn active" data-country="GL">GL</button>
-      </div>
-      <div class="region-group">
-        <button class="region-label" data-region="baltic">Baltic</button>
-        <button class="country-btn active" data-country="EE">EE</button>
-        <button class="country-btn active" data-country="LV">LV</button>
-        <button class="country-btn active" data-country="LT">LT</button>
-      </div>
-      <div class="region-group">
-        <button class="region-label" data-region="western">Western</button>
-        <button class="country-btn active" data-country="NL">NL</button>
-        <button class="country-btn active" data-country="BE">BE</button>
-        <button class="country-btn active" data-country="LU">LU</button>
-        <button class="country-btn active" data-country="FR">FR</button>
-        <button class="country-btn active" data-country="IE">IE</button>
-        <button class="country-btn active" data-country="GB">UK</button>
-      </div>
-      <div class="region-group">
-        <button class="region-label" data-region="central">Central</button>
-        <button class="country-btn active" data-country="DE">DE</button>
-        <button class="country-btn active" data-country="AT">AT</button>
-        <button class="country-btn active" data-country="CZ">CZ</button>
-        <button class="country-btn active" data-country="SK">SK</button>
-        <button class="country-btn active" data-country="PL">PL</button>
-        <button class="country-btn active" data-country="SI">SI</button>
-        <button class="country-btn active" data-country="HR">HR</button>
-        <button class="country-btn active" data-country="HU">HU</button>
-        <button class="country-btn active" data-country="RO">RO</button>
-        <button class="country-btn active" data-country="BG">BG</button>
-        <button class="country-btn active" data-country="BA">BA</button>
-        <button class="country-btn active" data-country="ME">ME</button>
-        <button class="country-btn active" data-country="RS">RS</button>
-        <button class="country-btn active" data-country="AL">AL</button>
-        <button class="country-btn active" data-country="XK">XK</button>
-        <button class="country-btn active" data-country="MK">MK</button>
-        <button class="country-btn active" data-country="UA">UA</button>
-        <button class="country-btn active" data-country="MD">MD</button>
-        <button class="country-btn active" data-country="BY">BY</button>
-      </div>
-      <div class="region-group">
-        <button class="region-label" data-region="southern">Southern</button>
-        <button class="country-btn active" data-country="ES">ES</button>
-        <button class="country-btn active" data-country="PT">PT</button>
-        <button class="country-btn active" data-country="IT">IT</button>
-        <button class="country-btn active" data-country="GR">GR</button>
-        <button class="country-btn active" data-country="CY">CY</button>
-        <button class="country-btn active" data-country="MT">MT</button>
-        <button class="country-btn active" data-country="SM">SM</button>
-        <button class="country-btn active" data-country="AD">AD</button>
-        <button class="country-btn active" data-country="TR">TR</button>
-        <button class="country-btn active" data-country="GE">GE</button>
-        <button class="country-btn active" data-country="AM">AM</button>
-        <button class="country-btn active" data-country="AZ">AZ</button>
-        <button class="country-btn active" data-country="LI">LI</button>
-        <button class="country-btn active" data-country="MC">MC</button>
-
-        <button class="region-label" data-region="mideast">Middle East</button>
-        <button class="country-btn active" data-country="AE">AE</button>
-        <button class="country-btn active" data-country="SA">SA</button>
-        <button class="country-btn active" data-country="OM">OM</button>
-        <button class="country-btn active" data-country="QA">QA</button>
-        <button class="country-btn active" data-country="BH">BH</button>
-        <button class="country-btn active" data-country="KW">KW</button>
-        <button class="country-btn active" data-country="IQ">IQ</button>
-        <button class="country-btn active" data-country="JO">JO</button>
-        <button class="country-btn active" data-country="LB">LB</button>
-        <button class="country-btn active" data-country="IR">IR</button>
-        <button class="country-btn active" data-country="IL">IL</button>
-        <button class="country-btn active" data-country="YE">YE</button>
-        <button class="country-btn active" data-country="SY">SY</button>
-        <button class="country-btn active" data-country="PS">PS</button>
-
-        <button class="region-label" data-region="casia">C Asia</button>
-        <button class="country-btn active" data-country="KZ">KZ</button>
-        <button class="country-btn active" data-country="UZ">UZ</button>
-        <button class="country-btn active" data-country="KG">KG</button>
-        <button class="country-btn active" data-country="RU">RU</button>
-        <button class="country-btn active" data-country="TJ">TJ</button>
-        <button class="country-btn active" data-country="TM">TM</button>
-
-        <button class="region-label" data-region="sasia">S Asia</button>
-        <button class="country-btn active" data-country="IN">IN</button>
-        <button class="country-btn active" data-country="PK">PK</button>
-        <button class="country-btn active" data-country="BD">BD</button>
-        <button class="country-btn active" data-country="LK">LK</button>
-        <button class="country-btn active" data-country="NP">NP</button>
-        <button class="country-btn active" data-country="AF">AF</button>
-        <button class="country-btn active" data-country="MV">MV</button>
-        <button class="country-btn active" data-country="BT">BT</button>
-
-        <button class="region-label" data-region="seasia">SE Asia</button>
-        <button class="country-btn active" data-country="ID">ID</button>
-        <button class="country-btn active" data-country="MY">MY</button>
-        <button class="country-btn active" data-country="TH">TH</button>
-        <button class="country-btn active" data-country="PH">PH</button>
-        <button class="country-btn active" data-country="KH">KH</button>
-        <button class="country-btn active" data-country="VN">VN</button>
-        <button class="country-btn active" data-country="MM">MM</button>
-        <button class="country-btn active" data-country="LA">LA</button>
-        <button class="country-btn active" data-country="BN">BN</button>
-        <button class="country-btn active" data-country="TL">TL</button>
-        <button class="country-btn active" data-country="SG">SG</button>
-        <button class="country-btn active" data-country="PG">PG</button>
-
-        <button class="region-label" data-region="easia">E Asia</button>
-        <button class="country-btn active" data-country="JP">JP</button>
-        <button class="country-btn active" data-country="KR">KR</button>
-        <button class="country-btn active" data-country="CN">CN</button>
-        <button class="country-btn active" data-country="TW">TW</button>
-        <button class="country-btn active" data-country="MN">MN</button>
-        <button class="country-btn active" data-country="KP">KP</button>
-
-        <button class="region-label" data-region="oceania">Oceania</button>
-        <button class="country-btn active" data-country="AU">AU</button>
-        <button class="country-btn active" data-country="NZ">NZ</button>
-        <button class="country-btn active" data-country="FJ">FJ</button>
-        <button class="country-btn active" data-country="WS">WS</button>
-        <button class="country-btn active" data-country="VU">VU</button>
-        <button class="country-btn active" data-country="TO">TO</button>
-        <button class="country-btn active" data-country="NR">NR</button>
-        <button class="country-btn active" data-country="PW">PW</button>
-        <button class="country-btn active" data-country="SB">SB</button>
-        <button class="country-btn active" data-country="MH">MH</button>
-        <button class="country-btn active" data-country="FM">FM</button>
-        <button class="country-btn active" data-country="KI">KI</button>
-        <button class="country-btn active" data-country="TV">TV</button>
-      </div>
-      <div class="region-group">
-        <button class="region-label" data-region="samerica">S America</button>
-        <button class="country-btn active" data-country="AR">AR</button>
-        <button class="country-btn active" data-country="BO">BO</button>
-        <button class="country-btn active" data-country="BR">BR</button>
-        <button class="country-btn active" data-country="CL">CL</button>
-        <button class="country-btn active" data-country="CO">CO</button>
-        <button class="country-btn active" data-country="EC">EC</button>
-        <button class="country-btn active" data-country="GY">GY</button>
-        <button class="country-btn active" data-country="PE">PE</button>
-        <button class="country-btn active" data-country="PY">PY</button>
-        <button class="country-btn active" data-country="SR">SR</button>
-        <button class="country-btn active" data-country="UY">UY</button>
-        <button class="country-btn active" data-country="VE">VE</button>
-
-        <button class="region-label" data-region="caribbean">Caribbean</button>
-        <button class="country-btn active" data-country="CU">CU</button>
-        <button class="country-btn active" data-country="HT">HT</button>
-        <button class="country-btn active" data-country="DO">DO</button>
-        <button class="country-btn active" data-country="JM">JM</button>
-        <button class="country-btn active" data-country="TT">TT</button>
-        <button class="country-btn active" data-country="BS">BS</button>
-        <button class="country-btn active" data-country="BB">BB</button>
-        <button class="country-btn active" data-country="AG">AG</button>
-        <button class="country-btn active" data-country="DM">DM</button>
-        <button class="country-btn active" data-country="GD">GD</button>
-        <button class="country-btn active" data-country="KN">KN</button>
-        <button class="country-btn active" data-country="LC">LC</button>
-        <button class="country-btn active" data-country="VC">VC</button>
-
-        <button class="region-label" data-region="namerica">N America</button>
-        <button class="country-btn active" data-country="CA">CA</button>
-        <button class="country-btn active" data-country="MX">MX</button>
-
-        <button class="region-label" data-region="camerica">C America</button>
-        <button class="country-btn active" data-country="BZ">BZ</button>
-        <button class="country-btn active" data-country="GT">GT</button>
-        <button class="country-btn active" data-country="HN">HN</button>
-        <button class="country-btn active" data-country="SV">SV</button>
-        <button class="country-btn active" data-country="NI">NI</button>
-        <button class="country-btn active" data-country="CR">CR</button>
-        <button class="country-btn active" data-country="PA">PA</button>
-      </div>
-      <div class="region-group">
-        <button class="region-label" data-region="nafrica">N Africa</button>
-        <button class="country-btn active" data-country="DZ">DZ</button>
-        <button class="country-btn active" data-country="EG">EG</button>
-        <button class="country-btn active" data-country="LY">LY</button>
-        <button class="country-btn active" data-country="MA">MA</button>
-        <button class="country-btn active" data-country="TN">TN</button>
-        <button class="country-btn active" data-country="SD">SD</button>
-
-        <button class="region-label" data-region="wafrica">W Africa</button>
-        <button class="country-btn active" data-country="BJ">BJ</button>
-        <button class="country-btn active" data-country="BF">BF</button>
-        <button class="country-btn active" data-country="CV">CV</button>
-        <button class="country-btn active" data-country="CI">CI</button>
-        <button class="country-btn active" data-country="GM">GM</button>
-        <button class="country-btn active" data-country="GH">GH</button>
-        <button class="country-btn active" data-country="GN">GN</button>
-        <button class="country-btn active" data-country="GW">GW</button>
-        <button class="country-btn active" data-country="LR">LR</button>
-        <button class="country-btn active" data-country="ML">ML</button>
-        <button class="country-btn active" data-country="MR">MR</button>
-        <button class="country-btn active" data-country="NE">NE</button>
-        <button class="country-btn active" data-country="NG">NG</button>
-        <button class="country-btn active" data-country="SN">SN</button>
-        <button class="country-btn active" data-country="SL">SL</button>
-        <button class="country-btn active" data-country="TG">TG</button>
-
-        <button class="region-label" data-region="cafrica">C Africa</button>
-        <button class="country-btn active" data-country="CM">CM</button>
-        <button class="country-btn active" data-country="CF">CF</button>
-        <button class="country-btn active" data-country="TD">TD</button>
-        <button class="country-btn active" data-country="CG">CG</button>
-        <button class="country-btn active" data-country="CD">CD</button>
-        <button class="country-btn active" data-country="GQ">GQ</button>
-        <button class="country-btn active" data-country="GA">GA</button>
-        <button class="country-btn active" data-country="ST">ST</button>
-
-        <button class="region-label" data-region="eafrica">E Africa</button>
-        <button class="country-btn active" data-country="BI">BI</button>
-        <button class="country-btn active" data-country="KM">KM</button>
-        <button class="country-btn active" data-country="DJ">DJ</button>
-        <button class="country-btn active" data-country="ER">ER</button>
-        <button class="country-btn active" data-country="ET">ET</button>
-        <button class="country-btn active" data-country="KE">KE</button>
-        <button class="country-btn active" data-country="MG">MG</button>
-        <button class="country-btn active" data-country="MW">MW</button>
-        <button class="country-btn active" data-country="MU">MU</button>
-        <button class="country-btn active" data-country="MZ">MZ</button>
-        <button class="country-btn active" data-country="RW">RW</button>
-        <button class="country-btn active" data-country="SC">SC</button>
-        <button class="country-btn active" data-country="SO">SO</button>
-        <button class="country-btn active" data-country="SS">SS</button>
-        <button class="country-btn active" data-country="TZ">TZ</button>
-        <button class="country-btn active" data-country="UG">UG</button>
-
-        <button class="region-label" data-region="safrica">S Africa</button>
-        <button class="country-btn active" data-country="AO">AO</button>
-        <button class="country-btn active" data-country="BW">BW</button>
-        <button class="country-btn active" data-country="SZ">SZ</button>
-        <button class="country-btn active" data-country="LS">LS</button>
-        <button class="country-btn active" data-country="NA">NA</button>
-        <button class="country-btn active" data-country="ZA">ZA</button>
-        <button class="country-btn active" data-country="ZM">ZM</button>
-        <button class="country-btn active" data-country="ZW">ZW</button>
-      </div>
+      <button class="country-btn active" data-country="IT">IT</button>
     </div>
     <div class="level-toggle">
-      <button class="level-btn active" data-level="region">Regions</button>
-      <button class="level-btn" data-level="district">Districts</button>
-      <button class="level-btn" data-level="municipality">Municipalities</button>
+      <button class="level-btn active" data-level="region">Regioni</button>
+      <button class="level-btn" data-level="district">Province</button>
+      <button class="level-btn" data-level="municipality">Comuni</button>
     </div>
   </div>
 </main>
@@ -493,25 +252,47 @@ if (!CSS.supports('height', '100dvh')) {
 }
 
 const COLORS = {
-  'Microsoft':      '#E83838',
-  'Google':         '#FFAB96',
-  'AWS':            '#FF7A5C',
-  'Local Provider': '#10B898',
-  'Self-hosted':    '#0E9680',
-  'Unknown':        '#BFBFBF'
+  // US hyperscalers (CLOUD Act)
+  'Microsoft 365':              '#E83838',
+  'Google Workspace':           '#FFAB96',
+  'AWS':                        '#FF7A5C',
+  // Italian commercial
+  'Aruba':                      '#F39C12',
+  'Register.it':                '#1E40AF',
+  'Seeweb':                     '#DC2626',
+  'InfoCert':                   '#065F46',
+  'Namirial':                   '#6B21A8',
+  'ISP italiano':               '#10B898',
+  'ISP locale':                 '#10B898',
+  'Zoho':                       '#7C3AED',
+  'Yandex':                     '#FFCC00',
+  // Italian sovereign
+  'IT pubblico (sovrano)':      '#16A34A',
+  'Contractor PA privato':      '#FCD34D',
+  // Italian self-hosted / shared
+  'Self-hosted':                '#0E9680',
+  'Mail provinciale condivisa': '#14B8A6',
+  // Backwards-compatible aliases (used by some upstream code paths)
+  'Microsoft':                  '#E83838',
+  'Google':                     '#FFAB96',
+  'Local Provider':             '#10B898',
+  'Sconosciuto':                '#BFBFBF',
+  'Unknown':                    '#BFBFBF',
 };
 
-const DARK_TEXT = new Set(['Google', 'AWS', 'Unknown']);
+const DARK_TEXT = new Set(['Google Workspace', 'Google', 'AWS', 'Sconosciuto', 'Unknown', 'Yandex']);
 
 const TIERS = {
-  'US (CLOUD Act)': ['Microsoft', 'Google', 'AWS'],
-  'Local':       ['Local Provider', 'Self-hosted'],
-  'Unknown':        ['Unknown']
+  'USA (CLOUD Act)': ['Microsoft 365', 'Google Workspace', 'AWS'],
+  'Sovrano (PA italiana pubblica)': ['IT pubblico (sovrano)'],
+  'Italiano commerciale': ['Aruba', 'Register.it', 'Seeweb', 'InfoCert', 'Namirial', 'ISP italiano', 'ISP locale', 'Contractor PA privato', 'Zoho', 'Yandex'],
+  'Self-hosted / condiviso': ['Self-hosted', 'Mail provinciale condivisa'],
+  'Sconosciuto': ['Sconosciuto'],
 };
 
 const FLAGS = { EE: '\u{1F1EA}\u{1F1EA}', LV: '\u{1F1F1}\u{1F1FB}', LT: '\u{1F1F1}\u{1F1F9}', FI: '\u{1F1EB}\u{1F1EE}', NO: '\u{1F1F3}\u{1F1F4}', IS: '\u{1F1EE}\u{1F1F8}', SE: '\u{1F1F8}\u{1F1EA}', DE: '\u{1F1E9}\u{1F1EA}', DK: '\u{1F1E9}\u{1F1F0}', AD: '\u{1F1E6}\u{1F1E9}', LU: '\u{1F1F1}\u{1F1FA}', BE: '\u{1F1E7}\u{1F1EA}', AT: '\u{1F1E6}\u{1F1F9}', CZ: '\u{1F1E8}\u{1F1FF}', SK: '\u{1F1F8}\u{1F1F0}', SI: '\u{1F1F8}\u{1F1EE}', ES: '\u{1F1EA}\u{1F1F8}', FR: '\u{1F1EB}\u{1F1F7}', PL: '\u{1F1F5}\u{1F1F1}', PT: '\u{1F1F5}\u{1F1F9}', IT: '\u{1F1EE}\u{1F1F9}', IE: '\u{1F1EE}\u{1F1EA}', NL: '\u{1F1F3}\u{1F1F1}', BG: '\u{1F1E7}\u{1F1EC}', GB: '\u{1F1EC}\u{1F1E7}', HR: '\u{1F1ED}\u{1F1F7}', CY: '\u{1F1E8}\u{1F1FE}', GR: '\u{1F1EC}\u{1F1F7}', HU: '\u{1F1ED}\u{1F1FA}', MT: '\u{1F1F2}\u{1F1F9}', RO: '\u{1F1F7}\u{1F1F4}', AL: '\u{1F1E6}\u{1F1F1}', XK: '\u{1F1FD}\u{1F1F0}', ME: '\u{1F1F2}\u{1F1EA}', BA: '\u{1F1E7}\u{1F1E6}', RS: '\u{1F1F7}\u{1F1F8}', MK: '\u{1F1F2}\u{1F1F0}', UA: '\u{1F1FA}\u{1F1E6}', MD: '\u{1F1F2}\u{1F1E9}', LI: '\u{1F1F1}\u{1F1EE}', SM: '\u{1F1F8}\u{1F1F2}', GE: '\u{1F1EC}\u{1F1EA}', AM: '\u{1F1E6}\u{1F1F2}', AZ: '\u{1F1E6}\u{1F1FF}', BY: '\u{1F1E7}\u{1F1FE}', TR: '\u{1F1F9}\u{1F1F7}', MC: '\u{1F1F2}\u{1F1E8}', GL: '\u{1F1EC}\u{1F1F1}', AU: '\u{1F1E6}\u{1F1FA}', NZ: '\u{1F1F3}\u{1F1FF}', FJ: '\u{1F1EB}\u{1F1EF}', WS: '\u{1F1FC}\u{1F1F8}', VU: '\u{1F1FB}\u{1F1FA}', TO: '\u{1F1F9}\u{1F1F4}', NR: '\u{1F1F3}\u{1F1F7}', PW: '\u{1F1F5}\u{1F1FC}', ID: '\u{1F1EE}\u{1F1E9}', PG: '\u{1F1F5}\u{1F1EC}', MY: '\u{1F1F2}\u{1F1FE}', TH: '\u{1F1F9}\u{1F1ED}', KH: '\u{1F1F0}\u{1F1ED}', PH: '\u{1F1F5}\u{1F1ED}', VN: '\u{1F1FB}\u{1F1F3}', MM: '\u{1F1F2}\u{1F1F2}', JP: '\u{1F1EF}\u{1F1F5}', TW: '\u{1F1F9}\u{1F1FC}', KR: '\u{1F1F0}\u{1F1F7}', KP: '\u{1F1F0}\u{1F1F5}', CN: '\u{1F1E8}\u{1F1F3}', MN: '\u{1F1F2}\u{1F1F3}', IN: '\u{1F1EE}\u{1F1F3}', BD: '\u{1F1E7}\u{1F1E9}', PK: '\u{1F1F5}\u{1F1F0}', LK: '\u{1F1F1}\u{1F1F0}', NP: '\u{1F1F3}\u{1F1F5}', LA: '\u{1F1F1}\u{1F1E6}', BN: '\u{1F1E7}\u{1F1F3}', TL: '\u{1F1F9}\u{1F1F1}', KZ: '\u{1F1F0}\u{1F1FF}', UZ: '\u{1F1FA}\u{1F1FF}', KG: '\u{1F1F0}\u{1F1EC}', RU: '\u{1F1F7}\u{1F1FA}', SA: '\u{1F1F8}\u{1F1E6}', IQ: '\u{1F1EE}\u{1F1F6}', JO: '\u{1F1EF}\u{1F1F4}', LB: '\u{1F1F1}\u{1F1E7}', KW: '\u{1F1F0}\u{1F1FC}', IR: '\u{1F1EE}\u{1F1F7}', IL: '\u{1F1EE}\u{1F1F1}', OM: '\u{1F1F4}\u{1F1F2}', AE: '\u{1F1E6}\u{1F1EA}', QA: '\u{1F1F6}\u{1F1E6}', BH: '\u{1F1E7}\u{1F1ED}', AR: '\u{1F1E6}\u{1F1F7}', BO: '\u{1F1E7}\u{1F1F4}', BR: '\u{1F1E7}\u{1F1F7}', CL: '\u{1F1E8}\u{1F1F1}', CO: '\u{1F1E8}\u{1F1F4}', EC: '\u{1F1EA}\u{1F1E8}', GY: '\u{1F1EC}\u{1F1FE}', PE: '\u{1F1F5}\u{1F1EA}', PY: '\u{1F1F5}\u{1F1FE}', SR: '\u{1F1F8}\u{1F1F7}', UY: '\u{1F1FA}\u{1F1FE}', VE: '\u{1F1FB}\u{1F1EA}', DZ: '\u{1F1E9}\u{1F1FF}', EG: '\u{1F1EA}\u{1F1EC}', LY: '\u{1F1F1}\u{1F1FE}', MA: '\u{1F1F2}\u{1F1E6}', TN: '\u{1F1F9}\u{1F1F3}', SD: '\u{1F1F8}\u{1F1E9}', BJ: '\u{1F1E7}\u{1F1EF}', BF: '\u{1F1E7}\u{1F1EB}', CV: '\u{1F1E8}\u{1F1FB}', CI: '\u{1F1E8}\u{1F1EE}', GM: '\u{1F1EC}\u{1F1F2}', GH: '\u{1F1EC}\u{1F1ED}', GN: '\u{1F1EC}\u{1F1F3}', GW: '\u{1F1EC}\u{1F1FC}', LR: '\u{1F1F1}\u{1F1F7}', ML: '\u{1F1F2}\u{1F1F1}', MR: '\u{1F1F2}\u{1F1F7}', NE: '\u{1F1F3}\u{1F1EA}', NG: '\u{1F1F3}\u{1F1EC}', SN: '\u{1F1F8}\u{1F1F3}', SL: '\u{1F1F8}\u{1F1F1}', TG: '\u{1F1F9}\u{1F1EC}', CM: '\u{1F1E8}\u{1F1F2}', CF: '\u{1F1E8}\u{1F1EB}', TD: '\u{1F1F9}\u{1F1E9}', CG: '\u{1F1E8}\u{1F1EC}', CD: '\u{1F1E8}\u{1F1E9}', GQ: '\u{1F1EC}\u{1F1F6}', GA: '\u{1F1EC}\u{1F1E6}', ST: '\u{1F1F8}\u{1F1F9}', BI: '\u{1F1E7}\u{1F1EE}', KM: '\u{1F1F0}\u{1F1F2}', DJ: '\u{1F1E9}\u{1F1EF}', ER: '\u{1F1EA}\u{1F1F7}', ET: '\u{1F1EA}\u{1F1F9}', KE: '\u{1F1F0}\u{1F1EA}', MG: '\u{1F1F2}\u{1F1EC}', MW: '\u{1F1F2}\u{1F1FC}', MU: '\u{1F1F2}\u{1F1FA}', MZ: '\u{1F1F2}\u{1F1FF}', RW: '\u{1F1F7}\u{1F1FC}', SC: '\u{1F1F8}\u{1F1E8}', SO: '\u{1F1F8}\u{1F1F4}', SS: '\u{1F1F8}\u{1F1F8}', TZ: '\u{1F1F9}\u{1F1FF}', UG: '\u{1F1FA}\u{1F1EC}', AO: '\u{1F1E6}\u{1F1F4}', BW: '\u{1F1E7}\u{1F1FC}', SZ: '\u{1F1F8}\u{1F1FF}', LS: '\u{1F1F1}\u{1F1F8}', NA: '\u{1F1F3}\u{1F1E6}', ZA: '\u{1F1FF}\u{1F1E6}', ZM: '\u{1F1FF}\u{1F1F2}', ZW: '\u{1F1FF}\u{1F1FC}', CA: '\u{1F1E8}\u{1F1E6}', BZ: '\u{1F1E7}\u{1F1FF}', GT: '\u{1F1EC}\u{1F1F9}', HN: '\u{1F1ED}\u{1F1F3}', SV: '\u{1F1F8}\u{1F1FB}', NI: '\u{1F1F3}\u{1F1EE}', CR: '\u{1F1E8}\u{1F1F7}', PA: '\u{1F1F5}\u{1F1E6}', CU: '\u{1F1E8}\u{1F1FA}', HT: '\u{1F1ED}\u{1F1F9}', DO: '\u{1F1E9}\u{1F1F4}', JM: '\u{1F1EF}\u{1F1F2}', TT: '\u{1F1F9}\u{1F1F9}', BS: '\u{1F1E7}\u{1F1F8}', BB: '\u{1F1E7}\u{1F1E7}', AG: '\u{1F1E6}\u{1F1EC}', DM: '\u{1F1E9}\u{1F1F2}', GD: '\u{1F1EC}\u{1F1E9}', KN: '\u{1F1F0}\u{1F1F3}', LC: '\u{1F1F1}\u{1F1E8}', VC: '\u{1F1FB}\u{1F1E8}', AF: '\u{1F1E6}\u{1F1EB}', SG: '\u{1F1F8}\u{1F1EC}', YE: '\u{1F1FE}\u{1F1EA}', SY: '\u{1F1F8}\u{1F1FE}', PS: '\u{1F1F5}\u{1F1F8}', TJ: '\u{1F1F9}\u{1F1EF}', TM: '\u{1F1F9}\u{1F1F2}', MV: '\u{1F1F2}\u{1F1FB}', BT: '\u{1F1E7}\u{1F1F9}', SB: '\u{1F1F8}\u{1F1E7}', MH: '\u{1F1F2}\u{1F1ED}', FM: '\u{1F1EB}\u{1F1F2}', KI: '\u{1F1F0}\u{1F1EE}', TV: '\u{1F1F9}\u{1F1FB}', MX: '\u{1F1F2}\u{1F1FD}' };
 
-const COUNTRY_LIST = ['EE', 'LV', 'LT', 'FI', 'NO', 'IS', 'SE', 'DE', 'DK', 'AD', 'LU', 'BE', 'AT', 'CZ', 'SK', 'SI', 'ES', 'FR', 'PL', 'PT', 'IT', 'IE', 'NL', 'BG', 'GB', 'HR', 'CY', 'GR', 'HU', 'MT', 'RO', 'AL', 'XK', 'ME', 'BA', 'RS', 'MK', 'UA', 'MD', 'LI', 'SM', 'GE', 'AM', 'AZ', 'BY', 'TR', 'MC', 'GL', 'AU', 'NZ', 'FJ', 'WS', 'VU', 'TO', 'NR', 'PW', 'SB', 'MH', 'FM', 'KI', 'TV', 'ID', 'PG', 'MY', 'TH', 'KH', 'PH', 'VN', 'MM', 'JP', 'TW', 'KR', 'KP', 'CN', 'MN', 'IN', 'BD', 'PK', 'LK', 'NP', 'AF', 'LA', 'BN', 'TL', 'SG', 'MV', 'BT', 'KZ', 'UZ', 'KG', 'RU', 'TJ', 'TM', 'SA', 'IQ', 'JO', 'LB', 'KW', 'IR', 'IL', 'OM', 'AE', 'QA', 'BH', 'YE', 'SY', 'PS', 'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'GY', 'PE', 'PY', 'SR', 'UY', 'VE', 'CU', 'HT', 'DO', 'JM', 'TT', 'BS', 'BB', 'AG', 'DM', 'GD', 'KN', 'LC', 'VC', 'CA', 'MX', 'BZ', 'GT', 'HN', 'SV', 'NI', 'CR', 'PA', 'DZ', 'EG', 'LY', 'MA', 'TN', 'SD', 'BJ', 'BF', 'CV', 'CI', 'GM', 'GH', 'GN', 'GW', 'LR', 'ML', 'MR', 'NE', 'NG', 'SN', 'SL', 'TG', 'CM', 'CF', 'TD', 'CG', 'CD', 'GQ', 'GA', 'ST', 'BI', 'KM', 'DJ', 'ER', 'ET', 'KE', 'MG', 'MW', 'MU', 'MZ', 'RW', 'SC', 'SO', 'SS', 'TZ', 'UG', 'AO', 'BW', 'SZ', 'LS', 'NA', 'ZA', 'ZM', 'ZW'];
+const COUNTRY_LIST = ['IT'];
 
 window.filterMuniList = function(input) {
   var query = input.value.toLowerCase();
@@ -641,9 +422,9 @@ let muniByName = {};   // lowercase name -> municipality
 
 // --- Map ---
 const map = L.map('map', {
-  center: [50.0, 15.0],
-  zoom: 4,
-  minZoom: 2,
+  center: [42.5, 12.5],
+  zoom: 6,
+  minZoom: 5,
   maxZoom: 14,
   renderer: L.canvas()
 });
@@ -1595,9 +1376,19 @@ document.querySelectorAll('.region-label').forEach(function (btn) {
 
 // --- Load data ---
 const providerDisplayMap = {
-  'microsoft': 'Microsoft', 'google': 'Google', 'aws': 'AWS',
-  'telia': 'Local Provider', 'tet': 'Local Provider', 'zone': 'Local Provider', 'elkdata': 'Local Provider',
-  'local-isp': 'Local Provider', 'zoho': 'Local Provider', 'yandex': 'Local Provider', 'independent': 'Self-hosted', 'unknown': 'Unknown',
+  'microsoft': 'Microsoft 365', 'google': 'Google Workspace', 'aws': 'AWS',
+  'telia': 'ISP locale', 'tet': 'ISP locale', 'zone': 'ISP locale', 'elkdata': 'ISP locale',
+  'local-isp': 'ISP italiano', 'zoho': 'Zoho', 'yandex': 'Yandex', 'independent': 'Self-hosted',
+  // Italian commercial providers (mxmap.it Phase 3)
+  'aruba': 'Aruba', 'register-it': 'Register.it', 'seeweb': 'Seeweb',
+  'infocert': 'InfoCert', 'namirial': 'Namirial',
+  // Italian publicly-owned consortium / regional ICT (sovereign)
+  'regional-public': 'IT pubblico (sovrano)',
+  // Italian private PA contractor
+  'pa-contractor-private': 'Contractor PA privato',
+  // Provincial-shared (XX.it pattern, no hyperscaler backend identified)
+  'provincial-shared': 'Mail provinciale condivisa',
+  'unknown': 'Sconosciuto',
 };
 
 function transformMuni(m) {
