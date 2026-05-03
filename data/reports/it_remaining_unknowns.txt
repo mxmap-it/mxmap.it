@@ -1,0 +1,289 @@
+====================================================================================================
+Italian comuni still UNKNOWN after the full pipeline (37 entries)
+====================================================================================================
+
+Categories:
+  dns_fail        23
+  no_email        13
+  http_fail       1
+
+Hints per category:
+  dns_fail     : primary domain has NO DNS resolution (NXDOMAIN). The website
+                 is genuinely offline. Try searching for the comune's CURRENT
+                 website (often migrated to a regional / new domain).
+  no_email     : homepage was fetched but no email addresses were found in
+                 the HTML. Visit the site and look at /contatti, /trasparenza,
+                 or look for a phone-only contact page.
+  http_fail    : domain resolves but homepage returns HTTP error / timeout.
+                 Site may be temporarily down or behind a paywall/auth.
+  scrape_no_mx : emails found, but their domains have no MX. Domain owner
+                 does not host email there — likely a typo.
+
+====================================================================================================
+
+### DNS_FAIL (23 entries)
+
+  IT-COM-003025  Comune di Borgo Ticino
+    ISTAT=003025  IPA=c_b043
+    primary_domain  : comuneborgoticino.no.it
+    website_url     : http://comuneborgoticino.no.it/  /  https://comuneborgoticino.no.it/
+    pipeline_reason : primary domain DNS failure (comuneborgoticino.no.it), no fallback
+    indicepa_mails  : Mail1=comune.borgoticino@legalmail.it[pec]
+
+  IT-COM-009051  Comune di Pontinvrea
+    ISTAT=009051  IPA=c_g866
+    primary_domain  : comune.pontinvrea.sv.it
+    website_url     : http://comune.pontinvrea.sv.it/  /  https://comune.pontinvrea.sv.it/
+    pipeline_reason : primary domain DNS failure (comune.pontinvrea.sv.it), no fallback
+    indicepa_mails  : Mail1=comune.pontinvrea@pec.it[pec]
+
+  IT-COM-054031  Comune di Monteleone di Spoleto
+    ISTAT=054031  IPA=c_f540
+    primary_domain  : comune.monteleone-di-spoleto.pg.it
+    website_url     : http://comune.monteleone-di-spoleto.pg.it/  /  https://comune.monteleone-di-spoleto.pg.it/
+    pipeline_reason : primary domain DNS failure (comune.monteleone-di-spoleto.pg.it), no fallback
+    indicepa_mails  : Mail1=comune.monteleonedispoleto@postacert.umbria.it[pec]
+
+  IT-COM-059021  Comune di Roccagorga
+    ISTAT=059021  IPA=c_h413
+    primary_domain  : comuneroccagorga.it
+    website_url     : http://comuneroccagorga.it/  /  https://comuneroccagorga.it/
+    pipeline_reason : primary domain DNS failure (comuneroccagorga.it), no fallback
+    indicepa_mails  : Mail1=protocollogenerale@comuneroccagorga.telecompost.it[pec] | Mail2=areacontabile@comuneroccagorga.telecompost.it[pec] | Mail3=areatecnica@comuneroccagorga.telecompost.it[pec] | Mail4=areavigilanza@comuneroccagorga.telecompost.it[pec] | Mail5=servizidemografici@comuneroccagorga.telecompost.it[pec]
+
+  IT-COM-061044  Comune di Letino
+    ISTAT=061044  IPA=c_e554
+    primary_domain  : letino.gov.it
+    website_url     : http://letino.gov.it/  /  https://letino.gov.it/
+    pipeline_reason : primary domain DNS failure (letino.gov.it), no fallback
+    indicepa_mails  : Mail1=letino.gov@pec.it[pec] | Mail2=comune@letino.gov.it[altro]
+
+  IT-COM-062016  Comune di Castelfranco In Miscano
+    ISTAT=062016  IPA=c_c106
+    primary_domain  : comune.castefrancoinmiscano.bn.it
+    website_url     : http://comune.castefrancoinmiscano.bn.it/  /  https://comune.castefrancoinmiscano.bn.it/
+    pipeline_reason : primary domain DNS failure (comune.castefrancoinmiscano.bn.it), no fallback
+    indicepa_mails  : Mail1=protocollo.castelfrancoinmiscano@asmepec.it[pec] | Mail2=info@comune.castefrancoinmiscano.bn.it[altro]
+
+  IT-COM-063070  Comune di San Sebastiano al Vesuvio
+    ISTAT=063070  IPA=c_i151
+    primary_domain  : comunesansebastiano.it
+    website_url     : http://comunesansebastiano.it/  /  https://comunesansebastiano.it/
+    pipeline_reason : primary domain DNS failure (comunesansebastiano.it), no fallback
+    indicepa_mails  : Mail1=protocollo@comunesansebastianoalvesuvio.legalmailpa.it[pec] | Mail2=a.raho@comunesansebastianoalvesuvio.legalmailpa.it[pec] | Mail3=segretariogenerale@comunesansebastianoalvesuvio.legalmailpa.it[pec]
+
+  IT-COM-064040  Comune di Guardia Lombardi
+    ISTAT=064040  IPA=c_e245
+    primary_domain  : comuneguardialombardi.gov.it
+    website_url     : http://comuneguardialombardi.gov.it/  /  https://comuneguardialombardi.gov.it/
+    pipeline_reason : primary domain DNS failure (comuneguardialombardi.gov.it), no fallback
+    indicepa_mails  : Mail1=protocollo@pec.comune.guardialombardi.av.it[pec]
+
+  IT-COM-064093  Comune di Santa Paolina
+    ISTAT=064093  IPA=c_i301
+    primary_domain  : comunesantapaolina.gov.it
+    website_url     : http://comunesantapaolina.gov.it/  /  https://comunesantapaolina.gov.it/
+    pipeline_reason : primary domain DNS failure (comunesantapaolina.gov.it), no fallback
+    indicepa_mails  : Mail1=comunesantapaolina@pec.it[pec]
+
+  IT-COM-065096  Comune di Pisciotta
+    ISTAT=065096  IPA=c_g707
+    primary_domain  : pisciotta.comune.sa.it
+    website_url     : http://pisciotta.comune.sa.it/  /  https://pisciotta.comune.sa.it/
+    pipeline_reason : primary domain DNS failure (pisciotta.comune.sa.it), no fallback
+    indicepa_mails  : Mail1=comune.pisciotta@pec.it[pec]
+
+  IT-COM-065101  Comune di Postiglione
+    ISTAT=065101  IPA=c_g939
+    primary_domain  : postiglione.gov.it
+    website_url     : http://postiglione.gov.it/  /  https://postiglione.gov.it/
+    pipeline_reason : primary domain DNS failure (postiglione.gov.it), no fallback
+    indicepa_mails  : Mail1=protocollo@pec.comunepostiglione.sa.it[pec] | Mail2=protocollo@postiglione.gov.it[altro] | Mail3=ragioneria@pec.comunepostiglione.sa.it[pec] | Mail4=ragioneria@postiglione.gov.it[altro] | Mail5=utc@postiglione.gov.it[altro]
+
+  IT-COM-065145  Comune di Stio
+    ISTAT=065145  IPA=c_i960
+    primary_domain  : comune.stio.sa.gov.it
+    website_url     : http://comune.stio.sa.gov.it/  /  https://comune.stio.sa.gov.it/
+    pipeline_reason : primary domain DNS failure (comune.stio.sa.gov.it), no fallback
+    indicepa_mails  : Mail1=protocollo@pec.comune.stio.sa.it[pec]
+
+  IT-COM-067015  Comune di Cellino Attanasio
+    ISTAT=067015  IPA=c_3rhm
+    primary_domain  : comunecellinoattanasio.te.it
+    website_url     : http://comunecellinoattanasio.te.it/  /  https://comunecellinoattanasio.te.it/
+    pipeline_reason : primary domain DNS failure (comunecellinoattanasio.te.it), no fallback
+    indicepa_mails  : Mail1=postacert@pec.comune.cellinoattanasio.te.it[pec]
+
+  IT-COM-067025  Azienda Speciale Consortile Ambito Sociale Tordino
+    ISTAT=067025  IPA=ascast
+    primary_domain  : ambitosocialetordino.it
+    website_url     : http://ambitosocialetordino.it/  /  https://ambitosocialetordino.it/
+    pipeline_reason : primary domain DNS failure (ambitosocialetordino.it), no fallback
+    indicepa_mails  : Mail1=fpaconsorzioast@legalmail.it[pec]
+
+  IT-COM-068046  Comune di Villa Celiera
+    ISTAT=068046  IPA=c_l922
+    primary_domain  : ww.comune.villaceliera.pe.it
+    website_url     : http://ww.comune.villaceliera.pe.it/  /  https://ww.comune.villaceliera.pe.it/
+    pipeline_reason : primary domain DNS failure (ww.comune.villaceliera.pe.it), no fallback
+    indicepa_mails  : Mail1=info@pec.comune.villaceliera.pe.it[pec] | Mail2=franco.ciota@comune.villaceliera.pe.it[altro] | Mail3=mauro.mantini@comune.villaceliera.pe.it[altro] | Mail4=servizidemografici@comune.villaceliera.pe.it[altro]
+
+  IT-COM-069050  Comune di Miglianico
+    ISTAT=069050  IPA=c_f196
+    primary_domain  : miglianico.gov.it
+    website_url     : http://miglianico.gov.it/  /  https://miglianico.gov.it/
+    pipeline_reason : primary domain DNS failure (miglianico.gov.it), no fallback
+    indicepa_mails  : Mail1=miglianico@pec.it[pec] | Mail2=protocollo@miglianico.gov.it[altro]
+
+  IT-COM-076075  Comune di San Costantino Albanese
+    ISTAT=076075  IPA=c_h808
+    primary_domain  : comunesancostantinoalbanese.it
+    website_url     : http://comunesancostantinoalbanese.it/  /  https://comunesancostantinoalbanese.it/
+    pipeline_reason : primary domain DNS failure (comunesancostantinoalbanese.it), no fallback
+    indicepa_mails  : Mail1=comunesancostantinoalbanese@pec.it[pec]
+
+  IT-COM-080087  Comune di Serrata
+    ISTAT=080087  IPA=c_oa0d
+    primary_domain  : comune.serrata.it
+    website_url     : http://comune.serrata.it/  /  https://comune.serrata.it/
+    pipeline_reason : primary domain DNS failure (comune.serrata.it), no fallback
+    indicepa_mails  : Mail1=protocollo.serrata@asmepec.it[pec]
+
+  IT-COM-080097  Comune di San Ferdinando
+    ISTAT=080097  IPA=c_m277
+    primary_domain  : comunesanferdinando.rc.it
+    website_url     : http://comunesanferdinando.rc.it/  /  https://comunesanferdinando.rc.it/
+    pipeline_reason : primary domain DNS failure (comunesanferdinando.rc.it), no fallback
+    indicepa_mails  : Mail1=protocollo.sanferdinando@asmepec.it[pec]
+
+  IT-COM-083054  Comune di Monforte San Giorgio
+    ISTAT=083054  IPA=c_f359
+    primary_domain  : monfortesangiorgio.me.it
+    website_url     : http://monfortesangiorgio.me.it/  /  https://monfortesangiorgio.me.it/
+    pipeline_reason : primary domain DNS failure (monfortesangiorgio.me.it), no fallback
+    indicepa_mails  : Mail1=protocollo@pec.comune.monfortesangiorgio.me.it[pec]
+
+  IT-COM-090020  Comune di Burgos
+    ISTAT=090020  IPA=c_b276
+    primary_domain  : comuneburgos.gov.it
+    website_url     : http://comuneburgos.gov.it/  /  https://comuneburgos.gov.it/
+    pipeline_reason : primary domain DNS failure (comuneburgos.gov.it), no fallback
+    indicepa_mails  : Mail1=protocollo@pec.comuneburgos.it[pec] | Mail2=tributi.burgos@pec.comunas.it[pec]
+
+  IT-COM-098021  Comune di Cornegliano Laudense
+    ISTAT=098021  IPA=c_d021
+    primary_domain  : comune.cornegliano.laudense.lo.it
+    website_url     : http://comune.cornegliano.laudense.lo.it/  /  https://comune.cornegliano.laudense.lo.it/
+    pipeline_reason : primary domain DNS failure (comune.cornegliano.laudense.lo.it), no fallback
+    indicepa_mails  : Mail1=corneglianolaudense@cert.elaus2002.net[pec]
+
+  IT-COM-102048  Comune di Zaccanopoli
+    ISTAT=102048  IPA=c_m138
+    primary_domain  : zaccanopolicomune.it
+    website_url     : http://zaccanopolicomune.it/  /  https://zaccanopolicomune.it/
+    pipeline_reason : primary domain DNS failure (zaccanopolicomune.it), no fallback
+    indicepa_mails  : Mail1=protzaccanopoli@asmepec.it[pec]
+
+
+### NO_EMAIL (13 entries)
+
+  IT-COM-001161  Comune di Montanaro
+    ISTAT=001161  IPA=c_f422
+    primary_domain  : comune.montanaro.to.it
+    website_url     : http://comune.montanaro.to.it/  /  https://comune.montanaro.to.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=comune.montanaro.to@legalmail.it[pec]
+
+  IT-COM-061070  Comune di Roccamonfina
+    ISTAT=061070  IPA=c_h423
+    primary_domain  : roccamonfina.asmenet.it
+    website_url     : http://roccamonfina.asmenet.it/  /  https://roccamonfina.asmenet.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=protocollo.roccamonfina@asmepec.it[pec] | Mail2=segretario.roccamonfina@asmepec.it[pec]
+
+  IT-COM-063067  Comune di San Giorgio a Cremano
+    ISTAT=063067  IPA=c_h892
+    primary_domain  : comune.sangiorgioacremano.na.it
+    website_url     : http://comune.sangiorgioacremano.na.it/  /  https://comune.sangiorgioacremano.na.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=protocollo.generale@cremano.telecompost.it[pec]
+
+  IT-COM-064115  Comune di Vallesaccarda
+    ISTAT=064115  IPA=c_l616
+    primary_domain  : comune.vallesaccarda.av.it
+    website_url     : http://comune.vallesaccarda.av.it/  /  https://comune.vallesaccarda.av.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=protocollo@pec.comune-vallesaccarda.it[pec] | Mail2=rag@pec.comune-vallesaccarda.it[pec] | Mail3=statocivile@pec.comune-vallesaccarda.it[pec] | Mail4=tributi@pec.comune-vallesaccarda.it[pec] | Mail5=utc@pec.comune-vallesaccarda.it[pec]
+
+  IT-COM-065032  Comune di Castelnuovo Cilento
+    ISTAT=065032  IPA=c_c231
+    primary_domain  : castelnuovocilento.eu
+    website_url     : http://castelnuovocilento.eu/  /  https://castelnuovocilento.eu/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=protocollo@pec.comune.castelnuovocilento.sa.it[pec] | Mail2=s.ciardo@pec.comune.castelnuovocilento.sa.it[pec] | Mail3=sindaco.castelnuovocilento@pec.it[pec]
+
+  IT-COM-065058  Comune di Giungano
+    ISTAT=065058  IPA=c_e060
+    primary_domain  : comune.giungano.sa.it
+    website_url     : http://comune.giungano.sa.it/  /  https://comune.giungano.sa.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=protocollo.comune.giungano@pec.it[pec]
+
+  IT-COM-078014  Comune di Belsito
+    ISTAT=078014  IPA=c_a768
+    primary_domain  : belsito.asmenet.it
+    website_url     : http://belsito.asmenet.it/  /  https://belsito.asmenet.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=sindaco.belsito@asmepec.it[pec] | Mail2=finanziario.belsito@asmepec.it[pec]
+
+  IT-COM-078132  Comune di Santa Maria del Cedro
+    ISTAT=078132  IPA=c_c717
+    primary_domain  : santamariadelcedro.asmenet.it
+    website_url     : http://santamariadelcedro.asmenet.it/  /  https://santamariadelcedro.asmenet.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=affarigenerali.santamariadelcedro@asmepec.it[pec] | Mail2=segretario.santamariadelcedro@asmepec.it[pec]
+
+  IT-COM-079077  Comune di Miglierina
+    ISTAT=079077  IPA=c_f200
+    primary_domain  : miglierina.asmenet.it
+    website_url     : http://miglierina.asmenet.it/  /  https://miglierina.asmenet.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=comune.miglierina@asmepec.it[pec]
+
+  IT-COM-080075  Comune di San Pietro di Carida'
+    ISTAT=080075  IPA=c_i102
+    primary_domain  : sanpietrodicarida.asmenet.it
+    website_url     : http://sanpietrodicarida.asmenet.it/  /  https://sanpietrodicarida.asmenet.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=comunesanpietrodicarida@asmepec.it[pec]
+
+  IT-COM-082008  Comune di Baucina
+    ISTAT=082008  IPA=c_a719
+    primary_domain  : egov.comune.baucina.pa.it
+    website_url     : http://egov.comune.baucina.pa.it/  /  https://egov.comune.baucina.pa.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=protocollo@pec.comune.baucina.pa.it[pec]
+
+  IT-COM-096012  Comune di Candelo
+    ISTAT=096012  IPA=c_b586
+    primary_domain  : comune.candelo.bi.it
+    website_url     : http://comune.candelo.bi.it/  /  https://comune.candelo.bi.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=candelo@pec.ptbiellese.it[pec]
+
+  IT-COM-096057  Comune di Sala Biellese
+    ISTAT=096057  IPA=c_h681
+    primary_domain  : comune.salabiellese.bi.it
+    website_url     : http://comune.salabiellese.bi.it/  /  https://comune.salabiellese.bi.it/
+    pipeline_reason : homepage fetched but no emails extracted
+    indicepa_mails  : Mail1=sala.biellese@pec.ptbiellese.it[pec]
+
+
+### HTTP_FAIL (1 entries)
+
+  IT-COM-047024  Comune di San Marcello Piteglio
+    ISTAT=047024  IPA=cdsmpi
+    primary_domain  : comune-sanmarcellopiteglio.info
+    website_url     : http://comune-sanmarcellopiteglio.info/  /  https://comune-sanmarcellopiteglio.info/
+    pipeline_reason : homepage unreachable (http_fail); no scrape candidate
+    indicepa_mails  : Mail1=comunedisanmarcellopiteglio@pec.it[pec]
