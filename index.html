@@ -231,7 +231,7 @@
   <div id="stats-content"></div>
 </section>
 <main id="map" role="application" aria-label="Interactive map of municipal email providers">
-  <div id="map-loading" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000;background:rgba(255,255,255,0.85);font-size:15px;color:#555;">Loading map data&hellip;</div>
+  <div id="map-loading" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000;background:rgba(255,255,255,0.85);font-size:15px;color:#555;">Caricamento dati mappa…</div>
   <div class="map-controls">
     <button class="country-toggle" id="country-toggle" style="display:none">Countries &#9662;</button>
     <div class="country-filters" id="country-filters">
@@ -462,9 +462,9 @@ function toggleInfo() {
   const wasCollapsed = bar.classList.contains('collapsed');
   bar.classList.toggle('collapsed');
   const collapsed = bar.classList.contains('collapsed');
-  btn.innerHTML = collapsed ? 'About \u25be' : 'About \u25b4';
+  btn.innerHTML = collapsed ? 'Informazioni \u25be' : 'Informazioni \u25b4';
   btn.setAttribute('aria-expanded', String(!collapsed));
-  if (wasCollapsed) collapsePanel('stats-bar', 'toggle-stats', 'Statistics');
+  if (wasCollapsed) collapsePanel('stats-bar', 'toggle-stats', 'Statistiche');
   map.invalidateSize({ animate: false });
 }
 document.getElementById('toggle-info').addEventListener('click', toggleInfo);
@@ -475,9 +475,9 @@ function toggleStats() {
   const wasCollapsed = bar.classList.contains('collapsed');
   bar.classList.toggle('collapsed');
   const collapsed = bar.classList.contains('collapsed');
-  btn.innerHTML = collapsed ? 'Statistics \u25be' : 'Statistics \u25b4';
+  btn.innerHTML = collapsed ? 'Statistiche \u25be' : 'Statistiche \u25b4';
   btn.setAttribute('aria-expanded', String(!collapsed));
-  if (wasCollapsed) collapsePanel('info-bar', 'toggle-info', 'About');
+  if (wasCollapsed) collapsePanel('info-bar', 'toggle-info', 'Informazioni');
   map.invalidateSize({ animate: false });
 }
 document.getElementById('toggle-stats').addEventListener('click', toggleStats);
@@ -488,7 +488,7 @@ function toggleLegend() {
   const btn = legend.querySelector('.legend-toggle');
   legend.classList.toggle('legend-collapsed');
   const collapsed = legend.classList.contains('legend-collapsed');
-  btn.textContent = collapsed ? 'Legend \u25B8' : '\u2715';
+  btn.textContent = collapsed ? 'Legenda \u25B8' : '\u2715';
   btn.setAttribute('aria-expanded', String(!collapsed));
 }
 
@@ -514,7 +514,7 @@ function buildStats(muniList) {
 
   const filtered = muniList.filter(m => activeCountries.has(m.country));
   const total = filtered.length;
-  if (total === 0) { content.innerHTML = '<p style="color:#999">No municipalities selected.</p>'; return; }
+  if (total === 0) { content.innerHTML = '<p style="color:#999">Nessun ente selezionato.</p>'; return; }
   const withMx = filtered.filter(m => m.has_mx || (m.mx || []).length > 0).length;
 
   const usProviders = new Set(['Microsoft', 'Google', 'AWS']);
@@ -566,13 +566,13 @@ function buildStats(muniList) {
 
   function jurisdictionHtml(stats, max) {
     let h = '';
-    h += barHtml('US-based', stats.us, max, '#E83838', stats.total);
+    h += barHtml('USA', stats.us, max, '#E83838', stats.total);
     if (stats.usLocalGw > 0) {
       h += `<div style="margin:-2px 0 4px 100px;font-size:11px;color:#795548">\u{1F6E1}\uFE0F ${stats.usLocalGw} via local gateway</div>`;
     }
-    h += barHtml('Same country', stats.sameCountry, max, '#0E9680', stats.total);
-    if (stats.otherRegion > 0) h += barHtml('Other region', stats.otherRegion, max, '#2EDBA8', stats.total);
-    if (stats.unk > 0) h += barHtml('Unknown', stats.unk, max, '#BFBFBF', stats.total);
+    h += barHtml('Italia', stats.sameCountry, max, '#0E9680', stats.total);
+    if (stats.otherRegion > 0) h += barHtml('Altra regione', stats.otherRegion, max, '#2EDBA8', stats.total);
+    if (stats.unk > 0) h += barHtml('Sconosciuto', stats.unk, max, '#BFBFBF', stats.total);
     return h;
   }
 
@@ -600,13 +600,13 @@ function buildStats(muniList) {
 
   let html = '<h3 style="margin:0 0 8px;font-size:14px;color:#555">Overall</h3>';
   html += '<div class="stats-columns"><div class="stats-column">';
-  html += sectionTitle + 'Provider jurisdiction</div>';
+  html += sectionTitle + 'Giurisdizione del provider</div>';
   html += jurisdictionHtml(allStats, total);
   html += '</div><div class="stats-column">';
-  html += sectionTitle + 'MX server location (by IP)</div>';
+  html += sectionTitle + 'Localizzazione server MX (per IP)</div>';
   html += mxLocationHtml(allStats, Math.max(...Object.values(allStats.mxCountries), 1));
   html += '</div><div class="stats-column">';
-  html += sectionTitle + 'Providers</div>';
+  html += sectionTitle + 'Provider</div>';
   html += providerHtml(allStats, Math.max(...Object.values(allStats.providers), 1));
   html += '</div></div>';
 
@@ -624,7 +624,7 @@ function buildStats(muniList) {
 
   if (Object.keys(countryStats).length > 0) {
     html += '<div style="border-top:1px solid #ddd;margin-top:12px;padding-top:12px">';
-    html += sectionTitle + 'By country</div>';
+    html += sectionTitle + 'Per regione</div>';
     html += '<div class="stats-countries">';
     for (const cc of activeList) {
       const stats = countryStats[cc];
@@ -633,9 +633,9 @@ function buildStats(muniList) {
       const topMx = Object.entries(stats.mxCountries).sort((a, b) => b[1] - a[1]).slice(0, 3);
       html += `<div class="stats-column">`;
       html += `<div style="font-size:13px;font-weight:600;color:#444;margin-bottom:8px">${FLAGS[cc] || ''} ${countryNames[cc]} (${stats.total})</div>`;
-      html += barHtml('US-based', stats.us, stats.total, '#E83838', stats.total);
-      html += barHtml('Same country', stats.sameCountry, stats.total, '#0E9680', stats.total);
-      if (stats.otherRegion > 0) html += barHtml('Other region', stats.otherRegion, stats.total, '#2EDBA8', stats.total);
+      html += barHtml('USA', stats.us, stats.total, '#E83838', stats.total);
+      html += barHtml('Italia', stats.sameCountry, stats.total, '#0E9680', stats.total);
+      if (stats.otherRegion > 0) html += barHtml('Altra regione', stats.otherRegion, stats.total, '#2EDBA8', stats.total);
       html += `<div style="margin-top:12px;font-size:11px;color:#999;font-weight:600">TOP PROVIDERS</div>`;
       for (const [p, count] of topProviders) {
         html += barHtml(p, count, topProviders[0][1], COLORS[p] || '#888', stats.total);
@@ -778,7 +778,7 @@ function buildPopup(m) {
     const rows = cls.mx_records.map(r =>
       `<tr><td class="pri">${r.priority}</td><td class="host" title="${escapeHtml(r.host)}">${escapeHtml(r.host)}</td></tr>`
     ).join('');
-    mxSection = `<div class="popup-section"><div class="popup-section-title">Incoming mail <span class="popup-section-hint">(MX)</span>${countryNote}</div><table class="dns-table">${rows}</table></div>`;
+    mxSection = `<div class="popup-section"><div class="popup-section-title">Posta in entrata <span class="popup-section-hint">(MX)</span>${countryNote}</div><table class="dns-table">${rows}</table></div>`;
   }
 
   let spfSection = '';
@@ -789,7 +789,7 @@ function buildPopup(m) {
     while ((match = re.exec(cls.spf)) !== null) includes.push(match[1]);
     if (includes.length > 0) {
       const rows = includes.map(h => `<tr><td class="host" title="${escapeHtml(h)}">${escapeHtml(h)}</td></tr>`).join('');
-      spfSection = `<div class="popup-section"><div class="popup-section-title">Authorized senders <span class="popup-section-hint">(SPF)</span></div><table class="dns-table">${rows}</table></div>`;
+      spfSection = `<div class="popup-section"><div class="popup-section-title">Mittenti autorizzati <span class="popup-section-hint">(SPF)</span></div><table class="dns-table">${rows}</table></div>`;
     }
   }
 
@@ -816,7 +816,7 @@ function buildPopup(m) {
     const entries = Object.entries(m.txt_verifications);
     if (entries.length > 0) {
       const rows = entries.map(([k, v]) => `<tr><td class="pri">${escapeHtml(k)}</td><td class="host" title="${escapeHtml(v)}">${escapeHtml(v.length > 40 ? v.substring(0, 37) + '...' : v)}</td></tr>`).join('');
-      txtVerifSection = `<div class="popup-section"><div class="popup-section-title">Domain Verification <span class="popup-section-hint">(TXT)</span></div><table class="dns-table">${rows}</table></div>`;
+      txtVerifSection = `<div class="popup-section"><div class="popup-section-title">Verifica dominio <span class="popup-section-hint">(TXT)</span></div><table class="dns-table">${rows}</table></div>`;
     }
   }
 
@@ -824,7 +824,7 @@ function buildPopup(m) {
   if (hasLocalGateway(m)) {
     gatewayNote = `<div style="margin-top:6px;padding:5px 8px;background:#fff3e0;border-left:3px solid #ff9800;font-size:11px;color:#795548">` +
       `\u{1F6E1}\uFE0F Mail filtered locally via <strong>${escapeHtml(m.gateway)}</strong> (${m.country}), ` +
-      `but mailboxes hosted by <strong>${escapeHtml(cls.provider)}</strong> (US)</div>`;
+      `ma mailbox ospitata da <strong>${escapeHtml(cls.provider)}</strong> (USA)</div>`;
   }
 
   let tenantNote = '';
@@ -837,7 +837,7 @@ function buildPopup(m) {
   if (m.smtp_software) {
     const swName = {'microsoft': 'Microsoft Exchange', 'google': 'Google', 'zone': 'Zone'}[m.smtp_software] || m.smtp_software;
     smtpSoftwareNote = `<div style="margin-top:6px;padding:5px 8px;background:#e3f2fd;border-left:3px solid #1976d2;font-size:11px;color:#37474f">` +
-      `Self-hosted using <strong>${escapeHtml(swName)}</strong> software</div>`;
+      `Self-hosted con <strong>${escapeHtml(swName)}</strong></div>`;
   }
 
   const popStr = m.population ? `<br><span style="font-size:11px;color:#999">Pop. ${m.population.toLocaleString()}</span>` : '';
@@ -845,7 +845,7 @@ function buildPopup(m) {
   return `<div class="info-popup">` +
     `<strong>${flag} ${eName}</strong><br>` +
     `${eDomain} <span class="provider-badge" style="background:${color};color:${textColor}">${escapeHtml(cls.provider)}</span>` +
-    (hasLocalGateway(m) ? ' <span title="Local gateway" style="font-size:13px">\u{1F6E1}\uFE0F</span>' : '') +
+    (hasLocalGateway(m) ? ' <span title="Gateway locale" style="font-size:13px">\u{1F6E1}\uFE0F</span>' : '') +
     popStr +
     `<br><span style="font-size:11px;color:#888">${m.region ? escapeHtml(m.region) + ' \u00b7 ' : ''}${m.country}</span>` +
     (cls.reason ? `<div style="margin-top:4px;font-size:11px;color:#666;font-style:italic">${escapeHtml(cls.reason)}</div>` : '') +
@@ -891,8 +891,8 @@ function buildAggregatedPopup(group, feature, cc) {
   // Municipality list
   let muniList;
   if (group.municipalities.length === 0) {
-    muniList = '<div class="popup-section"><div class="popup-section-title">Municipalities (' + total + ')</div>';
-    muniList += '<button class="popup-load-btn" data-cc="' + cc + '">Load municipality details</button>';
+    muniList = '<div class="popup-section"><div class="popup-section-title">Comuni (' + total + ')</div>';
+    muniList += '<button class="popup-load-btn" data-cc="' + cc + '">Carica dettagli comuni</button>';
   } else {
   const sorted = group.municipalities.slice().sort((a, b) => a.name.localeCompare(b.name));
   // Collect unique providers for filter chips
@@ -901,11 +901,11 @@ function buildAggregatedPopup(group, feature, cc) {
   const provList = Object.entries(provSet).sort((a,b) => b[1]-a[1]);
 
   muniList = '<div class="popup-section">';
-  muniList += '<div class="popup-section-title">Municipalities (' + total + ')</div>';
+  muniList += '<div class="popup-section-title">Comuni (' + total + ')</div>';
   // Search + filter row
   muniList += '<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px;align-items:center">';
   if (total > 10) {
-    muniList += '<input type="text" class="popup-search" placeholder="Search\u2026" oninput="filterMuniList(this)" style="flex:1;min-width:100px">';
+    muniList += '<input type="text" class="popup-search" placeholder="Cerca\u2026" oninput="filterMuniList(this)" style="flex:1;min-width:100px">';
   }
   for (const [prov, cnt] of provList) {
     const col = COLORS[prov] || '#888';
@@ -990,7 +990,7 @@ function buildAggregatedPopup(group, feature, cc) {
   return `<div class="info-popup">` +
     `<strong>${flag} ${escapeHtml(name)}</strong>` +
     ` <span class="provider-badge" style="background:${dominantColor};color:${textColor}">${escapeHtml(group.dominant)}</span>` +
-    `<br><span style="font-size:12px;color:#666">${total} municipalities</span>` +
+    `<br><span style="font-size:12px;color:#666">${total} enti</span>` +
     popStr +
     barChart + providerLegend + muniList +
     `</div>`;
@@ -1307,7 +1307,7 @@ async function setLevel(newLevel) {
     var overlay = document.createElement('div');
     overlay.id = 'map-loading';
     overlay.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000;background:rgba(255,255,255,0.85);font-size:15px;color:#555;';
-    overlay.textContent = 'Loading municipality data\u2026';
+    overlay.textContent = 'Caricamento dati comuni\u2026';
     document.getElementById('map').appendChild(overlay);
 
     await loadSummaryData();
@@ -1336,7 +1336,7 @@ document.getElementById('country-toggle').addEventListener('click', function () 
   const panel = document.getElementById('country-filters');
   const btn = document.getElementById('country-toggle');
   const expanded = panel.classList.toggle('expanded');
-  btn.innerHTML = expanded ? 'Countries \u25b4' : 'Countries \u25be';
+  btn.innerHTML = expanded ? 'Paesi \u25b4' : 'Paesi \u25be';
 });
 
 document.querySelectorAll('.country-btn').forEach(function (btn) {
@@ -1481,7 +1481,7 @@ function renderStats() {
   // Toggle
   html += '<div style="display:flex;gap:2px;margin-bottom:8px">';
   html += '<button class="stats-mode-btn' + (statsMode==='count'?' active':'') + '" data-statsmode="count">Municipalities</button>';
-  html += '<button class="stats-mode-btn' + (statsMode==='pop'?' active':'') + '" data-statsmode="pop">Population</button>';
+  html += '<button class="stats-mode-btn' + (statsMode==='pop'?' active':'') + '" data-statsmode="pop">Popolazione</button>';
   html += '</div>';
 
   // Global overview
@@ -1494,7 +1494,7 @@ function renderStats() {
     else if (p === 'Unknown') unkVal += v;
     else localVal += v;
   }
-  html += '<div style="font-size:11px;color:#777;text-transform:uppercase;letter-spacing:0.3px;font-weight:600;margin-bottom:4px">Overview (' + fmt(gBase) + (usePop?' people':' municipalities') + ')</div>';
+  html += '<div style="font-size:11px;color:#777;text-transform:uppercase;letter-spacing:0.3px;font-weight:600;margin-bottom:4px">Panoramica (' + fmt(gBase) + (usePop?' persone':' enti') + ')</div>';
   var maxJ = Math.max(usVal, localVal, unkVal) || 1;
   function overviewBar(label, v, color) {
     var pct = gBase > 0 ? Math.round(v/gBase*100) : 0;
@@ -1503,12 +1503,12 @@ function renderStats() {
       '<div style="flex:1;background:#f0f0f0;border-radius:3px;height:14px"><div style="width:'+w+'%;background:'+color+';height:100%;border-radius:3px;min-width:1px"></div></div>' +
       '<span style="width:55px;text-align:right;color:#888">'+fmt(v)+' ('+pct+'%)</span></div>';
   }
-  html += overviewBar('US-based', usVal, '#E83838');
-  html += overviewBar('Local', localVal, '#10B898');
+  html += overviewBar('USA', usVal, '#E83838');
+  html += overviewBar('Italiano', localVal, '#10B898');
   html += overviewBar('Unknown', unkVal, '#BFBFBF');
 
   // World regions
-  html += '<div style="margin-top:10px;font-size:11px;color:#777;text-transform:uppercase;letter-spacing:0.3px;font-weight:600;margin-bottom:4px">World regions</div>';
+  html += '<div style="margin-top:10px;font-size:11px;color:#777;text-transform:uppercase;letter-spacing:0.3px;font-weight:600;margin-bottom:4px">Macro-regioni del mondo</div>';
 
   for (var wrName in WORLD_REGIONS) {
     var subRegions = WORLD_REGIONS[wrName];
@@ -1692,7 +1692,7 @@ async function loadData() {
   legend.onAdd = function () {
     const div = L.DomUtil.create('div', 'legend');
     if (isMobile) div.classList.add('legend-collapsed');
-    div.innerHTML = '<button class="legend-toggle" aria-label="Toggle legend" aria-expanded="' + (!isMobile) + '">' + (isMobile ? 'Legend \u25B8' : '') + '</button><div class="legend-content"></div>';
+    div.innerHTML = '<button class="legend-toggle" aria-label="Mostra/nascondi legenda" aria-expanded="' + (!isMobile) + '">' + (isMobile ? 'Legenda \u25B8' : '') + '</button><div class="legend-content"></div>';
     L.DomEvent.disableClickPropagation(div);
     return div;
   };
@@ -1728,11 +1728,11 @@ async function loadData() {
     const content = document.querySelector('.legend-content');
     if (content) {
       content.innerHTML =
-        '<strong>Email Provider</strong>' +
-        legendGroupHtml('US-based', ['Microsoft', 'Google', 'AWS'], counts) +
-        legendGroupHtml('Local', ['Local Provider', 'Self-hosted', 'Unknown'], counts) +
-        (gwCount > 0 ? `<div style="margin-top:8px;font-size:11px;color:#795548">\u{1F6E1}\uFE0F = local gateway, US mailbox (${gwCount})</div>` : '') +
-        `<div style="margin-top:4px;font-size:11px;color:#999">${total} municipalities</div>`;
+        '<strong>Provider email</strong>' +
+        legendGroupHtml('USA (CLOUD Act)', ['Microsoft 365', 'Google Workspace', 'AWS'], counts) +
+        legendGroupHtml('Italia', ['IT pubblico (sovrano)', 'Aruba', 'Register.it', 'Seeweb', 'InfoCert', 'Namirial', 'ISP italiano', 'Contractor PA privato', 'Self-hosted', 'Mail provinciale condivisa', 'Sconosciuto'], counts) +
+        (gwCount > 0 ? `<div style="margin-top:8px;font-size:11px;color:#795548">\u{1F6E1}\uFE0F = gateway locale, mailbox USA (${gwCount})</div>` : '') +
+        `<div style="margin-top:4px;font-size:11px;color:#999">${total} enti</div>`;
     }
   };
   updateLegend();
@@ -1783,7 +1783,7 @@ async function loadData() {
     if (!e.target.classList.contains('popup-load-btn')) return;
     var btn = e.target;
     var cc = btn.dataset.cc;
-    btn.textContent = 'Loading\u2026';
+    btn.textContent = 'Caricamento\u2026';
     btn.disabled = true;
 
     loadCountryData(cc).then(function(munis) {
@@ -1864,7 +1864,7 @@ async function loadData() {
       }
     }).catch(function(err) {
       console.warn('Load country data failed:', err);
-      btn.textContent = 'Failed — retry';
+      btn.textContent = 'Errore — riprova';
       btn.disabled = false;
     });
   });
@@ -1874,7 +1874,7 @@ loadData().catch(function (err) {
   console.error('Failed to load data:', err);
   const loading = document.getElementById('map-loading');
   if (loading) {
-    loading.textContent = 'Failed to load map data. Please try again later.';
+    loading.textContent = 'Errore nel caricamento dei dati. Riprova più tardi.';
     loading.style.color = '#dc2626';
   }
 });
