@@ -171,6 +171,15 @@ def merge_overpass_responses(responses: list[dict]) -> dict:
     return {"elements": list(by_key.values())}
 
 
+def _load_crosswalk() -> dict:
+    if not CROSSWALK_PATH.exists():
+        raise FileNotFoundError(
+            f"{CROSSWALK_PATH} missing. Run scripts/build_istat_osm_crosswalk.py first."
+        )
+    with open(CROSSWALK_PATH, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def load_region_osm_ids() -> dict[str, int]:
     """ISTAT 2-digit region code -> OSM relation_id, from the crosswalk.
 
@@ -178,16 +187,24 @@ def load_region_osm_ids() -> dict[str, int]:
     because those are admin_level=6 in OSM and live inside region 04 area —
     a level=8 query scoped to region 04's area picks up their comuni too).
     """
-    if not CROSSWALK_PATH.exists():
-        raise FileNotFoundError(
-            f"{CROSSWALK_PATH} missing. Run scripts/build_istat_osm_crosswalk.py first."
-        )
-    with open(CROSSWALK_PATH, encoding="utf-8") as f:
-        xw = json.load(f)
-    by_region = xw.get("by_istat_region") or {}
+    by_region = _load_crosswalk().get("by_istat_region") or {}
     if not by_region:
         raise RuntimeError(f"by_istat_region empty in {CROSSWALK_PATH}")
     return {istat: int(osm) for istat, osm in by_region.items()}
+
+
+def load_province_osm_ids() -> dict[str, int]:
+    """ISTAT 3-digit province code -> OSM relation_id, from the crosswalk.
+
+    ~107 entries (province + città metropolitane). Used as the per-province
+    splitting key for admin_level=8 (~7,900 comuni). Per-province produces
+    smaller, more reliable Overpass queries (~70 comuni each vs ~400 per
+    region) and load-balances better across mirrors.
+    """
+    by_province = _load_crosswalk().get("by_istat_province") or {}
+    if not by_province:
+        raise RuntimeError(f"by_istat_province empty in {CROSSWALK_PATH}")
+    return {istat: int(osm) for istat, osm in by_province.items()}
 
 
 def fetch_per_region(admin_level: int) -> dict:
@@ -209,11 +226,39 @@ def fetch_per_region(admin_level: int) -> dict:
     return merge_overpass_responses(responses)
 
 
+def fetch_per_province(admin_level: int) -> dict:
+    """Iterate Italian province (admin_level=6 OSM areas); accumulate; dedupe.
+
+    Used for admin_level=8 (comuni). Each province area contains ~70 comuni
+    on average. ~107 queries total — slower than per-region but each query
+    is small and unlikely to hit the public Overpass 504 timeout.
+    """
+    prov_ids = load_province_osm_ids()
+    print(f"  Per-province fetch for admin_level={admin_level}: "
+          f"{len(prov_ids)} province")
+    responses: list[dict] = []
+    n_done = 0
+    for istat, osm_id in sorted(prov_ids.items()):
+        n_done += 1
+        label = f"prov{istat}/L{admin_level} ({n_done}/{len(prov_ids)})"
+        query = region_scope_query(osm_id, admin_level)  # same query template
+        try:
+            data = overpass_with_failover(query, label=label, timeout=180)
+        except OverpassError as e:
+            print(f"    SKIP province {istat}: {e}")
+            continue
+        responses.append(data)
+        time.sleep(5)  # politeness between province queries
+    return merge_overpass_responses(responses)
+
+
 def fetch_at_level(admin_level: int) -> dict | None:
-    """Country-scope first; per-region fallback for level 8 always, and
-    for levels 4/6 when the single-shot fails."""
+    """Country-scope first; province-split for level 8 always; region-split
+    fallback for levels 4/6 when the single-shot fails."""
     if admin_level == 8:
-        return fetch_per_region(admin_level)
+        # ~7,900 comuni — country-scope is impossible; per-region is borderline.
+        # Per-province (107 chunks) is the most reliable split.
+        return fetch_per_province(admin_level)
     try:
         query = country_scope_query(admin_level)
         return overpass_with_failover(query, label=f"country/L{admin_level}", timeout=300)
