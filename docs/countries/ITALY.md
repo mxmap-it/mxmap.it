@@ -50,9 +50,10 @@ What `run_it_pipeline.sh` does, in order:
 | 3 | `uv run preprocess IT` | mxmap DNS-based MX/SPF/CNAME/ASN/DKIM/autodiscover/MS365-tenant lookup + classification | DNS (system, Google, Cloudflare); Microsoft `getuserrealm.srf` |
 | 4 | `scripts/recover_it_unknowns.py` | For each entry classified as Unknown, retry against `domain_fallbacks` (non-PEC email-derived hostnames). E.g. `comune.albianodivrea.to.it` (no MX) → recover via `albiano.divrea@ruparpiemonte.it` → MX classification on `ruparpiemonte.it`. **Never uses PEC.** | DNS |
 | 5 | `scripts/reclassify_it_provincial.py` | Detect `XX.it` provincial-shared MX pattern; for each, look-through the *comune's own* DKIM / autodiscover / MS365 tenant to find the actual backend behind the provincial gateway. If a hyperscaler is found → reclassify with reason "via provincial gateway XX.it". Else → label `provincial-shared`. | DNS, Microsoft `getuserrealm.srf` |
-| 6 | `uv run postprocess IT` | Manual overrides + SMTP banner check (scrape step inert for IT — we don't scrape) | DNS, port 25 |
-| 7 | `uv run validate` | Confidence scoring + quality gate | (offline) |
-| 8 | `scripts/report_it_per_province.py` | Per-provincia + per-regione provider distribution → `data/reports/it_per_province.{txt,json}` | (offline) |
+| 6 | `scripts/finalize_it_unknowns.py` | Last-mile recovery for entries still unknown after step 4: (a) **`cert.ruparpiemonte.it` PEC special case** → classify as `regional-public` (CSI Piemonte / RUPAR Piemonte is publicly-owned regional ICT); (b) **homepage scrape** — fetch `https://{domain}/`, regex emails, filter third-party vendors, try each email's domain via DNS, full classify if MX found; (c) **DNS NXDOMAIN on primary** → KO with reason. Idempotent via `domain_used`. | DNS, HTTPS, IndicePA CKAN |
+| 7 | `uv run postprocess IT` | mxmap manual overrides + SMTP banner check | DNS, port 25 |
+| 8 | `uv run validate` | Confidence scoring + quality gate | (offline) |
+| 9 | `scripts/report_it_per_province.py` | Per-provincia + per-regione provider distribution → `data/reports/it_per_province.{txt,json}` | (offline) |
 | ✱ | `scripts/fetch_it_boundaries.py` | Overpass at admin_level 4/6/8 → `topo/it_{region,province,municipality}.topo.json` + manifest update. Skip with `SKIP_TOPO=1` (only needed when boundaries change). | Overpass API |
 
 Re-running is idempotent. The DNS cache is stored under `data/dns_cache/it.json`

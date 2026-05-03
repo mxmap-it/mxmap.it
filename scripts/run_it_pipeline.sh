@@ -58,19 +58,23 @@ echo "[4/8] Recover Unknown-MX entries via IndicePA non-PEC email fallbacks"
 PYTHONUNBUFFERED=1 uv run python3 scripts/recover_it_unknowns.py
 
 echo ""
-echo "[5/8] Reclassify provincial-shared (XX.it) via comune look-through"
+echo "[5/9] Reclassify provincial-shared (XX.it) via comune look-through"
 PYTHONUNBUFFERED=1 uv run python3 scripts/reclassify_it_provincial.py
 
 echo ""
-echo "[6/8] mxmap postprocess (manual overrides + SMTP banner + scrape disabled)"
+echo "[6/9] Finalize unknowns: ruparpiemonte.it -> regional-public; homepage scrape for the rest"
+PYTHONUNBUFFERED=1 uv run python3 scripts/finalize_it_unknowns.py
+
+echo ""
+echo "[7/9] mxmap postprocess (manual overrides + SMTP banner)"
 PYTHONUNBUFFERED=1 uv run postprocess IT
 
 echo ""
-echo "[7/8] Validate (quality gate)"
+echo "[8/9] Validate (quality gate)"
 uv run validate || echo "  validate exited non-zero — see validation_report.{json,csv}"
 
 echo ""
-echo "[8/8] Per-province report"
+echo "[9/9] Per-province report"
 uv run python3 scripts/report_it_per_province.py
 
 if [[ "$SKIP_TOPO" != "1" ]]; then
