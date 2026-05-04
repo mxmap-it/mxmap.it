@@ -112,6 +112,83 @@ PAGE_SIZE = 5000  # CKAN datastore_search limit
 USER_AGENT = "mxmap.it-indicepa-fetcher/0.1 (+https://github.com/fpietrosanti/mxmap.it)"
 
 
+# Italian ISTAT 3-digit province code -> region name (Italian).
+# Source: ISTAT classification of administrative units. Region names match
+# OSM admin_level=4 `name` tag so the frontend's matchGroupFeature() can join.
+# Region-level aggregation in the renderer uses comune.region as group key.
+ISTAT_PROVINCE_TO_REGION: dict[str, str] = {
+    # Piemonte
+    "001": "Piemonte", "002": "Piemonte", "003": "Piemonte", "004": "Piemonte",
+    "005": "Piemonte", "006": "Piemonte", "096": "Piemonte", "103": "Piemonte",
+    # Valle d'Aosta
+    "007": "Valle d'Aosta / Vallée d'Aoste",
+    # Lombardia
+    "012": "Lombardia", "013": "Lombardia", "014": "Lombardia", "015": "Lombardia",
+    "016": "Lombardia", "017": "Lombardia", "018": "Lombardia", "019": "Lombardia",
+    "020": "Lombardia", "097": "Lombardia", "098": "Lombardia", "108": "Lombardia",
+    # Trentino-Alto Adige (autonomous provinces under one region)
+    "021": "Trentino-Alto Adige/Südtirol", "022": "Trentino-Alto Adige/Südtirol",
+    # Veneto
+    "023": "Veneto", "024": "Veneto", "025": "Veneto", "026": "Veneto",
+    "027": "Veneto", "028": "Veneto", "029": "Veneto",
+    # Friuli-Venezia Giulia
+    "030": "Friuli-Venezia Giulia", "031": "Friuli-Venezia Giulia",
+    "032": "Friuli-Venezia Giulia", "093": "Friuli-Venezia Giulia",
+    # Liguria
+    "008": "Liguria", "009": "Liguria", "010": "Liguria", "011": "Liguria",
+    # Emilia-Romagna
+    "033": "Emilia-Romagna", "034": "Emilia-Romagna", "035": "Emilia-Romagna",
+    "036": "Emilia-Romagna", "037": "Emilia-Romagna", "038": "Emilia-Romagna",
+    "039": "Emilia-Romagna", "040": "Emilia-Romagna", "099": "Emilia-Romagna",
+    # Toscana
+    "045": "Toscana", "046": "Toscana", "047": "Toscana", "048": "Toscana",
+    "049": "Toscana", "050": "Toscana", "051": "Toscana", "052": "Toscana",
+    "053": "Toscana", "100": "Toscana",
+    # Umbria
+    "054": "Umbria", "055": "Umbria",
+    # Marche
+    "041": "Marche", "042": "Marche", "043": "Marche", "044": "Marche",
+    "109": "Marche",
+    # Lazio
+    "056": "Lazio", "057": "Lazio", "058": "Lazio", "059": "Lazio", "060": "Lazio",
+    # Abruzzo
+    "066": "Abruzzo", "067": "Abruzzo", "068": "Abruzzo", "069": "Abruzzo",
+    # Molise
+    "070": "Molise", "094": "Molise",
+    # Campania
+    "061": "Campania", "062": "Campania", "063": "Campania", "064": "Campania",
+    "065": "Campania",
+    # Puglia
+    "071": "Puglia", "072": "Puglia", "073": "Puglia", "074": "Puglia",
+    "075": "Puglia", "110": "Puglia",
+    # Basilicata
+    "076": "Basilicata", "077": "Basilicata",
+    # Calabria
+    "078": "Calabria", "079": "Calabria", "080": "Calabria", "101": "Calabria",
+    "102": "Calabria",
+    # Sicilia
+    "081": "Sicilia", "082": "Sicilia", "083": "Sicilia", "084": "Sicilia",
+    "085": "Sicilia", "086": "Sicilia", "087": "Sicilia", "088": "Sicilia",
+    "089": "Sicilia",
+    # Sardegna (current Sardinian provinces — historical 104-107, 111 split)
+    "090": "Sardigna/Sardegna", "091": "Sardigna/Sardegna",
+    "092": "Sardigna/Sardegna", "095": "Sardigna/Sardegna",
+    "104": "Sardigna/Sardegna", "105": "Sardigna/Sardegna",
+    "106": "Sardigna/Sardegna", "107": "Sardigna/Sardegna",
+    "111": "Sardigna/Sardegna",
+}
+
+
+def istat_to_region(codice_comune_istat: str | None) -> str | None:
+    """Comune ISTAT 6-digit -> region name. None if mapping unknown."""
+    if not codice_comune_istat:
+        return None
+    s = str(codice_comune_istat).strip().zfill(6)
+    if len(s) < 3:
+        return None
+    return ISTAT_PROVINCE_TO_REGION.get(s[:3])
+
+
 # Manual domain overrides — applied at seed-build time when IndicePA's
 # Sito_istituzionale is wrong (typo, defunct .gov.it migration, missing
 # subdomain, etc.) and the standard recovery flow (domain_fallbacks,
@@ -389,13 +466,21 @@ def transform(
 
     domain_fallbacks = extract_domain_fallbacks(row, domain)
 
+    # Region name: derive from ISTAT comune-3-digit prefix via the
+    # ISTAT_PROVINCE_TO_REGION table. Used by the frontend's
+    # matchGroupFeature() to join comuni to region polygons by name.
+    region_name = istat_to_region(codice_comune_istat_str) if codice_categoria == "L6" else None
+    if region_name is None and codice_categoria == "L4":
+        # For regioni entries, use the entity's own Codice_ISTAT (2-digit) as
+        # an alternative path — though we may want to set region to its own name.
+        # Easiest: set region == name itself for L4/L5/L45 territorial entities.
+        region_name = name
+
     seed: dict[str, Any] = {
         "id": entity_id,
         "name": name,
         "country": "IT",
-        # `region` is filled in a later pass once we have the ISTAT region table;
-        # leaving as None here keeps this script free of external lookups.
-        "region": None,
+        "region": region_name,
         "domain": domain,
         "osm_relation_id": osm_id,
         # mxmap.it Italian extension: ordered list of non-PEC email-derived

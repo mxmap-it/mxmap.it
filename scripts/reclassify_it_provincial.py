@@ -229,15 +229,20 @@ async def main_async() -> int:
               f"look-through. Run scripts/probe_it_provincial_backends.py first "
               f"for accurate backend attribution.")
 
+    # Selection policy (allowing idempotent re-run after probe cache changes):
+    # an entry becomes a candidate when ALL of:
+    #   - country = IT
+    #   - first MX matches XX.it (XX in valid Italian province codes)
+    #   - provider is NOT already a hyperscaler (those are correctly attributed
+    #     by preprocess regardless of the gateway)
+    # Note: provincial-shared / independent / local-isp / pa-contractor-private
+    # / regional-public ARE re-processed so that policy updates flow into them.
+    skip_providers = {"microsoft", "google", "aws"}
     candidates: list[tuple[str, dict, str]] = []
     for key, entry in muns.items():
         if entry.get("country") != "IT":
             continue
-        # Skip hyperscalers (already correctly classified)
-        if entry.get("provider") in {"microsoft", "google", "aws", "zoho", "yandex"}:
-            continue
-        # Skip if already reclassified by this script
-        if entry.get("provincial_gateway"):
+        if entry.get("provider") in skip_providers:
             continue
         province_code = detect_province(entry)
         if not province_code:
