@@ -1728,7 +1728,13 @@ async function loadData() {
     if (summaryLoaded && dnsData) {
       for (const m of dnsData.municipalities) {
         if (!activeCountries.has(m.country)) continue;
-        const p = m.classification.provider;
+        // Map raw provider value (microsoft/google/aruba/...) -> display name
+        // (Microsoft 365 / Google Workspace / Provider Italiano / ...) so the
+        // legendGroupHtml lookups below match. Without this map, the only
+        // raw-name == display-name match is "aws" == "AWS" — hence the bug
+        // where the legend showed only AWS at region-level after summary load.
+        const raw = m.classification.provider;
+        const p = providerDisplayMap[raw] || raw;
         counts[p] = (counts[p] || 0) + 1;
         total++;
         if (hasLocalGateway(m)) gwCount++;
