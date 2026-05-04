@@ -687,6 +687,7 @@ function getGroupKey(m, fileLevelName) {
     if (m.country === 'BE') return m.id.substring(0, 5);
     if (m.country === 'DE') return m.id.substring(0, 8); // "DE-01001" (5-digit Kreis)
     if (m.country === 'GB') return m.district || m.name;
+    if (m.country === 'IT') return m.district || m.region || '';
     return m.region || '';
   }
   // Countries with province-only topo: always group by region

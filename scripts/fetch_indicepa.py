@@ -1,14 +1,29 @@
 #!/usr/bin/env python3
 """Fetch Italian public-administration seed data from IndicePA.
 
-Pulls only territorial entities (Regioni / Province / Città Metropolitane /
-Comuni) from the IndicePA `enti` dataset via CKAN's datastore_search JSON API.
+Default mode (no flag): fetches only territorial entities (Regioni /
+Province / Città Metropolitane / Comuni) from the IndicePA `enti` dataset
+via CKAN's datastore_search JSON API.
 
-Filtering rules per docs/countries/ITALY.md:
+`--include-others` mode: ALSO fetches every other IndicePA category
+(schools L33, ASL L7, hospitals L8, universities L17, ministries C1,
+authorities C5, professional orders C14, procurement SA, etc.) and emits
+them in the same seed file with `IT-{categoria}-{codice_ipa}` ID format.
+The same DNS/classify pipeline downstream will classify each of these
+entities by their MX / SPF / DKIM / etc. so we can analyse digital
+sovereignty across the entire Italian PA, not just territorial bodies.
+
+Territorial filtering (per docs/countries/ITALY.md):
 - Drop Ente_in_liquidazione = "S"
 - Drop rows without a usable Sito_istituzionale (any TLD accepted)
 - Drop consorzi/associazioni/unioni/comunità montane via name regex
 - Encode level in the `id` prefix (IT-REG / IT-PRO / IT-CMM / IT-COM)
+
+Non-territorial filtering (when --include-others):
+- Drop Ente_in_liquidazione = "S"
+- Drop rows without a usable Sito_istituzionale
+- NO name regex filter (all enti accepted within the category)
+- Keep ipa_codice_categoria for downstream slicing
 
 If `data/it_istat_osm_crosswalk.json` exists (built by
 `scripts/build_istat_osm_crosswalk.py`), `osm_relation_id` is populated by
@@ -16,8 +31,9 @@ joining first on Codice_IPA (P6832 in Wikidata) and falling back to the
 ISTAT code. Otherwise the field is left null.
 
 Usage:
-    uv run python3 scripts/build_istat_osm_crosswalk.py   # one-time, before
-    uv run python3 scripts/fetch_indicepa.py
+    uv run python3 scripts/build_istat_osm_crosswalk.py   # one-time
+    uv run python3 scripts/fetch_indicepa.py              # territorial only
+    uv run python3 scripts/fetch_indicepa.py --include-others   # +Tier 2/3
 """
 
 from __future__ import annotations
@@ -189,6 +205,67 @@ def istat_to_region(codice_comune_istat: str | None) -> str | None:
     return ISTAT_PROVINCE_TO_REGION.get(s[:3])
 
 
+# Lazily-built ISTAT 3-digit province code -> OSM province name (matching
+# the `name` tag on topo/it_province.topo.json features). Used to populate
+# m.district so the frontend's district-level (province) aggregation can
+# join comuni to province polygons by name. Built from:
+#   1. data/it_istat_osm_crosswalk.json's by_istat_province (ISTAT3 -> osm)
+#   2. topo/it_province.topo.json features (osm relation/N -> name)
+_ISTAT3_TO_PROVINCE_NAME: dict[str, str] | None = None
+
+
+def _load_istat3_to_province_name() -> dict[str, str]:
+    global _ISTAT3_TO_PROVINCE_NAME
+    if _ISTAT3_TO_PROVINCE_NAME is not None:
+        return _ISTAT3_TO_PROVINCE_NAME
+    out: dict[str, str] = {}
+    crosswalk_path = ROOT / "data" / "it_istat_osm_crosswalk.json"
+    topo_path = ROOT / "topo" / "it_province.topo.json"
+    if not crosswalk_path.exists() or not topo_path.exists():
+        _ISTAT3_TO_PROVINCE_NAME = out
+        return out
+    try:
+        crosswalk = json.loads(crosswalk_path.read_text(encoding="utf-8"))
+        by_istat_province = crosswalk.get("by_istat_province", {})  # ISTAT3 -> osm
+        topo = json.loads(topo_path.read_text(encoding="utf-8"))
+        # Build osm_id -> name from topo features
+        osm_to_name: dict[int, str] = {}
+        for obj in topo.get("objects", {}).values():
+            for feat in obj.get("geometries", []):
+                fid = feat.get("id", "")
+                if isinstance(fid, str) and fid.startswith("relation/"):
+                    try:
+                        osm_id = int(fid.split("/", 1)[1])
+                    except ValueError:
+                        continue
+                    name = (feat.get("properties") or {}).get("name") or ""
+                    if name:
+                        osm_to_name[osm_id] = name
+        # Compose: ISTAT3 -> name (via osm)
+        for istat3, osm_id in by_istat_province.items():
+            try:
+                osm_id_int = int(osm_id)
+            except (TypeError, ValueError):
+                continue
+            name = osm_to_name.get(osm_id_int)
+            if name:
+                out[str(istat3).zfill(3)] = name
+    except Exception as e:
+        print(f"  _load_istat3_to_province_name: skipping ({e!r})")
+    _ISTAT3_TO_PROVINCE_NAME = out
+    return out
+
+
+def istat_to_province_name(codice_comune_istat: str | None) -> str | None:
+    """Comune ISTAT 6-digit -> OSM province name (e.g., 'Salerno', 'Roma')."""
+    if not codice_comune_istat:
+        return None
+    s = str(codice_comune_istat).strip().zfill(6)
+    if len(s) < 3:
+        return None
+    return _load_istat3_to_province_name().get(s[:3])
+
+
 # Manual domain overrides — applied at seed-build time when IndicePA's
 # Sito_istituzionale is wrong (typo, defunct .gov.it migration, missing
 # subdomain, etc.) and the standard recovery flow (domain_fallbacks,
@@ -234,6 +311,25 @@ def http_get_json(url: str, *, retries: int = 3, sleep_s: float = 2.0) -> dict[s
                 time.sleep(sleep_s)
                 sleep_s *= 2
     raise RuntimeError(f"GET {url} failed after {retries} attempts: {last_err}")
+
+
+def fetch_all_categories() -> list[str]:
+    """Pull the complete list of Codice_categoria values from IndicePA's
+    categorie-enti dataset, so we can iterate over every category."""
+    cat_resource_id = "84ebb2e7-0e61-427b-a1dd-ab8bb2a84f07"
+    params = {
+        "resource_id": cat_resource_id,
+        "limit": 1000,
+    }
+    url = f"{CKAN_BASE}/datastore_search?{urllib.parse.urlencode(params)}"
+    data = http_get_json(url)
+    rows = data.get("result", {}).get("records", []) if data.get("success") else []
+    codes: list[str] = []
+    for r in rows:
+        c = (r.get("Codice_categoria") or "").strip()
+        if c:
+            codes.append(c)
+    return sorted(codes)
 
 
 def fetch_category(codice_categoria: str) -> list[dict[str, Any]]:
@@ -424,15 +520,24 @@ def transform(
     row: dict[str, Any],
     codice_categoria: str,
     crosswalk: dict[str, Any] | None,
+    *,
+    territorial_filter: bool = True,
 ) -> dict[str, Any] | None:
-    """Map an IndicePA row to mxmap seed format. Returns None if filtered out."""
+    """Map an IndicePA row to mxmap seed format. Returns None if filtered out.
+
+    territorial_filter=True applies the strict territorial rules (drop
+    consorzi/associazioni/unioni for L4/L5/L45/L6). When False (the
+    --include-others branch), only `in liquidazione` and missing-domain
+    drops apply — every other ente of every category is kept.
+    """
     if (row.get("Ente_in_liquidazione") or "").strip().upper() == "S":
         return None
     name = (row.get("Denominazione_ente") or "").strip()
     if not name:
         return None
-    if not is_territorial(name, codice_categoria):
-        return None
+    if territorial_filter:
+        if not is_territorial(name, codice_categoria):
+            return None
     domain = extract_domain(row.get("Sito_istituzionale"))
 
     # Manual override hook — applies when IndicePA's Sito_istituzionale is
@@ -448,8 +553,16 @@ def transform(
 
     if not domain:
         return None
-    prefix, _label = LEVEL_MAP[codice_categoria]
-    entity_id = build_id(prefix, row.get("Codice_ISTAT"), row.get("Codice_comune_ISTAT"))
+    if codice_categoria in LEVEL_MAP:
+        prefix, _label = LEVEL_MAP[codice_categoria]
+        entity_id = build_id(prefix, row.get("Codice_ISTAT"), row.get("Codice_comune_ISTAT"))
+    else:
+        # Non-territorial categories: ID = "IT-{categoria}-{codice_ipa}".
+        # Codice_IPA is unique per ente and stable.
+        codice_ipa_clean = (row.get("Codice_IPA") or "").strip()
+        if not codice_ipa_clean:
+            return None
+        entity_id = f"IT-{codice_categoria}-{codice_ipa_clean}"
     if entity_id is None:
         return None
 
@@ -476,11 +589,16 @@ def transform(
         # Easiest: set region == name itself for L4/L5/L45 territorial entities.
         region_name = name
 
+    # District name (= OSM province name) for IT-COM entries — used by the
+    # frontend's district-level aggregation. Falls back to region for non-comuni.
+    district_name = istat_to_province_name(codice_comune_istat_str) if codice_categoria == "L6" else None
+
     seed: dict[str, Any] = {
         "id": entity_id,
         "name": name,
         "country": "IT",
         "region": region_name,
+        "district": district_name,
         "domain": domain,
         "osm_relation_id": osm_id,
         # mxmap.it Italian extension: ordered list of non-PEC email-derived
@@ -502,6 +620,15 @@ def transform(
 
 
 def main() -> int:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--include-others", action="store_true",
+                    help="Also fetch every non-territorial IndicePA category "
+                         "(schools, healthcare, universities, ministries, "
+                         "professional orders, procurement, etc.) "
+                         "with looser filtering. Default: territorial only.")
+    args = ap.parse_args()
+
     raw_counts: dict[str, int] = {}
     kept_counts: dict[str, int] = {}
     entries: list[dict[str, Any]] = []
@@ -518,6 +645,7 @@ def main() -> int:
               f"{len(crosswalk.get('by_istat_comune', {}))} comuni, "
               f"{len(crosswalk.get('by_ipa', {}))} IPA-keyed")
 
+    # Phase 1: territorial categories (strict filtering)
     for codice_categoria, (prefix, label) in LEVEL_MAP.items():
         print(f"\n=== {codice_categoria} — {label} ({prefix}) ===")
         rows = fetch_category(codice_categoria)
@@ -528,7 +656,7 @@ def main() -> int:
         dropped_dup = 0
         with_osm = 0
         for row in rows:
-            entity = transform(row, codice_categoria, crosswalk)
+            entity = transform(row, codice_categoria, crosswalk, territorial_filter=True)
             if entity is None:
                 continue
             if entity["id"] in seen_ids:
@@ -544,6 +672,32 @@ def main() -> int:
             f"  Kept: {kept}  with_osm: {with_osm}  "
             f"dropped(filter): {len(rows) - kept - dropped_dup}  duplicates: {dropped_dup}"
         )
+
+    # Phase 2 (optional): non-territorial categories (looser filtering)
+    if args.include_others:
+        all_categories = fetch_all_categories()
+        territorial = set(LEVEL_MAP)
+        other_categories = [c for c in all_categories if c not in territorial]
+        print(f"\n=== --include-others: {len(other_categories)} non-territorial categories ===")
+        for codice_categoria in other_categories:
+            rows = fetch_category(codice_categoria)
+            raw_counts[codice_categoria] = len(rows)
+            kept = 0
+            dropped_dup = 0
+            for row in rows:
+                entity = transform(row, codice_categoria, crosswalk, territorial_filter=False)
+                if entity is None:
+                    continue
+                if entity["id"] in seen_ids:
+                    dropped_dup += 1
+                    continue
+                seen_ids.add(entity["id"])
+                entries.append(entity)
+                kept += 1
+            kept_counts[codice_categoria] = kept
+            if rows:
+                print(f"  {codice_categoria:<5} raw={len(rows):>5}  kept={kept:>5}  "
+                      f"dropped={len(rows)-kept-dropped_dup:>4}  dup={dropped_dup:>3}")
 
     out_path = DATA / "municipalities_it.json"
     DATA.mkdir(parents=True, exist_ok=True)
