@@ -1,0 +1,492 @@
+====================================================================================================
+IT public administrations — provider distribution by IndicePA category
+====================================================================================================
+Total classified IT entries: 22593
+Distinct IPA categories:     53
+
+=== Aggregate across ALL Italian PA categories ===
+  microsoft                   4229  ( 18.7%)
+  google                      6354  ( 28.1%)
+  aws                           10  (  0.0%)
+  aruba                        782  (  3.5%)
+  register-it                  673  (  3.0%)
+  seeweb                        78  (  0.3%)
+  regional-public             1039  (  4.6%)
+  pa-contractor-private          1  (  0.0%)
+  local-isp                   5442  ( 24.1%)
+  independent                 3960  ( 17.5%)
+  zoho                           2  (  0.0%)
+  unknown                       23  (  0.1%)
+
+=== USA vs Italy ===
+  USA hyperscalers:     10593  ( 46.9%)
+  Italy / EU / IT:      11975  ( 53.0%)
+
+====================================================================================================
+# Territorial (Tier 1)
+====================================================================================================
+
+  L4    Regioni e Prov. Autonome                 N=   22   USA share=72.7%
+      microsoft                    11  ( 50.0%)
+      google                        5  ( 22.7%)
+      regional-public               1  (  4.5%)
+      local-isp                     1  (  4.5%)
+      independent                   4  ( 18.2%)
+
+  L5    Province                                 N=   87   USA share=60.9%
+      microsoft                    38  ( 43.7%)
+      google                       15  ( 17.2%)
+      aruba                         2  (  2.3%)
+      register-it                   1  (  1.1%)
+      regional-public               3  (  3.4%)
+      local-isp                    16  ( 18.4%)
+      independent                  12  ( 13.8%)
+
+  L45   Città Metropolitane                      N=   15   USA share=73.3%
+      microsoft                     8  ( 53.3%)
+      google                        3  ( 20.0%)
+      regional-public               3  ( 20.0%)
+      local-isp                     1  (  6.7%)
+
+  L6    Comuni                                   N= 7870   USA share=23.4%
+      microsoft                  1252  ( 15.9%)
+      google                      585  (  7.4%)
+      aws                           2  (  0.0%)
+      aruba                       409  (  5.2%)
+      register-it                 428  (  5.4%)
+      seeweb                       27  (  0.3%)
+      regional-public             878  ( 11.2%)
+      local-isp                  2246  ( 28.5%)
+      independent                2037  ( 25.9%)
+      zoho                          2  (  0.0%)
+      unknown                       4  (  0.1%)
+
+====================================================================================================
+# Education
+====================================================================================================
+
+  L33   Istituti Istruzione Statale              N= 8101   USA share=77.5%
+      microsoft                  1376  ( 17.0%)
+      google                     4899  ( 60.5%)
+      aruba                        87  (  1.1%)
+      register-it                  25  (  0.3%)
+      seeweb                        5  (  0.1%)
+      regional-public               3  (  0.0%)
+      local-isp                   984  ( 12.1%)
+      independent                 722  (  8.9%)
+
+  L17   Università                               N=   71   USA share=90.1%
+      microsoft                    30  ( 42.3%)
+      google                       34  ( 47.9%)
+      regional-public               1  (  1.4%)
+      local-isp                     6  (  8.5%)
+
+  L43   AFAM                                     N=  105   USA share=63.8%
+      microsoft                    21  ( 20.0%)
+      google                       46  ( 43.8%)
+      aruba                         2  (  1.9%)
+      register-it                   1  (  1.0%)
+      local-isp                    29  ( 27.6%)
+      independent                   6  (  5.7%)
+
+  L15   Diritto allo Studio Univ.                N=   30   USA share=46.7%
+      microsoft                     9  ( 30.0%)
+      google                        5  ( 16.7%)
+      aruba                         3  ( 10.0%)
+      register-it                   1  (  3.3%)
+      regional-public               1  (  3.3%)
+      local-isp                     6  ( 20.0%)
+      independent                   5  ( 16.7%)
+
+  L28   Consorzi Interuniversitari               N=   30   USA share=30.0%
+      microsoft                     6  ( 20.0%)
+      google                        3  ( 10.0%)
+      seeweb                        1  (  3.3%)
+      local-isp                    15  ( 50.0%)
+      independent                   5  ( 16.7%)
+
+====================================================================================================
+# Healthcare
+====================================================================================================
+
+  L7    ASL                                      N=  115   USA share=65.2%
+      microsoft                    57  ( 49.6%)
+      google                       18  ( 15.7%)
+      aruba                         1  (  0.9%)
+      register-it                   2  (  1.7%)
+      regional-public               2  (  1.7%)
+      local-isp                    18  ( 15.7%)
+      independent                  16  ( 13.9%)
+      unknown                       1  (  0.9%)
+
+  L8    Aziende Ospedaliere/IRCCS                N=  100   USA share=66.0%
+      microsoft                    55  ( 55.0%)
+      google                       11  ( 11.0%)
+      aruba                         5  (  5.0%)
+      regional-public               1  (  1.0%)
+      local-isp                    13  ( 13.0%)
+      independent                  15  ( 15.0%)
+
+  L22   Agenzie Reg. Sanitarie                   N=    9   USA share=66.7%
+      microsoft                     3  ( 33.3%)
+      google                        3  ( 33.3%)
+      independent                   3  ( 33.3%)
+
+  C12   Istituti Zooprofilattici                 N=   10   USA share=80.0%
+      microsoft                     7  ( 70.0%)
+      google                        1  ( 10.0%)
+      local-isp                     2  ( 20.0%)
+
+====================================================================================================
+# Central state / Authorities
+====================================================================================================
+
+  C1    Presidenza/Ministeri                     N=   17   USA share=70.6%
+      microsoft                    12  ( 70.6%)
+      local-isp                     3  ( 17.6%)
+      independent                   2  ( 11.8%)
+
+  C2    Organi Costituzionali                    N=    9   USA share=77.8%
+      microsoft                     7  ( 77.8%)
+      independent                   2  ( 22.2%)
+
+  C5    Autorità Indipendenti                    N=   17   USA share=76.5%
+      microsoft                    13  ( 76.5%)
+      local-isp                     1  (  5.9%)
+      independent                   3  ( 17.6%)
+
+  C10   Agenzie Fiscali                          N=    4   USA share=75.0%
+      microsoft                     3  ( 75.0%)
+      independent                   1  ( 25.0%)
+
+  C11   Forze Polizia                            N=    3   USA share=66.7%
+      microsoft                     1  ( 33.3%)
+      google                        1  ( 33.3%)
+      local-isp                     1  ( 33.3%)
+
+  L46   Aziende Stato Autonomo                   N=    2   USA share=100.0%
+      microsoft                     2  (100.0%)
+
+====================================================================================================
+# Professional orders / Chambers
+====================================================================================================
+
+  C14   Federazioni/Ordini/Collegi               N= 1808   USA share=19.1%
+      microsoft                   229  ( 12.7%)
+      google                      114  (  6.3%)
+      aws                           3  (  0.2%)
+      aruba                        97  (  5.4%)
+      register-it                  64  (  3.5%)
+      seeweb                       23  (  1.3%)
+      regional-public              18  (  1.0%)
+      local-isp                   909  ( 50.3%)
+      independent                 349  ( 19.3%)
+      unknown                       2  (  0.1%)
+
+  L35   Camere di Commercio                      N=   82   USA share=72.0%
+      microsoft                     3  (  3.7%)
+      google                       56  ( 68.3%)
+      register-it                   1  (  1.2%)
+      regional-public               1  (  1.2%)
+      local-isp                     5  (  6.1%)
+      independent                  16  ( 19.5%)
+
+  C13   ACI Federati                             N=  101   USA share=89.1%
+      microsoft                     4  (  4.0%)
+      google                       86  ( 85.1%)
+      register-it                   1  (  1.0%)
+      seeweb                        1  (  1.0%)
+      local-isp                     4  (  4.0%)
+      independent                   5  (  5.0%)
+
+====================================================================================================
+# Local consortia & sub-municipal
+====================================================================================================
+
+  L18   Unioni Comuni                            N=  452   USA share=16.4%
+      microsoft                    45  ( 10.0%)
+      google                       29  (  6.4%)
+      aruba                        21  (  4.6%)
+      register-it                  22  (  4.9%)
+      seeweb                        1  (  0.2%)
+      regional-public              21  (  4.6%)
+      local-isp                   151  ( 33.4%)
+      independent                 159  ( 35.2%)
+      unknown                       3  (  0.7%)
+
+  L36   Consorzi Amm.ni Locali                   N=  171   USA share=22.8%
+      microsoft                    27  ( 15.8%)
+      google                       12  (  7.0%)
+      aruba                         6  (  3.5%)
+      register-it                   9  (  5.3%)
+      regional-public               5  (  2.9%)
+      local-isp                    53  ( 31.0%)
+      independent                  57  ( 33.3%)
+      unknown                       2  (  1.2%)
+
+  L12   Comunità Montane                         N=  164   USA share=30.5%
+      microsoft                    27  ( 16.5%)
+      google                       23  ( 14.0%)
+      aruba                         8  (  4.9%)
+      register-it                  11  (  6.7%)
+      seeweb                        2  (  1.2%)
+      regional-public               5  (  3.0%)
+      local-isp                    42  ( 25.6%)
+      independent                  46  ( 28.0%)
+
+  L1    Altri Enti Locali                        N=  346   USA share=45.7%
+      microsoft                    86  ( 24.9%)
+      google                       72  ( 20.8%)
+      aruba                        10  (  2.9%)
+      register-it                   8  (  2.3%)
+      seeweb                        1  (  0.3%)
+      regional-public              53  ( 15.3%)
+      local-isp                    59  ( 17.1%)
+      independent                  52  ( 15.0%)
+      unknown                       5  (  1.4%)
+
+  L24   Consorzi Bacino Imbrifero                N=   48   USA share=29.2%
+      microsoft                     7  ( 14.6%)
+      google                        7  ( 14.6%)
+      aruba                         1  (  2.1%)
+      register-it                   5  ( 10.4%)
+      local-isp                    10  ( 20.8%)
+      independent                  18  ( 37.5%)
+
+  L47   Commissari Straordinari                  N=   50   USA share=62.0%
+      microsoft                    26  ( 52.0%)
+      google                        5  ( 10.0%)
+      aruba                         2  (  4.0%)
+      register-it                   2  (  4.0%)
+      local-isp                    11  ( 22.0%)
+      independent                   4  (  8.0%)
+
+  L20   Rappresentanza Negoziale                 N=    1   USA share= 0.0%
+      local-isp                     1  (100.0%)
+
+====================================================================================================
+# Welfare / Housing
+====================================================================================================
+
+  L34   Aziende Servizi alla Persona             N=  433   USA share=29.6%
+      microsoft                    86  ( 19.9%)
+      google                       42  (  9.7%)
+      aruba                        40  (  9.2%)
+      register-it                  19  (  4.4%)
+      seeweb                        3  (  0.7%)
+      regional-public              15  (  3.5%)
+      local-isp                   151  ( 34.9%)
+      independent                  74  ( 17.1%)
+      unknown                       3  (  0.7%)
+
+  L39   Edilizia Residenziale                    N=   24   USA share=33.3%
+      microsoft                     6  ( 25.0%)
+      google                        2  (  8.3%)
+      aruba                         4  ( 16.7%)
+      register-it                   1  (  4.2%)
+      seeweb                        1  (  4.2%)
+      local-isp                    10  ( 41.7%)
+
+====================================================================================================
+# Environment & Territory
+====================================================================================================
+
+  L38   Parchi/Aree Naturali                     N=  161   USA share=24.8%
+      microsoft                    26  ( 16.1%)
+      google                       14  (  8.7%)
+      aruba                        12  (  7.5%)
+      register-it                   6  (  3.7%)
+      seeweb                        1  (  0.6%)
+      regional-public               5  (  3.1%)
+      local-isp                    61  ( 37.9%)
+      independent                  36  ( 22.4%)
+
+  L40   Autorità di Bacino                       N=   18   USA share=44.4%
+      microsoft                     8  ( 44.4%)
+      aruba                         1  (  5.6%)
+      register-it                   1  (  5.6%)
+      local-isp                     6  ( 33.3%)
+      independent                   2  ( 11.1%)
+
+  L42   Consorzi Sviluppo Industriale            N=   16   USA share=18.8%
+      microsoft                     3  ( 18.8%)
+      aruba                         1  (  6.2%)
+      local-isp                    10  ( 62.5%)
+      independent                   2  ( 12.5%)
+
+  L44   Enti Idrici/Rifiuti                      N=   92   USA share=32.6%
+      microsoft                    18  ( 19.6%)
+      google                       12  ( 13.0%)
+      aruba                         5  (  5.4%)
+      register-it                   1  (  1.1%)
+      regional-public               2  (  2.2%)
+      local-isp                    35  ( 38.0%)
+      independent                  19  ( 20.7%)
+
+====================================================================================================
+# Culture
+====================================================================================================
+
+  L31   Teatri Stabili                           N=   17   USA share=47.1%
+      microsoft                     5  ( 29.4%)
+      google                        3  ( 17.6%)
+      local-isp                     9  ( 52.9%)
+
+  L16   Fondazioni Lirico-Sinfoniche             N=   12   USA share=33.3%
+      microsoft                     2  ( 16.7%)
+      google                        2  ( 16.7%)
+      regional-public               1  (  8.3%)
+      local-isp                     5  ( 41.7%)
+      independent                   2  ( 16.7%)
+
+  C7    Servizi Ricreativi/Culturali             N=   59   USA share=44.1%
+      microsoft                    24  ( 40.7%)
+      google                        2  (  3.4%)
+      aruba                         2  (  3.4%)
+      register-it                   2  (  3.4%)
+      seeweb                        1  (  1.7%)
+      local-isp                    21  ( 35.6%)
+      independent                   7  ( 11.9%)
+
+====================================================================================================
+# Research
+====================================================================================================
+
+  C8    Enti di Ricerca                          N=   54   USA share=59.3%
+      microsoft                    18  ( 33.3%)
+      google                       14  ( 25.9%)
+      aruba                         1  (  1.9%)
+      register-it                   2  (  3.7%)
+      regional-public               1  (  1.9%)
+      local-isp                    15  ( 27.8%)
+      independent                   3  (  5.6%)
+
+  L13   Sviluppo Agricolo                        N=   12   USA share=41.7%
+      microsoft                     4  ( 33.3%)
+      google                        1  (  8.3%)
+      seeweb                        1  (  8.3%)
+      local-isp                     4  ( 33.3%)
+      independent                   2  ( 16.7%)
+
+  L21   Erogazioni Agricoltura                   N=   10   USA share=50.0%
+      microsoft                     4  ( 40.0%)
+      google                        1  ( 10.0%)
+      regional-public               2  ( 20.0%)
+      independent                   3  ( 30.0%)
+
+====================================================================================================
+# Transport / Ports
+====================================================================================================
+
+  L11   Autorità Portuali                        N=   17   USA share=70.6%
+      microsoft                     9  ( 52.9%)
+      google                        3  ( 17.6%)
+      register-it                   1  (  5.9%)
+      local-isp                     2  ( 11.8%)
+      independent                   2  ( 11.8%)
+
+====================================================================================================
+# Public services / SOEs
+====================================================================================================
+
+  L37   Gestori Pubblici Servizi                 N=  974   USA share=45.0%
+      microsoft                   327  ( 33.6%)
+      google                      109  ( 11.2%)
+      aws                           2  (  0.2%)
+      aruba                        42  (  4.3%)
+      register-it                  33  (  3.4%)
+      seeweb                        7  (  0.7%)
+      regional-public               5  (  0.5%)
+      pa-contractor-private         1  (  0.1%)
+      local-isp                   298  ( 30.6%)
+      independent                 147  ( 15.1%)
+      unknown                       3  (  0.3%)
+
+  S01   Soc. Conto Econ. Consolidato             N=  127   USA share=52.8%
+      microsoft                    53  ( 41.7%)
+      google                       14  ( 11.0%)
+      aruba                         3  (  2.4%)
+      register-it                   1  (  0.8%)
+      regional-public               4  (  3.1%)
+      local-isp                    33  ( 26.0%)
+      independent                  19  ( 15.0%)
+
+  S01G  Gestori Pubblici Servizi (S01G)          N=    4   USA share=100.0%
+      microsoft                     2  ( 50.0%)
+      google                        2  ( 50.0%)
+
+  C3    Enti Pubblici Non Economici              N=   62   USA share=51.6%
+      microsoft                    21  ( 33.9%)
+      google                       10  ( 16.1%)
+      aws                           1  (  1.6%)
+      aruba                         1  (  1.6%)
+      register-it                   1  (  1.6%)
+      regional-public               1  (  1.6%)
+      local-isp                    14  ( 22.6%)
+      independent                  13  ( 21.0%)
+
+====================================================================================================
+# Agencies (regional)
+====================================================================================================
+
+  L2    Agenzie Reg. Formazione/Ricerca          N=   32   USA share=62.5%
+      microsoft                    17  ( 53.1%)
+      google                        3  (  9.4%)
+      aruba                         1  (  3.1%)
+      regional-public               2  (  6.2%)
+      local-isp                     4  ( 12.5%)
+      independent                   5  ( 15.6%)
+
+  L19   Agenzie Reg. Lavoro                      N=   13   USA share=46.2%
+      microsoft                     2  ( 15.4%)
+      google                        4  ( 30.8%)
+      local-isp                     3  ( 23.1%)
+      independent                   4  ( 30.8%)
+
+  L10   Agenzie Turismo                          N=   20   USA share=60.0%
+      microsoft                     6  ( 30.0%)
+      google                        6  ( 30.0%)
+      aruba                         1  (  5.0%)
+      register-it                   1  (  5.0%)
+      regional-public               1  (  5.0%)
+      local-isp                     2  ( 10.0%)
+      independent                   3  ( 15.0%)
+
+====================================================================================================
+# Procurement (Stazioni Appaltanti)
+====================================================================================================
+
+  SA    Stazioni Appaltanti                      N=  442   USA share=50.2%
+      microsoft                   159  ( 36.0%)
+      google                       61  ( 13.8%)
+      aws                           2  (  0.5%)
+      aruba                        12  (  2.7%)
+      register-it                  21  (  4.8%)
+      seeweb                        1  (  0.2%)
+      regional-public               3  (  0.7%)
+      local-isp                   128  ( 29.0%)
+      independent                  55  ( 12.4%)
+
+  SAG   Stazioni Appaltanti GPS                  N=  132   USA share=49.2%
+      microsoft                    50  ( 37.9%)
+      google                       15  ( 11.4%)
+      aruba                         2  (  1.5%)
+      register-it                   2  (  1.5%)
+      seeweb                        1  (  0.8%)
+      regional-public               1  (  0.8%)
+      local-isp                    39  ( 29.5%)
+      independent                  22  ( 16.7%)
+
+====================================================================================================
+# Pension / Social security
+====================================================================================================
+
+  C16   Previdenza Pubblica                      N=    2   USA share=100.0%
+      microsoft                     2  (100.0%)
+
+  C17   Previdenza Privata                       N=   20   USA share=65.0%
+      microsoft                    12  ( 60.0%)
+      google                        1  (  5.0%)
+      seeweb                        1  (  5.0%)
+      local-isp                     5  ( 25.0%)
+      independent                   1  (  5.0%)

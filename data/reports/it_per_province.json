@@ -3,19 +3,19 @@
   "comuni_analyzed": 7870,
   "aggregate": {
     "microsoft": 1252,
-    "google": 587,
+    "google": 585,
     "aruba": 409,
     "register-it": 428,
     "seeweb": 27,
     "infocert": 0,
     "namirial": 0,
-    "regional-public": 879,
+    "regional-public": 878,
     "pa-contractor-private": 0,
     "provincial-shared": 0,
     "local-isp": 2246,
     "independent": 2037,
     "aws": 2,
-    "unknown": 1,
+    "unknown": 4,
     "zoho": 2
   },
   "per_province": {
@@ -24,9 +24,9 @@
       "providers": {
         "microsoft": 34,
         "local-isp": 65,
-        "regional-public": 18,
-        "independent": 157,
-        "aruba": 15,
+        "regional-public": 17,
+        "independent": 159,
+        "aruba": 14,
         "register-it": 10,
         "google": 12,
         "zoho": 1
@@ -400,9 +400,9 @@
       "providers": {
         "local-isp": 4,
         "microsoft": 8,
-        "independent": 14,
+        "independent": 13,
         "regional-public": 13,
-        "aruba": 1,
+        "aruba": 2,
         "google": 2
       }
     },
@@ -696,12 +696,13 @@
       "providers": {
         "microsoft": 7,
         "google": 7,
-        "independent": 9,
+        "independent": 8,
         "register-it": 5,
         "local-isp": 50,
         "aruba": 5,
         "regional-public": 8,
-        "seeweb": 1
+        "seeweb": 1,
+        "unknown": 1
       }
     },
     "064": {
@@ -711,8 +712,9 @@
         "regional-public": 29,
         "aruba": 10,
         "register-it": 2,
-        "independent": 6,
-        "microsoft": 1
+        "independent": 5,
+        "microsoft": 1,
+        "unknown": 1
       }
     },
     "065": {
@@ -722,7 +724,7 @@
         "microsoft": 18,
         "regional-public": 45,
         "independent": 5,
-        "google": 1,
+        "unknown": 1,
         "aruba": 6,
         "register-it": 7
       }
@@ -1057,10 +1059,10 @@
     "096": {
       "n": 74,
       "providers": {
-        "independent": 46,
+        "independent": 47,
         "microsoft": 9,
         "local-isp": 3,
-        "aruba": 4,
+        "aruba": 3,
         "unknown": 1,
         "regional-public": 9,
         "register-it": 2
@@ -1174,8 +1176,8 @@
         "microsoft": 14,
         "seeweb": 1,
         "independent": 6,
-        "google": 3,
-        "aruba": 3,
+        "google": 2,
+        "aruba": 4,
         "regional-public": 5
       }
     },
@@ -1242,8 +1244,9 @@
         "aruba": 61,
         "microsoft": 31,
         "seeweb": 3,
-        "independent": 24,
-        "google": 8
+        "independent": 22,
+        "google": 7,
+        "unknown": 3
       }
     },
     "Emilia-Romagna": {
@@ -1252,9 +1255,9 @@
         "register-it": 7,
         "regional-public": 69,
         "local-isp": 27,
-        "independent": 68,
+        "independent": 67,
         "microsoft": 76,
-        "aruba": 2,
+        "aruba": 3,
         "google": 79
       }
     },
@@ -1336,9 +1339,9 @@
       "providers": {
         "microsoft": 121,
         "local-isp": 210,
-        "regional-public": 112,
-        "independent": 598,
-        "aruba": 64,
+        "regional-public": 111,
+        "independent": 601,
+        "aruba": 62,
         "register-it": 42,
         "google": 27,
         "zoho": 1,
@@ -1365,8 +1368,8 @@
         "regional-public": 51,
         "microsoft": 29,
         "local-isp": 245,
-        "aruba": 16,
-        "google": 8,
+        "aruba": 17,
+        "google": 7,
         "seeweb": 1
       }
     },
