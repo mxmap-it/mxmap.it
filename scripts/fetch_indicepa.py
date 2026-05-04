@@ -205,12 +205,37 @@ def istat_to_region(codice_comune_istat: str | None) -> str | None:
     return ISTAT_PROVINCE_TO_REGION.get(s[:3])
 
 
+# Manual ISTAT3 -> topo province-feature `name` overrides for cases where
+# the Wikidata SPARQL crosswalk is incomplete (Sardegna 2016 reform legacy
+# codes, bilingual Friuli names that Wikidata doesn't tag). Without these,
+# comuni with these ISTAT codes have district=None and the frontend can't
+# join them to a province polygon. Each value MUST match the exact `name`
+# property in topo/it_province.topo.json verbatim.
+ISTAT3_TO_TOPO_NAME_MANUAL: dict[str, str] = {
+    # Friuli — bilingual Italian/Friulian/Slovene names
+    "030": "Udine / Udin / Videm",
+    "031": "Gorizia / Gurize / Gorica",
+    # Sardegna current provinces (2016 reform reorg)
+    "091": "Nuoro",
+    "095": "Aristanis/Oristano",
+    "111": "Casteddu/Cagliari",
+    # Sardegna historical / pre-2016 provinces — IndicePA still uses these
+    # ISTAT codes for some comuni; topo has the historical polygons.
+    "104": "Gallura Nord-Est Sardegna",
+    "105": "Ogliastra",
+    "106": "Medio Campidano",
+    "107": "Sulcis Iglesiente",
+    # 092 (Sud Sardegna) has no current province polygon in OSM topo —
+    # those comuni keep district=None (cannot join to a polygon).
+}
+
 # Lazily-built ISTAT 3-digit province code -> OSM province name (matching
 # the `name` tag on topo/it_province.topo.json features). Used to populate
 # m.district so the frontend's district-level (province) aggregation can
 # join comuni to province polygons by name. Built from:
 #   1. data/it_istat_osm_crosswalk.json's by_istat_province (ISTAT3 -> osm)
 #   2. topo/it_province.topo.json features (osm relation/N -> name)
+#   3. ISTAT3_TO_TOPO_NAME_MANUAL overrides (above) applied last to fill gaps.
 _ISTAT3_TO_PROVINCE_NAME: dict[str, str] | None = None
 
 
@@ -252,6 +277,12 @@ def _load_istat3_to_province_name() -> dict[str, str]:
                 out[str(istat3).zfill(3)] = name
     except Exception as e:
         print(f"  _load_istat3_to_province_name: skipping ({e!r})")
+    # Apply manual overrides (Sardegna legacy codes + Friuli bilingual names
+    # not covered by Wikidata crosswalk). Only fills gaps; does NOT overwrite
+    # crosswalk-derived entries since those have already been verified to
+    # match the topo feature name.
+    for k, v in ISTAT3_TO_TOPO_NAME_MANUAL.items():
+        out.setdefault(k, v)
     _ISTAT3_TO_PROVINCE_NAME = out
     return out
 

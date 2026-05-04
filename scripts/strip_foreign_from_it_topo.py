@@ -180,8 +180,30 @@ def main() -> int:
     filter_topo(TOPO_DIR / "it_region.topo.json", IT_REGION_NAMES, strict_allowlist=True)
 
     province_names = load_seed_province_names()
-    print(f"\n[L6 province] keeping {len(province_names)} province/CM names from seed:")
-    filter_topo(TOPO_DIR / "it_province.topo.json", province_names)
+    # Augment seed-province allowlist with the topo-bilingual variants we
+    # use in fetch_indicepa.py ISTAT3_TO_TOPO_NAME_MANUAL (Friuli bilingual,
+    # Sardegna historical pre-2016 names). These don't appear in the seed
+    # because seed.district mirrors the topo `name` tag, but the allowlist
+    # is computed from seed `name` (without the "Provincia di " prefix
+    # stripping logic). Adding them explicitly makes strip_foreign keep
+    # these polygons reliably.
+    province_names_topo = province_names | {
+        "Udine / Udin / Videm",
+        "Gorizia / Gurize / Gorica",
+        "Aristanis/Oristano",
+        "Casteddu/Cagliari",
+        "Tàttari/Sassari",
+        "Pordenone / Pordenon",
+        "Nuoro",
+        "Gallura Nord-Est Sardegna",
+        "Ogliastra",
+        "Medio Campidano",
+        "Sulcis Iglesiente",
+    }
+    print(f"\n[L6 province] strict allowlist of {len(province_names_topo)} Italian provinces "
+          f"(strips foreign cross-border features like Haute-Savoie):")
+    filter_topo(TOPO_DIR / "it_province.topo.json", province_names_topo,
+                strict_allowlist=True)
 
     # admin_level=8 (comuni) — too many entries to enumerate; rely on country tag
     # which annotate_geojson sets to "IT". Foreign comuni from cross-border
