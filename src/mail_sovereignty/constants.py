@@ -67,11 +67,18 @@ ITALIAN_REGIONAL_PUBLIC_KEYWORDS = [
     "asmecal.it", "asmecam.it",
     # Mountain-community consortium serving South Tyrol comuni (Gemeindenverband)
     "gvcc.net",
-    # MIUR national-state infrastructure for schools (sovrano statale)
-    "edu.it", "istruzione.it", "miur.it", "pubblica.istruzione.it",
-    # Regional in-house infrastructure additional (gap-analysis discoveries)
-    "basilicata.it",  # Regione Basilicata
-    "tix.it",         # Trentino IT Exchange — used by PA Trentino-Alto Adige
+    # Trentino IT Exchange — Trento provincial sovereign infrastructure
+    # (verified: smail.tix.it self-hosted, used by PA Trentino-Alto Adige).
+    "tix.it",
+    # NOTE: edu.it / istruzione.it / miur.it / pubblica.istruzione.it were
+    # REMOVED in 2026-05-04 because verification showed:
+    #  - istruzione.it MX = istruzione-it.mail.protection.outlook.com (Microsoft)
+    #  - miur.it MX = miur-it.mail.protection.outlook.com (Microsoft)
+    #  - edu.it / pubblica.istruzione.it have no MX (just namespace)
+    # School domains (*.edu.it) are mostly on Google Workspace for Education
+    # (~60% of schools). Classifying them as "regional-public" was technically
+    # wrong AND politically misleading — actual MX provider must be reported.
+    # basilicata.it was also removed (no MX, made no difference).
 ]
 
 # Italian private PA IT contractors (NOT in-house). Kept separate so the map
