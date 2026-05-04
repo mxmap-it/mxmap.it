@@ -1,0 +1,640 @@
+{
+  "total": 22593,
+  "aggregate": {
+    "microsoft": 4229,
+    "independent": 3960,
+    "local-isp": 5442,
+    "google": 6354,
+    "seeweb": 78,
+    "register-it": 673,
+    "aruba": 782,
+    "regional-public": 1039,
+    "unknown": 23,
+    "aws": 10,
+    "zoho": 2,
+    "pa-contractor-private": 1
+  },
+  "per_category": {
+    "C1": {
+      "label": "Presidenza/Ministeri",
+      "n": 17,
+      "providers": {
+        "microsoft": 12,
+        "independent": 2,
+        "local-isp": 3
+      }
+    },
+    "C10": {
+      "label": "Agenzie Fiscali",
+      "n": 4,
+      "providers": {
+        "microsoft": 3,
+        "independent": 1
+      }
+    },
+    "C11": {
+      "label": "Forze Polizia",
+      "n": 3,
+      "providers": {
+        "microsoft": 1,
+        "google": 1,
+        "local-isp": 1
+      }
+    },
+    "C12": {
+      "label": "Istituti Zooprofilattici",
+      "n": 10,
+      "providers": {
+        "local-isp": 2,
+        "microsoft": 7,
+        "google": 1
+      }
+    },
+    "C13": {
+      "label": "ACI Federati",
+      "n": 101,
+      "providers": {
+        "microsoft": 4,
+        "google": 86,
+        "seeweb": 1,
+        "independent": 5,
+        "local-isp": 4,
+        "register-it": 1
+      }
+    },
+    "C14": {
+      "label": "Federazioni/Ordini/Collegi",
+      "n": 1808,
+      "providers": {
+        "local-isp": 909,
+        "microsoft": 229,
+        "google": 114,
+        "aruba": 97,
+        "independent": 349,
+        "seeweb": 23,
+        "regional-public": 18,
+        "register-it": 64,
+        "unknown": 2,
+        "aws": 3
+      }
+    },
+    "C16": {
+      "label": "Previdenza Pubblica",
+      "n": 2,
+      "providers": {
+        "microsoft": 2
+      }
+    },
+    "C17": {
+      "label": "Previdenza Privata",
+      "n": 20,
+      "providers": {
+        "local-isp": 5,
+        "microsoft": 12,
+        "independent": 1,
+        "seeweb": 1,
+        "google": 1
+      }
+    },
+    "C2": {
+      "label": "Organi Costituzionali",
+      "n": 9,
+      "providers": {
+        "independent": 2,
+        "microsoft": 7
+      }
+    },
+    "C3": {
+      "label": "Enti Pubblici Non Economici",
+      "n": 62,
+      "providers": {
+        "local-isp": 14,
+        "microsoft": 21,
+        "aruba": 1,
+        "independent": 13,
+        "google": 10,
+        "regional-public": 1,
+        "aws": 1,
+        "register-it": 1
+      }
+    },
+    "C5": {
+      "label": "Autorità Indipendenti",
+      "n": 17,
+      "providers": {
+        "microsoft": 13,
+        "independent": 3,
+        "local-isp": 1
+      }
+    },
+    "C7": {
+      "label": "Servizi Ricreativi/Culturali",
+      "n": 59,
+      "providers": {
+        "local-isp": 21,
+        "register-it": 2,
+        "microsoft": 24,
+        "independent": 7,
+        "aruba": 2,
+        "google": 2,
+        "seeweb": 1
+      }
+    },
+    "C8": {
+      "label": "Enti di Ricerca",
+      "n": 54,
+      "providers": {
+        "local-isp": 15,
+        "microsoft": 18,
+        "google": 14,
+        "regional-public": 1,
+        "aruba": 1,
+        "register-it": 2,
+        "independent": 3
+      }
+    },
+    "L45": {
+      "label": "Città Metropolitane",
+      "n": 15,
+      "providers": {
+        "regional-public": 3,
+        "microsoft": 8,
+        "google": 3,
+        "local-isp": 1
+      }
+    },
+    "L6": {
+      "label": "Comuni",
+      "n": 7870,
+      "providers": {
+        "microsoft": 1252,
+        "local-isp": 2246,
+        "regional-public": 878,
+        "independent": 2037,
+        "aruba": 409,
+        "register-it": 428,
+        "google": 585,
+        "zoho": 2,
+        "aws": 2,
+        "seeweb": 27,
+        "unknown": 4
+      }
+    },
+    "L1": {
+      "label": "Altri Enti Locali",
+      "n": 346,
+      "providers": {
+        "regional-public": 53,
+        "microsoft": 86,
+        "local-isp": 59,
+        "aruba": 10,
+        "google": 72,
+        "independent": 52,
+        "unknown": 5,
+        "register-it": 8,
+        "seeweb": 1
+      }
+    },
+    "L10": {
+      "label": "Agenzie Turismo",
+      "n": 20,
+      "providers": {
+        "google": 6,
+        "independent": 3,
+        "microsoft": 6,
+        "aruba": 1,
+        "register-it": 1,
+        "regional-public": 1,
+        "local-isp": 2
+      }
+    },
+    "L11": {
+      "label": "Autorità Portuali",
+      "n": 17,
+      "providers": {
+        "independent": 2,
+        "microsoft": 9,
+        "google": 3,
+        "local-isp": 2,
+        "register-it": 1
+      }
+    },
+    "L12": {
+      "label": "Comunità Montane",
+      "n": 164,
+      "providers": {
+        "seeweb": 2,
+        "google": 23,
+        "microsoft": 27,
+        "independent": 46,
+        "regional-public": 5,
+        "register-it": 11,
+        "local-isp": 42,
+        "aruba": 8
+      }
+    },
+    "L13": {
+      "label": "Sviluppo Agricolo",
+      "n": 12,
+      "providers": {
+        "local-isp": 4,
+        "microsoft": 4,
+        "independent": 2,
+        "google": 1,
+        "seeweb": 1
+      }
+    },
+    "L15": {
+      "label": "Diritto allo Studio Univ.",
+      "n": 30,
+      "providers": {
+        "local-isp": 6,
+        "aruba": 3,
+        "independent": 5,
+        "microsoft": 9,
+        "register-it": 1,
+        "google": 5,
+        "regional-public": 1
+      }
+    },
+    "L16": {
+      "label": "Fondazioni Lirico-Sinfoniche",
+      "n": 12,
+      "providers": {
+        "independent": 2,
+        "local-isp": 5,
+        "regional-public": 1,
+        "google": 2,
+        "microsoft": 2
+      }
+    },
+    "L17": {
+      "label": "Università",
+      "n": 71,
+      "providers": {
+        "local-isp": 6,
+        "microsoft": 30,
+        "google": 34,
+        "regional-public": 1
+      }
+    },
+    "L18": {
+      "label": "Unioni Comuni",
+      "n": 452,
+      "providers": {
+        "aruba": 21,
+        "independent": 159,
+        "local-isp": 151,
+        "microsoft": 45,
+        "regional-public": 21,
+        "google": 29,
+        "register-it": 22,
+        "seeweb": 1,
+        "unknown": 3
+      }
+    },
+    "L19": {
+      "label": "Agenzie Reg. Lavoro",
+      "n": 13,
+      "providers": {
+        "local-isp": 3,
+        "microsoft": 2,
+        "independent": 4,
+        "google": 4
+      }
+    },
+    "L2": {
+      "label": "Agenzie Reg. Formazione/Ricerca",
+      "n": 32,
+      "providers": {
+        "local-isp": 4,
+        "independent": 5,
+        "microsoft": 17,
+        "regional-public": 2,
+        "google": 3,
+        "aruba": 1
+      }
+    },
+    "L20": {
+      "label": "Rappresentanza Negoziale",
+      "n": 1,
+      "providers": {
+        "local-isp": 1
+      }
+    },
+    "L21": {
+      "label": "Erogazioni Agricoltura",
+      "n": 10,
+      "providers": {
+        "microsoft": 4,
+        "independent": 3,
+        "google": 1,
+        "regional-public": 2
+      }
+    },
+    "L22": {
+      "label": "Agenzie Reg. Sanitarie",
+      "n": 9,
+      "providers": {
+        "microsoft": 3,
+        "google": 3,
+        "independent": 3
+      }
+    },
+    "L24": {
+      "label": "Consorzi Bacino Imbrifero",
+      "n": 48,
+      "providers": {
+        "local-isp": 10,
+        "google": 7,
+        "independent": 18,
+        "register-it": 5,
+        "microsoft": 7,
+        "aruba": 1
+      }
+    },
+    "L28": {
+      "label": "Consorzi Interuniversitari",
+      "n": 30,
+      "providers": {
+        "local-isp": 15,
+        "microsoft": 6,
+        "independent": 5,
+        "google": 3,
+        "seeweb": 1
+      }
+    },
+    "L31": {
+      "label": "Teatri Stabili",
+      "n": 17,
+      "providers": {
+        "local-isp": 9,
+        "microsoft": 5,
+        "google": 3
+      }
+    },
+    "L33": {
+      "label": "Istituti Istruzione Statale",
+      "n": 8101,
+      "providers": {
+        "google": 4899,
+        "local-isp": 984,
+        "independent": 722,
+        "microsoft": 1376,
+        "aruba": 87,
+        "seeweb": 5,
+        "regional-public": 3,
+        "register-it": 25
+      }
+    },
+    "L34": {
+      "label": "Aziende Servizi alla Persona",
+      "n": 433,
+      "providers": {
+        "local-isp": 151,
+        "register-it": 19,
+        "independent": 74,
+        "microsoft": 86,
+        "google": 42,
+        "aruba": 40,
+        "regional-public": 15,
+        "seeweb": 3,
+        "unknown": 3
+      }
+    },
+    "L35": {
+      "label": "Camere di Commercio",
+      "n": 82,
+      "providers": {
+        "google": 56,
+        "independent": 16,
+        "microsoft": 3,
+        "regional-public": 1,
+        "local-isp": 5,
+        "register-it": 1
+      }
+    },
+    "L36": {
+      "label": "Consorzi Amm.ni Locali",
+      "n": 171,
+      "providers": {
+        "independent": 57,
+        "local-isp": 53,
+        "aruba": 6,
+        "microsoft": 27,
+        "regional-public": 5,
+        "google": 12,
+        "unknown": 2,
+        "register-it": 9
+      }
+    },
+    "L37": {
+      "label": "Gestori Pubblici Servizi",
+      "n": 974,
+      "providers": {
+        "google": 109,
+        "independent": 147,
+        "local-isp": 298,
+        "microsoft": 327,
+        "seeweb": 7,
+        "register-it": 33,
+        "aruba": 42,
+        "regional-public": 5,
+        "unknown": 3,
+        "aws": 2,
+        "pa-contractor-private": 1
+      }
+    },
+    "L38": {
+      "label": "Parchi/Aree Naturali",
+      "n": 161,
+      "providers": {
+        "aruba": 12,
+        "independent": 36,
+        "local-isp": 61,
+        "google": 14,
+        "microsoft": 26,
+        "register-it": 6,
+        "regional-public": 5,
+        "seeweb": 1
+      }
+    },
+    "L39": {
+      "label": "Edilizia Residenziale",
+      "n": 24,
+      "providers": {
+        "aruba": 4,
+        "local-isp": 10,
+        "microsoft": 6,
+        "google": 2,
+        "seeweb": 1,
+        "register-it": 1
+      }
+    },
+    "L40": {
+      "label": "Autorità di Bacino",
+      "n": 18,
+      "providers": {
+        "independent": 2,
+        "local-isp": 6,
+        "microsoft": 8,
+        "aruba": 1,
+        "register-it": 1
+      }
+    },
+    "L42": {
+      "label": "Consorzi Sviluppo Industriale",
+      "n": 16,
+      "providers": {
+        "microsoft": 3,
+        "local-isp": 10,
+        "independent": 2,
+        "aruba": 1
+      }
+    },
+    "L43": {
+      "label": "AFAM",
+      "n": 105,
+      "providers": {
+        "independent": 6,
+        "local-isp": 29,
+        "microsoft": 21,
+        "google": 46,
+        "register-it": 1,
+        "aruba": 2
+      }
+    },
+    "L44": {
+      "label": "Enti Idrici/Rifiuti",
+      "n": 92,
+      "providers": {
+        "microsoft": 18,
+        "independent": 19,
+        "local-isp": 35,
+        "regional-public": 2,
+        "google": 12,
+        "aruba": 5,
+        "register-it": 1
+      }
+    },
+    "L46": {
+      "label": "Aziende Stato Autonomo",
+      "n": 2,
+      "providers": {
+        "microsoft": 2
+      }
+    },
+    "L47": {
+      "label": "Commissari Straordinari",
+      "n": 50,
+      "providers": {
+        "local-isp": 11,
+        "microsoft": 26,
+        "aruba": 2,
+        "independent": 4,
+        "register-it": 2,
+        "google": 5
+      }
+    },
+    "L7": {
+      "label": "ASL",
+      "n": 115,
+      "providers": {
+        "microsoft": 57,
+        "local-isp": 18,
+        "independent": 16,
+        "unknown": 1,
+        "google": 18,
+        "register-it": 2,
+        "regional-public": 2,
+        "aruba": 1
+      }
+    },
+    "L8": {
+      "label": "Aziende Ospedaliere/IRCCS",
+      "n": 100,
+      "providers": {
+        "local-isp": 13,
+        "regional-public": 1,
+        "microsoft": 55,
+        "independent": 15,
+        "google": 11,
+        "aruba": 5
+      }
+    },
+    "L5": {
+      "label": "Province",
+      "n": 87,
+      "providers": {
+        "independent": 12,
+        "microsoft": 38,
+        "google": 15,
+        "local-isp": 16,
+        "register-it": 1,
+        "regional-public": 3,
+        "aruba": 2
+      }
+    },
+    "L4": {
+      "label": "Regioni e Prov. Autonome",
+      "n": 22,
+      "providers": {
+        "independent": 4,
+        "microsoft": 11,
+        "google": 5,
+        "local-isp": 1,
+        "regional-public": 1
+      }
+    },
+    "S01": {
+      "label": "Soc. Conto Econ. Consolidato",
+      "n": 127,
+      "providers": {
+        "google": 14,
+        "microsoft": 53,
+        "local-isp": 33,
+        "independent": 19,
+        "aruba": 3,
+        "regional-public": 4,
+        "register-it": 1
+      }
+    },
+    "S01G": {
+      "label": "Gestori Pubblici Servizi (S01G)",
+      "n": 4,
+      "providers": {
+        "microsoft": 2,
+        "google": 2
+      }
+    },
+    "SA": {
+      "label": "Stazioni Appaltanti",
+      "n": 442,
+      "providers": {
+        "microsoft": 159,
+        "register-it": 21,
+        "independent": 55,
+        "google": 61,
+        "local-isp": 128,
+        "seeweb": 1,
+        "aruba": 12,
+        "regional-public": 3,
+        "aws": 2
+      }
+    },
+    "SAG": {
+      "label": "Stazioni Appaltanti GPS",
+      "n": 132,
+      "providers": {
+        "local-isp": 39,
+        "register-it": 2,
+        "independent": 22,
+        "microsoft": 50,
+        "google": 15,
+        "aruba": 2,
+        "seeweb": 1,
+        "regional-public": 1
+      }
+    }
+  }
+}
