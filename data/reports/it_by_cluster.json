@@ -1,41 +1,41 @@
 {
-  "total": 22593,
+  "total": 22824,
   "aggregate": {
     "providers": {
-      "microsoft": 4229,
-      "independent": 3960,
-      "local-isp": 5442,
-      "google": 6354,
-      "unknown": 23,
-      "register-it": 673,
-      "regional-public": 1039,
-      "aruba": 782,
-      "seeweb": 78,
+      "microsoft": 4442,
+      "independent": 3773,
+      "local-isp": 956,
+      "aruba": 5324,
+      "google": 6460,
+      "regional-public": 1084,
+      "register-it": 680,
+      "seeweb": 80,
       "aws": 10,
+      "unknown": 12,
       "pa-contractor-private": 1,
       "zoho": 2
     },
-    "usa_share_pct": 46.89
+    "usa_share_pct": 47.81
   },
   "clusters": {
     "territoriale": {
       "label_it": "Enti territoriali",
       "label_en": "Territorial entities",
       "visualization": "map",
-      "n": 7994,
-      "usa_share_pct": 24.01,
+      "n": 8007,
+      "usa_share_pct": 25.03,
       "providers": {
-        "regional-public": 885,
-        "microsoft": 1309,
-        "google": 608,
-        "local-isp": 2264,
-        "independent": 2053,
-        "aruba": 411,
-        "register-it": 429,
+        "regional-public": 909,
+        "microsoft": 1349,
+        "google": 653,
+        "local-isp": 208,
+        "aruba": 2470,
+        "independent": 1955,
+        "register-it": 430,
         "zoho": 2,
+        "unknown": 2,
         "aws": 2,
-        "seeweb": 27,
-        "unknown": 4
+        "seeweb": 27
       },
       "categories": {
         "L45": {
@@ -48,31 +48,31 @@
           }
         },
         "L6": {
-          "n": 7870,
+          "n": 7883,
           "providers": {
-            "microsoft": 1252,
-            "local-isp": 2246,
-            "regional-public": 878,
-            "independent": 2037,
-            "aruba": 409,
-            "register-it": 428,
-            "google": 585,
+            "microsoft": 1292,
+            "aruba": 2460,
+            "regional-public": 900,
+            "independent": 1941,
+            "local-isp": 198,
+            "register-it": 429,
+            "google": 630,
             "zoho": 2,
+            "unknown": 2,
             "aws": 2,
-            "seeweb": 27,
-            "unknown": 4
+            "seeweb": 27
           }
         },
         "L5": {
           "n": 87,
           "providers": {
-            "independent": 12,
+            "independent": 10,
             "microsoft": 38,
             "google": 15,
-            "local-isp": 16,
+            "aruba": 10,
+            "local-isp": 8,
             "register-it": 1,
-            "regional-public": 3,
-            "aruba": 2
+            "regional-public": 5
           }
         },
         "L4": {
@@ -91,72 +91,74 @@
       "label_it": "Istruzione",
       "label_en": "Education",
       "visualization": "map",
-      "n": 8337,
-      "usa_share_pct": 77.11,
+      "n": 8406,
+      "usa_share_pct": 78.16,
       "providers": {
-        "local-isp": 1040,
-        "aruba": 92,
-        "independent": 738,
-        "microsoft": 1442,
-        "register-it": 27,
-        "google": 4987,
+        "aruba": 867,
+        "independent": 665,
+        "microsoft": 1575,
+        "register-it": 28,
+        "google": 4995,
         "regional-public": 5,
+        "local-isp": 265,
         "seeweb": 6
       },
       "categories": {
         "L15": {
           "n": 30,
           "providers": {
-            "local-isp": 6,
-            "aruba": 3,
+            "aruba": 8,
             "independent": 5,
             "microsoft": 9,
             "register-it": 1,
             "google": 5,
-            "regional-public": 1
+            "regional-public": 1,
+            "local-isp": 1
           }
         },
         "L17": {
           "n": 71,
           "providers": {
-            "local-isp": 6,
+            "aruba": 2,
             "microsoft": 30,
             "google": 34,
+            "local-isp": 4,
             "regional-public": 1
           }
         },
         "L28": {
           "n": 30,
           "providers": {
-            "local-isp": 15,
+            "local-isp": 8,
             "microsoft": 6,
             "independent": 5,
+            "aruba": 7,
             "google": 3,
             "seeweb": 1
           }
         },
         "L33": {
-          "n": 8101,
+          "n": 8169,
           "providers": {
-            "google": 4899,
-            "local-isp": 984,
-            "independent": 722,
-            "microsoft": 1376,
-            "aruba": 87,
+            "google": 4907,
+            "aruba": 824,
+            "independent": 648,
+            "microsoft": 1509,
+            "local-isp": 247,
             "seeweb": 5,
             "regional-public": 3,
-            "register-it": 25
+            "register-it": 26
           }
         },
         "L43": {
-          "n": 105,
+          "n": 106,
           "providers": {
-            "independent": 6,
-            "local-isp": 29,
+            "independent": 7,
+            "local-isp": 5,
             "microsoft": 21,
             "google": 46,
-            "register-it": 1,
-            "aruba": 2
+            "aruba": 26,
+            "register-it": 1
           }
         }
       }
@@ -165,23 +167,22 @@
       "label_it": "Sanità",
       "label_en": "Healthcare",
       "visualization": "map",
-      "n": 234,
-      "usa_share_pct": 66.24,
+      "n": 235,
+      "usa_share_pct": 66.38,
       "providers": {
-        "local-isp": 33,
-        "microsoft": 122,
+        "aruba": 19,
+        "microsoft": 123,
         "google": 33,
-        "independent": 34,
-        "unknown": 1,
-        "register-it": 2,
-        "regional-public": 3,
-        "aruba": 6
+        "regional-public": 4,
+        "independent": 33,
+        "local-isp": 21,
+        "register-it": 2
       },
       "categories": {
         "C12": {
           "n": 10,
           "providers": {
-            "local-isp": 2,
+            "aruba": 2,
             "microsoft": 7,
             "google": 1
           }
@@ -191,31 +192,31 @@
           "providers": {
             "microsoft": 3,
             "google": 3,
-            "independent": 3
+            "regional-public": 1,
+            "independent": 2
           }
         },
         "L7": {
           "n": 115,
           "providers": {
             "microsoft": 57,
-            "local-isp": 18,
-            "independent": 16,
-            "unknown": 1,
+            "local-isp": 9,
+            "independent": 17,
+            "aruba": 10,
             "google": 18,
             "register-it": 2,
-            "regional-public": 2,
-            "aruba": 1
+            "regional-public": 2
           }
         },
         "L8": {
-          "n": 100,
+          "n": 101,
           "providers": {
-            "local-isp": 13,
+            "local-isp": 12,
             "regional-public": 1,
-            "microsoft": 55,
-            "independent": 15,
+            "microsoft": 56,
+            "independent": 14,
             "google": 11,
-            "aruba": 5
+            "aruba": 7
           }
         }
       }
@@ -229,7 +230,8 @@
       "providers": {
         "microsoft": 38,
         "independent": 8,
-        "local-isp": 5,
+        "local-isp": 4,
+        "aruba": 1,
         "google": 1
       },
       "categories": {
@@ -238,7 +240,8 @@
           "providers": {
             "microsoft": 12,
             "independent": 2,
-            "local-isp": 3
+            "local-isp": 2,
+            "aruba": 1
           }
         },
         "C10": {
@@ -283,18 +286,17 @@
       "label_it": "Ordini professionali e Camere",
       "label_en": "Professional orders & chambers",
       "visualization": "table",
-      "n": 1991,
-      "usa_share_pct": 24.86,
+      "n": 2026,
+      "usa_share_pct": 24.73,
       "providers": {
         "microsoft": 236,
-        "google": 256,
+        "google": 262,
         "seeweb": 24,
-        "independent": 370,
-        "local-isp": 918,
+        "independent": 377,
+        "local-isp": 225,
+        "aruba": 814,
         "register-it": 66,
-        "aruba": 97,
         "regional-public": 19,
-        "unknown": 2,
         "aws": 3
       },
       "categories": {
@@ -305,22 +307,22 @@
             "google": 86,
             "seeweb": 1,
             "independent": 5,
-            "local-isp": 4,
+            "local-isp": 1,
+            "aruba": 3,
             "register-it": 1
           }
         },
         "C14": {
-          "n": 1808,
+          "n": 1843,
           "providers": {
-            "local-isp": 909,
+            "aruba": 808,
             "microsoft": 229,
-            "google": 114,
-            "aruba": 97,
-            "independent": 349,
+            "google": 120,
+            "local-isp": 222,
+            "independent": 356,
             "seeweb": 23,
             "regional-public": 18,
             "register-it": 64,
-            "unknown": 2,
             "aws": 3
           }
         },
@@ -331,7 +333,8 @@
             "independent": 16,
             "microsoft": 3,
             "regional-public": 1,
-            "local-isp": 5,
+            "local-isp": 2,
+            "aruba": 3,
             "register-it": 1
           }
         }
@@ -341,39 +344,38 @@
       "label_it": "Welfare e politiche sociali",
       "label_en": "Welfare & social policy",
       "visualization": "table",
-      "n": 457,
-      "usa_share_pct": 29.76,
+      "n": 469,
+      "usa_share_pct": 31.77,
       "providers": {
-        "local-isp": 161,
+        "google": 51,
+        "aruba": 177,
         "register-it": 20,
-        "independent": 74,
-        "microsoft": 92,
-        "google": 44,
-        "aruba": 44,
-        "regional-public": 15,
+        "independent": 70,
+        "microsoft": 98,
+        "local-isp": 31,
+        "regional-public": 16,
         "seeweb": 4,
-        "unknown": 3
+        "unknown": 2
       },
       "categories": {
         "L34": {
-          "n": 433,
+          "n": 445,
           "providers": {
-            "local-isp": 151,
+            "google": 49,
+            "aruba": 163,
             "register-it": 19,
-            "independent": 74,
-            "microsoft": 86,
-            "google": 42,
-            "aruba": 40,
-            "regional-public": 15,
+            "independent": 70,
+            "microsoft": 92,
+            "local-isp": 31,
+            "regional-public": 16,
             "seeweb": 3,
-            "unknown": 3
+            "unknown": 2
           }
         },
         "L39": {
           "n": 24,
           "providers": {
-            "aruba": 4,
-            "local-isp": 10,
+            "aruba": 14,
             "microsoft": 6,
             "google": 2,
             "seeweb": 1,
@@ -386,29 +388,29 @@
       "label_it": "Ambiente e Territorio",
       "label_en": "Environment & Territory",
       "visualization": "both",
-      "n": 287,
-      "usa_share_pct": 28.22,
+      "n": 292,
+      "usa_share_pct": 29.11,
       "providers": {
-        "aruba": 19,
-        "independent": 59,
-        "local-isp": 112,
-        "google": 26,
-        "microsoft": 55,
+        "aruba": 109,
+        "independent": 56,
+        "local-isp": 24,
+        "google": 29,
+        "microsoft": 56,
         "register-it": 8,
-        "regional-public": 7,
-        "seeweb": 1
+        "regional-public": 8,
+        "seeweb": 2
       },
       "categories": {
         "L38": {
-          "n": 161,
+          "n": 162,
           "providers": {
-            "aruba": 12,
-            "independent": 36,
-            "local-isp": 61,
+            "aruba": 56,
+            "independent": 35,
+            "local-isp": 18,
             "google": 14,
             "microsoft": 26,
             "register-it": 6,
-            "regional-public": 5,
+            "regional-public": 6,
             "seeweb": 1
           }
         },
@@ -416,31 +418,32 @@
           "n": 18,
           "providers": {
             "independent": 2,
-            "local-isp": 6,
+            "aruba": 5,
             "microsoft": 8,
-            "aruba": 1,
+            "local-isp": 2,
             "register-it": 1
           }
         },
         "L42": {
-          "n": 16,
+          "n": 18,
           "providers": {
             "microsoft": 3,
-            "local-isp": 10,
-            "independent": 2,
-            "aruba": 1
+            "aruba": 11,
+            "independent": 3,
+            "google": 1
           }
         },
         "L44": {
-          "n": 92,
+          "n": 94,
           "providers": {
-            "microsoft": 18,
-            "independent": 19,
-            "local-isp": 35,
+            "microsoft": 19,
+            "google": 14,
+            "independent": 16,
+            "aruba": 37,
             "regional-public": 2,
-            "google": 12,
-            "aruba": 5,
-            "register-it": 1
+            "local-isp": 4,
+            "register-it": 1,
+            "seeweb": 1
           }
         }
       }
@@ -449,47 +452,49 @@
       "label_it": "Cultura",
       "label_en": "Culture",
       "visualization": "table",
-      "n": 88,
-      "usa_share_pct": 43.18,
+      "n": 89,
+      "usa_share_pct": 44.94,
       "providers": {
-        "local-isp": 35,
+        "aruba": 31,
         "register-it": 2,
-        "microsoft": 31,
-        "independent": 9,
-        "aruba": 2,
-        "google": 7,
+        "microsoft": 32,
+        "independent": 8,
+        "google": 8,
+        "local-isp": 6,
         "seeweb": 1,
         "regional-public": 1
       },
       "categories": {
         "C7": {
-          "n": 59,
+          "n": 60,
           "providers": {
-            "local-isp": 21,
+            "aruba": 22,
             "register-it": 2,
-            "microsoft": 24,
+            "microsoft": 25,
             "independent": 7,
-            "aruba": 2,
             "google": 2,
+            "local-isp": 1,
             "seeweb": 1
           }
         },
         "L16": {
           "n": 12,
           "providers": {
-            "independent": 2,
-            "local-isp": 5,
+            "google": 3,
+            "aruba": 4,
             "regional-public": 1,
-            "google": 2,
-            "microsoft": 2
+            "microsoft": 2,
+            "local-isp": 1,
+            "independent": 1
           }
         },
         "L31": {
           "n": 17,
           "providers": {
-            "local-isp": 9,
+            "aruba": 5,
             "microsoft": 5,
-            "google": 3
+            "google": 3,
+            "local-isp": 4
           }
         }
       }
@@ -498,27 +503,27 @@
       "label_it": "Ricerca",
       "label_en": "Research",
       "visualization": "table",
-      "n": 76,
-      "usa_share_pct": 55.26,
+      "n": 77,
+      "usa_share_pct": 55.84,
       "providers": {
-        "local-isp": 19,
-        "microsoft": 26,
+        "aruba": 10,
+        "microsoft": 27,
         "google": 16,
-        "regional-public": 3,
-        "aruba": 1,
+        "local-isp": 10,
+        "regional-public": 5,
         "register-it": 2,
-        "independent": 8,
+        "independent": 6,
         "seeweb": 1
       },
       "categories": {
         "C8": {
-          "n": 54,
+          "n": 55,
           "providers": {
-            "local-isp": 15,
-            "microsoft": 18,
+            "aruba": 10,
+            "microsoft": 19,
             "google": 14,
+            "local-isp": 6,
             "regional-public": 1,
-            "aruba": 1,
             "register-it": 2,
             "independent": 3
           }
@@ -528,18 +533,19 @@
           "providers": {
             "local-isp": 4,
             "microsoft": 4,
-            "independent": 2,
+            "independent": 1,
             "google": 1,
-            "seeweb": 1
+            "seeweb": 1,
+            "regional-public": 1
           }
         },
         "L21": {
           "n": 10,
           "providers": {
             "microsoft": 4,
-            "independent": 3,
+            "independent": 2,
             "google": 1,
-            "regional-public": 2
+            "regional-public": 3
           }
         }
       }
@@ -554,7 +560,7 @@
         "independent": 2,
         "microsoft": 9,
         "google": 3,
-        "local-isp": 2,
+        "aruba": 2,
         "register-it": 1
       },
       "categories": {
@@ -564,7 +570,7 @@
             "independent": 2,
             "microsoft": 9,
             "google": 3,
-            "local-isp": 2,
+            "aruba": 2,
             "register-it": 1
           }
         }
@@ -574,57 +580,56 @@
       "label_it": "Consorzi e Unioni di enti locali",
       "label_en": "Local consortia & sub-municipal",
       "visualization": "table",
-      "n": 1232,
-      "usa_share_pct": 29.71,
+      "n": 1310,
+      "usa_share_pct": 31.3,
       "providers": {
-        "regional-public": 84,
-        "microsoft": 218,
-        "local-isp": 327,
-        "aruba": 48,
-        "google": 148,
+        "regional-public": 98,
+        "microsoft": 232,
+        "aruba": 345,
+        "google": 178,
         "independent": 336,
-        "unknown": 10,
-        "register-it": 57,
-        "seeweb": 4
+        "local-isp": 53,
+        "register-it": 59,
+        "seeweb": 4,
+        "unknown": 5
       },
       "categories": {
         "L1": {
-          "n": 346,
+          "n": 390,
           "providers": {
-            "regional-public": 53,
-            "microsoft": 86,
-            "local-isp": 59,
-            "aruba": 10,
-            "google": 72,
-            "independent": 52,
-            "unknown": 5,
+            "regional-public": 59,
+            "microsoft": 93,
+            "aruba": 66,
+            "google": 86,
+            "independent": 62,
+            "local-isp": 15,
             "register-it": 8,
             "seeweb": 1
           }
         },
         "L12": {
-          "n": 164,
+          "n": 169,
           "providers": {
             "seeweb": 2,
-            "google": 23,
+            "google": 26,
             "microsoft": 27,
-            "independent": 46,
+            "independent": 47,
             "regional-public": 5,
             "register-it": 11,
-            "local-isp": 42,
-            "aruba": 8
+            "local-isp": 5,
+            "aruba": 46
           }
         },
         "L18": {
-          "n": 452,
+          "n": 463,
           "providers": {
-            "aruba": 21,
-            "independent": 159,
-            "local-isp": 151,
-            "microsoft": 45,
-            "regional-public": 21,
-            "google": 29,
+            "aruba": 159,
+            "independent": 151,
+            "microsoft": 47,
+            "regional-public": 27,
+            "google": 36,
             "register-it": 22,
+            "local-isp": 17,
             "seeweb": 1,
             "unknown": 3
           }
@@ -632,42 +637,43 @@
         "L20": {
           "n": 1,
           "providers": {
-            "local-isp": 1
-          }
-        },
-        "L24": {
-          "n": 48,
-          "providers": {
-            "local-isp": 10,
-            "google": 7,
-            "independent": 18,
-            "register-it": 5,
-            "microsoft": 7,
             "aruba": 1
           }
         },
-        "L36": {
-          "n": 171,
+        "L24": {
+          "n": 54,
           "providers": {
-            "independent": 57,
-            "local-isp": 53,
-            "aruba": 6,
-            "microsoft": 27,
-            "regional-public": 5,
-            "google": 12,
+            "aruba": 10,
+            "google": 9,
+            "independent": 19,
+            "register-it": 5,
+            "microsoft": 8,
+            "local-isp": 2,
+            "regional-public": 1
+          }
+        },
+        "L36": {
+          "n": 180,
+          "providers": {
+            "independent": 53,
+            "aruba": 56,
+            "microsoft": 31,
+            "regional-public": 6,
+            "local-isp": 8,
+            "google": 14,
             "unknown": 2,
-            "register-it": 9
+            "register-it": 10
           }
         },
         "L47": {
-          "n": 50,
+          "n": 53,
           "providers": {
-            "local-isp": 11,
+            "local-isp": 6,
             "microsoft": 26,
-            "aruba": 2,
+            "aruba": 7,
+            "register-it": 3,
             "independent": 4,
-            "register-it": 2,
-            "google": 5
+            "google": 7
           }
         }
       }
@@ -682,10 +688,10 @@
         "google": 13,
         "independent": 12,
         "microsoft": 25,
-        "aruba": 2,
+        "aruba": 8,
         "register-it": 1,
         "regional-public": 3,
-        "local-isp": 9
+        "local-isp": 3
       },
       "categories": {
         "L10": {
@@ -694,16 +700,16 @@
             "google": 6,
             "independent": 3,
             "microsoft": 6,
-            "aruba": 1,
+            "aruba": 2,
             "register-it": 1,
             "regional-public": 1,
-            "local-isp": 2
+            "local-isp": 1
           }
         },
         "L19": {
           "n": 13,
           "providers": {
-            "local-isp": 3,
+            "aruba": 3,
             "microsoft": 2,
             "independent": 4,
             "google": 4
@@ -712,12 +718,12 @@
         "L2": {
           "n": 32,
           "providers": {
-            "local-isp": 4,
+            "local-isp": 2,
             "independent": 5,
             "microsoft": 17,
             "regional-public": 2,
-            "google": 3,
-            "aruba": 1
+            "aruba": 3,
+            "google": 3
           }
         }
       }
@@ -726,46 +732,46 @@
       "label_it": "Gestori di pubblici servizi",
       "label_en": "Public-service operators",
       "visualization": "table",
-      "n": 1167,
-      "usa_share_pct": 46.36,
+      "n": 1179,
+      "usa_share_pct": 47.24,
       "providers": {
-        "local-isp": 345,
-        "microsoft": 403,
-        "aruba": 46,
-        "independent": 179,
-        "google": 135,
-        "regional-public": 10,
+        "aruba": 317,
+        "microsoft": 413,
+        "independent": 170,
+        "google": 141,
+        "regional-public": 12,
+        "local-isp": 75,
         "aws": 3,
-        "register-it": 35,
+        "register-it": 37,
         "seeweb": 7,
         "unknown": 3,
         "pa-contractor-private": 1
       },
       "categories": {
         "C3": {
-          "n": 62,
+          "n": 64,
           "providers": {
-            "local-isp": 14,
-            "microsoft": 21,
-            "aruba": 1,
+            "aruba": 13,
+            "microsoft": 22,
             "independent": 13,
-            "google": 10,
+            "google": 11,
             "regional-public": 1,
+            "local-isp": 2,
             "aws": 1,
             "register-it": 1
           }
         },
         "L37": {
-          "n": 974,
+          "n": 984,
           "providers": {
-            "google": 109,
-            "independent": 147,
-            "local-isp": 298,
-            "microsoft": 327,
+            "google": 114,
+            "independent": 139,
+            "aruba": 277,
+            "microsoft": 335,
+            "local-isp": 64,
             "seeweb": 7,
-            "register-it": 33,
-            "aruba": 42,
-            "regional-public": 5,
+            "register-it": 35,
+            "regional-public": 7,
             "unknown": 3,
             "aws": 2,
             "pa-contractor-private": 1
@@ -775,10 +781,10 @@
           "n": 127,
           "providers": {
             "google": 14,
-            "microsoft": 53,
-            "local-isp": 33,
-            "independent": 19,
-            "aruba": 3,
+            "microsoft": 54,
+            "aruba": 27,
+            "independent": 18,
+            "local-isp": 9,
             "regional-public": 4,
             "register-it": 1
           }
@@ -796,44 +802,44 @@
       "label_it": "Stazioni Appaltanti (procurement)",
       "label_en": "Procurement entities",
       "visualization": "table",
-      "n": 574,
-      "usa_share_pct": 50.0,
+      "n": 578,
+      "usa_share_pct": 50.69,
       "providers": {
-        "microsoft": 209,
-        "register-it": 23,
-        "independent": 77,
+        "microsoft": 215,
+        "register-it": 24,
+        "independent": 74,
         "google": 76,
-        "local-isp": 167,
-        "seeweb": 2,
-        "aruba": 14,
+        "aruba": 151,
+        "local-isp": 29,
+        "seeweb": 3,
         "regional-public": 4,
         "aws": 2
       },
       "categories": {
         "SA": {
-          "n": 442,
+          "n": 445,
           "providers": {
-            "microsoft": 159,
-            "register-it": 21,
-            "independent": 55,
+            "microsoft": 163,
+            "register-it": 22,
+            "independent": 53,
             "google": 61,
-            "local-isp": 128,
+            "aruba": 118,
+            "local-isp": 22,
             "seeweb": 1,
-            "aruba": 12,
             "regional-public": 3,
             "aws": 2
           }
         },
         "SAG": {
-          "n": 132,
+          "n": 133,
           "providers": {
-            "local-isp": 39,
+            "aruba": 33,
             "register-it": 2,
-            "independent": 22,
-            "microsoft": 50,
+            "independent": 21,
+            "microsoft": 52,
             "google": 15,
-            "aruba": 2,
-            "seeweb": 1,
+            "seeweb": 2,
+            "local-isp": 7,
             "regional-public": 1
           }
         }
@@ -847,8 +853,9 @@
       "usa_share_pct": 68.18,
       "providers": {
         "microsoft": 14,
-        "local-isp": 5,
+        "aruba": 3,
         "independent": 1,
+        "local-isp": 2,
         "seeweb": 1,
         "google": 1
       },
@@ -862,9 +869,10 @@
         "C17": {
           "n": 20,
           "providers": {
-            "local-isp": 5,
+            "aruba": 3,
             "microsoft": 12,
             "independent": 1,
+            "local-isp": 2,
             "seeweb": 1,
             "google": 1
           }

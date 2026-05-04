@@ -1,44 +1,44 @@
 {
   "source": "data.json",
-  "comuni_analyzed": 7870,
+  "comuni_analyzed": 7883,
   "aggregate": {
-    "microsoft": 1252,
-    "google": 585,
-    "aruba": 409,
-    "register-it": 428,
+    "microsoft": 1292,
+    "google": 630,
+    "aruba": 2460,
+    "register-it": 429,
     "seeweb": 27,
     "infocert": 0,
     "namirial": 0,
-    "regional-public": 878,
+    "regional-public": 900,
     "pa-contractor-private": 0,
     "provincial-shared": 0,
-    "local-isp": 2246,
-    "independent": 2037,
+    "local-isp": 198,
+    "independent": 1941,
     "aws": 2,
-    "unknown": 4,
+    "unknown": 2,
     "zoho": 2
   },
   "per_province": {
     "001": {
       "n": 312,
       "providers": {
-        "microsoft": 34,
-        "local-isp": 65,
+        "microsoft": 35,
+        "aruba": 68,
         "regional-public": 17,
-        "independent": 159,
-        "aruba": 14,
+        "independent": 156,
+        "local-isp": 12,
         "register-it": 10,
         "google": 12,
-        "zoho": 1
+        "zoho": 1,
+        "unknown": 1
       }
     },
     "002": {
       "n": 82,
       "providers": {
         "independent": 49,
-        "local-isp": 14,
+        "aruba": 16,
         "regional-public": 15,
-        "aruba": 2,
         "microsoft": 1,
         "register-it": 1
       }
@@ -49,20 +49,19 @@
         "independent": 61,
         "google": 3,
         "microsoft": 9,
-        "local-isp": 5,
+        "aruba": 10,
         "register-it": 1,
-        "aruba": 5,
         "regional-public": 3
       }
     },
     "004": {
-      "n": 246,
+      "n": 247,
       "providers": {
-        "local-isp": 80,
+        "aruba": 87,
         "regional-public": 34,
         "microsoft": 45,
-        "independent": 69,
-        "aruba": 10,
+        "independent": 70,
+        "local-isp": 3,
         "google": 2,
         "register-it": 5,
         "aws": 1
@@ -75,19 +74,18 @@
         "register-it": 18,
         "regional-public": 19,
         "microsoft": 13,
-        "aruba": 5,
-        "local-isp": 6,
+        "aruba": 11,
         "google": 1
       }
     },
     "006": {
-      "n": 185,
+      "n": 186,
       "providers": {
-        "local-isp": 36,
+        "local-isp": 2,
         "regional-public": 6,
         "google": 8,
-        "independent": 101,
-        "aruba": 21,
+        "aruba": 55,
+        "independent": 102,
         "register-it": 5,
         "microsoft": 8
       }
@@ -102,63 +100,63 @@
       }
     },
     "008": {
-      "n": 65,
+      "n": 66,
       "providers": {
-        "independent": 19,
+        "independent": 20,
         "google": 5,
-        "local-isp": 20,
+        "aruba": 18,
+        "local-isp": 3,
         "register-it": 8,
         "regional-public": 4,
-        "microsoft": 8,
-        "aruba": 1
+        "microsoft": 8
       }
     },
     "009": {
       "n": 69,
       "providers": {
-        "microsoft": 8,
-        "independent": 23,
-        "local-isp": 15,
+        "microsoft": 9,
+        "independent": 21,
+        "local-isp": 7,
         "regional-public": 7,
-        "aruba": 10,
+        "aruba": 18,
         "register-it": 1,
-        "google": 5
+        "google": 6
       }
     },
     "010": {
       "n": 67,
       "providers": {
-        "microsoft": 11,
-        "independent": 11,
+        "microsoft": 12,
+        "independent": 10,
         "regional-public": 3,
-        "aruba": 5,
+        "aruba": 15,
         "register-it": 19,
-        "local-isp": 15,
-        "google": 3
+        "google": 3,
+        "local-isp": 5
       }
     },
     "011": {
       "n": 32,
       "providers": {
         "independent": 8,
-        "aruba": 1,
+        "aruba": 4,
         "register-it": 13,
         "microsoft": 3,
-        "local-isp": 5,
+        "local-isp": 2,
         "google": 2
       }
     },
     "012": {
-      "n": 134,
+      "n": 135,
       "providers": {
-        "independent": 50,
-        "local-isp": 32,
+        "independent": 49,
+        "aruba": 30,
         "microsoft": 33,
         "register-it": 4,
         "regional-public": 6,
-        "google": 7,
-        "seeweb": 1,
-        "aruba": 1
+        "local-isp": 4,
+        "google": 8,
+        "seeweb": 1
       }
     },
     "013": {
@@ -167,29 +165,29 @@
         "microsoft": 24,
         "independent": 83,
         "google": 13,
-        "local-isp": 24,
-        "register-it": 2
+        "aruba": 21,
+        "register-it": 2,
+        "local-isp": 3
       }
     },
     "014": {
       "n": 77,
       "providers": {
-        "aruba": 3,
+        "aruba": 7,
         "google": 34,
-        "independent": 28,
-        "microsoft": 9,
-        "local-isp": 3
+        "independent": 27,
+        "microsoft": 9
       }
     },
     "015": {
       "n": 133,
       "providers": {
-        "microsoft": 78,
+        "microsoft": 79,
         "register-it": 7,
-        "independent": 16,
-        "local-isp": 13,
+        "independent": 15,
+        "local-isp": 6,
         "google": 14,
-        "aruba": 2,
+        "aruba": 9,
         "regional-public": 3
       }
     },
@@ -197,24 +195,24 @@
       "n": 243,
       "providers": {
         "independent": 36,
-        "register-it": 55,
+        "register-it": 56,
         "microsoft": 110,
-        "local-isp": 27,
+        "aruba": 30,
         "google": 6,
-        "aruba": 7,
-        "regional-public": 2
+        "regional-public": 2,
+        "local-isp": 3
       }
     },
     "017": {
-      "n": 204,
+      "n": 205,
       "providers": {
-        "aruba": 11,
+        "aruba": 31,
         "microsoft": 80,
-        "independent": 28,
+        "independent": 27,
         "google": 49,
-        "local-isp": 20,
         "register-it": 11,
-        "regional-public": 5
+        "regional-public": 5,
+        "local-isp": 2
       }
     },
     "018": {
@@ -223,33 +221,33 @@
         "independent": 79,
         "register-it": 27,
         "microsoft": 38,
-        "local-isp": 24,
+        "aruba": 25,
+        "local-isp": 3,
         "regional-public": 11,
-        "google": 1,
-        "aruba": 4
+        "google": 1
       }
     },
     "019": {
       "n": 113,
       "providers": {
-        "independent": 29,
-        "local-isp": 36,
+        "independent": 26,
+        "aruba": 38,
+        "microsoft": 16,
         "regional-public": 10,
         "google": 17,
-        "microsoft": 13,
         "register-it": 5,
-        "aruba": 3
+        "local-isp": 1
       }
     },
     "020": {
       "n": 64,
       "providers": {
-        "local-isp": 18,
+        "aruba": 18,
         "independent": 14,
         "microsoft": 15,
         "regional-public": 7,
+        "local-isp": 2,
         "google": 7,
-        "aruba": 2,
         "register-it": 1
       }
     },
@@ -264,11 +262,11 @@
       "n": 166,
       "providers": {
         "google": 123,
-        "local-isp": 7,
+        "aruba": 6,
         "microsoft": 18,
         "independent": 16,
-        "register-it": 1,
-        "aruba": 1
+        "local-isp": 2,
+        "register-it": 1
       }
     },
     "023": {
@@ -276,33 +274,32 @@
       "providers": {
         "microsoft": 38,
         "regional-public": 3,
-        "local-isp": 28,
+        "aruba": 32,
         "independent": 19,
         "google": 2,
         "register-it": 2,
-        "aruba": 6
+        "local-isp": 2
       }
     },
     "024": {
       "n": 111,
       "providers": {
-        "local-isp": 17,
-        "independent": 52,
-        "google": 9,
-        "microsoft": 25,
-        "regional-public": 5,
-        "aruba": 3
+        "aruba": 15,
+        "independent": 32,
+        "google": 24,
+        "local-isp": 5,
+        "microsoft": 30,
+        "regional-public": 5
       }
     },
     "025": {
       "n": 60,
       "providers": {
-        "independent": 26,
+        "independent": 25,
         "register-it": 21,
-        "microsoft": 4,
-        "local-isp": 7,
-        "google": 1,
-        "aruba": 1
+        "microsoft": 5,
+        "aruba": 8,
+        "google": 1
       }
     },
     "026": {
@@ -310,41 +307,42 @@
       "providers": {
         "google": 14,
         "microsoft": 33,
-        "aruba": 3,
+        "aruba": 11,
         "independent": 23,
         "register-it": 5,
         "regional-public": 2,
-        "local-isp": 14
+        "local-isp": 6
       }
     },
     "027": {
       "n": 44,
       "providers": {
-        "local-isp": 12,
+        "aruba": 13,
         "microsoft": 16,
         "regional-public": 1,
         "google": 5,
         "independent": 8,
-        "aruba": 2
+        "local-isp": 1
       }
     },
     "028": {
       "n": 101,
       "providers": {
-        "microsoft": 62,
-        "local-isp": 8,
-        "independent": 27,
-        "aruba": 2,
-        "regional-public": 1,
-        "google": 1
+        "microsoft": 64,
+        "local-isp": 1,
+        "aruba": 9,
+        "independent": 22,
+        "google": 4,
+        "regional-public": 1
       }
     },
     "029": {
       "n": 50,
       "providers": {
-        "local-isp": 11,
+        "aruba": 7,
         "microsoft": 21,
         "independent": 16,
+        "local-isp": 4,
         "google": 2
       }
     },
@@ -353,7 +351,8 @@
       "providers": {
         "microsoft": 32,
         "independent": 97,
-        "local-isp": 4,
+        "aruba": 2,
+        "local-isp": 2,
         "google": 1
       }
     },
@@ -378,10 +377,10 @@
       "providers": {
         "register-it": 3,
         "regional-public": 2,
-        "local-isp": 10,
-        "independent": 24,
-        "microsoft": 5,
-        "aruba": 1,
+        "aruba": 7,
+        "local-isp": 4,
+        "independent": 21,
+        "microsoft": 8,
         "google": 1
       }
     },
@@ -390,7 +389,8 @@
       "providers": {
         "google": 2,
         "independent": 16,
-        "local-isp": 10,
+        "local-isp": 5,
+        "aruba": 5,
         "microsoft": 15,
         "regional-public": 1
       }
@@ -398,12 +398,12 @@
     "035": {
       "n": 42,
       "providers": {
-        "local-isp": 4,
+        "aruba": 4,
         "microsoft": 8,
-        "independent": 13,
+        "independent": 14,
         "regional-public": 13,
-        "aruba": 2,
-        "google": 2
+        "google": 2,
+        "local-isp": 1
       }
     },
     "036": {
@@ -433,7 +433,8 @@
         "regional-public": 1,
         "microsoft": 8,
         "independent": 3,
-        "local-isp": 2
+        "local-isp": 1,
+        "aruba": 1
       }
     },
     "039": {
@@ -456,23 +457,23 @@
         "google": 2,
         "microsoft": 6,
         "register-it": 1,
-        "local-isp": 1
+        "aruba": 1
       }
     },
     "042": {
       "n": 47,
       "providers": {
-        "local-isp": 15,
+        "aruba": 13,
         "microsoft": 9,
         "independent": 19,
-        "register-it": 3,
-        "aruba": 1
+        "local-isp": 3,
+        "register-it": 3
       }
     },
     "043": {
       "n": 55,
       "providers": {
-        "local-isp": 48,
+        "aruba": 48,
         "microsoft": 4,
         "google": 1,
         "regional-public": 1,
@@ -480,10 +481,9 @@
       }
     },
     "044": {
-      "n": 32,
+      "n": 33,
       "providers": {
-        "aruba": 2,
-        "local-isp": 11,
+        "aruba": 14,
         "register-it": 8,
         "microsoft": 1,
         "independent": 4,
@@ -495,39 +495,35 @@
       "providers": {
         "google": 4,
         "microsoft": 2,
-        "aruba": 2,
-        "independent": 3,
-        "register-it": 1,
-        "regional-public": 1,
-        "local-isp": 4
+        "aruba": 6,
+        "regional-public": 4,
+        "register-it": 1
       }
     },
     "046": {
       "n": 33,
       "providers": {
-        "independent": 18,
-        "aruba": 3,
-        "regional-public": 2,
-        "local-isp": 7,
+        "regional-public": 16,
+        "aruba": 10,
+        "independent": 4,
         "google": 3
       }
     },
     "047": {
       "n": 20,
       "providers": {
-        "microsoft": 7,
-        "regional-public": 1,
+        "microsoft": 8,
+        "regional-public": 3,
         "google": 2,
-        "aruba": 1,
-        "independent": 5,
-        "local-isp": 4
+        "aruba": 5,
+        "independent": 2
       }
     },
     "048": {
       "n": 41,
       "providers": {
-        "independent": 17,
-        "regional-public": 4,
+        "regional-public": 14,
+        "independent": 7,
         "microsoft": 10,
         "google": 10
       }
@@ -535,39 +531,41 @@
     "049": {
       "n": 19,
       "providers": {
-        "independent": 6,
-        "local-isp": 5,
+        "independent": 3,
+        "regional-public": 3,
+        "aruba": 5,
+        "google": 1,
         "microsoft": 6,
-        "regional-public": 1,
-        "aruba": 1
+        "local-isp": 1
       }
     },
     "050": {
       "n": 37,
       "providers": {
         "microsoft": 9,
-        "regional-public": 1,
-        "aruba": 3,
+        "regional-public": 5,
+        "aruba": 6,
         "google": 7,
-        "local-isp": 10,
-        "independent": 7
+        "local-isp": 7,
+        "independent": 3
       }
     },
     "051": {
       "n": 36,
       "providers": {
-        "local-isp": 14,
+        "aruba": 13,
         "google": 2,
         "register-it": 2,
-        "microsoft": 5,
-        "regional-public": 7,
-        "independent": 6
+        "microsoft": 6,
+        "regional-public": 8,
+        "independent": 4,
+        "local-isp": 1
       }
     },
     "052": {
       "n": 35,
       "providers": {
-        "local-isp": 20,
+        "aruba": 20,
         "independent": 2,
         "google": 3,
         "microsoft": 10
@@ -576,11 +574,13 @@
     "053": {
       "n": 28,
       "providers": {
-        "local-isp": 10,
-        "independent": 8,
+        "aruba": 5,
+        "regional-public": 7,
         "register-it": 2,
         "seeweb": 1,
+        "local-isp": 5,
         "microsoft": 3,
+        "independent": 1,
         "google": 4
       }
     },
@@ -590,33 +590,34 @@
         "google": 4,
         "microsoft": 6,
         "register-it": 10,
-        "local-isp": 23,
+        "aruba": 19,
+        "local-isp": 5,
         "seeweb": 5,
         "regional-public": 2,
-        "independent": 8,
-        "aruba": 1
+        "independent": 8
       }
     },
     "055": {
       "n": 33,
       "providers": {
-        "local-isp": 21,
+        "aruba": 18,
         "independent": 6,
         "microsoft": 1,
         "register-it": 1,
         "seeweb": 1,
         "google": 2,
+        "local-isp": 3,
         "regional-public": 1
       }
     },
     "056": {
-      "n": 59,
+      "n": 60,
       "providers": {
-        "local-isp": 41,
+        "aruba": 40,
+        "independent": 7,
         "register-it": 5,
         "google": 3,
-        "aruba": 1,
-        "independent": 6,
+        "local-isp": 2,
         "microsoft": 1,
         "seeweb": 1,
         "regional-public": 1
@@ -625,33 +626,32 @@
     "057": {
       "n": 73,
       "providers": {
-        "local-isp": 57,
+        "aruba": 54,
         "regional-public": 3,
         "register-it": 9,
         "seeweb": 2,
-        "aruba": 1,
-        "independent": 1
+        "independent": 2,
+        "local-isp": 3
       }
     },
     "058": {
-      "n": 120,
+      "n": 121,
       "providers": {
-        "local-isp": 70,
+        "aruba": 76,
         "google": 6,
         "register-it": 10,
-        "microsoft": 7,
-        "aruba": 9,
+        "microsoft": 8,
         "independent": 14,
+        "local-isp": 3,
         "regional-public": 4
       }
     },
     "059": {
       "n": 33,
       "providers": {
-        "local-isp": 14,
+        "aruba": 16,
         "register-it": 4,
         "regional-public": 1,
-        "aruba": 2,
         "independent": 7,
         "microsoft": 3,
         "seeweb": 1,
@@ -659,83 +659,81 @@
       }
     },
     "060": {
-      "n": 90,
+      "n": 91,
       "providers": {
         "regional-public": 21,
-        "local-isp": 48,
-        "aruba": 5,
+        "aruba": 51,
         "seeweb": 4,
         "register-it": 4,
         "independent": 7,
-        "google": 1
+        "local-isp": 2,
+        "google": 1,
+        "microsoft": 1
       }
     },
     "061": {
       "n": 104,
       "providers": {
-        "local-isp": 60,
+        "aruba": 74,
         "register-it": 6,
         "regional-public": 15,
-        "aruba": 15,
         "microsoft": 5,
         "seeweb": 2,
-        "independent": 1
+        "independent": 1,
+        "local-isp": 1
       }
     },
     "062": {
       "n": 78,
       "providers": {
-        "local-isp": 46,
-        "aruba": 25,
-        "independent": 3,
-        "regional-public": 4
+        "aruba": 71,
+        "microsoft": 1,
+        "regional-public": 4,
+        "independent": 2
       }
     },
     "063": {
       "n": 92,
       "providers": {
         "microsoft": 7,
-        "google": 7,
+        "google": 8,
         "independent": 8,
         "register-it": 5,
-        "local-isp": 50,
-        "aruba": 5,
+        "aruba": 51,
         "regional-public": 8,
-        "seeweb": 1,
-        "unknown": 1
+        "local-isp": 4,
+        "seeweb": 1
       }
     },
     "064": {
       "n": 118,
       "providers": {
-        "local-isp": 70,
+        "aruba": 75,
         "regional-public": 29,
-        "aruba": 10,
+        "local-isp": 5,
         "register-it": 2,
-        "independent": 5,
-        "microsoft": 1,
-        "unknown": 1
+        "independent": 6,
+        "microsoft": 1
       }
     },
     "065": {
       "n": 157,
       "providers": {
-        "local-isp": 75,
+        "aruba": 78,
         "microsoft": 18,
         "regional-public": 45,
-        "independent": 5,
-        "unknown": 1,
-        "aruba": 6,
-        "register-it": 7
+        "independent": 6,
+        "register-it": 7,
+        "local-isp": 3
       }
     },
     "066": {
       "n": 108,
       "providers": {
-        "local-isp": 67,
-        "aruba": 6,
+        "aruba": 69,
         "register-it": 18,
         "microsoft": 4,
+        "local-isp": 4,
         "regional-public": 8,
         "google": 2,
         "independent": 2,
@@ -747,11 +745,11 @@
       "providers": {
         "microsoft": 7,
         "regional-public": 4,
-        "local-isp": 24,
+        "aruba": 24,
         "register-it": 5,
+        "local-isp": 3,
         "independent": 2,
         "google": 1,
-        "aruba": 3,
         "seeweb": 1
       }
     },
@@ -759,11 +757,11 @@
       "n": 46,
       "providers": {
         "regional-public": 5,
-        "local-isp": 22,
+        "aruba": 22,
         "register-it": 8,
         "microsoft": 4,
         "independent": 4,
-        "aruba": 1,
+        "local-isp": 1,
         "aws": 1,
         "seeweb": 1
       }
@@ -773,18 +771,18 @@
       "providers": {
         "register-it": 20,
         "regional-public": 4,
-        "local-isp": 54,
+        "aruba": 62,
         "microsoft": 2,
         "independent": 8,
-        "aruba": 11,
-        "google": 5
+        "google": 5,
+        "local-isp": 3
       }
     },
     "070": {
       "n": 84,
       "providers": {
-        "aruba": 25,
-        "local-isp": 14,
+        "aruba": 38,
+        "local-isp": 1,
         "register-it": 18,
         "independent": 25,
         "microsoft": 2
@@ -793,12 +791,12 @@
     "071": {
       "n": 60,
       "providers": {
-        "local-isp": 33,
+        "aruba": 34,
         "register-it": 8,
-        "aruba": 5,
-        "independent": 8,
+        "local-isp": 4,
+        "independent": 7,
         "regional-public": 2,
-        "google": 2,
+        "google": 3,
         "microsoft": 2
       }
     },
@@ -807,28 +805,28 @@
       "providers": {
         "google": 9,
         "regional-public": 3,
-        "independent": 6,
-        "aruba": 4,
-        "microsoft": 9,
+        "independent": 3,
+        "aruba": 11,
+        "microsoft": 12,
         "register-it": 2,
-        "local-isp": 8
+        "local-isp": 1
       }
     },
     "073": {
       "n": 29,
       "providers": {
-        "aruba": 3,
+        "aruba": 12,
         "regional-public": 1,
         "independent": 7,
         "google": 4,
-        "local-isp": 10,
-        "microsoft": 4
+        "microsoft": 4,
+        "local-isp": 1
       }
     },
     "074": {
       "n": 20,
       "providers": {
-        "local-isp": 6,
+        "aruba": 6,
         "independent": 8,
         "microsoft": 4,
         "register-it": 1,
@@ -838,10 +836,11 @@
     "075": {
       "n": 96,
       "providers": {
-        "google": 15,
+        "google": 17,
         "microsoft": 10,
-        "local-isp": 19,
-        "independent": 50,
+        "aruba": 15,
+        "independent": 48,
+        "local-isp": 4,
         "regional-public": 2
       }
     },
@@ -849,10 +848,10 @@
       "n": 100,
       "providers": {
         "independent": 76,
-        "local-isp": 17,
+        "aruba": 18,
         "register-it": 2,
-        "aruba": 2,
         "microsoft": 1,
+        "local-isp": 1,
         "google": 1,
         "regional-public": 1
       }
@@ -862,21 +861,20 @@
       "providers": {
         "independent": 21,
         "regional-public": 2,
-        "aruba": 1,
-        "local-isp": 5,
+        "aruba": 6,
         "google": 1,
         "microsoft": 1
       }
     },
     "078": {
-      "n": 149,
+      "n": 150,
       "providers": {
-        "independent": 21,
+        "independent": 22,
         "regional-public": 82,
-        "aruba": 4,
+        "aruba": 35,
         "google": 4,
-        "local-isp": 35,
         "register-it": 2,
+        "local-isp": 4,
         "microsoft": 1
       }
     },
@@ -884,65 +882,63 @@
       "n": 78,
       "providers": {
         "regional-public": 57,
-        "local-isp": 11,
+        "aruba": 13,
         "independent": 3,
-        "aruba": 3,
         "microsoft": 1,
+        "local-isp": 1,
         "google": 2,
         "register-it": 1
       }
     },
     "080": {
-      "n": 95,
+      "n": 97,
       "providers": {
-        "regional-public": 55,
-        "local-isp": 28,
-        "aruba": 9,
-        "google": 2,
+        "regional-public": 56,
+        "aruba": 37,
+        "google": 3,
         "independent": 1
       }
     },
     "081": {
       "n": 25,
       "providers": {
-        "independent": 3,
+        "microsoft": 1,
         "regional-public": 2,
-        "local-isp": 19,
-        "aruba": 1
+        "aruba": 20,
+        "independent": 2
       }
     },
     "082": {
       "n": 82,
       "providers": {
         "register-it": 2,
-        "independent": 8,
-        "local-isp": 56,
-        "google": 4,
-        "aruba": 8,
+        "independent": 7,
+        "aruba": 62,
+        "google": 5,
         "regional-public": 3,
+        "local-isp": 2,
         "seeweb": 1
       }
     },
     "083": {
       "n": 108,
       "providers": {
-        "local-isp": 68,
-        "aruba": 26,
+        "aruba": 93,
         "google": 3,
         "regional-public": 3,
         "register-it": 3,
         "microsoft": 2,
-        "independent": 3
+        "independent": 3,
+        "local-isp": 1
       }
     },
     "084": {
       "n": 43,
       "providers": {
-        "independent": 3,
-        "local-isp": 34,
-        "aruba": 1,
+        "independent": 2,
+        "aruba": 35,
+        "microsoft": 2,
         "seeweb": 2,
-        "microsoft": 1,
         "regional-public": 1,
         "google": 1
       }
@@ -951,25 +947,23 @@
       "n": 22,
       "providers": {
         "independent": 3,
-        "local-isp": 15,
-        "aruba": 2,
+        "aruba": 17,
         "register-it": 2
       }
     },
     "086": {
       "n": 20,
       "providers": {
-        "independent": 4,
-        "local-isp": 12,
-        "aruba": 3,
+        "independent": 3,
+        "aruba": 16,
         "google": 1
       }
     },
     "087": {
       "n": 58,
       "providers": {
-        "local-isp": 35,
-        "aruba": 14,
+        "aruba": 46,
+        "local-isp": 3,
         "google": 4,
         "independent": 4,
         "microsoft": 1
@@ -978,17 +972,17 @@
     "088": {
       "n": 12,
       "providers": {
-        "local-isp": 9,
+        "aruba": 8,
         "regional-public": 2,
-        "google": 1
+        "google": 1,
+        "local-isp": 1
       }
     },
     "089": {
       "n": 21,
       "providers": {
         "google": 3,
-        "local-isp": 15,
-        "aruba": 1,
+        "aruba": 16,
         "regional-public": 1,
         "microsoft": 1
       }
@@ -997,32 +991,31 @@
       "n": 88,
       "providers": {
         "independent": 4,
-        "regional-public": 7,
-        "microsoft": 5,
-        "local-isp": 68,
-        "aruba": 3,
-        "google": 1
+        "microsoft": 7,
+        "aruba": 69,
+        "regional-public": 3,
+        "local-isp": 2,
+        "google": 3
       }
     },
     "091": {
       "n": 74,
       "providers": {
-        "local-isp": 36,
-        "regional-public": 24,
-        "aruba": 6,
-        "google": 3,
+        "aruba": 36,
+        "local-isp": 6,
+        "regional-public": 12,
+        "google": 13,
         "independent": 4,
-        "microsoft": 1
+        "microsoft": 3
       }
     },
     "092": {
       "n": 17,
       "providers": {
-        "local-isp": 4,
-        "microsoft": 8,
-        "aruba": 1,
-        "regional-public": 2,
-        "independent": 2
+        "aruba": 5,
+        "microsoft": 10,
+        "regional-public": 1,
+        "independent": 1
       }
     },
     "093": {
@@ -1037,23 +1030,23 @@
     "094": {
       "n": 52,
       "providers": {
-        "aruba": 23,
+        "aruba": 27,
         "independent": 14,
         "register-it": 5,
-        "local-isp": 5,
         "google": 2,
-        "regional-public": 3
+        "regional-public": 3,
+        "local-isp": 1
       }
     },
     "095": {
       "n": 86,
       "providers": {
-        "regional-public": 13,
-        "local-isp": 63,
-        "aruba": 3,
-        "independent": 5,
-        "microsoft": 1,
-        "google": 1
+        "regional-public": 8,
+        "aruba": 63,
+        "microsoft": 4,
+        "independent": 4,
+        "google": 4,
+        "local-isp": 3
       }
     },
     "096": {
@@ -1061,8 +1054,7 @@
       "providers": {
         "independent": 47,
         "microsoft": 9,
-        "local-isp": 3,
-        "aruba": 3,
+        "aruba": 6,
         "unknown": 1,
         "regional-public": 9,
         "register-it": 2
@@ -1074,18 +1066,17 @@
         "microsoft": 58,
         "independent": 18,
         "google": 4,
-        "aruba": 1,
-        "local-isp": 3
+        "aruba": 4
       }
     },
     "098": {
-      "n": 59,
+      "n": 60,
       "providers": {
-        "microsoft": 21,
+        "microsoft": 22,
         "independent": 6,
         "regional-public": 6,
         "register-it": 6,
-        "local-isp": 13,
+        "aruba": 13,
         "google": 6,
         "seeweb": 1
       }
@@ -1098,21 +1089,22 @@
         "google": 3,
         "register-it": 2,
         "independent": 3,
-        "local-isp": 1
+        "aruba": 1
       }
     },
     "100": {
       "n": 7,
       "providers": {
         "microsoft": 2,
-        "independent": 5
+        "regional-public": 2,
+        "independent": 3
       }
     },
     "101": {
       "n": 27,
       "providers": {
         "regional-public": 20,
-        "local-isp": 5,
+        "aruba": 5,
         "google": 2
       }
     },
@@ -1120,8 +1112,7 @@
       "n": 50,
       "providers": {
         "regional-public": 39,
-        "local-isp": 7,
-        "aruba": 2,
+        "aruba": 9,
         "google": 1,
         "independent": 1
       }
@@ -1131,10 +1122,9 @@
       "providers": {
         "independent": 60,
         "regional-public": 8,
-        "aruba": 2,
+        "aruba": 3,
         "microsoft": 2,
-        "google": 1,
-        "local-isp": 1
+        "google": 1
       }
     },
     "108": {
@@ -1143,17 +1133,15 @@
         "microsoft": 38,
         "google": 5,
         "independent": 5,
-        "local-isp": 3,
+        "aruba": 5,
         "register-it": 1,
-        "regional-public": 1,
-        "aruba": 2
+        "regional-public": 1
       }
     },
     "109": {
       "n": 40,
       "providers": {
-        "local-isp": 17,
-        "aruba": 3,
+        "aruba": 20,
         "register-it": 11,
         "independent": 5,
         "regional-public": 3,
@@ -1163,36 +1151,35 @@
     "110": {
       "n": 10,
       "providers": {
-        "local-isp": 7,
+        "aruba": 6,
         "regional-public": 1,
-        "independent": 1,
-        "aruba": 1
+        "local-isp": 2,
+        "microsoft": 1
       }
     },
     "111": {
       "n": 106,
       "providers": {
-        "local-isp": 74,
-        "microsoft": 14,
+        "aruba": 70,
+        "microsoft": 15,
+        "local-isp": 7,
         "seeweb": 1,
-        "independent": 6,
-        "google": 2,
-        "aruba": 4,
-        "regional-public": 5
+        "independent": 5,
+        "google": 5,
+        "regional-public": 3
       }
     },
     "113": {
       "n": 4,
       "providers": {
-        "aruba": 1,
-        "microsoft": 2,
-        "local-isp": 1
+        "aruba": 2,
+        "microsoft": 2
       }
     },
     "117": {
       "n": 1,
       "providers": {
-        "local-isp": 1
+        "aruba": 1
       }
     }
   },
@@ -1200,10 +1187,10 @@
     "Abruzzo": {
       "n": 305,
       "providers": {
-        "local-isp": 167,
-        "aruba": 21,
+        "aruba": 177,
         "register-it": 51,
         "microsoft": 17,
+        "local-isp": 11,
         "regional-public": 21,
         "google": 8,
         "independent": 16,
@@ -1215,38 +1202,37 @@
       "n": 131,
       "providers": {
         "independent": 97,
-        "local-isp": 22,
+        "aruba": 24,
         "register-it": 2,
-        "aruba": 3,
         "microsoft": 2,
+        "local-isp": 1,
         "google": 2,
         "regional-public": 3
       }
     },
     "Calabria": {
-      "n": 399,
+      "n": 402,
       "providers": {
-        "independent": 26,
-        "regional-public": 253,
-        "aruba": 18,
-        "google": 11,
-        "local-isp": 86,
+        "independent": 27,
+        "regional-public": 254,
+        "aruba": 99,
+        "google": 12,
         "register-it": 3,
+        "local-isp": 5,
         "microsoft": 2
       }
     },
     "Campania": {
       "n": 549,
       "providers": {
-        "local-isp": 301,
+        "aruba": 349,
         "register-it": 20,
         "regional-public": 101,
-        "aruba": 61,
-        "microsoft": 31,
+        "microsoft": 32,
         "seeweb": 3,
-        "independent": 22,
-        "google": 7,
-        "unknown": 3
+        "independent": 23,
+        "local-isp": 13,
+        "google": 8
       }
     },
     "Emilia-Romagna": {
@@ -1254,10 +1240,10 @@
       "providers": {
         "register-it": 7,
         "regional-public": 69,
-        "local-isp": 27,
-        "independent": 67,
-        "microsoft": 76,
-        "aruba": 3,
+        "aruba": 18,
+        "local-isp": 11,
+        "independent": 65,
+        "microsoft": 79,
         "google": 79
       }
     },
@@ -1266,58 +1252,59 @@
       "providers": {
         "microsoft": 56,
         "independent": 150,
-        "local-isp": 6,
+        "aruba": 2,
+        "local-isp": 4,
         "google": 2,
         "register-it": 1
       }
     },
     "Lazio": {
-      "n": 375,
+      "n": 378,
       "providers": {
-        "local-isp": 230,
+        "aruba": 237,
+        "independent": 37,
         "register-it": 32,
         "google": 11,
-        "aruba": 18,
-        "independent": 35,
-        "microsoft": 11,
+        "local-isp": 10,
+        "microsoft": 13,
         "seeweb": 8,
         "regional-public": 30
       }
     },
     "Liguria": {
-      "n": 233,
+      "n": 234,
       "providers": {
-        "independent": 61,
-        "google": 15,
-        "local-isp": 55,
+        "independent": 59,
+        "google": 16,
+        "aruba": 55,
+        "local-isp": 17,
         "register-it": 41,
         "regional-public": 14,
-        "microsoft": 30,
-        "aruba": 17
+        "microsoft": 32
       }
     },
     "Lombardia": {
-      "n": 1496,
+      "n": 1499,
       "providers": {
-        "independent": 392,
-        "local-isp": 216,
-        "microsoft": 517,
-        "register-it": 119,
+        "independent": 385,
+        "aruba": 231,
+        "microsoft": 522,
+        "register-it": 120,
         "regional-public": 51,
-        "google": 163,
-        "seeweb": 2,
-        "aruba": 36
+        "local-isp": 24,
+        "google": 164,
+        "seeweb": 2
       }
     },
     "Marche": {
-      "n": 226,
+      "n": 227,
       "providers": {
         "independent": 70,
         "google": 3,
         "microsoft": 21,
         "register-it": 23,
-        "local-isp": 92,
-        "aruba": 6,
+        "aruba": 96,
+        "local-isp": 3,
         "regional-public": 10,
         "zoho": 1
       }
@@ -1325,8 +1312,8 @@
     "Molise": {
       "n": 136,
       "providers": {
-        "aruba": 48,
-        "local-isp": 19,
+        "aruba": 65,
+        "local-isp": 2,
         "register-it": 23,
         "independent": 39,
         "microsoft": 2,
@@ -1335,67 +1322,67 @@
       }
     },
     "Piemonte": {
-      "n": 1177,
+      "n": 1179,
       "providers": {
-        "microsoft": 121,
-        "local-isp": 210,
+        "microsoft": 122,
+        "aruba": 256,
         "regional-public": 111,
-        "independent": 601,
-        "aruba": 62,
+        "independent": 600,
+        "local-isp": 17,
         "register-it": 42,
         "google": 27,
         "zoho": 1,
-        "aws": 1,
-        "unknown": 1
+        "unknown": 2,
+        "aws": 1
       }
     },
     "Puglia": {
       "n": 256,
       "providers": {
-        "local-isp": 83,
+        "aruba": 84,
         "register-it": 11,
-        "aruba": 13,
-        "independent": 80,
+        "local-isp": 12,
+        "independent": 73,
         "regional-public": 9,
-        "google": 31,
-        "microsoft": 29
+        "google": 34,
+        "microsoft": 33
       }
     },
     "Sardigna/Sardegna": {
       "n": 371,
       "providers": {
-        "independent": 21,
-        "regional-public": 51,
-        "microsoft": 29,
-        "local-isp": 245,
-        "aruba": 17,
-        "google": 7,
+        "independent": 18,
+        "microsoft": 39,
+        "aruba": 243,
+        "regional-public": 27,
+        "local-isp": 18,
+        "google": 25,
         "seeweb": 1
       }
     },
     "Sicilia": {
       "n": 391,
       "providers": {
-        "independent": 28,
+        "microsoft": 7,
         "regional-public": 12,
-        "local-isp": 263,
-        "aruba": 56,
+        "aruba": 313,
+        "independent": 24,
         "register-it": 7,
-        "google": 17,
-        "seeweb": 3,
-        "microsoft": 5
+        "google": 18,
+        "local-isp": 7,
+        "seeweb": 3
       }
     },
     "Toscana": {
       "n": 273,
       "providers": {
-        "google": 35,
-        "microsoft": 54,
-        "aruba": 10,
-        "independent": 77,
+        "google": 36,
+        "microsoft": 56,
+        "aruba": 70,
+        "regional-public": 62,
         "register-it": 5,
-        "regional-public": 17,
-        "local-isp": 74,
+        "independent": 29,
+        "local-isp": 14,
         "seeweb": 1
       }
     },
@@ -1405,10 +1392,10 @@
         "regional-public": 108,
         "microsoft": 24,
         "google": 123,
-        "local-isp": 7,
+        "aruba": 6,
         "independent": 16,
-        "register-it": 1,
-        "aruba": 1
+        "local-isp": 2,
+        "register-it": 1
       }
     },
     "Umbria": {
@@ -1417,11 +1404,11 @@
         "google": 6,
         "microsoft": 7,
         "register-it": 11,
-        "local-isp": 44,
+        "aruba": 37,
+        "local-isp": 8,
         "seeweb": 6,
         "regional-public": 3,
-        "independent": 14,
-        "aruba": 1
+        "independent": 14
       }
     },
     "Valle d'Aosta / Vallée d'Aoste": {
@@ -1436,13 +1423,13 @@
     "Veneto": {
       "n": 558,
       "providers": {
-        "microsoft": 199,
+        "microsoft": 207,
         "regional-public": 12,
-        "local-isp": 97,
-        "independent": 171,
-        "google": 34,
+        "aruba": 95,
+        "independent": 145,
+        "google": 52,
         "register-it": 28,
-        "aruba": 17
+        "local-isp": 19
       }
     }
   }
