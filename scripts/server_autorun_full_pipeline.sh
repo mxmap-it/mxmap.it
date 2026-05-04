@@ -30,8 +30,12 @@ export PATH="$HOME/.local/bin:$PATH"
 log "=== server_autorun started ==="
 
 # 1) Wait for any preprocess in flight (user-launched). This survives.
-# Use [u] trick to avoid pgrep matching its own command line in argv.
-while pgrep -af "[u]v run preprocess IT" > /dev/null 2>&1; do
+# Match the actual Python child process (.venv/bin/preprocess) not "uv run
+# preprocess IT" in argv — the latter would match any wrapper bash whose
+# script body contains that literal string (e.g. SSH heredoc launchers),
+# causing infinite waits when the SSH parent stays alive after disown.
+# The Python entrypoint name is stable and unique to the real worker.
+while pgrep -fa "/.venv/bin/preprocess( |$)" > /dev/null 2>&1; do
   log "waiting for preprocess to finish..."
   sleep 60
 done
