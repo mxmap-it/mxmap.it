@@ -83,6 +83,10 @@ if [[ "$SKIP_TOPO" != "1" ]]; then
   echo ""
   echo "[3d/14] Strip foreign cross-border features (Auvergne-Rhône-Alpes, Haute-Savoie, …)"
   uv run python3 scripts/strip_foreign_from_it_topo.py
+
+  echo ""
+  echo "[3e/14] Fix Sardegna 2016-reform legacy province polygons"
+  uv run python3 scripts/fix_sardegna_legacy_provinces.py || echo "  fix-sardegna failed; continuing"
 else
   echo ""
   echo "[3/14] Skipping topo fetch + cleanup (SKIP_TOPO=1)"
