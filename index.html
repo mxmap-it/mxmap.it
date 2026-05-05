@@ -1101,7 +1101,13 @@ function getFileLevelName(cc, level) {
   if (typeof fileEntry === 'object') return level;
   // String value: "at_region.topo.json" -> "region"
   const match = fileEntry.match(/_([^.]+)\.topo\.json$/);
-  return match ? match[1] : 'municipality';
+  let name = match ? match[1] : 'municipality';
+  // Italy uses "province" in filename but maps to logical "district" level
+  // (admin_level=6 = province in IT). Normalize so computeAggregation /
+  // getGroupKey see the canonical level name. Without this, IT province
+  // polygons fall back to cd.regions and lose all aggregation/coloring.
+  if (name === 'province') name = 'district';
+  return name;
 }
 
 const renderedFiles = new Map(); // cc -> {file, level}
