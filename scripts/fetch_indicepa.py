@@ -493,6 +493,31 @@ def extract_domain_fallbacks(row: dict[str, Any], primary_domain: str | None) ->
     return out
 
 
+def extract_pec_domain_fallback(row: dict[str, Any]) -> str | None:
+    """Extract the first PEC email domain, used ONLY as third-tier fallback
+    when both Sito_istituzionale AND non-PEC email are missing.
+
+    PEC infrastructure in Italy is dominated by ~5-6 providers (Aruba PEC,
+    InfoCert/legalmail, Poste, Namirial, etc.) so this won't reflect the
+    ente's "real" email infrastructure — but it ensures every IndicePA row
+    enters the pipeline with SOME classifiable domain. The seed marks
+    domain_source='pec_email_fallback' so reports can split these out.
+    """
+    for n in range(1, 6):
+        addr = (row.get(f"Mail{n}") or "").strip()
+        kind = (row.get(f"Tipo_Mail{n}") or "").strip().lower()
+        if kind != "pec":
+            continue
+        if not addr or "@" not in addr:
+            continue
+        host = addr.rsplit("@", 1)[1].strip().lower().rstrip(".")
+        if host.startswith("www."):
+            host = host[4:]
+        if host and HOSTNAME_RE.match(host):
+            return host
+    return None
+
+
 def is_territorial(name: str, codice_categoria: str) -> bool:
     """Return True only for territorial entities at the right level.
 
@@ -612,9 +637,16 @@ def transform(
     name = (row.get("Denominazione_ente") or "").strip()
     if not name:
         return None
-    if territorial_filter:
+    # Territorial-vs-non-territorial split: previously we DROPPED consorzi/
+    # associazioni/unioni/comunità-montane in L4/L5/L45/L6 because they
+    # don't have a clean province/comune polygon. V1.1 keeps them in the
+    # seed but reassigns the ID prefix to IT-CONS-* so the territorial
+    # topo never tries to match a polygon for them. They're still
+    # classified, still aggregated into citizen-friendly clusters.
+    is_terr_for_id = True
+    if territorial_filter and codice_categoria in LEVEL_MAP:
         if not is_territorial(name, codice_categoria):
-            return None
+            is_terr_for_id = False
     domain = extract_domain(row.get("Sito_istituzionale"))
     domain_source = "sito_istituzionale" if domain else None
 
@@ -631,28 +663,48 @@ def transform(
             domain_override_source = "manual_override"
 
     # Email-fallback at seed-time: if Sito_istituzionale is missing/invalid,
-    # derive the primary domain from the first non-PEC Mail{1..5} entry. This
-    # mirrors the recover_it_unknowns logic but applied BEFORE the seed drop,
-    # so ~1,000 enti that have only an email (no website) still enter the
-    # MX-classification pipeline. PEC domains are NEVER used (per ITALY.md).
+    # derive the primary domain from the first non-PEC Mail{1..5} entry.
+    # This mirrors the recover_it_unknowns logic but applied BEFORE the seed
+    # drop, so enti that have only an email (no website) still enter the
+    # MX-classification pipeline.
     if not domain:
         fb = extract_domain_fallbacks(row, primary_domain=None)
         if fb:
             domain = fb[0]
             domain_source = "email_non_pec_fallback"
 
+    # PEC-fallback (V1.2): when neither Sito_istituzionale nor non-PEC email
+    # provide a domain, fall back to the first PEC email's domain. Italian
+    # PEC is dominated by ~5-6 providers (Aruba PEC, legalmail, postecert,
+    # asmepec, etc.) so this doesn't represent the ente's office infra —
+    # but it ensures every IndicePA row enters the pipeline. Reports filter
+    # by domain_source to split PEC-derived classifications from genuine
+    # non-PEC ones.
+    if not domain:
+        pec = extract_pec_domain_fallback(row)
+        if pec:
+            domain = pec
+            domain_source = "pec_email_fallback"
+
     if not domain:
         return None
-    if codice_categoria in LEVEL_MAP:
+    # Build entity ID. Territorial L4/L5/L45/L6 entities get the standard
+    # IT-REG/PRO/CMM/COM prefix; consorzi/unioni/associazioni in those
+    # category codes (NOT real territorial entities) get IT-CONS-{ipa} so
+    # the frontend never tries to match them to a province/comune polygon.
+    # All other categories (L17, L33, etc.) get IT-{cat}-{ipa}.
+    if codice_categoria in LEVEL_MAP and is_terr_for_id:
         prefix, _label = LEVEL_MAP[codice_categoria]
         entity_id = build_id(prefix, row.get("Codice_ISTAT"), row.get("Codice_comune_ISTAT"))
     else:
-        # Non-territorial categories: ID = "IT-{categoria}-{codice_ipa}".
-        # Codice_IPA is unique per ente and stable.
         codice_ipa_clean = (row.get("Codice_IPA") or "").strip()
         if not codice_ipa_clean:
             return None
-        entity_id = f"IT-{codice_categoria}-{codice_ipa_clean}"
+        if codice_categoria in LEVEL_MAP and not is_terr_for_id:
+            # Consorzio/unione/associazione miscategorized as territorial in IPA
+            entity_id = f"IT-CONS-{codice_ipa_clean}"
+        else:
+            entity_id = f"IT-{codice_categoria}-{codice_ipa_clean}"
     if entity_id is None:
         return None
 
