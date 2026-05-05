@@ -212,11 +212,17 @@ def istat_to_region(codice_comune_istat: str | None) -> str | None:
 # join them to a province polygon. Each value MUST match the exact `name`
 # property in topo/it_province.topo.json verbatim.
 ISTAT3_TO_TOPO_NAME_MANUAL: dict[str, str] = {
+    # Valle d'Aosta — single-province region. OSM has it at admin_level=4
+    # only, but scripts/fetch_extra_it_provinces.py copies the relation
+    # 35394 polygon into it_province.topo.json with this name so the
+    # province choropleth has full coverage.
+    "007": "Valle d'Aosta / Vallée d'Aoste",
     # Friuli — bilingual Italian/Friulian/Slovene names
     "030": "Udine / Udin / Videm",
     "031": "Gorizia / Gurize / Gorica",
     # Sardegna current provinces (2016 reform reorg)
     "091": "Nuoro",
+    "092": "Sud Sardegna",  # 2016 merger — relation 8829893 added by extra-provinces
     "095": "Aristanis/Oristano",
     "111": "Casteddu/Cagliari",
     # Sardegna historical / pre-2016 provinces — IndicePA still uses these
@@ -225,8 +231,6 @@ ISTAT3_TO_TOPO_NAME_MANUAL: dict[str, str] = {
     "105": "Ogliastra",
     "106": "Medio Campidano",
     "107": "Sulcis Iglesiente",
-    # 092 (Sud Sardegna) has no current province polygon in OSM topo —
-    # those comuni keep district=None (cannot join to a polygon).
 }
 
 # Lazily-built ISTAT 3-digit province code -> OSM province name (matching
@@ -493,31 +497,6 @@ def extract_domain_fallbacks(row: dict[str, Any], primary_domain: str | None) ->
     return out
 
 
-def extract_pec_domain_fallback(row: dict[str, Any]) -> str | None:
-    """Extract the first PEC email domain, used ONLY as third-tier fallback
-    when both Sito_istituzionale AND non-PEC email are missing.
-
-    PEC infrastructure in Italy is dominated by ~5-6 providers (Aruba PEC,
-    InfoCert/legalmail, Poste, Namirial, etc.) so this won't reflect the
-    ente's "real" email infrastructure — but it ensures every IndicePA row
-    enters the pipeline with SOME classifiable domain. The seed marks
-    domain_source='pec_email_fallback' so reports can split these out.
-    """
-    for n in range(1, 6):
-        addr = (row.get(f"Mail{n}") or "").strip()
-        kind = (row.get(f"Tipo_Mail{n}") or "").strip().lower()
-        if kind != "pec":
-            continue
-        if not addr or "@" not in addr:
-            continue
-        host = addr.rsplit("@", 1)[1].strip().lower().rstrip(".")
-        if host.startswith("www."):
-            host = host[4:]
-        if host and HOSTNAME_RE.match(host):
-            return host
-    return None
-
-
 def is_territorial(name: str, codice_categoria: str) -> bool:
     """Return True only for territorial entities at the right level.
 
@@ -673,18 +652,16 @@ def transform(
             domain = fb[0]
             domain_source = "email_non_pec_fallback"
 
-    # PEC-fallback (V1.2): when neither Sito_istituzionale nor non-PEC email
-    # provide a domain, fall back to the first PEC email's domain. Italian
-    # PEC is dominated by ~5-6 providers (Aruba PEC, legalmail, postecert,
-    # asmepec, etc.) so this doesn't represent the ente's office infra —
-    # but it ensures every IndicePA row enters the pipeline. Reports filter
-    # by domain_source to split PEC-derived classifications from genuine
-    # non-PEC ones.
-    if not domain:
-        pec = extract_pec_domain_fallback(row)
-        if pec:
-            domain = pec
-            domain_source = "pec_email_fallback"
+    # NOTE: a previous attempt added a "pec_email_fallback" third tier here
+    # (using the first PEC email host when neither Sito_istituzionale nor
+    # non-PEC email gave a domain). It was REVERTED because PEC providers
+    # don't reflect the ente's real email infrastructure — Italian PEC is
+    # dominated by ~5 providers (Aruba PEC, legalmail, postecert, asmepec).
+    # The chosen strategy for the ~620 PEC-only enti is enrichment: a
+    # separate scripts/enrich_pec_only.py runs before fetch_indicepa to
+    # discover the real website / non-PEC email via Wikidata P856, search
+    # engines, and LLM prompting, and writes IT_ENRICHMENT_OVERRIDES which
+    # are loaded here just like IT_MANUAL_DOMAIN_OVERRIDES.
 
     if not domain:
         return None
