@@ -41,13 +41,12 @@ TOPO_PROVINCE = ROOT / "topo" / "it_province.topo.json"
 # OSM relation IDs verified via Wikidata P402 / Overpass name search.
 EXTRA_PROVINCES = [
     (42004,    "Valle d'Aosta / Vallée d'Aoste"),  # Wikidata Q1280, P402=42004
-    (17135059, "Sud Sardegna"),                    # Wikidata Q23498165, P402=17135059
-    # Sardinian legacy provinces (pre-2016 reform). Their names get
-    # rewritten by scripts/fix_sardegna_legacy_provinces.py to map onto
-    # the modern province aggregations (Tàttari/Sassari + Nuoro), giving
-    # full territorial coverage in the Province choropleth.
-    (19166661, "Gallura Nord-Est Sardegna"),       # ex-Olbia-Tempio (now part of Sassari, ISTAT 090)
-    (19621461, "Ogliastra"),                        # ex-Ogliastra    (now part of Nuoro,   ISTAT 091)
+    # NOTE: Sud Sardegna (Q23498165, claimed P402=17135059) has no boundary
+    # relation in OSM — verified via name search 2026-05-05. Coverage is
+    # handled instead by re-fetching the 2 pre-2016 provinces below and
+    # renaming them to "Sud Sardegna" via fix_sardegna_legacy_provinces.py.
+    (19166661, "Gallura Nord-Est Sardegna"),       # ex-Olbia-Tempio (rename->Tàttari/Sassari)
+    (19621461, "Ogliastra"),                        # ex-Ogliastra    (rename->Nuoro)
 ]
 
 OVERPASS_MIRRORS = [
@@ -248,7 +247,11 @@ def main() -> int:
         except RuntimeError as e:
             print(f"  ERROR: {e}")
             continue
-        feat = overpass_to_geojson(data["elements"], rel_id, name)
+        try:
+            feat = overpass_to_geojson(data["elements"], rel_id, name)
+        except RuntimeError as e:
+            print(f"  PARSE ERROR: {e}")
+            continue
         print(f"  geometry: {feat['geometry']['type']} "
               f"with {sum(len(p) for p in feat['geometry']['coordinates'])} ring points")
         topojson_inject_geometry(topo, feat)
