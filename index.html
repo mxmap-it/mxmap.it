@@ -210,7 +210,7 @@
   <div class="header-left">
     <h1 class="brand">MXmap.it</h1>
     <span class="separator">|</span>
-    <span class="tagline">Sovranità email della Pubblica Amministrazione italiana</span>
+    <span class="tagline">Sovranità Digitale della Posta Elettronica nella Pubblica Amministrazione italiana</span>
   </div>
   <div class="header-right">
     <span class="updated" id="generated"></span>
@@ -219,7 +219,7 @@
   </div>
 </header>
 <section id="info-bar" class="collapsed" aria-label="About this project">
-  <h2 class="info-title">MXmap.it — Sovranità email della PA italiana</h2>
+  <h2 class="info-title">MXmap.it — Sovranità Digitale della Posta Elettronica nella PA italiana</h2>
   <div class="info-grid">
     <div class="info-card">
       <h3>Cos'è questa mappa?</h3>
@@ -1496,39 +1496,205 @@ function transformMuni(m) {
 
 function buildStatsFromRegions() { renderStats(); }
 
+// mxmap.it Italy-only statistics: by cluster + by IPA category, sourced
+// from data/reports/it_by_cluster.json (built by report_it_by_cluster.py).
+// Lazy-loaded once; cached for re-renders.
+let itClusterReport = null;
+let itClusterFetchPromise = null;
+
+function loadItClusterReport() {
+  if (itClusterReport) return Promise.resolve(itClusterReport);
+  if (itClusterFetchPromise) return itClusterFetchPromise;
+  itClusterFetchPromise = fetch('data/reports/it_by_cluster.json')
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { itClusterReport = d; return d; })
+    .catch(() => null);
+  return itClusterFetchPromise;
+}
+
+// Provider name normalization (raw -> citizen-friendly display)
+const STATS_PROVIDER_DISPLAY = {
+  'microsoft': 'Microsoft 365', 'google': 'Google Workspace', 'aws': 'AWS',
+  'aruba': 'Provider Italiano', 'register-it': 'Provider Italiano',
+  'seeweb': 'Provider Italiano', 'infocert': 'Provider Italiano',
+  'namirial': 'Provider Italiano', 'local-isp': 'Provider Italiano',
+  'pa-contractor-private': 'Provider Italiano',
+  'regional-public': 'Cloud Italiano',
+  'independent': 'Infrastruttura autonoma',
+  'provincial-shared': 'Mail provinciale condivisa',
+  'zoho': 'Zoho', 'yandex': 'Yandex',
+  'unknown': 'Sconosciuto',
+};
+
+const STATS_USA_PROVIDERS = new Set(['Microsoft 365', 'Google Workspace', 'AWS']);
+
+function statsRollupProviders(rawProviders) {
+  // Returns {dispProv: count} aggregated from raw provider keys.
+  var out = {};
+  for (var p in rawProviders) {
+    var d = STATS_PROVIDER_DISPLAY[p] || p;
+    out[d] = (out[d] || 0) + rawProviders[p];
+  }
+  return out;
+}
+
 function renderStats() {
   var content = document.getElementById('stats-content');
   if (!content) return;
-  var usePop = statsMode === 'pop';
-
-  // Gather per-country stats from regionData or dnsData
-  var perCC = {};
-  var src = regionData ? regionData.countries : {};
-  if (summaryLoaded && dnsData) {
-    // Compute from full municipality data
-    for (var i = 0; i < dnsData.municipalities.length; i++) {
-      var m = dnsData.municipalities[i];
-      if (!activeCountries.has(m.country)) continue;
-      var cc = m.country;
-      if (!perCC[cc]) perCC[cc] = { total: 0, pop: 0, providers: {}, popProviders: {} };
-      var d = perCC[cc];
-      d.total++;
-      var pop = m.population || 0;
-      d.pop += pop;
-      var p = m.classification.provider;
-      d.providers[p] = (d.providers[p] || 0) + 1;
-      d.popProviders[p] = (d.popProviders[p] || 0) + pop;
-    }
-  } else {
-    for (var ci = 0; ci < COUNTRY_LIST.length; ci++) {
-      var cc = COUNTRY_LIST[ci];
-      if (!activeCountries.has(cc)) continue;
-      var cd = src[cc];
-      if (!cd) continue;
-      perCC[cc] = { total: cd.total, pop: cd.popTotal || 0, providers: cd.providers, popProviders: cd.popProviders || {} };
-    }
+  // Always re-render skeleton synchronously so the "loading" state is visible
+  // immediately when user expands the panel; cluster JSON arrives async.
+  if (!itClusterReport) {
+    content.innerHTML = '<div style="padding:14px;color:#888;font-size:13px">' +
+      'Caricamento statistiche…</div>';
+    loadItClusterReport().then(d => { if (d) renderStats(); });
+    return;
   }
 
+  function fmt(n) {
+    if (n >= 1000000) return (n/1000000).toFixed(1)+'M';
+    if (n >= 10000)   return Math.round(n/1000)+'K';
+    if (n >= 1000)    return (n/1000).toFixed(1)+'K';
+    return String(n);
+  }
+  function pct(num, den) { return den > 0 ? Math.round(num/den*1000)/10 : 0; }
+
+  function providerBar(rawProviders, total, maxBars) {
+    maxBars = maxBars || 5;
+    var disp = statsRollupProviders(rawProviders);
+    var sorted = Object.entries(disp).sort(function(a,b){return b[1]-a[1]});
+    var html = '';
+    for (var i = 0; i < Math.min(sorted.length, maxBars); i++) {
+      var prov = sorted[i][0], v = sorted[i][1];
+      var p = pct(v, total);
+      var color = COLORS[prov] || '#888';
+      html += '<div style="display:flex;align-items:center;gap:6px;margin:1.5px 0;font-size:11px">' +
+        '<span style="width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#444">' + prov + '</span>' +
+        '<div class="stats-bar-bg"><div class="stats-bar" style="width:'+p+'%;background:'+color+'"></div></div>' +
+        '<span style="width:62px;text-align:right;color:#666;font-variant-numeric:tabular-nums">' + fmt(v) + ' (' + p.toFixed(1) + '%)</span></div>';
+    }
+    return html;
+  }
+
+  function usaItBars(rawProviders, total) {
+    var disp = statsRollupProviders(rawProviders);
+    var usa = (disp['Microsoft 365']||0) + (disp['Google Workspace']||0) + (disp['AWS']||0);
+    var cloudIt = disp['Cloud Italiano']||0;
+    var providerIt = disp['Provider Italiano']||0;
+    var indep = disp['Infrastruttura autonoma']||0;
+    var unknown = disp['Sconosciuto']||0;
+    function row(label, v, color) {
+      var p = pct(v, total);
+      return '<div style="display:flex;align-items:center;gap:6px;margin:1.5px 0;font-size:11px">' +
+        '<span style="width:120px;color:#444">' + label + '</span>' +
+        '<div class="stats-bar-bg"><div class="stats-bar" style="width:'+p+'%;background:'+color+'"></div></div>' +
+        '<span style="width:62px;text-align:right;color:#666;font-variant-numeric:tabular-nums">' + fmt(v) + ' (' + p.toFixed(1) + '%)</span></div>';
+    }
+    return row('USA (CLOUD Act)', usa, '#D42E2E') +
+           row('Cloud Italiano',  cloudIt, '#009246') +
+           row('Provider Italiano', providerIt, '#2E7D32') +
+           row('Infrastruttura aut.', indep, '#558B2F') +
+           (unknown > 0 ? row('Sconosciuto', unknown, '#bfbfbf') : '');
+  }
+
+  var rep = itClusterReport;
+  var aggTotal = rep.total || 0;
+  var aggProv  = rep.aggregate ? rep.aggregate.providers : {};
+
+  var html = '';
+
+  // === Panoramica ===
+  html += '<div style="font-size:12px;color:#777;text-transform:uppercase;letter-spacing:0.4px;font-weight:600;margin:4px 0 6px">' +
+          'Panoramica (' + fmt(aggTotal) + ' enti pubblici analizzati)</div>';
+  html += usaItBars(aggProv, aggTotal);
+
+  // === Per cluster (citizen-friendly) ===
+  html += '<div style="font-size:12px;color:#777;text-transform:uppercase;letter-spacing:0.4px;font-weight:600;margin:14px 0 4px">' +
+          'Per cluster cittadino-friendly</div>';
+  var clusters = Object.entries(rep.clusters || {})
+    .map(([k,v]) => Object.assign({key: k}, v))
+    .sort((a,b) => (b.n||0) - (a.n||0));
+  for (var ic = 0; ic < clusters.length; ic++) {
+    var cl = clusters[ic];
+    if (!cl.n || cl.n === 0) continue;
+    var label = cl.label_it || cl.key;
+    var disp = statsRollupProviders(cl.providers || {});
+    var domEntries = Object.entries(disp).sort((a,b) => b[1]-a[1]);
+    var dominant = domEntries.length ? domEntries[0][0] : '?';
+    var domPct = domEntries.length ? pct(domEntries[0][1], cl.n) : 0;
+    var usaPct = cl.usa_share_pct != null ? cl.usa_share_pct.toFixed(1) : '?';
+    html += '<details style="margin:3px 0;border:1px solid #eee;border-radius:4px;background:#fafafa">';
+    html += '<summary style="cursor:pointer;font-size:12px;font-weight:600;padding:5px 8px;list-style:none">' +
+            '<span style="color:#444">' + label + '</span>' +
+            ' <span style="color:#888;font-weight:400">(' + fmt(cl.n) + ' enti)</span>' +
+            ' <span style="float:right;color:#666;font-weight:400">USA ' + usaPct + '% — dom. <span style="color:' + (COLORS[dominant]||'#888') + ';font-weight:600">' + dominant + '</span> ' + domPct + '%</span>' +
+            '</summary>';
+    html += '<div style="padding:4px 8px 8px 8px">' + providerBar(cl.providers || {}, cl.n) + '</div>';
+    html += '</details>';
+  }
+
+  // === Per categoria IPA principale ===
+  // Aggregate across all clusters' .categories[catCode].
+  var byCat = {};
+  for (var ck in (rep.clusters || {})) {
+    var c = rep.clusters[ck];
+    var cats = c.categories || {};
+    for (var catCode in cats) {
+      var ci = cats[catCode];
+      if (!byCat[catCode]) byCat[catCode] = { n: 0, providers: {} };
+      byCat[catCode].n += ci.n || 0;
+      for (var p in (ci.providers || {})) {
+        byCat[catCode].providers[p] = (byCat[catCode].providers[p] || 0) + ci.providers[p];
+      }
+    }
+  }
+  var topCats = Object.entries(byCat).sort((a,b) => b[1].n - a[1].n).slice(0, 12);
+  // Friendly labels for top IPA category codes
+  var CATLABEL = {
+    "L4":"Regioni / Province autonome", "L5":"Province", "L45":"Città Metropolitane",
+    "L6":"Comuni", "L33":"Scuole statali", "L17":"Università pubbliche",
+    "L43":"AFAM (alta formaz. artistica)", "L7":"ASL", "L8":"Aziende ospedaliere",
+    "L22":"IRCCS", "C12":"Istituti zooprofilattici", "L37":"Gestori pubblici servizi",
+    "SA":"Stazioni appaltanti", "C14":"Ordini professionali", "L18":"Unioni di Comuni",
+    "L36":"Comunità montane / consorzi BIM", "L1":"Beni Civici (Alto Adige)",
+    "L34":"IPAB / ASP welfare", "L47":"Commissari straordinari",
+    "C1":"Ministeri", "C2":"Avvocatura / Org. cost.", "C5":"Autorità indipendenti",
+    "C10":"Agenzie fiscali", "C11":"Forze polizia", "L46":"Aziende dello Stato auton.",
+    "L12":"Consorzi tra Amm. Locali", "L24":"Altri enti locali", "L31":"Teatri",
+    "L16":"Fondazioni Lirico-Sinfoniche", "L11":"Autorità Sistema Portuale",
+    "S01":"Società consolidate", "SAG":"Stazioni appaltanti aggregatrici",
+  };
+  html += '<div style="font-size:12px;color:#777;text-transform:uppercase;letter-spacing:0.4px;font-weight:600;margin:14px 0 4px">' +
+          'Top categorie IPA (per dimensione)</div>';
+  for (var ti = 0; ti < topCats.length; ti++) {
+    var [code, info] = topCats[ti];
+    var lbl = CATLABEL[code] || code;
+    var disp2 = statsRollupProviders(info.providers);
+    var dom2 = Object.entries(disp2).sort((a,b) => b[1]-a[1]);
+    var dominant2 = dom2.length ? dom2[0][0] : '?';
+    var domPct2 = dom2.length ? pct(dom2[0][1], info.n) : 0;
+    html += '<details style="margin:3px 0;border:1px solid #eee;border-radius:4px;background:#fafafa">';
+    html += '<summary style="cursor:pointer;font-size:11px;padding:5px 8px;list-style:none">' +
+            '<span style="font-family:ui-monospace,Menlo,monospace;color:#999">' + code + '</span> ' +
+            '<span style="color:#444;font-weight:600">' + lbl + '</span>' +
+            ' <span style="color:#888">(' + fmt(info.n) + ')</span>' +
+            ' <span style="float:right;color:#666">' +
+              '<span style="color:' + (COLORS[dominant2]||'#888') + ';font-weight:600">' + dominant2 + '</span> ' + domPct2 + '%</span>' +
+            '</summary>';
+    html += '<div style="padding:4px 8px 8px 8px">' + providerBar(info.providers, info.n) + '</div>';
+    html += '</details>';
+  }
+
+  html += '<div style="margin-top:8px;font-size:10px;color:#aaa;font-style:italic">' +
+          'Fonte: data/reports/it_by_cluster.json — generato da report_it_by_cluster.py</div>';
+
+  content.innerHTML = html;
+}
+
+function _renderStats_unused_legacy() {
+  var content = document.getElementById('stats-content');
+  if (!content) return;
+  var usePop = false;
+  var perCC = {};
   function val(countV, popV) { return usePop ? (popV || 0) : countV; }
   function fmt(n) { return n >= 1000000 ? (n/1000000).toFixed(1)+'M' : n >= 1000 ? (n/1000).toFixed(0)+'K' : String(n); }
 
