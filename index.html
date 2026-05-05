@@ -242,6 +242,7 @@
       <button class="level-btn active" data-level="region">Regioni</button>
       <button class="level-btn" data-level="district">Province</button>
       <button class="level-btn" data-level="municipality">Comuni</button>
+      <button class="level-btn" data-level="istruzione" title="Choropleth comuni colorato per provider email dominante delle scuole statali (~8.000 scuole IPA L33)">Scuole</button>
     </div>
   </div>
 </main>
@@ -697,11 +698,36 @@ function getGroupKey(m, fileLevelName) {
 }
 
 function computeAggregation(cc, fileLevelName) {
-  // Fast path: use pre-computed region/district data before summary is loaded
-  if (!summaryLoaded && regionData) {
+  // Fast path: use pre-computed region/district/istruzione data
+  if ((!summaryLoaded || fileLevelName === 'istruzione') && regionData) {
     const cd = regionData.countries[cc];
     if (!cd) return {};
     const result = {};
+
+    // ISTRUZIONE branch: keyed by topo feature id "relation/<osm>" instead
+    // of region/district name. Built by aggregate_istruzione_per_comune.py.
+    if (fileLevelName === 'istruzione' && cd.istruzione_by_osm) {
+      for (const featId of Object.keys(cd.istruzione_by_osm)) {
+        const r = cd.istruzione_by_osm[featId];
+        const sorted = Object.entries(r.providers || {}).sort((a,b) => b[1]-a[1]);
+        result[featId] = {
+          name: r.name || featId,
+          municipalities: [],
+          providers: r.providers || {},
+          popProviders: r.popProviders || r.providers || {},
+          dominant: r.dominant,
+          dominance: r.dominance,
+          second: sorted.length > 1 ? sorted[1][0] : null,
+          blendedColor: r.blendedColor,
+          popTotal: r.school_count || 0,
+          count: r.school_count || 0,
+          hasGateway: false,
+          isIstruzione: true,
+        };
+      }
+      return result;
+    }
+
     // Pick which slice of pre-computed data to use, based on the level
     // we're rendering. Districts may be absent for countries that didn't
     // emit a district-level aggregation -> fall back to regions.
@@ -759,6 +785,9 @@ function computeAggregation(cc, fileLevelName) {
 }
 
 function matchGroupFeature(feature, groups) {
+  // Istruzione layer keys groups by topo feature id ("relation/<osm>"),
+  // not by name. Match the feature's own id directly.
+  if (feature.id && groups[feature.id]) return groups[feature.id];
   const props = feature.properties || {};
   const names = [props.name || '', props.name_en || '', props['name:en'] || '', props.region || ''];
   for (const name of names) {
@@ -1107,6 +1136,11 @@ function getFileLevelName(cc, level) {
   // getGroupKey see the canonical level name. Without this, IT province
   // polygons fall back to cd.regions and lose all aggregation/coloring.
   if (name === 'province') name = 'district';
+  // 'istruzione' shares the comuni topo file (it_municipality.topo.json)
+  // but we want the rendering pipeline to know it's a different data layer.
+  // When the user is at currentLevel='istruzione', getFileLevelName must
+  // return 'istruzione' even though the filename says 'municipality'.
+  if (level === 'istruzione') name = 'istruzione';
   return name;
 }
 
@@ -1706,6 +1740,17 @@ async function loadData() {
   regionData = await regionsRes.json();
   manifest = await manifestRes.json();
 
+  // Inject IT 'istruzione' synthetic level: same topo as comuni, but the
+  // choropleth is data-driven by cd.istruzione_by_osm (built by
+  // scripts/aggregate_istruzione_per_comune.py). Done at runtime so we
+  // don't need to mutate the on-disk manifest.json.
+  if (manifest && manifest.IT && manifest.IT.files && !manifest.IT.files.istruzione) {
+    manifest.IT.files.istruzione = manifest.IT.files.municipality;
+    if (Array.isArray(manifest.IT.levels) && !manifest.IT.levels.includes('istruzione')) {
+      manifest.IT.levels.push('istruzione');
+    }
+  }
+
   // Show date
   if (regionData.generated) {
     const date = new Date(regionData.generated);
@@ -1739,12 +1784,27 @@ async function loadData() {
     const counts = {};
     let total = 0, gwCount = 0;
     const levelNoun = (
-      currentLevel === 'region'   ? 'regioni' :
-      currentLevel === 'district' ? 'province' :
-                                    'enti'
+      currentLevel === 'region'     ? 'regioni' :
+      currentLevel === 'district'   ? 'province' :
+      currentLevel === 'istruzione' ? 'comuni con scuole' :
+                                      'enti'
     );
 
-    if (currentLevel !== 'municipality' && regionData) {
+    // Istruzione: count comuni-with-schools by their dominant school provider
+    if (currentLevel === 'istruzione' && regionData) {
+      for (const cc of COUNTRY_LIST) {
+        if (!activeCountries.has(cc)) continue;
+        const cd = regionData.countries[cc];
+        if (!cd || !cd.istruzione_by_osm) continue;
+        for (const featId of Object.keys(cd.istruzione_by_osm)) {
+          const r = cd.istruzione_by_osm[featId];
+          const dom = r.dominant;
+          if (!dom) continue;
+          counts[dom] = (counts[dom] || 0) + 1;
+          total++;
+        }
+      }
+    } else if (currentLevel !== 'municipality' && regionData) {
       // Aggregate-level legend: count groups (regions or provinces) by dominant provider.
       for (const cc of COUNTRY_LIST) {
         if (!activeCountries.has(cc)) continue;

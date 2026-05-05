@@ -253,6 +253,22 @@ def build_region_data(munis: dict, generated: str) -> dict:
             else:
                 rd["blendedColor"] = blend_provider_colors(rd["providers"], rd["count"])
 
+    # IT-specific extras: schools-per-comune choropleth data layer.
+    # Produced by scripts/aggregate_istruzione_per_comune.py — runs before
+    # build_frontend in the chain. If the file isn't present (script wasn't
+    # run yet) we silently skip; the frontend falls back to default views.
+    it_istruzione = ROOT / "data" / "it_istruzione_by_comune.json"
+    if "IT" in countries and it_istruzione.exists():
+        try:
+            ist = json.loads(it_istruzione.read_text(encoding="utf-8"))
+            countries["IT"]["istruzione_by_osm"] = ist.get("by_osm", {})
+            countries["IT"]["istruzione_total_schools"] = ist.get("total_schools", 0)
+            countries["IT"]["istruzione_national"] = ist.get("national_totals", {})
+            print(f"  IT istruzione: {ist.get('total_schools')} schools across "
+                  f"{ist.get('comuni_with_schools')} comuni")
+        except Exception as e:
+            print(f"  WARN: cannot load it_istruzione_by_comune.json: {e!r}")
+
     return {"generated": generated, "total": len(munis), "countries": countries}
 
 

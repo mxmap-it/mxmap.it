@@ -58,6 +58,8 @@ run_step "finalize_it_unknowns"         uv run python3 scripts/finalize_it_unkno
 run_step "report_it_per_province"       uv run python3 scripts/report_it_per_province.py
 run_step "report_it_by_category"        uv run python3 scripts/report_it_by_category.py
 run_step "report_it_by_cluster"         uv run python3 scripts/report_it_by_cluster.py
+# IT-specific data layers (consumed by build_frontend below):
+run_step "aggregate_istruzione"         uv run python3 scripts/aggregate_istruzione_per_comune.py
 run_step "build_frontend"               uv run python3 scripts/build_frontend.py
 
 log "=== chain complete; committing artifacts ==="
