@@ -38,10 +38,16 @@ ROOT = Path(__file__).resolve().parent.parent
 TOPO_PROVINCE = ROOT / "topo" / "it_province.topo.json"
 
 # Each entry: (osm_relation_id, name to write into properties.name).
-# OSM relation IDs verified via Wikidata P402 (2026-05).
+# OSM relation IDs verified via Wikidata P402 / Overpass name search.
 EXTRA_PROVINCES = [
     (42004,    "Valle d'Aosta / Vallée d'Aoste"),  # Wikidata Q1280, P402=42004
     (17135059, "Sud Sardegna"),                    # Wikidata Q23498165, P402=17135059
+    # Sardinian legacy provinces (pre-2016 reform). Their names get
+    # rewritten by scripts/fix_sardegna_legacy_provinces.py to map onto
+    # the modern province aggregations (Tàttari/Sassari + Nuoro), giving
+    # full territorial coverage in the Province choropleth.
+    (19166661, "Gallura Nord-Est Sardegna"),       # ex-Olbia-Tempio (now part of Sassari, ISTAT 090)
+    (19621461, "Ogliastra"),                        # ex-Ogliastra    (now part of Nuoro,   ISTAT 091)
 ]
 
 OVERPASS_MIRRORS = [
