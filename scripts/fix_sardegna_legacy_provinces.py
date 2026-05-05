@@ -38,15 +38,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 TOPO = ROOT / "topo" / "it_province.topo.json"
 
-DROP_NAMES = {
-    "Gallura Nord-Est Sardegna",  # now part of Sassari (090)
-    "Ogliastra",                   # now part of Nuoro (091)
-}
+DROP_NAMES: set[str] = set()  # nothing dropped — every territory needs coverage
 
-RENAME_TO_SUD_SARDEGNA = {
-    "Medio Campidano",      # 092 part 1
-    "Sulcis Iglesiente",    # 092 part 2
+# Rename map: legacy name -> modern province name. Multiple legacy polygons
+# can map to the same modern name; matchGroupFeature() takes the first match
+# but all with that name get the same group's color, so the territories
+# merge visually into one continuous district.
+RENAME_MAP = {
+    "Gallura Nord-Est Sardegna": "Tàttari/Sassari",  # 2016: Olbia-Tempio merged into Sassari (ISTAT 090)
+    "Ogliastra":                  "Nuoro",            # 2016: Ogliastra merged into Nuoro (ISTAT 091)
+    "Medio Campidano":            "Sud Sardegna",     # 2016: Medio Campidano merged into Sud Sardegna (092)
+    "Sulcis Iglesiente":          "Sud Sardegna",     # 2016: Carbonia-Iglesias merged into Sud Sardegna (092)
 }
+# Back-compat: keep old name list for messaging
+RENAME_TO_SUD_SARDEGNA = {k for k, v in RENAME_MAP.items() if v == "Sud Sardegna"}
 
 
 def main() -> int:
@@ -59,19 +64,23 @@ def main() -> int:
     geoms = topo["objects"][obj_name].setdefault("geometries", [])
 
     kept = []
-    dropped = []
-    renamed = []
+    dropped: list[str] = []
+    renamed: list[tuple[str, str]] = []
     for g in geoms:
         props = g.get("properties") or {}
         name = (props.get("name") or "").strip()
         if name in DROP_NAMES:
             dropped.append(name)
             continue
-        if name in RENAME_TO_SUD_SARDEGNA:
-            props["name"] = "Sud Sardegna"
-            props["original_name"] = name  # keep for audit
+        if name in RENAME_MAP:
+            new_name = RENAME_MAP[name]
+            # If already renamed in a previous run (idempotency), skip messaging
+            if (props.get("original_name") or name) != name or props.get("name") != new_name:
+                pass
+            props["name"] = new_name
+            props["original_name"] = name  # for audit
             g["properties"] = props
-            renamed.append(name)
+            renamed.append((name, new_name))
         kept.append(g)
 
     topo["objects"][obj_name]["geometries"] = kept
@@ -79,8 +88,8 @@ def main() -> int:
                     encoding="utf-8")
 
     print(f"Province topo: dropped {len(dropped)}, renamed {len(renamed)}")
-    for n in dropped:  print(f"  drop:   {n}")
-    for n in renamed:  print(f"  rename: {n} -> Sud Sardegna")
+    for n in dropped:    print(f"  drop:   {n}")
+    for old, new in renamed: print(f"  rename: {old} -> {new}")
     print(f"Total province features: {len(kept)}")
     return 0
 
