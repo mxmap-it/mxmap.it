@@ -1269,34 +1269,34 @@ async function renderCountryLayer(cc) {
           // when the user clicks an entity in the north of Italy / near the
           // top edge of the visible map area). Content inside the popup
           // becomes scrollable instead.
-          // 55vh cap = popup never larger than ~half-viewport, so autoPan
-          // can always fit it. Also forces internal scroll. innerHeight is
-          // captured at bind-time but the popup content is regenerated on
-          // each open(), so we recompute via a getter for resize-safety.
-          get maxHeight() { return Math.max(220, Math.floor(window.innerHeight * 0.55)); },
+          // 60vh cap = popup never larger than ~60% of viewport, so autoPan
+          // can always fit it without clipping. Internal content scrolls.
+          // Resize-safe via getter (innerHeight re-evaluated on each open).
+          get maxHeight() { return Math.max(220, Math.floor(window.innerHeight * 0.6)); },
           autoPan: true,
           autoPanPaddingTopLeft: [20, 60],
           autoPanPaddingBottomRight: [20, 20],
-          // keepInView ON: if user pans the map after opening, the popup
-          // stays attached + shifts to remain visible (avoids the dynamic
-          // re-position the user observed).
-          keepInView: true,
+          // keepInView MUST be false: combined with autoPan it creates an
+          // infinite loop on popup open (autoPan moves the map -> 'move'
+          // event -> keepInView repositions popup -> autoPan moves again
+          // -> visible flicker). autoPan-once-on-open is sufficient.
+          keepInView: false,
         });
       } else if (m) {
         layer.bindPopup(function () { return buildPopup(m); }, {
           maxWidth: 400,
-          // 55vh cap = popup never larger than ~half-viewport, so autoPan
-          // can always fit it. Also forces internal scroll. innerHeight is
-          // captured at bind-time but the popup content is regenerated on
-          // each open(), so we recompute via a getter for resize-safety.
-          get maxHeight() { return Math.max(220, Math.floor(window.innerHeight * 0.55)); },
+          // 60vh cap = popup never larger than ~60% of viewport, so autoPan
+          // can always fit it without clipping. Internal content scrolls.
+          // Resize-safe via getter (innerHeight re-evaluated on each open).
+          get maxHeight() { return Math.max(220, Math.floor(window.innerHeight * 0.6)); },
           autoPan: true,
           autoPanPaddingTopLeft: [20, 60],
           autoPanPaddingBottomRight: [20, 20],
-          // keepInView ON: if user pans the map after opening, the popup
-          // stays attached + shifts to remain visible (avoids the dynamic
-          // re-position the user observed).
-          keepInView: true,
+          // keepInView MUST be false: combined with autoPan it creates an
+          // infinite loop on popup open (autoPan moves the map -> 'move'
+          // event -> keepInView repositions popup -> autoPan moves again
+          // -> visible flicker). autoPan-once-on-open is sufficient.
+          keepInView: false,
         });
       }
       feature._country = cc;
