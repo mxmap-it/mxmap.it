@@ -1463,8 +1463,12 @@ const providerDisplayMap = {
   'elkdata':     'Provider Italiano',
   // Italian publicly-owned consortium / regional ICT — sovereign cloud
   'regional-public':       'Cloud Italiano',
-  // Italian private PA contractor (still tagged separately)
-  'pa-contractor-private': 'Contractor PA privato',
+  // Italian private PA contractor (Engineering, Almaviva, …) — aggregated
+  // into "Provider Italiano" for the citizen-facing map (same Italian
+  // jurisdiction as Aruba/Register from a CLOUD-Act sovereignty POV).
+  // The raw `pa-contractor-private` classifier value is kept in data.json
+  // for audit/reporting.
+  'pa-contractor-private': 'Provider Italiano',
   // Self-hosted (renamed)
   'independent': 'Infrastruttura autonoma',
   // Provincial-shared (XX.it pattern, no hyperscaler backend identified)
