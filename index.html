@@ -1269,20 +1269,34 @@ async function renderCountryLayer(cc) {
           // when the user clicks an entity in the north of Italy / near the
           // top edge of the visible map area). Content inside the popup
           // becomes scrollable instead.
-          maxHeight: Math.max(280, Math.floor(window.innerHeight * 0.7)),
+          // 55vh cap = popup never larger than ~half-viewport, so autoPan
+          // can always fit it. Also forces internal scroll. innerHeight is
+          // captured at bind-time but the popup content is regenerated on
+          // each open(), so we recompute via a getter for resize-safety.
+          get maxHeight() { return Math.max(220, Math.floor(window.innerHeight * 0.55)); },
           autoPan: true,
           autoPanPaddingTopLeft: [20, 60],
           autoPanPaddingBottomRight: [20, 20],
-          keepInView: false,
+          // keepInView ON: if user pans the map after opening, the popup
+          // stays attached + shifts to remain visible (avoids the dynamic
+          // re-position the user observed).
+          keepInView: true,
         });
       } else if (m) {
         layer.bindPopup(function () { return buildPopup(m); }, {
           maxWidth: 400,
-          maxHeight: Math.max(280, Math.floor(window.innerHeight * 0.7)),
+          // 55vh cap = popup never larger than ~half-viewport, so autoPan
+          // can always fit it. Also forces internal scroll. innerHeight is
+          // captured at bind-time but the popup content is regenerated on
+          // each open(), so we recompute via a getter for resize-safety.
+          get maxHeight() { return Math.max(220, Math.floor(window.innerHeight * 0.55)); },
           autoPan: true,
           autoPanPaddingTopLeft: [20, 60],
           autoPanPaddingBottomRight: [20, 20],
-          keepInView: false,
+          // keepInView ON: if user pans the map after opening, the popup
+          // stays attached + shifts to remain visible (avoids the dynamic
+          // re-position the user observed).
+          keepInView: true,
         });
       }
       feature._country = cc;
