@@ -1262,9 +1262,28 @@ async function renderCountryLayer(cc) {
       const g = feature._matchedGroup;
       const m = feature._matchedMuni;
       if (isAggregated && g) {
-        layer.bindPopup(function () { return buildAggregatedPopup(g, feature, cc); }, { maxWidth: 400 });
+        layer.bindPopup(function () { return buildAggregatedPopup(g, feature, cc); }, {
+          maxWidth: 400,
+          // Constrain popup height to viewport so Leaflet's autoPan doesn't
+          // shift the map down (clipping the top of long aggregated popups
+          // when the user clicks an entity in the north of Italy / near the
+          // top edge of the visible map area). Content inside the popup
+          // becomes scrollable instead.
+          maxHeight: Math.max(280, Math.floor(window.innerHeight * 0.7)),
+          autoPan: true,
+          autoPanPaddingTopLeft: [20, 60],
+          autoPanPaddingBottomRight: [20, 20],
+          keepInView: false,
+        });
       } else if (m) {
-        layer.bindPopup(function () { return buildPopup(m); }, { maxWidth: 400 });
+        layer.bindPopup(function () { return buildPopup(m); }, {
+          maxWidth: 400,
+          maxHeight: Math.max(280, Math.floor(window.innerHeight * 0.7)),
+          autoPan: true,
+          autoPanPaddingTopLeft: [20, 60],
+          autoPanPaddingBottomRight: [20, 20],
+          keepInView: false,
+        });
       }
       feature._country = cc;
 
