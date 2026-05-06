@@ -15,6 +15,12 @@
 <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script defer src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+<!-- markercluster — only loaded for the Scuole point-marker view -->
+<link rel="preload" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"></noscript>
+<noscript><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"></noscript>
+<script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
@@ -1377,6 +1383,53 @@ function updateStyles() {
   updateDominanceMarkers();
 }
 
+// --- Istruzione (Scuole) \u2014 point-marker layer ---
+// Single shared cluster group; built lazily on first 'istruzione' view.
+let istruzioneMarkerGroup = null;
+let istruzionePointsLoaded = false;
+
+function buildIstruzioneMarkers() {
+  if (istruzioneMarkerGroup) return;
+  if (typeof L.markerClusterGroup !== 'function') return;  // markercluster lib still loading
+  if (!regionData) return;
+  const cd = regionData.countries.IT || {};
+  const points = cd.istruzione_points || [];
+  if (!points.length) return;
+  istruzioneMarkerGroup = L.markerClusterGroup({
+    chunkedLoading: true,
+    showCoverageOnHover: false,
+    maxClusterRadius: 60,
+  });
+  for (const p of points) {
+    const disp = providerDisplayMap[p.p] || p.p;
+    const color = COLORS[disp] || '#888';
+    const m = L.circleMarker([p.lat, p.lon], {
+      radius: 4, color: color, weight: 1, fillColor: color, fillOpacity: 0.85
+    });
+    const catLabel = ({L33:'Scuola statale', L17:'Universit\u00e0 pubblica', L43:'AFAM',
+                       L15:'Diritto allo studio', L28:'Consorzio interuniv.'}[p.cat] || p.cat);
+    m.bindPopup(
+      `<div style="min-width:200px"><strong>${escapeHtml(p.name)}</strong><br>` +
+      `<span style="color:#888;font-size:11px">${escapeHtml(catLabel)} \u00b7 ${escapeHtml(p.dom || '')}</span><br>` +
+      `<span style="background:${color};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;display:inline-block;margin-top:4px">${escapeHtml(disp)}</span></div>`
+    );
+    istruzioneMarkerGroup.addLayer(m);
+  }
+  istruzionePointsLoaded = true;
+}
+
+function showIstruzioneMarkers() {
+  if (!istruzioneMarkerGroup) buildIstruzioneMarkers();
+  if (istruzioneMarkerGroup && !map.hasLayer(istruzioneMarkerGroup)) {
+    istruzioneMarkerGroup.addTo(map);
+  }
+}
+function hideIstruzioneMarkers() {
+  if (istruzioneMarkerGroup && map.hasLayer(istruzioneMarkerGroup)) {
+    map.removeLayer(istruzioneMarkerGroup);
+  }
+}
+
 // --- Level toggle ---
 async function setLevel(newLevel) {
   currentLevel = newLevel;
@@ -1403,6 +1456,14 @@ async function setLevel(newLevel) {
   dominanceMarkers.addTo(map);
   updateGatewayMarkers();
   updateDominanceMarkers();
+
+  // Toggle the point-marker layer for the Scuole view
+  if (newLevel === 'istruzione') {
+    showIstruzioneMarkers();
+  } else {
+    hideIstruzioneMarkers();
+  }
+
   updateLegend();
 }
 
@@ -2013,11 +2074,15 @@ async function loadData() {
     const levelNoun = (
       currentLevel === 'region'     ? 'regioni' :
       currentLevel === 'district'   ? 'province' :
-      currentLevel === 'istruzione' ? 'comuni con scuole' :
+      currentLevel === 'istruzione' ? 'scuole' :
                                       'enti'
     );
 
-    // Istruzione: count comuni-with-schools by their dominant school provider
+    // Istruzione: count individual schools by their provider (sum
+    // school_count across each comune entry's providers map). The
+    // previous version was counting comuni-with-schools (3015) instead
+    // of actual schools (8168) which made the legend mismatch the
+    // dataset's actual scale.
     if (currentLevel === 'istruzione' && regionData) {
       for (const cc of COUNTRY_LIST) {
         if (!activeCountries.has(cc)) continue;
@@ -2025,10 +2090,12 @@ async function loadData() {
         if (!cd || !cd.istruzione_by_osm) continue;
         for (const featId of Object.keys(cd.istruzione_by_osm)) {
           const r = cd.istruzione_by_osm[featId];
-          const dom = r.dominant;
-          if (!dom) continue;
-          counts[dom] = (counts[dom] || 0) + 1;
-          total++;
+          const provs = r.providers || {};
+          for (const p of Object.keys(provs)) {
+            const n = provs[p];
+            counts[p] = (counts[p] || 0) + n;
+            total += n;
+          }
         }
       }
     } else if (currentLevel !== 'municipality' && regionData) {

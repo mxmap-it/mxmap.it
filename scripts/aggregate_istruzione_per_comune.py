@@ -173,6 +173,37 @@ def main() -> int:
         for k, v in providers.items():
             national[k] += v
 
+    # Per-school point markers (lat/lng + provider) when geocoding cache exists.
+    # Built by scripts/geocode_istruzione.py. Falls back to empty list when
+    # the cache file is missing, so this aggregation script remains runnable
+    # without geocoding.
+    geocode_path = DATA / "it_istruzione_points.json"
+    points: list[dict] = []
+    if geocode_path.exists():
+        gd = json.loads(geocode_path.read_text(encoding="utf-8"))
+        gp = gd.get("points", {})
+        for bid, m in muns.items():
+            if not bid.startswith("IT-"):
+                continue
+            sd = seed_by_id.get(bid)
+            if not sd or sd.get("ipa_codice_categoria") not in ("L33", "L17", "L43", "L15", "L28"):
+                continue
+            ipa = (sd.get("ipa_codice_ipa") or "").strip()
+            pt = gp.get(ipa)
+            if not pt or "lat" not in pt or "lon" not in pt:
+                continue
+            raw = m.get("provider") or "unknown"
+            points.append({
+                "id": bid,
+                "name": sd.get("name", "")[:80],
+                "cat": sd.get("ipa_codice_categoria", ""),
+                "lat": pt["lat"],
+                "lon": pt["lon"],
+                "p":   raw,                                                # raw provider
+                "pd":  PROVIDER_DISPLAY.get(raw, raw),                     # display name
+                "dom": pt.get("comune_name", ""),
+            })
+
     out = {
         "generated": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "total_schools": school_count,
@@ -180,6 +211,7 @@ def main() -> int:
         "skipped_no_istat": skipped_no_istat,
         "comuni": comuni_out,
         "by_osm": by_osm,
+        "points": points,
         "national_totals": {
             "providers": dict(national),
             "dominant": national.most_common(1)[0][0] if national else "Sconosciuto",

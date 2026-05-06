@@ -264,6 +264,10 @@ def build_region_data(munis: dict, generated: str) -> dict:
             countries["IT"]["istruzione_by_osm"] = ist.get("by_osm", {})
             countries["IT"]["istruzione_total_schools"] = ist.get("total_schools", 0)
             countries["IT"]["istruzione_national"] = ist.get("national_totals", {})
+            # Per-school point markers (when geocoded). Heavy when full
+            # (~8K points = ~1MB) — kept inline because the user's intent
+            # is to see them on the map, not lazy-load.
+            countries["IT"]["istruzione_points"] = ist.get("points", [])
             print(f"  IT istruzione: {ist.get('total_schools')} schools across "
                   f"{ist.get('comuni_with_schools')} comuni")
         except Exception as e:
