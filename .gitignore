@@ -13,6 +13,11 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+# allow the public-download dataset under dist/ (built by
+# scripts/build_public_dataset.py, deployed via GitHub Pages)
+!dist/mxmap_it_dataset.csv
+!dist/mxmap_it_dataset.json
+!dist/mxmap_it_dataset.xlsx
 downloads/
 eggs/
 .eggs/

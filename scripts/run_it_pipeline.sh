@@ -138,8 +138,12 @@ echo "[13/14] Pipeline funnel transparency report"
 uv run python3 scripts/report_pipeline_funnel.py
 
 echo ""
-echo "[14/14] Build frontend data files (data-summary, data-detail, data-regions, per-country)"
+echo "[14a/15] Build frontend data files (data-summary, data-detail, data-regions, per-country)"
 uv run python3 scripts/build_frontend.py
+
+echo ""
+echo "[14b/15] Build public download dataset (CSV + JSON + XLSX) under dist/"
+uv run python3 scripts/build_public_dataset.py
 
 echo ""
 echo "=========================================="

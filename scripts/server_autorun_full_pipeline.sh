@@ -62,6 +62,8 @@ run_step "report_it_by_cluster"         uv run python3 scripts/report_it_by_clus
 run_step "aggregate_istruzione"         uv run python3 scripts/aggregate_istruzione_per_comune.py
 run_step "report_pipeline_funnel"       uv run python3 scripts/report_pipeline_funnel.py
 run_step "build_frontend"               uv run python3 scripts/build_frontend.py
+# Public download dataset (CSV + JSON + XLSX). Auto-updated each run.
+run_step "build_public_dataset"         uv run python3 scripts/build_public_dataset.py
 
 log "=== chain complete; committing artifacts ==="
 git add data.json data/dns_cache/ data/municipalities_it.json data/it_provincial_backends.json data/it_citizen_clusters.json data/reports/ data-summary.json data-detail.json data-regions.json data/summary/ 2>>"$LOG" || true
