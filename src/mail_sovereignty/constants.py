@@ -88,6 +88,32 @@ ITALIAN_PA_CONTRACTOR_PRIVATE_KEYWORDS = [
     "almaviva.it", "almavivaitalia.it",  # Almaviva SpA
 ]
 
+# AIIP — Associazione Italiana Internet Provider — member-company domains
+# (snapshotted from https://www.aiip.it/associati/ in 2026-05). When a PA
+# entity's MX hostname matches one of these, classify directly as
+# "local-isp" → display "Provider Italiano". This complements LOCAL_ISP_ASNS
+# for cases where the MX hostname is identifiable but the ASN/IP isn't
+# catalogued. Aruba/Seeweb/Vianova are already covered by their dedicated
+# keyword sets (kept here as an MX-fallback safety net for completeness).
+ITALIAN_AIIP_ISP_KEYWORDS = [
+    "4all.it", "aconet.it", "air2bite.net", "airbeam.it", "ampersand.it",
+    "apuacom.it", "avelia.it", "axera.it", "bbanda.it", "cedis.info",
+    "clio.it", "connesi.it", "cheapnet.it", "deda.group", "dodonet.it",
+    "ehiweb.it", "enegan.it", "estra.it", "fibraweb.it", "fibreconnect.it",
+    "fontel.it", "geny.it", "halservice.it", "intercom.it", "interfibra.it",
+    "gruppoiren.it", "itgate.it", "karsolink.com", "lenfiber.it", "leonet.it",
+    "linkwave.it", "messagenet.com", "metrolink.it", "mix-it.net", "mynet.it",
+    "namex.it", "naquadria.it", "netikom.it", "netsons.com", "netsons.it",
+    "nhm.it", "orakom.it", "panservice.it", "redder.it", "rocketway.it",
+    "sinetsrl.it", "sistemihs.it", "stadtwerke.it", "techdigital.it",
+    "tecnoadsl.it", "teknonet.it", "terrecablate.it", "timenet.it",
+    "tnetservizi.it", "top-ix.org", "umbria.net", "warian.net", "wifiweb.it",
+    "wispone.it", "wolnet.it", "x-stream.biz",
+    # Already covered by dedicated keyword sets but listed for completeness:
+    # "aruba.it" (ARUBA_KEYWORDS), "seeweb.it" (SEEWEB_KEYWORDS),
+    # "vianova.it" (GATEWAY_KEYWORDS), "leonet.it" (GATEWAY_KEYWORDS).
+]
+
 PROVIDER_KEYWORDS = {
     "microsoft": MICROSOFT_KEYWORDS,
     "google": GOOGLE_KEYWORDS,
@@ -107,6 +133,13 @@ PROVIDER_KEYWORDS = {
     # Italian public/regional/contractor categories
     "regional-public": ITALIAN_REGIONAL_PUBLIC_KEYWORDS,
     "pa-contractor-private": ITALIAN_PA_CONTRACTOR_PRIVATE_KEYWORDS,
+    # Italian commercial ISPs (AIIP — Associazione Italiana Internet Provider —
+    # member companies, fetched from https://www.aiip.it/associati/). When the
+    # PA's MX hostname matches one of these domains we classify as "local-isp"
+    # (citizen-facing display: "Provider Italiano"), avoiding the false
+    # "Infrastruttura autonoma" verdict for entities relayed via small/medium
+    # Italian ISPs whose ASN we may not have catalogued.
+    "local-isp": ITALIAN_AIIP_ISP_KEYWORDS,
 }
 
 FOREIGN_SENDER_KEYWORDS = {
@@ -515,10 +548,56 @@ ITALIAN_PROVIDER_ASN_OVERRIDES: dict[int, str] = {
     35369: "seeweb",          # Seeweb
     49367: "seeweb",          # Seeweb alt
     39257: "infocert",        # InfoCert
+
+    # Hyperscaler USA — when MX hostname doesn't carry the hyperscaler
+    # keyword but the IP resolves to the hyperscaler's AS (custom-domain
+    # mailboxes on EC2 / Cloud Run / etc.). Without these, ~800 IT enti
+    # appeared as "independent" / "Infrastruttura autonoma" while in
+    # fact hosted on USA cloud — significant CLOUD-Act sovereignty bias.
+    16509:  "aws",            # AS16509 = AWS (Amazon)
+    14618:  "aws",            # AS14618 = AWS US-East
+    396982: "google",         # AS396982 = Google Cloud Platform
+    15169:  "google",          # AS15169 = Google LLC
+
+    # Italian PA regional in-house (Cloud Italiano sovrano). Each
+    # Regione/Provincia owns its own AS — entities relayed there are
+    # genuinely sovereign infrastructure.
+    35110:  "regional-public", # AS35110 = Regione Basilicata
+    31403:  "regional-public", # AS31403 = IN.VA. (Valle d'Aosta in-house IT)
+    6882:   "regional-public", # AS6882  = Regione Toscana / PEGASO
+    198045: "regional-public", # AS198045 = Provincia di Pesaro e Urbino
+    31638:  "regional-public", # AS31638 = Lepida (already by keyword)
 }
 
 # Local ISP ASNs (replaces SWISS_ISP_ASNS)
 LOCAL_ISP_ASNS: dict[int, str] = {
+    # Italy — commercial ISPs and hosting providers (AIIP members
+    # + RIPE-discovered top ASNs hosting Italian PA email).
+    # ASNs in this dict get classified as "local-isp" -> displayed as
+    # "Provider Italiano" on the citizen-facing map.
+    24994: "Genesys Informatica (IT)",
+    44920: "SiTEK Informatica (IT)",
+    52030: "Serverplan (IT)",
+    21056: "Vianova / Welcome Italia (IT)",
+    60087: "Netsons (IT)",
+    47242: "Host SpA (IT)",
+    12874: "Fastweb (IT)",
+    8660:  "Italiaonline / Matrix (IT)",
+    16276: "OVH (FR — used by IT PA)",
+    15691: "LeoNet / UAN Company (IT)",
+    3302:  "Retelit / Irideos (IT)",
+    20746: "Telecom Italia IDC (IT)",
+    3242:  "Reevo (ex-Itnet) (IT)",
+    47217: "Planetel (IT)",
+    202675: "Keliweb (IT)",
+    200760: "Dinova / Elogic (IT)",
+    201333: "Naquadria (IT)",
+    34758: "Axera (IT)",
+    50178: "Limitis (IT)",
+    20912: "Panservice (IT)",
+    16633: "N-able Technologies (used by IT PA)",
+    43054: "N-able Acquisition (used by IT PA)",
+    12445: "A2A Smart City (IT)",
     # Estonia
     3249: "Telia (EE/LT)",
     2586: "Elisa Eesti",
