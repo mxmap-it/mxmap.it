@@ -90,6 +90,20 @@ def main():
             ok = False
         page.screenshot(path="C:/temp/popup_test.png", full_page=False)
         print("Screenshot: C:/temp/popup_test.png")
+        # Also dump the legend HTML for visual / regex check of % presence
+        legend_html = page.evaluate("""
+          (() => {
+            var el = document.querySelector('.legend-content');
+            return el ? el.innerHTML : '(no legend)';
+          })()
+        """)
+        print("\nLegend content:")
+        # Strip tags for readability, keep numbers
+        import re as _re
+        text = _re.sub(r'<[^>]+>', ' ', legend_html)
+        text = _re.sub(r'\s+', ' ', text)
+        sys.stdout.reconfigure(encoding='utf-8')
+        print(" ", text[:600])
         browser.close()
         return 0 if ok else 1
 

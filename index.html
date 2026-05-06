@@ -536,18 +536,27 @@ function toggleLegend() {
   btn.setAttribute('aria-expanded', String(!collapsed));
 }
 
-function legendItemHtml(key, counts) {
+function legendItemHtml(key, counts, total) {
   const bg = key === 'Unknown'
     ? "background:#BFBFBF"
     : `background:${COLORS[key]}`;
-  return `<i style="${bg}"></i>${key} (${counts[key] || 0})`;
+  const n = counts[key] || 0;
+  const pct = total > 0 ? (n / total * 100) : 0;
+  // 1 decimal under 10%, integer otherwise — readable + tabular alignment
+  const pctStr = pct >= 10 ? Math.round(pct) + '%' : pct.toFixed(1) + '%';
+  return `<i style="${bg}"></i>${key} (${n.toLocaleString('it-IT')}) - (${pctStr})`;
 }
 
 function legendGroupHtml(label, keys, counts) {
   const visible = keys.filter(k => (counts[k] || 0) > 0);
   if (visible.length === 0) return '';
+  // Total = sum of ALL counts in this updateLegend call (passed as
+  // counts[__total__] from updateLegend) so percentages are over the
+  // whole denominator (regions / province / scuole / enti) shown in
+  // the footer, not just over the items in this group.
+  const total = counts.__total__ || Object.values(counts).reduce((a, b) => a + (b || 0), 0);
   const heading = label ? `<span class="legend-group-label">${label}</span>` : '';
-  const items = visible.map(k => legendItemHtml(k, counts)).join('<br>');
+  const items = visible.map(k => legendItemHtml(k, counts, total)).join('<br>');
   return `<div class="legend-group">${heading}${items}</div>`;
 }
 
@@ -2174,6 +2183,11 @@ async function loadData() {
         gwCount += cd.gateway_count || 0;
       }
     }
+
+    // Inject the level-total denominator so legendGroupHtml can render
+    // the "(XX%)" share next to each provider line. Special key uses an
+    // underscore prefix to avoid colliding with any real provider name.
+    counts.__total__ = total;
 
     const content = document.querySelector('.legend-content');
     if (content) {
