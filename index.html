@@ -451,25 +451,20 @@ let muniByOsm = {};   // "relation/12345" -> municipality
 let muniByName = {};   // lowercase name -> municipality
 
 // --- Map ---
-// Italy-only viewport. maxBounds clamps panning so the user can't scroll
-// far out to France/Switzerland/etc., but with viscosity below 1.0 so
-// Leaflet's autoPan (used when opening popups near the viewport edge —
-// e.g. clicking Venezia at the top of the map) can still shift the map
-// far enough to fit the popup. Bounds are also extended ~3° beyond the
-// Italian bbox so autoPan has breathing room without hitting the wall.
-//
-// Earlier setting `maxBoundsViscosity: 1.0` + tight bbox produced a bug
-// where popups opened near the bbox edge had their top clipped behind
-// the brand bar: autoPan tried to shift the map down to make room but
-// the hard-viscous bound refused, so the popup stayed off-viewport.
-const IT_BOUNDS = L.latLngBounds([33.0, 4.0], [50.0, 21.0]);
+// REVERTED 2026-05-06: removed maxBounds + maxBoundsViscosity entirely.
+// They were introduced for "Italy-only viewport" branding but caused a
+// regression where popups opened near the bbox edge had their top
+// clipped behind the brand bar — Leaflet's autoPan was trying to shift
+// the map past the hard bound and could not. The map now pans freely.
+// Italy-only branding is preserved by:
+//   - tile layer .foreign-faded CSS filter (saturate 0)
+//   - center+zoom defaults pointing at Italy on initial load
+//   - region/province/comune boundary layers cover only Italy
 const map = L.map('map', {
   center: [42.5, 12.5],
   zoom: 6,
   minZoom: 5,
   maxZoom: 14,
-  maxBounds: IT_BOUNDS,
-  maxBoundsViscosity: 0.0,  // soft bound: lets autoPan work, user pan rubber-bands
   renderer: L.canvas()
 });
 window._map = map; // expose for debugging
