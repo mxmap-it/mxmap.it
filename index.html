@@ -1430,32 +1430,58 @@ let istruzionePointsLoaded = false;
 
 function buildIstruzioneMarkers() {
   if (istruzioneMarkerGroup) return;
-  if (typeof L.markerClusterGroup !== 'function') return;  // markercluster lib still loading
   if (!regionData) return;
   const cd = regionData.countries.IT || {};
   const points = cd.istruzione_points || [];
   if (!points.length) return;
-  istruzioneMarkerGroup = L.markerClusterGroup({
-    chunkedLoading: true,
-    showCoverageOnHover: false,
-    maxClusterRadius: 60,
-  });
+  // Use a plain L.layerGroup (no markerCluster) \u2014 the user explicitly
+  // asked to remove the cluster aggregation numbers (5, 4, ...) that
+  // were appearing at zoom levels where multiple schools overlap. With
+  // canvas markers + 8.4k circles the rendering stays smooth.
+  istruzioneMarkerGroup = L.layerGroup();
   for (const p of points) {
     const disp = providerDisplayMap[p.p] || p.p;
     const color = COLORS[disp] || '#888';
     const m = L.circleMarker([p.lat, p.lon], {
       radius: 4, color: color, weight: 1, fillColor: color, fillOpacity: 0.85
     });
-    const catLabel = ({L33:'Scuola statale', L17:'Universit\u00e0 pubblica', L43:'AFAM',
-                       L15:'Diritto allo studio', L28:'Consorzio interuniv.'}[p.cat] || p.cat);
-    m.bindPopup(
-      `<div style="min-width:200px"><strong>${escapeHtml(p.name)}</strong><br>` +
-      `<span style="color:#888;font-size:11px">${escapeHtml(catLabel)} \u00b7 ${escapeHtml(p.dom || '')}</span><br>` +
-      `<span style="background:${color};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;display:inline-block;margin-top:4px">${escapeHtml(disp)}</span></div>`
-    );
+    // Stash the seed id on the marker \u2014 the popup is built lazily on
+    // open by looking up the full classified entry in dnsData and
+    // calling the same buildPopup() used for comuni, so school popups
+    // show the SAME analytical detail (MX, SPF, DKIM, autodiscover,
+    // tenant, classification reason, etc.) instead of the previous
+    // 3-line summary.
+    m._mxmapId = p.id;
+    m._mxmapPoint = p;
+    m.bindPopup(function () {
+      return buildIstruzionePopup(m._mxmapId, m._mxmapPoint);
+    }, {
+      maxWidth: 400,
+      autoPan: true,
+      autoPanPaddingTopLeft: [20, 60],
+      autoPanPaddingBottomRight: [20, 20],
+      keepInView: false,
+    });
     istruzioneMarkerGroup.addLayer(m);
   }
   istruzionePointsLoaded = true;
+}
+
+function buildIstruzionePopup(bfsId, point) {
+  // Fall back to the slim popup if dnsData hasn't loaded yet (rare \u2014
+  // setLevel('istruzione') goes through loadSummaryData first).
+  const muni = (dnsData && (dnsData.municipalities || []).find(m => m.bfs === bfsId))
+            || (typeof muniByBfs === 'object' ? muniByBfs[bfsId] : null);
+  if (muni) return buildPopup(muni);
+  // Fallback: minimal info from the istruzione_points record
+  const disp = providerDisplayMap[point.p] || point.p;
+  const color = COLORS[disp] || '#888';
+  const cat = ({L33:'Scuola statale', L17:'Universit\u00e0 pubblica', L43:'AFAM',
+                L15:'Diritto allo studio', L28:'Consorzio interuniv.'}[point.cat] || point.cat);
+  return `<div style="min-width:200px"><strong>${escapeHtml(point.name)}</strong><br>` +
+         `<span style="color:#888;font-size:11px">${escapeHtml(cat)}</span><br>` +
+         `<span style="background:${color};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;display:inline-block;margin-top:4px">${escapeHtml(disp)}</span><br>` +
+         `<span style="color:#999;font-size:10px;font-style:italic">Dettaglio non ancora caricato\u2026</span></div>`;
 }
 
 function showIstruzioneMarkers() {
@@ -1497,10 +1523,17 @@ async function setLevel(newLevel) {
   updateGatewayMarkers();
   updateDominanceMarkers();
 
-  // Toggle the point-marker layer for the Scuole view
+  // Scuole view: hide ALL polygon layers (the comune choropleth would
+  // bleed under the markers and visually compete with them — user
+  // explicitly requested only the markers + base tile to be visible).
+  // Other levels: re-show whichever country layers were rendered.
   if (newLevel === 'istruzione') {
+    countryLayers.forEach(function (layer) { if (map.hasLayer(layer)) map.removeLayer(layer); });
+    if (map.hasLayer(gatewayMarkers))   map.removeLayer(gatewayMarkers);
+    if (map.hasLayer(dominanceMarkers)) map.removeLayer(dominanceMarkers);
     showIstruzioneMarkers();
   } else {
+    countryLayers.forEach(function (layer) { if (!map.hasLayer(layer)) layer.addTo(map); });
     hideIstruzioneMarkers();
   }
 
