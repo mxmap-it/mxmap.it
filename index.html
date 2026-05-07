@@ -1503,12 +1503,38 @@ async function setLevel(newLevel) {
     btn.classList.toggle('active', btn.dataset.level === newLevel);
   });
 
+  // SCUOLE shortcut: hide all polygons IMMEDIATELY (synchronously) and
+  // skip the renderCountryLayer await entirely. Otherwise we'd render
+  // the comune choropleth, then remove it -- leaving a window during
+  // which the user could click a comune polygon and get a comune popup.
+  if (newLevel === 'istruzione') {
+    countryLayers.forEach(function (layer) { if (map.hasLayer(layer)) map.removeLayer(layer); });
+    if (map.hasLayer(gatewayMarkers))   map.removeLayer(gatewayMarkers);
+    if (map.hasLayer(dominanceMarkers)) map.removeLayer(dominanceMarkers);
+    if (!summaryLoaded) {
+      var overlay = document.createElement('div');
+      overlay.id = 'map-loading';
+      overlay.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000;background:rgba(255,255,255,0.85);font-size:15px;color:#555;';
+      overlay.textContent = 'Caricamento dati scuole…';
+      document.getElementById('map').appendChild(overlay);
+      await loadSummaryData();
+      var loadingEl = document.getElementById('map-loading');
+      if (loadingEl) loadingEl.remove();
+    }
+    showIstruzioneMarkers();
+    updateLegend();
+    return;
+  }
+
+  // Non-istruzione: ensure markers are gone before re-rendering polygons
+  hideIstruzioneMarkers();
+
   // If switching away from region and summary not loaded, load it on demand
   if (newLevel !== 'region' && !summaryLoaded) {
     var overlay = document.createElement('div');
     overlay.id = 'map-loading';
     overlay.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000;background:rgba(255,255,255,0.85);font-size:15px;color:#555;';
-    overlay.textContent = 'Caricamento dati comuni\u2026';
+    overlay.textContent = 'Caricamento dati comuni…';
     document.getElementById('map').appendChild(overlay);
 
     await loadSummaryData();
@@ -1518,26 +1544,12 @@ async function setLevel(newLevel) {
   }
 
   await Promise.all(COUNTRY_LIST.map(function (cc) { return renderCountryLayer(cc); }));
+  countryLayers.forEach(function (layer) { if (!map.hasLayer(layer)) layer.addTo(map); });
   gatewayMarkers.addTo(map);
   dominanceMarkers.addTo(map);
   updateGatewayMarkers();
   updateDominanceMarkers();
-
-  // Scuole view: hide ALL polygon layers (the comune choropleth would
-  // bleed under the markers and visually compete with them — user
-  // explicitly requested only the markers + base tile to be visible).
-  // Other levels: re-show whichever country layers were rendered.
-  if (newLevel === 'istruzione') {
-    countryLayers.forEach(function (layer) { if (map.hasLayer(layer)) map.removeLayer(layer); });
-    if (map.hasLayer(gatewayMarkers))   map.removeLayer(gatewayMarkers);
-    if (map.hasLayer(dominanceMarkers)) map.removeLayer(dominanceMarkers);
-    showIstruzioneMarkers();
-  } else {
-    countryLayers.forEach(function (layer) { if (!map.hasLayer(layer)) layer.addTo(map); });
-    hideIstruzioneMarkers();
-  }
-
-  updateLegend();
+    updateLegend();
 }
 
 document.querySelectorAll('.level-btn').forEach(function (btn) {
