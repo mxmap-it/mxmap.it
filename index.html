@@ -1346,6 +1346,25 @@ function updateGatewayMarkers() {
   }
 }
 
+// Citizen-friendly Italian-sovereignty share = sum of all 3 Italian
+// provider buckets (Cloud sovrano + Provider commerciali + Infrastruttura
+// autonoma) over the group total. This is what the "% sovrana" label
+// above each region/province polygon shows — NOT the dominant-provider
+// share. Mirrors the legend grouping the user already sees on screen.
+const ITALIAN_BUCKETS = ['Cloud Italiano', 'Provider Italiano', 'Infrastruttura autonoma',
+                         'Mail provinciale condivisa', 'Contractor PA privato'];
+
+function italianShare(group) {
+  if (!group || !group.providers) return 0;
+  let italian = 0, total = 0;
+  for (const p in group.providers) {
+    const v = group.providers[p] || 0;
+    total += v;
+    if (ITALIAN_BUCKETS.indexOf(p) >= 0) italian += v;
+  }
+  return total > 0 ? italian / total : 0;
+}
+
 function updateDominanceMarkers() {
   dominanceMarkers.clearLayers();
   // Only show at aggregated levels and when zoomed in enough
@@ -1357,14 +1376,19 @@ function updateDominanceMarkers() {
     if (!activeCountries.has(cc)) continue;
     layer.eachLayer(function (sublayer) {
       const g = sublayer.feature ? sublayer.feature._matchedGroup : null;
-      if (!g || g.dominance >= 0.95) return;
+      if (!g) return;
       // Skip small polygons that would overlap
       var bounds = sublayer.getBounds();
       var size = map.latLngToLayerPoint(bounds.getNorthEast()).distanceTo(
         map.latLngToLayerPoint(bounds.getSouthWest())
       );
       if (size < 40) return;
-      const pct = Math.round(g.dominance * 100);
+      // % sovrana = sum of Italian providers (Cloud sovrano + commerciali +
+      // autonoma + provincial-shared + contractor) over the group total.
+      const share = italianShare(g);
+      // Don't bother rendering a label if 100% — uniform anyway.
+      if (share >= 0.999) return;
+      const pct = Math.round(share * 100);
       const icon = L.divIcon({
         html: '<span style="font-size:10px;font-weight:700;color:#333;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff">' + pct + '%</span>',
         className: 'dominance-label',
