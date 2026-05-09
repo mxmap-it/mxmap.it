@@ -313,6 +313,29 @@ def istat_to_province_name(codice_comune_istat: str | None) -> str | None:
 # data-quality fixes; keep one comment per override explaining why.
 IT_PEC_ENRICHMENT_PATH = ROOT / "data" / "enrichment_pec_only.json"
 IT_MANUAL_LLM_ENRICHMENT_PATH = ROOT / "data" / "manual_llm_enrichment.json"
+IT_AOO_UO_EXTENSION_PATH = ROOT / "data" / "indicepa_extended_emails.json"
+
+
+def load_aoo_uo_extension() -> dict[str, list[str]]:
+    """Load the AOO+UO-derived non-PEC domain harvest produced by
+    scripts/enrich_from_aoo_uo.py (Tier 6 in the recovery chain).
+
+    Returns {codice_ipa_lowercase: [domain, ...]}. Each domain has
+    already been filtered through is_legit_email_domain to ensure
+    structural relation to the parent ente — no cross-tenant leaks.
+    """
+    if not IT_AOO_UO_EXTENSION_PATH.exists():
+        return {}
+    try:
+        d = json.loads(IT_AOO_UO_EXTENSION_PATH.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"WARNING: cannot parse {IT_AOO_UO_EXTENSION_PATH}: {e!r}")
+        return {}
+    out: dict[str, list[str]] = {}
+    for ipa, info in d.get("by_ipa", {}).items():
+        doms = info.get("non_pec_domains") or []
+        out[ipa.strip().lower()] = doms
+    return out
 
 
 def load_manual_llm_enrichment() -> dict[str, str]:
@@ -727,6 +750,17 @@ def transform(
             domain = fb[0]
             domain_source = "email_non_pec_fallback"
 
+    # Tier 6 — AOO+UO derived non-PEC emails (passed through is_legit).
+    # Only fires when nothing above gave us a domain. Most useful for PA
+    # centrali (gov.it sites) whose enti record has only PEC but whose
+    # AOO sub-units expose dirigenti emails on the real institutional
+    # domain (interno.gov.it -> interno.it via mail_resp).
+    if not domain and codice_ipa_for_override in _AOO_UO_EXTENSION:
+        cands = _AOO_UO_EXTENSION[codice_ipa_for_override]
+        if cands:
+            domain = cands[0]
+            domain_source = "aoo_uo_email_fallback"
+
     # NOTE: a previous attempt added a "pec_email_fallback" third tier here
     # (using the first PEC email host when neither Sito_istituzionale nor
     # non-PEC email gave a domain). It was REVERTED because PEC providers
@@ -830,7 +864,7 @@ def main() -> int:
     entries: list[dict[str, Any]] = []
     seen_ids: set[str] = set()
 
-    global _PEC_ENRICHMENT, _MANUAL_LLM_ENRICHMENT
+    global _PEC_ENRICHMENT, _MANUAL_LLM_ENRICHMENT, _AOO_UO_EXTENSION
     _PEC_ENRICHMENT = load_pec_enrichment()
     if _PEC_ENRICHMENT:
         print(f"Loaded {len(_PEC_ENRICHMENT)} PEC-only enrichments from "
@@ -839,6 +873,11 @@ def main() -> int:
     if _MANUAL_LLM_ENRICHMENT:
         print(f"Loaded {len(_MANUAL_LLM_ENRICHMENT)} manual-LLM enrichments "
               f"from {IT_MANUAL_LLM_ENRICHMENT_PATH.name}")
+    _AOO_UO_EXTENSION = load_aoo_uo_extension()
+    if _AOO_UO_EXTENSION:
+        n_doms = sum(len(v) for v in _AOO_UO_EXTENSION.values())
+        print(f"Loaded {len(_AOO_UO_EXTENSION)} enti enriched via AOO+UO "
+              f"({n_doms} non-PEC domains, all is_legit-validated)")
 
     crosswalk = load_crosswalk()
     if crosswalk is None:

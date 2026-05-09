@@ -51,6 +51,7 @@ import httpx
 
 from mail_sovereignty.classify import classify
 from mail_sovereignty.constants import EMAIL_RE
+from mail_sovereignty.scrape_validator import is_legit_email_domain
 from mail_sovereignty.dns import (
     lookup_autodiscover,
     lookup_dkim,
@@ -396,12 +397,24 @@ async def try_scrape_for_email_mx(
     if not emails:
         return None, None, None, []
     tried: list[str] = []
+    rejected: list[tuple[str, str]] = []
     for addr in emails[:6]:
         host = addr.rsplit("@", 1)[1]
         tried.append(host)
+        # Strict gate: only accept emails whose domain is provably tied
+        # to the parent ente (primary_domain). Prevents the cross-tenant
+        # bug where scraping comune A's homepage finds an email of
+        # comune B in a footer/news/partner block.
+        ok, reason = is_legit_email_domain(host, primary_domain)
+        if not ok:
+            rejected.append((host, reason))
+            continue
         result = await try_domain_for_classify(host, dns_sem)
         if result:
             return result, addr, host, tried
+    # Surface rejects in the tried list as audit so they show up in reports.
+    if rejected:
+        tried.extend([f"{h}!REJECT[{r}]" for h, r in rejected])
     return None, None, None, tried
 
 

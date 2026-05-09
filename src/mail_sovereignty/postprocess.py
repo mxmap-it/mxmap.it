@@ -34,6 +34,7 @@ from mail_sovereignty.dns import (
     resolve_spf_includes,
 )
 from mail_sovereignty.smtp import fetch_smtp_banner
+from mail_sovereignty.scrape_validator import is_legit_email_domain
 
 
 def decrypt_typo3(encoded: str, offset: int = 2) -> str:
@@ -167,7 +168,18 @@ async def process_unknown(
             )
             return m
 
+        ente_domain = m.get("domain", "")
+        codice_ipa = m.get("ipa_codice_ipa") or m.get("codice_ipa")
+        rejected_audit: list[dict[str, str]] = []
         for email_domain in sorted(email_domains):
+            ok, reason_legit = is_legit_email_domain(
+                email_domain, ente_domain, codice_ipa=codice_ipa
+            )
+            if not ok:
+                rejected_audit.append(
+                    {"dom": email_domain, "reason": reason_legit}
+                )
+                continue
             mx = await lookup_mx(email_domain)
             if mx:
                 spf, txt_verifications = await lookup_txt(email_domain)
@@ -219,10 +231,19 @@ async def process_unknown(
                     m["tenant"] = tenant
                 return m
 
-        print(
-            f"  UNKNOWN  {bfs:>5} {name:<30} "
-            f"(scraped email domains: {email_domains or 'none'})"
-        )
+        if rejected_audit:
+            m["scrape_rejected_domains"] = rejected_audit[:10]
+            print(
+                f"  UNKNOWN  {bfs:>5} {name:<30} "
+                f"(scraped {len(email_domains)} email domains, "
+                f"all rejected by is_legit gate: "
+                f"{[r['dom'] for r in rejected_audit][:5]})"
+            )
+        else:
+            print(
+                f"  UNKNOWN  {bfs:>5} {name:<30} "
+                f"(scraped email domains: {email_domains or 'none'})"
+            )
         return m
 
 
