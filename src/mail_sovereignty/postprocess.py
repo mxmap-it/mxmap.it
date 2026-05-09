@@ -668,7 +668,10 @@ async def run(data_path: Path) -> None:
         for m in sorted(muni.values(), key=lambda x: x["bfs"]):
             if m["provider"] == "unknown":
                 print(
-                    f"  {m['bfs']:>5}  {m['name']:<30} {m['canton']:<20} domain={m['domain']}"
+                    f"  {(m.get('bfs') or ''):>5}  "
+                    f"{(m.get('name') or ''):<30} "
+                    f"{(m.get('canton') or m.get('region') or ''):<20} "
+                    f"domain={m.get('domain') or ''}"
                 )
 
     with open(data_path, "w", encoding="utf-8") as f:
