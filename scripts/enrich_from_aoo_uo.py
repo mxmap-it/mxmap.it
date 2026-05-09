@@ -36,6 +36,8 @@ from __future__ import annotations
 import argparse
 import csv
 import io
+import sys as _sys
+csv.field_size_limit(min(_sys.maxsize, 2**31 - 1))
 import json
 import sys
 import time
