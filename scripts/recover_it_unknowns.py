@@ -23,6 +23,7 @@ from collections import Counter
 from pathlib import Path
 
 from mail_sovereignty.classify import classify
+from mail_sovereignty.scrape_validator import is_legit_email_domain
 from mail_sovereignty.dns import (
     lookup_autodiscover,
     lookup_dkim,
@@ -96,23 +97,67 @@ async def classify_domain(domain: str) -> dict | None:
     }
 
 
-async def recover_one(seed_entry: dict, sem: asyncio.Semaphore) -> tuple[str, dict | None, str | None]:
-    """Try each domain_fallback in order; return (entry_id, classification, domain_used).
-    Returns (id, None, None) if no fallback yields MX."""
+# Categorie IndicePA che identificano scuole statali — la dirigenza usa
+# istituzionalmente il tenant centrale MIUR (istruzione.it) per la propria
+# casella di posta. Esponiamo questa dipendenza con un provider tag distinto.
+SCHOOL_CATEGORIE = {"L33"}
+
+
+def _is_school(seed_entry: dict) -> bool:
+    cat = (seed_entry.get("ipa_codice_categoria") or "").upper()
+    if cat in SCHOOL_CATEGORIE:
+        return True
+    ipa = (seed_entry.get("ipa_codice_ipa") or "").lower()
+    return any(ipa.startswith(p) for p in (
+        "ists", "cpia", "ic", "iis", "idis", "icim", "icp_", "icsg",
+        "icsm", "icsp", "iisa", "iiss", "lic", "cdsd", "cdpv", "cdsbs"))
+
+
+async def recover_one(seed_entry: dict, sem: asyncio.Semaphore) -> tuple[str, dict | None, str | None, list]:
+    """Try each domain_fallback in order, gated by is_legit_email_domain.
+    Returns (entry_id, classification, domain_used, rejected_audit).
+    """
     eid = seed_entry["id"]
     fallbacks = seed_entry.get("domain_fallbacks") or []
+    rejected: list[tuple[str, str]] = []
     if not fallbacks:
-        return eid, None, None
+        return eid, None, None, rejected
+    primary = (seed_entry.get("domain") or "").lower()
+    codice_ipa = (seed_entry.get("ipa_codice_ipa") or "").lower()
+    is_school = _is_school(seed_entry)
+
     async with sem:
         for fb in fallbacks:
+            ok, reason = is_legit_email_domain(fb, primary, codice_ipa=codice_ipa)
+            # Special exception: state schools (L33) using MIM's central
+            # tenant (istruzione.it) is a real institutional dependency,
+            # not a misattribution. Accept the fallback BUT tag with the
+            # dedicated `istruzione-miur-tenant` provider to keep it
+            # distinguishable from schools running their own tenants.
+            school_miur = (
+                fb.lower() == "istruzione.it" and is_school
+            )
+            if not ok and not school_miur:
+                rejected.append((fb, reason))
+                continue
             try:
                 result = await classify_domain(fb)
             except Exception as e:
                 print(f"  {eid}: error on fallback {fb}: {e!r}")
                 continue
-            if result is not None:
-                return eid, result, fb
-    return eid, None, None
+            if result is None:
+                continue
+            if school_miur:
+                result["provider"] = "istruzione-miur-tenant"
+                result["reason"] = (
+                    "Scuola statale: posta dei dirigenti sul tenant "
+                    "centrale MIM (istruzione.it / miuristruzione.onmicrosoft.com)"
+                )
+                result["miur_tenant_dependency"] = True
+            else:
+                result["recovery_legit_reason"] = reason
+            return eid, result, fb, rejected
+    return eid, None, None, rejected
 
 
 async def main_async() -> int:
@@ -152,26 +197,39 @@ async def main_async() -> int:
 
     n_done = 0
     n_recovered = 0
+    n_gate_rejected = 0
     provider_counts: Counter[str] = Counter()
+    rejection_audit: list[dict] = []
 
     for coro in asyncio.as_completed(tasks):
-        eid, result, used = await coro
+        eid, result, used, rejected = await coro
         n_done += 1
+        for fb, why in rejected:
+            n_gate_rejected += 1
+            rejection_audit.append({"id": eid, "fallback": fb, "reason": why})
         if result is None:
             continue
-        # Find which key in muns this id belongs to (should be eid itself)
         key = eid if eid in muns else next((k for k, v in muns.items() if v.get("id") == eid), None)
         if key is None:
             continue
         entry = muns[key]
-        # Preserve original domain; add domain_used and overlay classification
         entry["domain_used"] = used
         for k, v in result.items():
             entry[k] = v
         n_recovered += 1
         provider_counts[result["provider"]] += 1
         if n_done % 20 == 0:
-            print(f"  [{n_done}/{len(candidates)}] recovered={n_recovered}")
+            print(f"  [{n_done}/{len(candidates)}] recovered={n_recovered} gate_rejected={n_gate_rejected}")
+
+    # Audit trail of every fallback dropped by is_legit
+    if rejection_audit:
+        out = ROOT / "data" / "reports" / "recover_it_unknowns_rejections.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps({
+            "n_rejected": len(rejection_audit),
+            "items": rejection_audit,
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"\n  is_legit gate rejected {len(rejection_audit)} fallbacks → {out}")
 
     # Recompute counts at the data.json top level
     counts: Counter[str] = Counter(v.get("provider", "unknown") for v in muns.values())

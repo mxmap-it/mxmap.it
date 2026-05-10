@@ -6,7 +6,7 @@ human-readable summary printed to stdout.
 
 Inputs (no network):
   - data/indicepa_extended_emails.json (from enrich_from_aoo_uo.py)
-  - data/reports/cleanup_scraped_mx_bug.json (from cleanup_scraped_mx_bug.py)
+  - data/reports/cleanup_invalid_mx_attributions.json (from cleanup_invalid_mx_attributions.py)
   - data/municipalities_it.json (seed)
   - data.json (current pipeline state, for ente category lookup)
 
@@ -27,7 +27,10 @@ REPORTS.mkdir(parents=True, exist_ok=True)
 ext = json.loads((ROOT / "data/indicepa_extended_emails.json").read_text(encoding="utf-8"))
 seed = json.loads((ROOT / "data/municipalities_it.json").read_text(encoding="utf-8"))
 seed_by_ipa = {(e.get("ipa_codice_ipa") or "").lower(): e for e in seed}
-clean = json.loads((REPORTS / "cleanup_scraped_mx_bug.json").read_text(encoding="utf-8"))
+_clean_path = REPORTS / "cleanup_invalid_mx_attributions.json"
+if not _clean_path.exists():
+    _clean_path = REPORTS / "cleanup_scraped_mx_bug.json"  # legacy filename
+clean = json.loads(_clean_path.read_text(encoding="utf-8"))
 
 # ---------------- REPORT 1: Tier-6 reconciliations (full CSV) ----------------
 items = []

@@ -287,6 +287,10 @@ const COLORS = {
   // ITALIA — palette verde, gradata per grado di sovranità
   'Cloud Italiano':             '#009246', // verde bandiera — Lepida/ARIA/CSI/Insiel/Sogei...
   'Provider Italiano':          '#2E7D32', // Aruba/Register.it/Seeweb/InfoCert/Namirial/ISP
+  // Scuole statali sul tenant centrale MIM (istruzione.it / miuristruzione.onmicrosoft.com).
+  // Colore "ibrido": rosso CLOUD-Act perché è MS365, ma sfumato per indicare
+  // dipendenza da un tenant centrale che la scuola non controlla.
+  'Tenant centrale MIM (istruzione.it)': '#B85C5C',
   'Infrastruttura autonoma':    '#558B2F', // ex-Self-hosted/independent
   'Mail provinciale condivisa': '#7CB342',
   'Contractor PA privato':      '#AED581',
@@ -313,7 +317,7 @@ const COLORS = {
 const DARK_TEXT = new Set(['Google Workspace', 'Google', 'AWS', 'Sconosciuto', 'Unknown', 'Yandex', 'Mail provinciale condivisa', 'Contractor PA privato']);
 
 const TIERS = {
-  'USA (CLOUD Act)': ['Microsoft 365', 'Google Workspace', 'AWS'],
+  'USA (CLOUD Act)': ['Microsoft 365', 'Google Workspace', 'AWS', 'Tenant centrale MIM (istruzione.it)'],
   'Cloud Italiano (sovrano)': ['Cloud Italiano'],
   'Provider Italiano': ['Provider Italiano', 'Contractor PA privato'],
   'Infrastruttura autonoma': ['Infrastruttura autonoma', 'Mail provinciale condivisa'],
@@ -1642,6 +1646,10 @@ const providerDisplayMap = {
   'elkdata':     'Provider Italiano',
   // Italian publicly-owned consortium / regional ICT — sovereign cloud
   'regional-public':       'Cloud Italiano',
+  // Scuole statali appoggiate al tenant centrale MIM (istruzione.it).
+  // Distinto da Microsoft 365 perché la scuola NON ha tenant proprio:
+  // posta dei dirigenti su miuristruzione.onmicrosoft.com (CLOUD-Act).
+  'istruzione-miur-tenant': 'Tenant centrale MIM (istruzione.it)',
   // Italian private PA contractor (Engineering, Almaviva, …) — aggregated
   // into "Provider Italiano" for the citizen-facing map (same Italian
   // jurisdiction as Aruba/Register from a CLOUD-Act sovereignty POV).
@@ -1703,6 +1711,7 @@ const STATS_PROVIDER_DISPLAY = {
   'namirial': 'Provider Italiano', 'local-isp': 'Provider Italiano',
   'pa-contractor-private': 'Provider Italiano',
   'regional-public': 'Cloud Italiano',
+  'istruzione-miur-tenant': 'Tenant centrale MIM (istruzione.it)',
   'independent': 'Infrastruttura autonoma',
   'provincial-shared': 'Mail provinciale condivisa',
   'zoho': 'Zoho', 'yandex': 'Yandex',
@@ -1760,7 +1769,7 @@ function renderStats() {
 
   function usaItBars(rawProviders, total) {
     var disp = statsRollupProviders(rawProviders);
-    var usa = (disp['Microsoft 365']||0) + (disp['Google Workspace']||0) + (disp['AWS']||0);
+    var usa = (disp['Microsoft 365']||0) + (disp['Google Workspace']||0) + (disp['AWS']||0) + (disp['Tenant centrale MIM (istruzione.it)']||0);
     var cloudIt = disp['Cloud Italiano']||0;
     var providerIt = disp['Provider Italiano']||0;
     var indep = disp['Infrastruttura autonoma']||0;

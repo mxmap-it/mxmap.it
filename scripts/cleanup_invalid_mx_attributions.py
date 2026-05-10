@@ -1,27 +1,34 @@
 #!/usr/bin/env python3
-"""Purge cross-tenant misattributions left in data.json by the old
-postprocess.process_unknown / finalize_it_unknowns scrape paths (before
-the is_legit_email_domain gate was introduced).
+"""Purge cross-tenant MX misattributions left in data.json by ANY of
+the recovery paths that pre-dated the is_legit_email_domain gate:
 
-Detection — for each IT entity in data.json:
-  1. Determine the "claimed" email domain that was used to derive the MX:
-     - finalize_it_unknowns sets `domain_used`
-     - postprocess.process_unknown OVERWROTE `domain` (no audit field)
-       so we compare against the seed file's original domain
-  2. Run is_legit_email_domain(claimed_dom, seed_domain, codice_ipa)
+  1. recover_it_unknowns (consumes seed `domain_fallbacks` from IndicePA
+     non-PEC Mail* fields) — the dominant source for the istruzione.it
+     hijack of ~895 schools (a school's IndicePA record exposes the
+     dirigente's @istruzione.it inbox, which the recover script blindly
+     turned into the school's own MX).
+  2. postprocess.process_unknown (homepage scrape).
+  3. finalize_it_unknowns S3/S4 (homepage scrape + DDG search).
+  4. Any future ingest path that writes mx/provider/domain_used.
+
+For each IT entity in data.json:
+  1. Determine the "claimed" email domain that produced the MX:
+     - prefer audit fields `domain_used` or `scraped_email`
+     - else current `m["domain"]` (which may have been overwritten)
+  2. Compare against seed `domain` via is_legit_email_domain
   3. If reject → strip mx/spf/provider/cnames/asns/countries/autodiscover/
      dkim/tenant/gateway/domain_used/scraped_email and force the entry
      back to provider="unknown" with reason recording the rejection.
 
 Output:
   data.json mutated in-place (backup at data.json.cleanup_backup)
-  data/reports/cleanup_scraped_mx_bug.json — full audit (one line per
-  purged entity: id / name / seed_domain / claimed_domain / reject_reason
-  / old_mx / old_provider). This is the user-visible "rejection table".
+  data/reports/cleanup_invalid_mx_attributions.json — full audit
+  (id / name / seed_domain / claimed_domain / reject_reason / old_mx /
+  old_provider). User-visible "rejection table" for manual review.
 
 Idempotent: a second run finds nothing to purge.
 
-Usage: uv run python3 scripts/cleanup_scraped_mx_bug.py [--dry-run]
+Usage: uv run python3 scripts/cleanup_invalid_mx_attributions.py [--dry-run]
 """
 from __future__ import annotations
 
@@ -38,7 +45,7 @@ from mail_sovereignty.scrape_validator import is_legit_email_domain  # noqa
 DATA = ROOT / "data"
 DATAJSON = ROOT / "data.json"
 SEED = DATA / "municipalities_it.json"
-REPORT = DATA / "reports" / "cleanup_scraped_mx_bug.json"
+REPORT = DATA / "reports" / "cleanup_invalid_mx_attributions.json"
 
 # Fields that were set by the (now-gated) scrape paths and must be
 # stripped when we revert the entity to "unknown".
