@@ -44,6 +44,9 @@ DETAIL_FIELDS = {
     "txt_verifications",
     "tenant",
     "smtp_software",
+    # MX provenance — shown as badge in popup with link to methodology.html
+    "mx_discovery_method",
+    "mx_discovery_evidence",
 }
 
 # Fields intentionally dropped (not used by frontend)
@@ -304,6 +307,24 @@ def main():
         detail = {k: m[k] for k in DETAIL_FIELDS if k in m}
         if detail:
             detail_munis[bfs] = detail
+
+    # Emit mx_discovery_stats.json for methodology.html consumption.
+    # Per-method counts across IT enti — also gets used in the methodology
+    # page table. Keep alongside data/reports/ so it's served statically.
+    from collections import Counter as _Counter
+    _disc = _Counter()
+    _disc_total = 0
+    for _m in munis.values():
+        if (_m.get("country") or "").upper() != "IT":
+            continue
+        _disc_total += 1
+        _disc[_m.get("mx_discovery_method") or "unknown"] += 1
+    _disc_out = ROOT / "data" / "reports" / "mx_discovery_stats.json"
+    _disc_out.parent.mkdir(parents=True, exist_ok=True)
+    with open(_disc_out, "w", encoding="utf-8") as f:
+        json.dump({"total": _disc_total, "by_method": dict(_disc)}, f,
+                  ensure_ascii=False, indent=2)
+    print(f"  mx_discovery_stats.json: {_disc_total} enti, {len(_disc)} metodi")
 
     # Write region-level aggregations (lightweight, loaded first)
     regions_out = ROOT / "data-regions.json"

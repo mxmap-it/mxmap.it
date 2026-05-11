@@ -247,6 +247,10 @@
       </p>
       <p style="font-size:11px;color:#888">Licenza dati: ODbL-1.0 + CC-BY-4.0 (ereditate da OSM/IndicePA/Wikidata). Codice: MIT.</p>
       <h4 style="margin-top:14px;font-size:13px;color:#444">Trasparenza dataset</h4>
+      <p style="font-size:12px;color:#555;margin-bottom:6px">
+        📖 <a href="methodology.html" target="_blank" rel="noopener"><strong>Metodologia di scoperta MX</strong></a>
+        — come abbiamo determinato il fornitore di posta di ciascun ente, regole del validatore <code>is_legit_email_domain</code> e statistiche per metodo.
+      </p>
       <p id="funnel-sentence" style="margin-bottom:8px"><em>Caricamento…</em></p>
       <table id="funnel-table" style="border-collapse:collapse;font-size:12px;width:100%;max-width:560px"></table>
     </div>
@@ -854,6 +858,43 @@ function matchGroupFeature(feature, groups) {
   return null;
 }
 
+// --- MX discovery method badges ---
+// Synced with src/mail_sovereignty/mx_discovery.py — keep tags identical.
+const MX_DISCOVERY = {
+  seed_primary_mx:       { label: 'Dominio IndicePA (diretto)', tip: "Il dominio del Sito_istituzionale dichiarato in IndicePA ha record MX validi. Nessun recupero necessario." },
+  domain_guess:          { label: 'Dominio dedotto dal nome',  tip: "L'ente non aveva dominio in IndicePA. Il dominio è stato generato dal nome (traslitterazione + TLD nazionale) e ha risolto MX." },
+  manual_override:       { label: 'Override manuale',           tip: "Dominio corretto a mano dal mantenitore del dataset (typo IndicePA, dominio defunto, migrazione *.gov.it ecc.)." },
+  manual_llm_enrichment: { label: 'Curatela LLM',               tip: "Dominio proposto da una sessione LLM su prompt strutturato, validato a mano e committato." },
+  pec_only_enrichment:   { label: 'Enrichment PEC-only',        tip: "Ente con solo PEC su IndicePA. Dominio recuperato da Wikidata P856 e/o Wikipedia, verificato via MX." },
+  aoo_uo_tier6:          { label: 'AOO/UO IndicePA (Tier-6)',   tip: "Dominio non-PEC estratto dai record AOO/UO di IndicePA, filtrato dal validatore is_legit_email_domain." },
+  domain_fallback:       { label: 'Mail IndicePA non-PEC',      tip: "Dominio derivato dai campi Mail1..5 del record IndicePA dell'ente (esclusa la PEC), validato da is_legit_email_domain." },
+  istruzione_miur_tenant:{ label: 'Tenant centrale MIM',        tip: "Scuola statale (categoria L33): posta dei dirigenti sul tenant centrale del Ministero (miuristruzione.onmicrosoft.com), verificato via DKIM." },
+  wikidata_p856:         { label: 'Wikidata P856',              tip: "Dominio corretto recuperato dalla proprietà P856 (sito ufficiale) di Wikidata, indicizzato per codice ISTAT." },
+  public_pec_inference:  { label: 'PEC pubblica (inferenza)',   tip: "Ente con sola PEC su infrastruttura pubblica (RUPAR Piemonte, ASMEPEC). Classificato come regional-public." },
+  homepage_scrape:       { label: 'Scraping sito istituzionale', tip: "Email estratte dall'homepage / pagine contatti dell'ente, validate da is_legit_email_domain." },
+  search_engine_scrape:  { label: 'Ricerca + scraping',         tip: "Ricerca DuckDuckGo per il nome dell'ente, scraping dei candidati, validazione is_legit." },
+  smtp_banner:           { label: 'Banner SMTP',                tip: "Identificazione provider dal banner SMTP del primo MX." },
+  unknown:               { label: 'Non risolto',                tip: "Nessun percorso di recupero ha prodotto un MX accettato dal validatore. L'entità resta unknown per integrità." }
+};
+
+function renderDiscoveryBadge(m) {
+  const method = m.mx_discovery_method;
+  if (!method) return '';
+  const meta = MX_DISCOVERY[method];
+  if (!meta) return '';
+  const evidence = m.mx_discovery_evidence ? ` <span style="color:#666">— ${escapeHtml(m.mx_discovery_evidence)}</span>` : '';
+  const tip = escapeHtml(meta.tip);
+  return '<div class="mx-discovery-badge" style="margin-top:6px;font-size:11px;line-height:1.5">' +
+    '<span style="color:#888">Come abbiamo trovato questo MX:</span> ' +
+    '<a href="methodology.html#method-' + method + '" target="_blank" rel="noopener" ' +
+       'title="' + tip + '" ' +
+       'style="display:inline-block;background:#e8f5ee;color:#005a2a;padding:1px 6px;border-radius:3px;text-decoration:none;font-weight:600">' +
+    escapeHtml(meta.label) +
+    ' <span style="font-size:10px;color:#7aa890">↗</span>' +
+    '</a>' + evidence +
+    '</div>';
+}
+
 // --- Popup ---
 function buildPopup(m) {
   const cls = m.classification;
@@ -870,7 +911,11 @@ function buildPopup(m) {
     const rows = cls.mx_records.map(r =>
       `<tr><td class="pri">${r.priority}</td><td class="host" title="${escapeHtml(r.host)}">${escapeHtml(r.host)}</td></tr>`
     ).join('');
-    mxSection = `<div class="popup-section"><div class="popup-section-title">Posta in entrata <span class="popup-section-hint">(MX)</span>${countryNote}</div><table class="dns-table">${rows}</table></div>`;
+    mxSection = `<div class="popup-section"><div class="popup-section-title">Posta in entrata <span class="popup-section-hint">(MX)</span>${countryNote}</div><table class="dns-table">${rows}</table>${renderDiscoveryBadge(m)}</div>`;
+  } else {
+    // Even if no MX, if we have a discovery method (e.g. unknown), show it for transparency
+    const badge = renderDiscoveryBadge(m);
+    if (badge) mxSection = `<div class="popup-section"><div class="popup-section-title">Posta in entrata <span class="popup-section-hint">(MX)</span></div><p style="font-size:12px;color:#999;margin:4px 0">Nessun MX risolto.</p>${badge}</div>`;
   }
 
   let spfSection = '';

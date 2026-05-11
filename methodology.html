@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>mxmap.it — Metodologia di scoperta MX</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:900px;margin:0 auto;padding:32px 24px;line-height:1.6;color:#222}
+h1{font-size:26px;border-bottom:2px solid #009246;padding-bottom:8px}
+h2{font-size:20px;margin-top:36px;color:#005a2a;border-bottom:1px solid #ddd;padding-bottom:4px}
+h3{font-size:16px;margin-top:24px;color:#444}
+.method-card{border:1px solid #ddd;border-left:4px solid #009246;border-radius:6px;padding:16px 20px;margin:18px 0;background:#fafafa}
+.method-card h3{margin-top:0;color:#005a2a}
+.tag{display:inline-block;background:#e8f5ee;color:#005a2a;padding:2px 8px;border-radius:3px;font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:600}
+.gate{background:#fff8e1;border-left:3px solid #ffa000;padding:8px 12px;margin:8px 0;font-size:14px}
+.fail{background:#fef0f0;border-left:3px solid #d42e2e;padding:8px 12px;margin:8px 0;font-size:14px}
+.example{background:#f0f7ff;border-left:3px solid #1976d2;padding:8px 12px;margin:8px 0;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+table.stats{border-collapse:collapse;width:100%;max-width:520px;margin:12px 0;font-size:14px}
+table.stats th,table.stats td{padding:6px 12px;border-bottom:1px solid #eee;text-align:left}
+table.stats th{background:#f4f4f4;font-weight:600}
+table.stats td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+nav.toc{background:#f4f8f6;border-radius:6px;padding:14px 20px;margin:20px 0}
+nav.toc ul{margin:0;padding-left:20px}
+nav.toc a{color:#005a2a;text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+.intro{background:#fafafa;border:1px solid #ddd;border-radius:6px;padding:16px 20px;margin:18px 0}
+code{background:#f4f4f4;padding:1px 6px;border-radius:3px;font-size:13px}
+.principle{background:#fff8e1;border:1px solid #ffd54f;border-radius:6px;padding:16px 20px;margin:24px 0}
+.principle strong{color:#bf8800}
+</style>
+</head>
+<body>
+
+<p style="font-size:13px"><a href="index.html">← Torna alla mappa</a></p>
+<h1>Metodologia di scoperta MX</h1>
+<p>Come abbiamo determinato chi gestisce la posta di ciascun ente pubblico italiano (PEC esclusa).</p>
+
+<div class="principle">
+<strong>Principio guida.</strong> Meglio un ente classificato come <em>non risolto</em> che un ente classificato in modo fuorviante.
+Nessuna euristica permissiva: ogni metodo di scoperta segue regole esplicite e verificabili, validate dal modulo
+<code>is_legit_email_domain</code>. Quando una regola non si attiva, l'ente resta <strong>unknown</strong> —
+mai assegnato a un MX "plausibile ma non provato".
+</div>
+
+<nav class="toc">
+<strong>Indice</strong>
+<ul>
+  <li><a href="#pipeline">Pipeline di scoperta — panoramica</a></li>
+  <li><a href="#validator">Validatore <code>is_legit_email_domain</code></a></li>
+  <li><a href="#methods">Metodi di scoperta (taxonomia)</a></li>
+  <li><a href="#stats">Statistiche di scoperta — distribuzione</a></li>
+  <li><a href="#failure">Cosa significa "non risolto"</a></li>
+</ul>
+</nav>
+
+<h2 id="pipeline">Pipeline di scoperta — panoramica</h2>
+<div class="intro">
+<p>Ogni ente attraversa una catena di tentativi. Il primo che produce un MX accettato dal validatore vince:</p>
+<ol>
+  <li><strong>Seed-time</strong> (<code>fetch_indicepa.py</code>): si parte dal campo <code>Sito_istituzionale</code> di IndicePA, con sei tier di correzione automatica (override manuale, enrichment LLM curato, enrichment PEC-only Wikidata, AOO/UO Tier-6).</li>
+  <li><strong>Preprocess</strong> (<code>preprocess.py</code>): risoluzione DNS (MX/SPF/DKIM/CNAME/ASN/tenant) sul dominio risultante.</li>
+  <li><strong>Recover</strong> (<code>recover_it_unknowns.py</code>): per ogni ente ancora <code>unknown</code> con <code>domain_fallbacks</code> (mail non-PEC del record IndicePA), si tentano i fallback uno a uno, gated da <code>is_legit_email_domain</code>.</li>
+  <li><strong>Postprocess</strong> (<code>postprocess.py</code>): banner SMTP + scraping del sito (gated).</li>
+  <li><strong>Finalize</strong> (<code>finalize_it_unknowns.py</code>): cinque strategie sugli ultimi unknowns — Tier-6 AOO/UO, PEC pubblica, Wikidata P856, scraping homepage, ricerca DuckDuckGo + scraping (tutte gated).</li>
+</ol>
+<p>Ogni stage scrive il campo <code>mx_discovery_method</code> con la tag canonica del metodo applicato. Il tag viene mostrato nel popup dell'ente con tooltip esplicativo e link a questa pagina.</p>
+</div>
+
+<h2 id="validator">Validatore <code>is_legit_email_domain</code></h2>
+<p>Nucleo della pipeline. Per ogni dominio candidato proveniente da scraping, fallback IndicePA o ricerca web, decide se è legittimamente associato all'ente. <strong>Default: REJECT.</strong> Accetta solo se scatta una di queste regole esplicite:</p>
+<ol>
+  <li><strong>Match esatto</strong> — il dominio candidato è identico al dominio seed dell'ente.</li>
+  <li><strong>Override manuale</strong> — coppia (codice_ipa → dominio) hand-curata.</li>
+  <li><strong>PA-shared NAZIONALE</strong> — il candidato è un dominio di infrastruttura PA cross-territoriale (<code>garr.it</code>, <code>sogei.it</code>, consorzi ASMEL); accettato per qualsiasi ente.</li>
+  <li><strong>PA-shared REGIONALE</strong> — il candidato è una piattaforma di una specifica regione (<code>lepida.it</code> = Emilia-Romagna, <code>regione.vda.it</code> = Valle d'Aosta, <code>ruparpiemonte.it</code> = Piemonte, ecc.). Accettato solo se: (a) l'ente è una PA locale (presenza di marker <code>comune.</code>, <code>provincia.</code>, codice di provincia, ecc.); (b) <em>e</em> l'ente è geograficamente in quella regione, verificato tramite mappatura province (110 codici) + capoluoghi (107 nomi). <strong>Rigetto automatico</strong> per ministeri/PA centrali (dominio <code>*.gov.it</code>).</li>
+  <li><strong>Relazione di sottodominio</strong> — il candidato è ancestor o discendente del dominio seed.</li>
+  <li><strong>Intersezione di label significativi</strong> — dopo aver rimosso TLD comuni, codici provincia e prefissi strutturali (<code>comune.</code>, <code>mail.</code>, <code>www.</code>, ecc.), le label residue dei due domini condividono almeno un elemento (≥3 caratteri).</li>
+  <li><strong>Rigetto PEC</strong> — domini di provider PEC (<code>legalmail.it</code>, <code>arubapec.it</code>, <code>postecert.it</code>, ecc.) sono sempre rigettati come base di classificazione MX (per design: la PEC non è considerata posta "operativa" per scopo di sovranità).</li>
+</ol>
+<p>Codice: <a href="https://github.com/fpietrosanti/mxmap.it/blob/main/src/mail_sovereignty/scrape_validator.py" target="_blank" rel="noopener">src/mail_sovereignty/scrape_validator.py</a>. Test: <a href="https://github.com/fpietrosanti/mxmap.it/blob/main/scripts/_test_scrape_validator.py" target="_blank" rel="noopener">scripts/_test_scrape_validator.py</a> (34 casi).</p>
+
+<h2 id="methods">Metodi di scoperta — taxonomia completa</h2>
+<p>Ogni voce mostra: la tag stabile (citabile come anchor di questa pagina), una descrizione estesa, la regola formale che la attiva, le sorgenti di evidenza, e il comportamento in caso di fallimento.</p>
+
+<div class="method-card" id="method-seed_primary_mx">
+<h3>1. <span class="tag">seed_primary_mx</span> — Dominio IndicePA (diretto)</h3>
+<p>Il dominio dichiarato come <code>Sito_istituzionale</code> nel record IndicePA dell'ente ha record MX validi. Nessuna correzione, nessun recupero. È il caso ideale e il più frequente per i Comuni con presenza digitale matura.</p>
+<div class="gate"><strong>Regola:</strong> <code>lookup_mx(seed.domain)</code> restituisce almeno un MX.</div>
+<div class="example">Esempio: <code>comune.milano.it</code> → <code>p-milano-mx-001.it-milano.local</code> (su infrastruttura proprietaria).</div>
+</div>
+
+<div class="method-card" id="method-domain_guess">
+<h3>2. <span class="tag">domain_guess</span> — Dominio dedotto dal nome</h3>
+<p>L'ente non ha dominio in IndicePA. Il sistema genera candidati dal nome (rimozione diacritici, prefissi <code>comune-</code>/<code>provincia-</code>, TLD nazionale <code>.it</code>) e accetta il primo con MX risolvibile.</p>
+<div class="gate"><strong>Regola:</strong> generatore deterministico in <code>preprocess.guess_domains()</code> + verifica MX.</div>
+<div class="fail"><strong>Failure:</strong> nessun candidato genera MX → entry passa allo stadio successivo.</div>
+</div>
+
+<div class="method-card" id="method-manual_override">
+<h3>3. <span class="tag">manual_override</span> — Override manuale</h3>
+<p>Dominio corretto a mano dai mantenitori del dataset. Usato per fixare typo IndicePA (<code>castefranco</code> → <code>castelfranco</code>), domini <code>*.gov.it</code> defunti migrati a <code>comune.{nome}.{prov}.it</code>, o casi che la pipeline automatica non riesce a recuperare correttamente.</p>
+<div class="gate"><strong>Regola:</strong> presenza in <code>IT_MANUAL_DOMAIN_OVERRIDES</code> (dict <code>codice_ipa → dominio</code>) in <code>scripts/fetch_indicepa.py</code>. Ogni voce ha un commento di giustificazione.</div>
+<p style="font-size:13px;color:#666">Numero limitato (≪100). Crescita lenta, una voce per bug confermato.</p>
+</div>
+
+<div class="method-card" id="method-manual_llm_enrichment">
+<h3>4. <span class="tag">manual_llm_enrichment</span> — Curatela LLM (revisione umana)</h3>
+<p>Per gli enti che IndicePA segnala con sola PEC e dove né Wikidata né Wikipedia hanno informazioni, generiamo un prompt strutturato (lista di codici IPA + nomi ufficiali) e lo sottomettiamo a una sessione LLM. Le risposte vengono validate a mano e committate in <code>data/manual_llm_enrichment.json</code>.</p>
+<div class="gate"><strong>Regola:</strong> presenza in <code>data/manual_llm_enrichment.json</code> + verifica sintattica del hostname + MX risolvibile a runtime.</div>
+<p style="font-size:13px;color:#666">Generazione non riproducibile (LLM-mediata), consumo deterministico. Vedi <code>scripts/generate_llm_enrichment_prompt.py</code>.</p>
+</div>
+
+<div class="method-card" id="method-pec_only_enrichment">
+<h3>5. <span class="tag">pec_only_enrichment</span> — Enrichment PEC-only (Wikidata + Wikipedia)</h3>
+<p>Quando l'ente IndicePA espone solo indirizzi PEC, lo script <code>enrich_pec_only.py</code> tenta automaticamente di recuperare il dominio istituzionale tramite proprietà P856 di Wikidata indicizzata sul codice ISTAT o sul nome, con fallback al titolo Wikipedia. La verifica MX è obbligatoria prima di accettare il dominio.</p>
+<div class="gate"><strong>Regola:</strong> Wikidata P856 valido → hostname normalizzato → MX risolvibile. In assenza di MX la voce è scartata, non promossa a fallback.</div>
+</div>
+
+<div class="method-card" id="method-aoo_uo_tier6">
+<h3>6. <span class="tag">aoo_uo_tier6</span> — AOO/UO IndicePA (Tier-6)</h3>
+<p>IndicePA pubblica oltre al dataset <code>enti</code> anche due dataset ausiliari: <em>Aree Organizzative Omogenee</em> (AOO) e <em>Unità Organizzative</em> (UO). Questi record contengono email non-PEC dei responsabili (<code>mail_resp</code>, <code>mail1..3</code> con <code>tipo_mail*</code> ≠ Pec). Per ministeri e PA centrali è spesso l'unica fonte di domini reali (il record principale ha solo PEC).</p>
+<div class="gate"><strong>Regola:</strong> per ogni codice IPA, raccogliamo tutti i domini non-PEC dalle AOO+UO collegate; <strong>ogni</strong> dominio passa per <code>is_legit_email_domain(dominio, seed.domain, codice_ipa=...)</code>; vengono accettati solo i superstiti. I rigetti vengono loggati per audit (vedi <code>data/indicepa_extended_emails.json</code> → <code>filtered_out</code>).</div>
+<div class="example">Caso <code>m_it</code> (Min. Interno): 283 record AOO. Domini scoperti: <code>interno.it</code> ✓, <code>vigilfuoco.it</code> ✗ (rigettato — ente separato), <code>regione.vda.it</code> ✗ (rigettato — piattaforma regionale fuori scope per un ministero nazionale).</div>
+</div>
+
+<div class="method-card" id="method-domain_fallback">
+<h3>7. <span class="tag">domain_fallback</span> — Mail IndicePA non-PEC (fallback ente)</h3>
+<p>Il record <code>enti</code> stesso espone fino a 5 campi <code>Mail*</code>. Il fetch ne estrae i domini non-PEC distinti dal primario e li salva in <code>seed.domain_fallbacks</code>. Se il dominio primario non risolve, <code>recover_it_unknowns.py</code> prova ciascun fallback in ordine.</p>
+<div class="gate"><strong>Regola:</strong> per ogni fallback <code>fb</code>, <code>is_legit_email_domain(fb, seed.domain, codice_ipa=...)</code> deve restituire True. Solo allora si esegue la classificazione DNS. Rigetti loggati in <code>data/reports/recover_it_unknowns_rejections.json</code>.</div>
+<div class="fail"><strong>Failure:</strong> il fallback più frequente che fallisce questa regola è <code>istruzione.it</code> per scuole — gestito tramite la regola specifica <code>istruzione_miur_tenant</code> (sotto).</div>
+</div>
+
+<div class="method-card" id="method-istruzione_miur_tenant">
+<h3>8. <span class="tag">istruzione_miur_tenant</span> — Tenant centrale MIM (istruzione.it)</h3>
+<p>Le scuole statali italiane (categoria IndicePA <code>L33</code>) non hanno un proprio tenant Microsoft 365: la posta dei dirigenti scolastici, segreterie e docenti abilitati è ospitata sul tenant centrale del Ministero dell'Istruzione e del Merito (MIM) all'indirizzo <code>istruzione.it</code>. Questa dipendenza è una realtà istituzionale, non una misattribuzione — ma è importante segnalarla distintamente da una scuola che gestisce un proprio tenant.</p>
+<div class="gate"><strong>Regole (TUTTE E TRE obbligatorie):</strong>
+<ul>
+  <li><strong>R1:</strong> <code>seed.ipa_codice_categoria == "L33"</code> (nessuna euristica su codice_ipa).</li>
+  <li><strong>R2:</strong> il fallback proposto è esattamente <code>istruzione.it</code>.</li>
+  <li><strong>R3:</strong> la risoluzione DKIM su <code>istruzione.it</code> deve contenere <code>miuristruzione.onmicrosoft.com</code> (prova crittografica del tenant MIM).</li>
+</ul>
+</div>
+<div class="fail"><strong>Failure di anche una sola regola:</strong> entry rigettata, marcata come <code>miur_tenant_unverified</code> nel report, ente resta <code>unknown</code>. Nessuna assunzione "questo sembra una scuola, sarà MIM".</div>
+<div class="example">Caso <code>iccaroberlingieri.edu.it</code> (I.C. Caro-Berlingieri): categoria L33 ✓, fallback <code>istruzione.it</code> ✓, DKIM <code>selector1-istruzione-it._domainkey.miuristruzione.onmicrosoft.com</code> ✓ → tag <code>istruzione_miur_tenant</code>.</div>
+</div>
+
+<div class="method-card" id="method-wikidata_p856">
+<h3>9. <span class="tag">wikidata_p856</span> — Wikidata sito ufficiale</h3>
+<p>Per i comuni che fallirebbero tutti i tentativi precedenti, una query SPARQL batch su Wikidata recupera la proprietà <code>P856</code> (sito ufficiale) indicizzata sul codice ISTAT 6-cifre del comune. Cattura tipici typo IndicePA e migrazioni <code>*.gov.it</code> → <code>comune.{nome}.{prov}.it</code>.</p>
+<div class="gate"><strong>Regola:</strong> <code>SELECT ?web WHERE { ?city wdt:P3829 "{istat6}"; wdt:P856 ?web }</code> + verifica MX. Solo se il dominio Wikidata <em>differisce</em> dal primario IndicePA viene considerato (idempotenza).</div>
+</div>
+
+<div class="method-card" id="method-public_pec_inference">
+<h3>10. <span class="tag">public_pec_inference</span> — Inferenza da PEC pubblica</h3>
+<p>Alcuni enti utilizzano come PEC ufficiale infrastrutture pubblicamente operate (non provider commerciali): <code>cert.ruparpiemonte.it</code> (CSI Piemonte, ICT regionale sovrano), <code>asmepec.it</code> (consorzio comuni ASMEL). Quando il record IndicePA mostra solo PEC di questo tipo, classifichiamo l'ente come <code>regional-public</code> — anche senza un MX proprio risolto.</p>
+<div class="gate"><strong>Regola:</strong> presenza di Mail* su uno dei provider PEC pubblici whitelistati, e <em>assenza</em> di MX validi sul dominio primario.</div>
+</div>
+
+<div class="method-card" id="method-homepage_scrape">
+<h3>11. <span class="tag">homepage_scrape</span> — Scraping sito istituzionale</h3>
+<p>Quando i metodi precedenti falliscono, scarichiamo l'homepage (e alcune sotto-pagine: <code>/contatti</code>, <code>/amministrazione-trasparente</code>, ecc.) ed estraiamo gli indirizzi email visibili (incluso il decifrato dei mailto TYPO3 cifrati con Caesar). Ogni dominio estratto passa per il validatore.</p>
+<div class="gate"><strong>Regola:</strong> per ogni email scrapata, <code>is_legit_email_domain(email_host, ente_domain)</code> deve restituire True. Se rigettata, la coppia (host, ragione) viene loggata in <code>data/reports/cleanup_invalid_mx_attributions.json</code>.</div>
+<div class="fail"><strong>Failure storico (ora bloccato):</strong> molti siti comunali pubblicano in homepage email di terze parti (eventi, partner, scuole ospitate); l'attribuzione automatica del loro MX al comune era la causa del bug "Min. Interno → MX Comune di Roma" che ha motivato l'introduzione del validatore.</div>
+</div>
+
+<div class="method-card" id="method-search_engine_scrape">
+<h3>12. <span class="tag">search_engine_scrape</span> — Ricerca DDG + scraping</h3>
+<p>Ultima risorsa per enti con dominio primario defunto e nessuna voce Wikidata. Query DuckDuckGo HTML (no JS, no rate limit aggressivo) per il nome dell'ente; candidati URL filtrati per somiglianza al nome e dominio plausibile; scraping dell'homepage del candidato; validazione is_legit del dominio mail estratto.</p>
+<div class="gate"><strong>Regola:</strong> stessa di <code>homepage_scrape</code> (validatore is_legit obbligatorio).</div>
+</div>
+
+<div class="method-card" id="method-smtp_banner">
+<h3>13. <span class="tag">smtp_banner</span> — Banner SMTP</h3>
+<p>Per gli enti già classificati come <code>independent</code> (MX proprio, nessun match con i grandi provider), apriamo una connessione SMTP al primo MX e leggiamo il banner EHLO. Stringhe come <em>"Postfix (Ubuntu)"</em>, <em>"Exchange 2019"</em>, <em>"Plesk SMTP server"</em> arricchiscono il record con il software identificato.</p>
+<div class="gate"><strong>Regola:</strong> match keyword del banner contro <code>SMTP_BANNER_KEYWORDS</code> in <code>constants.py</code>. Concorrenza limitata (5) per non sembrare scanner.</div>
+</div>
+
+<div class="method-card" id="method-unknown">
+<h3>14. <span class="tag">unknown</span> — Non risolto</h3>
+<p>Nessuno dei 13 metodi sopra ha prodotto un MX accettabile. L'ente resta <code>unknown</code> e <em>non viene assegnato a un provider</em>. Le motivazioni di rigetto del validatore sono comunque archiviate per consentire revisione manuale futura.</p>
+<div class="gate"><strong>Promemoria del principio:</strong> non classifichiamo mai per riempire la riga. Il numero di <code>unknown</code> è una metrica di onestà del dataset, non un fallimento.</div>
+</div>
+
+<h2 id="stats">Statistiche di scoperta — distribuzione corrente</h2>
+<p id="stats-loading"><em>Caricamento statistiche…</em></p>
+<table class="stats" id="stats-table" style="display:none">
+  <thead><tr><th>Metodo</th><th>Enti</th><th>% sul totale IT</th></tr></thead>
+  <tbody></tbody>
+</table>
+<p style="font-size:13px;color:#666;margin-top:14px">Aggiornato automaticamente a ogni build del frontend (vedi <code>scripts/build_frontend.py</code>).</p>
+
+<h2 id="failure">Cosa significa "non risolto"</h2>
+<p>Un ente classificato come <code>unknown</code> può esserlo per varie ragioni — tutte riconducibili al principio "meglio onesto che fuorviante":</p>
+<ul>
+  <li><strong>Dominio defunto.</strong> Il sito IndicePA non risponde più; non esiste P856 Wikidata; la ricerca web non trova un sostituto plausibile.</li>
+  <li><strong>Nessun fallback non-PEC.</strong> IndicePA espone solo PEC, Wikidata non ha P856, nessun record AOO/UO collegato.</li>
+  <li><strong>Tutti i candidati cross-tenant.</strong> Lo scraping ha trovato email, ma <em>tutte</em> appartenevano ad altri enti (errore comune nei siti comunali con riferimenti a scuole/enti convenzionati). Il validatore le ha respinte.</li>
+  <li><strong>Ente recentemente costituito o estinto.</strong> Soppressioni, fusioni di comuni, ridenominazioni post-riforma: latenza tra IndicePA e realtà.</li>
+</ul>
+<p>Il prossimo passo programmato per ridurre il numero di unknown è il recupero <strong>fuzzy</strong> (Damerau-Levenshtein) sui typo di label e hyphenation: casi come <code>aciroma.it</code> ↔ <code>roma.aci.it</code> che il validatore attuale rigetta per mancanza di label condiviso ma che sono di fatto la stessa entità.</p>
+
+<hr style="margin-top:48px;border:none;border-top:1px solid #ddd">
+<p style="font-size:12px;color:#888;text-align:center">
+mxmap.it — <a href="https://github.com/fpietrosanti/mxmap.it" target="_blank" rel="noopener">codice e dati su GitHub</a> · Licenza dati: ODbL-1.0 + CC-BY-4.0 · Codice: MIT
+</p>
+
+<script>
+// Carica e visualizza le statistiche di scoperta MX
+fetch('data/reports/mx_discovery_stats.json')
+  .then(r => r.ok ? r.json() : null)
+  .then(stats => {
+    if (!stats || !stats.by_method) return;
+    const total = stats.total || 0;
+    const labels = {
+      seed_primary_mx: 'Dominio IndicePA (diretto)',
+      domain_guess: 'Dominio dedotto dal nome',
+      manual_override: 'Override manuale',
+      manual_llm_enrichment: 'Curatela LLM',
+      pec_only_enrichment: 'Enrichment PEC-only (Wikidata)',
+      aoo_uo_tier6: 'AOO/UO IndicePA (Tier-6)',
+      domain_fallback: 'Mail IndicePA non-PEC (fallback)',
+      istruzione_miur_tenant: 'Tenant centrale MIM',
+      wikidata_p856: 'Wikidata P856',
+      public_pec_inference: 'Inferenza da PEC pubblica',
+      homepage_scrape: 'Scraping sito',
+      search_engine_scrape: 'Ricerca + scraping',
+      smtp_banner: 'Banner SMTP',
+      unknown: 'Non risolto'
+    };
+    const tbody = document.querySelector('#stats-table tbody');
+    const rows = Object.entries(stats.by_method).sort((a, b) => b[1] - a[1]);
+    for (const [m, n] of rows) {
+      const tr = document.createElement('tr');
+      const pct = total ? (100 * n / total).toFixed(1) : '0';
+      tr.innerHTML = `<td><a href="#method-${m}">${labels[m] || m}</a> <span style="color:#888;font-size:11px;font-family:ui-monospace,Menlo,monospace">${m}</span></td><td class="n">${n.toLocaleString('it')}</td><td class="n">${pct}%</td>`;
+      tbody.appendChild(tr);
+    }
+    document.getElementById('stats-loading').style.display = 'none';
+    document.getElementById('stats-table').style.display = '';
+  })
+  .catch(() => { document.getElementById('stats-loading').innerHTML = '<em>Statistiche non disponibili.</em>'; });
+</script>
+
+</body>
+</html>
