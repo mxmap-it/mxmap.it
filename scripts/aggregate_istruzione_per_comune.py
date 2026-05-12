@@ -58,6 +58,9 @@ PROVIDER_DISPLAY = {
     "zone": "Provider Italiano", "elkdata": "Provider Italiano",
     "regional-public": "Cloud Italiano",
     "pa-contractor-private": "Provider Italiano",
+    # Scuole statali sul tenant centrale MIM (istruzione.it). Distinto da
+    # Microsoft 365 perché la scuola non controlla un proprio tenant.
+    "istruzione-miur-tenant": "Tenant centrale MIM (istruzione.it)",
     "independent": "Infrastruttura autonoma",
     "provincial-shared": "Mail provinciale condivisa",
     "zoho": "Zoho", "yandex": "Yandex",
@@ -68,6 +71,7 @@ PROVIDER_DISPLAY = {
 COLORS = {
     "Microsoft 365": "#D42E2E", "Google Workspace": "#FF6B6B", "AWS": "#FF8C42",
     "Cloud Italiano": "#009246", "Provider Italiano": "#2E7D32",
+    "Tenant centrale MIM (istruzione.it)": "#B85C5C",
     "Infrastruttura autonoma": "#558B2F",
     "Mail provinciale condivisa": "#7CB342",
     "Zoho": "#7C3AED", "Yandex": "#FFCC00",

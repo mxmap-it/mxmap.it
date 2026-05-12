@@ -77,6 +77,9 @@ PROVIDER_DISPLAY = {
     # distinct in data.json for auditing/reporting.
     "pa-contractor-private": "Provider Italiano",
     # Self-hosted (renamed)
+    # Scuole statali sul tenant centrale MIM (istruzione.it). Distinto da
+    # Microsoft 365 perché la scuola non controlla un proprio tenant.
+    "istruzione-miur-tenant": "Tenant centrale MIM (istruzione.it)",
     "independent": "Infrastruttura autonoma",
     # Provincial-shared
     "provincial-shared": "Mail provinciale condivisa",
