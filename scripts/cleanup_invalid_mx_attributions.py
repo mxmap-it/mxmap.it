@@ -97,6 +97,16 @@ def main() -> int:
         if claimed == seed_dom:
             continue   # never scrape-derived
 
+        # Eccezione: scuole statali sul tenant centrale MIM (istruzione.it).
+        # Hanno mx_discovery_method='istruzione_miur_tenant' + flag
+        # `miur_tenant_dependency` settato da recover_it_unknowns dopo
+        # verifica DKIM (R1+R2+R3). Il validatore qui rigetterebbe
+        # 'istruzione.it' vs 'liceo.edu.it' come 'unrelated' perché non
+        # conosce il pattern istituzionale. NON purgare.
+        if (m.get("mx_discovery_method") == "istruzione_miur_tenant"
+                or m.get("miur_tenant_dependency")):
+            continue
+
         ok, reason = is_legit_email_domain(claimed, seed_dom,
                                            codice_ipa=codice_ipa or None)
         if ok:
