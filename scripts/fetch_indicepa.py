@@ -459,6 +459,17 @@ IT_MANUAL_DOMAIN_OVERRIDES: dict[str, str] = {
     # `aspmariacristinadisavoia.it` (no MX); office uses
     # `aspmcdisavoiafoggia@gmail.com`, so mail is on personal gmail.com.
     "apspmcs": "gmail.com",
+    # ACI Ravenna — IndicePA lists `ravenna.aci.it` (no MX); il sito
+    # ufficiale è http://www.acravenna.it/ (Sito_istituzionale dichiarato
+    # dal Direttore). MX su alt{1,2,3}.aspmx.l.google.com (Google).
+    "ac_ra": "acravenna.it",
+    # ACI Trapani — IndicePA lists `trapani.aci.it` (no MX sul subdomain
+    # provinciale; solo HTTP). La posta dell'ufficio è gestita
+    # centralmente sul tenant Google di ACI nazionale (aci.it).
+    "ac_tp": "aci.it",
+    # ACI Taranto — analogo a Trapani: `taranto.aci.it` solo HTTP, posta
+    # operativa sul tenant Google centrale aci.it.
+    "acta":  "aci.it",
 }
 
 
