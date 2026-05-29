@@ -288,6 +288,42 @@ def test_seed_comuni_count_matches_istat(seed, istat_codes_current):
     )
 
 
+def test_no_osm_id_on_non_territorial_entries(seed):
+    """Solo entry territoriali (IT-REG/PRO/CMM/COM) possono avere
+    osm_relation_id. Le entry non-territoriali (IT-CONS-*, IT-C*-*,
+    IT-L33-*, IT-L34-*, ecc.) DEVONO avere osm_relation_id=None.
+
+    Se IndicePA categorizza un ente come L6 ma il filtro is_territorial
+    lo riassegna a IT-CONS-*, l'osm_id derivato da
+    ipa_codice_comune_istat deve essere stripped. Senza questo strip,
+    il frontend (che matcha le entry ai polygons per osm_relation_id)
+    mostrerebbe l'ente sul polygon del comune sede legale.
+
+    Storia: bug UNCEM Lazio osservato il 2026-05-29 — nel popup del
+    comune di Roma nella vista comuni appariva UNCEM Delegazione
+    Regionale del Lazio (IT-CONS-BRM2B3KM) perché aveva ancora
+    osm_relation_id=41485 (relazione OSM di Roma).
+    """
+    TERRITORIAL_PREFIXES = ("IT-REG-", "IT-PRO-", "IT-CMM-", "IT-COM-")
+    violations = []
+    for e in seed:
+        eid = e.get("id", "")
+        if eid.startswith(TERRITORIAL_PREFIXES):
+            continue
+        if e.get("osm_relation_id"):
+            violations.append({
+                "id": eid,
+                "osm_relation_id": e.get("osm_relation_id"),
+                "name": (e.get("name") or "")[:50],
+                "categoria": e.get("ipa_codice_categoria"),
+            })
+    assert not violations, (
+        f"{len(violations)} entry non-territoriali hanno osm_relation_id "
+        f"valorizzato. Il frontend li mostrerebbe sui polygon comunali "
+        f"sbagliati. First 10: {violations[:10]}"
+    )
+
+
 def test_no_orphan_it_com_istat_pairs(seed, istat_index):
     """Ogni IT-COM-XXX deve avere codice_istat che corrisponde all'id
     (cioè IT-COM-058091 deve avere ipa_codice_comune_istat=058091).

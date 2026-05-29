@@ -926,6 +926,16 @@ def transform(
         codice_istat=codice_istat_str,
         codice_comune_istat=codice_comune_istat_str,
     )
+    # CRITICAL: solo entry territoriali (IT-REG/PRO/CMM/COM) possono avere
+    # osm_relation_id assegnato a un polygon. Le entry non-territoriali
+    # (IT-CONS-* e IT-{C*|L33|L34|...}-*) NON DEVONO avere osm_relation_id
+    # perché il frontend matcha le entry ai polygons per quel campo: se
+    # UNCEM Lazio (IT-CONS-*) avesse osm_relation_id=41485 (= relazione
+    # OSM di Roma, perché ipa_codice_comune_istat=058091 mappa a Roma),
+    # il polygon di Roma nella vista comuni mostrerebbe UNCEM invece del
+    # vero Comune di Roma. Storia: bug osservato in produzione il 2026-05-29.
+    if not (codice_categoria in LEVEL_MAP and is_terr_for_id):
+        osm_id = None
 
     domain_fallbacks = extract_domain_fallbacks(row, domain)
 

@@ -25,6 +25,7 @@ La vista comuni della mappa renderizza un polygon per ogni entry con
 | **I4** | `id == "IT-COM-{X}"` ⇔ `ipa_codice_comune_istat == "X"` | id e campo di lookup divergenti → bug downstream |
 | **I5** | Ogni `IT-COM-XXX` ha un codice ISTAT (numerico o catastale) presente nell'**elenco ufficiale ISTAT** | codice spurio o obsoleto → render sul polygon sbagliato |
 | **I6** | Numero di `IT-COM-*` è ±50 da quello ISTAT (~7896) | filtro troppo permissivo (>>) o troppo stretto (<<) |
+| **I7** | Solo entry territoriali (`IT-REG/PRO/CMM/COM`) hanno `osm_relation_id` | enti non-comuni renderizzati sul polygon del comune sede (bug UNCEM 2026-05-29) |
 
 Analoghe invarianti su `IT-REG-*` (Regioni), `IT-PRO-*` (Province),
 `IT-CMM-*` (Città Metropolitane). Non ancora applicate alle categorie
