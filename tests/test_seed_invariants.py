@@ -213,22 +213,26 @@ def istat_codici_catastali(istat_payload):
 
 
 def test_all_it_com_have_valid_codice_catastale(seed, istat_codici_catastali):
-    """Ogni IT-COM-XXX dovrebbe avere ipa_codice_ipa nel pattern
-    'c_<codice-catastale>' e quel codice catastale deve esistere
-    nell'elenco ufficiale ISTAT. Usiamo il codice catastale (stabile
-    nel tempo, immutato durante riorganizzazioni provinciali come la
-    riforma Sardegna 2016) invece del codice comune ISTAT numerico
-    (che IndicePA mantiene su valori legacy 11X per la Sardegna).
+    """Per ogni IT-COM-XXX con codice IPA nel formato standard
+    'c_<catastale>' (es. c_a007 = Abbasanta), il codice catastale
+    deve esistere nell'elenco ISTAT.
 
-    Documentazione codici catastali ISTAT:
-    https://www.istat.it/it/archivio/6789
+    Comuni con codice IPA non standard (es. UUID-like '3BEP4ZAX' per
+    'COMUNE DI MORANSENGO-TONENGO', neo-fusi assegnati a IndicePA con
+    codice opaco; oppure 'B432' per Comune di Calto pre-2010) sono
+    skippati: la nostra invariante non si applica a loro perché non
+    espongono il catastale nel codice IPA. Il fatto che siano IT-COM-*
+    è già garantito dai test precedenti (nome 'Comune *' + categoria L6).
 
-    Soglia: max 50 outliers ammessi per assorbire (a) i 2 comuni di
-    L6_NAME_EXCEPTIONS con codice IPA non standard; (b) eventuali
-    comuni neo-fusi non ancora nel CSV ISTAT.
+    Codice catastale: identificativo stabile a 4 caratteri attribuito
+    dall'Agenzia delle Entrate (Catasto). NON cambia con riforme
+    amministrative (e.g. Abbasanta resta A007 anche se ISTAT cambia il
+    codice da 115001 a 095001 dopo la riforma Sardegna 2016).
     """
     import re
     CATASTALE_RE = re.compile(r"^c_([a-z][a-z0-9]{3})$", re.IGNORECASE)
+    n_skipped = 0
+    n_checked = 0
     violations = []
     for e in seed:
         if not e.get("id", "").startswith("IT-COM-"):
@@ -236,28 +240,26 @@ def test_all_it_com_have_valid_codice_catastale(seed, istat_codici_catastali):
         ipa = (e.get("ipa_codice_ipa") or "").strip()
         m = CATASTALE_RE.match(ipa)
         if not m:
-            # ipa_codice_ipa non in pattern c_<catastale> — potrebbe essere
-            # un comune con codice IPA storico non-standard. Skip dal test
-            # ma traccia per audit.
-            violations.append({
-                "id": e["id"],
-                "ipa": ipa,
-                "reason": "no_catastale_pattern_in_codice_ipa",
-                "name": (e.get("name") or "")[:50],
-            })
+            n_skipped += 1
             continue
         catastale = m.group(1).upper()
+        n_checked += 1
         if catastale not in istat_codici_catastali:
             violations.append({
                 "id": e["id"],
                 "ipa": ipa,
                 "catastale": catastale,
-                "reason": "catastale_not_in_istat",
                 "name": (e.get("name") or "")[:50],
             })
-    assert len(violations) <= 50, (
-        f"{len(violations)} IT-COM-* outliers contro elenco ISTAT. "
-        f"First 10: {violations[:10]}"
+    print(f"\n[info] cross-validation ISTAT catastale: "
+          f"{n_checked} verificati, {n_skipped} skipped (codice_ipa non-standard), "
+          f"{len(violations)} violazioni")
+    # Soglia: max 20 violazioni reali. Soglia stretta perché qui stiamo
+    # confrontando un codice IPA che PROMETTE di essere c_<catastale> contro
+    # ISTAT — se promette il catastale, deve essere valido.
+    assert len(violations) <= 20, (
+        f"{len(violations)} IT-COM-* con codice IPA 'c_<X>' dove X NON è "
+        f"in elenco ISTAT catastali. First 10: {violations[:10]}"
     )
 
 
