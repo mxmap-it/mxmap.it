@@ -43,6 +43,8 @@ jobs:
       # (senza flag scrive solo comuni/province/regioni).
       - name: Refresh IT seed from IndicePA
         run: uv run python3 scripts/fetch_indicepa.py --include-others
+      - name: Seed invariants (no IT-COM-XXX collisions, all are Comuni)
+        run: uv run pytest tests/test_seed_invariants.py -v
 
       # --- Tier-6 AOO/UO enrichment: domini non-PEC dai dataset ausiliari ---
       # Cache su data/indicepa_raw/. Daily usa cache, weekly --refresh
