@@ -22,8 +22,18 @@ def test_keyword_lists_non_empty():
 
 
 def test_provider_keywords_has_all_providers():
+    # Baltic-era providers (fork mxmap.ch) + Italian fork additions.
+    # Se aggiungi un provider in PROVIDER_KEYWORDS, aggiornalo anche qui.
     assert set(PROVIDER_KEYWORDS.keys()) == {
-        "microsoft", "google", "aws", "zoho", "yandex", "zone", "telia", "tet", "elkdata",
+        # Baltic-era
+        "microsoft", "google", "aws", "zoho", "yandex",
+        "zone", "telia", "tet", "elkdata",
+        # Italian commercial providers
+        "aruba", "register-it", "seeweb", "infocert", "namirial",
+        # Italian public/regional/contractor
+        "regional-public", "pa-contractor-private",
+        # Italian commercial ISPs (AIIP)
+        "local-isp",
     }
 
 
