@@ -48,15 +48,15 @@ async def resolve_robust(qname: str, rdtype: str) -> dns.resolver.Answer | None:
         except dns.resolver.NXDOMAIN:
             return None
         except dns.exception.Timeout:
-            logger.debug(
-                "%s %s: Timeout on resolver %d, retrying", rdtype, qname, i
-            )
+            logger.debug("%s %s: Timeout on resolver %d, retrying", rdtype, qname, i)
             await asyncio.sleep(0.5)
             continue
         except (dns.resolver.NoAnswer, dns.resolver.NoNameservers):
             logger.debug(
                 "%s %s: NoAnswer/NoNameservers on resolver %d, retrying",
-                rdtype, qname, i,
+                rdtype,
+                qname,
+                i,
             )
             continue
         except Exception:
@@ -102,7 +102,7 @@ async def lookup_txt(domain: str) -> tuple[str, dict[str, str]]:
         else:
             for prefix, provider in _VERIFICATION_PREFIXES.items():
                 if txt_lower.startswith(prefix):
-                    verifications[provider] = txt[len(prefix):]
+                    verifications[provider] = txt[len(prefix) :]
                     break
     spf = sorted(spf_records)[0] if spf_records else ""
     return spf, verifications
@@ -273,7 +273,9 @@ async def resolve_mx_asns(mx_hosts: list[str]) -> set[int]:
     """Resolve all MX hosts to IPs, look up ASNs, return set of unique ASNs."""
     if not mx_hosts:
         return set()
-    host_results = await asyncio.gather(*[_resolve_host_asn_country(h) for h in mx_hosts])
+    host_results = await asyncio.gather(
+        *[_resolve_host_asn_country(h) for h in mx_hosts]
+    )
     asns = set()
     for results in host_results:
         for result in results:
@@ -286,7 +288,9 @@ async def resolve_mx_countries(mx_hosts: list[str]) -> set[str]:
     """Resolve all MX hosts to IPs, look up countries, return set of country codes."""
     if not mx_hosts:
         return set()
-    host_results = await asyncio.gather(*[_resolve_host_asn_country(h) for h in mx_hosts])
+    host_results = await asyncio.gather(
+        *[_resolve_host_asn_country(h) for h in mx_hosts]
+    )
     countries = set()
     for results in host_results:
         for result in results:

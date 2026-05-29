@@ -8,6 +8,7 @@ and a deep link to the methodology page.
 
 Keep tags STABLE — they are public anchors on methodology.html.
 """
+
 from __future__ import annotations
 
 # (tag, italian_short_label, italian_tooltip)
@@ -144,11 +145,11 @@ def infer_method_from_entry(entry: dict) -> tuple[str, str | None]:
 # Mapping fetch_indicepa.py seed.domain_source -> taxonomy tag. Re-used
 # by preprocess.py. Kept here so both sides import the same source of truth.
 SEED_SOURCE_TO_METHOD = {
-    "sito_istituzionale":       "seed_primary_mx",
-    "manual_override":          "manual_override",
-    "manual_llm_enrichment":    "manual_llm_enrichment",
-    "pec_enrichment":           "pec_only_enrichment",
-    "email_non_pec_fallback":   "domain_fallback",
-    "aoo_uo_email_fallback":    "aoo_uo_tier6",
-    "name_guess":               "domain_guess",
+    "sito_istituzionale": "seed_primary_mx",
+    "manual_override": "manual_override",
+    "manual_llm_enrichment": "manual_llm_enrichment",
+    "pec_enrichment": "pec_only_enrichment",
+    "email_non_pec_fallback": "domain_fallback",
+    "aoo_uo_email_fallback": "aoo_uo_tier6",
+    "name_guess": "domain_guess",
 }

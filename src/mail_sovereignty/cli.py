@@ -3,7 +3,9 @@ import sys
 from pathlib import Path
 
 
-def _parse_country_args(args: list[str]) -> tuple[list[str] | None, dict[str, list[str]]]:
+def _parse_country_args(
+    args: list[str],
+) -> tuple[list[str] | None, dict[str, list[str]]]:
     """Parse country arguments, supporting CC:STATE syntax for sub-country filtering.
 
     Examples:
@@ -49,7 +51,9 @@ def preprocess() -> None:
 
     # Optional country filter: `uv run preprocess IT IE NL` or `uv run preprocess DE:BY`
     countries, state_filters = _parse_country_args(sys.argv[1:])
-    asyncio.run(run(Path("data.json"), countries=countries, state_filters=state_filters))
+    asyncio.run(
+        run(Path("data.json"), countries=countries, state_filters=state_filters)
+    )
 
 
 def postprocess() -> None:

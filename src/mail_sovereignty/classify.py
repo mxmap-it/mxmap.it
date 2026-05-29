@@ -80,9 +80,7 @@ def _check_spf_for_provider(spf_blob: str) -> str | None:
     return None
 
 
-def _check_spf_all(
-    spf_record: str | None, resolved_spf: str | None
-) -> str | None:
+def _check_spf_all(spf_record: str | None, resolved_spf: str | None) -> str | None:
     """Check raw and resolved SPF for a provider keyword."""
     spf_blob = (spf_record or "").lower()
     provider = _check_spf_for_provider(spf_blob)
@@ -139,9 +137,18 @@ def classify(
     # land on them as MX yet sign DKIM via a hyperscaler tenant (hybrid
     # setups). Treat them as "local providers" so DKIM look-through fires.
     local_providers = {
-        "zone", "telia", "tet", "elkdata", "yandex",
-        "aruba", "register-it", "seeweb", "infocert", "namirial",
-        "regional-public", "pa-contractor-private",
+        "zone",
+        "telia",
+        "tet",
+        "elkdata",
+        "yandex",
+        "aruba",
+        "register-it",
+        "seeweb",
+        "infocert",
+        "namirial",
+        "regional-public",
+        "pa-contractor-private",
     }
     for provider, keywords, label in [
         ("microsoft", MICROSOFT_KEYWORDS, "Microsoft"),
@@ -159,8 +166,16 @@ def classify(
         ("seeweb", SEEWEB_KEYWORDS, "Seeweb"),
         ("infocert", INFOCERT_KEYWORDS, "InfoCert"),
         ("namirial", NAMIRIAL_KEYWORDS, "Namirial"),
-        ("regional-public", ITALIAN_REGIONAL_PUBLIC_KEYWORDS, "Italian regional public ICT"),
-        ("pa-contractor-private", ITALIAN_PA_CONTRACTOR_PRIVATE_KEYWORDS, "Italian private PA contractor"),
+        (
+            "regional-public",
+            ITALIAN_REGIONAL_PUBLIC_KEYWORDS,
+            "Italian regional public ICT",
+        ),
+        (
+            "pa-contractor-private",
+            ITALIAN_PA_CONTRACTOR_PRIVATE_KEYWORDS,
+            "Italian private PA contractor",
+        ),
     ]:
         if any(k in mx_blob for k in keywords):
             # For local providers, DKIM may reveal a cloud backend
@@ -191,8 +206,16 @@ def classify(
             ("seeweb", SEEWEB_KEYWORDS, "Seeweb"),
             ("infocert", INFOCERT_KEYWORDS, "InfoCert"),
             ("namirial", NAMIRIAL_KEYWORDS, "Namirial"),
-            ("regional-public", ITALIAN_REGIONAL_PUBLIC_KEYWORDS, "Italian regional public ICT"),
-            ("pa-contractor-private", ITALIAN_PA_CONTRACTOR_PRIVATE_KEYWORDS, "Italian private PA contractor"),
+            (
+                "regional-public",
+                ITALIAN_REGIONAL_PUBLIC_KEYWORDS,
+                "Italian regional public ICT",
+            ),
+            (
+                "pa-contractor-private",
+                ITALIAN_PA_CONTRACTOR_PRIVATE_KEYWORDS,
+                "Italian private PA contractor",
+            ),
         ]:
             if any(k in cname_blob for k in keywords):
                 cname_target = next(iter(mx_cnames.values()), "?")
@@ -253,9 +276,7 @@ def classify(
                 f"MX is {gateway} gateway; MS365 tenant detected ({tenant})"
             )
         # Gateway relays to unknown backend
-        return "independent", (
-            f"MX is {gateway} gateway; backend provider unknown"
-        )
+        return "independent", (f"MX is {gateway} gateway; backend provider unknown")
 
     # 4. MX exists but no direct provider match → check DKIM for hidden
     #    backend (self-hosted gateway pattern), then Local ISP, then independent
@@ -290,17 +311,13 @@ def classify(
 
         if is_local_isp:
             asn_names = [
-                LOCAL_ISP_ASNS[a]
-                for a in sorted(mx_asns & LOCAL_ISP_ASNS.keys())
+                LOCAL_ISP_ASNS[a] for a in sorted(mx_asns & LOCAL_ISP_ASNS.keys())
             ]
             return "local-isp", (
-                f"MX ({mx_display}) hosted on Local ISP "
-                f"({', '.join(asn_names)})"
+                f"MX ({mx_display}) hosted on Local ISP ({', '.join(asn_names)})"
             )
 
-        return "independent", (
-            f"MX ({mx_display}) is self-hosted"
-        )
+        return "independent", (f"MX ({mx_display}) is self-hosted")
 
     # 5. No MX → unknown
     return "unknown", "No MX records found"

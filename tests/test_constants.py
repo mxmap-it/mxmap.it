@@ -26,12 +26,24 @@ def test_provider_keywords_has_all_providers():
     # Se aggiungi un provider in PROVIDER_KEYWORDS, aggiornalo anche qui.
     assert set(PROVIDER_KEYWORDS.keys()) == {
         # Baltic-era
-        "microsoft", "google", "aws", "zoho", "yandex",
-        "zone", "telia", "tet", "elkdata",
+        "microsoft",
+        "google",
+        "aws",
+        "zoho",
+        "yandex",
+        "zone",
+        "telia",
+        "tet",
+        "elkdata",
         # Italian commercial providers
-        "aruba", "register-it", "seeweb", "infocert", "namirial",
+        "aruba",
+        "register-it",
+        "seeweb",
+        "infocert",
+        "namirial",
         # Italian public/regional/contractor
-        "regional-public", "pa-contractor-private",
+        "regional-public",
+        "pa-contractor-private",
         # Italian commercial ISPs (AIIP)
         "local-isp",
     }

@@ -168,6 +168,7 @@ class TestScoreEntry:
 
     def test_manual_override(self):
         from mail_sovereignty.validate import MANUAL_OVERRIDE_BFS
+
         MANUAL_OVERRIDE_BFS.add("EE-0784")
         try:
             result = score_entry(

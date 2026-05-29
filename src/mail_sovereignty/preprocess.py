@@ -7,7 +7,11 @@ from typing import Any
 from urllib.parse import urlparse
 
 from mail_sovereignty.classify import classify, detect_gateway
-from mail_sovereignty.constants import CONCURRENCY, LOCAL_ISP_ASNS, PARTITIONED_COUNTRIES
+from mail_sovereignty.constants import (
+    CONCURRENCY,
+    LOCAL_ISP_ASNS,
+    PARTITIONED_COUNTRIES,
+)
 from mail_sovereignty.dns import (
     lookup_autodiscover,
     lookup_dkim,
@@ -770,9 +774,7 @@ async def scan_municipality(
                     if guess == domain:
                         continue
                     # Check cache for guessed domain too
-                    gcached = (
-                        dns_cache.get_domain(guess) if dns_cache else None
-                    )
+                    gcached = dns_cache.get_domain(guess) if dns_cache else None
                     if gcached and gcached.get("mx"):
                         mx = gcached["mx"]
                         spf = gcached.get("spf", "")
@@ -818,12 +820,17 @@ async def scan_municipality(
             autodiscover = await lookup_autodiscover(domain) if domain else {}
             dkim = await lookup_dkim(domain) if domain else {}
             # Only lookup tenant for gateway scenarios (avoids HTTP call for ~80% of domains)
-            tenant = await lookup_tenant(domain) if domain and mx and detect_gateway(mx) else None
+            tenant = (
+                await lookup_tenant(domain)
+                if domain and mx and detect_gateway(mx)
+                else None
+            )
 
             # Store in cache
             if dns_cache and domain:
                 cache_data = {
-                    "mx": mx, "spf": spf,
+                    "mx": mx,
+                    "spf": spf,
                     "spf_resolved": spf_resolved,
                     "mx_cnames": mx_cnames,
                     "mx_asns": sorted(mx_asns) if mx_asns else [],
@@ -908,15 +915,17 @@ async def scan_municipality(
             # Map fetch_indicepa.py seed.domain_source values to the canonical
             # mx_discovery_method taxonomy (see src/mail_sovereignty/mx_discovery.py).
             seed_to_method = {
-                "sito_istituzionale":       "seed_primary_mx",
-                "manual_override":          "manual_override",
-                "manual_llm_enrichment":    "manual_llm_enrichment",
-                "pec_enrichment":           "pec_only_enrichment",
-                "email_non_pec_fallback":   "domain_fallback",
-                "aoo_uo_email_fallback":    "aoo_uo_tier6",
-                "name_guess":               "domain_guess",
+                "sito_istituzionale": "seed_primary_mx",
+                "manual_override": "manual_override",
+                "manual_llm_enrichment": "manual_llm_enrichment",
+                "pec_enrichment": "pec_only_enrichment",
+                "email_non_pec_fallback": "domain_fallback",
+                "aoo_uo_email_fallback": "aoo_uo_tier6",
+                "name_guess": "domain_guess",
             }
-            method = seed_to_method.get(seed_source, "seed_primary_mx" if domain else "unknown")
+            method = seed_to_method.get(
+                seed_source, "seed_primary_mx" if domain else "unknown"
+            )
             entry["mx_discovery_method"] = method
             entry["mx_discovery_evidence"] = domain
         else:
@@ -957,12 +966,15 @@ async def run(
             else:
                 filtered[k] = v
         from mail_sovereignty.constants import DE_STATE_CODES
+
         filter_labels = []
         for cc, codes in state_filters.items():
             abbrevs = [DE_STATE_CODES.get(c, c) for c in codes] if cc == "DE" else codes
             filter_labels.append(f"{cc}:{','.join(abbrevs)}")
-        print(f"  State filter: {', '.join(filter_labels)} "
-              f"({len(filtered)}/{len(municipalities)} municipalities)")
+        print(
+            f"  State filter: {', '.join(filter_labels)} "
+            f"({len(filtered)}/{len(municipalities)} municipalities)"
+        )
         municipalities = filtered
 
     total = len(municipalities)
@@ -980,10 +992,13 @@ async def run(
         if cc in PARTITIONED_COUNTRIES:
             # Create one cache per partition (state)
             extract = PARTITIONED_COUNTRIES[cc]
-            partitions = sorted({
-                extract(k) for k, v in municipalities.items()
-                if v.get("country", "") == cc
-            })
+            partitions = sorted(
+                {
+                    extract(k)
+                    for k, v in municipalities.items()
+                    if v.get("country", "") == cc
+                }
+            )
             for part in partitions:
                 caches[f"{cc}:{part}"] = DnsCache(cc, partition=part)
         else:
@@ -1073,8 +1088,7 @@ async def run(
                 return True
 
             merged = {
-                k: v for k, v in existing_munis.items()
-                if not should_replace(k, v)
+                k: v for k, v in existing_munis.items() if not should_replace(k, v)
             }
         else:
             # Remove old entries for the filtered countries, keep the rest

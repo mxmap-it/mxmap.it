@@ -110,8 +110,15 @@ class TestManualOverrides:
 
     def test_valid_providers(self):
         valid = {
-            "independent", "zone", "telia", "tet", "microsoft",
-            "google", "aws", "local-isp", "merged",
+            "independent",
+            "zone",
+            "telia",
+            "tet",
+            "microsoft",
+            "google",
+            "aws",
+            "local-isp",
+            "merged",
         }
         for bfs, entry in MANUAL_OVERRIDES.items():
             if "provider" in entry:
@@ -150,7 +157,12 @@ class TestProcessUnknown:
         assert result["provider"] == "unknown"
 
     async def test_resolves_via_email_scraping(self):
-        m = {"bfs": "EE-0001", "name": "Test", "domain": "test.ee", "provider": "unknown"}
+        m = {
+            "bfs": "EE-0001",
+            "name": "Test",
+            "domain": "test.ee",
+            "provider": "unknown",
+        }
         sem = asyncio.Semaphore(10)
 
         class FakeResponse:
@@ -187,7 +199,12 @@ class TestProcessUnknown:
         assert result["provider"] == "independent"
 
     async def test_no_email_domains_found(self):
-        m = {"bfs": "EE-0001", "name": "Test", "domain": "test.ee", "provider": "unknown"}
+        m = {
+            "bfs": "EE-0001",
+            "name": "Test",
+            "domain": "test.ee",
+            "provider": "unknown",
+        }
         sem = asyncio.Semaphore(10)
 
         class FakeResponse:

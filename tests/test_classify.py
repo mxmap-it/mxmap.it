@@ -25,10 +25,16 @@ def reason(result):
 
 class TestClassify:
     def test_microsoft_mx(self):
-        assert provider(classify(["tallinn-ch.mail.protection.outlook.com"], "")) == "microsoft"
+        assert (
+            provider(classify(["tallinn-ch.mail.protection.outlook.com"], ""))
+            == "microsoft"
+        )
 
     def test_google_mx(self):
-        assert provider(classify(["aspmx.l.google.com", "alt1.aspmx.l.google.com"], "")) == "google"
+        assert (
+            provider(classify(["aspmx.l.google.com", "alt1.aspmx.l.google.com"], ""))
+            == "google"
+        )
 
     def test_zone_mx(self):
         assert provider(classify(["mxpool.zone.eu"], "")) == "zone"
@@ -50,7 +56,10 @@ class TestClassify:
 
     def test_no_mx_with_spf_stays_unknown(self):
         """SPF alone does not determine provider — MX is required."""
-        assert provider(classify([], "v=spf1 include:spf.protection.outlook.com -all")) == "unknown"
+        assert (
+            provider(classify([], "v=spf1 include:spf.protection.outlook.com -all"))
+            == "unknown"
+        )
 
     def test_no_mx_no_spf(self):
         assert provider(classify([], "")) == "unknown"
@@ -80,10 +89,14 @@ class TestClassify:
         assert provider(result) == "microsoft"
 
     def test_cname_none_stays_independent(self):
-        assert provider(classify(["mail.example.ee"], "", mx_cnames=None)) == "independent"
+        assert (
+            provider(classify(["mail.example.ee"], "", mx_cnames=None)) == "independent"
+        )
 
     def test_cname_empty_stays_independent(self):
-        assert provider(classify(["mail.example.ee"], "", mx_cnames={})) == "independent"
+        assert (
+            provider(classify(["mail.example.ee"], "", mx_cnames={})) == "independent"
+        )
 
     def test_direct_mx_takes_precedence_over_cname(self):
         result = classify(
@@ -502,7 +515,10 @@ class TestSpfMentionsProviders:
         assert "nl2go" in result
 
     def test_foreign_sender_not_in_classify(self):
-        assert provider(classify([], "v=spf1 include:spf.mandrillapp.com -all")) == "unknown"
+        assert (
+            provider(classify([], "v=spf1 include:spf.mandrillapp.com -all"))
+            == "unknown"
+        )
 
     def test_foreign_sender_not_in_classify_from_spf(self):
         assert classify_from_spf("v=spf1 include:spf.mandrillapp.com -all") is None
@@ -579,7 +595,9 @@ class TestClassifyFromTxtVerifications:
         assert classify_from_txt_verifications({}) is None
 
     def test_microsoft_token(self):
-        assert classify_from_txt_verifications({"microsoft": "ms77422356"}) == "microsoft"
+        assert (
+            classify_from_txt_verifications({"microsoft": "ms77422356"}) == "microsoft"
+        )
 
     def test_google_token(self):
         assert classify_from_txt_verifications({"google": "R9vBEx8..."}) == "google"
@@ -590,9 +608,10 @@ class TestClassifyFromTxtVerifications:
 
     def test_microsoft_takes_precedence_over_google(self):
         """When both exist, microsoft wins (checked first)."""
-        assert classify_from_txt_verifications(
-            {"microsoft": "ms123", "google": "gv123"}
-        ) == "microsoft"
+        assert (
+            classify_from_txt_verifications({"microsoft": "ms123", "google": "gv123"})
+            == "microsoft"
+        )
 
 
 # ── TXT verification in classify() ────────────────────────────────

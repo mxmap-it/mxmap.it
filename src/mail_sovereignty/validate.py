@@ -19,7 +19,9 @@ MIN_AVERAGE_SCORE = int(os.environ.get("MIN_AVERAGE_SCORE", "70"))
 MIN_HIGH_CONFIDENCE_PCT = int(os.environ.get("MIN_HIGH_CONFIDENCE_PCT", "80"))
 HIGH_CONFIDENCE_THRESHOLD = 80
 
-MANUAL_OVERRIDE_BFS: set[str] = set()  # populated from postprocess MANUAL_OVERRIDES keys
+MANUAL_OVERRIDE_BFS: set[str] = (
+    set()
+)  # populated from postprocess MANUAL_OVERRIDES keys
 
 
 POTENTIAL_GATEWAY_THRESHOLD = 5

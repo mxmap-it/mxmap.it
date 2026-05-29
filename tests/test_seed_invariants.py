@@ -20,6 +20,7 @@ polygon di Roma" (commit c26a7358) ha rivelato 90 enti L6 mal-
 categorizzati in IndicePA. Tutti correttamente riassegnati a IT-CONS-*
 dal filtro positivo `^Comune\\b` aggiunto in quel commit.
 """
+
 import importlib.util as _ilu
 import json
 import re
@@ -42,7 +43,8 @@ _spec.loader.exec_module(_fi)
 COMUNE_NAME_RE = re.compile(r"^\s*comune\b", re.IGNORECASE)
 REGIONE_NAME_RE = re.compile(r"^\s*(regione\b|provincia\s+autonoma\b)", re.IGNORECASE)
 PROVINCIA_NAME_RE = re.compile(
-    r"^\s*(provincia\b|libero\s+consorzio\s+comunale\b)", re.IGNORECASE)
+    r"^\s*(provincia\b|libero\s+consorzio\s+comunale\b)", re.IGNORECASE
+)
 CMM_NAME_RE = re.compile(r"^\s*citt[aà]'?\s+metropolitana\b", re.IGNORECASE)
 
 
@@ -79,8 +81,9 @@ def test_all_it_com_pass_is_real_comune(seed):
         istat = (e.get("ipa_codice_comune_istat") or "").strip()
         if _fi.is_real_comune(name, ipa, istat):
             continue
-        violations.append({"id": e["id"], "ipa": ipa, "istat": istat,
-                           "name": name[:50]})
+        violations.append(
+            {"id": e["id"], "ipa": ipa, "istat": istat, "name": name[:50]}
+        )
     assert not violations, (
         f"{len(violations)} entries IT-COM-* falliscono is_real_comune(). "
         f"First 10: {violations[:10]}"
@@ -135,8 +138,11 @@ def test_no_it_com_for_non_l6_categorie(seed):
     """No entry with non-L6 ipa_codice_categoria should have IT-COM-XXX id.
     The id namespace IT-COM-* is reserved for L6 Comuni."""
     violations = [
-        {"id": e["id"], "categoria": e.get("ipa_codice_categoria"),
-         "name": (e.get("name") or "")[:60]}
+        {
+            "id": e["id"],
+            "categoria": e.get("ipa_codice_categoria"),
+            "name": (e.get("name") or "")[:60],
+        }
         for e in seed
         if e.get("id", "").startswith("IT-COM-")
         and (e.get("ipa_codice_categoria") or "").upper() != "L6"
@@ -200,12 +206,16 @@ def istat_codici_catastali(istat_payload):
     'H501'). Stabili nel tempo (un comune mantiene il codice catastale
     anche dopo fusioni provinciali), quindi più robusti del codice ISTAT
     numerico per validazione cross-source."""
-    return {(c.get("codice_catastale") or "").upper()
-            for c in istat_payload["comuni"] if c.get("codice_catastale")}
+    return {
+        (c.get("codice_catastale") or "").upper()
+        for c in istat_payload["comuni"]
+        if c.get("codice_catastale")
+    }
 
 
-def test_all_it_com_cross_validate_against_istat(seed, istat_codes,
-                                                   istat_codici_catastali):
+def test_all_it_com_cross_validate_against_istat(
+    seed, istat_codes, istat_codici_catastali
+):
     """Cross-validation OR su tre fonti ISTAT, per assorbire le
     inconsistenze IndicePA tipiche (codici legacy):
 
@@ -228,6 +238,7 @@ def test_all_it_com_cross_validate_against_istat(seed, istat_codes,
         (M335). Risolto da (1) (ISTAT numerico matcha sempre).
     """
     import re
+
     CATASTALE_RE = re.compile(r"^c_([a-z][a-z0-9]{3})$", re.IGNORECASE)
     n_match_istat = 0
     n_match_catastale = 0
@@ -248,13 +259,20 @@ def test_all_it_com_cross_validate_against_istat(seed, istat_codes,
         if catastale and catastale in istat_codici_catastali:
             n_match_catastale += 1
             continue
-        violations.append({
-            "id": e["id"], "istat": istat, "ipa": ipa,
-            "catastale": catastale, "name": (e.get("name") or "")[:50],
-        })
-    print(f"\n[info] ISTAT cross-validation: total={n_total} "
-          f"match_istat={n_match_istat} match_catastale={n_match_catastale} "
-          f"violations={len(violations)}")
+        violations.append(
+            {
+                "id": e["id"],
+                "istat": istat,
+                "ipa": ipa,
+                "catastale": catastale,
+                "name": (e.get("name") or "")[:50],
+            }
+        )
+    print(
+        f"\n[info] ISTAT cross-validation: total={n_total} "
+        f"match_istat={n_match_istat} match_catastale={n_match_catastale} "
+        f"violations={len(violations)}"
+    )
     # Soglia: max 30 violazioni. Sotto questa soglia possiamo accettare
     # (snapshot ISTAT ±6 mesi vs IndicePA su variazioni amministrative).
     assert len(violations) <= 30, (
@@ -303,12 +321,14 @@ def test_no_osm_id_on_non_territorial_entries(seed):
         if eid.startswith(TERRITORIAL_PREFIXES):
             continue
         if e.get("osm_relation_id"):
-            violations.append({
-                "id": eid,
-                "osm_relation_id": e.get("osm_relation_id"),
-                "name": (e.get("name") or "")[:50],
-                "categoria": e.get("ipa_codice_categoria"),
-            })
+            violations.append(
+                {
+                    "id": eid,
+                    "osm_relation_id": e.get("osm_relation_id"),
+                    "name": (e.get("name") or "")[:50],
+                    "categoria": e.get("ipa_codice_categoria"),
+                }
+            )
     assert not violations, (
         f"{len(violations)} entry non-territoriali hanno osm_relation_id "
         f"valorizzato. Il frontend li mostrerebbe sui polygon comunali "
@@ -328,11 +348,13 @@ def test_no_orphan_it_com_istat_pairs(seed, istat_index):
         id_istat = eid.split("-")[-1]  # IT-COM-058091 → "058091"
         field_istat = (e.get("ipa_codice_comune_istat") or "").strip()
         if id_istat != field_istat:
-            violations.append({
-                "id": eid,
-                "ipa_codice_comune_istat_field": field_istat,
-                "name": (e.get("name") or "")[:50],
-            })
+            violations.append(
+                {
+                    "id": eid,
+                    "ipa_codice_comune_istat_field": field_istat,
+                    "name": (e.get("name") or "")[:50],
+                }
+            )
     assert not violations, (
         f"{len(violations)} entries hanno IT-COM-{{X}} ma "
         f"ipa_codice_comune_istat != X. First 5: {violations[:5]}"
@@ -343,13 +365,15 @@ def test_no_orphan_it_com_istat_pairs(seed, istat_index):
 # Meta-test sulla whitelist L6_NAME_EXCEPTIONS
 # ============================================================================
 
+
 def test_roma_capitale_is_a_comune(seed):
     """REGRESSION (2026-05-29): ROMA CAPITALE deve essere un IT-COM-058091.
     Il vecchio filtro name-regex 'Comune' lo escludeva perché il nome
     ufficiale non inizia con 'Comune di'. La nuova is_real_comune() basata
     su ISTAT lo accetta via T1 (codice IPA c_h501 = catastale Roma)."""
-    roma = next((e for e in seed if (e.get("ipa_codice_ipa") or "").lower() == "c_h501"),
-                None)
+    roma = next(
+        (e for e in seed if (e.get("ipa_codice_ipa") or "").lower() == "c_h501"), None
+    )
     assert roma is not None, "Roma (c_h501) mancante dal seed!"
     assert roma["id"] == "IT-COM-058091", (
         f"Roma deve avere id=IT-COM-058091, ha: {roma['id']}. "
@@ -364,6 +388,7 @@ def test_roma_capitale_is_a_comune(seed):
 # Meta-test sullo snapshot ISTAT
 # ============================================================================
 
+
 def test_istat_snapshot_well_formed(istat_payload):
     """Schema check sul snapshot ISTAT: assicura formato atteso, count
     ragionevole, no rows malformed."""
@@ -377,8 +402,13 @@ def test_istat_snapshot_well_formed(istat_payload):
     )
 
     # Schema: ogni comune ha i campi obbligatori
-    required = ("codice_istat", "denominazione_it", "codice_catastale",
-                "codice_regione", "codice_provincia")
+    required = (
+        "codice_istat",
+        "denominazione_it",
+        "codice_catastale",
+        "codice_regione",
+        "codice_provincia",
+    )
     missing = []
     for i, c in enumerate(comuni):
         for f in required:
@@ -386,22 +416,26 @@ def test_istat_snapshot_well_formed(istat_payload):
                 missing.append((i, f, c.get("denominazione_it", "?")))
                 break
     assert not missing, (
-        f"{len(missing)} comuni ISTAT con campi mancanti. First 3: "
-        f"{missing[:3]}"
+        f"{len(missing)} comuni ISTAT con campi mancanti. First 3: {missing[:3]}"
     )
 
     # Codici ISTAT ben formati (6 cifre)
-    bad_codes = [c["codice_istat"] for c in comuni
-                 if not (len(c["codice_istat"]) == 6 and c["codice_istat"].isdigit())]
+    bad_codes = [
+        c["codice_istat"]
+        for c in comuni
+        if not (len(c["codice_istat"]) == 6 and c["codice_istat"].isdigit())
+    ]
     assert not bad_codes, (
         f"{len(bad_codes)} codici ISTAT non sono 6-cifre: first 3 {bad_codes[:3]}"
     )
 
     # Codici catastali ben formati (4 char alfanum, primo è una lettera)
-    bad_cat = [c["codice_catastale"] for c in comuni
-               if not (len(c["codice_catastale"]) == 4
-                       and c["codice_catastale"][0].isalpha())]
-    assert len(bad_cat) <= 5, (   # ammettiamo qualche caso esotico
+    bad_cat = [
+        c["codice_catastale"]
+        for c in comuni
+        if not (len(c["codice_catastale"]) == 4 and c["codice_catastale"][0].isalpha())
+    ]
+    assert len(bad_cat) <= 5, (  # ammettiamo qualche caso esotico
         f"{len(bad_cat)} codici catastali malformed: first 5 {bad_cat[:5]}"
     )
 
@@ -411,15 +445,20 @@ def test_istat_codes_no_duplicates(istat_payload):
     bug nel parser o CSV ISTAT corrotto."""
     codes = [c["codice_istat"] for c in istat_payload["comuni"]]
     from collections import Counter as _C
+
     dups = {k: v for k, v in _C(codes).items() if v > 1}
     assert not dups, f"Duplicati nel snapshot ISTAT: {dups}"
 
 
 def test_istat_catastali_no_duplicates(istat_payload):
     """Ogni codice catastale deve essere unico (1:1 con comune)."""
-    cats = [c["codice_catastale"] for c in istat_payload["comuni"]
-            if c.get("codice_catastale")]
+    cats = [
+        c["codice_catastale"]
+        for c in istat_payload["comuni"]
+        if c.get("codice_catastale")
+    ]
     from collections import Counter as _C
+
     dups = {k: v for k, v in _C(cats).items() if v > 1}
     assert not dups, f"Duplicati codici catastali ISTAT: {dups}"
 
@@ -427,6 +466,7 @@ def test_istat_catastali_no_duplicates(istat_payload):
 # ============================================================================
 # Unit test di is_real_comune() — verifica casi positivi/negativi noti.
 # ============================================================================
+
 
 def test_is_real_comune_positive_cases():
     """is_real_comune() deve accettare i veri comuni con codice IPA
@@ -444,10 +484,12 @@ def test_is_real_comune_negative_cases():
     """is_real_comune() deve rifiutare gli enti L6-mal-categorizzati."""
     # UNCEM: codice IPA UUID-like, codice_istat=Roma ma nome non inizia con "Roma"
     assert not _fi.is_real_comune(
-        "UNCEM DELEGAZIONE REGIONALE DEL LAZIO", "BRM2B3KM", "058091")
+        "UNCEM DELEGAZIONE REGIONALE DEL LAZIO", "BRM2B3KM", "058091"
+    )
     # Patrimonio Mobilita: nome contiene "Rimini" ma non INIZIA con Rimini
     assert not _fi.is_real_comune(
-        "Patrimonio Mobilita Provincia di Rimini", "ampr", "099014")
+        "Patrimonio Mobilita Provincia di Rimini", "ampr", "099014"
+    )
     # ATS Madonie Sud
     assert not _fi.is_real_comune("ATS Madonie Sud", "atsms", "082036")
     # ANCI Piemonte
@@ -460,8 +502,7 @@ def test_is_real_comune_uuid_neo_fusi():
     """is_real_comune() T2: accetta comuni neo-fusi con codice IPA UUID-like
     se il nome inizia con denominazione ISTAT."""
     # Moransengo-Tonengo (fusione 2022): nome inizia con "MORANSENGO"
-    assert _fi.is_real_comune(
-        "COMUNE DI MORANSENGO-TONENGO", "3BEP4ZAX", "005122")
+    assert _fi.is_real_comune("COMUNE DI MORANSENGO-TONENGO", "3BEP4ZAX", "005122")
     # Sovizzo (post-fusione): nome inizia con "SOVIZZO"
     assert _fi.is_real_comune("COMUNE DI SOVIZZO", "40B59AWR", "024128")
 
@@ -482,5 +523,5 @@ def test_is_territorial_l4_l5_l45():
     assert not is_terr("Upi Veneto", "L5")
     # L45 Città Metropolitana
     assert is_terr("Città Metropolitana di Milano", "L45")
-    assert is_terr("Citta Metropolitana di Roma", "L45")   # senza accento
+    assert is_terr("Citta Metropolitana di Roma", "L45")  # senza accento
     assert not is_terr("Patrimonio Mobilita Provincia di Rimini", "L45")

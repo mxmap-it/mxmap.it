@@ -163,9 +163,7 @@ async def process_unknown(
                 scrape_email_domains(client, domain), timeout=30
             )
         except asyncio.TimeoutError:
-            print(
-                f"  TIMEOUT  {bfs:>5} {name:<30} (scraping timed out)"
-            )
+            print(f"  TIMEOUT  {bfs:>5} {name:<30} (scraping timed out)")
             return m
 
         ente_domain = m.get("domain", "")
@@ -176,9 +174,7 @@ async def process_unknown(
                 email_domain, ente_domain, codice_ipa=codice_ipa
             )
             if not ok:
-                rejected_audit.append(
-                    {"dom": email_domain, "reason": reason_legit}
-                )
+                rejected_audit.append({"dom": email_domain, "reason": reason_legit})
                 continue
             mx = await lookup_mx(email_domain)
             if mx:
@@ -567,8 +563,9 @@ async def run(data_path: Path) -> None:
         # al banner SMTP poteva tenere bloccato indefinitamente uno slot
         # del semaforo (visto in produzione: 57 minuti, CPU 0.4%).
         import time as _t
+
         SMTP_BANNER_TIMEOUT_PER_HOST = 10.0
-        SMTP_BANNER_STAGE_BUDGET = 600.0   # 10 minuti totali
+        SMTP_BANNER_STAGE_BUDGET = 600.0  # 10 minuti totali
         smtp_semaphore = asyncio.Semaphore(CONCURRENCY_SMTP)
         smtp_start = _t.monotonic()
         smtp_done = 0
@@ -609,7 +606,9 @@ async def run(data_path: Path) -> None:
                 timeout=SMTP_BANNER_STAGE_BUDGET + 30,
             )
         except asyncio.TimeoutError:
-            print("  SMTP banner stage hit hard ceiling — proceeding with partial results")
+            print(
+                "  SMTP banner stage hit hard ceiling — proceeding with partial results"
+            )
             banner_results = []
 
         smtp_reclassified = 0
@@ -623,11 +622,16 @@ async def run(data_path: Path) -> None:
             # provider (e.g. "220 xxx.mail.protection.outlook.com ...").
             # If so, the municipality truly uses that provider's cloud
             # even though the MX hostname looked self-hosted.
-            banner_host_is_cloud = provider and any(
-                kw in banner.lower().split()[1]
-                for kw in PROVIDER_KEYWORDS.get(provider, [])
-                if "." in kw  # only domain-like keywords
-            ) if len(banner.split()) > 1 else False
+            banner_host_is_cloud = (
+                provider
+                and any(
+                    kw in banner.lower().split()[1]
+                    for kw in PROVIDER_KEYWORDS.get(provider, [])
+                    if "." in kw  # only domain-like keywords
+                )
+                if len(banner.split()) > 1
+                else False
+            )
             for bfs in mx_host_to_bfs[mx_host]:
                 muni[bfs]["smtp_banner"] = banner
                 if provider and muni[bfs]["provider"] in ("independent", "unknown"):
@@ -681,9 +685,7 @@ async def run(data_path: Path) -> None:
             return await process_unknown(client, semaphore, m)
 
         async with httpx.AsyncClient(
-            headers={
-                "User-Agent": "mxmap.ee/1.0 (https://github.com/livenson/mxmap)"
-            },
+            headers={"User-Agent": "mxmap.ee/1.0 (https://github.com/livenson/mxmap)"},
             follow_redirects=True,
         ) as client:
             tasks = [process_with_budget(client, m) for m in unknowns]

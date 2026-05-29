@@ -16,10 +16,58 @@ MANIFEST_PATH = TOPO_DIR / "manifest.json"
 DATA_PATH = ROOT / "data.json"
 
 # Countries that use the monolithic TopoJSON (split via split_topo.py)
-MONOLITHIC_COUNTRIES = {"EE", "LV", "LT", "FI", "NO", "SE", "DE", "DK", "AD", "LU", "BE", "AT", "CZ", "GB"}
+MONOLITHIC_COUNTRIES = {
+    "EE",
+    "LV",
+    "LT",
+    "FI",
+    "NO",
+    "SE",
+    "DE",
+    "DK",
+    "AD",
+    "LU",
+    "BE",
+    "AT",
+    "CZ",
+    "GB",
+}
 
 # Countries with standalone TopoJSON files
-STANDALONE_COUNTRIES = {"IS", "ES", "FR", "PL", "PT", "NL", "IT", "IE", "SI", "BG", "SK", "HR", "CY", "GR", "HU", "MT", "RO", "AL", "XK", "ME", "BA", "RS", "MK", "UA", "MD", "LI", "SM", "GE", "AM", "AZ", "BY", "TR"}
+STANDALONE_COUNTRIES = {
+    "IS",
+    "ES",
+    "FR",
+    "PL",
+    "PT",
+    "NL",
+    "IT",
+    "IE",
+    "SI",
+    "BG",
+    "SK",
+    "HR",
+    "CY",
+    "GR",
+    "HU",
+    "MT",
+    "RO",
+    "AL",
+    "XK",
+    "ME",
+    "BA",
+    "RS",
+    "MK",
+    "UA",
+    "MD",
+    "LI",
+    "SM",
+    "GE",
+    "AM",
+    "AZ",
+    "BY",
+    "TR",
+}
 
 # Countries that use name-based matching (OSM IDs differ between seed data and TopoJSON)
 NAME_MATCHED_COUNTRIES = set()  # All countries now use ID matching
@@ -40,14 +88,52 @@ ALL_COUNTRIES = MONOLITHIC_COUNTRIES | STANDALONE_COUNTRIES
 
 # Minimum expected features per country (catches collapsed/empty files)
 MIN_FEATURES = {
-    "EE": 70, "LV": 40, "LT": 55, "FI": 300, "NO": 350, "SE": 280,
-    "DE": 395, "DK": 95, "AD": 7, "LU": 95, "BE": 560, "AT": 2070, "CZ": 75,
-    "IS": 60, "ES": 50, "FR": 90, "PL": 370, "PT": 300, "NL": 330,
-    "IT": 100, "IE": 25, "SI": 200, "BG": 25, "SK": 70, "GB": 280,
-    "HR": 530, "CY": 15, "GR": 320, "HU": 170, "MT": 60, "RO": 40,
-    "AL": 55, "XK": 30, "ME": 20, "BA": 100,
-    "RS": 30, "MK": 70, "UA": 20, "MD": 30, "LI": 10, "SM": 8,
-    "GE": 60, "AM": 10, "AZ": 1, "BY": 110, "TR": 75,
+    "EE": 70,
+    "LV": 40,
+    "LT": 55,
+    "FI": 300,
+    "NO": 350,
+    "SE": 280,
+    "DE": 395,
+    "DK": 95,
+    "AD": 7,
+    "LU": 95,
+    "BE": 560,
+    "AT": 2070,
+    "CZ": 75,
+    "IS": 60,
+    "ES": 50,
+    "FR": 90,
+    "PL": 370,
+    "PT": 300,
+    "NL": 330,
+    "IT": 100,
+    "IE": 25,
+    "SI": 200,
+    "BG": 25,
+    "SK": 70,
+    "GB": 280,
+    "HR": 530,
+    "CY": 15,
+    "GR": 320,
+    "HU": 170,
+    "MT": 60,
+    "RO": 40,
+    "AL": 55,
+    "XK": 30,
+    "ME": 20,
+    "BA": 100,
+    "RS": 30,
+    "MK": 70,
+    "UA": 20,
+    "MD": 30,
+    "LI": 10,
+    "SM": 8,
+    "GE": 60,
+    "AM": 10,
+    "AZ": 1,
+    "BY": 110,
+    "TR": 75,
 }
 
 
@@ -167,15 +253,14 @@ class TestTopoDataMatching:
 
         # Get data.json entries for this country
         entries = [
-            m for m in data_json["municipalities"].values()
+            m
+            for m in data_json["municipalities"].values()
             if m.get("country") == cc and m.get("osm_relation_id")
         ]
         if not entries:
             pytest.skip(f"No {cc} entries in data.json")
 
-        data_osm_ids = {
-            f"relation/{m['osm_relation_id']}" for m in entries
-        }
+        data_osm_ids = {f"relation/{m['osm_relation_id']}" for m in entries}
 
         # Get topo feature IDs (handles multi-file manifest)
         geoms = load_topo_geometries(manifest, cc)
@@ -190,7 +275,8 @@ class TestTopoDataMatching:
             # Verify name-based matching works instead
             topo_names = {
                 g.get("properties", {}).get("name", "").lower()
-                for g in geoms if g.get("properties", {}).get("name")
+                for g in geoms
+                if g.get("properties", {}).get("name")
             }
             data_names = {m["name"].lower() for m in entries}
             name_matched = data_names & topo_names
@@ -229,22 +315,48 @@ class TestTopoDataMatching:
 # Altri: gap pre-esistenti del fork Baltic, non legati al progetto IT.
 KNOWN_TOPO_GAPS = {
     "EE": {"Toila vald"},
-    "ES": {"Altza", "Canillejas", "Formentera", "Los Molinos",
-           "Melilla", "Oza-Cesuras", "Peña", "Valley of Aibar"},
-    "GB": {"Antrim and Newtownabbey", "Ards and North Down",
-           "Armagh City, Banbridge and Craigavon", "Belfast",
-           "Causeway Coast and Glens", "City of Portsmouth",
-           "City of Southampton", "Cumberland", "Derry City and Strabane",
-           "Fermanagh and Omagh", "Isle of Man",
-           "Lisburn and Castlereagh", "Mid Ulster",
-           "Newry, Mourne and Down", "Reading"},
-    "IT": {"Comune di Challand-Saint-Anselme", "Comune di Gressan",
-           "Comune di Latisana", "Comune di Osini",
-           "Comune di Remanzacco", "Comune di Santa Maria La Longa",
-           "Comune di Villanovafranca"},
+    "ES": {
+        "Altza",
+        "Canillejas",
+        "Formentera",
+        "Los Molinos",
+        "Melilla",
+        "Oza-Cesuras",
+        "Peña",
+        "Valley of Aibar",
+    },
+    "GB": {
+        "Antrim and Newtownabbey",
+        "Ards and North Down",
+        "Armagh City, Banbridge and Craigavon",
+        "Belfast",
+        "Causeway Coast and Glens",
+        "City of Portsmouth",
+        "City of Southampton",
+        "Cumberland",
+        "Derry City and Strabane",
+        "Fermanagh and Omagh",
+        "Isle of Man",
+        "Lisburn and Castlereagh",
+        "Mid Ulster",
+        "Newry, Mourne and Down",
+        "Reading",
+    },
+    "IT": {
+        "Comune di Challand-Saint-Anselme",
+        "Comune di Gressan",
+        "Comune di Latisana",
+        "Comune di Osini",
+        "Comune di Remanzacco",
+        "Comune di Santa Maria La Longa",
+        "Comune di Villanovafranca",
+    },
     "LV": {"Rīga"},
-    "RS": {"Palilula City Municipality", "Trgovište Municipality",
-           "Žagubica Municipality"},
+    "RS": {
+        "Palilula City Municipality",
+        "Trgovište Municipality",
+        "Žagubica Municipality",
+    },
 }
 
 
@@ -274,14 +386,16 @@ class TestZeroGaps:
                 continue
 
             entries = [
-                m for m in data_json["municipalities"].values()
+                m
+                for m in data_json["municipalities"].values()
                 if m.get("country") == cc and m.get("osm_relation_id")
             ]
             # IT: solo entità a livello municipio (IT-COM-*). REG/PRO/CMM
             # vivono nei topo region/district, non nel municipality.
             if cc == "IT":
                 entries = [
-                    m for m in entries
+                    m
+                    for m in entries
                     if (m.get("bfs") or m.get("id") or "").startswith("IT-COM-")
                 ]
             if not entries:

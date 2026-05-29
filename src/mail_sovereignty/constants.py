@@ -48,23 +48,31 @@ NAMIRIAL_KEYWORDS = ["namirial.com", "namirial.it"]
 # to Germany's Vitako-affiliated providers (Dataport, AKDB, etc.). Many comuni
 # rely on these for email and IT infrastructure. See ITALY.md for ownership.
 ITALIAN_REGIONAL_PUBLIC_KEYWORDS = [
-    "lepida.it", "lepida.network", "lepida.net",   # Emilia-Romagna
-    "ariaspa.it",                                   # Lombardia
-    "csi.it", "csipiemonte.it",                     # Piemonte / Valle d'Aosta
-    "insiel.it",                                    # Friuli Venezia Giulia
-    "liguriadigitale.it",                           # Liguria
-    "puntozeroscarl.it", "umbriadigitale.it",       # Umbria (legacy domain)
-    "sardegnait.it",                                # Sardegna
-    "trentinodigitale.it",                          # Provincia Autonoma Trento
-    "siag.it", "provinz.bz.it",                     # Provincia Autonoma Bolzano
-    "pasubiotecnologia.it",                         # Vicenza/Verona/Padova
-    "sogei.it",                                     # Stato centrale (MEF)
+    "lepida.it",
+    "lepida.network",
+    "lepida.net",  # Emilia-Romagna
+    "ariaspa.it",  # Lombardia
+    "csi.it",
+    "csipiemonte.it",  # Piemonte / Valle d'Aosta
+    "insiel.it",  # Friuli Venezia Giulia
+    "liguriadigitale.it",  # Liguria
+    "puntozeroscarl.it",
+    "umbriadigitale.it",  # Umbria (legacy domain)
+    "sardegnait.it",  # Sardegna
+    "trentinodigitale.it",  # Provincia Autonoma Trento
+    "siag.it",
+    "provinz.bz.it",  # Provincia Autonoma Bolzano
+    "pasubiotecnologia.it",  # Vicenza/Verona/Padova
+    "sogei.it",  # Stato centrale (MEF)
     # ASMEL family — national association of Italian comuni; the regional
     # branches (ASMECAL Calabria, ASMECAM Campania) and shared services
     # (ASMENET website hosting, ASMEPEC certified email) are publicly-owned
     # consortium infrastructure, not third-party vendors.
-    "asmel.it", "asmenet.it", "asmepec.it",
-    "asmecal.it", "asmecam.it",
+    "asmel.it",
+    "asmenet.it",
+    "asmepec.it",
+    "asmecal.it",
+    "asmecam.it",
     # Mountain-community consortium serving South Tyrol comuni (Gemeindenverband)
     "gvcc.net",
     # Trentino IT Exchange — Trento provincial sovereign infrastructure
@@ -84,8 +92,10 @@ ITALIAN_REGIONAL_PUBLIC_KEYWORDS = [
 # Italian private PA IT contractors (NOT in-house). Kept separate so the map
 # can distinguish public sovereign infrastructure from private outsourcers.
 ITALIAN_PA_CONTRACTOR_PRIVATE_KEYWORDS = [
-    "eng.it", "engineering.it",     # Engineering Ingegneria Informatica SpA
-    "almaviva.it", "almavivaitalia.it",  # Almaviva SpA
+    "eng.it",
+    "engineering.it",  # Engineering Ingegneria Informatica SpA
+    "almaviva.it",
+    "almavivaitalia.it",  # Almaviva SpA
 ]
 
 # AIIP — Associazione Italiana Internet Provider — member-company domains
@@ -96,19 +106,67 @@ ITALIAN_PA_CONTRACTOR_PRIVATE_KEYWORDS = [
 # catalogued. Aruba/Seeweb/Vianova are already covered by their dedicated
 # keyword sets (kept here as an MX-fallback safety net for completeness).
 ITALIAN_AIIP_ISP_KEYWORDS = [
-    "4all.it", "aconet.it", "air2bite.net", "airbeam.it", "ampersand.it",
-    "apuacom.it", "avelia.it", "axera.it", "bbanda.it", "cedis.info",
-    "clio.it", "connesi.it", "cheapnet.it", "deda.group", "dodonet.it",
-    "ehiweb.it", "enegan.it", "estra.it", "fibraweb.it", "fibreconnect.it",
-    "fontel.it", "geny.it", "halservice.it", "intercom.it", "interfibra.it",
-    "gruppoiren.it", "itgate.it", "karsolink.com", "lenfiber.it", "leonet.it",
-    "linkwave.it", "messagenet.com", "metrolink.it", "mix-it.net", "mynet.it",
-    "namex.it", "naquadria.it", "netikom.it", "netsons.com", "netsons.it",
-    "nhm.it", "orakom.it", "panservice.it", "redder.it", "rocketway.it",
-    "sinetsrl.it", "sistemihs.it", "stadtwerke.it", "techdigital.it",
-    "tecnoadsl.it", "teknonet.it", "terrecablate.it", "timenet.it",
-    "tnetservizi.it", "top-ix.org", "umbria.net", "warian.net", "wifiweb.it",
-    "wispone.it", "wolnet.it", "x-stream.biz",
+    "4all.it",
+    "aconet.it",
+    "air2bite.net",
+    "airbeam.it",
+    "ampersand.it",
+    "apuacom.it",
+    "avelia.it",
+    "axera.it",
+    "bbanda.it",
+    "cedis.info",
+    "clio.it",
+    "connesi.it",
+    "cheapnet.it",
+    "deda.group",
+    "dodonet.it",
+    "ehiweb.it",
+    "enegan.it",
+    "estra.it",
+    "fibraweb.it",
+    "fibreconnect.it",
+    "fontel.it",
+    "geny.it",
+    "halservice.it",
+    "intercom.it",
+    "interfibra.it",
+    "gruppoiren.it",
+    "itgate.it",
+    "karsolink.com",
+    "lenfiber.it",
+    "leonet.it",
+    "linkwave.it",
+    "messagenet.com",
+    "metrolink.it",
+    "mix-it.net",
+    "mynet.it",
+    "namex.it",
+    "naquadria.it",
+    "netikom.it",
+    "netsons.com",
+    "netsons.it",
+    "nhm.it",
+    "orakom.it",
+    "panservice.it",
+    "redder.it",
+    "rocketway.it",
+    "sinetsrl.it",
+    "sistemihs.it",
+    "stadtwerke.it",
+    "techdigital.it",
+    "tecnoadsl.it",
+    "teknonet.it",
+    "terrecablate.it",
+    "timenet.it",
+    "tnetservizi.it",
+    "top-ix.org",
+    "umbria.net",
+    "warian.net",
+    "wifiweb.it",
+    "wispone.it",
+    "wolnet.it",
+    "x-stream.biz",
     # Already covered by dedicated keyword sets but listed for completeness:
     # "aruba.it" (ARUBA_KEYWORDS), "seeweb.it" (SEEWEB_KEYWORDS),
     # "vianova.it" (GATEWAY_KEYWORDS), "leonet.it" (GATEWAY_KEYWORDS).
@@ -448,7 +506,12 @@ SUBPAGES = [
 GATEWAY_KEYWORDS = {
     "seppmail": ["seppmail.cloud", "seppmail.com"],
     "barracuda": ["barracudanetworks.com", "barracuda.com"],
-    "trendmicro": ["tmes.trendmicro.eu", "tmes.trendmicro.com", "trendmicro.eu", "trendmicro.com"],
+    "trendmicro": [
+        "tmes.trendmicro.eu",
+        "tmes.trendmicro.com",
+        "trendmicro.eu",
+        "trendmicro.com",
+    ],
     "hornetsecurity": ["hornetsecurity.com"],
     "proofpoint": ["ppe-hosted.com", "pphosted.com"],
     "sophos": ["hydra.sophos.com"],
@@ -520,15 +583,15 @@ GATEWAY_KEYWORDS = {
     "iconto": ["iconto.it"],
     # Gap-analysis additions (mxmap.it post-launch): private Italian PA SaaS
     # gateways found in the "independent" residue.
-    "gecomail": ["gecomail.net", "gecom.it"],          # 432 entries
-    "vianova": ["vianova.it", "vi-pa.cloud"],          # 47+32 entries
-    "leonet": ["leonet.it"],                           # 49 entries
-    "omitech": ["omitech.it"],                         # 20 entries
-    "a2asmartcity": ["a2asmartcity.it"],               # 26 entries
+    "gecomail": ["gecomail.net", "gecom.it"],  # 432 entries
+    "vianova": ["vianova.it", "vi-pa.cloud"],  # 47+32 entries
+    "leonet": ["leonet.it"],  # 49 entries
+    "omitech": ["omitech.it"],  # 20 entries
+    "a2asmartcity": ["a2asmartcity.it"],  # 26 entries
     "naquadria": ["naquadria.it"],
-    "host-it": ["host.it"],                            # 105 entries (Italian hosting)
+    "host-it": ["host.it"],  # 105 entries (Italian hosting)
     "interhost": ["interhost.it"],
-    "cbsolt": ["cbsolt.net"],                          # 49 entries
+    "cbsolt": ["cbsolt.net"],  # 49 entries
 }
 
 # ASN-based provider override: when an MX hostname doesn't match any of the
@@ -540,32 +603,30 @@ GATEWAY_KEYWORDS = {
 #
 # Format: ASN -> internal provider tag (matches PROVIDER_KEYWORDS keys)
 ITALIAN_PROVIDER_ASN_OVERRIDES: dict[int, str] = {
-    31034: "aruba",         # Aruba SpA — primary AS
-    12637: "aruba",          # Aruba SpA — secondary
-    62076: "aruba",          # Aruba SpA — additional
-    39729: "register-it",    # Register.it / Dada
-    35369: "seeweb",          # Seeweb
-    49367: "seeweb",          # Seeweb alt
-    39257: "infocert",        # InfoCert
-
+    31034: "aruba",  # Aruba SpA — primary AS
+    12637: "aruba",  # Aruba SpA — secondary
+    62076: "aruba",  # Aruba SpA — additional
+    39729: "register-it",  # Register.it / Dada
+    35369: "seeweb",  # Seeweb
+    49367: "seeweb",  # Seeweb alt
+    39257: "infocert",  # InfoCert
     # Hyperscaler USA — when MX hostname doesn't carry the hyperscaler
     # keyword but the IP resolves to the hyperscaler's AS (custom-domain
     # mailboxes on EC2 / Cloud Run / etc.). Without these, ~800 IT enti
     # appeared as "independent" / "Infrastruttura autonoma" while in
     # fact hosted on USA cloud — significant CLOUD-Act sovereignty bias.
-    16509:  "aws",            # AS16509 = AWS (Amazon)
-    14618:  "aws",            # AS14618 = AWS US-East
-    396982: "google",         # AS396982 = Google Cloud Platform
-    15169:  "google",          # AS15169 = Google LLC
-
+    16509: "aws",  # AS16509 = AWS (Amazon)
+    14618: "aws",  # AS14618 = AWS US-East
+    396982: "google",  # AS396982 = Google Cloud Platform
+    15169: "google",  # AS15169 = Google LLC
     # Italian PA regional in-house (Cloud Italiano sovrano). Each
     # Regione/Provincia owns its own AS — entities relayed there are
     # genuinely sovereign infrastructure.
-    35110:  "regional-public", # AS35110 = Regione Basilicata
-    31403:  "regional-public", # AS31403 = IN.VA. (Valle d'Aosta in-house IT)
-    6882:   "regional-public", # AS6882  = Regione Toscana / PEGASO
-    198045: "regional-public", # AS198045 = Provincia di Pesaro e Urbino
-    31638:  "regional-public", # AS31638 = Lepida (already by keyword)
+    35110: "regional-public",  # AS35110 = Regione Basilicata
+    31403: "regional-public",  # AS31403 = IN.VA. (Valle d'Aosta in-house IT)
+    6882: "regional-public",  # AS6882  = Regione Toscana / PEGASO
+    198045: "regional-public",  # AS198045 = Provincia di Pesaro e Urbino
+    31638: "regional-public",  # AS31638 = Lepida (already by keyword)
 }
 
 # Local ISP ASNs (replaces SWISS_ISP_ASNS)
@@ -581,12 +642,12 @@ LOCAL_ISP_ASNS: dict[int, str] = {
     60087: "Netsons (IT)",
     47242: "Host SpA (IT)",
     12874: "Fastweb (IT)",
-    8660:  "Italiaonline / Matrix (IT)",
+    8660: "Italiaonline / Matrix (IT)",
     16276: "OVH (FR — used by IT PA)",
     15691: "LeoNet / UAN Company (IT)",
-    3302:  "Retelit / Irideos (IT)",
+    3302: "Retelit / Irideos (IT)",
     20746: "Telecom Italia IDC (IT)",
-    3242:  "Reevo (ex-Itnet) (IT)",
+    3242: "Reevo (ex-Itnet) (IT)",
     47217: "Planetel (IT)",
     202675: "Keliweb (IT)",
     200760: "Dinova / Elogic (IT)",
@@ -1039,10 +1100,22 @@ LOCAL_ISP_ASNS: dict[int, str] = {
 }
 
 DE_STATES = {
-    "SH": "01", "HH": "02", "NI": "03", "HB": "04",
-    "NW": "05", "HE": "06", "RP": "07", "BW": "08",
-    "BY": "09", "SL": "10", "BE": "11", "BB": "12",
-    "MV": "13", "SN": "14", "ST": "15", "TH": "16",
+    "SH": "01",
+    "HH": "02",
+    "NI": "03",
+    "HB": "04",
+    "NW": "05",
+    "HE": "06",
+    "RP": "07",
+    "BW": "08",
+    "BY": "09",
+    "SL": "10",
+    "BE": "11",
+    "BB": "12",
+    "MV": "13",
+    "SN": "14",
+    "ST": "15",
+    "TH": "16",
 }
 
 # Reverse mapping: state code → abbreviation (for display)
