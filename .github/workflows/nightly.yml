@@ -191,7 +191,12 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: baltic
+          # Deploy dal branch di lavoro corrente (main). Il commit notturno
+          # di update-data ha già pushato i dati freschi su main; qui li
+          # serviamo. NB: in passato era 'baltic' (branch storico del fork
+          # Baltic) — un bug latente che avrebbe sovrascritto il sito con
+          # contenuto stale a ogni run notturno.
+          ref: main
       - uses: actions/upload-pages-artifact@v4
         with:
           path: .
