@@ -81,7 +81,26 @@ LEVEL_NAME_RE = {
     "L4":  re.compile(r"^\s*(regione\b|provincia\s+autonoma\s+(di|del)\b)", re.IGNORECASE),
     "L5":  re.compile(r"^\s*(provincia\b|libero\s+consorzio\s+comunale\b)", re.IGNORECASE),
     "L45": re.compile(r"^\s*citt[aà]'?\s+metropolitana\b", re.IGNORECASE),
-    "L6":  None,  # no positive filter; NON_TERRITORIAL_NAME_RE handles drops
+    # L6 FILTRO POSITIVO: nome inizia con "Comune". Cattura 110+ enti
+    # mal-categorizzati come L6 in IndicePA (UNCEM, ANCI Piemonte, ATS Madonie,
+    # Patrimonio Mobilita, ecc.) che altrimenti finiscono come IT-COM-XXX e
+    # collidono con i veri comuni — esempio reale: UNCEM DELEGAZIONE REGIONALE
+    # DEL LAZIO categorizzato L6 con istat 058091 → collisione con Roma.
+    # Il vecchio filtro solo-negativo (NON_TERRITORIAL_NAME_RE) lasciava
+    # passare nomi come "UNCEM", "ANCI", "Patrimonio Mobilita" che non
+    # contengono "Consorzio"/"Associazione"/"Unione di Comuni" letterali.
+    "L6":  re.compile(r"^\s*comune\b", re.IGNORECASE),
+}
+
+# Eccezioni: veri comuni il cui Denominazione_ente IndicePA NON inizia con
+# "Comune". Identificati durante la migrazione del filtro positivo L6.
+# Ogni eccezione deve avere:
+#   - codice IPA che corrisponde a c_XXXX (pattern catastale comunale)
+#   - ipa_codice_comune_istat valido
+#   - nome che è il nome del comune stesso (verificato via wikipedia/ISTAT)
+L6_NAME_EXCEPTIONS = {
+    "c_m390",   # San Giovanni di Fassa-Sen Jan (TN, comune ladino)
+    "c_f392",   # Montagna sulla strada del vino (BZ, denominazione bilingue)
 }
 
 # Italian regioni: IPA Codice_IPA → ISTAT 2-digit region code. Hand-curated;
@@ -657,22 +676,45 @@ def extract_domain_fallbacks(row: dict[str, Any], primary_domain: str | None) ->
     return out
 
 
-def is_territorial(name: str, codice_categoria: str) -> bool:
+def is_territorial(name: str, codice_categoria: str,
+                    codice_ipa: str | None = None) -> bool:
     """Return True only for territorial entities at the right level.
 
-    L4/L5/L45 use a positive name pattern (must start with "Regione" /
-    "Provincia" / "Città Metropolitana") so that interregional consortia,
-    regional agencies, and other non-territorial enti sharing the category
-    are dropped.
-    L6 uses a negative pattern (drop consorzi/unioni/comunità montane).
+    L4/L5/L45/L6 use positive name patterns:
+      - L4: nome inizia con "Regione" o "Provincia Autonoma"
+      - L5: nome inizia con "Provincia" o "Libero Consorzio Comunale"
+      - L45: nome inizia con "Città Metropolitana"
+      - L6: nome inizia con "Comune" (oppure codice_ipa in L6_NAME_EXCEPTIONS)
+
+    Inoltre per L6 applichiamo il filtro negativo NON_TERRITORIAL_NAME_RE
+    come secondo controllo (alcuni enti hanno nomi compositi come
+    "Comune Casciana Terme Lari" che matchano il positivo ma in casi
+    futuri potrebbe non bastare).
+
+    L'eccezione per `codice_ipa in L6_NAME_EXCEPTIONS` permette di mantenere
+    i 2 veri comuni ladini il cui Denominazione_ente IndicePA non inizia
+    con "Comune".
     """
     if not name:
         return False
+    # L6 exception: comuni ladini con nome non-standard
+    if codice_categoria == "L6" and codice_ipa and \
+            codice_ipa.strip().lower() in L6_NAME_EXCEPTIONS:
+        return True
     pos = LEVEL_NAME_RE.get(codice_categoria)
-    if pos is not None:
-        return bool(pos.match(name))
-    # L6 fallback: negative match
-    return NON_TERRITORIAL_NAME_RE.search(name) is None
+    if pos is None:
+        # Categoria con nessun filtro positivo definito → conservativo: reject.
+        return False
+    if not pos.match(name):
+        return False
+    # L6: applica anche il filtro NEGATIVO (parole come "Consorzio" possono
+    # comparire nel nome: "CONSORZIO RIUNITO STRADE VICINALI COMUNE ARCIDOSSO"
+    # inizia con "Consorzio" e non passa il filtro positivo, ma vogliamo
+    # essere doppiamente sicuri se un giorno un nome simile partisse con
+    # "Comune di X — Consorzio Y").
+    if codice_categoria == "L6" and NON_TERRITORIAL_NAME_RE.search(name):
+        return False
+    return True
 
 
 def build_id(prefix: str, codice_istat: Any, codice_comune_istat: Any) -> str | None:
@@ -784,7 +826,8 @@ def transform(
     # classified, still aggregated into citizen-friendly clusters.
     is_terr_for_id = True
     if territorial_filter and codice_categoria in LEVEL_MAP:
-        if not is_territorial(name, codice_categoria):
+        if not is_territorial(name, codice_categoria,
+                              codice_ipa=row.get("Codice_IPA")):
             is_terr_for_id = False
     domain = extract_domain(row.get("Sito_istituzionale"))
     domain_source = "sito_istituzionale" if domain else None
