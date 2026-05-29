@@ -30,9 +30,7 @@ import pytest
 
 SEED_PATH = Path(__file__).resolve().parent.parent / "data" / "municipalities_it.json"
 
-# Import the whitelist from the source of truth so the test stays in
-# sync with the fetcher. We use importlib because scripts/ is not a
-# package, but the constants are module-level.
+# Carichiamo fetch_indicepa per accedere a is_real_comune e helpers.
 import importlib.util as _ilu
 _spec = _ilu.spec_from_file_location(
     "fetch_indicepa",
@@ -40,7 +38,6 @@ _spec = _ilu.spec_from_file_location(
 )
 _fi = _ilu.module_from_spec(_spec)
 _spec.loader.exec_module(_fi)
-L6_NAME_EXCEPTIONS = _fi.L6_NAME_EXCEPTIONS
 
 COMUNE_NAME_RE = re.compile(r"^\s*comune\b", re.IGNORECASE)
 REGIONE_NAME_RE = re.compile(r"^\s*(regione\b|provincia\s+autonoma\b)", re.IGNORECASE)
@@ -68,30 +65,25 @@ def test_no_it_com_id_collisions(seed):
     )
 
 
-def test_all_it_com_entries_have_comune_name(seed):
-    """Every IT-COM-XXX entry must be a real Comune (name starts with
-    'Comune' or codice_ipa is in the documented whitelist)."""
+def test_all_it_com_pass_is_real_comune(seed):
+    """Ogni IT-COM-XXX deve passare is_real_comune() (cross-validation
+    ISTAT-based, non più name regex). Se il check fallisce, vuol dire
+    che è entrato nel namespace IT-COM-* in modo improprio (bug di
+    fetch_indicepa)."""
     violations = []
     for e in seed:
         if not e.get("id", "").startswith("IT-COM-"):
             continue
         name = e.get("name", "") or ""
-        codice_ipa = (e.get("ipa_codice_ipa") or "").strip().lower()
-        if COMUNE_NAME_RE.match(name):
+        ipa = (e.get("ipa_codice_ipa") or "").strip().lower()
+        istat = (e.get("ipa_codice_comune_istat") or "").strip()
+        if _fi.is_real_comune(name, ipa, istat):
             continue
-        if codice_ipa in L6_NAME_EXCEPTIONS:
-            continue
-        violations.append({
-            "id": e["id"],
-            "codice_ipa": codice_ipa,
-            "name": name,
-        })
+        violations.append({"id": e["id"], "ipa": ipa, "istat": istat,
+                           "name": name[:50]})
     assert not violations, (
-        f"{len(violations)} entries have IT-COM-XXX id but name does NOT "
-        f"start with 'Comune' and codice_ipa is NOT in L6_NAME_EXCEPTIONS. "
-        f"Either fix the IndicePA categorisation (they should be IT-CONS-*) "
-        f"or add codice_ipa to L6_NAME_EXCEPTIONS in scripts/fetch_indicepa.py "
-        f"with a justification.\nFirst 10 violations: {violations[:10]}"
+        f"{len(violations)} entries IT-COM-* falliscono is_real_comune(). "
+        f"First 10: {violations[:10]}"
     )
 
 
@@ -351,72 +343,20 @@ def test_no_orphan_it_com_istat_pairs(seed, istat_index):
 # Meta-test sulla whitelist L6_NAME_EXCEPTIONS
 # ============================================================================
 
-def test_l6_exceptions_are_in_seed(seed):
-    """Ogni codice_ipa in L6_NAME_EXCEPTIONS deve esistere nel seed.
-    Se IndicePA un domani toglie il comune dal registro (es. dopo
-    fusione), il commento della whitelist diventa stale e va aggiornato.
-    """
-    seed_ipa_codes = {(e.get("ipa_codice_ipa") or "").lower() for e in seed}
-    stale = [exc for exc in L6_NAME_EXCEPTIONS
-             if exc.lower() not in seed_ipa_codes]
-    assert not stale, (
-        f"L6_NAME_EXCEPTIONS contiene {len(stale)} codice_ipa NON presenti "
-        f"nel seed corrente: {stale}. Probabilmente sono stati rimossi/fusi "
-        f"da IndicePA. Aggiorna scripts/fetch_indicepa.py e questo test."
+def test_roma_capitale_is_a_comune(seed):
+    """REGRESSION (2026-05-29): ROMA CAPITALE deve essere un IT-COM-058091.
+    Il vecchio filtro name-regex 'Comune' lo escludeva perché il nome
+    ufficiale non inizia con 'Comune di'. La nuova is_real_comune() basata
+    su ISTAT lo accetta via T1 (codice IPA c_h501 = catastale Roma)."""
+    roma = next((e for e in seed if (e.get("ipa_codice_ipa") or "").lower() == "c_h501"),
+                None)
+    assert roma is not None, "Roma (c_h501) mancante dal seed!"
+    assert roma["id"] == "IT-COM-058091", (
+        f"Roma deve avere id=IT-COM-058091, ha: {roma['id']}. "
+        f"Bug fix L6: il filtro is_real_comune() deve accettare ROMA CAPITALE."
     )
-
-
-def test_l6_exceptions_are_actually_l6_in_seed(seed):
-    """Ogni eccezione L6_NAME_EXCEPTIONS deve avere ipa_codice_categoria=L6
-    nel seed. Se IndicePA ricategorizza il comune (improbabile ma possibile),
-    la whitelist potrebbe nascondere un bug futuro."""
-    by_ipa = {(e.get("ipa_codice_ipa") or "").lower(): e for e in seed}
-    violations = []
-    for exc in L6_NAME_EXCEPTIONS:
-        e = by_ipa.get(exc.lower())
-        if e and (e.get("ipa_codice_categoria") or "").upper() != "L6":
-            violations.append({
-                "codice_ipa": exc,
-                "categoria_attuale": e.get("ipa_codice_categoria"),
-                "name": (e.get("name") or "")[:50],
-            })
-    assert not violations, (
-        f"L6_NAME_EXCEPTIONS contiene {len(violations)} entries la cui "
-        f"categoria IndicePA non è più L6: {violations}"
-    )
-
-
-def test_l6_exceptions_are_real_istat_comuni(seed, istat_codici_catastali):
-    """Ogni L6_NAME_EXCEPTIONS deve essere un VERO comune ISTAT. Se la
-    whitelist contiene un finto comune, è un bypass del filtro is_territorial
-    e va rimosso."""
-    import re
-    CATASTALE_RE = re.compile(r"^c_([a-z][a-z0-9]{3})$", re.IGNORECASE)
-    by_ipa = {(e.get("ipa_codice_ipa") or "").lower(): e for e in seed}
-    violations = []
-    for exc in L6_NAME_EXCEPTIONS:
-        e = by_ipa.get(exc.lower())
-        if not e:
-            continue   # gestito da test_l6_exceptions_are_in_seed
-        m = CATASTALE_RE.match(exc)
-        if not m:
-            violations.append({
-                "codice_ipa": exc,
-                "reason": "non in pattern c_<catastale>",
-                "name": (e.get("name") or "")[:50],
-            })
-            continue
-        catastale = m.group(1).upper()
-        if catastale not in istat_codici_catastali:
-            violations.append({
-                "codice_ipa": exc,
-                "catastale": catastale,
-                "reason": "non in ISTAT catastali",
-                "name": (e.get("name") or "")[:50],
-            })
-    assert not violations, (
-        f"L6_NAME_EXCEPTIONS contiene {len(violations)} entries che NON "
-        f"sono comuni ISTAT validi: {violations}. Rivedi la whitelist."
+    assert roma.get("osm_relation_id") == 41485, (
+        f"Roma deve avere osm_relation_id=41485, ha: {roma.get('osm_relation_id')}"
     )
 
 
@@ -485,76 +425,61 @@ def test_istat_catastali_no_duplicates(istat_payload):
 
 
 # ============================================================================
-# Unit test sintetici di is_territorial() — copre i casi senza dipendere
-# dal seed reale, utili per pinnare le regex senza dover regenerate il seed.
+# Unit test di is_real_comune() — verifica casi positivi/negativi noti.
 # ============================================================================
 
-def test_is_territorial_l6_positive_cases():
-    """is_territorial() deve accettare nomi standard 'Comune *'."""
-    from importlib import util as _u
-    _spec = _u.spec_from_file_location(
-        "fetch_indicepa",
-        str(Path(__file__).resolve().parent.parent / "scripts" / "fetch_indicepa.py"))
-    _m = _u.module_from_spec(_spec)
-    _spec.loader.exec_module(_m)
-    is_terr = _m.is_territorial
-
-    accepts = [
-        ("Comune di Roma", "L6"),
-        ("Comune di Bologna", "L6"),
-        ("Comune Casciana Terme Lari", "L6"),    # fusione, manca "di"
-        ("Comune Presicce - Acquarica", "L6"),    # fusione
-        ("comune di milano", "L6"),               # lowercase
-        ("COMUNE DI BARI", "L6"),                 # uppercase
-    ]
-    for name, cat in accepts:
-        assert is_terr(name, cat), f"Doveva accettare: {name!r}"
+def test_is_real_comune_positive_cases():
+    """is_real_comune() deve accettare i veri comuni con codice IPA
+    catastale standard."""
+    # T1: pattern c_<catastale>
+    assert _fi.is_real_comune("Comune di Roma", "c_h501", "058091")
+    assert _fi.is_real_comune("ROMA CAPITALE", "c_h501", "058091")  # legge 42/2009
+    assert _fi.is_real_comune("Comune di Bologna", "c_a944", "037006")
+    assert _fi.is_real_comune("Comune Casciana Terme Lari", "c_e4557", "050040")
+    # T2: codice catastale puro (legacy)
+    assert _fi.is_real_comune("Comune di Calto", "B432", "029008")
 
 
-def test_is_territorial_l6_negative_cases():
-    """is_territorial() deve rifiutare i falsi 'comuni' IndicePA."""
-    from importlib import util as _u
-    _spec = _u.spec_from_file_location(
-        "fetch_indicepa",
-        str(Path(__file__).resolve().parent.parent / "scripts" / "fetch_indicepa.py"))
-    _m = _u.module_from_spec(_spec)
-    _spec.loader.exec_module(_m)
-    is_terr = _m.is_territorial
-
-    rejects = [
-        ("UNCEM DELEGAZIONE REGIONALE DEL LAZIO", "L6"),
-        ("ANCI Piemonte", "L6"),
-        ("ANCI Veneto", "L6"),
-        ("Patrimonio Mobilita Provincia di Rimini", "L6"),
-        ("Acquedotto Consortile Biviere", "L6"),
-        ("ATS Madonie Sud", "L6"),
-        ("Federazione Regionale Agronomi Lombardia", "L6"),
-        ("Consorzio Acquedotto Comuni Media Sabina", "L6"),
-        # Caso edge: nome contiene "Comune" ma non all'inizio
-        ("CONSORZIO RIUNITO STRADE VICINALI COMUNE ARCIDOSSO", "L6"),
-    ]
-    for name, cat in rejects:
-        assert not is_terr(name, cat), (
-            f"Doveva rifiutare: {name!r} (cat={cat})"
-        )
+def test_is_real_comune_negative_cases():
+    """is_real_comune() deve rifiutare gli enti L6-mal-categorizzati."""
+    # UNCEM: codice IPA UUID-like, codice_istat=Roma ma nome non inizia con "Roma"
+    assert not _fi.is_real_comune(
+        "UNCEM DELEGAZIONE REGIONALE DEL LAZIO", "BRM2B3KM", "058091")
+    # Patrimonio Mobilita: nome contiene "Rimini" ma non INIZIA con Rimini
+    assert not _fi.is_real_comune(
+        "Patrimonio Mobilita Provincia di Rimini", "ampr", "099014")
+    # ATS Madonie Sud
+    assert not _fi.is_real_comune("ATS Madonie Sud", "atsms", "082036")
+    # ANCI Piemonte
+    assert not _fi.is_real_comune("Anci Piemonte", "ancip", "001272")
+    # ANCI Veneto
+    assert not _fi.is_real_comune("Anci Veneto", "anciv", "028060")
 
 
-def test_is_territorial_l6_exception_whitelist():
-    """is_territorial() accetta i 2 comuni ladini via L6_NAME_EXCEPTIONS."""
-    from importlib import util as _u
-    _spec = _u.spec_from_file_location(
-        "fetch_indicepa",
-        str(Path(__file__).resolve().parent.parent / "scripts" / "fetch_indicepa.py"))
-    _m = _u.module_from_spec(_spec)
-    _spec.loader.exec_module(_m)
+def test_is_real_comune_uuid_neo_fusi():
+    """is_real_comune() T2: accetta comuni neo-fusi con codice IPA UUID-like
+    se il nome inizia con denominazione ISTAT."""
+    # Moransengo-Tonengo (fusione 2022): nome inizia con "MORANSENGO"
+    assert _fi.is_real_comune(
+        "COMUNE DI MORANSENGO-TONENGO", "3BEP4ZAX", "005122")
+    # Sovizzo (post-fusione): nome inizia con "SOVIZZO"
+    assert _fi.is_real_comune("COMUNE DI SOVIZZO", "40B59AWR", "024128")
 
-    assert _m.is_territorial(
-        "San Giovanni di Fassa-Sen Jan", "L6", codice_ipa="c_m390")
-    assert _m.is_territorial(
-        "Montagna sulla strada del vino", "L6", codice_ipa="c_f392")
-    # Stesso nome ma senza codice_ipa nella whitelist → rifiuto
-    assert not _m.is_territorial(
-        "San Giovanni di Fassa-Sen Jan", "L6", codice_ipa="not_in_whitelist")
+
+def test_is_territorial_l4_l5_l45():
+    """Le altre categorie territoriali usano ancora positive name pattern."""
+    is_terr = _fi.is_territorial
+    # L4
+    assert is_terr("Regione Lazio", "L4")
+    assert is_terr("Provincia Autonoma di Trento", "L4")
+    assert not is_terr("Assemblea Regionale Siciliana", "L4")
+    # L5
+    assert is_terr("Provincia di Belluno", "L5")
+    assert is_terr("Libero Consorzio Comunale di Agrigento", "L5")
+    assert not is_terr("Unione Province D'Italia", "L5")
+    # L45
+    assert is_terr("Città Metropolitana di Milano", "L45")
+    assert is_terr("Citta Metropolitana di Roma", "L45")
 
 
 def test_is_territorial_l4_l5_l45():

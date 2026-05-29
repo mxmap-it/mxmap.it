@@ -81,31 +81,147 @@ LEVEL_NAME_RE = {
     "L4":  re.compile(r"^\s*(regione\b|provincia\s+autonoma\s+(di|del)\b)", re.IGNORECASE),
     "L5":  re.compile(r"^\s*(provincia\b|libero\s+consorzio\s+comunale\b)", re.IGNORECASE),
     "L45": re.compile(r"^\s*citt[aà]'?\s+metropolitana\b", re.IGNORECASE),
-    # L6 FILTRO POSITIVO: nome inizia con "Comune". Cattura 110+ enti
-    # mal-categorizzati come L6 in IndicePA (UNCEM, ANCI Piemonte, ATS Madonie,
-    # Patrimonio Mobilita, ecc.) che altrimenti finiscono come IT-COM-XXX e
-    # collidono con i veri comuni — esempio reale: UNCEM DELEGAZIONE REGIONALE
-    # DEL LAZIO categorizzato L6 con istat 058091 → collisione con Roma.
-    # Il vecchio filtro solo-negativo (NON_TERRITORIAL_NAME_RE) lasciava
-    # passare nomi come "UNCEM", "ANCI", "Patrimonio Mobilita" che non
-    # contengono "Consorzio"/"Associazione"/"Unione di Comuni" letterali.
-    "L6":  re.compile(r"^\s*comune\b", re.IGNORECASE),
+    # L6: NIENTE name regex. Vedi is_real_comune() — usiamo ISTAT come
+    # autorità (codice_comune_ISTAT + denominazione) invece del nome
+    # IndicePA che è instabile (ROMA CAPITALE, comuni ladini, varianti
+    # locali, ecc.).
+    "L6":  None,
 }
 
-# Eccezioni: veri comuni il cui Denominazione_ente IndicePA NON inizia con
-# "Comune". Identificati durante la migrazione del filtro positivo L6.
-# Ogni eccezione deve avere:
-#   - codice IPA che corrisponde a c_XXXX (pattern catastale comunale)
-#   - ipa_codice_comune_istat valido
-#   - nome che è il nome del comune stesso (verificato via wikipedia/ISTAT)
-L6_NAME_EXCEPTIONS = {
-    "c_m390",   # San Giovanni di Fassa-Sen Jan (TN, comune ladino)
-    "c_f392",   # Montagna sulla strada del vino (BZ, denominazione bilingue)
-    "c_h501",   # ROMA CAPITALE — denominazione ufficiale dal 2010 (legge
-                # 42/2009, statuto speciale). Nome IndicePA: "ROMA CAPITALE"
-                # senza prefisso "Comune di". Verifica: c_h501 = codice
-                # catastale di Roma (Agenzia Entrate, immutato).
-}
+# Lookup ISTAT lazy-loaded: codice_istat -> ente ISTAT con denominazione,
+# catastale, codici storici. Inizializzato a None; popolato dal primo
+# accesso a is_real_comune() o esplicitamente da main().
+_ISTAT_INDEX: dict[str, dict] | None = None
+_ISTAT_ISTAT_CODES: set[str] | None = None
+
+
+def _load_istat_index() -> tuple[dict[str, dict], set[str]]:
+    """Carica data/istat_comuni.json e ritorna (codice_istat -> entry,
+    set di tutti i codici validi inclusi storici)."""
+    global _ISTAT_INDEX, _ISTAT_ISTAT_CODES
+    if _ISTAT_INDEX is not None:
+        return _ISTAT_INDEX, _ISTAT_ISTAT_CODES  # type: ignore
+    p = ROOT / "data" / "istat_comuni.json"
+    if not p.exists():
+        print(f"WARN: {p} missing. Esegui prima "
+              f"`uv run python3 scripts/fetch_istat_comuni.py`.")
+        _ISTAT_INDEX = {}
+        _ISTAT_ISTAT_CODES = set()
+        return _ISTAT_INDEX, _ISTAT_ISTAT_CODES
+    payload = json.loads(p.read_text(encoding="utf-8"))
+    idx: dict[str, dict] = {}
+    codes: set[str] = set()
+    for c in payload.get("comuni") or []:
+        cur = c.get("codice_istat")
+        if cur:
+            idx[cur] = c
+            codes.add(cur)
+        for storico in c.get("codici_storici") or []:
+            codes.add(storico)
+            # Storici puntano allo stesso entry corrente
+            if storico not in idx:
+                idx[storico] = c
+    _ISTAT_INDEX = idx
+    _ISTAT_ISTAT_CODES = codes
+    print(f"Loaded ISTAT lookup: {len(idx)} comuni indexed "
+          f"({len(codes)} codici totali correnti+storici)")
+    return idx, codes
+
+
+def _normalize_for_match(s: str) -> str:
+    """Lowercase + rimozione diacritici + rimozione punteggiatura
+    (mantiene spazi e trattini per match parziale)."""
+    import unicodedata
+    n = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
+    # Rimuovi punteggiatura ma mantieni spazi e trattini
+    return re.sub(r"[^a-z0-9 \-]", " ", n).strip()
+
+
+def is_real_comune(name: str, codice_ipa: str, codice_comune_istat: str) -> bool:
+    """Decide autoritativamente se una riga IndicePA L6 è un vero comune,
+    USANDO ISTAT come fonte ufficiale (non il nome IndicePA che è instabile).
+
+    Una L6 è un vero comune SSE almeno UNO di:
+      T1. codice_ipa segue il pattern catastale (c_<X> o solo <X>, X = catastale).
+          Cattura: c_h501 (Roma), c_a007 (Abbasanta), B432 (Calto), c_0319 (Dolcedo),
+          A690_bpe (variante mista). Discriminante: codice IPA con questa forma
+          esiste storicamente solo per veri comuni.
+
+      T2. codice_ipa è un codice opaco UUID-like (8-char) MA il nome ente
+          INIZIA con la denominazione ISTAT del comune (dopo opzionale
+          "Comune di" prefix). Cattura: 3BEP4ZAX (Moransengo-Tonengo),
+          40B59AWR (Sovizzo). Discrimina UNCEM (BRM2B3KM, nome "UNCEM..."
+          non inizia con "Roma") da Sovizzo (nome "COMUNE DI SOVIZZO"
+          inizia con "Sovizzo").
+
+      T3. codice_ipa ha forma legacy (c_<N digits>, c_<weird>) MA:
+          (a) codice_comune_ISTAT è in ISTAT (corrente o storico)
+          (b) il nome ente INIZIA con la denominazione ISTAT dopo opzionale
+              "Comune di" prefix.
+
+    Rifiuta:
+      - UNCEM Lazio (BRM2B3KM, istat=058091=Roma): T2 fallisce (nome
+        "UNCEM..." non inizia con "Roma").
+      - Patrimonio Mobilita Rimini (ampr, istat=099014): T2 fallisce
+        (nome "Patrimonio..." non inizia con "Rimini").
+      - ATS Madonie (atsms, istat=082036): T2 fallisce.
+    """
+    if not name:
+        return False
+
+    name_norm = _normalize_for_match(name)
+    ipa = (codice_ipa or "").strip().lower()
+    istat = (codice_comune_istat or "").strip()
+
+    # T1: codice IPA segue pattern catastale.
+    # Forme accettate:
+    #   c_h501          → c_<lettera>+<3 alfanumerici>
+    #   B432            → <lettera>+<3 digit> nudo
+    #   c_a690_bpe      → c_<catastale>_<suffisso>
+    #   c_0319          → c_<4 digit> (legacy)
+    #   c_067039        → c_<6 digit> (legacy lungo)
+    #   c_11j8          → c_<misti>
+    CATASTAL_PATTERNS = [
+        re.compile(r"^c_[a-z][a-z0-9]{3}(_[a-z0-9]+)?$", re.IGNORECASE),
+        re.compile(r"^[a-z]\d{3}$", re.IGNORECASE),
+        re.compile(r"^c_\d{4,6}$", re.IGNORECASE),
+        re.compile(r"^c_[a-z0-9]{4}$", re.IGNORECASE),
+    ]
+    for p in CATASTAL_PATTERNS:
+        if p.match(ipa):
+            return True
+
+    # T2/T3: codice IPA opaco o legacy → richiediamo cross-validation con
+    # nome ↔ ISTAT denominazione.
+    idx, _ = _load_istat_index()
+    istat_entry = idx.get(istat)
+    if not istat_entry:
+        return False  # codice ISTAT non in ISTAT → reject conservativo
+
+    den_it = (istat_entry.get("denominazione_it") or "").strip()
+    den_full = (istat_entry.get("denominazione_full") or "").strip() or den_it
+    if not den_it:
+        return False
+
+    # Rimuovi prefisso "Comune di/del/della/..." dal nome
+    name_stripped = re.sub(
+        r"^\s*comune\s+(di|del|della|degli|delle|dei|dell['’])?\s*",
+        "", name_norm
+    ).strip()
+
+    den_norm = _normalize_for_match(den_it)
+    den_full_norm = _normalize_for_match(den_full)
+
+    # Il nome deve INIZIARE con la denominazione ISTAT (o sua variante full
+    # bilingue). Cattura "ROMA CAPITALE" (inizia con "roma"), rifiuta
+    # "Patrimonio Mobilita Provincia di Rimini" (inizia con "patrimonio",
+    # NON con "rimini").
+    if name_stripped.startswith(den_norm) or name_stripped.startswith(den_full_norm):
+        return True
+    # Match equivalence stretta
+    if name_stripped == den_norm or name_norm == den_norm:
+        return True
+    return False
 
 # Italian regioni: IPA Codice_IPA → ISTAT 2-digit region code. Hand-curated;
 # 22 entries (20 regioni + 2 province autonome). Used to look up the OSM
@@ -680,45 +796,90 @@ def extract_domain_fallbacks(row: dict[str, Any], primary_domain: str | None) ->
     return out
 
 
+# Esclusioni L6 — popolato a runtime da is_territorial() per i casi
+# rigettati da is_real_comune. Scaricato a fine fetch in
+# data/reports/l6_exclusions.json per audit manuale.
+_L6_EXCLUSIONS_LOG: list[dict] = []
+
+
 def is_territorial(name: str, codice_categoria: str,
-                    codice_ipa: str | None = None) -> bool:
-    """Return True only for territorial entities at the right level.
+                    codice_ipa: str | None = None,
+                    codice_comune_istat: str | None = None) -> bool:
+    """Return True solo per entità territoriali al livello giusto.
 
-    L4/L5/L45/L6 use positive name patterns:
-      - L4: nome inizia con "Regione" o "Provincia Autonoma"
-      - L5: nome inizia con "Provincia" o "Libero Consorzio Comunale"
-      - L45: nome inizia con "Città Metropolitana"
-      - L6: nome inizia con "Comune" (oppure codice_ipa in L6_NAME_EXCEPTIONS)
-
-    Inoltre per L6 applichiamo il filtro negativo NON_TERRITORIAL_NAME_RE
-    come secondo controllo (alcuni enti hanno nomi compositi come
-    "Comune Casciana Terme Lari" che matchano il positivo ma in casi
-    futuri potrebbe non bastare).
-
-    L'eccezione per `codice_ipa in L6_NAME_EXCEPTIONS` permette di mantenere
-    i 2 veri comuni ladini il cui Denominazione_ente IndicePA non inizia
-    con "Comune".
+    L4/L5/L45: positive name pattern (instabile in IndicePA ma per queste
+    categorie funziona ad oggi — vedi note in LEVEL_NAME_RE).
+    L6: NIENTE name pattern. Delega a is_real_comune() che usa ISTAT
+    come fonte autoritativa (codice_comune_ISTAT + denominazione).
     """
     if not name:
         return False
-    # L6 exception: comuni ladini con nome non-standard
-    if codice_categoria == "L6" and codice_ipa and \
-            codice_ipa.strip().lower() in L6_NAME_EXCEPTIONS:
-        return True
+
+    # L6: nuova logica ISTAT-based, sostituisce il vecchio name regex
+    # che falliva su "ROMA CAPITALE" (Roma) e simili.
+    if codice_categoria == "L6":
+        ok = is_real_comune(name, codice_ipa or "", codice_comune_istat or "")
+        if not ok:
+            # Logga l'esclusione per il report manuale.
+            _L6_EXCLUSIONS_LOG.append({
+                "codice_ipa": (codice_ipa or "").strip(),
+                "codice_comune_istat": (codice_comune_istat or "").strip(),
+                "name": name.strip(),
+            })
+        return ok
+
+    # L4/L5/L45: positive name pattern (legacy, lasciato come è)
     pos = LEVEL_NAME_RE.get(codice_categoria)
     if pos is None:
-        # Categoria con nessun filtro positivo definito → conservativo: reject.
         return False
     if not pos.match(name):
         return False
-    # L6: applica anche il filtro NEGATIVO (parole come "Consorzio" possono
-    # comparire nel nome: "CONSORZIO RIUNITO STRADE VICINALI COMUNE ARCIDOSSO"
-    # inizia con "Consorzio" e non passa il filtro positivo, ma vogliamo
-    # essere doppiamente sicuri se un giorno un nome simile partisse con
-    # "Comune di X — Consorzio Y").
-    if codice_categoria == "L6" and NON_TERRITORIAL_NAME_RE.search(name):
-        return False
     return True
+
+
+def write_l6_exclusions_report() -> None:
+    """Scrive data/reports/l6_exclusions.json/csv col registro completo
+    delle L6 escluse da is_real_comune. Per audit manuale e revisione."""
+    if not _L6_EXCLUSIONS_LOG:
+        return
+    import csv
+    out_dir = ROOT / "data" / "reports"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # JSON dettagliato
+    out_json = out_dir / "l6_exclusions.json"
+    out_json.write_text(json.dumps({
+        "_meta": {
+            "generated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "n_excluded": len(_L6_EXCLUSIONS_LOG),
+            "explanation": (
+                "Enti IndicePA categorizzati L6 (Comune) ma rifiutati come "
+                "veri comuni da is_real_comune(). Cross-validation ISTAT: "
+                "codice_comune_ISTAT è presente in ISTAT ma il nome IndicePA "
+                "non corrisponde alla denominazione ufficiale. Sono enti con "
+                "SEDE in quel comune (UNCEM, ANCI, ATS, Patrimonio Mobilita, "
+                "consorzi, ecc.) mal-categorizzati upstream da IndicePA. "
+                "Riassegnati a IT-CONS-{codice_ipa} per non collidere con "
+                "i veri comuni nella vista comuni della mappa."
+            ),
+            "for_manual_review": (
+                "Se trovi qui un VERO comune erroneamente escluso, è un "
+                "bug di is_real_comune() o un caso ISTAT mancante. "
+                "Procedure: docs/SEED_VALIDATION.md §6.2 / §6.3"
+            ),
+        },
+        "items": _L6_EXCLUSIONS_LOG,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # CSV per audit veloce
+    out_csv = out_dir / "l6_exclusions.csv"
+    with open(out_csv, "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["codice_ipa", "codice_comune_istat", "name"])
+        for r in _L6_EXCLUSIONS_LOG:
+            w.writerow([r["codice_ipa"], r["codice_comune_istat"], r["name"]])
+
+    print(f"L6 exclusions: {len(_L6_EXCLUSIONS_LOG)} enti -> {out_json.name}, {out_csv.name}")
 
 
 def build_id(prefix: str, codice_istat: Any, codice_comune_istat: Any) -> str | None:
@@ -831,7 +992,8 @@ def transform(
     is_terr_for_id = True
     if territorial_filter and codice_categoria in LEVEL_MAP:
         if not is_territorial(name, codice_categoria,
-                              codice_ipa=row.get("Codice_IPA")):
+                              codice_ipa=row.get("Codice_IPA"),
+                              codice_comune_istat=str(row.get("Codice_comune_ISTAT") or "")):
             is_terr_for_id = False
     domain = extract_domain(row.get("Sito_istituzionale"))
     domain_source = "sito_istituzionale" if domain else None
@@ -1084,6 +1246,10 @@ def main() -> int:
     DATA.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(entries, f, ensure_ascii=False, indent=2)
+
+    # Scrivi report L6 esclusioni (per audit manuale — vedi
+    # docs/SEED_VALIDATION.md §6).
+    write_l6_exclusions_report()
 
     total_with_osm = sum(1 for e in entries if e.get("osm_relation_id") is not None)
     print("\n=== Summary ===")

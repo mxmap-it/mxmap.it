@@ -156,18 +156,44 @@ IndicePA categorizza come `L6 = Comune` enti che NON sono comuni: UNCEM, ANCI Pi
 
 Risultato: tutti reassegnati a `IT-CONS-{codice_ipa}`, namespace separato dal polygon comunale.
 
-### Q5. Comuni ladini con nome non-standard
+### Q5. ROMA CAPITALE e altri nomi non-standard (RISOLTO 2026-05-29)
 
-2 veri comuni italiani il cui Denominazione_ente IndicePA non inizia per "Comune":
-- `c_m390` "San Giovanni di Fassa-Sen Jan" (Trento, bilingue ladino)
-- `c_f392` "Montagna sulla strada del vino" (Bolzano)
+Storia:
+- Il vecchio filtro `LEVEL_NAME_RE["L6"] = ^Comune\b` falliva su:
+  - **ROMA CAPITALE** (denominazione ufficiale dal 2010, legge 42/2009)
+  - **c_m390** "San Giovanni di Fassa-Sen Jan" (TN, ladino)
+  - **c_f392** "Montagna sulla strada del vino" (BZ, bilingue)
+- La whitelist `L6_NAME_EXCEPTIONS` era una toppa fragile (richiede
+  manutenzione manuale per ogni denominazione esotica IndicePA).
 
-Catturati dal positive filter L6 come "non comuni" → riassegnati erroneamente a `IT-CONS-*`.
+**Soluzione attuale**: rimosso il name regex. `is_real_comune()` usa
+**ISTAT come fonte autoritativa** via 3 tier:
 
-**Mitigazione**: `L6_NAME_EXCEPTIONS` whitelist documentata. Ogni eccezione **deve** essere:
-- Un `codice_ipa` esistente nel seed corrente (test #X verifica)
-- Categoria `L6` in IndicePA
-- Verificato manualmente come vero comune (link Wikipedia / ISTAT)
+1. **T1**: `codice_ipa` segue il pattern catastale (`c_<X>`, `<X>`
+   nudo, `c_<digits>`). Cattura veri comuni indipendentemente dal
+   nome ("ROMA CAPITALE", "BOZEN", ecc.) — il catastale è stabile.
+2. **T2**: `codice_ipa` è UUID-like (8-char), MA il nome ente
+   INIZIA con la denominazione ISTAT del comune (case-insensitive,
+   senza diacritici, dopo eventuale "Comune di" prefix). Cattura i
+   neo-fusi (Moransengo-Tonengo, Sovizzo) e discrimina UNCEM-tipo
+   (sede a Roma ma nome che non inizia con "Roma").
+3. **T3**: codice IPA legacy strano (`c_0319`, `c_067039`) — accetta
+   se il nome dopo strip del prefisso inizia con la denominazione
+   ISTAT.
+
+**Cosa scarta correttamente**:
+- UNCEM Lazio (BRM2B3KM, sede Roma): T1/T2/T3 falliscono
+- Patrimonio Mobilita Provincia di Rimini (ampr, sede Rimini)
+- ATS Madonie Sud
+- ANCI Piemonte/Veneto
+- Federazioni varie
+
+**Report di audit manuale**:
+- `data/reports/l6_exclusions.json` (e .csv) — committato a ogni run
+  di `fetch_indicepa.py`. Lista completa degli L6 IndicePA scartati
+  da `is_real_comune()` con codice IPA, codice ISTAT e nome.
+- Se trovi un vero comune erroneamente escluso lì, è un bug di
+  `is_real_comune()` da indagare (test cases + fix).
 
 ---
 
@@ -208,26 +234,28 @@ verificare che il nuovo snapshot non rompa nulla. Il count atteso
 nel test #8 potrebbe richiedere aggiornamento se ISTAT ha più o
 meno comuni (fusioni).
 
-### 6.2 Aggiungere un comune a `L6_NAME_EXCEPTIONS`
+### 6.2 Investigare una L6 in `data/reports/l6_exclusions.json`
 
-Se il test `test_all_it_com_entries_have_comune_name` fallisce con
-un ente che è **un vero comune** con nome non-standard:
+Il file `data/reports/l6_exclusions.json` (rigenerato a ogni run di
+`fetch_indicepa.py`) elenca **tutti gli enti IndicePA categorizzati
+L6 ma rifiutati da `is_real_comune()`**. È il punto di partenza per
+audit manuale di qualità: se ci trovi un vero comune, è un bug.
 
-1. Verifica che sia un vero comune (link Wikipedia, ISTAT)
-2. Verifica che `codice_ipa` segua il pattern `c_<catastale>`
-3. Aggiungi a `L6_NAME_EXCEPTIONS` in `scripts/fetch_indicepa.py` con commento esplicito:
-   ```python
-   L6_NAME_EXCEPTIONS = {
-       "c_m390",   # San Giovanni di Fassa-Sen Jan (TN, comune ladino)
-       "c_f392",   # Montagna sulla strada del vino (BZ, denominazione bilingue)
-       # NEW: "c_xyzw",  # Nome del comune (provincia, ragione)
-   }
-   ```
-4. Rigenera il seed e rilancia i test:
-   ```bash
-   uv run python3 scripts/fetch_indicepa.py --include-others
-   uv run pytest tests/test_seed_invariants.py -v
-   ```
+Procedura:
+1. Apri `data/reports/l6_exclusions.csv` (più leggibile del JSON).
+2. Per ogni voce sospetta (es. `name` inizia con "Comune" ma è scartata):
+   - Cerca il `codice_ipa` su https://indicepa.gov.it/
+   - Verifica su Wikipedia / ISTAT se è un vero comune o no
+3. Se è un vero comune scartato:
+   - Identifica perché `is_real_comune()` lo ha rifiutato:
+     - codice IPA non matcha nessun T1/T2/T3?
+     - codice ISTAT non in ISTAT snapshot? (potrebbe servire `--refresh`)
+     - nome non inizia con denominazione ISTAT?
+   - Aggiungi un caso di test in
+     `tests/test_seed_invariants.py::test_is_real_comune_positive_cases`
+   - Sistema `is_real_comune()` in `scripts/fetch_indicepa.py`
+4. Se NON è un vero comune (es. UNCEM, ANCI), nessuna azione necessaria
+   — l'esclusione è corretta.
 
 ### 6.3 Investigare una nuova violazione I5
 
