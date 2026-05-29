@@ -43,6 +43,10 @@ _spec.loader.exec_module(_fi)
 L6_NAME_EXCEPTIONS = _fi.L6_NAME_EXCEPTIONS
 
 COMUNE_NAME_RE = re.compile(r"^\s*comune\b", re.IGNORECASE)
+REGIONE_NAME_RE = re.compile(r"^\s*(regione\b|provincia\s+autonoma\b)", re.IGNORECASE)
+PROVINCIA_NAME_RE = re.compile(
+    r"^\s*(provincia\b|libero\s+consorzio\s+comunale\b)", re.IGNORECASE)
+CMM_NAME_RE = re.compile(r"^\s*citt[aà]'?\s+metropolitana\b", re.IGNORECASE)
 
 
 @pytest.fixture(scope="module")
@@ -88,6 +92,50 @@ def test_all_it_com_entries_have_comune_name(seed):
         f"Either fix the IndicePA categorisation (they should be IT-CONS-*) "
         f"or add codice_ipa to L6_NAME_EXCEPTIONS in scripts/fetch_indicepa.py "
         f"with a justification.\nFirst 10 violations: {violations[:10]}"
+    )
+
+
+def test_all_it_reg_entries_have_regione_name(seed):
+    """Ogni IT-REG-XXX deve avere nome che inizia con 'Regione' o 'Provincia
+    Autonoma'. Le 30 anomalie L4 IndicePA (assemblee, consorzi, associazioni
+    tematiche) finiscono correttamente come IT-CONS-*."""
+    violations = [
+        {"id": e["id"], "name": (e.get("name") or "")[:60]}
+        for e in seed
+        if e.get("id", "").startswith("IT-REG-")
+        and not REGIONE_NAME_RE.match(e.get("name") or "")
+    ]
+    assert not violations, (
+        f"{len(violations)} IT-REG-* entries non hanno nome 'Regione'. "
+        f"First 5: {violations[:5]}"
+    )
+
+
+def test_all_it_pro_entries_have_provincia_name(seed):
+    """Ogni IT-PRO-XXX deve avere nome 'Provincia' o 'Libero Consorzio'."""
+    violations = [
+        {"id": e["id"], "name": (e.get("name") or "")[:60]}
+        for e in seed
+        if e.get("id", "").startswith("IT-PRO-")
+        and not PROVINCIA_NAME_RE.match(e.get("name") or "")
+    ]
+    assert not violations, (
+        f"{len(violations)} IT-PRO-* non hanno nome 'Provincia'. "
+        f"First 5: {violations[:5]}"
+    )
+
+
+def test_all_it_cmm_entries_have_cmm_name(seed):
+    """Ogni IT-CMM-XXX deve avere nome 'Città Metropolitana'."""
+    violations = [
+        {"id": e["id"], "name": (e.get("name") or "")[:60]}
+        for e in seed
+        if e.get("id", "").startswith("IT-CMM-")
+        and not CMM_NAME_RE.match(e.get("name") or "")
+    ]
+    assert not violations, (
+        f"{len(violations)} IT-CMM-* non hanno nome 'Città Metropolitana'. "
+        f"First 5: {violations[:5]}"
     )
 
 
