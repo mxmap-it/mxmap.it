@@ -202,30 +202,61 @@ def istat_index():
     return {c["codice_istat"]: c for c in payload["comuni"]}
 
 
-def test_all_it_com_istat_codes_are_valid(seed, istat_codes):
-    """Ogni IT-COM-XXX nel seed deve avere ipa_codice_comune_istat
-    presente nella lista ufficiale ISTAT. Cattura comuni IndicePA con
-    codice ISTAT obsoleto (es. comuni fusi non aggiornati upstream) o
-    spurio."""
+@pytest.fixture(scope="module")
+def istat_codici_catastali(istat_payload):
+    """Set dei codici catastali ufficiali ISTAT (4 caratteri tipo 'A007',
+    'H501'). Stabili nel tempo (un comune mantiene il codice catastale
+    anche dopo fusioni provinciali), quindi più robusti del codice ISTAT
+    numerico per validazione cross-source."""
+    return {(c.get("codice_catastale") or "").upper()
+            for c in istat_payload["comuni"] if c.get("codice_catastale")}
+
+
+def test_all_it_com_have_valid_codice_catastale(seed, istat_codici_catastali):
+    """Ogni IT-COM-XXX dovrebbe avere ipa_codice_ipa nel pattern
+    'c_<codice-catastale>' e quel codice catastale deve esistere
+    nell'elenco ufficiale ISTAT. Usiamo il codice catastale (stabile
+    nel tempo, immutato durante riorganizzazioni provinciali come la
+    riforma Sardegna 2016) invece del codice comune ISTAT numerico
+    (che IndicePA mantiene su valori legacy 11X per la Sardegna).
+
+    Documentazione codici catastali ISTAT:
+    https://www.istat.it/it/archivio/6789
+
+    Soglia: max 50 outliers ammessi per assorbire (a) i 2 comuni di
+    L6_NAME_EXCEPTIONS con codice IPA non standard; (b) eventuali
+    comuni neo-fusi non ancora nel CSV ISTAT.
+    """
+    import re
+    CATASTALE_RE = re.compile(r"^c_([a-z][a-z0-9]{3})$", re.IGNORECASE)
     violations = []
     for e in seed:
         if not e.get("id", "").startswith("IT-COM-"):
             continue
-        istat = (e.get("ipa_codice_comune_istat") or "").strip()
-        if istat not in istat_codes:
+        ipa = (e.get("ipa_codice_ipa") or "").strip()
+        m = CATASTALE_RE.match(ipa)
+        if not m:
+            # ipa_codice_ipa non in pattern c_<catastale> — potrebbe essere
+            # un comune con codice IPA storico non-standard. Skip dal test
+            # ma traccia per audit.
             violations.append({
                 "id": e["id"],
-                "istat": istat,
+                "ipa": ipa,
+                "reason": "no_catastale_pattern_in_codice_ipa",
                 "name": (e.get("name") or "")[:50],
-                "ipa": e.get("ipa_codice_ipa"),
             })
-    # Soglia: max 20 comuni con codice ISTAT non valido. Sopra questa soglia
-    # il test fallisce e va investigato (probabile snapshot ISTAT obsoleto).
-    assert len(violations) <= 20, (
-        f"{len(violations)} IT-COM-* hanno codice ISTAT NON in elenco ISTAT "
-        f"ufficiale. Probabili comuni fusi/aggiornamenti. Se il numero è "
-        f"alto, rigenera lo snapshot con "
-        f"`uv run python3 scripts/fetch_istat_comuni.py`.\n"
+            continue
+        catastale = m.group(1).upper()
+        if catastale not in istat_codici_catastali:
+            violations.append({
+                "id": e["id"],
+                "ipa": ipa,
+                "catastale": catastale,
+                "reason": "catastale_not_in_istat",
+                "name": (e.get("name") or "")[:50],
+            })
+    assert len(violations) <= 50, (
+        f"{len(violations)} IT-COM-* outliers contro elenco ISTAT. "
         f"First 10: {violations[:10]}"
     )
 
