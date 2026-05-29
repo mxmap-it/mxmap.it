@@ -101,6 +101,10 @@ LEVEL_NAME_RE = {
 L6_NAME_EXCEPTIONS = {
     "c_m390",   # San Giovanni di Fassa-Sen Jan (TN, comune ladino)
     "c_f392",   # Montagna sulla strada del vino (BZ, denominazione bilingue)
+    "c_h501",   # ROMA CAPITALE — denominazione ufficiale dal 2010 (legge
+                # 42/2009, statuto speciale). Nome IndicePA: "ROMA CAPITALE"
+                # senza prefisso "Comune di". Verifica: c_h501 = codice
+                # catastale di Roma (Agenzia Entrate, immutato).
 }
 
 # Italian regioni: IPA Codice_IPA → ISTAT 2-digit region code. Hand-curated;
