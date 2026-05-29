@@ -721,15 +721,42 @@ function buildStats(muniList) {
 }
 
 // --- Feature matching ---
+// Namespace prefix consentiti nella vista 'municipality' per ogni paese.
+// Per IT: solo IT-COM-* (veri comuni). Le entry IT-CONS-*, IT-C*-*, IT-L*-*
+// (consorzi, enti centrali, scuole, ASL, ordini professionali, ecc.) NON
+// devono mai apparire nella vista comuni anche se per qualche motivo
+// fossero entrate in muniByOsm (es. bug futuro che dimentica di strippare
+// osm_relation_id). Requisito stringente: la vista comuni mostra SOLO comuni.
+const MUNICIPALITY_VIEW_ALLOWED_PREFIX = {
+  'IT': 'IT-COM-',
+};
+
+function isAllowedInMunicipalityView(m) {
+  if (!m) return false;
+  const allowedPrefix = MUNICIPALITY_VIEW_ALLOWED_PREFIX[m.country];
+  if (!allowedPrefix) return true;   // paesi senza filtro esplicito (tutti i Baltic)
+  const id = m.bfs || m.id || '';
+  return id.startsWith(allowedPrefix);
+}
+
 function matchFeature(feature) {
   const props = feature.properties || {};
   const osmId = feature.id || props.id || '';
-  if (osmId && muniByOsm[osmId]) return muniByOsm[osmId];
-  for (const key of ['name', 'name_en', 'name:en']) {
-    const name = (props[key] || '').toLowerCase();
-    if (name && muniByName[name]) return muniByName[name];
+  let candidate = null;
+  if (osmId && muniByOsm[osmId]) candidate = muniByOsm[osmId];
+  if (!candidate) {
+    for (const key of ['name', 'name_en', 'name:en']) {
+      const name = (props[key] || '').toLowerCase();
+      if (name && muniByName[name]) { candidate = muniByName[name]; break; }
+    }
   }
-  return null;
+  if (!candidate) return null;
+  // Guard finale: nella vista 'municipality' rifiutiamo entry che non
+  // corrispondono al namespace dei veri comuni per quel paese.
+  if (currentLevel === 'municipality' && !isAllowedInMunicipalityView(candidate)) {
+    return null;
+  }
+  return candidate;
 }
 
 function escapeHtml(str) {
@@ -2099,12 +2126,26 @@ async function loadSummaryData() {
       generated_at: raw.generated || raw.generated_at,
     };
 
-    // Build lookups
+    // Build lookups. Per IT applichiamo un filtro stringente:
+    // muniByOsm e muniByName NON devono contenere entry non-comuni
+    // (IT-CONS-*, IT-C*-*, IT-L*-*), così matchFeature() non può
+    // accidentalmente associarle a un polygon comunale.
     const muniByBfs = {};
     for (const m of dnsData.municipalities) {
-      if (m.osm_relation_id) muniByOsm['relation/' + m.osm_relation_id] = m;
-      muniByName[m.name.toLowerCase()] = m;
-      if (m.name_en) muniByName[m.name_en.toLowerCase()] = m;
+      const isIt = m.country === 'IT';
+      const isItComune = isIt && (m.bfs || '').startsWith('IT-COM-');
+      // Solo veri comuni IT entrano in muniByOsm/muniByName per polygon
+      // matching. Altre nazioni: tutte (no rischio cross-namespace).
+      const indexableForPolygon = !isIt || isItComune;
+      if (m.osm_relation_id && indexableForPolygon) {
+        muniByOsm['relation/' + m.osm_relation_id] = m;
+      }
+      if (indexableForPolygon) {
+        muniByName[m.name.toLowerCase()] = m;
+        if (m.name_en) muniByName[m.name_en.toLowerCase()] = m;
+      }
+      // muniByBfs (indice generale per ID) include TUTTI gli enti — usato
+      // dalla "Ricerca Ente", che ha la sua logica di filtraggio per vista.
       if (m.bfs) muniByBfs[m.bfs] = m;
     }
 
@@ -2285,8 +2326,13 @@ async function loadData() {
       }
     } else if (summaryLoaded && dnsData) {
       // Municipality-level legend: count individual entities by their provider.
+      // Filtro stringente: per IT contiamo SOLO veri comuni (IT-COM-*), non
+      // gli enti centrali / consorzi / scuole / ASL / ordini che la
+      // legenda "comuni" altrimenti includerebbe gonfiando i totali con
+      // non-comuni.
       for (const m of dnsData.municipalities) {
         if (!activeCountries.has(m.country)) continue;
+        if (!isAllowedInMunicipalityView(m)) continue;
         const raw = m.classification.provider;
         const p = providerDisplayMap[raw] || raw;
         counts[p] = (counts[p] || 0) + 1;
