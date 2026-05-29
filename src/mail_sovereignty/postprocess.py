@@ -609,7 +609,7 @@ async def run(data_path: Path) -> None:
                 timeout=SMTP_BANNER_STAGE_BUDGET + 30,
             )
         except asyncio.TimeoutError:
-            print(f"  SMTP banner stage hit hard ceiling — proceeding with partial results")
+            print("  SMTP banner stage hit hard ceiling — proceeding with partial results")
             banner_results = []
 
         smtp_reclassified = 0

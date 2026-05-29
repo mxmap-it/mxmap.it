@@ -805,7 +805,6 @@ async def scan_municipality(
                     cached["txt_verifications"] = txt_verifications
 
             # Backfill tenant if missing from old cache (only for gateway scenarios)
-            from mail_sovereignty.classify import detect_gateway
             if tenant is None and domain and mx and detect_gateway(mx):
                 tenant = await lookup_tenant(domain)
                 if tenant:
@@ -819,7 +818,6 @@ async def scan_municipality(
             autodiscover = await lookup_autodiscover(domain) if domain else {}
             dkim = await lookup_dkim(domain) if domain else {}
             # Only lookup tenant for gateway scenarios (avoids HTTP call for ~80% of domains)
-            from mail_sovereignty.classify import detect_gateway
             tenant = await lookup_tenant(domain) if domain and mx and detect_gateway(mx) else None
 
             # Store in cache

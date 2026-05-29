@@ -20,6 +20,7 @@ polygon di Roma" (commit c26a7358) ha rivelato 90 enti L6 mal-
 categorizzati in IndicePA. Tutti correttamente riassegnati a IT-CONS-*
 dal filtro positivo `^Comune\\b` aggiunto in quel commit.
 """
+import importlib.util as _ilu
 import json
 import re
 from collections import Counter
@@ -31,7 +32,6 @@ import pytest
 SEED_PATH = Path(__file__).resolve().parent.parent / "data" / "municipalities_it.json"
 
 # Carichiamo fetch_indicepa per accedere a is_real_comune e helpers.
-import importlib.util as _ilu
 _spec = _ilu.spec_from_file_location(
     "fetch_indicepa",
     str(Path(__file__).resolve().parent.parent / "scripts" / "fetch_indicepa.py"),
@@ -467,43 +467,19 @@ def test_is_real_comune_uuid_neo_fusi():
 
 
 def test_is_territorial_l4_l5_l45():
-    """Le altre categorie territoriali usano ancora positive name pattern."""
+    """Le altre categorie territoriali (L4/L5/L45) usano ancora il positive
+    name pattern di LEVEL_NAME_RE (solo L6 è passato a is_real_comune)."""
     is_terr = _fi.is_territorial
-    # L4
-    assert is_terr("Regione Lazio", "L4")
-    assert is_terr("Provincia Autonoma di Trento", "L4")
-    assert not is_terr("Assemblea Regionale Siciliana", "L4")
-    # L5
-    assert is_terr("Provincia di Belluno", "L5")
-    assert is_terr("Libero Consorzio Comunale di Agrigento", "L5")
-    assert not is_terr("Unione Province D'Italia", "L5")
-    # L45
-    assert is_terr("Città Metropolitana di Milano", "L45")
-    assert is_terr("Citta Metropolitana di Roma", "L45")
-
-
-def test_is_territorial_l4_l5_l45():
-    """is_territorial() comportamento atteso per le altre categorie territoriali."""
-    from importlib import util as _u
-    _spec = _u.spec_from_file_location(
-        "fetch_indicepa",
-        str(Path(__file__).resolve().parent.parent / "scripts" / "fetch_indicepa.py"))
-    _m = _u.module_from_spec(_spec)
-    _spec.loader.exec_module(_m)
-    is_terr = _m.is_territorial
-
-    # L4 Regione
+    # L4 Regione / Provincia Autonoma
     assert is_terr("Regione Lazio", "L4")
     assert is_terr("Provincia Autonoma di Trento", "L4")
     assert not is_terr("Assemblea Regionale Siciliana", "L4")
     assert not is_terr("Associazione Nazionale degli Enti di Governo d'Ambito", "L4")
-
     # L5 Provincia
     assert is_terr("Provincia di Belluno", "L5")
     assert is_terr("Libero Consorzio Comunale di Agrigento", "L5")
     assert not is_terr("Unione Province D'Italia", "L5")
     assert not is_terr("Upi Veneto", "L5")
-
     # L45 Città Metropolitana
     assert is_terr("Città Metropolitana di Milano", "L45")
     assert is_terr("Citta Metropolitana di Roma", "L45")   # senza accento

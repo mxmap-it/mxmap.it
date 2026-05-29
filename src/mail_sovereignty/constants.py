@@ -482,7 +482,6 @@ GATEWAY_KEYWORDS = {
     "cdmon": ["cdmon.net", "cdmon.com"],
     "vadesecure": ["vadesecure.com"],
     "mailinblack": ["mailinblack.com"],
-    "mimecast": ["mimecast.com"],
     "mailcontrol": ["mailcontrol.com"],
     "security-mail": ["security-mail.net"],
     "topsec": ["topsec.com"],
@@ -603,7 +602,7 @@ LOCAL_ISP_ASNS: dict[int, str] = {
     2586: "Elisa Eesti",
     3327: "Telia Eesti",
     49604: "Telia Eesti",
-    3212: "EENET",
+    3221: "EENET",
     216263: "Radicenter (EE)",
     # Latvia
     5518: "TET (Lattelecom)",
@@ -724,7 +723,7 @@ LOCAL_ISP_ASNS: dict[int, str] = {
     8339: "Medialog (AT)",
     1764: "Next Layer (AT)",
     12605: "Salzburg AG (AT)",
-    6830: "Liberty Global/UPC (AT)",
+    6830: "Liberty Global (UPC AT / Virgin Media IE)",
     29081: "OpenBusiness (AT)",
     1853: "ACOnet/ACONET (AT)",
     12762: "SPARDAT (AT)",
@@ -748,8 +747,7 @@ LOCAL_ISP_ASNS: dict[int, str] = {
     5577: "root.cz (CZ)",
     35592: "CZNIC/Coolhousing (CZ)",
     15685: "Casablanca INT (CZ)",
-    # France
-    16276: "OVH (FR)",
+    # France (NB: 16276 OVH già mappato nella sezione IT — usato da PA italiane)
     12876: "Online/Scaleway (FR)",
     3215: "Orange (FR)",
     15557: "LDCom/SFR (FR)",
@@ -820,8 +818,7 @@ LOCAL_ISP_ASNS: dict[int, str] = {
     12338: "Euskaltel (ES)",
     203051: "Diputación Ávila (ES)",
     3262: "Sarenet (ES)",
-    # Italy
-    12874: "Fastweb (IT)",
+    # Italy (NB: 12874 Fastweb già mappato sopra nella sezione IT principale)
     3269: "Telecom Italia/TIM (IT)",
     6762: "Telecom Italia Sparkle (IT)",
     12637: "Aruba.it (IT)",
@@ -866,7 +863,7 @@ LOCAL_ISP_ASNS: dict[int, str] = {
     34245: "Magnet Networks (IE)",
     13280: "Enet/Viatel (IE)",
     15502: "Vodafone Ireland (IE)",
-    6830: "Virgin Media Ireland (IE)",
+    # NB: 6830 (Liberty Global, gestisce Virgin Media IE) mappato nella sezione AT
     25441: "Eir/eircom (IE)",
     35272: "Eir/eircom (IE)",
     60800: "GTI (IE)",
@@ -932,7 +929,7 @@ LOCAL_ISP_ASNS: dict[int, str] = {
     5603: "Telekom Slovenije (SI)",
     34779: "T-2 (SI)",
     21283: "A1 Slovenija (SI)",
-    3212: "ARNES (SI)",
+    3212: "Telemach Slovenija (SI)",
     47610: "Mega M (SI)",
     34803: "Telemach (SI)",
     12644: "AMIS (SI)",

@@ -278,11 +278,15 @@ def _damerau_levenshtein(s1: str, s2: str) -> int:
     if s1 == s2:
         return 0
     len1, len2 = len(s1), len(s2)
-    if not len1: return len2
-    if not len2: return len1
+    if not len1:
+        return len2
+    if not len2:
+        return len1
     d = [[0] * (len2 + 1) for _ in range(len1 + 1)]
-    for i in range(len1 + 1): d[i][0] = i
-    for j in range(len2 + 1): d[0][j] = j
+    for i in range(len1 + 1):
+        d[i][0] = i
+    for j in range(len2 + 1):
+        d[0][j] = j
     for i in range(1, len1 + 1):
         for j in range(1, len2 + 1):
             cost = 0 if s1[i-1] == s2[j-1] else 1
@@ -316,8 +320,8 @@ def _label_concatenation_match(s_labels: set[str], e_labels: set[str]) -> tuple[
     Inoltre richiede 2+ label dell'ente, quindi single-label cross-tenant
     non passano (es. comune.roma.it vs interno.gov.it).
     """
-    cand_labels = [l for l in s_labels if len(l) >= 5]
-    ente_labels_lst = [l for l in e_labels if len(l) >= 3]
+    cand_labels = [lbl for lbl in s_labels if len(lbl) >= 5]
+    ente_labels_lst = [lbl for lbl in e_labels if len(lbl) >= 3]
     if not cand_labels or len(ente_labels_lst) < 2:
         return False, ""
     for c in cand_labels:
@@ -349,8 +353,8 @@ def _fuzzy_label_match(s_labels: set[str], e_labels: set[str]) -> tuple[bool, st
     """True se esiste una coppia (lbl_s, lbl_e) con DL <= FUZZY_MAX_DISTANCE
     e entrambi i label di lunghezza >= FUZZY_MIN_LEN. Ritorna anche la
     coppia per audit/reason."""
-    sl = {l for l in s_labels if len(l) >= FUZZY_MIN_LEN}
-    el = {l for l in e_labels if len(l) >= FUZZY_MIN_LEN}
+    sl = {lbl for lbl in s_labels if len(lbl) >= FUZZY_MIN_LEN}
+    el = {lbl for lbl in e_labels if len(lbl) >= FUZZY_MIN_LEN}
     if not sl or not el:
         return False, ""
     for a in sl:
