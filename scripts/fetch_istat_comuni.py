@@ -81,8 +81,23 @@ def main() -> int:
             capoluogo = row.get(
                 "Flag Comune capoluogo di provincia/citt\xe0 metropolitana/libero consorzio",
                 "").strip() == "1"
+
+            # Codici storici (legacy province che IndicePA usa ancora,
+            # tipicamente per i comuni della Sardegna mappati a 111-118
+            # invece dei codici post-riforma 2016). Salviamo come alias.
+            codici_storici = []
+            for k in (
+                "Codice Comune numerico con 110 province (dal 2010 al 2016)",
+                "Codice Comune numerico con 107 province (dal 2006 al 2009)",
+                "Codice Comune numerico con 103 province (dal 1995 al 2005)",
+            ):
+                v = (row.get(k) or "").strip()
+                if v and v != codice_istat:
+                    codici_storici.append(v)
+
             out.append({
                 "codice_istat": codice_istat,
+                "codici_storici": codici_storici,
                 "codice_catastale": codice_cat,
                 "denominazione_it": den_it,
                 "denominazione_full": den_full,

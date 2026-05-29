@@ -164,7 +164,10 @@ ISTAT_PATH = Path(__file__).resolve().parent.parent / "data" / "istat_comuni.jso
 @pytest.fixture(scope="module")
 def istat_codes():
     """Set dei codici ISTAT validi (6 cifre alfanumeriche) caricati dal
-    snapshot ISTAT in data/istat_comuni.json. Skip se il file manca —
+    snapshot ISTAT in data/istat_comuni.json. Include sia i codici
+    correnti sia i codici storici (110/107/103 province) perché
+    IndicePA mappa ancora i comuni sardi sui codici 'vecchi' (111-118)
+    invece dei nuovi post-riforma 2016. Skip se il file manca —
     indica all'utente come generarlo con scripts/fetch_istat_comuni.py."""
     if not ISTAT_PATH.exists():
         pytest.skip(
@@ -172,7 +175,12 @@ def istat_codes():
             f"`uv run python3 scripts/fetch_istat_comuni.py` to generate it."
         )
     payload = json.loads(ISTAT_PATH.read_text(encoding="utf-8"))
-    return {c["codice_istat"] for c in payload["comuni"]}
+    codes = set()
+    for c in payload["comuni"]:
+        codes.add(c["codice_istat"])
+        for storico in c.get("codici_storici") or []:
+            codes.add(storico)
+    return codes
 
 
 @pytest.fixture(scope="module")
