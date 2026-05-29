@@ -1,0 +1,780 @@
+{
+  "_meta": {
+    "generated": "2026-05-29T19:55:08Z",
+    "n_excluded": 154,
+    "explanation": "Enti IndicePA categorizzati L6 (Comune) ma rifiutati come veri comuni da is_real_comune(). Cross-validation ISTAT: codice_comune_ISTAT è presente in ISTAT ma il nome IndicePA non corrisponde alla denominazione ufficiale. Sono enti con SEDE in quel comune (UNCEM, ANCI, ATS, Patrimonio Mobilita, consorzi, ecc.) mal-categorizzati upstream da IndicePA. Riassegnati a IT-CONS-{codice_ipa} per non collidere con i veri comuni nella vista comuni della mappa.",
+    "for_manual_review": "Se trovi qui un VERO comune erroneamente escluso, è un bug di is_real_comune() o un caso ISTAT mancante. Procedure: docs/SEED_VALIDATION.md §6.2 / §6.3"
+  },
+  "items": [
+    {
+      "codice_ipa": "17UW94ZL",
+      "codice_comune_istat": "024129",
+      "name": "Comune di Castegnero Nanto"
+    },
+    {
+      "codice_ipa": "7ZHXNWHL",
+      "codice_comune_istat": "053001",
+      "name": "CONSORZIO RIUNITO STRADE VICINALI COMUNE ARCIDOSSO"
+    },
+    {
+      "codice_ipa": "A2V9OORY",
+      "codice_comune_istat": "024009",
+      "name": "fondazione asiago 7 comuni"
+    },
+    {
+      "codice_ipa": "acbpa",
+      "codice_comune_istat": "082049",
+      "name": "Acquedotto Consortile Biviere"
+    },
+    {
+      "codice_ipa": "acsvd",
+      "codice_comune_istat": "033021",
+      "name": "Azienda Consortile Servizi Val D'Arda"
+    },
+    {
+      "codice_ipa": "acvgc",
+      "codice_comune_istat": "021061",
+      "name": "Azienda Consortile Val Gardena - Castelrotto"
+    },
+    {
+      "codice_ipa": "agrosol",
+      "codice_comune_istat": "065088",
+      "name": "Agro Solidale Azienda Territoriale per I Servizi alla Persona"
+    },
+    {
+      "codice_ipa": "aipes",
+      "codice_comune_istat": "060074",
+      "name": "A.I.P.E.S. Associazione Intercomunale per Esercizio Sociale - Consorzio per I Servizi alla Persona"
+    },
+    {
+      "codice_ipa": "aivdl",
+      "codice_comune_istat": "060008",
+      "name": "Associazione Intercomunale Valle del Liri"
+    },
+    {
+      "codice_ipa": "alicom",
+      "codice_comune_istat": "070006",
+      "name": "Ali Comunimolisani"
+    },
+    {
+      "codice_ipa": "ampr",
+      "codice_comune_istat": "099014",
+      "name": "Patrimonio Mobilita Provincia di Rimini"
+    },
+    {
+      "codice_ipa": "ancip",
+      "codice_comune_istat": "001272",
+      "name": "Anci Piemonte"
+    },
+    {
+      "codice_ipa": "anciv",
+      "codice_comune_istat": "028060",
+      "name": "Anci Veneto"
+    },
+    {
+      "codice_ipa": "ascast",
+      "codice_comune_istat": "067025",
+      "name": "Azienda Speciale Consortile Ambito Sociale Tordino"
+    },
+    {
+      "codice_ipa": "ascgs",
+      "codice_comune_istat": "017170",
+      "name": "Azienda Speciale Consortile Garda Sociale"
+    },
+    {
+      "codice_ipa": "asclg",
+      "codice_comune_istat": "064005",
+      "name": "Azienda Speciale Consortile per La Gestione Associata Delle Politiche Sociali Nei Comuni dell'Ambito Territoriale N. A1"
+    },
+    {
+      "codice_ipa": "assch",
+      "codice_comune_istat": "069084",
+      "name": "Associazione Tra Enti Locali per L'Attuazione del Patto Territoriale Sangro Aventino"
+    },
+    {
+      "codice_ipa": "assemi",
+      "codice_comune_istat": "015192",
+      "name": "Azienda Sociale Sud Est Milano"
+    },
+    {
+      "codice_ipa": "atespr",
+      "codice_comune_istat": "034027",
+      "name": "Agenzia Territoriale per L'Energia e La Sostenibilita' di Parma"
+    },
+    {
+      "codice_ipa": "atsgal",
+      "codice_comune_istat": "085011",
+      "name": "Ats Gal Terre del Nisseno"
+    },
+    {
+      "codice_ipa": "atsmag",
+      "codice_comune_istat": "087011",
+      "name": "Associazione Temporanea di Scopo Maguli"
+    },
+    {
+      "codice_ipa": "atsms",
+      "codice_comune_istat": "082036",
+      "name": "Ats Madonie Sud"
+    },
+    {
+      "codice_ipa": "B02ASC",
+      "codice_comune_istat": "062058",
+      "name": "B02 - Azienda Speciale Consortile per La Gestione Dei Servizi alla Persona"
+    },
+    {
+      "codice_ipa": "BB2S4HIU",
+      "codice_comune_istat": "057027",
+      "name": "Consorzio Sociale Rieti3"
+    },
+    {
+      "codice_ipa": "bpa",
+      "codice_comune_istat": "028001",
+      "name": "Consorzio Biblioteche Padovane Associate"
+    },
+    {
+      "codice_ipa": "BRM2B3KM",
+      "codice_comune_istat": "058091",
+      "name": "UNCEM DELEGAZIONE REGIONALE DEL LAZIO"
+    },
+    {
+      "codice_ipa": "c_a65",
+      "codice_comune_istat": "115012",
+      "name": "Consorzio Due Giare"
+    },
+    {
+      "codice_ipa": "c_f208A",
+      "codice_comune_istat": "115032",
+      "name": "Comune di Milis"
+    },
+    {
+      "codice_ipa": "c_F8494",
+      "codice_comune_istat": "021056",
+      "name": "Consorzio-azienda Naturno-senales-plaus"
+    },
+    {
+      "codice_ipa": "c_h93",
+      "codice_comune_istat": "082064",
+      "name": "Consorzio Sviluppo e Legalita"
+    },
+    {
+      "codice_ipa": "c_i64",
+      "codice_comune_istat": "042046",
+      "name": "Consorzio per La Gestione di Servizi Comunali Co.Ge.S.Co."
+    },
+    {
+      "codice_ipa": "c_l158a",
+      "codice_comune_istat": "112058",
+      "name": "Comune di Thiesi"
+    },
+    {
+      "codice_ipa": "c_m168s",
+      "codice_comune_istat": "115087",
+      "name": "Comune di Zerfaliu"
+    },
+    {
+      "codice_ipa": "C526ABVO",
+      "codice_comune_istat": "073003",
+      "name": "Consorzio Volontario per la Valorizzazione Turistica del Litorale Tarantino Occidentale"
+    },
+    {
+      "codice_ipa": "cabmar",
+      "codice_comune_istat": "004196",
+      "name": "Consorzio Acquedotto Benevello - Montelupo Albese - Rodello"
+    },
+    {
+      "codice_ipa": "cacoms",
+      "codice_comune_istat": "057012",
+      "name": "Consorzio Acquedotto Comuni Media Sabina"
+    },
+    {
+      "codice_ipa": "caidp",
+      "codice_comune_istat": "057027",
+      "name": "Consorzio Acquedotto Intercomunale del Peschiera"
+    },
+    {
+      "codice_ipa": "camdr",
+      "codice_comune_istat": "006111",
+      "name": "Consorzio Acquedotto Madonna della Rocchetta"
+    },
+    {
+      "codice_ipa": "camt",
+      "codice_comune_istat": "058032",
+      "name": "Consorzio Acquedotto Medio Tirreno in Liquidazione"
+    },
+    {
+      "codice_ipa": "capin",
+      "codice_comune_istat": "001191",
+      "name": "Consorzio Acea Pinerolese"
+    },
+    {
+      "codice_ipa": "car",
+      "codice_comune_istat": "013102",
+      "name": "Consorzio Depurazione Acque Reflue Comprensorio Torrente Livescia"
+    },
+    {
+      "codice_ipa": "carbba",
+      "codice_comune_istat": "110001",
+      "name": "Consorzio Ato Rifiuti Bacino Ba1"
+    },
+    {
+      "codice_ipa": "cat",
+      "codice_comune_istat": "016098",
+      "name": "Consorzio Ambiente Territorio e Servizi"
+    },
+    {
+      "codice_ipa": "catcfm",
+      "codice_comune_istat": "062034",
+      "name": "Consorzio Acquedotto Tra I Comuni di Fragneto Monforte e Fragneto L'Abate"
+    },
+    {
+      "codice_ipa": "cavn",
+      "codice_comune_istat": "033004",
+      "name": "Consorzio Acquedotto Val Nure"
+    },
+    {
+      "codice_ipa": "cb_to",
+      "codice_comune_istat": "001265",
+      "name": "CONSORZIO DI AREA VASTA CB 16"
+    },
+    {
+      "codice_ipa": "cbcar",
+      "codice_comune_istat": "030121",
+      "name": "Consorzio Boschi Carnici"
+    },
+    {
+      "codice_ipa": "cbn",
+      "codice_comune_istat": "003106",
+      "name": "Consorzio Area Vasta Basso Novarese"
+    },
+    {
+      "codice_ipa": "cbsap",
+      "codice_comune_istat": "057029",
+      "name": "Consorzio Bassa Sabina Acqua Peschiera"
+    },
+    {
+      "codice_ipa": "ccaip",
+      "codice_comune_istat": "001125",
+      "name": "Consorzio Canavesano Ambiente"
+    },
+    {
+      "codice_ipa": "cccfgnf",
+      "codice_comune_istat": "063032",
+      "name": "Consorzio Cimiteriale Fra I Comuni di Frattamaggiore Grumo Nevano e Frattaminore"
+    },
+    {
+      "codice_ipa": "ccpavn",
+      "codice_comune_istat": "033019",
+      "name": "Consorzio Casa Protetta Alta Val Nure"
+    },
+    {
+      "codice_ipa": "cdb_ot",
+      "codice_comune_istat": "113008",
+      "name": "Comune di Budduso'"
+    },
+    {
+      "codice_ipa": "cdcmuaf",
+      "codice_comune_istat": "057070",
+      "name": "Consorzio Dei Comuni per Il Museo Territoriale dell'Agro Foronovano"
+    },
+    {
+      "codice_ipa": "cdmps",
+      "codice_comune_istat": "079029",
+      "name": "Consorzio di Metanizazzazione Pre-Serre"
+    },
+    {
+      "codice_ipa": "cdssac",
+      "codice_comune_istat": "001078",
+      "name": "Consorzio dei Servizi Socio Assistenziali del Chierese"
+    },
+    {
+      "codice_ipa": "cdvb",
+      "codice_comune_istat": "012006",
+      "name": "Consorzio della Valbossa"
+    },
+    {
+      "codice_ipa": "cea",
+      "codice_comune_istat": "075061",
+      "name": "C.E.A. Centro di Educazione Ambientale Delle Serre Salentine"
+    },
+    {
+      "codice_ipa": "cecu",
+      "codice_comune_istat": "004078",
+      "name": "Consorzio Ecologico Cuneese"
+    },
+    {
+      "codice_ipa": "cfi",
+      "codice_comune_istat": "065116",
+      "name": "Consorzio Farmaceutico Intercomunale"
+    },
+    {
+      "codice_ipa": "cg_f727",
+      "codice_comune_istat": "115037",
+      "name": "Consorzio di Gestione del Parco Naturale Regionale del Monte Arci"
+    },
+    {
+      "codice_ipa": "cgdrspp",
+      "codice_comune_istat": "024089",
+      "name": "Consorzio per La Gestione del Demanio Civico Ed Esercizio Degli Usi Civici di Rotzo - San Pietro e Pedescala"
+    },
+    {
+      "codice_ipa": "cgoa",
+      "codice_comune_istat": "056050",
+      "name": "Consorzio per La Gestione dell'Osservatorio Ambientale"
+    },
+    {
+      "codice_ipa": "ciabfg4",
+      "codice_comune_istat": "071020",
+      "name": "Consorzio di Igiene Ambientale Bacino Fg4"
+    },
+    {
+      "codice_ipa": "cidssos",
+      "codice_comune_istat": "103028",
+      "name": "Consorzio Intercomunale Dei Servizi Sociali - Ciss Ossola"
+    },
+    {
+      "codice_ipa": "cidsvt",
+      "codice_comune_istat": "058038",
+      "name": "Consorzio Intercomunale Dei Servizi Ed Interventi Sociali Valle del Tevere"
+    },
+    {
+      "codice_ipa": "cifsp",
+      "codice_comune_istat": "026022",
+      "name": "Consorzio Intercomunale Fognatura Sinistra Piave"
+    },
+    {
+      "codice_ipa": "cigat",
+      "codice_comune_istat": "033043",
+      "name": "Consorzio Intercomunale Gasdotto Val Trebbia"
+    },
+    {
+      "codice_ipa": "cimepop",
+      "codice_comune_istat": "015146",
+      "name": "Consorzio Intercomunale Milanese per L'Edilizia Popolare"
+    },
+    {
+      "codice_ipa": "cipls",
+      "codice_comune_istat": "013042",
+      "name": "Consorzio Intercomunale di Polizia Locale Segrino in Liquidazione"
+    },
+    {
+      "codice_ipa": "ciptp",
+      "codice_comune_istat": "065147",
+      "name": "Consorzio Insediamenti Produttivi Torchiara-Prignano Cilento"
+    },
+    {
+      "codice_ipa": "cisa_ats",
+      "codice_comune_istat": "005080",
+      "name": "Consorzio Intercomunale Socio Assistenziale C.I.S.A - Asti Sud"
+    },
+    {
+      "codice_ipa": "ciscv",
+      "codice_comune_istat": "023091",
+      "name": "Consorzio Intercomunale Soggiorni Climatici"
+    },
+    {
+      "codice_ipa": "ciss_chi",
+      "codice_comune_istat": "001082",
+      "name": "Consorzio Intercomunale Servizi Sociali di Chivasso"
+    },
+    {
+      "codice_ipa": "cissa_",
+      "codice_comune_istat": "004130",
+      "name": "Consorzio per I Servizi Socio Assistenziali del Monregalese"
+    },
+    {
+      "codice_ipa": "cissac_c",
+      "codice_comune_istat": "001047",
+      "name": "Consorzio Intercomunale Servizi Socio Assistenziali Caluso"
+    },
+    {
+      "codice_ipa": "cit",
+      "codice_comune_istat": "001272",
+      "name": "Consorzio Intercomunale Torinese"
+    },
+    {
+      "codice_ipa": "cittss",
+      "codice_comune_istat": "062074",
+      "name": "Consorzio per L'Amministrazione del Complesso Idrotermale di Telese Terme e di San Salvatore Telesino"
+    },
+    {
+      "codice_ipa": "civdc",
+      "codice_comune_istat": "025022",
+      "name": "Consorzio per La Industrializzazione della Vallata del Cismon"
+    },
+    {
+      "codice_ipa": "cl514",
+      "codice_comune_istat": "116021",
+      "name": "Comune di Ussassai"
+    },
+    {
+      "codice_ipa": "clasa",
+      "codice_comune_istat": "002061",
+      "name": "Consorzio per La Attivita Socio Assistenziale"
+    },
+    {
+      "codice_ipa": "clc",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale La Collina"
+    },
+    {
+      "codice_ipa": "cleader",
+      "codice_comune_istat": "074010",
+      "name": "Consorzio Volontario Fra I Comuni per La Realizzazione di Un P.A.L."
+    },
+    {
+      "codice_ipa": "clv",
+      "codice_comune_istat": "023069",
+      "name": "Consorzio Le Valli"
+    },
+    {
+      "codice_ipa": "cmdsb",
+      "codice_comune_istat": "119009",
+      "name": "Cammino Minerario di Santa Barbara"
+    },
+    {
+      "codice_ipa": "cmls",
+      "codice_comune_istat": "082058",
+      "name": "Consorzio Madonita per La Legalita' e Lo Sviluppo"
+    },
+    {
+      "codice_ipa": "cms_004",
+      "codice_comune_istat": "004089",
+      "name": "Consorzio Monviso Solidale"
+    },
+    {
+      "codice_ipa": "cmsv",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Manutenzione Stradale Vicinale di Poggi di Villore"
+    },
+    {
+      "codice_ipa": "co_cmpd",
+      "codice_comune_istat": "028086",
+      "name": "Consorzio Polizia Municipale Padova Ovest"
+    },
+    {
+      "codice_ipa": "co_plnev",
+      "codice_comune_istat": "024105",
+      "name": "Consorzio Polizia Locale Nordest Vicentino"
+    },
+    {
+      "codice_ipa": "cofaser",
+      "codice_comune_istat": "065135",
+      "name": "Cofaser - Consorzio Farmacie Servizi"
+    },
+    {
+      "codice_ipa": "cogesa",
+      "codice_comune_istat": "005005",
+      "name": "Co.Ge.Sa. Consorzio Gestione Servizi Socio Assistenziali"
+    },
+    {
+      "codice_ipa": "conami",
+      "codice_comune_istat": "037032",
+      "name": "Con.Ami Consorzio Azienda Multiservizi Intercomunale"
+    },
+    {
+      "codice_ipa": "consocr",
+      "codice_comune_istat": "057059",
+      "name": "Consorzio Sociale Ri 1"
+    },
+    {
+      "codice_ipa": "cotrpulo",
+      "codice_comune_istat": "058114",
+      "name": "Consorzio Trasporto Pubblico Locale"
+    },
+    {
+      "codice_ipa": "cpes",
+      "codice_comune_istat": "033005",
+      "name": "Consorzio Casa Protetta Dottor Ellenio Silva"
+    },
+    {
+      "codice_ipa": "cpgsr",
+      "codice_comune_istat": "065037",
+      "name": "Consorzio per La Gestione Integrata di Raccolta e Smaltimento Dei Rifiuti Solidi Urbani Bacino Sa1"
+    },
+    {
+      "codice_ipa": "cpis",
+      "codice_comune_istat": "026076",
+      "name": "Consorzio per I Servizi di Igiene del Territorio"
+    },
+    {
+      "codice_ipa": "cpso",
+      "codice_comune_istat": "020045",
+      "name": "Consorzio Progetto Solidarieta'"
+    },
+    {
+      "codice_ipa": "cq",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale della Querciola"
+    },
+    {
+      "codice_ipa": "csa_alr",
+      "codice_comune_istat": "004003",
+      "name": "Consorzio Socio Assistenziale Alba Langhe Roero"
+    },
+    {
+      "codice_ipa": "csc_004",
+      "codice_comune_istat": "004078",
+      "name": "Consorzio Socio-assistenziale del Cuneese"
+    },
+    {
+      "codice_ipa": "csmo",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale Montemorli - Montecuccheri"
+    },
+    {
+      "codice_ipa": "cso",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale di Orneto"
+    },
+    {
+      "codice_ipa": "csp",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale Delle Pietre"
+    },
+    {
+      "codice_ipa": "cspi",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale Piandicampi - Rocchetta"
+    },
+    {
+      "codice_ipa": "cspp",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale San Pietro a Padule"
+    },
+    {
+      "codice_ipa": "csrad",
+      "codice_comune_istat": "064008",
+      "name": "Consorzio Smaltimento Rifiuti Av2"
+    },
+    {
+      "codice_ipa": "csrav1",
+      "codice_comune_istat": "064008",
+      "name": "Consorzio Smaltimento Rifiuti Avellino 1"
+    },
+    {
+      "codice_ipa": "csrsu",
+      "codice_comune_istat": "062008",
+      "name": "Consorzio Smaltimento Rifiuti Solidi Urbani Bn1"
+    },
+    {
+      "codice_ipa": "cssag_53",
+      "codice_comune_istat": "053011",
+      "name": "COESO Societa' della Salute delle Zone Amiata Grossetana, Colline Metallifere e Area Grossetana"
+    },
+    {
+      "codice_ipa": "csso",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale di Sornano"
+    },
+    {
+      "codice_ipa": "CSSV",
+      "codice_comune_istat": "103072",
+      "name": "Consorzio dei Servizi Sociali del Verbano"
+    },
+    {
+      "codice_ipa": "cstdn",
+      "codice_comune_istat": "022062",
+      "name": "Consorzio per I Servizi Territoriali del Noce"
+    },
+    {
+      "codice_ipa": "csvadip",
+      "codice_comune_istat": "065114",
+      "name": "Consorzio Sociale Vallo di Diano Tanagro Alburni"
+    },
+    {
+      "codice_ipa": "csvdea",
+      "codice_comune_istat": "065013",
+      "name": "Consorzio Sociale Valle dell'Irno - Ambito S6"
+    },
+    {
+      "codice_ipa": "csvgd",
+      "codice_comune_istat": "052022",
+      "name": "Consorzio Strada Vicinale Gavignano Cedda"
+    },
+    {
+      "codice_ipa": "ctclg",
+      "codice_comune_istat": "101010",
+      "name": "Consorzio Tra Comuni per La Gestione del Servizio Idrico Integrato nel Crotonese"
+    },
+    {
+      "codice_ipa": "ctpr",
+      "codice_comune_istat": "073011",
+      "name": "Consorzio Tutela e Prevenzione Randagismo San Francesco"
+    },
+    {
+      "codice_ipa": "ctrle",
+      "codice_comune_istat": "081006",
+      "name": "Consorzio Trapanese Legalita"
+    },
+    {
+      "codice_ipa": "CTS9WR8P",
+      "codice_comune_istat": "058013",
+      "name": "Consorzio quattropuntotre"
+    },
+    {
+      "codice_ipa": "cvcr",
+      "codice_comune_istat": "078102",
+      "name": "Consorzio Valle Crati"
+    },
+    {
+      "codice_ipa": "cvse",
+      "codice_comune_istat": "010055",
+      "name": "Consorzio Villa Serra"
+    },
+    {
+      "codice_ipa": "cvval",
+      "codice_comune_istat": "002057",
+      "name": "Consorzio Valmastallone Valsesia"
+    },
+    {
+      "codice_ipa": "dsc",
+      "codice_comune_istat": "019036",
+      "name": "Azienda Speciale Consortile del Distretto Sociale Cremonese"
+    },
+    {
+      "codice_ipa": "ecrf",
+      "codice_comune_istat": "083097",
+      "name": "Consorzio Rete Fognante"
+    },
+    {
+      "codice_ipa": "F3HHFYK8",
+      "codice_comune_istat": "062023",
+      "name": "CONSORZIO AMBITO B4"
+    },
+    {
+      "codice_ipa": "F7DFHC25",
+      "codice_comune_istat": "069057",
+      "name": "Consorzio \"Il Cammino della Pace\""
+    },
+    {
+      "codice_ipa": "I14ZYO7O",
+      "codice_comune_istat": "053028",
+      "name": "CONSORZIO STRADALE RIUNITO DEL COMUNE DI SEMPRONIANO"
+    },
+    {
+      "codice_ipa": "I9EGFGS2",
+      "codice_comune_istat": "063032",
+      "name": "AZIENDA SPECIALE CONSORTILE AMBITO N17"
+    },
+    {
+      "codice_ipa": "icds",
+      "codice_comune_istat": "058110",
+      "name": "Consorzio I Castelli della Sapienza"
+    },
+    {
+      "codice_ipa": "ieplpm",
+      "codice_comune_istat": "024085",
+      "name": "Istituto Europeo per Le Politiche della Montagna"
+    },
+    {
+      "codice_ipa": "iscmfav",
+      "codice_comune_istat": "002158",
+      "name": "Istituzione Scuola Comunale di Musica F.A.Vallotti"
+    },
+    {
+      "codice_ipa": "JWUQLH5U",
+      "codice_comune_istat": "017075",
+      "name": "CONSORZIO FORESTALE ALTA VALLE TROMPIA"
+    },
+    {
+      "codice_ipa": "KGO0UU5C",
+      "codice_comune_istat": "058039",
+      "name": "CONSORZIO DEL TUSCOLO"
+    },
+    {
+      "codice_ipa": "LOG8RSTT",
+      "codice_comune_istat": "056039",
+      "name": "Consorzio T.I.N.E.R.I. - TUTTI INSIEME NESSUNO RESTI INDIETRO"
+    },
+    {
+      "codice_ipa": "mcad",
+      "codice_comune_istat": "025039",
+      "name": "Magnifica Comunita' di Cadore"
+    },
+    {
+      "codice_ipa": "MT811TON",
+      "codice_comune_istat": "074001",
+      "name": "Consorzio per la realizzazione del sistema integrato di Welfare dell'Ambito territoriale sociale BR1"
+    },
+    {
+      "codice_ipa": "pane",
+      "codice_comune_istat": "108017",
+      "name": "Consorzio Parco Agricolo Nord Est"
+    },
+    {
+      "codice_ipa": "pometeo",
+      "codice_comune_istat": "075034",
+      "name": "Prometeo Srl"
+    },
+    {
+      "codice_ipa": "puid",
+      "codice_comune_istat": "061082",
+      "name": "Parco Urbano Intercomunale Dea Diana"
+    },
+    {
+      "codice_ipa": "RS3SWWDZ",
+      "codice_comune_istat": "109015",
+      "name": "ASSOCIAZIONE SIBILLINI MOUNTAIN EXPERIENCE"
+    },
+    {
+      "codice_ipa": "S0IR9UU4",
+      "codice_comune_istat": "064008",
+      "name": "Azienda Speciale Consortile A04"
+    },
+    {
+      "codice_ipa": "sbl",
+      "codice_comune_istat": "079160",
+      "name": "Associazione Sistema Bibliotecario Territoriale Lametino"
+    },
+    {
+      "codice_ipa": "sbtj",
+      "codice_comune_istat": "080012",
+      "name": "Sistema Bibliotecario Territoriale Jonico"
+    },
+    {
+      "codice_ipa": "sbts",
+      "codice_comune_istat": "078119",
+      "name": "Sistema Bibliotecario Territoriale Silano"
+    },
+    {
+      "codice_ipa": "sbv",
+      "codice_comune_istat": "102047",
+      "name": "Sistema Bibliotecario Vibonese"
+    },
+    {
+      "codice_ipa": "SCSWXASS",
+      "codice_comune_istat": "065137",
+      "name": "Azienda Speciale Consortile Comunità Sensibile"
+    },
+    {
+      "codice_ipa": "uapss",
+      "codice_comune_istat": "082053",
+      "name": "Unione degli Assessorati alle Politiche Socio Sanitare dell'Istruzione e del Lavoro"
+    },
+    {
+      "codice_ipa": "ucmap",
+      "codice_comune_istat": "047024",
+      "name": "Unione di Comuni Montani Appennino Pistoiese"
+    },
+    {
+      "codice_ipa": "udcmvm",
+      "codice_comune_istat": "094030",
+      "name": "Unione Dei Comuni Montani Volturno Matesina"
+    },
+    {
+      "codice_ipa": "VUB7PSTJ",
+      "codice_comune_istat": "017081",
+      "name": "AZIENDA SPECIALE CONSORTILE OVEST SOLIDALE"
+    },
+    {
+      "codice_ipa": "WV904BG3",
+      "codice_comune_istat": "028100",
+      "name": "AZIENDA SPECIALE CONSORTILE ALTA PADOVANA"
+    },
+    {
+      "codice_ipa": "XO5GKXJH",
+      "codice_comune_istat": "061048",
+      "name": "AZIENDA SPECIALE CONSORZIO TIFATA"
+    }
+  ]
+}
