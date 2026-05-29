@@ -212,54 +212,64 @@ def istat_codici_catastali(istat_payload):
             for c in istat_payload["comuni"] if c.get("codice_catastale")}
 
 
-def test_all_it_com_have_valid_codice_catastale(seed, istat_codici_catastali):
-    """Per ogni IT-COM-XXX con codice IPA nel formato standard
-    'c_<catastale>' (es. c_a007 = Abbasanta), il codice catastale
-    deve esistere nell'elenco ISTAT.
+def test_all_it_com_cross_validate_against_istat(seed, istat_codes,
+                                                   istat_codici_catastali):
+    """Cross-validation OR su tre fonti ISTAT, per assorbire le
+    inconsistenze IndicePA tipiche (codici legacy):
 
-    Comuni con codice IPA non standard (es. UUID-like '3BEP4ZAX' per
-    'COMUNE DI MORANSENGO-TONENGO', neo-fusi assegnati a IndicePA con
-    codice opaco; oppure 'B432' per Comune di Calto pre-2010) sono
-    skippati: la nostra invariante non si applica a loro perché non
-    espongono il catastale nel codice IPA. Il fatto che siano IT-COM-*
-    è già garantito dai test precedenti (nome 'Comune *' + categoria L6).
+      1. ipa_codice_comune_istat in `istat_codes` (codici correnti +
+         storici 110/107/103 province). Questo cattura ~99% dei comuni
+         italiani inclusi quelli con codici Sardegna pre-2016.
 
-    Codice catastale: identificativo stabile a 4 caratteri attribuito
-    dall'Agenzia delle Entrate (Catasto). NON cambia con riforme
-    amministrative (e.g. Abbasanta resta A007 anche se ISTAT cambia il
-    codice da 115001 a 095001 dopo la riforma Sardegna 2016).
+      2. codice catastale estratto da ipa_codice_ipa nel pattern
+         'c_<catastale>' presente in `istat_codici_catastali`.
+
+    Il match riesce se ALMENO UNA delle due regole hit. Solo i comuni
+    dove NESSUNA matcha sono violation reale (potenzialmente bug o
+    snapshot ISTAT obsoleto).
+
+    Le inconsistenze ISTAT vs IndicePA note:
+      - Sardegna 2016: riforma province → IndicePA usa codici 11X,
+        ISTAT pubblica 09X. Risolto da (1) con codici storici.
+      - Fusioni comuni 2010+: IndicePA conserva codice catastale
+        pre-fusione (Bellagio c_a744), ISTAT pubblica solo il nuovo
+        (M335). Risolto da (1) (ISTAT numerico matcha sempre).
     """
     import re
     CATASTALE_RE = re.compile(r"^c_([a-z][a-z0-9]{3})$", re.IGNORECASE)
-    n_skipped = 0
-    n_checked = 0
+    n_match_istat = 0
+    n_match_catastale = 0
+    n_total = 0
     violations = []
     for e in seed:
         if not e.get("id", "").startswith("IT-COM-"):
             continue
+        n_total += 1
+        istat = (e.get("ipa_codice_comune_istat") or "").strip()
         ipa = (e.get("ipa_codice_ipa") or "").strip()
         m = CATASTALE_RE.match(ipa)
-        if not m:
-            n_skipped += 1
+        catastale = m.group(1).upper() if m else None
+
+        if istat in istat_codes:
+            n_match_istat += 1
             continue
-        catastale = m.group(1).upper()
-        n_checked += 1
-        if catastale not in istat_codici_catastali:
-            violations.append({
-                "id": e["id"],
-                "ipa": ipa,
-                "catastale": catastale,
-                "name": (e.get("name") or "")[:50],
-            })
-    print(f"\n[info] cross-validation ISTAT catastale: "
-          f"{n_checked} verificati, {n_skipped} skipped (codice_ipa non-standard), "
-          f"{len(violations)} violazioni")
-    # Soglia: max 20 violazioni reali. Soglia stretta perché qui stiamo
-    # confrontando un codice IPA che PROMETTE di essere c_<catastale> contro
-    # ISTAT — se promette il catastale, deve essere valido.
-    assert len(violations) <= 20, (
-        f"{len(violations)} IT-COM-* con codice IPA 'c_<X>' dove X NON è "
-        f"in elenco ISTAT catastali. First 10: {violations[:10]}"
+        if catastale and catastale in istat_codici_catastali:
+            n_match_catastale += 1
+            continue
+        violations.append({
+            "id": e["id"], "istat": istat, "ipa": ipa,
+            "catastale": catastale, "name": (e.get("name") or "")[:50],
+        })
+    print(f"\n[info] ISTAT cross-validation: total={n_total} "
+          f"match_istat={n_match_istat} match_catastale={n_match_catastale} "
+          f"violations={len(violations)}")
+    # Soglia: max 30 violazioni. Sotto questa soglia possiamo accettare
+    # (snapshot ISTAT ±6 mesi vs IndicePA su variazioni amministrative).
+    assert len(violations) <= 30, (
+        f"{len(violations)} IT-COM-* non si cross-validano contro ISTAT "
+        f"(né ipa_codice_comune_istat né codice catastale matchano). "
+        f"Rigenera snapshot ISTAT o investiga upstream IndicePA.\n"
+        f"First 10: {violations[:10]}"
     )
 
 
