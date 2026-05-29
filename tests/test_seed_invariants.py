@@ -162,21 +162,30 @@ ISTAT_PATH = Path(__file__).resolve().parent.parent / "data" / "istat_comuni.jso
 
 
 @pytest.fixture(scope="module")
-def istat_codes():
-    """Set dei codici ISTAT validi (6 cifre alfanumeriche) caricati dal
-    snapshot ISTAT in data/istat_comuni.json. Include sia i codici
-    correnti sia i codici storici (110/107/103 province) perché
-    IndicePA mappa ancora i comuni sardi sui codici 'vecchi' (111-118)
-    invece dei nuovi post-riforma 2016. Skip se il file manca —
-    indica all'utente come generarlo con scripts/fetch_istat_comuni.py."""
+def istat_payload():
     if not ISTAT_PATH.exists():
         pytest.skip(
             f"{ISTAT_PATH} missing — run "
             f"`uv run python3 scripts/fetch_istat_comuni.py` to generate it."
         )
-    payload = json.loads(ISTAT_PATH.read_text(encoding="utf-8"))
+    return json.loads(ISTAT_PATH.read_text(encoding="utf-8"))
+
+
+@pytest.fixture(scope="module")
+def istat_codes_current(istat_payload):
+    """Set dei codici ISTAT CORRENTI (solo edizione 2024+). Usato per
+    verificare il count del seed (7896 comuni ufficiali)."""
+    return {c["codice_istat"] for c in istat_payload["comuni"]}
+
+
+@pytest.fixture(scope="module")
+def istat_codes(istat_payload):
+    """Set ESTESO di tutti i codici ISTAT mai validi (correnti + storici
+    110/107/103 province). IndicePA mappa ancora i comuni sardi sui
+    codici provincia pre-riforma 2016 (111-118). Usato per la
+    cross-validation 'è un codice comune legittimo?'."""
     codes = set()
-    for c in payload["comuni"]:
+    for c in istat_payload["comuni"]:
         codes.add(c["codice_istat"])
         for storico in c.get("codici_storici") or []:
             codes.add(storico)
@@ -221,12 +230,12 @@ def test_all_it_com_istat_codes_are_valid(seed, istat_codes):
     )
 
 
-def test_seed_comuni_count_matches_istat(seed, istat_codes):
-    """Il numero di IT-COM-* nel seed deve essere ±50 di quello ISTAT.
-    Margine ampio per assorbire lag IndicePA su variazioni amministrative
-    e i 2 comuni L6_NAME_EXCEPTIONS ladini."""
+def test_seed_comuni_count_matches_istat(seed, istat_codes_current):
+    """Il numero di IT-COM-* nel seed deve essere ±50 di quello ISTAT
+    CORRENTE (7896 a gennaio 2024). Margine ampio per assorbire lag
+    IndicePA su variazioni amministrative."""
     seed_it_com = [e for e in seed if e.get("id", "").startswith("IT-COM-")]
-    istat_count = len(istat_codes)
+    istat_count = len(istat_codes_current)
     seed_count = len(seed_it_com)
     diff = abs(seed_count - istat_count)
     assert diff <= 50, (
