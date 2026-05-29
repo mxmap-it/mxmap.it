@@ -153,3 +153,99 @@ def test_no_it_com_for_non_l6_categorie(seed):
         f"{len(violations)} entries have IT-COM-XXX id but categoria != L6. "
         f"First 10: {violations[:10]}"
     )
+
+
+# ============================================================================
+# Cross-validation con ISTAT (fonte autoritativa dei comuni italiani)
+# ============================================================================
+ISTAT_PATH = Path(__file__).resolve().parent.parent / "data" / "istat_comuni.json"
+
+
+@pytest.fixture(scope="module")
+def istat_codes():
+    """Set dei codici ISTAT validi (6 cifre alfanumeriche) caricati dal
+    snapshot ISTAT in data/istat_comuni.json. Skip se il file manca —
+    indica all'utente come generarlo con scripts/fetch_istat_comuni.py."""
+    if not ISTAT_PATH.exists():
+        pytest.skip(
+            f"{ISTAT_PATH} missing — run "
+            f"`uv run python3 scripts/fetch_istat_comuni.py` to generate it."
+        )
+    payload = json.loads(ISTAT_PATH.read_text(encoding="utf-8"))
+    return {c["codice_istat"] for c in payload["comuni"]}
+
+
+@pytest.fixture(scope="module")
+def istat_index():
+    """Indice dei comuni ISTAT per codice → record completo (denominazione,
+    codice catastale, regione, ecc.)."""
+    if not ISTAT_PATH.exists():
+        pytest.skip(f"{ISTAT_PATH} missing")
+    payload = json.loads(ISTAT_PATH.read_text(encoding="utf-8"))
+    return {c["codice_istat"]: c for c in payload["comuni"]}
+
+
+def test_all_it_com_istat_codes_are_valid(seed, istat_codes):
+    """Ogni IT-COM-XXX nel seed deve avere ipa_codice_comune_istat
+    presente nella lista ufficiale ISTAT. Cattura comuni IndicePA con
+    codice ISTAT obsoleto (es. comuni fusi non aggiornati upstream) o
+    spurio."""
+    violations = []
+    for e in seed:
+        if not e.get("id", "").startswith("IT-COM-"):
+            continue
+        istat = (e.get("ipa_codice_comune_istat") or "").strip()
+        if istat not in istat_codes:
+            violations.append({
+                "id": e["id"],
+                "istat": istat,
+                "name": (e.get("name") or "")[:50],
+                "ipa": e.get("ipa_codice_ipa"),
+            })
+    # Soglia: max 20 comuni con codice ISTAT non valido. Sopra questa soglia
+    # il test fallisce e va investigato (probabile snapshot ISTAT obsoleto).
+    assert len(violations) <= 20, (
+        f"{len(violations)} IT-COM-* hanno codice ISTAT NON in elenco ISTAT "
+        f"ufficiale. Probabili comuni fusi/aggiornamenti. Se il numero è "
+        f"alto, rigenera lo snapshot con "
+        f"`uv run python3 scripts/fetch_istat_comuni.py`.\n"
+        f"First 10: {violations[:10]}"
+    )
+
+
+def test_seed_comuni_count_matches_istat(seed, istat_codes):
+    """Il numero di IT-COM-* nel seed deve essere ±50 di quello ISTAT.
+    Margine ampio per assorbire lag IndicePA su variazioni amministrative
+    e i 2 comuni L6_NAME_EXCEPTIONS ladini."""
+    seed_it_com = [e for e in seed if e.get("id", "").startswith("IT-COM-")]
+    istat_count = len(istat_codes)
+    seed_count = len(seed_it_com)
+    diff = abs(seed_count - istat_count)
+    assert diff <= 50, (
+        f"Seed IT-COM-* count ({seed_count}) si discosta di {diff} da "
+        f"ISTAT ({istat_count}). Soglia: 50. Possibile bug di filter o "
+        f"snapshot ISTAT da rinfrescare."
+    )
+
+
+def test_no_orphan_it_com_istat_pairs(seed, istat_index):
+    """Ogni IT-COM-XXX deve avere codice_istat che corrisponde all'id
+    (cioè IT-COM-058091 deve avere ipa_codice_comune_istat=058091).
+    Verifica che la mappatura id↔istat sia consistente."""
+    violations = []
+    for e in seed:
+        eid = e.get("id", "")
+        if not eid.startswith("IT-COM-"):
+            continue
+        id_istat = eid.split("-")[-1]  # IT-COM-058091 → "058091"
+        field_istat = (e.get("ipa_codice_comune_istat") or "").strip()
+        if id_istat != field_istat:
+            violations.append({
+                "id": eid,
+                "ipa_codice_comune_istat_field": field_istat,
+                "name": (e.get("name") or "")[:50],
+            })
+    assert not violations, (
+        f"{len(violations)} entries hanno IT-COM-{{X}} ma "
+        f"ipa_codice_comune_istat != X. First 5: {violations[:5]}"
+    )
