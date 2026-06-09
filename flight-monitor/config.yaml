@@ -1,0 +1,63 @@
+# Nordic budget flight monitor — flexible 3-4 night trips.
+# Tweak freely. Secrets (Telegram/email/Amadeus) are read from env vars.
+
+currency: EUR
+
+# Departure airports. BSL and BGY are Ryanair bases reachable from CH/N. Italy.
+# ZRH is mostly useful with the optional Amadeus provider.
+origins:
+  - BSL   # Basel EuroAirport
+  - BGY   # Milan Bergamo (Ryanair/Wizz base)
+  # - ZRH # Zurich — enable together with the amadeus provider
+
+# Flexible-date trip constraints.
+trip:
+  min_nights: 3
+  max_nights: 4
+  earliest_days_ahead: 3     # ignore departures sooner than this
+  search_horizon_days: 90    # how far ahead to scan
+
+# Default round-trip alert threshold (EUR, per person). Per-destination
+# overrides below take precedence (Iceland/Greenland are never truly cheap).
+budget_eur: 100
+
+# 'ryanair' works with no API key. Add 'amadeus' once you set
+# AMADEUS_CLIENT_ID / AMADEUS_CLIENT_SECRET (needed for KEF/GOH coverage).
+providers:
+  - ryanair
+  # - amadeus
+
+destinations:
+  # --- Mainland Nordics: prime cheap-LCC targets ---------------------
+  - { code: CPH, city: Copenhagen,        country: DK, region: nordic }
+  - { code: BLL, city: Billund,           country: DK, region: nordic }
+  - { code: AAL, city: Aalborg,           country: DK, region: nordic }
+  - { code: NYO, city: Stockholm-Skavsta, country: SE, region: nordic }
+  - { code: GOT, city: Gothenburg,        country: SE, region: nordic }
+  - { code: ARN, city: Stockholm-Arlanda, country: SE, region: nordic }
+  - { code: TRF, city: Oslo-Torp,         country: NO, region: nordic }
+  - { code: OSL, city: Oslo,              country: NO, region: nordic }
+  - { code: HEL, city: Helsinki,          country: FI, region: nordic }
+  - { code: TMP, city: Tampere,           country: FI, region: nordic }
+  # --- Iceland: only worth it when genuinely cheap (needs amadeus) ----
+  - { code: KEF, city: Reykjavik,         country: IS, region: iceland,   budget_eur: 120 }
+  # --- Greenland: structurally expensive — flag rare events (amadeus) -
+  - { code: GOH, city: Nuuk,              country: GL, region: greenland, budget_eur: 350 }
+
+db_path: flightmon.db
+
+alerts:
+  console: true
+  csv_path: deals.csv
+  telegram:
+    enabled: false
+    # token/chat read from FLIGHTMON_TG_TOKEN / FLIGHTMON_TG_CHAT if blank
+    bot_token: ""
+    chat_id: ""
+  email:
+    enabled: false
+    smtp_host: ""
+    smtp_port: 587
+    sender: ""
+    recipients: []
+    # username/password read from FLIGHTMON_SMTP_USER / FLIGHTMON_SMTP_PASS
