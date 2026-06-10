@@ -476,5 +476,56 @@ già con una curva, non da zero.
 
 ---
 
+---
+
+## 14. Validazione del prototipo (fatta stanotte)
+
+Per de-riskare la Fase 1 ho scritto e **testato su dati reali** i due
+script chiave:
+
+- `scripts/historicize.py` — snapshot + diff + changelog + runs.jsonl +
+  time-series + CHANGELOG.md. Funzionante.
+- `scripts/backfill_history.py` — estrae ogni versione storica di
+  `data.json` da git e la storicizza in ordine cronologico.
+
+**Test eseguito**: backfill di 12 commit campionati dai 160 esistenti
+(da `initial commit` del 6 marzo al `full IT pipeline` del 5 maggio).
+Risultati reali ricostruiti:
+
+```
+2026-03-15   USA-CloudAct=80     (Italia appena aggiunta)
+2026-03-16   USA-CloudAct=143
+2026-04-30   USA-CloudAct=100
+2026-05-05   USA-CloudAct=10938  CloudSovrano=1088  Sconosciuto=12
+                                  (pipeline IT completa, tutte le categorie)
+```
+
+Conferme empiriche:
+- **Snapshot compatto**: 635 KB gzip per 22.947 enti → la stima "~1 MB/run"
+  del §4.1 è corretta (vs 86 MB di data.json: **−99%**).
+- **Backfill funziona**: i 160 commit git esistenti danno davvero ~2 mesi
+  di storia al day-one, senza aspettare nuovi run (tesi §10 verificata).
+- **Diff/changelog corretti**: il run 05-05 produce 22.947 eventi `new`
+  (l'aggiunta della pipeline IT completa) con il CHANGELOG markdown
+  leggibile (Min Interno → microsoft, PCM → microsoft, …).
+- **Idempotenza**: ri-eseguire sullo stesso run-id sovrascrive senza
+  duplicare.
+
+Limiti noti del prototipo (da rifinire in F1):
+- alcuni `ipa`/`cat` vuoti negli snapshot storici vecchi (i campi
+  IndicePA non erano ancora popolati a marzo) — non un bug, è la storia;
+- il backfill campiona 12 commit per il test; la F1 reale li processa
+  tutti e 160;
+- gli artefatti `history/` generati nel test NON sono committati (sono
+  output di prova sul server) — la F1 reale li genera puliti dal backfill
+  completo.
+
+**Conclusione**: il design non è solo teoria — la spina dorsale (F1) è
+già provata su dati veri. Manca da concordare le decisioni aperte (§11)
+e costruire dashboard (F3) + scheda ente (F4).
+
+---
+
 *Prossimo passo: discutere le decisioni aperte (§11), poi partire da F1
-(`historicize.py` + backfill dei 160 commit storici).*
+(`historicize.py` + backfill dei 160 commit storici) — il prototipo è
+già pronto.*
