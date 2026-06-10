@@ -1,4 +1,5 @@
 """Pytest per src/mail_sovereignty/mx_discovery.py (taxonomy provenance MX)."""
+
 import pytest
 
 from mail_sovereignty.mx_discovery import (
@@ -44,20 +45,44 @@ def test_set_discovery_rejects_unknown_tag():
         set_discovery({}, "not_a_real_tag")
 
 
-@pytest.mark.parametrize("entry,expected_method", [
-    ({"miur_tenant_dependency": True}, "istruzione_miur_tenant"),
-    ({"domain_correction_source": "indicepa_aoo_uo_tier6", "domain_used": "x.it"}, "aoo_uo_tier6"),
-    ({"domain_correction_source": "wikidata_p856", "domain_used": "x.it"}, "wikidata_p856"),
-    ({"domain_correction_source": "homepage_scrape_primary", "domain_used": "x.it"}, "homepage_scrape"),
-    ({"domain_correction_source": "search_engine", "domain_used": "x.it"}, "search_engine_scrape"),
-    ({"public_pec_match": "cert.ruparpiemonte.it"}, "public_pec_inference"),
-    ({"scraped_email": "info@x.it"}, "homepage_scrape"),
-    ({"recovery_legit_reason": "fuzzy_match:a~b", "domain_used": "x.it"}, "domain_fallback"),
-    ({"domain_used": "x.it"}, "domain_fallback"),
-    ({"provider": "unknown"}, "unknown"),
-    ({"mx": ["mx.x.it"], "domain": "x.it"}, "seed_primary_mx"),
-    ({}, "unknown"),
-])
+@pytest.mark.parametrize(
+    "entry,expected_method",
+    [
+        ({"miur_tenant_dependency": True}, "istruzione_miur_tenant"),
+        (
+            {
+                "domain_correction_source": "indicepa_aoo_uo_tier6",
+                "domain_used": "x.it",
+            },
+            "aoo_uo_tier6",
+        ),
+        (
+            {"domain_correction_source": "wikidata_p856", "domain_used": "x.it"},
+            "wikidata_p856",
+        ),
+        (
+            {
+                "domain_correction_source": "homepage_scrape_primary",
+                "domain_used": "x.it",
+            },
+            "homepage_scrape",
+        ),
+        (
+            {"domain_correction_source": "search_engine", "domain_used": "x.it"},
+            "search_engine_scrape",
+        ),
+        ({"public_pec_match": "cert.ruparpiemonte.it"}, "public_pec_inference"),
+        ({"scraped_email": "info@x.it"}, "homepage_scrape"),
+        (
+            {"recovery_legit_reason": "fuzzy_match:a~b", "domain_used": "x.it"},
+            "domain_fallback",
+        ),
+        ({"domain_used": "x.it"}, "domain_fallback"),
+        ({"provider": "unknown"}, "unknown"),
+        ({"mx": ["mx.x.it"], "domain": "x.it"}, "seed_primary_mx"),
+        ({}, "unknown"),
+    ],
+)
 def test_infer_method_from_entry(entry, expected_method):
     method, _evidence = infer_method_from_entry(entry)
     assert method == expected_method

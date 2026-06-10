@@ -7,6 +7,7 @@ concatenation, scope PA-shared, is_local_pa_domain) per coprire tutti
 i rami del modulo — il validatore è il componente critico per la
 correttezza dell'attribuzione MX.
 """
+
 import importlib.util as _ilu
 from pathlib import Path
 
@@ -26,7 +27,9 @@ from mail_sovereignty.scrape_validator import (
 )
 
 # Importa la lista CASES dallo script standalone (single source of truth).
-_script = Path(__file__).resolve().parent.parent / "scripts" / "_test_scrape_validator.py"
+_script = (
+    Path(__file__).resolve().parent.parent / "scripts" / "_test_scrape_validator.py"
+)
 _spec = _ilu.spec_from_file_location("_svcases", str(_script))
 _mod = _ilu.module_from_spec(_spec)
 _spec.loader.exec_module(_mod)
@@ -60,46 +63,58 @@ def test_pec_providers_all_rejected():
 
 def test_manual_override_accepts():
     ok, reason = is_legit_email_domain(
-        "qualcosa.it", "comune.foo.it",
-        codice_ipa="c_xxxx", manual_overrides={"c_xxxx": "qualcosa.it"})
+        "qualcosa.it",
+        "comune.foo.it",
+        codice_ipa="c_xxxx",
+        manual_overrides={"c_xxxx": "qualcosa.it"},
+    )
     assert ok and reason == "manual_override"
 
 
 # --- meaningful_labels ---
-@pytest.mark.parametrize("domain,expected", [
-    ("interno.gov.it", {"interno"}),
-    ("comune.roccagorga.lt.it", {"roccagorga"}),
-    ("mail.comune.padova.it", {"padova"}),
-    ("interno.it", {"interno"}),
-    ("", set()),
-])
+@pytest.mark.parametrize(
+    "domain,expected",
+    [
+        ("interno.gov.it", {"interno"}),
+        ("comune.roccagorga.lt.it", {"roccagorga"}),
+        ("mail.comune.padova.it", {"padova"}),
+        ("interno.it", {"interno"}),
+        ("", set()),
+    ],
+)
 def test_meaningful_labels(domain, expected):
     assert meaningful_labels(domain) == expected
 
 
 # --- is_local_pa_domain ---
-@pytest.mark.parametrize("domain,expected", [
-    ("comune.milano.it", True),
-    ("provincia.lecce.it", True),
-    ("comune.bolzano.bz.it", True),
-    ("interno.gov.it", False),       # gov.it = nazionale, mai local
-    ("salute.gov.it", False),
-    ("peritiagrari.it", False),      # ordine, no marker local
-])
+@pytest.mark.parametrize(
+    "domain,expected",
+    [
+        ("comune.milano.it", True),
+        ("provincia.lecce.it", True),
+        ("comune.bolzano.bz.it", True),
+        ("interno.gov.it", False),  # gov.it = nazionale, mai local
+        ("salute.gov.it", False),
+        ("peritiagrari.it", False),  # ordine, no marker local
+    ],
+)
 def test_is_local_pa_domain(domain, expected):
     assert is_local_pa_domain(domain) is expected
 
 
 # --- Damerau-Levenshtein ---
-@pytest.mark.parametrize("a,b,dist", [
-    ("abc", "abc", 0),
-    ("abc", "abd", 1),       # sostituzione
-    ("abc", "ab", 1),        # cancellazione
-    ("ab", "abc", 1),        # inserimento
-    ("ab", "ba", 1),         # trasposizione adiacente
-    ("", "abc", 3),
-    ("consofarm", "consorfarm", 1),
-])
+@pytest.mark.parametrize(
+    "a,b,dist",
+    [
+        ("abc", "abc", 0),
+        ("abc", "abd", 1),  # sostituzione
+        ("abc", "ab", 1),  # cancellazione
+        ("ab", "abc", 1),  # inserimento
+        ("ab", "ba", 1),  # trasposizione adiacente
+        ("", "abc", 3),
+        ("consofarm", "consorfarm", 1),
+    ],
+)
 def test_damerau_levenshtein(a, b, dist):
     assert _damerau_levenshtein(a, b) == dist
 
@@ -134,13 +149,16 @@ def test_label_concatenation_needs_two_labels():
 
 
 # --- region scoping ---
-@pytest.mark.parametrize("ente,region,expected", [
-    ("comune.milano.it", "lombardia", True),     # capoluogo
-    ("comune.bologna.it", "emilia-romagna", True),
-    ("comune.albianodivrea.to.it", "piemonte", True),   # province code TO
-    ("comune.palermo.it", "lombardia", False),   # wrong region
-    ("comune.aosta.vda.it", "valle-d-aosta", True),
-])
+@pytest.mark.parametrize(
+    "ente,region,expected",
+    [
+        ("comune.milano.it", "lombardia", True),  # capoluogo
+        ("comune.bologna.it", "emilia-romagna", True),
+        ("comune.albianodivrea.to.it", "piemonte", True),  # province code TO
+        ("comune.palermo.it", "lombardia", False),  # wrong region
+        ("comune.aosta.vda.it", "valle-d-aosta", True),
+    ],
+)
 def test_ente_in_region(ente, region, expected):
     assert _ente_in_region(ente, region) is expected
 
