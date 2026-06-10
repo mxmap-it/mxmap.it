@@ -49,9 +49,10 @@ def entry(provider, *, mx=False, spf=False, dkim=False, autodiscover=False,
     (entry("aruba", spf=True), 0.50, "spf_only"),
     # spf + gateway → spf_gw 0.70 (gateway richiesto)
     (entry("microsoft", spf=True, gateway="mxgate.proofpoint.it"), 0.70, "spf_gw"),
-    # tenant solo su MS365 → mx_tenant? no mx → ad_tenant? no ad → fallback?
-    # solo tenant: present={tenant}, nessuna regola 1-tenant senza altro → fallback 0.40
-    (entry("microsoft", tenant=True), 0.40, "fallback"),
+    # tenant solo su MS365: nessuna regola 1-tenant → fallback 0.40
+    # + boost 1×0.02 per il segnale tenant non consumato dalla regola = 0.42
+    # (comportamento upstream: boost = len(signals - rule.signals))
+    (entry("microsoft", tenant=True), 0.42, "fallback"),
 ])
 def test_provider_confidence_exact(e, exp_conf, exp_rule):
     conf, rule, _ = compute_confidence(e)
@@ -105,10 +106,10 @@ def test_unknown_no_mx():
 
 # === Funzioni di basso livello (parità con upstream) ===
 def test_rule_confidence_boost():
-    # mx_spf base 0.90, +2 segnali extra (dkim, autodiscover) → 0.94
-    conf, rule = _rule_confidence(
-        "google", {"mx", "spf", "dkim", "autodiscover"}, None)
-    assert rule == "mx_spf" and abs(conf - 0.94) < 1e-9
+    # mx+spf+dkim (no autodiscover): mx_spf 0.90 + boost {dkim}=1×0.02 = 0.92
+    # (con autodiscover invece matcherebbe mx_spf_ad, regola a 3 segnali)
+    conf, rule = _rule_confidence("google", {"mx", "spf", "dkim"}, None)
+    assert rule == "mx_spf" and abs(conf - 0.92) < 1e-9
 
 
 def test_rule_confidence_cap_at_one():
