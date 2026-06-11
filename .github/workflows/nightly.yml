@@ -133,6 +133,14 @@ jobs:
       - name: Aggregate istruzione per comune (mappa scuole)
         continue-on-error: true
         run: uv run python3 scripts/aggregate_istruzione_per_comune.py
+      # Confidence ESORICS + sovranità DOMESTIC/FOREIGN + domestic-MX-override.
+      # Dopo recovery/cleanup (provider finale), prima di build_frontend
+      # (così i campi confidence/jurisdiction finiscono in data-detail.json).
+      - name: Confidence scoring + sovereignty (ESORICS)
+        run: uv run python3 scripts/compute_confidence.py --country IT
+      - name: Confidence report (1 pagina, anticipazione bounce)
+        continue-on-error: true
+        run: uv run python3 scripts/report_confidence.py --country IT
 
       - name: Validate data quality
         id: validate
@@ -152,7 +160,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json data-regions.json data-summary.json data-detail.json data/summary/ dist/ validation_report.json validation_report.csv data/dns_cache/ \
                   data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
-                  data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json data/reports/mx_discovery_stats.json
+                  data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json data/reports/mx_discovery_stats.json \
+                  data/reports/confidence_report.json data/reports/confidence_report.md
           git commit -m "chore: nightly data update"
           git pull --rebase
           git push

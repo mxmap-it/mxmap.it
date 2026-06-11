@@ -47,6 +47,12 @@ DETAIL_FIELDS = {
     # MX provenance — shown as badge in popup with link to methodology.html
     "mx_discovery_method",
     "mx_discovery_evidence",
+    # Confidence ESORICS + sovranità (popup badge + filtro mappa)
+    "classification_confidence",
+    "classification_rule",
+    "mx_jurisdiction",
+    "cloud_tenant_only",
+    "domestic_mx_override",
 }
 
 # Fields intentionally dropped (not used by frontend)
