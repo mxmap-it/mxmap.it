@@ -180,6 +180,11 @@
     letter-spacing: 0.5px; margin-bottom: 2px; font-weight: 600;
   }
   .popup-section-hint { font-weight: 400; opacity: 0.7; }
+  .popup-confidence {
+    margin-top: 6px; padding: 5px 8px; background: #f3f6f9;
+    border-left: 3px solid #607d8b; font-size: 11px; color: #37474f;
+  }
+  .popup-confidence a { color: #607d8b; }
   .dns-table { border-collapse: collapse; }
   .dns-table td {
     padding: 1px 8px 1px 0; vertical-align: baseline; font-size: 12px; white-space: nowrap;
@@ -922,6 +927,77 @@ function renderDiscoveryBadge(m) {
     '</div>';
 }
 
+// --- Confidence + sovranità (modello ESORICS 2026) ---
+// classification_confidence (0..1), classification_rule e mx_jurisdiction
+// arrivano da data-detail.json (fusi su m). mx_jurisdiction si può anche
+// derivare da mx_countries (presente nel summary) così il filtro sovranità
+// della mappa funziona prima che il detail finisca di caricare.
+const RULE_EXPLAIN = {
+  mx_spf: 'MX e SPF concordano sul provider',
+  mx_only: 'solo record MX (routing) concorda',
+  spf_gw: 'SPF visibile dietro il gateway',
+  dkim_gw: 'DKIM prova il firmatario dietro il gateway',
+  dkim_spf: 'DKIM e SPF concordano (senza routing MX)',
+  spf_only: 'solo SPF (autorizzazione mittenti)',
+  fallback: 'evidenza minima',
+  dom_mx_spf: 'MX in Italia + SPF',
+  dom_mx_only: 'MX in Italia (routing domestico)',
+  dom_secondary: 'evidenza secondaria, MX domestico',
+  dom_none: 'nessuna evidenza',
+  frgn_mx_spf: 'MX estero + SPF',
+  frgn_mx_only: 'MX estero (routing)',
+  frgn_secondary: 'evidenza secondaria, MX estero',
+  frgn_none: 'nessuna evidenza',
+  no_mx: 'nessun MX risolto',
+};
+
+function confidenceBand(c) {
+  if (c >= 0.90) return { label: 'molto alta', color: '#1a7f37' };
+  if (c >= 0.80) return { label: 'alta', color: '#1a7f37' };
+  if (c >= 0.60) return { label: 'media', color: '#bf8700' };
+  if (c > 0) return { label: 'bassa', color: '#cf222e' };
+  return { label: 'non determinata', color: '#888' };
+}
+
+// Mirror JS di classification_confidence.mx_jurisdiction (Python), target IT.
+function mxJurisdiction(m) {
+  if (m.mx_jurisdiction) return m.mx_jurisdiction;
+  const cc = m.mx_countries || [];
+  if (!cc.length) return 'unknown';
+  const inIt = cc.filter(c => (c || '').toUpperCase() === 'IT');
+  if (inIt.length === cc.length) return 'domestic';
+  if (inIt.length === 0) return 'foreign';
+  return 'mixed';
+}
+
+const JURIS_DISPLAY = {
+  domestic: '\u{1F1EE}\u{1F1F9} MX sovrano (IT)',
+  foreign: '\u{1F30D} MX estero',
+  mixed: '\u{1F1EE}\u{1F1F9}+\u{1F30D} MX misto',
+  unknown: 'MX non geolocalizzato',
+};
+
+function confidenceBadge(m) {
+  const c = m.classification_confidence;
+  if (typeof c !== 'number') return '';
+  const pct = Math.round(c * 100);
+  const band = confidenceBand(c);
+  const rule = m.classification_rule || '';
+  const explain = RULE_EXPLAIN[rule] || rule;
+  const jur = mxJurisdiction(m);
+  const jd = JURIS_DISPLAY[jur] || JURIS_DISPLAY.unknown;
+  const tip = `Regola ${rule}: ${explain}. Affidabilità ${pct}% secondo il modello ESORICS 2026.`;
+  const ovr = m.domestic_mx_override
+    ? ` <span title="Verdetto cloud da tenant/DKIM (es. solo Teams), ma MX self-hosted domestico → riclassificato per giurisdizione" style="cursor:help">↻</span>`
+    : '';
+  return `<div class="popup-confidence" title="${escapeHtml(tip)}">` +
+    `Affidabilità classificazione: <strong style="color:${band.color}">${pct}%</strong> ` +
+    `<span style="color:${band.color}">(${band.label})</span> · ` +
+    `<span>${jd}</span>${ovr} ` +
+    `<a href="methodology.html#confidence" target="_blank" rel="noopener" title="Come calcoliamo l'affidabilità">ⓘ</a>` +
+    `</div>`;
+}
+
 // --- Popup ---
 function buildPopup(m) {
   const cls = m.classification;
@@ -1013,6 +1089,7 @@ function buildPopup(m) {
     popStr +
     `<br><span style="font-size:11px;color:#888">${m.region ? escapeHtml(m.region) + ' \u00b7 ' : ''}${m.country}</span>` +
     (cls.reason ? `<div style="margin-top:4px;font-size:11px;color:#666;font-style:italic">${escapeHtml(cls.reason)}</div>` : '') +
+    confidenceBadge(m) +
     gatewayNote + tenantNote + smtpSoftwareNote + mxSection + spfSection + autodiscoverSection + dkimSection + txtVerifSection +
     `</div>`;
 }
@@ -2165,6 +2242,13 @@ async function loadSummaryData() {
         m.txt_verifications = d.txt_verifications || null;
         m.tenant = d.tenant || null;
         m.smtp_software = d.smtp_software || null;
+        // Confidence ESORICS + sovranità (badge popup). mx_jurisdiction qui è
+        // il valore precomputato; il filtro mappa lo deriva anche da
+        // mx_countries (summary) per funzionare prima del load del detail.
+        m.classification_confidence = d.classification_confidence;
+        m.classification_rule = d.classification_rule || null;
+        m.mx_jurisdiction = d.mx_jurisdiction || null;
+        m.domestic_mx_override = d.domestic_mx_override || false;
         m.classification.mx_records = (d.mx || []).map(function (host, i) {
           return { priority: (i + 1) * 10, host: host };
         });

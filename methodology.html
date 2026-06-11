@@ -202,6 +202,47 @@ mai assegnato a un MX "plausibile ma non provato".
 </ul>
 <p>Le regole 6.5 (fuzzy Damerau-Levenshtein ≤ 1) e 6.6 (label concatenation) sono già attive — catturano typo singoli e pattern del tipo <code>aciarezzo.it</code> ↔ <code>arezzo.aci.it</code>. Restano <code>unknown</code> i casi che richiedono override manuale (mismatch semantici non risolvibili automaticamente senza assunzioni rischiose).</p>
 
+<h2 id="confidence">Affidabilità della classificazione (confidence)</h2>
+<p>Ogni ente porta un punteggio di <strong>affidabilità</strong> della classificazione (0–100%): quanto è solida l'evidenza DNS che sostiene il provider attribuito. Il modello è un <strong>port fedele del classificatore <a href="https://github.com/mxmap/esorics2026" target="_blank" rel="noopener">ESORICS 2026</a></strong> (versione peer-reviewed di mxmap), adattato alla nostra architettura: da noi il provider è già deciso per keyword sui record DNS, qui calcoliamo <em>quanto fidarsene</em> e la <em>giurisdizione</em> dell'infrastruttura di posta.</p>
+
+<p>Il punteggio nasce da un set di <strong>7 regole</strong>: si scorre dall'evidenza più forte alla più debole e si prende la prima che combacia. Solo i tre segnali di <em>routing/autorizzazione</em> (MX, SPF, DKIM) determinano la regola di base; gli altri (tenant MS365, autodiscover) contribuiscono solo come <em>boost</em> (+0,02 ciascuno, cap a 1,0). Razionale upstream: avere un tenant Microsoft 365 (es. per Teams) non prova che la <em>posta</em> sia ospitata lì.</p>
+
+<table class="stats">
+  <thead><tr><th>regola</th><th>segnali richiesti</th><th>gateway</th><th>base</th></tr></thead>
+  <tbody>
+    <tr><td><code>mx_spf</code></td><td>MX + SPF</td><td>—</td><td>0,90</td></tr>
+    <tr><td><code>mx_only</code></td><td>MX</td><td>—</td><td>0,80</td></tr>
+    <tr><td><code>spf_gw</code></td><td>SPF</td><td>sì</td><td>0,70</td></tr>
+    <tr><td><code>dkim_gw</code></td><td>DKIM</td><td>sì</td><td>0,65</td></tr>
+    <tr><td><code>dkim_spf</code></td><td>DKIM + SPF</td><td>—</td><td>0,60</td></tr>
+    <tr><td><code>spf_only</code></td><td>SPF</td><td>—</td><td>0,50</td></tr>
+    <tr><td><code>fallback</code></td><td>— (catch-all)</td><td>—</td><td>0,40</td></tr>
+  </tbody>
+</table>
+
+<h3 style="margin-top:28px">Sovranità: domestic / foreign / mixed</h3>
+<p>Per gli enti senza un backend cloud riconosciuto (posta self-hosted o provider minore) non basta dire "indipendente": li qualifichiamo per <strong>giurisdizione dell'IP del server MX</strong> (paese dell'ASN via Team Cymru). La confidenza usa tabelle dedicate a base piatta (nessun boost, perché i segnali cloud sono irrilevanti alla classificazione per paese):</p>
+<table class="stats">
+  <thead><tr><th>caso</th><th>🇮🇹 domestico (IT)</th><th>🌍 estero</th></tr></thead>
+  <tbody>
+    <tr><td>MX + SPF</td><td><code>dom_mx_spf</code> 0,80</td><td><code>frgn_mx_spf</code> 0,60</td></tr>
+    <tr><td>solo MX</td><td><code>dom_mx_only</code> 0,70</td><td><code>frgn_mx_only</code> 0,50</td></tr>
+    <tr><td>solo evidenza secondaria</td><td><code>dom_secondary</code> 0,20</td><td><code>frgn_secondary</code> 0,10</td></tr>
+    <tr><td>niente</td><td><code>dom_none</code> 0,00</td><td><code>frgn_none</code> 0,00</td></tr>
+  </tbody>
+</table>
+<p>L'<strong>etichetta di sovranità</strong> nel popup (🇮🇹 MX sovrano / 🌍 MX estero / misto) deriva da <code>mx_countries</code>: <em>domestic</em> se tutti gli MX sono in IT, <em>foreign</em> se nessuno, <em>mixed</em> se alcuni.</p>
+
+<div class="method-card" id="method-domestic_mx_override">
+<h3><span class="tag">domestic MX override</span> — Teams ≠ posta</h3>
+<p>Caso insidioso: un ente risulta <code>microsoft</code>/<code>google</code> per via del <em>tenant</em> o del <em>DKIM</em>, ma il suo record MX punta a un server <strong>self-hosted in Italia</strong> (non a <code>*.protection.outlook.com</code>). Significa che il cloud serve Teams/SharePoint, mentre la <strong>posta in entrata</strong> resta sovrana. In questi casi riclassifichiamo l'ente per giurisdizione invece che come cloud estero.</p>
+<div class="gate"><strong>Regola (come ESORICS):</strong> scatta solo se <em>non</em> c'è gateway <em>e</em> l'MX non combacia coi pattern cloud del provider. Dietro un gateway antispam il verdetto cloud viene dal look-through (il DKIM prova il backend reale) ed è legittimo → nessun override.</div>
+</div>
+
+<h3 style="margin-top:28px">Anticipazione: validazione via bounce</h3>
+<p>La confidenza è anche una <strong>mappa di dove verificare</strong>. Gli enti a confidenza bassa (&lt; 0,60) pur essendo classificati sono i candidati prioritari per la futura validazione attiva via <em>bounce-probing</em> (invio a indirizzo inesistente + analisi del messaggio di ritorno NDR, che rivela il MTA reale del backend). Il <strong>report completo</strong> — distribuzione aggregata, confidenza per provider, regole attivate, sovranità e lista dei candidati bounce — è rigenerato a ogni run:</p>
+<div class="gate"><strong>Report:</strong> <a href="https://github.com/fpietrosanti/mxmap.it/blob/main/data/reports/confidence_report.md" target="_blank" rel="noopener">confidence_report.md</a> (leggibile) · <a href="data/reports/confidence_report.json" target="_blank" rel="noopener">confidence_report.json</a> (machine-readable). Codice: <code>src/mail_sovereignty/classification_confidence.py</code> (port + test di fedeltà), <code>scripts/compute_confidence.py</code>, <code>scripts/report_confidence.py</code>.</div>
+
 <hr style="margin-top:48px;border:none;border-top:1px solid #ddd">
 <p style="font-size:12px;color:#888;text-align:center">
 Osservatorio Sovranità Digitale PA — <a href="https://github.com/fpietrosanti/mxmap.it" target="_blank" rel="noopener">codice e dati su GitHub</a> · Licenza dati: ODbL-1.0 + CC-BY-4.0 · Codice: MIT
