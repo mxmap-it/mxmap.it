@@ -1,53 +1,76 @@
 #!/usr/bin/env python3
-"""Applica il confidence scoring (port fedele upstream) a data.json.
+"""Applica confidence ESORICS + refinement di sovranità a data.json.
 
 Aggiunge a ogni entità:
-  classification_confidence  float 0-1
-  classification_rule        nome regola (es. mx_spf_tenant)
-  classification_signals     lista segnali presenti
+  classification_confidence  float 0-1   (7-rule ESORICS / DOMESTIC-FOREIGN)
+  classification_rule        nome regola
+  classification_signals     segnali presenti
+  mx_jurisdiction            domestic | foreign | mixed | unknown
 
-Step di pipeline: eseguire dopo postprocess/recovery, prima di
-build_frontend (così i campi finiscono in data-detail.json per il popup).
+E applica il DOMESTIC MX OVERRIDE: gli enti classificati cloud (microsoft/
+google/aws) il cui MX NON è del cloud (verdetto da tenant/DKIM, es. MS365
+solo per Teams) e con MX domestico vengono riclassificati 'independent'
+(la posta in entrata è self-hosted). Il provider cloud originale è
+conservato in 'cloud_tenant_only' per la narrazione.
 
-Uso:
-  uv run python3 scripts/compute_confidence.py [--country IT] [--data data.json]
+Step pipeline: dopo recovery/cleanup, prima di build_frontend.
+
+Uso: uv run python3 scripts/compute_confidence.py [--country IT]
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import sys
 from collections import Counter
 from pathlib import Path
 
-import sys
-
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str((ROOT / "src").as_posix()))
-from mail_sovereignty.classification_confidence import compute_confidence  # noqa
+from mail_sovereignty.classification_confidence import (  # noqa
+    compute_confidence,
+    needs_domestic_mx_override,
+)
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", type=Path, default=ROOT / "data.json")
-    ap.add_argument("--country", default="", help="limita a un paese (es. IT)")
+    ap.add_argument("--country", default="IT")
     args = ap.parse_args()
+    target = args.country.upper()
 
     data = json.loads(args.data.read_text(encoding="utf-8"))
     muns = data.get("municipalities") or data
 
     n = 0
-    rule_hist: Counter[str] = Counter()
-    conf_buckets = Counter()
+    n_override = 0
+    conf_buckets: Counter[str] = Counter()
     for v in muns.values():
-        if args.country and (v.get("country") or "").upper() != args.country.upper():
+        if (v.get("country") or "").upper() != target:
             continue
-        conf, rule, signals = compute_confidence(v)
+
+        # 1. domestic MX override (prima della confidence, così la confidence
+        #    riflette il provider riclassificato)
+        if needs_domestic_mx_override(v):
+            v["cloud_tenant_only"] = v.get("provider")
+            v["provider"] = "independent"
+            v["domestic_mx_override"] = True
+            v["reason"] = (
+                f"riclassificato da {v['cloud_tenant_only']}: segnale cloud "
+                f"(tenant/DKIM) presente ma MX in entrata self-hosted domestico "
+                f"(il tenant cloud riflette uso Teams/SharePoint, non l'email)"
+            )
+            n_override += 1
+
+        # 2. confidence + jurisdiction
+        conf, rule, signals, jur = compute_confidence(v, target_country=target)
         v["classification_confidence"] = conf
         v["classification_rule"] = rule
         v["classification_signals"] = signals
-        rule_hist[rule] += 1
-        # bucket per istogramma
+        v["mx_jurisdiction"] = jur
+
         if conf >= 0.80:
             conf_buckets["alta (>=0.80)"] += 1
         elif conf >= 0.60:
@@ -62,16 +85,14 @@ def main() -> int:
         json.dumps(data, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8")
 
-    print(f"Confidence calcolata su {n} entità"
-          f"{' (' + args.country + ')' if args.country else ''}\n")
+    print(f"Confidence + sovranità calcolata su {n} enti {target}")
+    print(f"Domestic MX override applicato a {n_override} enti "
+          f"(cloud→independent: tenant Teams-only)\n")
     print("Distribuzione confidence:")
     for k in ("alta (>=0.80)", "media (0.60-0.79)", "bassa (<0.60)", "nulla (unknown)"):
         v = conf_buckets.get(k, 0)
         pct = 100 * v / n if n else 0
         print(f"  {k:<22} {v:>6}  ({pct:.1f}%)")
-    print("\nRegole più frequenti (top 12):")
-    for rule, cnt in rule_hist.most_common(12):
-        print(f"  {rule:<18} {cnt}")
     return 0
 
 

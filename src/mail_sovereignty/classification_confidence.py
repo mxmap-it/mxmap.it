@@ -1,23 +1,31 @@
-"""Confidence scoring — PORT FEDELE di davidhuser/mxmap classifier.py.
+"""Confidence scoring + sovereignty refinement — PORT FEDELE di
+mxmap/esorics2026 (paper ESORICS 2026), src/.../provider_classification.
 
-Replica l'algoritmo di confidence dell'upstream
-(https://github.com/davidhuser/mxmap, src/mail_sovereignty/classifier.py),
-attenendosi alle stesse regole, pesi e formula. NON aggiunge euristiche
-proprie (niente bonus/malus per metodo di scoperta, country, ecc.).
+Replica l'algoritmo del classifier ESORICS, più autorevole della versione
+davidhuser/mxmap (peer-reviewed). Differenze chiave adottate:
 
-Differenza di contesto:
-  - Upstream calcola provider + confidence insieme: elegge il *winner*
-    sommando i pesi dei segnali primari, poi calcola la confidence sul
-    set di segnali attribuiti al winner.
-  - Da noi il provider è GIÀ determinato da classify.py. Quindi qui
-    portiamo SOLO il calcolo della confidence (`_rule_confidence` per i
-    provider, `_independent_confidence` per gli independent), costruendo
-    il set di segnali presenti dall'entità come fa `by_provider[winner]`
-    upstream (TENANT attribuito solo a MS365).
+1. Rule set semplificato a 7 regole: solo MX/SPF/DKIM determinano la base;
+   TENANT/AUTODISCOVER contribuiscono SOLO come boost (+0.02). Razionale
+   upstream: avere un tenant MS365 (Teams) non prova l'hosting della posta.
 
-Tabelle `_PROVIDER_RULES` / `_INDEPENDENT_RULES`, `_BOOST_PER_SIGNAL` e le
-due funzioni di scoring sono copiate verbatim dall'upstream (solo
-SignalKind→str per non dipendere da pydantic).
+2. DOMESTIC/FOREIGN via ASN country (Team Cymru CC): gli enti senza match
+   cloud non sono un indistinto "independent" ma vengono qualificati per
+   giurisdizione dell'IP del MX — sovrano (IT) vs estero. Regole dedicate
+   _DOMESTIC_RULES / _FOREIGN_RULES (base flat, no boost).
+
+3. Domestic MX override: se il MX esiste ma NON è quello del cloud (il
+   verdetto microsoft/google veniva da tenant/DKIM, es. MS365 solo per
+   Teams) e l'MX è domestico, la posta in entrata è self-hosted →
+   riclassifica per giurisdizione invece che cloud.
+
+Contesto: da noi il provider è già determinato da classify.py (keyword).
+Qui portiamo il CALCOLO della confidence + il refinement di sovranità,
+usando i segnali già presenti nell'entità (mx/spf/dkim/autodiscover/
+tenant/mx_countries/gateway). Le tabelle _PROVIDER_RULES / _DOMESTIC_RULES
+/ _FOREIGN_RULES e le funzioni di scoring sono verbatim dall'upstream
+ESORICS (SignalKind→str per non dipendere da pydantic).
+
+Riferimento: https://github.com/mxmap/esorics2026
 """
 
 from __future__ import annotations
@@ -31,17 +39,24 @@ DKIM = "dkim"
 AUTODISCOVER = "autodiscover"
 TENANT = "tenant"
 
-# Provider che corrispondono a Microsoft 365 nel nostro schema. TENANT
-# (getuserrealm.srf) è attribuibile solo a MS365 — come fa probe_tenant
-# upstream, che emette Evidence(provider=MS365).
+# Provider che corrispondono a Microsoft 365 (TENANT/AUTODISCOVER attribuiti
+# a MS365 come fa probe_tenant/probe_autodiscover upstream).
 MS365_PROVIDERS = {"microsoft", "istruzione-miur-tenant"}
 
-# Provider "veri" → usano _rule_confidence. Tutto il resto è independent
-# o unknown.
+# Provider cloud esteri soggetti al domestic-MX-override (MX cloud-specifico).
+# Pattern MX del cloud: se l'MX NON contiene questi, il verdetto è venuto
+# da un segnale non-MX (tenant/dkim) → candidato override.
+CLOUD_MX_PATTERNS = {
+    "microsoft": ("protection.outlook.com", "outlook.com", "outlook.de", "mx.microsoft"),
+    "istruzione-miur-tenant": ("protection.outlook.com", "outlook.com"),
+    "google": ("aspmx.l.google.com", "googlemail.com", "smtp.google.com", "google.com"),
+    "aws": ("amazonaws.com", "awsapps.com"),
+}
+
+# Provider "residuo" (MX esiste ma nessun keyword/backend) → giurisdizione.
 INDEPENDENT_PROVIDERS = {"independent", "provincial-shared"}
 NO_MX_PROVIDERS = {"unknown"}
 
-# --- VERBATIM dall'upstream ---
 _BOOST_PER_SIGNAL = 0.02
 
 
@@ -53,66 +68,56 @@ class _Rule(NamedTuple):
 
 
 # fmt: off
+# VERBATIM dall'upstream ESORICS classifier.py (_PROVIDER_RULES, 7 regole).
 _PROVIDER_RULES: tuple[_Rule, ...] = (
-    # rule name             signals                                  gw?    base
-    # --- 3 signals (0.90–0.95) ---
-    _Rule("mx_spf_ad",      frozenset({MX, SPF, AUTODISCOVER}),      False, 0.95),
-    _Rule("mx_spf_tenant",  frozenset({MX, SPF, TENANT}),           False, 0.95),
-    _Rule("ad_spf_tenant",  frozenset({AUTODISCOVER, SPF, TENANT}), False, 0.95),
-    _Rule("dkim_ad_tenant", frozenset({DKIM, AUTODISCOVER, TENANT}),False, 0.90),
-    _Rule("dkim_spf_tenant",frozenset({DKIM, SPF, TENANT}),         False, 0.90),
-    # --- 2 signals (0.75–0.90) ---
-    _Rule("mx_spf",         frozenset({MX, SPF}),                   False, 0.90),
-    _Rule("spf_tenant_gw",  frozenset({SPF, TENANT}),               True,  0.90),
-    _Rule("dkim_tenant_gw", frozenset({DKIM, TENANT}),              True,  0.85),
-    _Rule("mx_tenant",      frozenset({MX, TENANT}),                False, 0.85),
-    _Rule("spf_tenant",     frozenset({SPF, TENANT}),               False, 0.80),
-    _Rule("dkim_tenant",    frozenset({DKIM, TENANT}),              False, 0.75),
-    _Rule("ad_tenant",      frozenset({AUTODISCOVER, TENANT}),      False, 0.75),
-    # --- 1 signal + gateway ---
-    _Rule("spf_gw",         frozenset({SPF}),                       True,  0.70),
-    # --- 1 signal ---
-    _Rule("mx_only",        frozenset({MX}),                        False, 0.80),
-    _Rule("spf_only",       frozenset({SPF}),                       False, 0.50),
-    _Rule("fallback",       frozenset(),                            False, 0.40),
+    # rule name        signals                  gw?    base
+    _Rule("mx_spf",    frozenset({MX, SPF}),    False, 0.90),  # routing + authorization
+    _Rule("mx_only",   frozenset({MX}),         False, 0.80),  # routing alone
+    _Rule("spf_gw",    frozenset({SPF}),        True,  0.70),  # SPF visible through gateway
+    _Rule("dkim_gw",   frozenset({DKIM}),       True,  0.65),  # DKIM proves signer behind gw
+    _Rule("dkim_spf",  frozenset({DKIM, SPF}),  False, 0.60),  # two signals, no routing
+    _Rule("spf_only",  frozenset({SPF}),        False, 0.50),  # authorization only
+    _Rule("fallback",  frozenset(),             False, 0.40),  # catch-all
 )
 
-_INDEPENDENT_RULES: tuple[tuple[str, float], ...] = (
-    ("ind_mx_spf",     0.90),  # MX + SPF present
-    ("ind_mx_only",    0.60),  # MX only
-    ("ind_secondary",  0.20),  # secondary evidence only
-    ("ind_none",       0.00),  # nothing
+# Domestic: IP del MX confermato nel paese target via Cymru CC.
+_DOMESTIC_RULES: tuple[tuple[str, float], ...] = (
+    ("dom_mx_spf",     0.80),  # MX domestico + SPF
+    ("dom_mx_only",    0.70),  # MX domestico, no SPF
+    ("dom_secondary",  0.20),  # solo evidenza secondaria (no MX)
+    ("dom_none",       0.00),
+)
+
+# Foreign: IP del MX in un altro paese — segnale più debole (CDN, shared hosting).
+_FOREIGN_RULES: tuple[tuple[str, float], ...] = (
+    ("frgn_mx_spf",    0.60),
+    ("frgn_mx_only",   0.50),
+    ("frgn_secondary", 0.10),
+    ("frgn_none",      0.00),
 )
 # fmt: on
 
 ALL_RULE_NAMES: tuple[str, ...] = (
     tuple(r.name for r in _PROVIDER_RULES)
-    + tuple(name for name, _ in _INDEPENDENT_RULES)
+    + tuple(n for n, _ in _DOMESTIC_RULES)
+    + tuple(n for n, _ in _FOREIGN_RULES)
     + ("no_mx",)
 )
 
 
 def _rule_confidence(
-    provider: str, signals: set[str], gateway: str | None
+    signals: set[str], gateway: str | None
 ) -> tuple[float, str]:
-    """Return (confidence, rule_name) for a winning provider.
+    """Port verbatim di ESORICS _rule_confidence.
 
-    Port verbatim di classifier._rule_confidence: itera _PROVIDER_RULES
-    (primo match vince) via subset check rule.signals <= present. TENANT
-    contato solo quando il winner è MS365. I segnali non consumati dalla
-    regola aggiungono _BOOST_PER_SIGNAL ciascuno; cap a 1.0.
+    Solo MX/SPF/DKIM partecipano al matching delle regole; gli altri
+    segnali (TENANT, AUTODISCOVER, …) contribuiscono solo via boost
+    (+0.02 ciascuno). Cap a 1.0.
     """
     present: set[str] = set()
-    if MX in signals:
-        present.add(MX)
-    if SPF in signals:
-        present.add(SPF)
-    if TENANT in signals and provider in MS365_PROVIDERS:
-        present.add(TENANT)
-    if AUTODISCOVER in signals:
-        present.add(AUTODISCOVER)
-    if DKIM in signals:
-        present.add(DKIM)
+    for kind in (MX, SPF, DKIM):
+        if kind in signals:
+            present.add(kind)
     has_gateway = gateway is not None
 
     for rule in _PROVIDER_RULES:
@@ -120,36 +125,47 @@ def _rule_confidence(
             boost = len(signals - rule.signals) * _BOOST_PER_SIGNAL
             return min(1.0, rule.base + boost), rule.name
 
-    return 0.40, "fallback"  # pragma: no cover (fallback matcha sempre)
+    return 0.40, "fallback"  # pragma: no cover
 
 
-def _independent_confidence(
-    has_mx: bool, has_spf: bool, signals: set[str]
+def _country_confidence(
+    has_mx: bool, has_spf: bool, has_secondary: bool,
+    rules: tuple[tuple[str, float], ...],
 ) -> tuple[float, str]:
-    """Return (confidence, rule_name) for an INDEPENDENT domain.
-
-    Port di classifier._independent_confidence. ind_mx_spf 0.90 ·
-    ind_mx_only 0.60 · ind_secondary 0.20 · ind_none 0.0. I segnali extra
-    oltre MX/SPF aggiungono _BOOST_PER_SIGNAL ciascuno; cap a 1.0.
-    """
+    """Port di ESORICS _country_confidence. Base flat (no boost) perché i
+    segnali cloud (tenant, txt) sono irrilevanti alla classificazione per
+    paese."""
     if has_mx and has_spf:
-        name, base = _INDEPENDENT_RULES[0]
+        name, base = rules[0]
     elif has_mx:
-        name, base = _INDEPENDENT_RULES[1]
-    elif signals:
-        name, base = _INDEPENDENT_RULES[2]
+        name, base = rules[1]
+    elif has_secondary:
+        name, base = rules[2]
     else:
-        return 0.0, _INDEPENDENT_RULES[3][0]
+        return 0.0, rules[3][0]
+    return base, name
 
-    extra_kinds = signals - {MX, SPF}
-    boost = len(extra_kinds) * _BOOST_PER_SIGNAL
-    return min(1.0, base + boost), name
+
+def mx_jurisdiction(entry: dict, target_country: str = "IT") -> str:
+    """Giurisdizione dell'infrastruttura MX in base a mx_countries (Team
+    Cymru CC): 'domestic' (tutti nel paese target), 'foreign' (nessuno),
+    'mixed' (alcuni), 'unknown' (nessun dato)."""
+    countries = entry.get("mx_countries") or []
+    if not countries:
+        return "unknown"
+    t = target_country.upper()
+    in_target = [c for c in countries if (c or "").upper() == t]
+    if len(in_target) == len(countries):
+        return "domestic"
+    if not in_target:
+        return "foreign"
+    return "mixed"
 
 
 def _present_signals(entry: dict, provider: str) -> set[str]:
-    """Costruisce il set di segnali presenti come fa by_provider[winner]
-    upstream: MX/SPF/DKIM/AUTODISCOVER se presenti nei campi DNS, TENANT
-    solo se il provider è MS365 (probe_tenant attribuisce a MS365)."""
+    """Segnali presenti come by_provider[winner] upstream: MX/SPF/DKIM se
+    nei campi DNS; TENANT/AUTODISCOVER solo per MS365 (probe_tenant/
+    probe_autodiscover li attribuiscono a MS365)."""
     sig: set[str] = set()
     if entry.get("mx"):
         sig.add(MX)
@@ -157,38 +173,82 @@ def _present_signals(entry: dict, provider: str) -> set[str]:
         sig.add(SPF)
     if entry.get("dkim"):
         sig.add(DKIM)
-    if entry.get("autodiscover"):
-        sig.add(AUTODISCOVER)
-    if entry.get("tenant") and provider in MS365_PROVIDERS:
-        sig.add(TENANT)
+    if provider in MS365_PROVIDERS:
+        if entry.get("autodiscover"):
+            sig.add(AUTODISCOVER)
+        if entry.get("tenant"):
+            sig.add(TENANT)
     return sig
 
 
-def compute_confidence(entry: dict) -> tuple[float, str, list[str]]:
-    """Calcola (confidence, rule_name, signals) per un'entità data.json.
+def needs_domestic_mx_override(entry: dict) -> bool:
+    """True se il verdetto cloud (microsoft/google/aws) NON è supportato dal
+    MX (l'MX non è quello del cloud → il segnale era tenant/DKIM, es. MS365
+    solo per Teams) E il MX è domestico/estero → la posta in entrata è
+    self-hosted, da riclassificare per giurisdizione.
 
-    - provider == "unknown" (nessun MX) → (0.0, "no_mx", [])
-    - provider independent/provincial-shared → _independent_confidence
-    - ogni altro provider "vero" → _rule_confidence
+    NON scatta per le scuole istruzione-miur-tenant (il loro MX È
+    istruzione-it.mail.protection.outlook.com → cloud genuino)."""
+    provider = entry.get("provider") or ""
+    if provider not in CLOUD_MX_PATTERNS:
+        return False
+    mx = entry.get("mx") or []
+    if not mx:
+        return False
+    patterns = CLOUD_MX_PATTERNS[provider]
+    mx_is_cloud = any(p in (h or "").lower() for h in mx for p in patterns)
+    if mx_is_cloud:
+        return False  # routing cloud genuino → tieni il provider
+    # MX non-cloud + verdetto cloud → veniva da tenant/dkim. Riclassifica
+    # solo se abbiamo la giurisdizione (altrimenti resta com'è).
+    return mx_jurisdiction(entry) in ("domestic", "foreign", "mixed")
+
+
+def compute_confidence(
+    entry: dict, target_country: str = "IT"
+) -> tuple[float, str, list[str], str]:
+    """Calcola (confidence, rule_name, signals, jurisdiction) per un'entità.
+
+    - unknown (no MX) → (0.0, 'no_mx', [], 'unknown')
+    - independent/provincial-shared → _country_confidence per giurisdizione
+    - ogni altro provider (cloud o IT specifico) → _rule_confidence
     """
     provider = entry.get("provider") or "unknown"
+    jur = mx_jurisdiction(entry, target_country)
+
     if provider in NO_MX_PROVIDERS:
-        return 0.0, "no_mx", []
+        return 0.0, "no_mx", [], jur
 
     signals = _present_signals(entry, provider)
-    gateway = entry.get("gateway")
 
     if provider in INDEPENDENT_PROVIDERS:
-        conf, rule = _independent_confidence(MX in signals, SPF in signals, signals)
+        has_mx = MX in signals
+        has_spf = SPF in signals
+        has_secondary = bool(signals - {MX, SPF}) or bool(entry.get("mx_countries"))
+        if jur == "domestic":
+            rules = _DOMESTIC_RULES
+        elif jur == "foreign":
+            rules = _FOREIGN_RULES
+        elif jur == "mixed":
+            # misto: usa domestic ma con cap leggermente più basso → trattalo
+            # come domestic (almeno un hop in IT). Conservativo.
+            rules = _DOMESTIC_RULES
+        else:
+            # nessun dato paese: degrada a foreign-secondary style
+            rules = _FOREIGN_RULES
+        conf, rule = _country_confidence(has_mx, has_spf, has_secondary, rules)
     else:
-        conf, rule = _rule_confidence(provider, signals, gateway)
+        conf, rule = _rule_confidence(signals, entry.get("gateway"))
 
-    return round(conf, 4), rule, sorted(signals)
+    return round(conf, 4), rule, sorted(signals), jur
 
 
 __all__ = [
     "compute_confidence",
+    "mx_jurisdiction",
+    "needs_domestic_mx_override",
     "ALL_RULE_NAMES",
     "_PROVIDER_RULES",
-    "_INDEPENDENT_RULES",
+    "_DOMESTIC_RULES",
+    "_FOREIGN_RULES",
 ]
