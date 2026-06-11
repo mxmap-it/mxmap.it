@@ -203,7 +203,7 @@ mai assegnato a un MX "plausibile ma non provato".
 <p>Le regole 6.5 (fuzzy Damerau-Levenshtein ≤ 1) e 6.6 (label concatenation) sono già attive — catturano typo singoli e pattern del tipo <code>aciarezzo.it</code> ↔ <code>arezzo.aci.it</code>. Restano <code>unknown</code> i casi che richiedono override manuale (mismatch semantici non risolvibili automaticamente senza assunzioni rischiose).</p>
 
 <h2 id="confidence">Affidabilità della classificazione (confidence)</h2>
-<p>Ogni ente porta un punteggio di <strong>affidabilità</strong> della classificazione (0–100%): quanto è solida l'evidenza DNS che sostiene il provider attribuito. Il modello è un <strong>port fedele del classificatore <a href="https://github.com/mxmap/esorics2026" target="_blank" rel="noopener">ESORICS 2026</a></strong> (versione peer-reviewed di mxmap), adattato alla nostra architettura: da noi il provider è già deciso per keyword sui record DNS, qui calcoliamo <em>quanto fidarsene</em> e la <em>giurisdizione</em> dell'infrastruttura di posta.</p>
+<p>Ogni ente porta un punteggio di <strong>affidabilità</strong> della classificazione (0–100%): quanto è solida l'evidenza DNS che sostiene il provider attribuito. Il modello è un <strong>port fedele del classificatore <a href="https://github.com/mxmap/esorics2026" target="_blank" rel="noopener">ESORICS 2026</a></strong> di David Huser e colleghi (citazione completa nei <a href="#riferimenti">Riferimenti</a>), adattato alla nostra architettura: da noi il provider è già deciso per keyword sui record DNS, qui calcoliamo <em>quanto fidarsene</em> e la <em>giurisdizione</em> dell'infrastruttura di posta.</p>
 
 <p>Il punteggio nasce da un set di <strong>7 regole</strong>: si scorre dall'evidenza più forte alla più debole e si prende la prima che combacia. Solo i tre segnali di <em>routing/autorizzazione</em> (MX, SPF, DKIM) determinano la regola di base; gli altri (tenant MS365, autodiscover) contribuiscono solo come <em>boost</em> (+0,02 ciascuno, cap a 1,0). Razionale upstream: avere un tenant Microsoft 365 (es. per Teams) non prova che la <em>posta</em> sia ospitata lì.</p>
 
@@ -243,9 +243,16 @@ mai assegnato a un MX "plausibile ma non provato".
 <p>La confidenza è anche una <strong>mappa di dove verificare</strong>. Gli enti a confidenza bassa (&lt; 0,60) pur essendo classificati sono i candidati prioritari per la futura validazione attiva via <em>bounce-probing</em> (invio a indirizzo inesistente + analisi del messaggio di ritorno NDR, che rivela il MTA reale del backend). Il <strong>report completo</strong> — distribuzione aggregata, confidenza per provider, regole attivate, sovranità e lista dei candidati bounce — è rigenerato a ogni run:</p>
 <div class="gate"><strong>Report:</strong> <a href="https://github.com/fpietrosanti/mxmap.it/blob/main/data/reports/confidence_report.md" target="_blank" rel="noopener">confidence_report.md</a> (leggibile) · <a href="data/reports/confidence_report.json" target="_blank" rel="noopener">confidence_report.json</a> (machine-readable). Codice: <code>src/mail_sovereignty/classification_confidence.py</code> (port + test di fedeltà), <code>scripts/compute_confidence.py</code>, <code>scripts/report_confidence.py</code>.</div>
 
+<h2 id="riferimenti">Riferimenti</h2>
+<p>Questo osservatorio è un fork del lavoro di <strong>David Huser</strong> e colleghi, a cui va il credito per il metodo di classificazione e per il modello di confidence qui adottato.</p>
+<ul style="font-size:14px;line-height:1.7">
+  <li><strong>Paper di ricerca</strong> (modello confidence + sovranità) — David Huser, Mario Bischof, Ronald Petrlic, Alexej Ochsner, <em>«Email Provider Dependencies and Email Security in Municipalities Across Germany, Austria, and Switzerland»</em>, ESORICS 2026. Codice e dati: <a href="https://github.com/mxmap/esorics2026" target="_blank" rel="noopener">github.com/mxmap/esorics2026</a> · sito: <a href="https://mxmap.github.io/esorics2026/" target="_blank" rel="noopener">mxmap.github.io/esorics2026</a>. Il nostro classificatore (le 7 regole, il modello domestic/foreign, il domestic-MX-override) è un port fedele del loro modulo <code>provider_classification</code>.</li>
+  <li><strong>Progetto originale</strong> — <strong>David Huser</strong>, <em>mxmap.ch</em>: mappe interattive di dove i comuni svizzeri ospitano la posta e quanto dipendono dagli hyperscaler statunitensi. <a href="https://mxmap.ch" target="_blank" rel="noopener">mxmap.ch</a> · <a href="https://github.com/davidhuser/mxmap" target="_blank" rel="noopener">github.com/davidhuser/mxmap</a> (MIT). <em>mxmap.it</em> ne è un fork ispirato, adattato alla Pubblica Amministrazione italiana.</li>
+</ul>
+
 <hr style="margin-top:48px;border:none;border-top:1px solid #ddd">
 <p style="font-size:12px;color:#888;text-align:center">
-Osservatorio Sovranità Digitale PA — <a href="https://github.com/fpietrosanti/mxmap.it" target="_blank" rel="noopener">codice e dati su GitHub</a> · Licenza dati: ODbL-1.0 + CC-BY-4.0 · Codice: MIT
+Osservatorio Sovranità Digitale PA — <a href="https://github.com/fpietrosanti/mxmap.it" target="_blank" rel="noopener">codice e dati su GitHub</a> · Licenza dati: ODbL-1.0 + CC-BY-4.0 · Codice: MIT · Metodo: <a href="https://github.com/mxmap/esorics2026" target="_blank" rel="noopener">mxmap/ESORICS 2026</a>
 </p>
 
 <script>
