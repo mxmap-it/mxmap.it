@@ -1,0 +1,23 @@
+# Enforcement meccanico delle stesse regole del CI (.github/workflows/ci.yml):
+#   uv run ruff check src tests
+#   uv run ruff format src tests --check
+#
+# Setup (una volta): pre-commit install
+# Poi `git commit` blocca i commit con Python non formattato/non lintato
+# sotto src/ o tests/, formattandoli automaticamente. Vedi CLAUDE.md
+# "CRITICAL: Format Python before every commit".
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.6
+    hooks:
+      # Lint (equivalente a `ruff check src tests`). --fix applica i fix
+      # sicuri; i residui bloccano il commit.
+      - id: ruff
+        name: ruff check (src/tests)
+        args: [--fix]
+        files: ^(src|tests)/.*\.py$
+      # Format (equivalente a `ruff format src tests --check`, ma mutante:
+      # riformatta invece di fallire, così il commit parte già pulito).
+      - id: ruff-format
+        name: ruff format (src/tests)
+        files: ^(src|tests)/.*\.py$

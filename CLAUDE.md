@@ -10,6 +10,21 @@ MX Map is a DNS-based email provider classifier for European municipalities (92 
 
 **Never use system `python3` directly.** Always use `uv run python3` or `uv run` for all Python commands. The system Python may be an older version (e.g., 3.9) that doesn't support the type annotations and features used in this codebase.
 
+## CRITICAL: Format Python before every commit
+
+CI (`.github/workflows/ci.yml`) runs `uv run ruff format src tests --check` and **fails the entire CI (exit 1, pytest skipped)** if any file under `src/` or `tests/` is not ruff-formatted. Hand-written Python is almost never compliant (string wrapping, `@parametrize` layout, trailing commas), so it breaks CI every time.
+
+**Mandatory before committing any change to `src/` or `tests/` Python:**
+
+```bash
+uv run ruff format src tests      # auto-format (mutates files)
+uv run ruff check src tests       # lint (separate CI gate, also blocks)
+```
+
+Then `git add` the reformatted files. There is a committed `.pre-commit-config.yaml` (ruff hooks) — run `pre-commit install` once to enforce this automatically on `git commit`.
+
+**Dev-machine note:** if the working machine has no `uv` (e.g. a Windows laptop driving a remote server), run the format on the server, then copy the formatted files back before committing. CI checks only `src tests`, **not** `scripts/` — do not bulk-commit a repo-wide reformat of `scripts/`.
+
 ## Commands
 
 ```bash
