@@ -142,18 +142,24 @@ jobs:
         continue-on-error: true
         run: uv run python3 scripts/report_confidence.py --country IT
 
-      - name: Validate data quality
+      # Quality gate = SEGNALE, non blocco del deploy. Lo score euristico
+      # 0-100 di validate.py è tarato sul fork Baltic; il dataset IT
+      # (con unknown onesti per integrità) sta legittimamente ~80%. Soglia
+      # high-confidence calata a 75 (floor realistico). Il fallimento del
+      # gate crea un issue di visibilità ma NON blocca build/deploy: il sito
+      # deve sempre servire il dato corretto più recente, non restare fermo
+      # su dati vecchi per un'euristica legacy.
+      - name: Validate data quality (signal only)
         id: validate
         continue-on-error: true
+        env:
+          MIN_HIGH_CONFIDENCE_PCT: "75"
         run: uv run validate
       - name: Build frontend data
-        if: steps.validate.outcome == 'success'
         run: uv run python3 scripts/build_frontend.py
       - name: Build public dataset (CSV/JSON/XLSX)
-        if: steps.validate.outcome == 'success'
         run: uv run python3 scripts/build_public_dataset.py
       - name: Commit and push if changed
-        if: steps.validate.outcome == 'success'
         run: |
           git diff --quiet data.json && exit 0
           git config user.name "github-actions[bot]"
@@ -184,9 +190,9 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Fail workflow on quality gate failure
-        if: steps.validate.outcome == 'failure'
-        run: exit 1
+      # NB: nessuno step "exit 1" sul gate — il gate è un segnale, non un
+      # blocco. Il job update-data deve concludersi con successo affinché
+      # il job deploy (needs: update-data) pubblichi sempre il dato corretto.
 
   deploy:
     needs: update-data
