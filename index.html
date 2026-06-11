@@ -168,6 +168,20 @@
   .level-btn.active { background: #333; color: white; }
   .level-btn:hover:not(.active) { background: #f0f0f0; }
 
+  .juris-toggle {
+    display: flex; align-items: center; gap: 4px; background: white;
+    border-radius: 5px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); padding: 3px 6px;
+  }
+  .juris-label { color: #888; font-weight: 600; font-size: 10px; padding: 0 2px; }
+  .juris-btn {
+    background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 4px;
+    padding: 3px 8px; cursor: pointer; font-size: 11px; font-weight: 600;
+    color: #555; transition: all 0.15s; white-space: nowrap;
+  }
+  .juris-btn.active { background: #455a64; color: white; border-color: #455a64; }
+  .juris-btn:hover:not(.active) { background: #eaeaea; }
+  @media (max-width: 640px) { .juris-btn { padding: 2px 6px; font-size: 10px; } .juris-label { display: none; } }
+
   .info-popup { font-size: 13px; line-height: 1.6; }
   .info-popup strong { font-size: 14px; }
   .info-popup .provider-badge {
@@ -278,6 +292,13 @@
       <button class="level-btn" data-level="district">Province</button>
       <button class="level-btn" data-level="municipality">Comuni</button>
       <button class="level-btn" data-level="istruzione" title="Choropleth comuni colorato per provider email dominante delle scuole statali (~8.000 scuole IPA L33)">Scuole</button>
+    </div>
+    <div class="juris-toggle" id="juris-toggle" title="Filtra le aree per sovranità dell'infrastruttura di posta in entrata — il paese dell'IP del server MX (Team Cymru ASN). Più intenso = più enti in quella giurisdizione.">
+      <span class="juris-label">Sovranità&nbsp;MX</span>
+      <button class="juris-btn active" data-jur="">Tutte</button>
+      <button class="juris-btn" data-jur="domestic">🇮🇹 Sovrana</button>
+      <button class="juris-btn" data-jur="foreign">🌍 Estera</button>
+      <button class="juris-btn" data-jur="mixed">Mista</button>
     </div>
   </div>
 </main>
@@ -454,6 +475,9 @@ let summaryLoaded = false;      // true once data-summary.json loaded
 let summaryLoadPromise = null;  // dedup in-flight loads
 const countryData = {};         // cc -> [municipality, ...] (per-country on-demand)
 let currentLevel = 'region';
+// Filtro sovranità MX (null = tutte). Colora le aree per quota di giurisdizione.
+let activeJurisdiction = null;
+const JURIS_FILL = { domestic: '#009246', foreign: '#D42E2E', mixed: '#E8A33D' };
 const topoCache = {};           // cacheKey -> parsed TopoJSON
 const countryLayers = new Map(); // "EE" -> L.geoJSON layer
 let gatewayMarkers = L.layerGroup();
@@ -837,6 +861,7 @@ function computeAggregation(cc, fileLevelName) {
         blendedColor: r.blendedColor,
         popTotal: r.popTotal || 0,
         count: r.count,
+        jurisdictions: r.jurisdictions || {},
         hasGateway: (r.gateway_count || 0) > 0,
       };
     }
@@ -848,13 +873,15 @@ function computeAggregation(cc, fileLevelName) {
   const groups = {};
   for (const m of munis) {
     const key = getGroupKey(m, fileLevelName);
-    if (!groups[key]) groups[key] = { name: key, municipalities: [], providers: {}, popProviders: {}, popTotal: 0 };
+    if (!groups[key]) groups[key] = { name: key, municipalities: [], providers: {}, popProviders: {}, popTotal: 0, jurisdictions: {} };
     groups[key].municipalities.push(m);
     const p = m.classification.provider;
     const w = m.population || 1;
     groups[key].providers[p] = (groups[key].providers[p] || 0) + 1;
     groups[key].popProviders[p] = (groups[key].popProviders[p] || 0) + w;
     groups[key].popTotal += w;
+    const jr = mxJurisdiction(m);
+    groups[key].jurisdictions[jr] = (groups[key].jurisdictions[jr] || 0) + 1;
   }
   for (const g of Object.values(groups)) {
     const entries = Object.entries(g.providers).sort((a, b) => b[1] - a[1]);
@@ -996,6 +1023,30 @@ function confidenceBadge(m) {
     `<span>${jd}</span>${ovr} ` +
     `<a href="methodology.html#confidence" target="_blank" rel="noopener" title="Come calcoliamo l'affidabilità">ⓘ</a>` +
     `</div>`;
+}
+
+// Stile di una feature quando il filtro sovranità è attivo: colora per QUOTA
+// della giurisdizione selezionata (gruppi regione/provincia, da
+// g.jurisdictions pre-calcolato in data-regions.json) o per match (singolo
+// ente a livello comune, via mxJurisdiction). Ritorna null se nessun filtro è
+// attivo (o vista Scuole) → i chiamanti ricadono sulla colorazione provider.
+function jurisdictionStyle(feature) {
+  if (!activeJurisdiction || currentLevel === 'istruzione') return null;
+  const fill = JURIS_FILL[activeJurisdiction] || '#607d8b';
+  const m = feature._matchedMuni;
+  const g = feature._matchedGroup;
+  let share;
+  if (m) {
+    share = (mxJurisdiction(m) === activeJurisdiction) ? 1 : 0;
+  } else if (g) {
+    const jd = g.jurisdictions;
+    const cnt = g.count || (g.municipalities && g.municipalities.length) || 0;
+    share = (jd && cnt) ? (jd[activeJurisdiction] || 0) / cnt : -1;
+  } else {
+    return null;
+  }
+  if (share < 0) return { fillColor: '#e8e8e8', fillOpacity: 0.25, color: '#ccc', weight: 0.5 };
+  return { fillColor: fill, fillOpacity: 0.10 + 0.72 * share, color: '#888', weight: 0.5 };
 }
 
 // --- Popup ---
@@ -1402,21 +1453,21 @@ async function renderCountryLayer(cc) {
         feature._matchedGroup = g;
         feature._matchedMuni = null;
         if (g) {
-          return { fillColor: g.blendedColor, fillOpacity: 0.75, color: '#999', weight: 0.5 };
+          return jurisdictionStyle(feature) || { fillColor: g.blendedColor, fillOpacity: 0.75, color: '#999', weight: 0.5 };
         }
         // Fallback: if summary not loaded and no region match, use pre-computed country-level color
         if (!summaryLoaded && regionData && regionData.countries[cc]) {
           const cd = regionData.countries[cc];
           var featureName = (feature.properties && (feature.properties.name || feature.properties.region || feature.properties.name_en)) || cc;
-          feature._matchedGroup = { name: featureName, count: cd.total, providers: cd.providers, popProviders: cd.popProviders || {}, popTotal: cd.popTotal || 0, dominant: cd.dominant, dominance: 1, blendedColor: cd.blendedColor, municipalities: [], hasGateway: false };
-          return { fillColor: cd.blendedColor, fillOpacity: 0.75, color: '#999', weight: 0.5 };
+          feature._matchedGroup = { name: featureName, count: cd.total, providers: cd.providers, popProviders: cd.popProviders || {}, popTotal: cd.popTotal || 0, dominant: cd.dominant, dominance: 1, blendedColor: cd.blendedColor, jurisdictions: cd.jurisdictions || {}, municipalities: [], hasGateway: false };
+          return jurisdictionStyle(feature) || { fillColor: cd.blendedColor, fillOpacity: 0.75, color: '#999', weight: 0.5 };
         }
       } else {
         const m = matchFeature(feature);
         feature._matchedMuni = m;
         feature._matchedGroup = null;
         if (m) {
-          return { fillColor: COLORS[m.classification.provider] || COLORS['Unknown'], fillOpacity: 0.75, color: '#666', weight: 0.5 };
+          return jurisdictionStyle(feature) || { fillColor: COLORS[m.classification.provider] || COLORS['Unknown'], fillOpacity: 0.75, color: '#666', weight: 0.5 };
         }
       }
       return INACTIVE_STYLE;
@@ -1585,7 +1636,10 @@ function updateStyles() {
       }
       const g = feature._matchedGroup;
       const m = feature._matchedMuni;
-      if (g) {
+      const js = jurisdictionStyle(feature);
+      if (js) {
+        sublayer.setStyle(js);
+      } else if (g) {
         const borderColor = g.second && g.dominance < 0.95 ? (COLORS[g.second] || '#666') : '#666';
         const borderWeight = g.second && g.dominance < 0.95 ? 3 : 0.5;
         sublayer.setStyle({ fillColor: COLORS[g.dominant] || COLORS['Unknown'], fillOpacity: 0.75, color: borderColor, weight: borderWeight });
@@ -1733,6 +1787,19 @@ document.querySelectorAll('.level-btn').forEach(function (btn) {
   btn.addEventListener('click', function () {
     if (btn.dataset.level === currentLevel) return;
     setLevel(btn.dataset.level);
+  });
+});
+
+// --- Sovereignty (jurisdiction) filter ---
+document.querySelectorAll('.juris-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    const jur = btn.dataset.jur || null;
+    if (jur === activeJurisdiction) return;
+    activeJurisdiction = jur;
+    document.querySelectorAll('.juris-btn').forEach(function (b) {
+      b.classList.toggle('active', (b.dataset.jur || null) === activeJurisdiction);
+    });
+    updateStyles();
   });
 });
 

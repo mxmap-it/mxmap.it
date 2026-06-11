@@ -137,6 +137,36 @@ def blend_provider_colors(providers: dict[str, int], total: int) -> str:
     return f"#{int(r):02x}{int(g):02x}{int(b):02x}"
 
 
+def _ente_jurisdiction(m: dict) -> str:
+    """Giurisdizione MX dell'ente: 'domestic'/'foreign'/'mixed'/'unknown'.
+
+    Usa il valore precomputato da compute_confidence.py (classification_
+    confidence) se presente; altrimenti deriva dai paesi degli MX rispetto
+    al paese dell'ente. Identico al mirror JS mxJurisdiction() nel frontend.
+    Serve a pre-aggregare le quote di sovranità per regione/provincia
+    (data-regions.json) così il filtro mappa funziona ai livelli aggregati.
+    """
+    j = m.get("mx_jurisdiction")
+    if j:
+        return j
+    countries = m.get("mx_countries") or []
+    if not countries:
+        return "unknown"
+    target = (m.get("country") or "").upper()
+    in_target = [c for c in countries if (c or "").upper() == target]
+    if len(in_target) == len(countries):
+        return "domestic"
+    if not in_target:
+        return "foreign"
+    return "mixed"
+
+
+def _bump_jurisdiction(d: dict, jur: str) -> None:
+    """Incrementa il contatore di giurisdizione in d['jurisdictions']."""
+    jd = d.setdefault("jurisdictions", {})
+    jd[jur] = jd.get(jur, 0) + 1
+
+
 def build_region_data(munis: dict, generated: str) -> dict:
     """Build pre-computed region-level aggregations with population weighting."""
     countries: dict[str, dict] = {}
@@ -171,6 +201,7 @@ def build_region_data(munis: dict, generated: str) -> dict:
             and cc in (m.get("mx_countries") or [])
             and provider in US_PROVIDERS
         )
+        jur = _ente_jurisdiction(m)
 
         if cc not in countries:
             countries[cc] = {
@@ -179,6 +210,7 @@ def build_region_data(munis: dict, generated: str) -> dict:
                 "popProviders": {},
                 "popTotal": 0,
                 "gateway_count": 0,
+                "jurisdictions": {},
                 "regions": {},
                 "districts": {},
             }
@@ -189,6 +221,7 @@ def build_region_data(munis: dict, generated: str) -> dict:
         cd["popTotal"] += pop
         if has_gateway:
             cd["gateway_count"] += 1
+        _bump_jurisdiction(cd, jur)
 
         if region not in cd["regions"]:
             cd["regions"][region] = {
@@ -197,6 +230,7 @@ def build_region_data(munis: dict, generated: str) -> dict:
                 "popProviders": {},
                 "popTotal": 0,
                 "gateway_count": 0,
+                "jurisdictions": {},
             }
         rd = cd["regions"][region]
         rd["count"] += 1
@@ -205,6 +239,7 @@ def build_region_data(munis: dict, generated: str) -> dict:
         rd["popTotal"] += pop
         if has_gateway:
             rd["gateway_count"] += 1
+        _bump_jurisdiction(rd, jur)
 
         # District-level aggregation (for IT province polygons / GB districts)
         if district:
@@ -216,6 +251,7 @@ def build_region_data(munis: dict, generated: str) -> dict:
                     "popProviders": {},
                     "popTotal": 0,
                     "gateway_count": 0,
+                    "jurisdictions": {},
                 }
             dd = cd["districts"][district]
             dd["count"] += 1
@@ -224,6 +260,7 @@ def build_region_data(munis: dict, generated: str) -> dict:
             dd["popTotal"] += pop
             if has_gateway:
                 dd["gateway_count"] += 1
+            _bump_jurisdiction(dd, jur)
 
     # Compute blended colors + dominant for each region & district
     for cc, cd in countries.items():
