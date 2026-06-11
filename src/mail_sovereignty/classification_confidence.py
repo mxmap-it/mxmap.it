@@ -47,7 +47,12 @@ MS365_PROVIDERS = {"microsoft", "istruzione-miur-tenant"}
 # Pattern MX del cloud: se l'MX NON contiene questi, il verdetto è venuto
 # da un segnale non-MX (tenant/dkim) → candidato override.
 CLOUD_MX_PATTERNS = {
-    "microsoft": ("protection.outlook.com", "outlook.com", "outlook.de", "mx.microsoft"),
+    "microsoft": (
+        "protection.outlook.com",
+        "outlook.com",
+        "outlook.de",
+        "mx.microsoft",
+    ),
     "istruzione-miur-tenant": ("protection.outlook.com", "outlook.com"),
     "google": ("aspmx.l.google.com", "googlemail.com", "smtp.google.com", "google.com"),
     "aws": ("amazonaws.com", "awsapps.com"),
@@ -105,9 +110,7 @@ ALL_RULE_NAMES: tuple[str, ...] = (
 )
 
 
-def _rule_confidence(
-    signals: set[str], gateway: str | None
-) -> tuple[float, str]:
+def _rule_confidence(signals: set[str], gateway: str | None) -> tuple[float, str]:
     """Port verbatim di ESORICS _rule_confidence.
 
     Solo MX/SPF/DKIM partecipano al matching delle regole; gli altri
@@ -129,7 +132,9 @@ def _rule_confidence(
 
 
 def _country_confidence(
-    has_mx: bool, has_spf: bool, has_secondary: bool,
+    has_mx: bool,
+    has_spf: bool,
+    has_secondary: bool,
     rules: tuple[tuple[str, float], ...],
 ) -> tuple[float, str]:
     """Port di ESORICS _country_confidence. Base flat (no boost) perché i
