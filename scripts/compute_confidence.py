@@ -51,6 +51,13 @@ def main() -> int:
         if (v.get("country") or "").upper() != target:
             continue
 
+        # 0. idempotenza: se un override precedente è già stato applicato,
+        #    ripristina il provider cloud originale prima di rivalutare.
+        if v.get("domestic_mx_override") and v.get("cloud_tenant_only"):
+            v["provider"] = v["cloud_tenant_only"]
+            v.pop("cloud_tenant_only", None)
+            v.pop("domestic_mx_override", None)
+
         # 1. domestic MX override (prima della confidence, così la confidence
         #    riflette il provider riclassificato)
         if needs_domestic_mx_override(v):

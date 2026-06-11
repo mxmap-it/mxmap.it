@@ -188,10 +188,16 @@ def needs_domestic_mx_override(entry: dict) -> bool:
     self-hosted, da riclassificare per giurisdizione.
 
     NON scatta per le scuole istruzione-miur-tenant (il loro MX È
-    istruzione-it.mail.protection.outlook.com → cloud genuino)."""
+    istruzione-it.mail.protection.outlook.com → cloud genuino), NÉ quando
+    c'è un gateway: in quel caso il verdetto cloud viene dal look-through
+    del gateway (DKIM prova il backend reale dietro l'appliance antispam),
+    quindi è legittimo e non va riclassificato. Come ESORICS: l'override
+    è 'if not gateway and not has_cloud_mx'."""
     provider = entry.get("provider") or ""
     if provider not in CLOUD_MX_PATTERNS:
         return False
+    if entry.get("gateway"):
+        return False  # backend cloud identificato via gateway look-through
     mx = entry.get("mx") or []
     if not mx:
         return False

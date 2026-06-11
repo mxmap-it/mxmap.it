@@ -152,6 +152,14 @@ def test_override_skips_google_genuine():
     assert needs_domestic_mx_override(e) is False
 
 
+def test_override_skips_gateway_cases():
+    # microsoft via gateway look-through (DKIM dietro Sophos): MX è il gateway,
+    # non outlook, ma il backend È Microsoft → NO override (come ESORICS)
+    e = entry("microsoft", mx=["mx-01.prod.hydra.sophos.com"], dkim=True,
+              gateway="sophos", mx_countries=["IT"])
+    assert needs_domestic_mx_override(e) is False
+
+
 # === Unknown ===
 def test_unknown_no_mx():
     conf, rule, sig, jur = compute_confidence(entry("unknown"))
