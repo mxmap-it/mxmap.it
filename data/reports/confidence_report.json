@@ -1,0 +1,55 @@
+{
+  "country": "IT",
+  "n": 22987,
+  "mean": 0.849,
+  "median": 0.9,
+  "mean_nonzero": 0.873,
+  "buckets": {
+    "0.90-1.00 (molto alta)": 17302,
+    "0.80-0.89 (alta)": 3700,
+    "0.00 (nulla / unknown)": 629,
+    "0.60-0.79 (media)": 1257,
+    "0.01-0.59 (bassa)": 99
+  },
+  "rules": {
+    "mx_spf": 17302,
+    "dom_mx_spf": 1770,
+    "no_mx": 629,
+    "mx_only": 1930,
+    "frgn_mx_spf": 1001,
+    "dom_mx_only": 256,
+    "frgn_mx_only": 69,
+    "fallback": 30
+  },
+  "jurisdiction": {
+    "foreign": 11397,
+    "domestic": 10597,
+    "mixed": 257,
+    "unknown": 736
+  },
+  "domestic_mx_override": 219,
+  "bounce_candidates": 99,
+  "bounce_by_provider": {
+    "independent": 69,
+    "regional-public": 30
+  },
+  "bounce_by_jurisdiction": {
+    "unknown": 68,
+    "foreign": 31
+  },
+  "provider_confidence": {
+    "microsoft": 0.928,
+    "independent": 0.72,
+    "local-isp": 0.893,
+    "aruba": 0.896,
+    "unknown": 0.0,
+    "google": 0.879,
+    "seeweb": 0.899,
+    "register-it": 0.889,
+    "aws": 0.9,
+    "regional-public": 0.874,
+    "zoho": 0.9,
+    "istruzione-miur-tenant": 0.96,
+    "pa-contractor-private": 0.9
+  }
+}
