@@ -12,7 +12,7 @@ reale e correggere `provider` / `mx_jurisdiction` / `classification_confidence`.
 
 | # | Requisito | Sezione |
 |---|---|---|
-| R1 | Distinguere controllo destinatario a **RCPT TO** vs **ingestion + bounce** | §3 (due fasi) |
+| R1 | Invio **sempre**; **registrare** se c'è validazione destinatario a RCPT TO | §3 (flusso unico) |
 | R2 | Email con header/oggetto/contenuto forti anti-spam | §5 (deliverability) |
 | R3 | Rate-limit per **MX e IP** di destinazione; preparare prima il **pool** | §6 (pool) |
 | R4 | **Log** preciso | §7 (schema JSONL) |
@@ -33,33 +33,30 @@ reale e correggere `provider` / `mx_jurisdiction` / `classification_confidence`.
   eseguito **dal server** (vantage reale), perché risoluzione, reachability e
   reputazione IP dipendono dal punto di invio.
 
-## 3. Architettura a due fasi (cuore del refinement, R1)
+## 3. Flusso unico: l'invio si fa SEMPRE, registrando la validazione a RCPT TO (R1)
 
-### Fase 1 — Probe SMTP RCPT TO (sincrono, NESSUNA email inviata)
+**Un solo tentativo di invio per dominio, sempre**, che porta avanti l'intera
+conversazione SMTP fino a `DATA`. La validazione-destinatario a RCPT TO **non**
+decide se inviare: è un **dato che registriamo** mentre l'invio procede.
 
-Per ogni dominio: risolvi MX → `connect MX:25` → `EHLO` → `MAIL FROM:<probe>` →
-`RCPT TO:<inesistente@dominio>` → leggi la risposta. **Non si invia mai DATA.**
+Per ogni dominio: risolvi MX → `connect MX:25` → `EHLO` (registra banner/feature)
+→ `MAIL FROM:<verp>` → `RCPT TO:<inesistente@dominio>` → **registra codice+testo**
+→ se accettato, `DATA` con l'email completa (§5) → email **ingerita** → si attende
+il bounce asincrono (§8).
 
-Esiti possibili:
+| risposta RCPT TO | campo `rcpt_validation` | cosa accade all'invio | il backend si legge da |
+|---|---|---|---|
+| **5xx** user unknown | `rejected_5xx` — il server **valida** i destinatari (mailstore integrato) | il server rifiuta il destinatario → non si arriva a DATA, niente ingestion | **testo del 5xx** + banner EHLO |
+| **2xx** accept | `accepted_2xx` — **nessuna** validazione sincrona (relay/gateway/catch-all) | si procede a `DATA` → email **ingerita** | **NDR** asincrono (o `accept_silent` se non torna indietro) |
+| **4xx** | `tempfail` | rinvio temporaneo | retry |
+| no connect / no DNS | `unreachable` | — | esito `mx_unreachable` |
 
-| risposta RCPT TO | significato | serve Fase 2? |
-|---|---|---|
-| **5xx** (user unknown) | il server **valida i destinatari** (mailstore integrato). Il banner EHLO + il testo 5xx spesso nominano il backend (Postfix virtual, Exchange, Zimbra, Aruba…) | **No** — risolto qui |
-| **2xx** (accept) | accetta destinatari ignoti (catch-all / validazione differita / gateway che inoltra) | **Sì** → Fase 2 |
-| **4xx / greylist** | rinvio temporaneo | retry |
-| connect refused / timeout | MX irraggiungibile (i 26 non risolti?) | esito "unreachable" |
-
-Fase 1 è un'estensione del probe SMTP già presente in MX Map (che legge solo il
-banner): qui aggiungiamo il **comportamento di validazione destinatario** e il
-**testo esatto del rifiuto**, che è ciò che identifica il backend. **La maggior
-parte dei casi si chiude in Fase 1 senza inviare nulla.**
-
-### Fase 2 — Invio reale + NDR asincrono (solo per i 2xx-at-RCPT)
-
-Solo per i domini che in Fase 1 accettano il destinatario ignoto: si invia una
-email ben formata (§5), si attende il bounce asincrono via IMAP (§8), si parsa
-l'NDR per estrarre l'MTA reale. Se **nessun bounce** arriva entro la finestra →
-esito "accept-silent" (ingerita e non rimbalzata → catch-all o drop silenzioso).
+Il punto (R1): **sempre invio**; il fatto che ci sia o no validazione del
+destinatario a RCPT TO è una **caratteristica registrata** del server, non una
+condizione che cambia la procedura. Di per sé è già un segnale architetturale:
+5xx sincrono = server che conosce i suoi utenti; accept-then-bounce =
+relay/gateway con backend separato. Entrambi i percorsi identificano il backend
+(uno dal testo 5xx, l'altro dall'NDR).
 
 ## 4. Tassonomia degli esiti (per i report)
 
@@ -127,24 +124,28 @@ Campi: `ts`, `domain`, `mx_host`, `mx_ip`, `phase` (`rcpt`|`send`),
 
 ## 10. Esecuzione a stadi, vantage, prerequisiti, decisioni aperte
 
-**Staging consigliato:**
-1. **Fase 1 su tutti i 67** (RCPT, nessun invio) → quanti si chiudono senza mail.
-2. Solo sul residuo `2xx-at-RCPT` → **Fase 2** (invio + NDR).
+**Staging (un'unica passata di invii, non due fasi):**
+1. Costruisci il **pool** serializzato per IP (§6).
+2. **Invia sempre** (un tentativo per dominio, registrando `rcpt_validation`),
+   rispettando il rate-limit; logga ogni transazione (§7).
+3. **Finestra di raccolta NDR** (24–48 h) via IMAP per i casi `accepted_2xx`.
+4. Riconcilia e genera i report (§9).
 
 **Vantage:** eseguire **dal server** `mxmap.it@…` (non dal laptop): risoluzione,
-reachability e reputazione IP dipendono dal punto di invio. La Fase 2 **invia
-attraverso lo smarthost autenticato di Google Workspace** (SPF/DKIM allineati),
+reachability e reputazione IP dipendono dal punto di invio. L'invio passa
+**attraverso lo smarthost autenticato di Google Workspace** (SPF/DKIM allineati),
 non in SMTP diretto dall'IP del server (reputazione scarsa).
 
-**Prerequisiti per la Fase 2 (forniti dall'utente al momento giusto):** dominio
-+ account Workspace mittente con SPF/DKIM/DMARC; credenziali SMTP submission +
-IMAP (in un file di config non committato); autorizzazione esplicita all'invio.
+**Prerequisiti (forniti dall'utente al momento giusto):** dominio + account
+Workspace mittente con SPF/DKIM/DMARC; credenziali SMTP submission + IMAP (in un
+file di config non committato); autorizzazione esplicita all'invio.
 
 **Decisioni aperte:**
-- D1. Procediamo a stadi (Fase 1 prima, poi Fase 2 sul residuo)? *(consigliato)*
-- D2. Fase 1 è accettabile come primo passo eseguibile (non invia email, ma apre
-  connessioni SMTP verso MX di terzi)? Da dove la lanciamo?
-- D3. Per i 26 MX non risolvibili: trattarli subito come `mx_unreachable`/verso
-  unknown, o ritentare dal server prima di concludere?
-- D4. Testo/branding dell'email di Fase 2: confermi il tono «osservatorio di
-  pubblico interesse, ignorare»?
+- D1. Flusso unico «invio sempre + registra RCPT» confermato (al posto delle due
+  fasi che avevo proposto erroneamente)?
+- D2. Da dove inviamo: confermi il **server** + smarthost Workspace autenticato?
+- D3. Per i 26 MX non risolvibili: trattarli come `mx_unreachable` o ritentare la
+  risoluzione/invio dal server prima di concludere?
+- D4. Testo/branding dell'email: confermi il tono «osservatorio di pubblico
+  interesse, ignorare» con link e contatto?
+- D5. Finestra di raccolta NDR: 24 h o 48 h prima di marcare `accept_silent`?
