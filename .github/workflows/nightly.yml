@@ -141,6 +141,9 @@ jobs:
       - name: Confidence report (1 pagina, anticipazione bounce)
         continue-on-error: true
         run: uv run python3 scripts/report_confidence.py --country IT
+      - name: Anomalies report (pagina pubblica anomalie.html)
+        continue-on-error: true
+        run: uv run python3 scripts/report_anomalies.py --country IT
 
       # Quality gate = SEGNALE, non blocco del deploy. Lo score euristico
       # 0-100 di validate.py è tarato sul fork Baltic; il dataset IT
@@ -167,7 +170,8 @@ jobs:
           git add data.json data-regions.json data-summary.json data-detail.json data/summary/ dist/ validation_report.json validation_report.csv data/dns_cache/ \
                   data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
                   data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json data/reports/mx_discovery_stats.json \
-                  data/reports/confidence_report.json data/reports/confidence_report.md
+                  data/reports/confidence_report.json data/reports/confidence_report.md \
+                  data/reports/anomalies.json data/reports/anomalies.md
           git commit -m "chore: nightly data update"
           git pull --rebase
           git push

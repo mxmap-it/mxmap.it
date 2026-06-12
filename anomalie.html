@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anomalie — Osservatorio sulla Sovranità Digitale della Posta Elettronica della PA Italiana</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:1000px;margin:0 auto;padding:32px 24px;line-height:1.6;color:#222}
+h1{font-size:26px;border-bottom:2px solid #009246;padding-bottom:8px}
+h2{font-size:20px;margin-top:36px;color:#005a2a;border-bottom:1px solid #ddd;padding-bottom:4px}
+.intro{background:#fafafa;border:1px solid #ddd;border-radius:6px;padding:16px 20px;margin:18px 0}
+.cards{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.card{flex:1;min-width:150px;background:#fafafa;border:1px solid #ddd;border-left:4px solid #009246;border-radius:6px;padding:12px 16px}
+.card .big{font-size:28px;font-weight:700;color:#005a2a;font-variant-numeric:tabular-nums}
+.card .lbl{font-size:12px;color:#666}
+table.stats{border-collapse:collapse;width:100%;max-width:520px;margin:12px 0;font-size:14px}
+table.stats th,table.stats td{padding:6px 12px;border-bottom:1px solid #eee;text-align:left}
+table.stats th{background:#f4f4f4;font-weight:600}
+table.stats td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+code{background:#f4f4f4;padding:1px 6px;border-radius:3px;font-size:13px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0}
+.controls input{padding:6px 10px;font-size:13px;border:1px solid #ccc;border-radius:4px;min-width:220px}
+.chip{padding:3px 10px;font-size:12px;border-radius:12px;border:1px solid #ccc;background:#fff;cursor:pointer;font-weight:600}
+.chip.active{color:#fff}
+.chip[data-t="all"].active{background:#555;border-color:#555}
+.chip[data-t="no_mx"].active{background:#cf222e;border-color:#cf222e}
+.chip[data-t="geo_unknown"].active{background:#bf8700;border-color:#bf8700}
+.chip[data-t="low_confidence"].active{background:#1f6feb;border-color:#1f6feb}
+table.data{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+table.data th,table.data td{padding:5px 10px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
+table.data th{background:#f4f4f4;position:sticky;top:0;cursor:pointer}
+.tag{display:inline-block;padding:1px 7px;border-radius:3px;font-size:11px;font-weight:600;color:#fff;margin-right:3px;white-space:nowrap}
+.tag.no_mx{background:#cf222e}.tag.geo_unknown{background:#bf8700}.tag.low_confidence{background:#1f6feb}
+.muted{color:#888;font-size:12px}
+</style>
+</head>
+<body>
+<p style="font-size:13px"><a href="index.html">← Torna alla mappa</a> · <a href="methodology.html">Metodologia</a></p>
+<h1>Anomalie</h1>
+<p style="font-size:13px;color:#666;margin-top:-8px">Osservatorio sulla Sovranità Digitale della Posta Elettronica della Pubblica Amministrazione Italiana</p>
+
+<div class="intro">
+<p>Gli enti la cui posta è <strong>non individuabile o incoerente</strong>: nessun
+record MX risolto, MX presente ma non geolocalizzabile, oppure classificazione a
+<strong>bassa confidenza</strong> (&lt;&nbsp;0,60). Non li nascondiamo: li
+contiamo e li esponiamo, perché il numero di anomalie è una misura di onestà del
+dataset. Una parte verrà chiusa dalla verifica attiva via <em>bounce</em>
+(vedi <a href="methodology.html#confidence">metodologia</a>).</p>
+</div>
+
+<div class="cards" id="cards"></div>
+
+<h2>Per tipo</h2>
+<table class="stats" id="byType"><tbody></tbody></table>
+
+<h2>Per provider attribuito</h2>
+<table class="stats" id="byProvider"><tbody></tbody></table>
+
+<h2>Elenco degli enti anomali</h2>
+<div class="controls">
+  <input id="q" type="search" placeholder="Cerca per nome o dominio…">
+  <span class="chip active" data-t="all">Tutte</span>
+  <span class="chip" data-t="no_mx">Nessun MX</span>
+  <span class="chip" data-t="geo_unknown">MX non geolocalizzato</span>
+  <span class="chip" data-t="low_confidence">Bassa confidenza</span>
+  <span class="muted" id="shown"></span>
+</div>
+<table class="data" id="tbl">
+  <thead><tr><th>Ente</th><th>Dominio</th><th>Provider</th><th>Anomalia</th><th>Conf.</th><th>MX</th></tr></thead>
+  <tbody></tbody>
+</table>
+<p class="muted" id="gen" style="margin-top:24px"></p>
+
+<script>
+let DATA = null, filterType = 'all';
+const TLABEL = { no_mx: 'Nessun MX', geo_unknown: 'MX non geolocalizzato', low_confidence: 'Bassa confidenza (<0,60)' };
+
+fetch('data/reports/anomalies.json').then(r => r.json()).then(d => { DATA = d; render(); })
+  .catch(() => { document.getElementById('cards').innerHTML = '<p>Dati non disponibili.</p>'; });
+
+function esc(s){ const e=document.createElement('div'); e.textContent=s==null?'':s; return e.innerHTML; }
+
+function render() {
+  const d = DATA;
+  document.getElementById('cards').innerHTML =
+    card(d.anomalies_total, 'enti anomali') +
+    card(d.anomalies_pct + '%', 'sul totale (' + d.total_entities + ')') +
+    card(d.classified_but_anomalous, 'classificati ma anomali');
+  const tt = Object.entries(d.by_type).sort((a,b)=>b[1]-a[1])
+    .map(([k,v]) => `<tr><td>${esc(TLABEL[k]||k)}</td><td class="n">${v}</td></tr>`).join('');
+  document.querySelector('#byType tbody').innerHTML = tt;
+  const tp = Object.entries(d.by_provider)
+    .map(([k,v]) => `<tr><td>${esc(k)}</td><td class="n">${v}</td></tr>`).join('');
+  document.querySelector('#byProvider tbody').innerHTML = tp;
+  document.getElementById('gen').textContent = 'Aggiornato: ' + d.generated_at + '. Sorgente: data/reports/anomalies.json (rigenerato a ogni build).';
+  renderTable();
+}
+
+function card(big, lbl){ return `<div class="card"><div class="big">${esc(big)}</div><div class="lbl">${esc(lbl)}</div></div>`; }
+
+function renderTable() {
+  const q = (document.getElementById('q').value || '').toLowerCase().trim();
+  const rows = DATA.entries.filter(e => {
+    if (filterType !== 'all' && !e.anomaly.includes(filterType)) return false;
+    if (q && !((e.name||'').toLowerCase().includes(q) || (e.domain||'').toLowerCase().includes(q))) return false;
+    return true;
+  });
+  const html = rows.slice(0, 1500).map(e =>
+    `<tr><td>${esc(e.name)}</td><td>${esc(e.domain)}</td><td>${esc(e.provider)}</td>` +
+    `<td>${e.anomaly.map(t => `<span class="tag ${t}">${esc(TLABEL[t]||t)}</span>`).join('')}</td>` +
+    `<td>${e.confidence ? e.confidence.toFixed(2) : '—'}</td><td><code>${esc(e.mx||'—')}</code></td></tr>`
+  ).join('');
+  document.querySelector('#tbl tbody').innerHTML = html;
+  document.getElementById('shown').textContent = rows.length + ' enti' + (rows.length > 1500 ? ' (primi 1500 mostrati)' : '');
+}
+
+document.getElementById('q').addEventListener('input', renderTable);
+document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+  document.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active'); filterType = c.dataset.t; renderTable();
+}));
+</script>
+</body>
+</html>
