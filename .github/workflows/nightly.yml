@@ -166,6 +166,14 @@ jobs:
         run: uv run python3 scripts/build_frontend.py
       - name: Build public dataset (CSV/JSON/XLSX)
         run: uv run python3 scripts/build_public_dataset.py
+      # --- Storicizzazione (F1) — DISATTIVATA finché non risolviamo le anomalie.
+      # Il run #1 ufficiale dello storico dev'essere il primo scan su dati "da
+      # rollout" (anomalie risolte), non un run sporco. Per attivarla: togliere
+      # il commento sotto (history/ è già incluso nel git-add tollerante).
+      # - name: Historicize run (snapshot + diff + changelog + timeseries)
+      #   run: |
+      #     uv run python3 scripts/historicize.py --run-id "$(date -u +%F)" \
+      #       --git-sha "${{ github.sha }}" --pipeline-version "0.1.0"
       - name: Commit and push if changed
         run: |
           git diff --quiet data.json && { echo "data.json invariato: niente da committare"; exit 0; }
@@ -179,7 +187,7 @@ jobs:
                    data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
                    data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json \
                    data/reports/mx_discovery_stats.json data/reports/confidence_report.json data/reports/confidence_report.md \
-                   data/reports/anomalies.json data/reports/anomalies.md; do
+                   data/reports/anomalies.json data/reports/anomalies.md history; do
             [ -e "$p" ] && git add "$p"
           done
           git commit -m "chore: nightly data update" || { echo "niente di staged: esco pulito"; exit 0; }
