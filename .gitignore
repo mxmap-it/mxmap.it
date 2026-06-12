@@ -217,4 +217,8 @@ data/domain_validation/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# mxmap.it — credenziali e config locale del bounce-verifier (MAI committare)
+config/bounce.toml
+config/*.local.toml
 tmp/

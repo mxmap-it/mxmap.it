@@ -72,11 +72,12 @@ DNS) · `tempfail` (4xx persistente). Ogni esito → eventuale nuovo
 - **Header:** `Message-ID` valido, `Date`, MIME multipart (text + HTML),
   `Auto-Submitted: auto-generated` (RFC 3834, evita loop di auto-risponditori),
   `Precedence: bulk`, `Return-Path` VERP (§8).
-- **Oggetto/corpo:** trasparenti e non spammosi — es. oggetto *«Verifica tecnica
-  di recapito — Osservatorio mxmap.it»*; corpo che spiega che è un probe
-  automatico di un osservatorio di pubblico interesse, con link al progetto e
-  contatto, e invito a ignorare. (Etica + se un catch-all lo fa leggere a un
-  umano, è onesto + riduce il rischio spam/abuse-report.)
+- **Oggetto/corpo:** trasparenti, non spammosi e che **dichiarano esplicitamente
+  che è un test**. Oggetto: *«[TEST] Verifica tecnica di recapito — Osservatorio
+  mxmap.it»*; corpo che spiega che è un **test automatico** di recapito di un
+  osservatorio di pubblico interesse, con link al progetto e contatto, e invito
+  a ignorare. (Etica + se un catch-all lo fa leggere a un umano è onesto +
+  riduce il rischio spam/abuse-report.)
 - **Un solo probe per dominio** (dedup: 67, non 69).
 
 ## 6. Pool di invio e rate-limit (R3) — da preparare PRIMA
@@ -136,16 +137,36 @@ reachability e reputazione IP dipendono dal punto di invio. L'invio passa
 **attraverso lo smarthost autenticato di Google Workspace** (SPF/DKIM allineati),
 non in SMTP diretto dall'IP del server (reputazione scarsa).
 
-**Prerequisiti (forniti dall'utente al momento giusto):** dominio + account
-Workspace mittente con SPF/DKIM/DMARC; credenziali SMTP submission + IMAP (in un
-file di config non committato); autorizzazione esplicita all'invio.
+**Configurazione (predisposta):** `config/bounce.example.toml` → copiare in
+`config/bounce.toml` (gitignorato) con login/password/host **SMTP (smtp+TLS)** e
+**IMAP (imaps)**, mittente, VERP, rate-limit e `ndr_wait_hours`. Fornita
+dall'utente al momento dell'invio.
 
-**Decisioni aperte:**
-- D1. Flusso unico «invio sempre + registra RCPT» confermato (al posto delle due
-  fasi che avevo proposto erroneamente)?
-- D2. Da dove inviamo: confermi il **server** + smarthost Workspace autenticato?
-- D3. Per i 26 MX non risolvibili: trattarli come `mx_unreachable` o ritentare la
-  risoluzione/invio dal server prima di concludere?
-- D4. Testo/branding dell'email: confermi il tono «osservatorio di pubblico
-  interesse, ignorare» con link e contatto?
-- D5. Finestra di raccolta NDR: 24 h o 48 h prima di marcare `accept_silent`?
+**Decisioni — CHIUSE:**
+- D1 ✅ flusso unico «invio sempre + registra `rcpt_validation`».
+- D2 ✅ invio **dal server** via **smarthost Workspace autenticato** (smtp/TLS).
+- D3 ✅ i non risolvibili → marcati `mx_unreachable` **e** confluiscono nel
+  tracking trasversale delle **anomalie** (§11).
+- D4 ✅ email trasparente che **dichiara esplicitamente che è un test**.
+- D5 ✅ finestra NDR **48 h** (configurabile, `ndr_wait_hours`).
+
+## 11. Anomalie — metadato trasversale (TODO, oltre il bounce)
+
+Tutto ciò che è **non risolvibile / incoerente** non va perso: è un metadato da
+**raccogliere, contare, e visualizzare anche sulla mappa**, non solo nel bounce.
+
+**Quantificazione attuale (da `data.json`, senza nuovo DNS): ~767 enti (3,3%)**
+= nessun MX (659) ∪ MX presente ma geo non risolta (77) ∪ bassa confidenza (99).
+Di cui **138 classificati ma comunque anomali** (provider dato, evidenza debole).
+Provider tra le anomalie: unknown 629, independent 101, regional-public 30,
+microsoft 5, google 2.
+
+**Piano (TODO):**
+- Campo/metadato `anomaly` per ente (es. `no_mx`, `mx_unresolved`,
+  `mx_unreachable` (dal bounce), `low_confidence`, `geo_unknown`).
+- Il bounce-verifier **alimenta** questo metadato (i `mx_unreachable` reali).
+- Conteggio aggregato + per-tipo, esposto come **report web di anomalie**
+  dedicato (3,3% giustifica una pagina propria) e come **layer/filtro sulla
+  mappa** (evidenziare gli enti anomali).
+- Un vero conteggio di `mx_unresolved` su tutti i 22.987 richiede una passata DNS
+  dedicata (il bounce la produce per i 67; estendibile a tutto il dataset).

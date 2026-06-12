@@ -1,0 +1,42 @@
+# Bounce-verifier — configurazione di ESEMPIO.
+# Copia in  config/bounce.toml  (gitignorato) e compila con le credenziali reali.
+# Mittente consigliato: account Google Workspace dedicato con SPF/DKIM/DMARC
+# allineati sul dominio mittente (vedi docs/BOUNCE_VERIFIER_DESIGN.md §5, §10).
+#
+# Letto nativamente da Python 3.11+ (tomllib). NON committare config/bounce.toml.
+
+[smtp]
+# Submission autenticata (smarthost Workspace), NON SMTP diretto dall'IP server.
+host       = "smtp.gmail.com"      # es. smtp del Workspace
+port       = 587                   # 587 = STARTTLS (submission) | 465 = TLS implicito
+security   = "starttls"            # "starttls" | "tls"
+username   = "probe@TUODOMINIO.it"
+password   = "APP_PASSWORD"        # app password / token (NON la password account)
+
+[imap]
+# Casella dove arrivano gli NDR (bounce). Tipicamente lo stesso account mittente.
+host       = "imap.gmail.com"
+port       = 993                   # IMAPS
+security   = "ssl"                 # "ssl" | "starttls"
+username   = "probe@TUODOMINIO.it"
+password   = "APP_PASSWORD"
+mailbox    = "INBOX"
+
+[sender]
+from_name    = "Osservatorio mxmap.it"
+from_address = "probe@TUODOMINIO.it"
+# VERP: envelope return-path per auto-correlare i bounce. {token} = id opaco del
+# dominio target, sostituito a runtime. Richiede che il dominio accetti il '+'.
+verp_format  = "bounce+{token}@TUODOMINIO.it"
+# Oggetto e corpo: trasparenti e che dichiarano esplicitamente che è un TEST.
+subject      = "[TEST] Verifica tecnica di recapito — Osservatorio mxmap.it"
+
+[limits]
+per_ip_min_interval_sec = 45       # secondi minimi tra invii allo STESSO IP destinazione
+max_per_hour            = 60       # tetto globale (protegge la reputazione mittente)
+connect_timeout_sec     = 20
+ndr_wait_hours          = 48       # finestra di raccolta NDR prima di marcare 'accept_silent'
+
+[run]
+# SEMPRE true finché non si autorizza esplicitamente l'invio reale.
+dry_run = true
