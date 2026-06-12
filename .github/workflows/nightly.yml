@@ -170,10 +170,12 @@ jobs:
       # Il run #1 ufficiale dello storico dev'essere il primo scan su dati "da
       # rollout" (anomalie risolte), non un run sporco. Per attivarla: togliere
       # il commento sotto (history/ è già incluso nel git-add tollerante).
-      # - name: Historicize run (snapshot + diff + changelog + timeseries)
+      # - name: Historicize run (snapshot + diff + changelog + timeseries + entity)
       #   run: |
       #     uv run python3 scripts/historicize.py --run-id "$(date -u +%F)" \
       #       --git-sha "${{ github.sha }}" --pipeline-version "0.1.0"
+      # - name: DCAT-AP_IT metadata (harvesting dati.gov.it)
+      #   run: uv run python3 scripts/build_dcat.py
       - name: Commit and push if changed
         run: |
           git diff --quiet data.json && { echo "data.json invariato: niente da committare"; exit 0; }

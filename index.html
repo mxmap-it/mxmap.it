@@ -274,6 +274,10 @@
         ⚠️ <a href="anomalie.html" target="_blank" rel="noopener"><strong>Anomalie</strong></a>
         — enti con posta non individuabile o classificazione a bassa confidenza (~767, 3,3% del dataset).
       </p>
+      <p style="font-size:12px;color:#555;margin-bottom:6px">
+        📈 <a href="storia.html" target="_blank" rel="noopener"><strong>Storia</strong></a>
+        — andamento nel tempo della sovranità della posta PA: cambiamenti reali vs miglioramenti del rilevamento.
+      </p>
       <p id="funnel-sentence" style="margin-bottom:8px"><em>Caricamento…</em></p>
       <table id="funnel-table" style="border-collapse:collapse;font-size:12px;width:100%;max-width:560px"></table>
     </div>
@@ -1053,6 +1057,41 @@ function jurisdictionStyle(feature) {
   return { fillColor: fill, fillOpacity: 0.10 + 0.72 * share, color: '#888', weight: 0.5 };
 }
 
+// --- Storia per-ente (F4): scheda storica nel popup, da history/entity/{ipa}.json ---
+function ipaFromBfs(bfs) {
+  // "IT-C1-m_it" -> "m_it" (mirror di parse_bfs Python), sanitizzato per filename
+  const parts = (bfs || '').split('-');
+  const ipa = parts.length >= 3 ? parts.slice(2).join('-') : '';
+  return ipa.replace(/[^A-Za-z0-9_.-]/g, '_');
+}
+
+const HIST_CAUSE_COLOR = { reality: '#1f6feb', methodology: '#bf8700', uncertain: '#999', source: '#6b7280' };
+
+function entityHistoryHtml(d) {
+  if (!d || !d.timeline || !d.timeline.length) return '';
+  const rows = d.timeline.slice().reverse().slice(0, 8).map(function (t) {
+    const c = HIST_CAUSE_COLOR[t.cause] || '#999';
+    return `<tr><td class="pri">${escapeHtml(t.run_id)}</td>` +
+      `<td>${escapeHtml(t.change)}: <code>${escapeHtml(t.from)}</code>→<code>${escapeHtml(t.to)}</code> ` +
+      `<span style="background:${c};color:#fff;padding:0 5px;border-radius:3px;font-size:10px">${escapeHtml(t.cause)}</span></td></tr>`;
+  }).join('');
+  return `<div class="popup-section"><div class="popup-section-title">Storia di questo ente ` +
+    `<span class="popup-section-hint">(${d.n_changes} cambiamenti)</span></div>` +
+    `<table class="dns-table">${rows}</table></div>`;
+}
+
+function fillEntityHistory(popupEl) {
+  const div = popupEl && popupEl.querySelector ? popupEl.querySelector('.ent-history[data-bfs]') : null;
+  if (!div || div.dataset.loaded) return;
+  div.dataset.loaded = '1';
+  const ipa = ipaFromBfs(div.dataset.bfs);
+  if (!ipa) return;
+  fetch('history/entity/' + encodeURIComponent(ipa) + '.json')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) { if (d) div.innerHTML = entityHistoryHtml(d); })
+    .catch(function () {});
+}
+
 // --- Popup ---
 function buildPopup(m) {
   const cls = m.classification;
@@ -1145,6 +1184,7 @@ function buildPopup(m) {
     `<br><span style="font-size:11px;color:#888">${m.region ? escapeHtml(m.region) + ' \u00b7 ' : ''}${m.country}</span>` +
     (cls.reason ? `<div style="margin-top:4px;font-size:11px;color:#666;font-style:italic">${escapeHtml(cls.reason)}</div>` : '') +
     confidenceBadge(m) +
+    `<div class="ent-history" data-bfs="${escapeHtml(m.bfs || '')}"></div>` +
     gatewayNote + tenantNote + smtpSoftwareNote + mxSection + spfSection + autodiscoverSection + dkimSection + txtVerifSection +
     `</div>`;
 }
@@ -1610,6 +1650,12 @@ function updateDominanceMarkers() {
 }
 
 map.on('zoomend', function () { updateDominanceMarkers(); });
+// F4: quando si apre un popup ente, carica la sua scheda storica (graceful: se
+// non esiste storico per quell'ente, non mostra nulla).
+map.on('popupopen', function (e) {
+  const el = e.popup && e.popup.getElement ? e.popup.getElement() : null;
+  if (el) fillEntityHistory(el);
+});
 
 // Viewport-based loading: reload countries with multi-file municipality topo on pan/zoom
 let viewportLoadTimeout = null;

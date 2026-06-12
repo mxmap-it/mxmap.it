@@ -17,6 +17,7 @@ from mail_sovereignty.historicize import (
     material_row,
     parse_bfs,
     sovereignty_of,
+    update_entity_timeline,
 )
 from collections import Counter
 
@@ -232,3 +233,37 @@ def test_build_manifest_and_timeseries():
     assert ts["sovereignty"][0]["date"] == "2026-06-12"
     assert ts["jurisdiction"][0]["domestic"] == 1
     assert ts["coverage"][0]["coverage_pct"] == m["coverage_pct"]
+
+
+# ── F2: scheda storica per-ente ─────────────────────────────────────────────
+def test_update_entity_timeline_idempotent():
+    curr = _row(provider="microsoft", sovereignty="USA (CLOUD Act)")
+    evs = [
+        {
+            "change": "provider_change",
+            "field": "provider",
+            "from": "aruba",
+            "to": "microsoft",
+            "cause": "reality",
+        }
+    ]
+    e1 = update_entity_timeline(None, "2026-06-12", curr, evs)
+    assert e1["n_changes"] == 1 and e1["first_seen"] == "2026-06-12"
+    assert e1["current"]["provider"] == "microsoft"
+
+    evs2 = [
+        {
+            "change": "method_change",
+            "field": "method",
+            "from": "a",
+            "to": "b",
+            "cause": "methodology",
+        }
+    ]
+    e2 = update_entity_timeline(e1, "2026-06-13", curr, evs2)
+    assert e2["n_changes"] == 2
+    assert e2["first_seen"] == "2026-06-12" and e2["last_change"] == "2026-06-13"
+
+    # ri-eseguire lo stesso run non duplica
+    e2b = update_entity_timeline(e2, "2026-06-13", curr, evs2)
+    assert e2b["n_changes"] == 2

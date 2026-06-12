@@ -267,6 +267,49 @@ def build_manifest(
     }
 
 
+def update_entity_timeline(
+    existing: dict | None, run_id: str, curr_row: dict, events: list[dict]
+) -> dict:
+    """Aggiorna (o crea) la scheda storica di un ente (F2). `existing` è il
+    contenuto del file entity/{ipa}.json precedente (o None). Appende gli
+    eventi di questo run alla timeline e aggiorna lo stato corrente."""
+    base = existing or {}
+    # idempotenza: togli eventuali eventi già scritti per questo run_id
+    timeline = [t for t in base.get("timeline", []) if t.get("run_id") != run_id]
+    for ev in events:
+        timeline.append(
+            {
+                "run_id": run_id,
+                "change": ev["change"],
+                "field": ev.get("field"),
+                "from": ev.get("from"),
+                "to": ev.get("to"),
+                "cause": ev["cause"],
+            }
+        )
+    current = {
+        k: curr_row.get(k)
+        for k in (
+            "provider",
+            "sovereignty",
+            "jurisdiction",
+            "method",
+            "domain_used",
+            "confidence",
+        )
+    }
+    return {
+        "ipa": curr_row.get("ipa", ""),
+        "name": curr_row.get("name", ""),
+        "cat": curr_row.get("cat", ""),
+        "current": current,
+        "timeline": timeline,
+        "n_changes": len(timeline),
+        "first_seen": base.get("first_seen", run_id),
+        "last_change": run_id if events else base.get("last_change", run_id),
+    }
+
+
 def build_timeseries(runs: list[dict]) -> dict[str, list]:
     """Da runs.jsonl (ordinato) → le serie temporali per la dashboard."""
     runs = sorted(runs, key=lambda r: r["run_id"])
@@ -305,4 +348,5 @@ __all__ = [
     "mean_confidence",
     "build_manifest",
     "build_timeseries",
+    "update_entity_timeline",
 ]

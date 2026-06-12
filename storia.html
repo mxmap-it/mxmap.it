@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Storia — Osservatorio sulla Sovranità Digitale della Posta Elettronica della PA Italiana</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:1000px;margin:0 auto;padding:32px 24px;line-height:1.6;color:#222}
+h1{font-size:26px;border-bottom:2px solid #009246;padding-bottom:8px}
+h2{font-size:20px;margin-top:36px;color:#005a2a;border-bottom:1px solid #ddd;padding-bottom:4px}
+.intro{background:#fafafa;border:1px solid #ddd;border-radius:6px;padding:16px 20px;margin:18px 0}
+.cards{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.card{flex:1;min-width:160px;background:#fafafa;border:1px solid #ddd;border-left:4px solid #009246;border-radius:6px;padding:12px 16px}
+.card .big{font-size:26px;font-weight:700;color:#005a2a;font-variant-numeric:tabular-nums}
+.card .lbl{font-size:12px;color:#666}
+.card .delta{font-size:12px;font-weight:600}
+.delta.up{color:#cf222e}.delta.down{color:#1a7f37}
+.chartbox{position:relative;height:340px;margin:14px 0 28px}
+.note{font-size:12px;color:#777;margin-top:-18px;margin-bottom:18px}
+table.feed{border-collapse:collapse;width:100%;font-size:13px}
+table.feed th,table.feed td{padding:5px 10px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
+table.feed th{background:#f4f4f4}
+.cause{display:inline-block;padding:1px 7px;border-radius:3px;font-size:11px;font-weight:600;color:#fff}
+.cause.reality{background:#1f6feb}.cause.methodology{background:#bf8700}.cause.uncertain{background:#999}.cause.source{background:#6b7280}
+.chip{padding:3px 10px;font-size:12px;border-radius:12px;border:1px solid #ccc;background:#fff;cursor:pointer;font-weight:600;margin-right:4px}
+.chip.active{background:#455a64;color:#fff;border-color:#455a64}
+.muted{color:#888;font-size:12px}
+code{background:#f4f4f4;padding:1px 6px;border-radius:3px;font-size:12px}
+</style>
+</head>
+<body>
+<p style="font-size:13px"><a href="index.html">← Torna alla mappa</a> · <a href="methodology.html">Metodologia</a> · <a href="anomalie.html">Anomalie</a></p>
+<h1>Storia</h1>
+<p style="font-size:13px;color:#666;margin-top:-8px">Osservatorio sulla Sovranità Digitale della Posta Elettronica della Pubblica Amministrazione Italiana</p>
+<div class="intro">
+<p>Come cambia nel tempo la sovranità della posta elettronica della PA italiana.
+Distinguiamo i cambiamenti <strong>reali</strong> (un ente è migrato davvero) da
+quelli di <strong>metodologia</strong> (abbiamo migliorato il rilevamento) —
+così un nostro miglioramento non si confonde con una migrazione di massa.
+Dati: <code>history/</code> (snapshot + changelog opendata).</p>
+</div>
+
+<div class="cards" id="cards"></div>
+
+<h2>Sovranità nel tempo</h2>
+<p class="note">Numero di enti per bucket di sovranità (narrazione CLOUD Act), per run.</p>
+<div class="chartbox"><canvas id="sovChart"></canvas></div>
+
+<h2>Giurisdizione dell'MX nel tempo</h2>
+<p class="note">Dove risiede fisicamente il server di posta in entrata (modello ESORICS): 🇮🇹 domestico vs 🌍 estero.</p>
+<div class="chartbox"><canvas id="jurChart"></canvas></div>
+
+<h2>Copertura del rilevamento</h2>
+<p class="note">% enti classificati (non <code>unknown</code>) e confidenza media — il <em>nostro</em> lavoro, distinto dalla realtà.</p>
+<div class="chartbox"><canvas id="covChart"></canvas></div>
+
+<h2>Cosa è cambiato nell'ultimo run</h2>
+<div style="margin:10px 0">
+  <span class="chip active" data-c="all">Tutte</span>
+  <span class="chip" data-c="reality">Reality</span>
+  <span class="chip" data-c="methodology">Methodology</span>
+  <span class="chip" data-c="uncertain">Uncertain</span>
+</div>
+<table class="feed"><thead><tr><th>Ente</th><th>Cambiamento</th><th>Da → A</th><th>Causa</th></tr></thead><tbody id="feed"></tbody></table>
+<p class="muted" id="gen" style="margin-top:20px"></p>
+
+<script>
+const SOV_COLORS = {
+  "USA (CLOUD Act)": "#D42E2E", "Italia — Cloud sovrano": "#009246",
+  "Italia — Provider commerciali": "#4a9e5c", "Italia — Infrastruttura autonoma": "#6b8e23",
+  "Altri provider esteri": "#FF8C42", "Sconosciuto": "#9aa0a6",
+};
+const JUR_COLORS = { domestic: "#009246", foreign: "#D42E2E", mixed: "#E8A33D", unknown: "#9aa0a6" };
+const JUR_LABEL = { domestic: "🇮🇹 Domestico", foreign: "🌍 Estero", mixed: "Misto", unknown: "Sconosciuto" };
+let allEvents = [], feedFilter = "all";
+
+async function getJSON(u){ const r = await fetch(u); return r.ok ? r.json() : null; }
+async function getJSONL(u){ const r = await fetch(u); if(!r.ok) return []; return (await r.text()).trim().split("\n").filter(Boolean).map(JSON.parse); }
+function esc(s){ const e=document.createElement("div"); e.textContent=s==null?"":s; return e.innerHTML; }
+
+function stackedArea(canvasId, series, keys, colors, labels) {
+  const dates = series.map(s => s.date);
+  const datasets = keys.map(k => ({
+    label: (labels && labels[k]) || k,
+    data: series.map(s => s[k] || 0),
+    backgroundColor: colors[k] || "#ccc", borderColor: colors[k] || "#ccc",
+    fill: true, tension: 0.25, pointRadius: 2, borderWidth: 1,
+  }));
+  new Chart(document.getElementById(canvasId), {
+    type: "line",
+    data: { labels: dates, datasets },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { y: { stacked: true, ticks: { precision: 0 } } }, plugins: { legend: { position: "bottom" } } },
+  });
+}
+
+(async function () {
+  const [runs, sov, jur, cov] = await Promise.all([
+    getJSONL("history/runs.jsonl"),
+    getJSON("history/timeseries/sovereignty.json"),
+    getJSON("history/timeseries/jurisdiction.json"),
+    getJSON("history/timeseries/coverage.json"),
+  ]);
+  if (!runs.length || !sov) { document.getElementById("cards").innerHTML = "<p>Storico non ancora disponibile (parte dal primo scan ufficiale).</p>"; return; }
+
+  const first = runs[0], last = runs[runs.length - 1];
+  const usaNow = last.sovereignty["USA (CLOUD Act)"] || 0;
+  const usaFirst = first.sovereignty["USA (CLOUD Act)"] || 0;
+  const pct = (n, tot) => tot ? (100 * n / tot).toFixed(1) : "0";
+  const dUsa = usaNow - usaFirst;
+  document.getElementById("cards").innerHTML =
+    card(pct(usaNow, last.n_entities) + "%", "PA sotto CLOUD Act (USA)", dUsa, "enti") +
+    card(last.coverage_pct + "%", "copertura (classificati)", (last.coverage_pct - first.coverage_pct).toFixed(2), "pt") +
+    card(last.mean_confidence.toFixed(3), "confidenza media", null, "") +
+    card(runs.length, "run nello storico", null, "");
+
+  // grafici
+  const sovKeys = Object.keys(SOV_COLORS).filter(k => sov.some(s => s[k]));
+  stackedArea("sovChart", sov, sovKeys, SOV_COLORS);
+  if (jur) stackedArea("jurChart", jur, ["domestic", "mixed", "foreign", "unknown"], JUR_COLORS, JUR_LABEL);
+  if (cov) {
+    new Chart(document.getElementById("covChart"), {
+      type: "line",
+      data: { labels: cov.map(c => c.date), datasets: [
+        { label: "Copertura %", data: cov.map(c => c.coverage_pct), borderColor: "#1a7f37", backgroundColor: "#1a7f3722", yAxisID: "y", fill: true, tension: 0.25 },
+        { label: "Confidenza media", data: cov.map(c => c.mean_confidence), borderColor: "#1f6feb", yAxisID: "y2", tension: 0.25 },
+      ] },
+      options: { responsive: true, maintainAspectRatio: false,
+        scales: { y: { position: "left", suggestedMin: 90, suggestedMax: 100, title: { display: true, text: "copertura %" } },
+          y2: { position: "right", suggestedMin: 0, suggestedMax: 1, grid: { drawOnChartArea: false }, title: { display: true, text: "confidenza" } } },
+        plugins: { legend: { position: "bottom" } } },
+    });
+  }
+
+  // feed changelog dell'ultimo run
+  const month = last.run_id.slice(0, 7);
+  const events = await getJSONL("history/changelog/" + month + ".jsonl");
+  allEvents = events.filter(e => e.run_id === last.run_id && e.change !== "new").reverse();
+  renderFeed();
+  document.getElementById("gen").textContent = "Ultimo run: " + last.run_id + " · " + last.n_entities + " enti · " + last.n_changed + " cambiamenti. Sorgente: history/ (opendata).";
+})();
+
+function card(big, lbl, delta, unit) {
+  let d = "";
+  if (delta !== null && delta !== undefined && !isNaN(delta)) {
+    const up = Number(delta) > 0;
+    d = `<div class="delta ${up ? "up" : "down"}">${up ? "▲" : "▼"} ${Math.abs(delta)} ${esc(unit)}</div>`;
+  }
+  return `<div class="card"><div class="big">${esc(big)}</div><div class="lbl">${esc(lbl)}</div>${d}</div>`;
+}
+
+function renderFeed() {
+  const rows = allEvents.filter(e => feedFilter === "all" || e.cause === feedFilter);
+  document.getElementById("feed").innerHTML = rows.slice(0, 300).map(e =>
+    `<tr><td>${esc(e.name)}</td><td>${esc(e.change)}</td>` +
+    `<td><code>${esc(e.from)}</code> → <code>${esc(e.to)}</code></td>` +
+    `<td><span class="cause ${esc(e.cause)}">${esc(e.cause)}</span></td></tr>`
+  ).join("") || `<tr><td colspan="4" class="muted">Nessun cambiamento di questo tipo.</td></tr>`;
+}
+
+document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach(x => x.classList.remove("active"));
+  c.classList.add("active"); feedFilter = c.dataset.c; renderFeed();
+}));
+</script>
+</body>
+</html>

@@ -140,6 +140,27 @@ def main() -> int:
     runs.append(manifest)
     write_jsonl(runs_path, runs)
 
+    # 3b. F2: scheda storica per-ente (solo enti con eventi in questo run)
+    entity_dir = HISTORY / "entity"
+    by_ent: dict[str, list] = {}
+    for ev in events:
+        by_ent.setdefault(ev.get("ipa") or ev.get("id") or "", []).append(ev)
+    for key, evs in by_ent.items():
+        if not key:
+            continue
+        safe = "".join(c if (c.isalnum() or c in "_.-") else "_" for c in key)
+        eid = evs[0]["id"]
+        ef = entity_dir / f"{safe}.json"
+        existing = json.loads(ef.read_text(encoding="utf-8")) if ef.exists() else None
+        curr_row = curr.get(eid) or {
+            "ipa": key,
+            "name": evs[0].get("name", ""),
+            "cat": evs[0].get("cat", ""),
+        }
+        updated = H.update_entity_timeline(existing, args.run_id, curr_row, evs)
+        ef.parent.mkdir(parents=True, exist_ok=True)
+        ef.write_text(json.dumps(updated, ensure_ascii=False, indent=1), encoding="utf-8")
+
     # 4. time-series (ricostruite da runs.jsonl per coerenza)
     TS_DIR.mkdir(parents=True, exist_ok=True)
     for name, series in H.build_timeseries(runs).items():
