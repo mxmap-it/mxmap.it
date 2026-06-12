@@ -173,9 +173,10 @@ def _write_reports(sends, ndrs) -> None:
     md = ["# Bounce-verifier — rendiconto sintetico", ""]
     md.append(f"- inviati: **{summ['n_sent']}** · NDR raccolti: {summ['n_ndr']} · riclassificabili: **{summ['reclassifiable']}**")
     md.append(f"- per esito: {summ['by_outcome']}")
+    md.append(f"- per origine NDR (hop): {summ.get('by_ndr_origin', {})}")
     md.append(f"- per backend identificato (da NDR): {summ['by_backend']}")
     (OUTDIR / "report_summary.md").write_text("\n".join(md), encoding="utf-8")
-    cols = ["domain", "submitted", "outcome", "identified_backend", "ndr_status", "ndr_diagnostic", "remote_mta", "error"]
+    cols = ["domain", "submitted", "outcome", "ndr_origin", "identified_backend", "reporting_mta", "ndr_status", "ndr_diagnostic", "remote_mta", "ndr_from", "error"]
     with open(OUTDIR / "report_detail.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()

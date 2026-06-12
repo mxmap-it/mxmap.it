@@ -110,7 +110,21 @@ Campi: `ts`, `domain`, `mx_host`, `mx_ip`, `phase` (`rcpt`|`send`),
 - Poll IMAP della casella mittente; per ogni NDR: estrai il `token` dal
   destinatario/Original-Recipient, poi parsa la parte `message/delivery-status`
   (`Diagnostic-Code`, `Remote-MTA`, `Reporting-MTA`) → backend reale.
-- Finestra d'attesa (es. 24–48 h) prima di marcare `accept_silent`.
+- **Origine del bounce (R header) — strutturata.** Un NDR può nascere da tre
+  hop diversi; registriamo `ndr_origin` ∈ {`sender`, `gateway`, `destination`,
+  `unknown`} oltre ai grezzi (`ndr_from` = MAILER-DAEMON, `received_chain`,
+  `reporting_mta`, `remote_mta`):
+  - **`sender`** — il nostro smarthost (es. non riesce a instradare → DNS/no
+    route; `Reporting-MTA`/From combaciano con gli host mittente);
+  - **`gateway`** — un antispam ricevente (Sophos/Proofpoint/Barracuda/…);
+  - **`destination`** — l'MTA backend finale (rifiuto «user unknown»).
+  - Ambiguità: se mittente e destinazione sono lo stesso cloud (es. entrambi
+    Google) il `Reporting-MTA` non basta → i campi grezzi restano per la
+    disambiguazione manuale. La riclassificazione del provider si fida degli
+    NDR `destination` e `gateway` (entrambi hanno raggiunto il backend, che il
+    `Remote-MTA` nomina), **non** degli NDR `sender` (fallimento del nostro
+    relay, backend non raggiunto).
+- Finestra d'attesa (`ndr_wait_hours`, default 48 h) prima di marcare `no_bounce`.
 
 ## 9. Report (R6)
 

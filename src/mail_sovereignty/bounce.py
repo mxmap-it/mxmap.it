@@ -20,7 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 import tomllib
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from email.message import EmailMessage, Message
 from pathlib import Path
 
@@ -162,6 +162,63 @@ class NdrResult:
     remote_mta: str | None = None
     reporting_mta: str | None = None
     identified_backend: str | None = None
+    # da quale hop è nato l'NDR: sender (nostro smarthost) / gateway
+    # (antispam ricevente) / destination (MTA backend finale) / unknown
+    ndr_from: str | None = None
+    ndr_origin: str = "unknown"
+    received_chain: list[str] = field(default_factory=list)
+
+
+# Keyword di gateway antispam riceventi (origine intermedia dell'NDR)
+GATEWAY_ORIGINS: tuple[str, ...] = (
+    "sophos",
+    "proofpoint",
+    "pphosted",
+    "barracuda",
+    "mailspamprotection",
+    "fortimail",
+    "ironport",
+    "mimecast",
+    "spamtitan",
+    "libraesva",
+)
+
+
+def sender_hosts_from_cfg(cfg: BounceConfig) -> tuple[str, ...]:
+    """Host che identificano il NOSTRO smarthost di invio (per riconoscere gli
+    NDR generati dal nostro lato): host SMTP + dominio mittente/VERP, più gli
+    alias Google se lo smarthost è Workspace/Gmail."""
+    hosts: set[str] = set()
+    if cfg.smtp_host:
+        hosts.add(cfg.smtp_host.lower())
+    for addr in (cfg.from_address, cfg.verp_format):
+        if "@" in addr:
+            hosts.add(addr.split("@", 1)[1].split(">")[0].strip().lower())
+    if any("gmail" in h or "google" in h for h in hosts):
+        hosts.update({"google.com", "googlemail.com"})
+    return tuple(h for h in hosts if h)
+
+
+def classify_ndr_origin(
+    reporting_mta: str | None, ndr_from: str | None, sender_hosts: tuple[str, ...]
+) -> str:
+    """Da quale hop è nato l'NDR, dal Reporting-MTA + mittente (MAILER-DAEMON):
+    ``gateway`` (antispam ricevente), ``sender`` (nostro smarthost), altrimenti
+    ``destination`` (MTA backend finale); ``unknown`` se nessun segnale.
+
+    Nota: se smarthost e destinazione sono lo stesso cloud (es. entrambi Google)
+    il Reporting-MTA non basta a distinguere sender da destination → restano i
+    campi grezzi (remote_mta, diagnostic, received_chain) per disambiguare."""
+    blob = " ".join(t.lower() for t in (reporting_mta, ndr_from) if t)
+    if not blob:
+        return "unknown"
+    for gw in GATEWAY_ORIGINS:
+        if gw in blob:
+            return "gateway"
+    for sh in sender_hosts:
+        if sh and sh in blob:
+            return "sender"
+    return "destination"
 
 
 def _header_from_part(part: Message, name: str) -> str | None:
@@ -169,10 +226,14 @@ def _header_from_part(part: Message, name: str) -> str | None:
     return str(val) if val is not None else None
 
 
-def parse_ndr(msg: Message) -> NdrResult:
+def parse_ndr(msg: Message, sender_hosts: tuple[str, ...] = ()) -> NdrResult:
     """Estrae i campi diagnostici da un NDR multipart/report (RFC 3464):
-    cerca la parte ``message/delivery-status`` e i suoi header per-recipient."""
+    cerca la parte ``message/delivery-status`` e i suoi header per-recipient, e
+    registra in modo strutturato **da quale hop** nasce il bounce (mittente
+    MAILER-DAEMON, catena Received, Reporting-MTA → ``ndr_origin``)."""
     res = NdrResult()
+    res.ndr_from = _header_from_part(msg, "From")
+    res.received_chain = [str(r) for r in msg.get_all("Received", [])]
     # token VERP: l'NDR arriva sull'envelope-from VERP (header To), o lo si
     # ritrova negli header di ritorno / nella delivery-status.
     for hdr in ("To", "X-Failed-Recipients", "Original-Recipient", "Final-Recipient"):
@@ -204,6 +265,7 @@ def parse_ndr(msg: Message) -> NdrResult:
     res.identified_backend = identify_backend(
         res.diagnostic_code, res.remote_mta, res.reporting_mta
     )
+    res.ndr_origin = classify_ndr_origin(res.reporting_mta, res.ndr_from, sender_hosts)
     return res
 
 
@@ -365,6 +427,11 @@ def join_results(sends: list[SendResult], ndrs: list[NdrResult]) -> list[dict]:
         else:
             outcome = "no_bounce"
         backend = ndr.identified_backend if ndr else None
+        # riclassifica il provider solo se l'NDR ha RAGGIUNTO il backend:
+        # destination (il backend stesso) o gateway (il cui Remote-MTA nomina il
+        # backend). NON ci fidiamo degli NDR 'sender' (fallimento del nostro
+        # relay, il backend non è stato raggiunto).
+        trust = bool(ndr) and ndr.ndr_origin in ("destination", "gateway")
         rows.append(
             {
                 "domain": s.domain,
@@ -372,10 +439,13 @@ def join_results(sends: list[SendResult], ndrs: list[NdrResult]) -> list[dict]:
                 "submitted": s.submitted,
                 "outcome": outcome,
                 "identified_backend": backend,
+                "ndr_origin": ndr.ndr_origin if ndr else None,
+                "ndr_from": ndr.ndr_from if ndr else None,
                 "ndr_status": ndr.status if ndr else None,
                 "ndr_diagnostic": ndr.diagnostic_code if ndr else None,
+                "reporting_mta": ndr.reporting_mta if ndr else None,
                 "remote_mta": ndr.remote_mta if ndr else None,
-                "reconcile": reconcile(backend),
+                "reconcile": reconcile(backend) if trust else None,
                 "error": s.error,
             }
         )
@@ -390,12 +460,14 @@ def build_summary(sends: list[SendResult], ndrs: list[NdrResult]) -> dict:
     rows = join_results(sends, ndrs)
     outcomes = Counter(r["outcome"] for r in rows)
     backends = Counter(r["identified_backend"] for r in rows if r["identified_backend"])
+    origins = Counter(n.ndr_origin for n in ndrs)
     reclassifiable = sum(1 for r in rows if r["reconcile"])
     return {
         "n_sent": sum(1 for s in sends if s.submitted),
         "n_ndr": len(ndrs),
         "by_outcome": dict(outcomes),
         "by_backend": dict(backends),
+        "by_ndr_origin": dict(origins),
         "reclassifiable": reclassifiable,
     }
 
@@ -416,6 +488,7 @@ def collect_ndrs(cfg: BounceConfig, *, imap=None) -> list[NdrResult]:
         return []
     if imap is None:  # pragma: no cover - rete reale
         imap = _default_imap(cfg)
+    sh = sender_hosts_from_cfg(cfg)
     out: list[NdrResult] = []
     for raw in imap.iter_messages():
         import email
@@ -424,7 +497,7 @@ def collect_ndrs(cfg: BounceConfig, *, imap=None) -> list[NdrResult]:
         if msg.get_content_type().startswith("multipart/report") or "delivery" in (
             msg.get("Subject", "").lower()
         ):
-            out.append(parse_ndr(msg))
+            out.append(parse_ndr(msg, sh))
     return out
 
 
@@ -463,6 +536,8 @@ __all__ = [
     "build_token_map",
     "identify_backend",
     "parse_ndr",
+    "classify_ndr_origin",
+    "sender_hosts_from_cfg",
     "NdrResult",
     "build_probe_message",
     "build_send_plan",

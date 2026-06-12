@@ -17,6 +17,7 @@ from mail_sovereignty.bounce import (
     build_send_plan,
     build_summary,
     build_token_map,
+    classify_ndr_origin,
     collect_ndrs,
     identify_backend,
     join_results,
@@ -24,6 +25,7 @@ from mail_sovereignty.bounce import (
     parse_ndr,
     reconcile,
     send_probe,
+    sender_hosts_from_cfg,
     verp_address,
     verp_token,
 )
@@ -146,6 +148,66 @@ def test_parse_ndr_extracts_fields_and_backend():
     assert res.identified_backend == "aruba"  # aruba.it precede postfix
 
 
+# ── origine dell'NDR (quale hop ha rimbalzato) ──────────────────────────────
+@pytest.mark.parametrize(
+    "reporting,frm,sh,expected",
+    [
+        ("dns; mail.comune.x.it", "MAILER-DAEMON@comune.x.it", (), "destination"),
+        ("dns; mx-01.prod.hydra.sophos.com", "d@sophos.com", (), "gateway"),
+        (
+            "dns; googlemail.com",
+            "d@googlemail.com",
+            ("google.com", "googlemail.com"),
+            "sender",
+        ),
+        (None, None, (), "unknown"),
+    ],
+)
+def test_classify_ndr_origin(reporting, frm, sh, expected):
+    assert classify_ndr_origin(reporting, frm, sh) == expected
+
+
+def test_sender_hosts_from_cfg_google_aliases():
+    cfg = BounceConfig(
+        smtp_host="smtp.gmail.com",
+        from_address="probe@mitt.it",
+        verp_format="bounce+{token}@mitt.it",
+    )
+    sh = sender_hosts_from_cfg(cfg)
+    assert "google.com" in sh and "googlemail.com" in sh and "mitt.it" in sh
+
+
+def _ndr_from(reporting_mta: str, frm: str) -> str:
+    return (
+        f"From: {frm}\n"
+        "To: bounce+tok@mitt.it\n"
+        "Received: from relay.a by relay.b\n"
+        "Subject: Undelivered Mail\n"
+        'Content-Type: multipart/report; boundary="B"\n\n'
+        "--B\n"
+        "Content-Type: message/delivery-status\n\n"
+        f"Reporting-MTA: {reporting_mta}\n"
+        "Status: 5.1.1\n"
+        "Remote-MTA: dns; mx.aruba.it\n"
+        "Diagnostic-Code: smtp; 550 User unknown\n\n"
+        "--B--\n"
+    )
+
+
+def test_parse_ndr_origin_from_and_received():
+    raw = _ndr_from("dns; mx-01.prod.hydra.sophos.com", "MAILER-DAEMON@sophos.com")
+    res = parse_ndr(email.message_from_string(raw))
+    assert res.ndr_origin == "gateway"  # gateway antispam ricevente
+    assert "sophos" in res.ndr_from
+    assert any("relay.b" in r for r in res.received_chain)
+
+
+def test_parse_ndr_origin_sender_with_hosts():
+    raw = _ndr_from("dns; googlemail.com", "MAILER-DAEMON@googlemail.com")
+    res = parse_ndr(email.message_from_string(raw), ("google.com", "googlemail.com"))
+    assert res.ndr_origin == "sender"  # generato dal nostro smarthost
+
+
 # ── send_probe (smarthost finto) ────────────────────────────────────────────
 class FakeSMTP:
     def __init__(self, refused=None, raise_exc=None):
@@ -221,6 +283,18 @@ def test_join_and_summary_with_ndr():
     assert summ["by_backend"]["aruba"] == 1
     assert summ["reclassifiable"] == 1
     assert build_detail([s_bounced], [ndr])[0]["domain"] == "target.it"
+
+
+def test_join_no_reclassify_when_ndr_from_sender():
+    cfg = BounceConfig(dry_run=False)
+    s = send_probe(cfg, {"domain": "s.it"}, smtp=FakeSMTP())
+    raw = _ndr_from("dns; googlemail.com", "MAILER-DAEMON@googlemail.com").replace(
+        "bounce+tok@", "bounce+" + verp_token("s.it") + "@"
+    )
+    ndr = parse_ndr(email.message_from_string(raw), ("googlemail.com",))
+    row = join_results([s], [ndr])[0]
+    assert row["ndr_origin"] == "sender"
+    assert row["reconcile"] is None  # il nostro smarthost non rivela il backend
 
 
 # ── collect_ndrs (IMAP finto) ───────────────────────────────────────────────
