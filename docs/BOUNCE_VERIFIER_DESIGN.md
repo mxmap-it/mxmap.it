@@ -12,7 +12,7 @@ reale e correggere `provider` / `mx_jurisdiction` / `classification_confidence`.
 
 | # | Requisito | Sezione |
 |---|---|---|
-| R1 | Invio **sempre**; **registrare** se c'è validazione destinatario a RCPT TO | §3 (flusso unico) |
+| R1 | Invio via smarthost; la validazione destinatario emerge **dall'NDR** | §3 (smarthost + NDR) |
 | R2 | Email con header/oggetto/contenuto forti anti-spam | §5 (deliverability) |
 | R3 | Rate-limit per **MX e IP** di destinazione; preparare prima il **pool** | §6 (pool) |
 | R4 | **Log** preciso | §7 (schema JSONL) |
@@ -33,39 +33,38 @@ reale e correggere `provider` / `mx_jurisdiction` / `classification_confidence`.
   eseguito **dal server** (vantage reale), perché risoluzione, reachability e
   reputazione IP dipendono dal punto di invio.
 
-## 3. Flusso unico: l'invio si fa SEMPRE, registrando la validazione a RCPT TO (R1)
+## 3. Flusso: invio via smarthost + analisi dei bounce/NDR (R1)
 
-**Un solo tentativo di invio per dominio, sempre**, che porta avanti l'intera
-conversazione SMTP fino a `DATA`. La validazione-destinatario a RCPT TO **non**
-decide se inviare: è un **dato che registriamo** mentre l'invio procede.
+Si **invia** un'email di test a un indirizzo inesistente di ogni dominio
+**attraverso lo smarthost autenticato** (Workspace, SPF/DKIM/DMARC allineati →
+buona deliverability). **Niente direct-to-MX** (finirebbe in spam) e **niente
+RCPT TO sincrono**. Gli esiti si leggono **dai bounce/NDR** che tornano alla
+casella mittente.
 
-Per ogni dominio: risolvi MX → `connect MX:25` → `EHLO` (registra banner/feature)
-→ `MAIL FROM:<verp>` → `RCPT TO:<inesistente@dominio>` → **registra codice+testo**
-→ se accettato, `DATA` con l'email completa (§5) → email **ingerita** → si attende
-il bounce asincrono (§8).
+Per ogni dominio: apri **una** connessione allo smarthost (riusata per tutti) →
+`sendmail(<VERP>, <inesistente@dominio>, email)` → lo smarthost accetta e
+rilancia → (asincrono) eventuale **NDR** alla casella VERP → IMAP + `parse_ndr`.
 
-| risposta RCPT TO | campo `rcpt_validation` | cosa accade all'invio | il backend si legge da |
-|---|---|---|---|
-| **5xx** user unknown | `rejected_5xx` — il server **valida** i destinatari (mailstore integrato) | il server rifiuta il destinatario → non si arriva a DATA, niente ingestion | **testo del 5xx** + banner EHLO |
-| **2xx** accept | `accepted_2xx` — **nessuna** validazione sincrona (relay/gateway/catch-all) | si procede a `DATA` → email **ingerita** | **NDR** asincrono (o `accept_silent` se non torna indietro) |
-| **4xx** | `tempfail` | rinvio temporaneo | retry |
-| no connect / no DNS | `unreachable` | — | esito `mx_unreachable` |
+| esito | come si determina | il backend si legge da |
+|---|---|---|
+| `bounced` | è arrivato un NDR correlato al token VERP | `Diagnostic-Code`/`Remote-MTA` dell'NDR (es. «550 User unknown» da `mx.aruba.it`) |
+| `no_bounce` | inviato, nessun NDR nella finestra | — (catch-all / accettato / drop silenzioso) |
+| `not_submitted` | lo smarthost ha rifiutato l'invio | errore SMTP locale |
 
-Il punto (R1): **sempre invio**; il fatto che ci sia o no validazione del
-destinatario a RCPT TO è una **caratteristica registrata** del server, non una
-condizione che cambia la procedura. Di per sé è già un segnale architetturale:
-5xx sincrono = server che conosce i suoi utenti; accept-then-bounce =
-relay/gateway con backend separato. Entrambi i percorsi identificano il backend
-(uno dal testo 5xx, l'altro dall'NDR).
+Nota (R1): il fatto che il destinatario validi o no l'indirizzo emerge
+**comunque**, ma dall'NDR (asincrono) invece che da una RCPT TO sincrona. Un
+«550 User unknown» nell'NDR dice che il backend valida i destinatari e ne nomina
+l'MTA. Per i 26 MX non risolvibili, è lo smarthost stesso a generare subito un
+NDR di «DNS/no route» → esito anomalo registrato.
 
 ## 4. Tassonomia degli esiti (per i report)
 
-`rcpt_rejected` (backend identificato dal 5xx) · `accept_then_bounce` (backend
-dall'NDR) · `accept_silent` (nessun bounce) · `mx_unreachable` (no connect/no
-DNS) · `tempfail` (4xx persistente). Ogni esito → eventuale nuovo
-`provider`/`jurisdiction`/`confidence`.
+`bounced` (NDR ricevuto → backend identificato) · `no_bounce` (inviato, nessun
+NDR → catch-all/accettato/silent) · `not_submitted` (smarthost ha rifiutato).
+Ogni `bounced` con backend noto → eventuale nuovo
+`provider`/`jurisdiction`/`confidence` (riconciliazione).
 
-## 5. Deliverability dell'email di Fase 2 (R2)
+## 5. Deliverability dell'email di test (R2)
 
 - **Mittente:** mailbox reale su dominio Workspace dedicato con **SPF + DKIM +
   DMARC** allineati (altrimenti molti MX rifiutano o filtrano).
@@ -143,7 +142,8 @@ non in SMTP diretto dall'IP del server (reputazione scarsa).
 dall'utente al momento dell'invio.
 
 **Decisioni — CHIUSE:**
-- D1 ✅ flusso unico «invio sempre + registra `rcpt_validation`».
+- D1 ✅ **invio via smarthost + analisi NDR** (niente direct-to-MX né RCPT TO
+  sincrono: finirebbe in spam — gli esiti si leggono dai bounce).
 - D2 ✅ invio **dal server** via **smarthost Workspace autenticato** (smtp/TLS).
 - D3 ✅ i non risolvibili → marcati `mx_unreachable` **e** confluiscono nel
   tracking trasversale delle **anomalie** (§11).

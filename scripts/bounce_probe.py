@@ -9,7 +9,8 @@ Sottocomandi:
   --report       genera report_summary.{json,md} + report_detail.csv dal log
 
 Logica e I/O nel modulo src/mail_sovereignty/bounce.py (testato). L'invio reale
-è direct-to-MX e va abilitato esplicitamente; di default tutto è in dry-run.
+passa per lo smarthost autenticato (Workspace) e va abilitato esplicitamente;
+di default tutto è in dry-run. Gli esiti si leggono poi dagli NDR (--collect-ndr).
 """
 
 from __future__ import annotations
@@ -120,18 +121,26 @@ def run_send(cfg: bounce.BounceConfig, cands: list[dict]) -> int:
         cfg.per_ip_min_interval_sec,
     )
     by_dom = {c["domain"]: c for c in doms}
-    results = []
+    conn = bounce.open_smarthost(cfg)
+    sends = []
     start = time.monotonic()
-    print(f"INVIO reale (direct-to-MX) su {len(plan)} domini...", file=sys.stderr)
-    for step in plan:
-        wait = step["offset_sec"] - (time.monotonic() - start)
-        if wait > 0:
-            time.sleep(wait)
-        res = bounce.probe_domain(cfg, by_dom[step["domain"]])
-        results.append(res)
-        bounce.write_jsonl(LOG, [{"type": "probe", **bounce.asdict(res)}])
-        print(f"  {res.domain:30} rcpt={res.rcpt_validation:14} outcome={res.outcome}", file=sys.stderr)
-    _write_reports(results, [])
+    print(f"INVIO via smarthost {cfg.smtp_host} su {len(plan)} domini...", file=sys.stderr)
+    try:
+        for step in plan:
+            wait = step["offset_sec"] - (time.monotonic() - start)
+            if wait > 0:
+                time.sleep(wait)
+            res = bounce.send_probe(cfg, by_dom[step["domain"]], smtp=conn)
+            sends.append(res)
+            bounce.write_jsonl(LOG, [{"type": "send", **bounce.asdict(res)}])
+            print(f"  {res.domain:30} submitted={res.submitted} {res.error or ''}", file=sys.stderr)
+    finally:
+        try:
+            conn.quit()
+        except Exception:
+            pass
+    print("Invii completati. Attendi la finestra NDR, poi --collect-ndr e --report.", file=sys.stderr)
+    _write_reports(sends, [])
     return 0
 
 
@@ -142,32 +151,31 @@ def run_collect(cfg: bounce.BounceConfig) -> int:
     return 0
 
 
-def _load_log() -> tuple[list[bounce.ProbeResult], list[bounce.NdrResult]]:
-    results, ndrs = [], []
+def _load_log() -> tuple[list[bounce.SendResult], list[bounce.NdrResult]]:
+    sends, ndrs = [], []
     if not LOG.exists():
-        return results, ndrs
+        return sends, ndrs
     for line in LOG.read_text(encoding="utf-8").splitlines():
         rec = json.loads(line)
-        t = rec.pop("type", "probe")
-        if t == "probe":
-            results.append(bounce.ProbeResult(**{k: rec.get(k) for k in bounce.ProbeResult.__dataclass_fields__ if k in rec}))
+        t = rec.pop("type", "send")
+        if t == "send":
+            sends.append(bounce.SendResult(**{k: rec.get(k) for k in bounce.SendResult.__dataclass_fields__ if k in rec}))
         else:
             ndrs.append(bounce.NdrResult(**{k: rec.get(k) for k in bounce.NdrResult.__dataclass_fields__ if k in rec}))
-    return results, ndrs
+    return sends, ndrs
 
 
-def _write_reports(results, ndrs) -> None:
-    summ = bounce.build_summary(results, ndrs)
-    detail = bounce.build_detail(results)
+def _write_reports(sends, ndrs) -> None:
+    summ = bounce.build_summary(sends, ndrs)
+    detail = bounce.build_detail(sends, ndrs)
     OUTDIR.mkdir(parents=True, exist_ok=True)
     (OUTDIR / "report_summary.json").write_text(json.dumps(summ, ensure_ascii=False, indent=2), encoding="utf-8")
     md = ["# Bounce-verifier — rendiconto sintetico", ""]
-    md.append(f"- enti sondati: **{summ['n_probed']}** · NDR raccolti: {summ['n_ndr']} · riclassificabili: **{summ['reclassifiable']}**")
+    md.append(f"- inviati: **{summ['n_sent']}** · NDR raccolti: {summ['n_ndr']} · riclassificabili: **{summ['reclassifiable']}**")
     md.append(f"- per esito: {summ['by_outcome']}")
-    md.append(f"- per validazione RCPT: {summ['by_rcpt_validation']}")
-    md.append(f"- per backend identificato: {summ['by_backend']}")
+    md.append(f"- per backend identificato (da NDR): {summ['by_backend']}")
     (OUTDIR / "report_summary.md").write_text("\n".join(md), encoding="utf-8")
-    cols = ["domain", "mx_host", "mx_ip", "rcpt_code", "rcpt_validation", "outcome", "identified_backend", "error"]
+    cols = ["domain", "submitted", "outcome", "identified_backend", "ndr_status", "ndr_diagnostic", "remote_mta", "error"]
     with open(OUTDIR / "report_detail.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()

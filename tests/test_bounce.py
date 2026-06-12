@@ -1,8 +1,9 @@
 """Test del bounce-verifier (src/mail_sovereignty/bounce.py).
 
-Coprono la logica pura (classify_rcpt, identify_backend, parse_ndr, VERP,
-pool, reconcile, report, build_probe_message, load_config) e il flusso
-``probe_domain`` / ``collect_ndrs`` con SMTP/IMAP finti — nessuna rete reale.
+Approccio: invio via smarthost + analisi NDR. Coprono la logica pura
+(identify_backend, parse_ndr, VERP, pool, reconcile, join, report,
+build_probe_message, load_config) e ``send_probe`` / ``collect_ndrs`` con
+SMTP/IMAP finti — nessuna rete reale.
 """
 
 import email
@@ -16,46 +17,29 @@ from mail_sovereignty.bounce import (
     build_send_plan,
     build_summary,
     build_token_map,
-    classify_rcpt,
     collect_ndrs,
     identify_backend,
+    join_results,
     load_config,
     parse_ndr,
-    probe_domain,
     reconcile,
+    send_probe,
     verp_address,
     verp_token,
 )
-
-
-# ── classify_rcpt ───────────────────────────────────────────────────────────
-@pytest.mark.parametrize(
-    "code,expected",
-    [
-        (250, "accepted_2xx"),
-        (251, "accepted_2xx"),
-        (550, "rejected_5xx"),
-        (551, "rejected_5xx"),
-        (450, "tempfail"),
-        (None, "unreachable"),
-    ],
-)
-def test_classify_rcpt(code, expected):
-    assert classify_rcpt(code) == expected
 
 
 # ── VERP ────────────────────────────────────────────────────────────────────
 def test_verp_token_stable_and_distinct():
     assert verp_token("comune.x.it") == verp_token("comune.x.it")
     assert verp_token("comune.x.it") != verp_token("comune.y.it")
-    assert verp_token("COMUNE.X.IT") == verp_token("comune.x.it")  # case-insensitive
+    assert verp_token("COMUNE.X.IT") == verp_token("comune.x.it")
 
 
 def test_verp_address_and_token_map():
     cfg = BounceConfig(verp_format="bounce+{token}@mitt.it")
-    addr = verp_address(cfg, "comune.x.it")
     tok = verp_token("comune.x.it")
-    assert addr == f"bounce+{tok}@mitt.it"
+    assert verp_address(cfg, "comune.x.it") == f"bounce+{tok}@mitt.it"
     assert build_token_map(["comune.x.it"]) == {tok: "comune.x.it"}
 
 
@@ -63,12 +47,12 @@ def test_verp_address_and_token_map():
 @pytest.mark.parametrize(
     "texts,expected",
     [
-        (("220 mx.aruba.it ESMTP",), "aruba"),
+        (("dns; mx.aruba.it",), "aruba"),
         (("550 User unknown", "dns; mail.protection.outlook.com"), "microsoft"),
         (("dns; alt1.aspmx.l.google.com",), "google"),
         (("550 5.1.1 unknown (Postfix)",), "postfix"),
         (("mx-01.prod.hydra.sophos.com",), "sophos-gw"),
-        (("220 generic esmtp",), None),
+        (("550 generic error",), None),
     ],
 )
 def test_identify_backend(texts, expected):
@@ -87,7 +71,7 @@ def test_probe_message_headers_and_test_declaration():
     assert "TEST" in body and "mxmap.it" in body  # dichiara che è un test
 
 
-# ── build_send_plan (serializzazione per IP) ────────────────────────────────
+# ── build_send_plan ─────────────────────────────────────────────────────────
 def test_send_plan_serializes_same_ip():
     items = [
         ("a.it", "1.1.1.1"),
@@ -97,36 +81,34 @@ def test_send_plan_serializes_same_ip():
     ]
     plan = build_send_plan(items, per_ip_interval=45)
     off = {p["domain"]: p["offset_sec"] for p in plan}
-    # stesso IP -> distanziati di 45s; IP diverso -> parte subito
     assert off["a.it"] == 0 and off["b.it"] == 45 and off["c.it"] == 90
     assert off["d.it"] == 0
-    # ordinato per offset crescente
     assert [p["offset_sec"] for p in plan] == sorted(p["offset_sec"] for p in plan)
 
 
 # ── reconcile ───────────────────────────────────────────────────────────────
 def test_reconcile_cloud_provider():
-    r = reconcile("microsoft", "rejected_5xx")
+    r = reconcile("microsoft")
     assert r["provider"] == "microsoft" and r["mx_jurisdiction"] == "foreign"
 
 
 def test_reconcile_italian_provider():
-    r = reconcile("aruba", "accepted_2xx")
+    r = reconcile("aruba")
     assert r["provider"] == "aruba" and r["mx_jurisdiction"] == "domestic"
 
 
 def test_reconcile_gateway_no_reclass():
-    r = reconcile("sophos-gw", "accepted_2xx")
+    r = reconcile("sophos-gw")
     assert "provider" not in r and r["smtp_software"] == "sophos-gw"
 
 
 def test_reconcile_selfhosted_software():
-    r = reconcile("postfix", "rejected_5xx")
+    r = reconcile("postfix")
     assert r["smtp_software"] == "postfix" and r["classification_confidence"] == 0.65
 
 
 def test_reconcile_none():
-    assert reconcile(None, "accepted_2xx") is None
+    assert reconcile(None) is None
 
 
 # ── parse_ndr ───────────────────────────────────────────────────────────────
@@ -156,120 +138,89 @@ Diagnostic-Code: smtp; 550 5.1.1 <x> User unknown (Postfix)
 
 
 def test_parse_ndr_extracts_fields_and_backend():
-    msg = email.message_from_string(_NDR)
-    res = parse_ndr(msg)
+    res = parse_ndr(email.message_from_string(_NDR))
     assert res.verp_token == "abc123def456"
-    assert res.action == "failed"
-    assert res.status == "5.1.1"
+    assert res.action == "failed" and res.status == "5.1.1"
     assert "User unknown" in res.diagnostic_code
     assert "aruba" in res.remote_mta
-    # aruba.it precede postfix nelle keyword -> backend = aruba
-    assert res.identified_backend == "aruba"
+    assert res.identified_backend == "aruba"  # aruba.it precede postfix
 
 
-# ── probe_domain ────────────────────────────────────────────────────────────
+# ── send_probe (smarthost finto) ────────────────────────────────────────────
 class FakeSMTP:
-    def __init__(
-        self, rcpt_code=250, rcpt_text=b"OK", banner="220 mx.test ESMTP", has_tls=False
-    ):
-        self.banner = banner
-        self.peer_ip = "9.9.9.9"
-        self._rcpt = (rcpt_code, rcpt_text)
-        self._has_tls = has_tls
-        self.data_sent = False
-        self.quit_called = False
+    def __init__(self, refused=None, raise_exc=None):
+        self._refused = refused or {}
+        self._raise = raise_exc
+        self.sent = []
 
-    def ehlo(self, name):
-        return (250, b"ok")
-
-    def has_extn(self, name):
-        return self._has_tls and name == "starttls"
-
-    def starttls(self):
-        return (220, b"ready")
-
-    def mail(self, addr):
-        return (250, b"ok")
-
-    def rcpt(self, addr):
-        return self._rcpt
-
-    def data(self, payload):
-        self.data_sent = True
-        return (250, b"queued")
-
-    def quit(self):
-        self.quit_called = True
+    def sendmail(self, from_addr, to_addrs, msg):
+        if self._raise:
+            raise self._raise
+        self.sent.append((from_addr, to_addrs))
+        return self._refused
 
 
-def test_probe_dry_run_does_not_connect():
+def test_send_probe_dry_run_does_not_send():
     cfg = BounceConfig(dry_run=True)
-    called = []
-    res = probe_domain(
-        cfg, {"domain": "x.it", "mx": ["mx.x.it"]}, connect=lambda *a: called.append(a)
-    )
-    assert res.outcome == "dry_run" and res.dry_run is True
-    assert called == []  # nessuna connessione in dry-run
+    fake = FakeSMTP()
+    res = send_probe(cfg, {"domain": "x.it"}, smtp=fake)
+    assert res.submitted is False and res.dry_run is True
+    assert fake.sent == []  # nessun invio in dry-run
 
 
-def test_probe_accepted_sends_data_and_ingested():
-    cfg = BounceConfig(dry_run=False, starttls=False)
-    fake = FakeSMTP(rcpt_code=250)
-    res = probe_domain(
-        cfg, {"domain": "x.it", "mx": ["mx.x.it"]}, connect=lambda *a: fake
-    )
-    assert res.rcpt_validation == "accepted_2xx"
-    assert fake.data_sent is True  # invio SEMPRE fino a DATA quando accettato
-    assert res.outcome == "ingested"
-    assert fake.quit_called is True
+def test_send_probe_accepted_by_smarthost():
+    cfg = BounceConfig(dry_run=False, verp_format="bounce+{token}@mitt.it")
+    fake = FakeSMTP(refused={})
+    res = send_probe(cfg, {"domain": "x.it"}, smtp=fake)
+    assert res.submitted is True
+    # envelope-from VERP + destinatario inesistente del dominio target
+    frm, to = fake.sent[0]
+    assert frm == verp_address(cfg, "x.it")
+    assert to == ["mxmap-probe-no-such-mailbox@x.it"]
 
 
-def test_probe_rejected_records_validation_no_data():
-    cfg = BounceConfig(dry_run=False, starttls=False)
-    fake = FakeSMTP(rcpt_code=550, rcpt_text=b"550 User unknown (Postfix)")
-    res = probe_domain(
-        cfg, {"domain": "x.it", "mx": ["mx.x.it"]}, connect=lambda *a: fake
-    )
-    assert res.rcpt_validation == "rejected_5xx"
-    assert fake.data_sent is False  # rifiutato a RCPT -> niente DATA
-    assert res.outcome == "rcpt_rejected"
-    assert res.identified_backend == "postfix"
-
-
-def test_probe_no_mx_unreachable():
+def test_send_probe_refused_recipient():
     cfg = BounceConfig(dry_run=False)
-    res = probe_domain(cfg, {"domain": "x.it", "mx": []}, connect=lambda *a: FakeSMTP())
-    assert res.outcome == "mx_unreachable"
+    fake = FakeSMTP(refused={"mxmap-probe-no-such-mailbox@x.it": (550, b"no")})
+    res = send_probe(cfg, {"domain": "x.it"}, smtp=fake)
+    assert res.submitted is False
 
 
-def test_probe_connect_failure():
+def test_send_probe_smtp_error():
     cfg = BounceConfig(dry_run=False)
-
-    def boom(*a):
-        raise OSError("refused")
-
-    res = probe_domain(cfg, {"domain": "x.it", "mx": ["mx.x.it"]}, connect=boom)
-    assert res.outcome == "mx_unreachable" and "refused" in res.error
+    fake = FakeSMTP(raise_exc=OSError("auth failed"))
+    res = send_probe(cfg, {"domain": "x.it"}, smtp=fake)
+    assert res.submitted is False and "auth failed" in res.error
 
 
-# ── report ──────────────────────────────────────────────────────────────────
-def test_build_summary_and_detail():
-    cfg = BounceConfig(dry_run=False, starttls=False)
-    r_ok = probe_domain(
-        cfg, {"domain": "a.it", "mx": ["mx.a.it"]}, connect=lambda *a: FakeSMTP(250)
+# ── join_results + report ───────────────────────────────────────────────────
+def test_join_and_summary_with_ndr():
+    cfg = BounceConfig(dry_run=False)
+    s_bounced = send_probe(cfg, {"domain": "target.it"}, smtp=FakeSMTP())
+    s_silent = send_probe(cfg, {"domain": "silent.it"}, smtp=FakeSMTP())
+    s_failed = send_probe(
+        cfg, {"domain": "fail.it"}, smtp=FakeSMTP(raise_exc=OSError("x"))
     )
-    r_rej = probe_domain(
-        cfg,
-        {"domain": "b.it", "mx": ["mx.b.it"]},
-        connect=lambda *a: FakeSMTP(550, b"User unknown (Exchange)"),
+    # un NDR correlato a target.it (stesso token)
+    ndr = parse_ndr(
+        email.message_from_string(_NDR.replace("abc123def456", verp_token("target.it")))
     )
-    summ = build_summary([r_ok, r_rej], [])
-    assert summ["n_probed"] == 2
-    assert summ["by_rcpt_validation"]["rejected_5xx"] == 1
-    assert summ["by_backend"].get("microsoft") == 1  # Exchange -> microsoft
-    detail = build_detail([r_rej])
-    assert detail[0]["domain"] == "b.it"
-    assert detail[0]["reconcile"]["provider"] == "microsoft"
+    rows = join_results([s_bounced, s_silent, s_failed], [ndr])
+    by = {r["domain"]: r["outcome"] for r in rows}
+    assert by["target.it"] == "bounced"
+    assert by["silent.it"] == "no_bounce"
+    assert by["fail.it"] == "not_submitted"
+    # la riga bounced porta backend + suggerimento di riclassificazione
+    target_row = next(r for r in rows if r["domain"] == "target.it")
+    assert target_row["identified_backend"] == "aruba"
+    assert target_row["reconcile"]["provider"] == "aruba"
+
+    summ = build_summary([s_bounced, s_silent, s_failed], [ndr])
+    assert summ["n_sent"] == 2 and summ["n_ndr"] == 1
+    assert summ["by_outcome"]["bounced"] == 1
+    assert summ["by_backend"]["aruba"] == 1
+    assert summ["reclassifiable"] == 1
+    assert build_detail([s_bounced], [ndr])[0]["domain"] == "target.it"
 
 
 # ── collect_ndrs (IMAP finto) ───────────────────────────────────────────────
@@ -298,16 +249,18 @@ def test_load_config(tmp_path):
     p.write_text(
         """
 [smtp]
-starttls = false
+host = "smtp.x.it"
+port = 587
+security = "starttls"
+username = "probe@x.it"
+password = "pw"
 [imap]
 host = "imap.x.it"
-port = 993
-username = "u@x.it"
+username = "probe@x.it"
 [sender]
 from_address = "probe@x.it"
 verp_format = "bounce+{token}@x.it"
 [limits]
-per_ip_min_interval_sec = 30
 ndr_wait_hours = 24
 [run]
 dry_run = false
@@ -315,8 +268,7 @@ dry_run = false
         encoding="utf-8",
     )
     cfg = load_config(p)
-    assert cfg.starttls is False
-    assert cfg.imap_host == "imap.x.it" and cfg.imap_username == "u@x.it"
-    assert cfg.from_address == "probe@x.it"
-    assert cfg.per_ip_min_interval_sec == 30 and cfg.ndr_wait_hours == 24
+    assert cfg.smtp_host == "smtp.x.it" and cfg.smtp_username == "probe@x.it"
+    assert cfg.imap_host == "imap.x.it"
+    assert cfg.from_address == "probe@x.it" and cfg.ndr_wait_hours == 24
     assert cfg.dry_run is False

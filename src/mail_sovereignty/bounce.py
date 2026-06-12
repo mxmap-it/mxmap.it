@@ -1,19 +1,18 @@
 """Bounce-verifier — verifica attiva del backend di posta per i casi a bassa
 confidenza (vedi docs/BOUNCE_VERIFIER_DESIGN.md).
 
-Flusso unico: per ogni dominio si tenta SEMPRE l'invio direct-to-MX, registrando
-``rcpt_validation`` (``rejected_5xx`` / ``accepted_2xx`` / ``tempfail`` /
-``unreachable``); se accettato a RCPT TO si invia anche DATA. Gli NDR asincroni
-(per gli ``accepted_2xx`` che poi rimbalzano) si raccolgono via IMAP correlati
-per VERP.
+Approccio: si **invia** un'email di test verso un indirizzo inesistente di ogni
+dominio target **attraverso lo smarthost autenticato** (es. Google Workspace,
+SPF/DKIM/DMARC allineati → buona deliverability, niente direct-to-MX che
+finirebbe in spam). Si **analizzano poi i bounce/NDR** che tornano alla casella
+mittente: dal Diagnostic-Code / Remote-MTA dell'NDR si identifica l'MTA reale del
+backend e si corregge provider/giurisdizione/confidenza.
 
-NOTA TRANSPORT: per *vedere* la risposta RCPT TO del destinatario (requisito R1)
-l'invio è **direct-to-MX** (connessione diretta all'MX di destinazione, porta
-25). Inviare via smarthost autenticato nasconderebbe la RCPT (lo smarthost
-accetta sempre e rilancia, e il rifiuto torna solo come NDR asincrono).
+Niente RCPT TO sincrono: il fatto che il destinatario validi o no il destinatario
+emerge comunque dall'NDR (es. "550 User unknown"), in modo asincrono.
 
-Le funzioni di logica pura sono testabili senza rete; ``probe_domain`` e
-``collect_ndrs`` accettano factory iniettabili per i test.
+Le funzioni di logica pura sono testabili senza rete; ``send_probe`` e
+``collect_ndrs`` accettano connessioni iniettabili per i test.
 """
 
 from __future__ import annotations
@@ -21,7 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 import tomllib
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 from email.message import EmailMessage, Message
 from pathlib import Path
 
@@ -30,10 +29,13 @@ from pathlib import Path
 
 @dataclass
 class BounceConfig:
-    # invio direct-to-MX
-    helo_hostname: str = "localhost"
+    # smarthost di invio (submission autenticata)
+    smtp_host: str = ""
+    smtp_port: int = 587
+    smtp_security: str = "starttls"  # "starttls" | "tls"
+    smtp_username: str = ""
+    smtp_password: str = ""
     connect_timeout_sec: int = 20
-    starttls: bool = True  # STARTTLS opportunistico se l'MX lo offre
     # mittente / VERP
     from_name: str = "Osservatorio mxmap.it"
     from_address: str = "probe@example.invalid"
@@ -63,9 +65,12 @@ def load_config(path: str | Path) -> BounceConfig:
     limits = raw.get("limits", {})
     run = raw.get("run", {})
     return BounceConfig(
-        helo_hostname=smtp.get("helo_hostname", "localhost"),
+        smtp_host=smtp.get("host", ""),
+        smtp_port=int(smtp.get("port", 587)),
+        smtp_security=smtp.get("security", "starttls"),
+        smtp_username=smtp.get("username", ""),
+        smtp_password=smtp.get("password", ""),
         connect_timeout_sec=int(limits.get("connect_timeout_sec", 20)),
-        starttls=bool(smtp.get("starttls", True)),
         from_name=sender.get("from_name", BounceConfig.from_name),
         from_address=sender.get("from_address", BounceConfig.from_address),
         verp_format=sender.get("verp_format", BounceConfig.verp_format),
@@ -100,25 +105,9 @@ def build_token_map(domains: list[str]) -> dict[str, str]:
     return {verp_token(d): d for d in domains}
 
 
-# ── Classificazione RCPT TO ─────────────────────────────────────────────────
-
-
-def classify_rcpt(code: int | None) -> str:
-    """Mappa il codice SMTP della RCPT TO al campo ``rcpt_validation``."""
-    if code is None:
-        return "unreachable"
-    if 200 <= code < 300:
-        return "accepted_2xx"
-    if 400 <= code < 500:
-        return "tempfail"
-    if 500 <= code < 600:
-        return "rejected_5xx"
-    return "unknown"
-
-
 # ── Identificazione del backend ─────────────────────────────────────────────
 
-# keyword (su banner EHLO, testo del 5xx, diagnostic-code NDR) -> backend
+# keyword (su diagnostic-code/Remote-MTA dell'NDR) -> backend reale
 BACKEND_KEYWORDS: tuple[tuple[str, str], ...] = (
     ("protection.outlook.com", "microsoft"),
     ("outlook.com", "microsoft"),
@@ -153,7 +142,7 @@ BACKEND_KEYWORDS: tuple[tuple[str, str], ...] = (
 
 def identify_backend(*texts: str | None) -> str | None:
     """Identifica il backend reale cercando keyword note nei testi forniti
-    (banner EHLO, testo del rifiuto 5xx, diagnostic-code dell'NDR)."""
+    (diagnostic-code, Remote-MTA, Reporting-MTA dell'NDR)."""
     blob = " ".join(t.lower() for t in texts if t)
     for kw, backend in BACKEND_KEYWORDS:
         if kw in blob:
@@ -247,17 +236,16 @@ def build_probe_message(cfg: BounceConfig, domain: str, token: str) -> EmailMess
     return msg
 
 
-# ── Pool di invio (serializzazione per IP) ──────────────────────────────────
+# ── Pool di invio (serializzazione per IP di destinazione) ──────────────────
 
 
 def build_send_plan(
     items: list[tuple[str, str | None]], per_ip_interval: int
 ) -> list[dict]:
-    """Ordina gli invii distanziando nel tempo quelli verso lo STESSO IP.
+    """Ordina gli invii distanziando nel tempo quelli verso lo STESSO IP di
+    destinazione (per non saturare un singolo backend ricevente).
 
-    ``items`` = lista di (domain, dest_ip). Ritorna una lista di
-    {domain, ip, offset_sec}: gli invii allo stesso IP sono spaziati di almeno
-    ``per_ip_interval`` secondi; domini diversi su IP diversi partono subito.
+    ``items`` = lista di (domain, dest_ip). Ritorna {domain, ip, offset_sec}.
     """
     next_free: dict[str, int] = {}
     plan: list[dict] = []
@@ -270,9 +258,64 @@ def build_send_plan(
     return plan
 
 
-# ── Riconciliazione (esito -> nuova classificazione) ────────────────────────
+# ── Invio via smarthost ─────────────────────────────────────────────────────
 
-# backend identificato -> (provider, hint giurisdizione, confidence)
+
+@dataclass
+class SendResult:
+    domain: str
+    verp_token: str
+    submitted: bool = False
+    smtp_text: str | None = None
+    error: str | None = None
+    dry_run: bool = True
+
+
+def send_probe(cfg: BounceConfig, cand: dict, *, smtp=None) -> SendResult:
+    """Invia l'email di probe verso il dominio target ATTRAVERSO lo smarthost.
+
+    Non apre connessioni in ``cfg.dry_run``. ``smtp`` (connessione smarthost già
+    aperta e autenticata) è iniettabile per i test; il chiamante reale la apre
+    una volta con ``open_smarthost`` e la riusa per tutti gli invii.
+    """
+    domain = cand["domain"]
+    token = verp_token(domain)
+    res = SendResult(domain=domain, verp_token=token, dry_run=cfg.dry_run)
+    if cfg.dry_run:
+        return res
+    msg = build_probe_message(cfg, domain, token)
+    target = f"mxmap-probe-no-such-mailbox@{domain}"
+    try:
+        refused = smtp.sendmail(verp_address(cfg, domain), [target], msg.as_bytes())
+        # sendmail ritorna {} se accettato; un dict non vuoto = destinatari rifiutati
+        res.submitted = not refused
+        res.smtp_text = "accepted" if not refused else str(refused)
+    except Exception as exc:  # pragma: no cover - rete reale
+        res.error = f"send: {exc}"
+    return res
+
+
+def open_smarthost(cfg: BounceConfig):  # pragma: no cover - rete reale
+    """Apre e autentica una connessione allo smarthost (submission)."""
+    import smtplib
+
+    if cfg.smtp_security == "tls":
+        conn = smtplib.SMTP_SSL(
+            cfg.smtp_host, cfg.smtp_port, timeout=cfg.connect_timeout_sec
+        )
+    else:
+        conn = smtplib.SMTP(
+            cfg.smtp_host, cfg.smtp_port, timeout=cfg.connect_timeout_sec
+        )
+        conn.ehlo()
+        conn.starttls()
+        conn.ehlo()
+    conn.login(cfg.smtp_username, cfg.smtp_password)
+    return conn
+
+
+# ── Riconciliazione (backend NDR -> nuova classificazione) ──────────────────
+
 _RECONCILE: dict[str, tuple[str, str | None, float]] = {
     "microsoft": ("microsoft", "foreign", 0.85),
     "google": ("google", "foreign", 0.85),
@@ -283,11 +326,11 @@ _RECONCILE: dict[str, tuple[str, str | None, float]] = {
 }
 
 
-def reconcile(backend: str | None, rcpt_validation: str) -> dict | None:
-    """Mappa il backend identificato a un eventuale aggiornamento di
-    provider/jurisdiction/confidence. Ritorna None se inconcludente o se il
-    backend è solo un software self-hosted (resta ``independent``, ma annotiamo
-    il software e alziamo un po' la confidenza perché ora è corroborato)."""
+def reconcile(backend: str | None) -> dict | None:
+    """Mappa il backend identificato (dall'NDR) a un eventuale aggiornamento di
+    provider/jurisdiction/confidence. None se inconcludente; per software
+    self-hosted resta ``independent`` ma annotiamo il software e alziamo la
+    confidenza perché ora corroborato."""
     if not backend:
         return None
     if backend in _RECONCILE:
@@ -298,168 +341,68 @@ def reconcile(backend: str | None, rcpt_validation: str) -> dict | None:
             "classification_confidence": conf,
         }
     if backend.endswith("-gw"):
-        # gateway identificato ma backend dietro ancora ignoto: non riclassifica
         return {"smtp_software": backend}
-    # software self-hosted (postfix/exim/zimbra/…): resta independent, corroborato
     return {"smtp_software": backend, "classification_confidence": 0.65}
 
 
-# ── Esito del probe ─────────────────────────────────────────────────────────
+# ── Join + report ───────────────────────────────────────────────────────────
 
 
-@dataclass
-class ProbeResult:
-    domain: str
-    mx_host: str | None = None
-    mx_ip: str | None = None
-    banner: str | None = None
-    rcpt_code: int | None = None
-    rcpt_text: str | None = None
-    rcpt_validation: str = "unreachable"
-    data_code: int | None = None
-    outcome: str = "unreachable"
-    identified_backend: str | None = None
-    verp_token: str | None = None
-    error: str | None = None
-    dry_run: bool = True
-    extra: dict = field(default_factory=dict)
-
-
-def _outcome(rcpt_validation: str, data_code: int | None) -> str:
-    if rcpt_validation == "rejected_5xx":
-        return "rcpt_rejected"
-    if rcpt_validation == "accepted_2xx":
-        # ingerita: l'eventuale bounce arriva dopo via IMAP
-        return (
-            "ingested" if (data_code and 200 <= data_code < 300) else "accept_partial"
+def join_results(sends: list[SendResult], ndrs: list[NdrResult]) -> list[dict]:
+    """Unisce invii e NDR per token VERP. Esito per dominio:
+    ``bounced`` (NDR ricevuto → backend), ``no_bounce`` (inviato, nessun NDR →
+    catch-all/accettato/silent), ``not_submitted`` (invio fallito)."""
+    ndr_by_token: dict[str, NdrResult] = {n.verp_token: n for n in ndrs if n.verp_token}
+    rows = []
+    for s in sends:
+        ndr = ndr_by_token.get(s.verp_token)
+        if not s.submitted and not s.dry_run:
+            outcome = "not_submitted"
+        elif ndr is not None:
+            outcome = "bounced"
+        elif s.dry_run:
+            outcome = "dry_run"
+        else:
+            outcome = "no_bounce"
+        backend = ndr.identified_backend if ndr else None
+        rows.append(
+            {
+                "domain": s.domain,
+                "verp_token": s.verp_token,
+                "submitted": s.submitted,
+                "outcome": outcome,
+                "identified_backend": backend,
+                "ndr_status": ndr.status if ndr else None,
+                "ndr_diagnostic": ndr.diagnostic_code if ndr else None,
+                "remote_mta": ndr.remote_mta if ndr else None,
+                "reconcile": reconcile(backend),
+                "error": s.error,
+            }
         )
-    if rcpt_validation == "tempfail":
-        return "tempfail"
-    return "mx_unreachable"
+    return rows
 
 
-def probe_domain(cfg: BounceConfig, cand: dict, *, connect=None) -> ProbeResult:
-    """Esegue il flusso unico verso il primo MX del candidato.
-
-    Se ``cfg.dry_run`` non apre connessioni: ritorna un ProbeResult marcato
-    dry_run. ``connect(host, port, timeout)`` è iniettabile (per i test);
-    di default usa smtplib direct-to-MX.
-    """
-    domain = cand["domain"]
-    mx_list = cand.get("mx") or []
-    mx_host = mx_list[0] if mx_list else None
-    token = verp_token(domain)
-    res = ProbeResult(
-        domain=domain, mx_host=mx_host, verp_token=token, dry_run=cfg.dry_run
-    )
-
-    if cfg.dry_run:
-        res.outcome = "dry_run"
-        return res
-    if not mx_host:
-        res.outcome = "mx_unreachable"
-        res.error = "no MX"
-        return res
-
-    if connect is None:
-        connect = _default_connect
-    try:
-        conn = connect(mx_host, 25, cfg.connect_timeout_sec)
-    except Exception as exc:  # pragma: no cover - rete reale
-        res.outcome = "mx_unreachable"
-        res.rcpt_validation = "unreachable"
-        res.error = f"connect: {exc}"
-        return res
-
-    try:
-        res.banner = getattr(conn, "banner", None)
-        conn.ehlo(cfg.helo_hostname)
-        if cfg.starttls and getattr(conn, "has_extn", lambda x: False)("starttls"):
-            conn.starttls()
-            conn.ehlo(cfg.helo_hostname)
-        res.mx_ip = getattr(conn, "peer_ip", None)
-        conn.mail(verp_address(cfg, domain))
-        code, text = conn.rcpt(f"mxmap-probe-no-such-mailbox@{domain}")
-        res.rcpt_code, res.rcpt_text = code, _as_text(text)
-        res.rcpt_validation = classify_rcpt(code)
-        if res.rcpt_validation == "accepted_2xx":
-            msg = build_probe_message(cfg, domain, token)
-            dcode, _dtext = conn.data(msg.as_bytes())
-            res.data_code = dcode
-        res.identified_backend = identify_backend(res.banner, res.rcpt_text)
-        res.outcome = _outcome(res.rcpt_validation, res.data_code)
-    except Exception as exc:  # pragma: no cover - rete reale
-        res.error = f"smtp: {exc}"
-        res.outcome = res.outcome or "error"
-    finally:
-        try:
-            conn.quit()
-        except Exception:  # pragma: no cover
-            pass
-    return res
-
-
-def _as_text(v) -> str | None:
-    if v is None:
-        return None
-    if isinstance(v, bytes):
-        return v.decode("utf-8", "replace")
-    return str(v)
-
-
-def _default_connect(host: str, port: int, timeout: int):  # pragma: no cover - rete
-    import smtplib
-
-    conn = smtplib.SMTP(timeout=timeout)
-    code, banner = conn.connect(host, port)
-    conn.banner = _as_text(banner)
-    try:
-        conn.peer_ip = conn.sock.getpeername()[0]
-    except Exception:
-        conn.peer_ip = None
-    return conn
-
-
-# ── Report ──────────────────────────────────────────────────────────────────
-
-
-def build_summary(results: list[ProbeResult], ndrs: list[NdrResult]) -> dict:
-    """Rendiconto sintetico: conteggi per esito, per rcpt_validation, per
-    backend identificato, e n. enti riclassificabili."""
+def build_summary(sends: list[SendResult], ndrs: list[NdrResult]) -> dict:
+    """Rendiconto sintetico: invii, bounce, esiti, backend identificati,
+    enti riclassificabili."""
     from collections import Counter
 
-    outcomes = Counter(r.outcome for r in results)
-    rcpt = Counter(r.rcpt_validation for r in results)
-    backends = Counter(
-        b
-        for b in (
-            [r.identified_backend for r in results]
-            + [n.identified_backend for n in ndrs]
-        )
-        if b
-    )
-    reclassifiable = sum(
-        1 for r in results if reconcile(r.identified_backend, r.rcpt_validation)
-    ) + sum(1 for n in ndrs if reconcile(n.identified_backend, "accepted_2xx"))
+    rows = join_results(sends, ndrs)
+    outcomes = Counter(r["outcome"] for r in rows)
+    backends = Counter(r["identified_backend"] for r in rows if r["identified_backend"])
+    reclassifiable = sum(1 for r in rows if r["reconcile"])
     return {
-        "n_probed": len(results),
+        "n_sent": sum(1 for s in sends if s.submitted),
         "n_ndr": len(ndrs),
         "by_outcome": dict(outcomes),
-        "by_rcpt_validation": dict(rcpt),
         "by_backend": dict(backends),
         "reclassifiable": reclassifiable,
     }
 
 
-def build_detail(results: list[ProbeResult]) -> list[dict]:
-    """Rendiconto analitico: una riga per dominio con la transazione + il
-    suggerimento di riclassificazione."""
-    rows = []
-    for r in results:
-        row = asdict(r)
-        row["reconcile"] = reconcile(r.identified_backend, r.rcpt_validation)
-        rows.append(row)
-    return rows
+def build_detail(sends: list[SendResult], ndrs: list[NdrResult]) -> list[dict]:
+    """Rendiconto analitico: una riga per dominio (invio + NDR + suggerimento)."""
+    return join_results(sends, ndrs)
 
 
 # ── Raccolta NDR via IMAP ───────────────────────────────────────────────────
@@ -467,8 +410,8 @@ def build_detail(results: list[ProbeResult]) -> list[dict]:
 
 def collect_ndrs(cfg: BounceConfig, *, imap=None) -> list[NdrResult]:
     """Legge gli NDR dalla casella IMAP e li parsa. ``imap`` è iniettabile per
-    i test (oggetto con .search/.fetch sui messaggi grezzi). In dry_run o senza
-    host IMAP ritorna []."""
+    i test (oggetto con ``iter_messages()`` sui messaggi grezzi). In dry_run o
+    senza host IMAP ritorna []."""
     if cfg.dry_run or not cfg.imap_host:
         return []
     if imap is None:  # pragma: no cover - rete reale
@@ -495,9 +438,9 @@ def _default_imap(cfg: BounceConfig):  # pragma: no cover - rete reale
 
     class _Wrap:
         def iter_messages(self):
-            typ, data = conn.search(None, "ALL")
+            _typ, data = conn.search(None, "ALL")
             for num in data[0].split():
-                t, d = conn.fetch(num, "(RFC822)")
+                _t, d = conn.fetch(num, "(RFC822)")
                 if d and d[0]:
                     yield d[0][1]
 
@@ -518,17 +461,19 @@ __all__ = [
     "verp_token",
     "verp_address",
     "build_token_map",
-    "classify_rcpt",
     "identify_backend",
     "parse_ndr",
     "NdrResult",
     "build_probe_message",
     "build_send_plan",
+    "SendResult",
+    "send_probe",
+    "open_smarthost",
     "reconcile",
-    "ProbeResult",
-    "probe_domain",
+    "join_results",
     "collect_ndrs",
     "build_summary",
     "build_detail",
     "write_jsonl",
+    "asdict",
 ]
