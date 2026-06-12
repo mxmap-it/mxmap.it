@@ -113,11 +113,7 @@ def main() -> int:
     print(f"  snapshot precedente: {prev_path.name if prev_path else '(nessuno)'} ({len(prev)})")
 
     runs_path = HISTORY / "runs.jsonl"
-    prev_runs = [r for r in read_jsonl(runs_path) if r.get("run_id") != args.run_id]
-    last_sha = prev_runs[-1].get("git_sha") if prev_runs else None
-    git_changed = bool(args.git_sha and last_sha and args.git_sha != last_sha)
-
-    events, counts = H.diff_runs(prev, curr, git_changed)
+    events, counts = H.diff_runs(prev, curr)
     print(f"  eventi: {len(events)}  " + " ".join(f"{k}={v}" for k, v in counts.most_common()))
 
     # 1. snapshot canonico
@@ -169,13 +165,11 @@ def main() -> int:
         )
 
     # 5. CHANGELOG markdown leggibile
-    by_cause = Counter(e["cause"] for e in events)
     md = [
         f"# Changelog run {args.run_id}",
         "",
         f"- git: `{args.git_sha}` - pipeline: `{args.pipeline_version}`",
         f"- entita: {len(curr)} - cambiamenti: {len(events)}",
-        "- per causa: " + ", ".join(f"{k}={v}" for k, v in by_cause.most_common()),
         "",
     ]
     order = ("resolved", "regressed", "provider_change", "sovereignty_change", "jurisdiction_change", "new", "removed")
@@ -185,7 +179,7 @@ def main() -> int:
             continue
         md.append(f"## {ctype} ({len(evs)})")
         for e in evs[:50]:
-            md.append(f"- **{e['name'][:50]}** ({e['ipa']}): `{e.get('from')}` -> `{e.get('to')}` [{e['cause']}]")
+            md.append(f"- **{e['name'][:50]}** ({e['ipa']}): `{e.get('from')}` -> `{e.get('to')}`")
         if len(evs) > 50:
             md.append(f"- ... +{len(evs) - 50} altri")
         md.append("")

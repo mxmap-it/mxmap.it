@@ -1065,15 +1065,11 @@ function ipaFromBfs(bfs) {
   return ipa.replace(/[^A-Za-z0-9_.-]/g, '_');
 }
 
-const HIST_CAUSE_COLOR = { reality: '#1f6feb', methodology: '#bf8700', uncertain: '#999', source: '#6b7280' };
-
 function entityHistoryHtml(d) {
   if (!d || !d.timeline || !d.timeline.length) return '';
   const rows = d.timeline.slice().reverse().slice(0, 8).map(function (t) {
-    const c = HIST_CAUSE_COLOR[t.cause] || '#999';
     return `<tr><td class="pri">${escapeHtml(t.run_id)}</td>` +
-      `<td>${escapeHtml(t.change)}: <code>${escapeHtml(t.from)}</code>→<code>${escapeHtml(t.to)}</code> ` +
-      `<span style="background:${c};color:#fff;padding:0 5px;border-radius:3px;font-size:10px">${escapeHtml(t.cause)}</span></td></tr>`;
+      `<td>${escapeHtml(t.change)}: <code>${escapeHtml(t.from)}</code>→<code>${escapeHtml(t.to)}</code></td></tr>`;
   }).join('');
   return `<div class="popup-section"><div class="popup-section-title">Storia di questo ente ` +
     `<span class="popup-section-hint">(${d.n_changes} cambiamenti)</span></div>` +

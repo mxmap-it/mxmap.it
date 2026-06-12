@@ -118,12 +118,11 @@ def _row(**kw):
 
 
 def test_change_new_and_removed():
-    assert classify_change(None, _row(), False)[0]["change"] == "new"
-    assert classify_change(None, _row(), False)[0]["cause"] == "source"
-    assert classify_change(_row(), None, False)[0]["change"] == "removed"
+    assert classify_change(None, _row())[0]["change"] == "new"
+    assert classify_change(_row(), None)[0]["change"] == "removed"
 
 
-def test_change_resolved_methodology():
+def test_change_resolved():
     prev = _row(
         provider="unknown",
         sovereignty="Sconosciuto",
@@ -134,48 +133,40 @@ def test_change_resolved_methodology():
     curr = _row(
         provider="microsoft", sovereignty="USA (CLOUD Act)", method="aoo_uo_tier6"
     )
-    evs = classify_change(prev, curr, False)
-    resolved = [e for e in evs if e["change"] == "resolved"]
-    assert resolved and resolved[0]["cause"] == "methodology"  # method cambiato
+    assert any(e["change"] == "resolved" for e in classify_change(prev, curr))
 
 
 def test_change_regressed():
     prev = _row(provider="microsoft", sovereignty="USA (CLOUD Act)")
     curr = _row(provider="unknown", sovereignty="Sconosciuto", mx0=None, has_mx=False)
-    evs = classify_change(prev, curr, False)
-    assert any(e["change"] == "regressed" for e in evs)
+    assert any(e["change"] == "regressed" for e in classify_change(prev, curr))
 
 
-def test_change_provider_reality_vs_uncertain():
-    # stessa method, git invariato -> reality (la PA è migrata)
+def test_change_provider():
     prev = _row(provider="aruba", sovereignty="Italia — Provider commerciali")
     curr = _row(provider="microsoft", sovereignty="USA (CLOUD Act)")
-    evs = classify_change(prev, curr, git_changed=False)
-    pc = [e for e in evs if e["change"] == "provider_change"]
-    assert pc and pc[0]["cause"] == "reality"
-    # stessa method ma git CAMBIATO -> uncertain (potrebbe essere un nostro fix)
-    evs2 = classify_change(prev, curr, git_changed=True)
-    pc2 = [e for e in evs2 if e["change"] == "provider_change"]
-    assert pc2 and pc2[0]["cause"] == "uncertain"
+    evs = classify_change(prev, curr)
+    assert any(e["change"] == "provider_change" for e in evs)
+    assert all("cause" not in e for e in evs)  # niente attribuzione di causa
 
 
 def test_change_sovereignty_and_jurisdiction():
     prev = _row(jurisdiction="domestic")
     curr = _row(jurisdiction="foreign")
-    evs = classify_change(prev, curr, False)
-    assert any(e["change"] == "jurisdiction_change" for e in evs)
+    assert any(
+        e["change"] == "jurisdiction_change" for e in classify_change(prev, curr)
+    )
 
 
 def test_change_method_only():
     prev = _row(method="seed_primary_mx")
     curr = _row(method="smtp_banner")
-    evs = classify_change(prev, curr, False)
+    evs = classify_change(prev, curr)
     assert len(evs) == 1 and evs[0]["change"] == "method_change"
-    assert evs[0]["cause"] == "methodology"
 
 
 def test_change_none_when_identical():
-    assert classify_change(_row(), _row(), False) == []
+    assert classify_change(_row(), _row()) == []
 
 
 # ── diff_runs / build_manifest / build_timeseries ───────────────────────────
@@ -190,7 +181,7 @@ def test_diff_runs_counts():
         ),  # invariato
         "c": _row(id="c"),  # nuovo
     }
-    events, counts = diff_runs(prev, curr, False)
+    events, counts = diff_runs(prev, curr)
     assert counts["removed"] == 1  # a sparito
     assert counts["new"] == 1  # c nuovo
     assert all("id" in e and "name" in e for e in events)
@@ -244,12 +235,12 @@ def test_update_entity_timeline_idempotent():
             "field": "provider",
             "from": "aruba",
             "to": "microsoft",
-            "cause": "reality",
         }
     ]
     e1 = update_entity_timeline(None, "2026-06-12", curr, evs)
     assert e1["n_changes"] == 1 and e1["first_seen"] == "2026-06-12"
     assert e1["current"]["provider"] == "microsoft"
+    assert "cause" not in e1["timeline"][0]  # niente attribuzione di causa
 
     evs2 = [
         {
@@ -257,7 +248,6 @@ def test_update_entity_timeline_idempotent():
             "field": "method",
             "from": "a",
             "to": "b",
-            "cause": "methodology",
         }
     ]
     e2 = update_entity_timeline(e1, "2026-06-13", curr, evs2)

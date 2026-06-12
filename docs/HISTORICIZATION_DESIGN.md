@@ -191,7 +191,18 @@ Tipi di `change` (tassonomia):
 | `domain_change` | domain_used cambiato | ente ha cambiato dominio email |
 | `mx_change` | host MX primario cambiato | cambio server, stesso provider |
 
-### 4.4 Il campo `cause` — l'insight centrale del design
+### 4.4 Il campo `cause` — RIMOSSO (decisione)
+
+> **Aggiornamento (decisione utente):** il campo `cause` è stato **rimosso**.
+> Disciplina adottata: i bug si risolvono *prima* del primo scan ufficiale e la
+> metodologia si **congela** al run #1; da lì ogni cambiamento è dato reale.
+> Niente attribuzione reality/methodology/uncertain, niente euristica su
+> `git_sha`. Gli eventi del changelog sono `{change, field, from, to}`. Se in
+> futuro si vorrà marcare un raro rilascio deliberato, si userà esplicitamente
+> il bump di `pipeline_version` (§7). Il testo sotto è conservato come
+> razionale storico della scelta.
+
+
 
 Ogni evento porta una **causa attribuita**:
 

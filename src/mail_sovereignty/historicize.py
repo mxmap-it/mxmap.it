@@ -2,9 +2,9 @@
 
 Vedi docs/HISTORICIZATION_DESIGN.md. Estrae da ogni entità i **campi
 materiali** (la cui variazione È un cambiamento reale), confronta due run
-(prev vs curr) e produce gli eventi di changelog con **causa attribuita**
-(reality = la PA è migrata / methodology = abbiamo migliorato il rilevamento /
-source = cambiamento a monte / uncertain = da rivedere).
+(prev vs curr) e produce gli eventi di changelog. La metodologia si congela al
+primo scan ufficiale (i bug si risolvono prima): da lì ogni cambiamento è
+"realtà" — niente attribuzione di causa.
 
 Forward-only: lo storico parte dal primo scan ufficiale, non dal backfill dei
 commit git (decisione utente). Scope: IT. Lo snapshot compatto diventa il
@@ -124,39 +124,13 @@ def _change_type(field: str, prev: dict, curr: dict) -> str:
     }[field]
 
 
-def _attribute_cause(method_changed: bool, git_changed: bool) -> str:
-    """reality (la PA è migrata) vs methodology (abbiamo migliorato il
-    rilevamento) vs uncertain (la logica è cambiata → da rivedere)."""
-    if method_changed:
-        return "methodology"
-    if git_changed:
-        return "uncertain"
-    return "reality"
-
-
-def classify_change(
-    prev: dict | None, curr: dict | None, git_changed: bool
-) -> list[dict]:
+def classify_change(prev: dict | None, curr: dict | None) -> list[dict]:
     """Confronta due righe materiali → lista di eventi changelog (per-campo)."""
     if prev is None and curr is not None:
-        return [
-            {
-                "change": "new",
-                "field": None,
-                "from": None,
-                "to": curr["provider"],
-                "cause": "source",
-            }
-        ]
+        return [{"change": "new", "field": None, "from": None, "to": curr["provider"]}]
     if curr is None and prev is not None:
         return [
-            {
-                "change": "removed",
-                "field": None,
-                "from": prev["provider"],
-                "to": None,
-                "cause": "source",
-            }
+            {"change": "removed", "field": None, "from": prev["provider"], "to": None}
         ]
 
     events: list[dict] = []
@@ -172,7 +146,6 @@ def classify_change(
                 "to": curr.get(field),
                 "from_method": prev["method"],
                 "to_method": curr["method"],
-                "cause": _attribute_cause(method_changed, git_changed),
             }
         )
     # cambio di solo metodo (stessa classificazione su tutti i campi materiali)
@@ -183,21 +156,20 @@ def classify_change(
                 "field": "method",
                 "from": prev["method"],
                 "to": curr["method"],
-                "cause": "methodology",
             }
         )
     return events
 
 
 def diff_runs(
-    prev: dict[str, dict], curr: dict[str, dict], git_changed: bool
+    prev: dict[str, dict], curr: dict[str, dict]
 ) -> tuple[list[dict], Counter]:
     """Diff di tutti gli enti tra due run → (eventi arricchiti, conteggi)."""
     events: list[dict] = []
     counts: Counter = Counter()
     for eid in sorted(set(prev) | set(curr)):
         row = curr.get(eid) or prev.get(eid)
-        for ev in classify_change(prev.get(eid), curr.get(eid), git_changed):
+        for ev in classify_change(prev.get(eid), curr.get(eid)):
             ev.update(
                 {
                     "id": eid,
@@ -284,7 +256,6 @@ def update_entity_timeline(
                 "field": ev.get("field"),
                 "from": ev.get("from"),
                 "to": ev.get("to"),
-                "cause": ev["cause"],
             }
         )
     current = {
