@@ -6,6 +6,14 @@
 > opendata, una dashboard interattiva, un changelog per ogni run, e la
 > scheda storica di ogni singolo ente.
 
+> **AGGIORNAMENTO (decisione utente).** La distinzione **reality vs
+> methodology** (il campo `cause`) è stata **rimossa** dall'implementazione:
+> esiste una sola realtà. Disciplina: i bug si risolvono *prima*, la
+> metodologia si **congela** al primo scan ufficiale, e da lì ogni cambiamento
+> è dato reale. Le sezioni §4.4, §6.2, §7 e la TL;DR che parlano di `cause` /
+> due-serie sono conservate come **razionale storico**, ma non descrivono più
+> il comportamento attuale.
+
 ---
 
 ## 0. TL;DR (la proposta in 8 righe)

@@ -1,9 +1,9 @@
 """Test della logica di storicizzazione (src/mail_sovereignty/historicize.py).
 
 Coprono: estrazione material_row (parse bfs, sovranità, giurisdizione,
-confidence, normalizzazione mx0, dkim tenant), classify_change (tutti i tipi)
-e l'attribuzione della causa (reality/methodology/uncertain/source),
-diff_runs, build_manifest, build_timeseries.
+confidence, normalizzazione mx0, dkim tenant), classify_change (tutti i tipi),
+diff_runs, build_manifest, build_timeseries. Niente attribuzione di causa:
+esiste una sola realtà (metodologia congelata al primo scan).
 """
 
 import pytest
