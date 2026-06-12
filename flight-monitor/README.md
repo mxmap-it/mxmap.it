@@ -40,6 +40,41 @@ Found deals print to the console and append to `deals.csv`. Full price
 history is kept in `flightmon.db` (SQLite) so historic-low detection improves
 the longer it runs.
 
+## Chain composer (creative multi-stop self-transfer)
+
+`flightmon chain` builds the **cheapest multi-stop itinerary** to a far
+destination (e.g. Colombo / Sri Lanka) by combining *separate* low-cost
+tickets — "virtual interlining". It models the corridor as a hub graph and
+runs a Dijkstra search on cumulative price, so it returns the globally
+cheapest route regardless of how many stops it takes (1–5). Each leg is priced
+as a real **nonstop** flight; non-existent routes prune themselves.
+
+```bash
+# Offline demo (no API key) — synthetic Italy -> Colombo fares:
+uv run flightmon chain --mock --from FCO,NAP --to CMB --depart 2026-07-15
+
+# Live pricing (needs Amadeus credentials, see below):
+uv run flightmon chain --from FCO,NAP --to CMB --depart 2026-07-15 --days 3 \
+    --max-legs 5 --min-connection 3 --max-layover 30 --top 5
+```
+
+Each result shows per-leg times/carrier/price, **layover duration** at every
+hub, and **visa flags** (e.g. India requires an e-Visa even just to
+self-transfer, since you must re-check bags landside). Constraints:
+
+- `--min-connection` — buffer for self-transfer (no through-checked bags, you
+  re-clear security/immigration). Default 3h. Keep it generous.
+- `--max-layover` — up to this many hours, so overnight layovers (turn a stop
+  into a mini city break) are allowed. Default 30h.
+- `--max-legs` — cap on number of flights. Default 5.
+
+The corridor graph and per-airport visa notes live in `corridor.py` — extend
+`ADJACENCY` / `AIRPORTS` to target other destinations or add hubs.
+
+> Self-transfer means **no protection** if a leg is delayed/cancelled — the
+> next airline owes you nothing. Travel **carry-on only** (cheaper per leg,
+> faster transfers) and prefer long/overnight layovers.
+
 ## Data sources
 
 ### Ryanair (default, no key)

@@ -14,59 +14,22 @@ data instead of the test sandbox.
 
 from __future__ import annotations
 
-import os
 import time
 from collections.abc import Iterable
 from datetime import date, timedelta
 
-import requests
-
+from ..amadeus_client import AmadeusClient
 from ..dates import departure_window
 from ..models import Destination, FareQuote, TripParams
-
-_HOSTS = {
-    "test": "https://test.api.amadeus.com",
-    "production": "https://api.amadeus.com",
-}
 
 
 class AmadeusProvider:
     name = "amadeus"
 
     def __init__(self, currency: str = "EUR", sample_weekday: int = 2):
-        self.client_id = os.environ.get("AMADEUS_CLIENT_ID", "")
-        self.client_secret = os.environ.get("AMADEUS_CLIENT_SECRET", "")
-        if not (self.client_id and self.client_secret):
-            raise RuntimeError(
-                "AMADEUS_CLIENT_ID / AMADEUS_CLIENT_SECRET not set"
-            )
-        self.base = _HOSTS.get(
-            os.environ.get("AMADEUS_HOST", "test"), _HOSTS["test"]
-        )
+        self.client = AmadeusClient()
         self.currency = currency
         self.sample_weekday = sample_weekday  # 0=Mon .. 2=Wed
-        self._token = ""
-        self._token_exp = 0.0
-        self.session = requests.Session()
-
-    # -- auth -------------------------------------------------------------
-    def _auth(self) -> str:
-        if self._token and time.time() < self._token_exp - 30:
-            return self._token
-        resp = self.session.post(
-            f"{self.base}/v1/security/oauth2/token",
-            data={
-                "grant_type": "client_credentials",
-                "client_id": self.client_id,
-                "client_secret": self.client_secret,
-            },
-            timeout=20,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        self._token = data["access_token"]
-        self._token_exp = time.time() + data.get("expires_in", 1799)
-        return self._token
 
     def _candidate_departures(self, trip: TripParams) -> list[date]:
         start, end = departure_window(trip)
@@ -82,10 +45,9 @@ class AmadeusProvider:
     def _price(
         self, origin: str, dest: str, depart: date, ret: date
     ) -> float | None:
-        resp = self.session.get(
-            f"{self.base}/v2/shopping/flight-offers",
-            headers={"Authorization": f"Bearer {self._auth()}"},
-            params={
+        data = self.client.get(
+            "/v2/shopping/flight-offers",
+            {
                 "originLocationCode": origin,
                 "destinationLocationCode": dest,
                 "departureDate": depart.isoformat(),
@@ -95,11 +57,10 @@ class AmadeusProvider:
                 "max": 5,
                 "nonStop": "false",
             },
-            timeout=30,
         )
-        if resp.status_code != 200:
+        if data is None:
             return None
-        offers = resp.json().get("data", [])
+        offers = data.get("data", [])
         prices = [float(o["price"]["grandTotal"]) for o in offers]
         return min(prices) if prices else None
 
