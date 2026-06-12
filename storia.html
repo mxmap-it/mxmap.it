@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Storia — Osservatorio sulla Sovranità Digitale della Posta Elettronica della PA Italiana</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
+:root{color-scheme:light}
+html,body{background:#fff}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:1000px;margin:0 auto;padding:32px 24px;line-height:1.6;color:#222}
 h1{font-size:26px;border-bottom:2px solid #009246;padding-bottom:8px}
 h2{font-size:20px;margin-top:36px;color:#005a2a;border-bottom:1px solid #ddd;padding-bottom:4px}
@@ -79,19 +82,34 @@ async function getJSON(u){ const r = await fetch(u); return r.ok ? r.json() : nu
 async function getJSONL(u){ const r = await fetch(u); if(!r.ok) return []; return (await r.text()).trim().split("\n").filter(Boolean).map(JSON.parse); }
 function esc(s){ const e=document.createElement("div"); e.textContent=s==null?"":s; return e.innerHTML; }
 
+if (window.Chart) { Chart.defaults.color = "#444"; Chart.defaults.borderColor = "#eee"; Chart.defaults.font.family = "-apple-system,Segoe UI,Roboto,sans-serif"; }
+
+function rgba(hex, a) {
+  const m = (hex || "#cccccc").replace("#", "");
+  const h = m.length === 3 ? m.split("").map(c => c + c).join("") : m;
+  const n = parseInt(h, 16);
+  return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
+}
+
 function stackedArea(canvasId, series, keys, colors, labels) {
   const dates = series.map(s => s.date);
+  const total = series.map(s => keys.reduce((a, k) => a + (s[k] || 0), 0));
+  // 100%-stacked: l'altezza di ogni banda È la sua quota → coerente coi numeri.
   const datasets = keys.map(k => ({
     label: (labels && labels[k]) || k,
-    data: series.map(s => s[k] || 0),
-    backgroundColor: colors[k] || "#ccc", borderColor: colors[k] || "#ccc",
-    fill: true, tension: 0.25, pointRadius: 2, borderWidth: 1,
+    data: series.map((s, i) => total[i] ? +(100 * (s[k] || 0) / total[i]).toFixed(2) : 0),
+    abs: series.map(s => s[k] || 0),
+    backgroundColor: rgba(colors[k], 0.65), borderColor: colors[k] || "#ccc",
+    fill: true, tension: 0.25, pointRadius: 0, borderWidth: 1.5,
   }));
   new Chart(document.getElementById(canvasId), {
     type: "line",
     data: { labels: dates, datasets },
     options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
-      scales: { y: { stacked: true, ticks: { precision: 0 } } }, plugins: { legend: { position: "bottom" } } },
+      scales: { x: { grid: { display: false } },
+        y: { stacked: true, beginAtZero: true, max: 100, ticks: { callback: v => v + "%" } } },
+      plugins: { legend: { position: "bottom" },
+        tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%  (${ctx.dataset.abs[ctx.dataIndex].toLocaleString("it")})` } } } },
   });
 }
 
