@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
-"""Bounce-verifier — SETUP + DRY-RUN (non invia email).
+"""Bounce-verifier — CLI di orchestrazione (vedi docs/BOUNCE_VERIFIER_DESIGN.md).
 
-Imposta la verifica attiva dei casi a bassa confidenza (vedi
-docs/LOW_CONFIDENCE_CASES.md): seleziona gli enti `frgn_mx_only` (conf 0,50,
-MX presente ma backend ignoto), genera per ciascuno un indirizzo-target
-inesistente e mostra cosa *verrebbe* inviato. NON spedisce nulla.
+Sottocomandi:
+  --export       scrive data/bounce/candidates.{csv,json} (69 enti frgn_mx_only)
+  --dry-run      anteprima dei probe (default; NON invia)
+  --send         esegue il flusso (richiede config/bounce.toml con dry_run=false)
+  --collect-ndr  legge gli NDR via IMAP e li accoda al log
+  --report       genera report_summary.{json,md} + report_detail.csv dal log
 
-L'invio reale (lettura NDR via IMAP + parsing) è volutamente NON implementato
-qui: è un'azione esterna che richiede il setup e l'autorizzazione esplicita
-dell'utente (account Google Workspace dedicato). `--send` solleva un errore.
-
-Uso:
-  python3 scripts/bounce_probe.py --export      # scrive data/bounce/candidates.{csv,json}
-  python3 scripts/bounce_probe.py --dry-run     # stampa i probe pianificati (default)
-  python3 scripts/bounce_probe.py --send        # bloccato: non implementato
+Logica e I/O nel modulo src/mail_sovereignty/bounce.py (testato). L'invio reale
+è direct-to-MX e va abilitato esplicitamente; di default tutto è in dry-run.
 """
 
 from __future__ import annotations
@@ -21,17 +17,19 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import socket
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str((ROOT / "src").as_posix()))
 OUTDIR = ROOT / "data" / "bounce"
+CONFIG = ROOT / "config" / "bounce.toml"
+LOG = OUTDIR / "probe_log.jsonl"
 
-# Local-part inesistente e riconoscibile: deve generare un NDR (no such user)
-# ed essere ovviamente un probe, non un tentativo di raggiungere una persona.
-PROBE_LOCALPART = "mxmap-probe-no-such-mailbox"
+from mail_sovereignty import bounce  # noqa: E402
 
-# Coorte target: bassa confidenza CON MX (bounce-testabile). Vedi doc.
 TARGET_RULES = {"frgn_mx_only"}
 CONF_MAX = 0.60
 
@@ -44,85 +42,165 @@ def select_candidates(data_path: Path) -> list[dict]:
         if (v.get("country") or "").upper() != "IT":
             continue
         conf = v.get("classification_confidence") or 0.0
-        rule = v.get("classification_rule")
-        mx = v.get("mx") or []
-        if rule in TARGET_RULES and 0.0 < conf < CONF_MAX and mx:
+        if v.get("classification_rule") in TARGET_RULES and 0.0 < conf < CONF_MAX and v.get("mx"):
             out.append(
                 {
                     "bfs": v.get("bfs", ""),
                     "name": v.get("name", ""),
                     "domain": v.get("domain", ""),
-                    "mx": ";".join(mx),
+                    "mx": list(v.get("mx") or []),
                     "mx_jurisdiction": v.get("mx_jurisdiction", ""),
                     "confidence": conf,
-                    "rule": rule,
+                    "rule": v.get("classification_rule"),
                     "reason": (v.get("reason") or "")[:160],
-                    "target_address": f"{PROBE_LOCALPART}@{v.get('domain', '')}",
                 }
             )
     out.sort(key=lambda r: r["domain"])
     return out
 
 
+def dedupe_domains(cands: list[dict]) -> list[dict]:
+    seen, out = set(), []
+    for c in cands:
+        if c["domain"] in seen:
+            continue
+        seen.add(c["domain"])
+        out.append(c)
+    return out
+
+
 def export(cands: list[dict]) -> None:
     OUTDIR.mkdir(parents=True, exist_ok=True)
+    for c in cands:
+        c["target_address"] = f"mxmap-probe-no-such-mailbox@{c['domain']}"
     (OUTDIR / "candidates.json").write_text(
         json.dumps(cands, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    cols = [
-        "bfs",
-        "name",
-        "domain",
-        "mx",
-        "mx_jurisdiction",
-        "confidence",
-        "rule",
-        "target_address",
-        "reason",
-    ]
+    cols = ["bfs", "name", "domain", "mx", "mx_jurisdiction", "confidence", "rule", "target_address", "reason"]
     with open(OUTDIR / "candidates.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
         for c in cands:
-            w.writerow({k: c.get(k, "") for k in cols})
+            row = dict(c)
+            row["mx"] = ";".join(c["mx"])
+            w.writerow({k: row.get(k, "") for k in cols})
     print(f"Scritti {len(cands)} candidati in {OUTDIR}/candidates.{{csv,json}}")
 
 
 def dry_run(cands: list[dict]) -> None:
-    domains = sorted({c["domain"] for c in cands})
-    print(
-        f"DRY-RUN: {len(cands)} enti su {len(domains)} domini distinti "
-        f"(NESSUN invio; si invia 1 probe per dominio).\n"
+    doms = dedupe_domains(cands)
+    print(f"DRY-RUN: {len(cands)} enti su {len(doms)} domini distinti (NESSUN invio).\n")
+    for c in doms[:15]:
+        addr = f"mxmap-probe-no-such-mailbox@{c['domain']}"
+        mx0 = (c["mx"][0] if c["mx"] else "?")
+        print(f"  -> {addr:48}  via MX {mx0[:38]:38}  [{c['name'].encode('ascii', 'replace').decode()[:28]}]")
+    if len(doms) > 15:
+        print(f"  ... e altri {len(doms) - 15}. Lista completa: data/bounce/candidates.csv")
+    print("\nNessuna email inviata. L'invio reale richiede config/bounce.toml (dry_run=false) e --send.")
+
+
+def _resolve_ip(mx_host: str) -> str | None:
+    try:
+        return socket.getaddrinfo(mx_host, 25, proto=socket.IPPROTO_TCP)[0][4][0]
+    except Exception:
+        return None
+
+
+def run_send(cfg: bounce.BounceConfig, cands: list[dict]) -> int:
+    if cfg.dry_run:
+        print(
+            "RIFIUTO: config/bounce.toml ha dry_run=true. L'invio reale richiede "
+            "dry_run=false (e la tua autorizzazione esplicita).",
+            file=sys.stderr,
+        )
+        return 2
+    doms = dedupe_domains(cands)
+    plan = bounce.build_send_plan(
+        [(c["domain"], _resolve_ip(c["mx"][0]) if c["mx"] else None) for c in doms],
+        cfg.per_ip_min_interval_sec,
     )
-    for c in cands[:15]:
-        mx0 = c["mx"].split(";")[0]
-        name = c["name"].encode("ascii", "replace").decode()[:30]
-        print(f"  -> {c['target_address']:48}  via MX {mx0[:40]:40}  [{name}]")
-    if len(cands) > 15:
-        print(f"  ... e altri {len(cands) - 15}. Lista completa: data/bounce/candidates.csv")
-    print(
-        "\nNessuna email inviata. L'invio reale richiede il tuo setup Workspace "
-        "e va abilitato esplicitamente (vedi --send)."
-    )
+    by_dom = {c["domain"]: c for c in doms}
+    results = []
+    start = time.monotonic()
+    print(f"INVIO reale (direct-to-MX) su {len(plan)} domini...", file=sys.stderr)
+    for step in plan:
+        wait = step["offset_sec"] - (time.monotonic() - start)
+        if wait > 0:
+            time.sleep(wait)
+        res = bounce.probe_domain(cfg, by_dom[step["domain"]])
+        results.append(res)
+        bounce.write_jsonl(LOG, [{"type": "probe", **bounce.asdict(res)}])
+        print(f"  {res.domain:30} rcpt={res.rcpt_validation:14} outcome={res.outcome}", file=sys.stderr)
+    _write_reports(results, [])
+    return 0
+
+
+def run_collect(cfg: bounce.BounceConfig) -> int:
+    ndrs = bounce.collect_ndrs(cfg)
+    bounce.write_jsonl(LOG, [{"type": "ndr", **bounce.asdict(n)} for n in ndrs])
+    print(f"Raccolti {len(ndrs)} NDR -> {LOG}")
+    return 0
+
+
+def _load_log() -> tuple[list[bounce.ProbeResult], list[bounce.NdrResult]]:
+    results, ndrs = [], []
+    if not LOG.exists():
+        return results, ndrs
+    for line in LOG.read_text(encoding="utf-8").splitlines():
+        rec = json.loads(line)
+        t = rec.pop("type", "probe")
+        if t == "probe":
+            results.append(bounce.ProbeResult(**{k: rec.get(k) for k in bounce.ProbeResult.__dataclass_fields__ if k in rec}))
+        else:
+            ndrs.append(bounce.NdrResult(**{k: rec.get(k) for k in bounce.NdrResult.__dataclass_fields__ if k in rec}))
+    return results, ndrs
+
+
+def _write_reports(results, ndrs) -> None:
+    summ = bounce.build_summary(results, ndrs)
+    detail = bounce.build_detail(results)
+    OUTDIR.mkdir(parents=True, exist_ok=True)
+    (OUTDIR / "report_summary.json").write_text(json.dumps(summ, ensure_ascii=False, indent=2), encoding="utf-8")
+    md = ["# Bounce-verifier — rendiconto sintetico", ""]
+    md.append(f"- enti sondati: **{summ['n_probed']}** · NDR raccolti: {summ['n_ndr']} · riclassificabili: **{summ['reclassifiable']}**")
+    md.append(f"- per esito: {summ['by_outcome']}")
+    md.append(f"- per validazione RCPT: {summ['by_rcpt_validation']}")
+    md.append(f"- per backend identificato: {summ['by_backend']}")
+    (OUTDIR / "report_summary.md").write_text("\n".join(md), encoding="utf-8")
+    cols = ["domain", "mx_host", "mx_ip", "rcpt_code", "rcpt_validation", "outcome", "identified_backend", "error"]
+    with open(OUTDIR / "report_detail.csv", "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=cols)
+        w.writeheader()
+        for r in detail:
+            w.writerow({k: r.get(k, "") for k in cols})
+    print(f"Report -> {OUTDIR}/report_summary.{{json,md}} + report_detail.csv")
+
+
+def run_report() -> int:
+    results, ndrs = _load_log()
+    _write_reports(results, ndrs)
+    return 0
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", type=Path, default=ROOT / "data.json")
-    ap.add_argument("--export", action="store_true", help="scrive candidates.{csv,json}")
-    ap.add_argument("--dry-run", action="store_true", help="stampa i probe (default)")
-    ap.add_argument("--send", action="store_true", help="BLOCCATO: invio non implementato")
+    ap.add_argument("--export", action="store_true")
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--send", action="store_true")
+    ap.add_argument("--collect-ndr", action="store_true")
+    ap.add_argument("--report", action="store_true")
     args = ap.parse_args()
 
-    if args.send:
-        print(
-            "ERRORE: l'invio reale non è implementato in questo scaffold.\n"
-            "È un'azione esterna: richiede account Google Workspace dedicato, "
-            "lettura NDR via IMAP e parser, e la tua autorizzazione esplicita.\n"
-            "Per ora usa --export e --dry-run.",
-            file=sys.stderr,
-        )
-        return 2
+    if args.send or args.collect_ndr:
+        if not CONFIG.exists():
+            print(f"ERRORE: manca {CONFIG}. Copia config/bounce.example.toml e compila.", file=sys.stderr)
+            return 2
+        cfg = bounce.load_config(CONFIG)
+        cands = select_candidates(args.data)
+        return run_send(cfg, cands) if args.send else run_collect(cfg)
+    if args.report:
+        return run_report()
 
     cands = select_candidates(args.data)
     if args.export:

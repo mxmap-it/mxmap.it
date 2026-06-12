@@ -3,7 +3,10 @@
     "bfs": "IT-SA-MH1SG6PS",
     "name": "ASMia S.r.l.",
     "domain": "asmortara.eu",
-    "mx": "mx10.firewallsrl.com;mx20.firewallsrl.com",
+    "mx": [
+      "mx10.firewallsrl.com",
+      "mx20.firewallsrl.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -14,7 +17,10 @@
     "bfs": "IT-SA-MJSP89IF",
     "name": "Azienda Servizi Mortara S.p.A.",
     "domain": "asmortara.eu",
-    "mx": "mx10.firewallsrl.com;mx20.firewallsrl.com",
+    "mx": [
+      "mx10.firewallsrl.com",
+      "mx20.firewallsrl.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -25,7 +31,10 @@
     "bfs": "IT-SA-UANQS8JQ",
     "name": "ASMare S.r.l.",
     "domain": "asmortara.eu",
-    "mx": "mx10.firewallsrl.com;mx20.firewallsrl.com",
+    "mx": [
+      "mx10.firewallsrl.com",
+      "mx20.firewallsrl.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -36,7 +45,9 @@
     "bfs": "IT-L34-acrgs_ud",
     "name": "Asp 'Casa di Riposo Giuseppe Sirch'",
     "domain": "aspsirch.it",
-    "mx": "relay-rupar-pri.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -47,7 +58,9 @@
     "bfs": "IT-L35-cciaa_ta",
     "name": "Camera di Commercio, Industria, Artigianato e Agricoltura di Taranto",
     "domain": "camcomtaranto.com",
-    "mx": "mail7.cs.interbusiness.it",
+    "mx": [
+      "mail7.cs.interbusiness.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -58,7 +71,9 @@
     "bfs": "IT-L34-icffm",
     "name": "Casa del Fanciullo F. Messina",
     "domain": "casadelfanciullo.pe.hu",
-    "mx": "mx1.hostinger.it",
+    "mx": [
+      "mx1.hostinger.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -69,7 +84,9 @@
     "bfs": "IT-L28-cisfa",
     "name": "Consorzio Interuniversitario Scienze Fisiche Applicate",
     "domain": "cisfa.net",
-    "mx": "cisfa.net",
+    "mx": [
+      "cisfa.net"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -80,7 +97,9 @@
     "bfs": "IT-L12-xcmar",
     "name": "XVIII Comunita' Montana Area Romana",
     "domain": "cmmontilepini.it",
-    "mx": "cmmontilepini.it",
+    "mx": [
+      "cmmontilepini.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -91,7 +110,9 @@
     "bfs": "IT-COM-060001",
     "name": "Comune di Acquafondata",
     "domain": "comune.acquafondata.fr.it",
-    "mx": "mail.comune.acquafondata.fr.it",
+    "mx": [
+      "mail.comune.acquafondata.fr.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -102,7 +123,9 @@
     "bfs": "IT-COM-019003",
     "name": "Comune di Annicco",
     "domain": "comune.annicco.cr.it",
-    "mx": "mx01.metarete.it",
+    "mx": [
+      "mx01.metarete.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -113,7 +136,10 @@
     "bfs": "IT-COM-024010",
     "name": "Comune di Asigliano Veneto",
     "domain": "comune.asiglianoveneto.vi.it",
-    "mx": "relay1.altovicentino.it;relay2.altovicentino.it",
+    "mx": [
+      "relay1.altovicentino.it",
+      "relay2.altovicentino.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -124,7 +150,10 @@
     "bfs": "IT-COM-093008",
     "name": "Comune di Budoia",
     "domain": "comune.budoia.pn.it",
-    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com;mx-02-eu-central-1.prod.hydra.sophos.com",
+    "mx": [
+      "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "mx-02-eu-central-1.prod.hydra.sophos.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -135,7 +164,9 @@
     "bfs": "IT-COM-002041",
     "name": "Comune di Cervatto",
     "domain": "comune.cervatto.vc.it",
-    "mx": "mail.comune.cervatto.vc.it",
+    "mx": [
+      "mail.comune.cervatto.vc.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -146,7 +177,10 @@
     "bfs": "IT-COM-052008",
     "name": "Comune di Cetona",
     "domain": "comune.cetona.siena.it",
-    "mx": "as1.consorzioterrecablate.it;as2.consorzioterrecablate.it",
+    "mx": [
+      "as1.consorzioterrecablate.it",
+      "as2.consorzioterrecablate.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -157,7 +191,9 @@
     "bfs": "IT-COM-004069",
     "name": "Comune di Ciglie'",
     "domain": "comune.ciglie.cn.it",
-    "mx": "mail.comune.ciglie.cn.it",
+    "mx": [
+      "mail.comune.ciglie.cn.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -168,7 +204,10 @@
     "bfs": "IT-COM-030030",
     "name": "Comune di Corno di Rosazzo",
     "domain": "comune.corno-di-rosazzo.ud.it",
-    "mx": "relay-rupar-pri.regione.fvg.it;relay-rupar-sec.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it",
+      "relay-rupar-sec.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -179,7 +218,9 @@
     "bfs": "IT-COM-002057",
     "name": "Comune di Fobello",
     "domain": "comune.fobello.vc.it",
-    "mx": "mail.comune.fobello.vc.it",
+    "mx": [
+      "mail.comune.fobello.vc.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -190,7 +231,9 @@
     "bfs": "IT-COM-010024",
     "name": "Comune di Fontanigorda",
     "domain": "comune.fontanigorda.ge.it",
-    "mx": "mail.comune.fontanigorda.ge.it",
+    "mx": [
+      "mail.comune.fontanigorda.ge.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -201,7 +244,9 @@
     "bfs": "IT-COM-004090",
     "name": "Comune di Frabosa Soprana",
     "domain": "comune.frabosasoprana.cn.it",
-    "mx": "mail.comune.frabosasoprana.cn.it",
+    "mx": [
+      "mail.comune.frabosasoprana.cn.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -212,7 +257,10 @@
     "bfs": "IT-COM-031008",
     "name": "Comune di Gradisca d'Isonzo",
     "domain": "comune.gradisca-d-isonzo.go.it",
-    "mx": "relay-rupar-pri.regione.fvg.it;relay-rupar-sec.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it",
+      "relay-rupar-sec.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -223,7 +271,9 @@
     "bfs": "IT-COM-042023",
     "name": "Comune di Maiolati Spontini",
     "domain": "comune.maiolatispontini.an.it",
-    "mx": "mail7.cs.interbusiness.it",
+    "mx": [
+      "mail7.cs.interbusiness.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -234,7 +284,9 @@
     "bfs": "IT-COM-030062",
     "name": "Comune di Mortegliano",
     "domain": "comune.mortegliano.ud.it",
-    "mx": "mx1.nauta.it",
+    "mx": [
+      "mx1.nauta.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -245,7 +297,9 @@
     "bfs": "IT-COM-032003",
     "name": "Comune di Muggia",
     "domain": "comune.muggia.ts.it",
-    "mx": "relay-rupar-pri.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -256,7 +310,10 @@
     "bfs": "IT-COM-004153",
     "name": "Comune di Nucetto",
     "domain": "comune.nucetto.cn.it",
-    "mx": "mx4.serverlet.com;mx5.serverlet.com",
+    "mx": [
+      "mx4.serverlet.com",
+      "mx5.serverlet.com"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -267,7 +324,10 @@
     "bfs": "IT-COM-024079",
     "name": "Comune di Poiana Maggiore",
     "domain": "comune.poiana-maggiore.vi.it",
-    "mx": "relay1.altovicentino.it;relay2.altovicentino.it",
+    "mx": [
+      "relay1.altovicentino.it",
+      "relay2.altovicentino.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -278,7 +338,9 @@
     "bfs": "IT-COM-109033",
     "name": "Comune di Porto San Giorgio",
     "domain": "comune.portosangiorgio.fm.it",
-    "mx": "comune.portosangiorgio.fm.it",
+    "mx": [
+      "comune.portosangiorgio.fm.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -289,7 +351,9 @@
     "bfs": "IT-COM-004175",
     "name": "Comune di Priero",
     "domain": "comune.priero.cn.it",
-    "mx": "mail.comune.priero.cn.it",
+    "mx": [
+      "mail.comune.priero.cn.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -300,7 +364,9 @@
     "bfs": "IT-COM-059020",
     "name": "Comune di Prossedi",
     "domain": "comune.prossedi.lt.it",
-    "mx": "mail.global.frontbridge.com",
+    "mx": [
+      "mail.global.frontbridge.com"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -311,7 +377,10 @@
     "bfs": "IT-COM-030091",
     "name": "Comune di Remanzacco",
     "domain": "comune.remanzacco.ud.it",
-    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com;mx-02-eu-central-1.prod.hydra.sophos.com",
+    "mx": [
+      "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "mx-02-eu-central-1.prod.hydra.sophos.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -322,7 +391,10 @@
     "bfs": "IT-COM-031016",
     "name": "Comune di Ronchi dei Legionari",
     "domain": "comune.ronchideilegionari.go.it",
-    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com;mx-02-eu-central-1.prod.hydra.sophos.com",
+    "mx": [
+      "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "mx-02-eu-central-1.prod.hydra.sophos.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -333,7 +405,9 @@
     "bfs": "IT-COM-096055",
     "name": "Comune di Rosazza",
     "domain": "comune.rosazza.bi.it",
-    "mx": "mail.comune.rosazza.bi.it",
+    "mx": [
+      "mail.comune.rosazza.bi.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -344,7 +418,9 @@
     "bfs": "IT-COM-004199",
     "name": "Comune di Sale Delle Langhe",
     "domain": "comune.saledellelanghe.cn.it",
-    "mx": "mail.comune.saledellelanghe.cn.it",
+    "mx": [
+      "mail.comune.saledellelanghe.cn.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -355,7 +431,10 @@
     "bfs": "IT-COM-032004",
     "name": "Comune di San Dorligo della Valle - Dolina",
     "domain": "comune.san-dorligo-della-valle.ts.it",
-    "mx": "relay-rupar-pri.regione.fvg.it;relay-rupar-sec.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it",
+      "relay-rupar-sec.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -366,7 +445,9 @@
     "bfs": "IT-COM-002135",
     "name": "Comune di Scopello",
     "domain": "comune.scopello.vc.it",
-    "mx": "mail.comune.scopello.vc.it",
+    "mx": [
+      "mail.comune.scopello.vc.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -377,7 +458,9 @@
     "bfs": "IT-COM-115069",
     "name": "Comune di Siris",
     "domain": "comune.siris.or.it",
-    "mx": "ms91731427.msv1.invalid",
+    "mx": [
+      "ms91731427.msv1.invalid"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -388,7 +471,10 @@
     "bfs": "IT-COM-031023",
     "name": "Comune di Staranzano",
     "domain": "comune.staranzano.go.it",
-    "mx": "relay-rupar-pri.regione.fvg.it;relay-rupar-sec.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it",
+      "relay-rupar-sec.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -399,7 +485,9 @@
     "bfs": "IT-COM-096065",
     "name": "Comune di Strona",
     "domain": "comune.strona.bi.it",
-    "mx": "mail.comune.strona.bi.it",
+    "mx": [
+      "mail.comune.strona.bi.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -410,7 +498,10 @@
     "bfs": "IT-COM-030116",
     "name": "Comune di Tarcento",
     "domain": "comune.tarcento.ud.it",
-    "mx": "relay-rupar-pri.regione.fvg.it;relay-rupar-sec.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it",
+      "relay-rupar-sec.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -421,7 +512,9 @@
     "bfs": "IT-COM-004229",
     "name": "Comune di Torresina",
     "domain": "comune.torresina.cn.it",
-    "mx": "mail.comune.torresina.cn.it",
+    "mx": [
+      "mail.comune.torresina.cn.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -432,7 +525,9 @@
     "bfs": "IT-COM-006176",
     "name": "Comune di Trisobbio",
     "domain": "comune.trisobbio.al.it",
-    "mx": "mail.comune.trisobbio.al.it",
+    "mx": [
+      "mail.comune.trisobbio.al.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -443,7 +538,10 @@
     "bfs": "IT-COM-031024",
     "name": "Comune di Turriaco",
     "domain": "comune.turriaco.go.it",
-    "mx": "relay-rupar-pri.regione.fvg.it;relay-rupar-sec.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it",
+      "relay-rupar-sec.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -454,7 +552,10 @@
     "bfs": "IT-COM-030131",
     "name": "Comune di Venzone",
     "domain": "comune.venzone.ud.it",
-    "mx": "relay-rupar-pri.regione.fvg.it;relay-rupar-sec.regione.fvg.it",
+    "mx": [
+      "relay-rupar-pri.regione.fvg.it",
+      "relay-rupar-sec.regione.fvg.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -465,7 +566,9 @@
     "bfs": "IT-COM-005113",
     "name": "Comune di Vesime",
     "domain": "comune.vesime.at.it",
-    "mx": "mail.comune.vesime.at.it",
+    "mx": [
+      "mail.comune.vesime.at.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -476,7 +579,9 @@
     "bfs": "IT-COM-002166",
     "name": "Comune di Vocca",
     "domain": "comune.vocca.vc.it",
-    "mx": "mail.comune.vocca.vc.it",
+    "mx": [
+      "mail.comune.vocca.vc.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -487,7 +592,9 @@
     "bfs": "IT-L44-cdbdb",
     "name": "Consiglio di Bacino Dolomiti Bellunesi",
     "domain": "consigliobacinoidrico.belluno.it",
-    "mx": "mail.consigliobacinoidrico.belluno.it",
+    "mx": [
+      "mail.consigliobacinoidrico.belluno.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -498,7 +605,9 @@
     "bfs": "IT-C14-cnpd",
     "name": "Consiglio Notarile di Padova",
     "domain": "consiglionotarilepadova.it",
-    "mx": "mail.consiglionotarilepadova.it",
+    "mx": [
+      "mail.consiglionotarilepadova.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -509,7 +618,11 @@
     "bfs": "IT-C14-cop_pe",
     "name": "Ordine della professione di Ostetrica della Provincia di Pescara",
     "domain": "fnco.it",
-    "mx": "mx10.antispam.mailspamprotection.com;mx20.antispam.mailspamprotection.com;mx30.antispam.mailspamprotection.com",
+    "mx": [
+      "mx10.antispam.mailspamprotection.com",
+      "mx20.antispam.mailspamprotection.com",
+      "mx30.antispam.mailspamprotection.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -520,7 +633,9 @@
     "bfs": "IT-S01-V8URJNAS",
     "name": "FRIULI VENEZIA GIULIA STRADE SPA",
     "domain": "fvgstrade.it",
-    "mx": "mail.fvgstrade.it",
+    "mx": [
+      "mail.fvgstrade.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -531,7 +646,9 @@
     "bfs": "IT-L37-galc",
     "name": "G.A.L. Campidano",
     "domain": "galcampidano.it",
-    "mx": "mx.galcampidano.it",
+    "mx": [
+      "mx.galcampidano.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -542,7 +659,9 @@
     "bfs": "IT-L33-icgp",
     "name": "Istituto Comprensivo G. Puecher",
     "domain": "icspuechererba.edu.it",
-    "mx": "mx.icspuerchererba.edu.it",
+    "mx": [
+      "mx.icspuerchererba.edu.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -553,7 +672,9 @@
     "bfs": "IT-L33-istsc_pdic89400c",
     "name": "ISTITUTO COMPRENSIVO - CONSELVE 'NICOLO' TOMMASEO'",
     "domain": "ictommaseo.edu.it",
-    "mx": "mail.gecomail.net",
+    "mx": [
+      "mail.gecomail.net"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -564,7 +685,10 @@
     "bfs": "IT-L33-istsc_geis01300x",
     "name": "ISTRUZIONE SECONDARIA SUPERIORE - LICETI",
     "domain": "iissliceti.it",
-    "mx": "mail-a.range-id.it;rmx1.range-id.it",
+    "mx": [
+      "mail-a.range-id.it",
+      "rmx1.range-id.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -575,7 +699,9 @@
     "bfs": "IT-L43-isl_058",
     "name": "Istituto Superiore per Le Industrie Artistiche di Roma",
     "domain": "isiaroma.it",
-    "mx": "_dc-mx.36a27af53e79.isiaroma.it",
+    "mx": [
+      "_dc-mx.36a27af53e79.isiaroma.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -586,7 +712,9 @@
     "bfs": "IT-L33-istsc_riic806008",
     "name": "ISTITUTO COMPRENSIVO - LEONESSA",
     "domain": "istitutocomprensivodileonessa.it",
-    "mx": "mail.istitutocomprensivodileonessa.it",
+    "mx": [
+      "mail.istitutocomprensivodileonessa.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -597,7 +725,9 @@
     "bfs": "IT-L37-OC1QYJAW",
     "name": "ITS PER LE NUOVE TECNOLOGIE PER IL MADE IN ITALY EMPORIUM DEL GOLFO",
     "domain": "itsemporiumdelgolfo.it",
-    "mx": "_dc-mx.6c2c0d9303d6.itsemporiumdelgolfo.it",
+    "mx": [
+      "_dc-mx.6c2c0d9303d6.itsemporiumdelgolfo.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -608,7 +738,9 @@
     "bfs": "IT-L33-istsc_capc03000v",
     "name": "LICEO CLASSICO - LC G.M.DETTORI",
     "domain": "liceoclassicodettori.edu.it",
-    "mx": "mail.gecomail.net",
+    "mx": [
+      "mail.gecomail.net"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -619,7 +751,9 @@
     "bfs": "IT-L33-istsc_czps02000r",
     "name": "LICEO SCIENTIFICO - LS 'GALILEI' LAMEZIA TERME",
     "domain": "liceogalileilamezia.edu.it",
-    "mx": "mx.liceogalileilamezia.edu.it",
+    "mx": [
+      "mx.liceogalileilamezia.edu.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -630,7 +764,9 @@
     "bfs": "IT-L33-istsc_chpm02000g",
     "name": "ISTITUTO MAGISTRALE - I. GONZAGA",
     "domain": "magistralechieti.edu.it",
-    "mx": "mail.gecomail.net",
+    "mx": [
+      "mail.gecomail.net"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -641,7 +777,9 @@
     "bfs": "IT-COM-109016",
     "name": "Comune di Monte Giberto",
     "domain": "montegiberto.net",
-    "mx": "pop.irradium.it",
+    "mx": [
+      "pop.irradium.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -652,7 +790,10 @@
     "bfs": "IT-SA-RM7V19PV",
     "name": "Consorzio Venezia Nuova",
     "domain": "mosevenezia.eu",
-    "mx": "avas01.semplify.net;avas02.semplify.net",
+    "mx": [
+      "avas01.semplify.net",
+      "avas02.semplify.net"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -663,7 +804,9 @@
     "bfs": "IT-SA-N0PNPPR5",
     "name": "Fondazione Museo Nazionale della Scienza e della Tecnologia Leonardo da Vinci",
     "domain": "museoscienza.org",
-    "mx": "mail.rarodevelop.net",
+    "mx": [
+      "mail.rarodevelop.net"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -674,7 +817,10 @@
     "bfs": "IT-C14-oap_001",
     "name": "Consiglio dell'Ordine Degli Avvocati di Pinerolo",
     "domain": "ordineavvocatipinerolo.it",
-    "mx": "mail.dcssrl.it;mail2.dcssrl.it",
+    "mx": [
+      "mail.dcssrl.it",
+      "mail2.dcssrl.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -685,7 +831,9 @@
     "bfs": "IT-C14-omvpc",
     "name": "Ordine Dei Medici Veterinari della Provincia di Chieti",
     "domain": "ordinemediciveterinarichieti.it",
-    "mx": "mx.ordinemediciveterinarichieti.it",
+    "mx": [
+      "mx.ordinemediciveterinarichieti.it"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -696,7 +844,10 @@
     "bfs": "IT-C14-omv_fc",
     "name": "Ordine dei Medici Veterinari della Provincia di Forli' Cesena",
     "domain": "ordineveterinarifc.it",
-    "mx": "mx1.lonex.com;mx2.lonex.com",
+    "mx": [
+      "mx1.lonex.com",
+      "mx2.lonex.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -707,7 +858,11 @@
     "bfs": "IT-L38-clgpp",
     "name": "Consorzio per La Gestione Provvisoria del Parco Naturale Regionale Dune Costiere",
     "domain": "parcodunecostiere.org",
-    "mx": "mx10.antispam.mailspamprotection.com;mx20.antispam.mailspamprotection.com;mx30.antispam.mailspamprotection.com",
+    "mx": [
+      "mx10.antispam.mailspamprotection.com",
+      "mx20.antispam.mailspamprotection.com",
+      "mx30.antispam.mailspamprotection.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -718,7 +873,9 @@
     "bfs": "IT-L33-istsc_ctic885009",
     "name": "ISTITUTO COMPRENSIVO - IC G.PARINI - CATANIA",
     "domain": "parinict.edu.it",
-    "mx": "mail.gecomail.net",
+    "mx": [
+      "mail.gecomail.net"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -729,7 +886,9 @@
     "bfs": "IT-L36-sdszfn",
     "name": "Societa' della Salute Zona Fiorentina Nord Ovest",
     "domain": "sds-nordovest.fi.it",
-    "mx": "mail.smtp2go.com",
+    "mx": [
+      "mail.smtp2go.com"
+    ],
     "mx_jurisdiction": "foreign",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -740,7 +899,9 @@
     "bfs": "IT-L18-uc_coleu",
     "name": "Unione dei Comuni dei Colli Euganei",
     "domain": "uce.pd.it",
-    "mx": "mbox.provincia.padova.it",
+    "mx": [
+      "mbox.provincia.padova.it"
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
@@ -751,7 +912,9 @@
     "bfs": "IT-L18-udpie",
     "name": "Uncem Delegazione Piemontese",
     "domain": "uncem.piemonte.it",
-    "mx": "",
+    "mx": [
+      ""
+    ],
     "mx_jurisdiction": "unknown",
     "confidence": 0.5,
     "rule": "frgn_mx_only",
