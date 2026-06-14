@@ -176,6 +176,9 @@ jobs:
       # aggregato di data.json). Le serie storiche restano gated (historicize sotto).
       - name: Build current KPIs (pagina Statistiche)
         run: uv run python3 scripts/build_stats.py --country IT
+      # KPI aggregati pubblici (dist/kpi.json) per l'Osservatorio Sovranità Digitale.
+      - name: Build public KPI feed (Osservatorio)
+        run: uv run python3 scripts/build_kpi.py --country IT
       # --- Storicizzazione (F1) — DISATTIVATA finché non risolviamo le anomalie.
       # Il run #1 ufficiale dello storico dev'essere il primo scan su dati "da
       # rollout" (anomalie risolte), non un run sporco. Per attivarla: togliere

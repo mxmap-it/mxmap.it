@@ -202,3 +202,26 @@ nessun "other".
 5. **Cat.6 — Sovranità per regione** → **DIFFERITA**: `data.json` non ha un campo `region`
    (0/22987). Serve decidere la fonte (`data-regions.json`, crosswalk ISTAT, o derivazione
    dal `bfs`/seed comune→regione) prima di produrre `stats_by_region.json`.
+
+## 9. Feed pubblico per l'Osservatorio (`kpi.json`)
+
+[`scripts/build_kpi.py`](../scripts/build_kpi.py) (+ logica [`src/mail_sovereignty/kpi.py`](../src/mail_sovereignty/kpi.py))
+produce **`dist/kpi.json`**, file statico pubblico (CC BY-SA 4.0) consumato dal sito Hugo
+dell'[Osservatorio Nazionale Sovranità Digitale](https://github.com/fpietrosanti/osservatorio-nazionale-sovranita-digitale)
+per sostituire i placeholder `—%`.
+
+- **URL pubblico:** `https://fpietrosanti.github.io/mxmap.it/dist/kpi.json`
+- **Schema:** `generated_at`, `run_id` (da `history/runs.jsonl`, `null` finché lo storico è
+  gated), `totals{n_entities,n_with_mx,coverage_pct}`, `sovereignty{extra_eu,eu_non_it,it,unknown}`
+  (count/pct/label, pct sul totale → somma 100), `top_providers[≤10]` (aggregati per nome-display,
+  con bucket a 4 valori), `by_cluster` (15 cluster citizen: n, `usa_pct`, `dominant_provider`),
+  `confidence{mean,high_pct}`.
+- **Mappatura 6→4 bucket** (a livello provider, `kpi.provider_to_sov4`):
+  `extra_eu` = USA (CLOUD Act) + esteri non-UE (zoho/yandex) · `eu_non_it` = `EU_NON_IT_PROVIDERS`
+  (oggi vuoto, punto di estensione per OVH/Hetzner/…) · `it` = i 3 bucket Italia · `unknown`.
+- **`usa_pct`** per cluster = quota del bucket *USA (CLOUD Act)* (include il tenant MIM delle
+  scuole), più ampio del set `{microsoft,google,aws}` di `report_it_by_cluster.py`.
+- **Integrità:** `assert_kpi_integrity()` (somma bucket = enti, quote ~100, range, cluster = totale)
+  girata a ogni build (exit 1 se viola) + 11 unit test in [`tests/test_kpi.py`](../tests/test_kpi.py).
+- **Pipeline:** eseguito nella nightly dopo `build_stats.py` e nel job CI `smoke`. `dist/kpi.json`
+  è già nel git-add notturno e nell'artifact Pages → servito automaticamente.
