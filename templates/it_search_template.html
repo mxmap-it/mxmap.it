@@ -67,7 +67,7 @@
   .summary-card.italia .n { color: #009246; }
 
   .controls {
-    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 8px; margin-bottom: 12px;
   }
   .controls input, .controls select {
@@ -104,6 +104,12 @@
   .badge.sovrano { background: #C8E6C9; color: #006623; }
   .badge.indep   { background: #DCEDC8; color: #33691E; }
   .badge.unknown { background: #ECEFF1; color: #607D8B; }
+  .badge.dom  { background: #E8F5E9; color: #1B5E20; }
+  .badge.frgn { background: #FCE4E4; color: #B71C1C; }
+  .badge.mix  { background: #FFF3E0; color: #E65100; }
+  .conf { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .conf.hi { color: #1a7f37; } .conf.mid { color: #bf8700; }
+  .conf.lo { color: #cf222e; } .conf.na { color: #999; }
 
   .domain { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; }
   .ipa-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #888; }
@@ -150,8 +156,10 @@
   <p class="description">
     Cerca tra tutti gli enti pubblici italiani analizzati. Ogni riga è un ente IndicePA
     con il suo provider di posta elettronica classificato via DNS pubblico (MX, SPF,
-    DKIM, autodiscover, ASN). Filtra per nome, codice IPA, categoria, provider,
-    sovranità, regione, provincia. Usa direttamente i bottoni di download per scaricare
+    DKIM, autodiscover, ASN), con il <strong>livello di attendibilità</strong> della
+    classificazione e la <strong>giurisdizione del server MX</strong> (🇮🇹 domestica /
+    🌍 estera). Filtra e ordina per nome, codice IPA, categoria, provider, sovranità,
+    attendibilità, giurisdizione, regione. Usa i bottoni di download per scaricare
     l'intero dataset.
   </p>
 
@@ -171,6 +179,22 @@
     <select id="filter-cluster"><option value="">Tutti i cluster</option></select>
     <select id="filter-provider"><option value="">Tutti i provider</option></select>
     <select id="filter-sovereignty"><option value="">Tutte le sovranità</option></select>
+    <select id="filter-jurisdiction">
+      <option value="">Tutte le giurisdizioni MX</option>
+      <option value="🇮🇹 Domestica (IT)">🇮🇹 Domestica (IT)</option>
+      <option value="🌍 Estera">🌍 Estera</option>
+      <option value="Mista (IT+estero)">Mista (IT+estero)</option>
+      <option value="Sconosciuta">Sconosciuta</option>
+    </select>
+    <select id="filter-confidence">
+      <option value="">Tutte le attendibilità</option>
+      <option value="molto alta">molto alta (≥90%)</option>
+      <option value="alta">alta (80–89%)</option>
+      <option value="media">media (60–79%)</option>
+      <option value="bassa">bassa (&lt;60%)</option>
+      <option value="nulla">nulla (0%)</option>
+      <option value="n.d.">n.d.</option>
+    </select>
     <select id="filter-regione"><option value="">Tutte le regioni</option></select>
   </div>
 
@@ -189,11 +213,13 @@
         <th data-key="domain_used">Dominio</th>
         <th data-key="provider_display">Provider</th>
         <th data-key="sovereignty_bucket">Sovranità</th>
+        <th data-key="classification_confidence">Attendibilità</th>
+        <th data-key="jurisdiction_label">Giurisdizione MX</th>
         <th data-key="classification_reason">Evidenza</th>
       </tr>
     </thead>
     <tbody id="tbody">
-      <tr><td colspan="8" style="text-align:center;color:#999;padding:24px">Caricamento…</td></tr>
+      <tr><td colspan="10" style="text-align:center;color:#999;padding:24px">Caricamento…</td></tr>
     </tbody>
   </table>
 
@@ -229,6 +255,16 @@ function sovereigntyClass(s) {
   if (s.includes('Provider commerciali')) return 'italia';
   if (s.includes('Infrastruttura autonoma')) return 'indep';
   return 'unknown';
+}
+
+function confClass(c) {
+  if (typeof c !== 'number') return 'na';
+  if (c >= 0.8) return 'hi';
+  if (c >= 0.6) return 'mid';
+  return 'lo';
+}
+function jurClass(j) {
+  return { domestic: 'dom', foreign: 'frgn', mixed: 'mix' }[j] || 'unknown';
 }
 
 function buildSummary(rows) {
@@ -268,6 +304,8 @@ function applyFilters() {
   const fk = document.getElementById('filter-cluster').value;
   const fp = document.getElementById('filter-provider').value;
   const fs = document.getElementById('filter-sovereignty').value;
+  const fj = document.getElementById('filter-jurisdiction').value;
+  const fcf = document.getElementById('filter-confidence').value;
   const fr = document.getElementById('filter-regione').value;
 
   filteredRows = allRows.filter(r => {
@@ -275,6 +313,8 @@ function applyFilters() {
     if (fk && r.cluster_label !== fk) return false;
     if (fp && r.provider_display !== fp) return false;
     if (fs && r.sovereignty_bucket !== fs) return false;
+    if (fj && r.jurisdiction_label !== fj) return false;
+    if (fcf && r.confidence_band !== fcf) return false;
     if (fr && r.regione !== fr) return false;
     if (q) {
       const hay = `${r.denominazione} ${r.codice_ipa} ${r.domain_used} ${r.sito_istituzionale}`.toLowerCase();
@@ -284,6 +324,11 @@ function applyFilters() {
   });
 
   filteredRows.sort((a, b) => {
+    if (sortKey === 'classification_confidence') {  // ordinamento numerico
+      const an = typeof a[sortKey] === 'number' ? a[sortKey] : -1;
+      const bn = typeof b[sortKey] === 'number' ? b[sortKey] : -1;
+      return (an - bn) * (sortDir === 'asc' ? 1 : -1);
+    }
     const av = (a[sortKey] || '').toString().toLowerCase();
     const bv = (b[sortKey] || '').toString().toLowerCase();
     if (av === bv) return 0;
@@ -303,7 +348,7 @@ function render() {
     : `${filteredRows.length.toLocaleString('it-IT')} risultati su ${allRows.length.toLocaleString('it-IT')}`;
 
   if (filteredRows.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:#999;padding:24px">Nessun risultato.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;color:#999;padding:24px">Nessun risultato.</td></tr>';
     document.getElementById('pagination').innerHTML = '';
     return;
   }
@@ -324,6 +369,10 @@ function render() {
       '<td><span class="domain">' + escapeHtml(r.domain_used || '') + '</span></td>' +
       '<td>' + escapeHtml(r.provider_display || '') + '</td>' +
       '<td><span class="badge ' + sovClass + '">' + escapeHtml(r.sovereignty_bucket || '') + '</span></td>' +
+      '<td>' + (typeof r.classification_confidence === 'number'
+        ? '<span class="conf ' + confClass(r.classification_confidence) + '">' + Math.round(r.classification_confidence * 100) + '%</span>'
+        : '<span class="conf na">—</span>') + '</td>' +
+      '<td><span class="badge ' + jurClass(r.mx_jurisdiction) + '">' + escapeHtml(r.jurisdiction_label || '') + '</span></td>' +
       '<td><span class="reason">' + escapeHtml(r.classification_reason || '') + '</span></td>' +
     '</tr>';
   }).join('');
@@ -369,12 +418,14 @@ document.querySelectorAll('thead th').forEach(th => {
   });
 });
 ['q', 'filter-categoria', 'filter-cluster', 'filter-provider',
- 'filter-sovereignty', 'filter-regione'].forEach(id => {
+ 'filter-sovereignty', 'filter-jurisdiction', 'filter-confidence',
+ 'filter-regione'].forEach(id => {
   document.getElementById(id).addEventListener('input', applyFilters);
 });
 document.getElementById('reset-filters').addEventListener('click', () => {
   ['q', 'filter-categoria', 'filter-cluster', 'filter-provider',
-   'filter-sovereignty', 'filter-regione'].forEach(id => {
+   'filter-sovereignty', 'filter-jurisdiction', 'filter-confidence',
+   'filter-regione'].forEach(id => {
     document.getElementById(id).value = '';
   });
   applyFilters();
@@ -394,7 +445,7 @@ fetch(DATASET_URL)
   })
   .catch(e => {
     document.getElementById('tbody').innerHTML =
-      '<tr><td colspan="8" style="color:#c00;padding:24px;text-align:center">' +
+      '<tr><td colspan="10" style="color:#c00;padding:24px;text-align:center">' +
       'Errore caricamento dataset: ' + escapeHtml(e.message) + '<br><br>' +
       'Il file <code>dist/mxmap_it_dataset.json</code> verrà generato al prossimo run della pipeline. ' +
       'Riprova fra qualche minuto.</td></tr>';

@@ -27,8 +27,9 @@ Schema (per-entity flat row):
   cluster_label, denominazione, codice_istat, codice_comune_istat,
   regione, provincia, sito_istituzionale, domain_used, domain_source,
   has_mx, provider_raw, provider_display, sovereignty_bucket,
-  mx_records, mx_countries, gateway, dkim_tenant, spf_includes,
-  classification_reason, ipa_url
+  classification_confidence, confidence_band, mx_jurisdiction,
+  jurisdiction_label, mx_records, mx_countries, gateway, dkim_tenant,
+  spf_includes, classification_reason, ipa_url
 
 Run:
   uv run python3 scripts/build_public_dataset.py
@@ -68,6 +69,9 @@ PROVIDER_DISPLAY = {
     "regional-public": "Cloud Italiano",
     "independent": "Infrastruttura autonoma",
     "provincial-shared": "Mail provinciale condivisa",
+    # scuole sul tenant centrale MIM (istruzione.it) = Microsoft 365 (CLOUD Act),
+    # come in index.html / historicize (prima mancava → sovranità "Sconosciuto").
+    "istruzione-miur-tenant": "Microsoft 365",
     "zoho": "Zoho", "yandex": "Yandex",
     "unknown": "Sconosciuto",
 }
@@ -86,6 +90,30 @@ def sovereignty_of(provider_display: str) -> str:
     if provider_display in {"Zoho", "Yandex"}:
         return "Altri provider esteri"
     return "Sconosciuto"
+
+
+# Livello di attendibilità della classificazione (confidence ESORICS 0–1).
+def confidence_band(c) -> str:
+    if not isinstance(c, int | float):
+        return "n.d."
+    if c >= 0.90:
+        return "molto alta"
+    if c >= 0.80:
+        return "alta"
+    if c >= 0.60:
+        return "media"
+    if c > 0:
+        return "bassa"
+    return "nulla"
+
+
+# Giurisdizione dell'infrastruttura MX (dove risiede fisicamente il server).
+JURISDICTION_LABEL = {
+    "domestic": "🇮🇹 Domestica (IT)",
+    "foreign": "🌍 Estera",
+    "mixed": "Mista (IT+estero)",
+    "unknown": "Sconosciuta",
+}
 
 
 # Friendly Italian labels for IPA category codes (citizen-facing).
@@ -200,6 +228,8 @@ def main() -> int:
 
         mx_hosts = m.get("mx") or []
         mx_countries = m.get("mx_countries") or []
+        conf = m.get("classification_confidence")
+        jur = m.get("mx_jurisdiction") or "unknown"
 
         rows.append({
             "codice_ipa":           codice_ipa,
@@ -219,6 +249,10 @@ def main() -> int:
             "provider_raw":         provider_raw,
             "provider_display":     provider_disp,
             "sovereignty_bucket":   sovereignty_of(provider_disp),
+            "classification_confidence": round(conf, 2) if isinstance(conf, int | float) else "",
+            "confidence_band":      confidence_band(conf),
+            "mx_jurisdiction":      jur,
+            "jurisdiction_label":   JURISDICTION_LABEL.get(jur, jur),
             "mx_records":           ";".join(mx_hosts[:10]),
             "mx_countries":         ";".join(mx_countries),
             "gateway":              gateway,
