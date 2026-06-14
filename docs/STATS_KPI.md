@@ -169,20 +169,36 @@ attuale senza le serie temporali). Le `timeseries/*` restano gated col run #1.
 - **Layout**: 4 carte di testata → sezione per categoria (Cat.1–8) con il grafico adatto
   (stacked area per le quote, line per i trend, bar/heat per le segmentazioni) → tabella
   segmentazioni (cluster ente, regione) con ISD per riga.
-- **Decisione**: pagina nuova `statistiche.html` *oppure* estendere `storia.html` (oggi
-  più "changelog"; le statistiche sono più "cruscotto"). Proposta: **pagina nuova**, e
-  `storia.html` resta il diario dei cambiamenti.
+- **Deciso (✓): pagina nuova `statistiche.html`** — cruscotto KPI; `storia.html` resta il
+  diario dei cambiamenti.
 
-## 8. Punti aperti (decisioni)
+## 8. Decisioni (chiuse) e implementazione
 
-1. **Denominatore ISD**: su *classificati* (`N_class`, proposto — non diluisce con gli
-   unknown) o su *totale* (`N`)?
-2. **Base ISD**: bucket di *sovranità* (proposto — controllo legale) o `mx_jurisdiction`
-   *domestic* (controllo tecnico)? Si possono mostrare entrambi, ma il "numero-faro" è uno.
-3. **4 KPI di testata** (§5): confermare o cambiare.
-4. **Cat.3.4 / 3.3**: teniamo HHI e provider-IT-vs-esteri o sfoltiamo?
-5. **Regione per ente** (Cat.6): confermare la fonte (`data-regions.json` vs campo nel
-   seed) — serve un `region(e)` affidabile per tutti gli enti.
-6. **Fotografia anticipata**: vuoi pubblicare i KPI *correnti* (`stats_current`,
-   `by_category`, `by_region`) già prima del run #1, lasciando gated solo le serie storiche?
-7. **`statistiche.html` nuova** vs estendere `storia.html`.
+**Chiuse (✓):**
+1. **Denominatore ISD** → sui *classificati* (`N_class`): non diluisce con gli unknown.
+2. **Base ISD** → bucket di *sovranità* (controllo legale). `mx_jurisdiction` mostrato a
+   parte come indicatore tecnico complementare (lo scarto ISD↔MX-domestic è un segnale).
+3. **4 KPI di testata** → ISD · Quota CLOUD Act · Coverage · Enti monitorati.
+4. **Mercato** → teniamo top-3 (3.2) e HHI (3.3); **droppata** provider-IT-vs-esteri (3.4),
+   ridondante con la Cat.1.
+6. **Fotografia anticipata** → **SÌ**: `stats_current` + `stats_by_category` sono non-gated
+   e già live (`scripts/build_stats.py`). Solo le `timeseries/*` restano gated al run #1.
+7. **Pagina nuova `statistiche.html`** (cruscotto); `storia.html` resta il diario.
+
+**Stato implementazione (questo commit):**
+- `scripts/build_stats.py` → `data/summary/stats_current.json` + `stats_by_category.json`
+  (riusa `sovereignty_of`/`material_row`). Cablato in nightly (non-gated) + CI smoke.
+- `statistiche.html` → testata + composizione sovranità + giurisdizione MX + **sovranità
+  per tipo di ente** (15 cluster, barre 100%-stacked) + mercato + qualità + trend (gated).
+- Linkata da `index.html` (Trasparenza dataset).
+
+**Correzione importante (segmentazione):** i codici categoria del `bfs` IT sono quelli
+**propri del seed** (`COM`=Comuni, `PRO`=Province, `CMM`=Città metrop., `REG`=Regioni,
+`CONS`=Consorzi…), NON i codici IndicePA `L6/L5/...` del report. Il mapping in
+`build_stats.py` (`CLUSTERS`) è stato verificato sui 54 codici reali → copertura totale,
+nessun "other".
+
+**Aperte / differite:**
+5. **Cat.6 — Sovranità per regione** → **DIFFERITA**: `data.json` non ha un campo `region`
+   (0/22987). Serve decidere la fonte (`data-regions.json`, crosswalk ISTAT, o derivazione
+   dal `bfs`/seed comune→regione) prima di produrre `stats_by_region.json`.

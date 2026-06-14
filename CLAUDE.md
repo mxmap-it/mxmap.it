@@ -39,6 +39,20 @@ The nightly (`.github/workflows/nightly.yml`) broke twice on the data commit/pus
 
 5. **Before merging any change that touches the nightly or its scripts:** confirm `ci.yml`'s `smoke` job is green. Locally/on the server you can dry-run the tail with the same commands the smoke job uses (see `ci.yml`). Network steps (`fetch_indicepa`, `preprocess`, `postprocess`, `recover/finalize`, `enrich`) can't run in CI — they are only `py_compile`d; their runtime failures are transient (network) and surface via the `nightly-failure` issue, never by silently dropping the site.
 
+## CRITICAL: KPIs & statistics — numbers must always be tested and verified
+
+Any statistic or KPI we publish (Indice di Sovranità Digitale, CLOUD Act share, per-category breakdowns, coverage, market concentration, …) **MUST be both unit-tested and self-verified at build time**. A wrong public number is worse than a missing one — this is a transparency observatory; the figures are the product.
+
+**Two mandatory layers for every KPI/statistics generator:**
+
+1. **Unit tests with hand-computed expected values.** The compute logic lives in `src/mail_sovereignty/` (importable, coverage-gated by `fail_under`), **not** only in `scripts/`. A `tests/test_*.py` exercises it on a small synthetic fixture whose totals are worked out by hand, asserting **exact** values (counts, shares, index, segmentation). Reference: [`src/mail_sovereignty/stats.py`](src/mail_sovereignty/stats.py) + [`tests/test_stats.py`](tests/test_stats.py).
+
+2. **Runtime integrity assertions on real data.** The module exposes an `assert_integrity()` that checks internal consistency — counts sum to the population, shares sum to ~100%, the headline index equals its definition, the segmentation covers everything with no oversized `other`, no `NaN`/out-of-range — and the build script calls it on **every** run, exiting non-zero on any violation. Reference: `stats.assert_integrity()`, called by [`scripts/build_stats.py`](scripts/build_stats.py). Each invariant has a test proving it actually fires on corrupted input.
+
+**Wiring (so it runs automatically):** unit tests run in the `test` CI job (`pytest --cov`); the build script *with its integrity check* runs in the nightly **and** in the `smoke` CI job (see the rule above). A KPI that isn't covered by **both** a unit test and a runtime invariant must not ship.
+
+**Dev-machine note:** `src/` + `tests/` are ruff-gated. The Windows laptop has no `uv`, but `ruff==0.15.5` and `pytest` can be `pip install`ed into the system Python to format/lint/test `stats`-style modules locally (logic that only imports stdlib + `mail_sovereignty`), avoiding the server round-trip. Match the pinned ruff version (see `uv.lock`).
+
 ## Commands
 
 ```bash

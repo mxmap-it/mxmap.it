@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Statistiche — Osservatorio sulla Sovranità Digitale della Posta Elettronica della PA Italiana</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{color-scheme:light}
+html,body{background:#fff}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:1000px;margin:0 auto;padding:32px 24px;line-height:1.6;color:#222}
+h1{font-size:26px;border-bottom:2px solid #009246;padding-bottom:8px}
+h2{font-size:20px;margin-top:38px;color:#005a2a;border-bottom:1px solid #ddd;padding-bottom:4px}
+.intro{background:#fafafa;border:1px solid #ddd;border-radius:6px;padding:16px 20px;margin:18px 0}
+.banner{background:#fff8e6;border:1px solid #e8cf80;border-left:4px solid #E8A33D;border-radius:6px;padding:12px 16px;margin:18px 0;font-size:13px}
+.cards{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.card{flex:1;min-width:150px;background:#fafafa;border:1px solid #ddd;border-left:4px solid #009246;border-radius:6px;padding:12px 16px}
+.card.red{border-left-color:#D42E2E}
+.card .big{font-size:26px;font-weight:700;color:#005a2a;font-variant-numeric:tabular-nums}
+.card.red .big{color:#b3261e}
+.card .lbl{font-size:12px;color:#666}
+.chartbox{position:relative;height:300px;margin:14px 0 24px}
+.chartbox.tall{height:520px}
+.chartbox.short{height:150px}
+.note{font-size:12px;color:#777;margin:-8px 0 14px}
+table.tbl{border-collapse:collapse;width:100%;font-size:13px}
+table.tbl th,table.tbl td{padding:5px 10px;border-bottom:1px solid #eee;text-align:left;vertical-align:middle}
+table.tbl th{background:#f4f4f4}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.bar{position:relative;background:#eee;border-radius:3px;height:14px;min-width:60px}
+.bar>span{position:absolute;left:0;top:0;bottom:0;background:#4a9e5c;border-radius:3px}
+.muted{color:#888;font-size:12px}
+code{background:#f4f4f4;padding:1px 6px;border-radius:3px;font-size:12px}
+a{color:#005a2a}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;margin:8px 0 0}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
+</style>
+</head>
+<body>
+<p style="font-size:13px"><a href="index.html">← Torna alla mappa</a> · <a href="methodology.html">Metodologia</a> · <a href="storia.html">Storia</a> · <a href="anomalie.html">Anomalie</a></p>
+<h1>Statistiche</h1>
+<p style="font-size:13px;color:#666;margin-top:-8px">Osservatorio sulla Sovranità Digitale della Posta Elettronica della Pubblica Amministrazione Italiana</p>
+
+<div class="intro">
+<p>La fotografia attuale della sovranità digitale della posta elettronica della PA
+italiana: dove ogni ente ospita la propria posta, chi ne ha il controllo legale
+(giurisdizione) e tecnico (dove risiede l'MX), con la qualità del rilevamento.
+Numeri calcolati dal software a ogni aggiornamento da <code>data.json</code> —
+gli stessi dati della mappa, qui aggregati.</p>
+</div>
+
+<div class="banner" id="banner" style="display:none">
+⚠️ <strong>Fase di stabilizzazione.</strong> Stiamo risolvendo le
+<a href="anomalie.html">anomalie</a> residue prima del primo scan ufficiale: i valori
+qui sono quelli correnti (live), ma <strong>le serie storiche partiranno dal run #1</strong>
+(baseline pulita). Vedi <a href="storia.html">Storia</a> per i cambiamenti nel tempo.
+</div>
+
+<div class="cards" id="cards"></div>
+
+<h2>Composizione della sovranità</h2>
+<p class="note">Quota degli enti per bucket di sovranità (narrazione CLOUD Act). L'<strong>ISD</strong> è la somma dei tre bucket italiani sui soli enti classificati.</p>
+<div class="chartbox short"><canvas id="sovChart"></canvas></div>
+<div class="legend" id="sovLegend"></div>
+
+<h2>Giurisdizione tecnica dell'MX</h2>
+<p class="note">Dove risiede fisicamente il server di posta in entrata (modello ESORICS): 🇮🇹 domestico vs 🌍 estero. Complementare alla sovranità: uno scarto col controllo legale è esso stesso un segnale.</p>
+<div class="chartbox short"><canvas id="jurChart"></canvas></div>
+<div class="legend" id="jurLegend"></div>
+
+<h2>Sovranità per tipo di ente</h2>
+<p class="note">Composizione della sovranità dentro ogni categoria di PA (ordinate dalla meno alla più sovrana). Le scuole e lo Stato centrale sono i più esposti al CLOUD Act; Comuni e Ordini i più sovrani.</p>
+<div class="chartbox tall"><canvas id="catChart"></canvas></div>
+
+<h2>Struttura del mercato</h2>
+<p class="note">Provider di posta per quota sugli enti classificati.</p>
+<div class="cards" id="marketCards"></div>
+<table class="tbl"><thead><tr><th>Provider</th><th>Tipo</th><th class="num">Enti</th><th class="num">Quota</th><th style="width:30%">&nbsp;</th></tr></thead><tbody id="provBody"></tbody></table>
+
+<h2>Copertura e qualità del dato</h2>
+<p class="note">Trasparenza sul metodo: quanto del campo è classificato e con quanta confidenza.</p>
+<div class="cards" id="qualCards"></div>
+<table class="tbl" style="margin-top:14px"><thead><tr><th>Indicatore</th><th class="num">Valore</th><th style="width:40%">&nbsp;</th></tr></thead><tbody id="qualBody"></tbody></table>
+
+<h2>Andamento nel tempo</h2>
+<div id="trendBox" class="muted">Carico le serie storiche…</div>
+
+<p class="muted" id="gen" style="margin-top:24px"></p>
+
+<script>
+const SOV_ORDER = ["Italia — Cloud sovrano","Italia — Provider commerciali","Italia — Infrastruttura autonoma","Altri provider esteri","USA (CLOUD Act)","Sconosciuto"];
+const SOV_COLORS = {
+  "USA (CLOUD Act)":"#D42E2E","Italia — Cloud sovrano":"#009246",
+  "Italia — Provider commerciali":"#4a9e5c","Italia — Infrastruttura autonoma":"#6b8e23",
+  "Altri provider esteri":"#FF8C42","Sconosciuto":"#9aa0a6",
+};
+const JUR_ORDER = ["domestic","mixed","foreign","unknown"];
+const JUR_COLORS = { domestic:"#009246", foreign:"#D42E2E", mixed:"#E8A33D", unknown:"#9aa0a6" };
+const JUR_LABEL = { domestic:"🇮🇹 Domestico", foreign:"🌍 Estero", mixed:"Misto", unknown:"Sconosciuto" };
+
+async function getJSON(u){ try{ const r = await fetch(u); return r.ok ? await r.json() : null; }catch(e){ return null; } }
+function esc(s){ const e=document.createElement("div"); e.textContent=s==null?"":s; return e.innerHTML; }
+function fmt(n){ return Number(n).toLocaleString("it"); }
+if (window.Chart){ Chart.defaults.color="#444"; Chart.defaults.borderColor="#eee"; Chart.defaults.font.family="-apple-system,Segoe UI,Roboto,sans-serif"; }
+
+function card(big, lbl, red){ return `<div class="card ${red?'red':''}"><div class="big">${esc(big)}</div><div class="lbl">${esc(lbl)}</div></div>`; }
+function provColor(display){
+  if(["Microsoft 365","Google Workspace","AWS"].includes(display)) return "#D42E2E";
+  if(display==="Cloud Italiano") return "#009246";
+  if(["Zoho","Yandex"].includes(display)) return "#FF8C42";
+  if(display==="Infrastruttura autonoma") return "#6b8e23";
+  if(display==="Sconosciuto") return "#9aa0a6";
+  return "#4a9e5c"; // Provider Italiano (commerciali)
+}
+function legend(el, items){ document.getElementById(el).innerHTML = items.map(([c,t])=>`<span><i style="background:${c}"></i>${esc(t)}</span>`).join(""); }
+
+// barra orizzontale 100%-stacked: un dataset per segmento, dati in % della riga
+function stackedBar(canvasId, rows, segKeys, colorOf, labelOf, opts){
+  opts = opts || {};
+  const datasets = segKeys.map(k => ({
+    label: labelOf(k),
+    data: rows.map(r => r.totals ? +(100*(r.seg[k]||0)/r.totals).toFixed(2) : 0),
+    abs: rows.map(r => r.seg[k]||0),
+    backgroundColor: colorOf(k), borderWidth: 0,
+  }));
+  new Chart(document.getElementById(canvasId), {
+    type: "bar",
+    data: { labels: rows.map(r=>r.label), datasets },
+    options: { indexAxis: "y", responsive: true, maintainAspectRatio: false,
+      scales: { x: { stacked: true, max: 100, ticks:{ callback:v=>v+"%" } }, y: { stacked: true } },
+      plugins: { legend: { display: !!opts.legend, position:"bottom" },
+        tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.x}%  (${fmt(ctx.dataset.abs[ctx.dataIndex])})` } } } },
+  });
+}
+
+(async function(){
+  const [cur, byCat] = await Promise.all([
+    getJSON("data/summary/stats_current.json"),
+    getJSON("data/summary/stats_by_category.json"),
+  ]);
+  if (!cur){ document.getElementById("cards").innerHTML = "<p>Statistiche non ancora disponibili.</p>"; return; }
+
+  // banner stabilizzazione finché lo storico non è attivo (run #1)
+  const runs = await getJSON("history/timeseries/sovereignty.json");
+  if (!runs || !runs.length) document.getElementById("banner").style.display = "block";
+
+  // testata
+  const h = cur.headline;
+  document.getElementById("cards").innerHTML =
+    card(h.isd + "%", "Indice di Sovranità Digitale (giurisdizione 🇮🇹)") +
+    card(h.cloud_act_pct + "%", "PA sotto CLOUD Act (USA)", true) +
+    card(h.coverage_pct + "%", "Copertura (enti classificati)") +
+    card(fmt(h.n_entities), "Enti monitorati");
+
+  // composizione sovranità (una barra, 100% del totale)
+  const sovSeg = {}; cur.sovereignty.forEach(s => sovSeg[s.bucket] = s.count);
+  stackedBar("sovChart",
+    [{ label: "PA italiana", seg: sovSeg, totals: cur.n_entities }],
+    SOV_ORDER, k=>SOV_COLORS[k], k=>k);
+  legend("sovLegend", cur.sovereignty.map(s => [SOV_COLORS[s.bucket], `${s.bucket} — ${fmt(s.count)} (${s.pct}%)`]));
+
+  // giurisdizione MX (una barra)
+  const jurSeg = {}; cur.jurisdiction.forEach(j => jurSeg[j.key] = j.count);
+  const jurTot = cur.jurisdiction.reduce((a,j)=>a+j.count,0);
+  stackedBar("jurChart",
+    [{ label: "MX in entrata", seg: jurSeg, totals: jurTot }],
+    JUR_ORDER, k=>JUR_COLORS[k], k=>JUR_LABEL[k]);
+  legend("jurLegend", cur.jurisdiction.map(j => [JUR_COLORS[j.key], `${JUR_LABEL[j.key]} — ${fmt(j.count)} (${j.pct}%)`]));
+
+  // sovranità per categoria (barre 100%-stacked, ordinate per ISD crescente)
+  if (byCat && byCat.clusters){
+    const clusters = byCat.clusters.slice().sort((a,b)=>a.isd-b.isd);
+    const rows = clusters.map(c => {
+      const seg = {}; c.sovereignty.forEach(s => seg[s.bucket]=s.count);
+      return { label: `${c.label.split(" (")[0]} (${fmt(c.n)})`, seg, totals: c.n };
+    });
+    stackedBar("catChart", rows, SOV_ORDER, k=>SOV_COLORS[k], k=>k, { legend:true });
+  }
+
+  // mercato
+  document.getElementById("marketCards").innerHTML =
+    card(cur.market.top3_pct + "%", "quota dei primi 3 provider") +
+    card(cur.market.hhi, "indice di concentrazione (HHI 0–10000)");
+  const maxP = Math.max(...cur.providers.map(p=>p.pct));
+  document.getElementById("provBody").innerHTML = cur.providers.filter(p=>p.count>=1).map(p =>
+    `<tr><td><code>${esc(p.provider)}</code></td><td>${esc(p.display)}</td>` +
+    `<td class="num">${fmt(p.count)}</td><td class="num">${p.pct}%</td>` +
+    `<td><div class="bar"><span style="width:${Math.max(2,100*p.pct/maxP)}%;background:${provColor(p.display)}"></span></div></td></tr>`
+  ).join("");
+
+  // qualità
+  document.getElementById("qualCards").innerHTML =
+    card(cur.coverage_pct + "%", "copertura") +
+    card(cur.mean_confidence.toFixed(3), "confidenza media");
+  const qrows = [];
+  cur.confidence_bands.forEach(b => qrows.push([`Confidenza ${b.band} (${b.band==='alta'?'≥0.8':b.band==='media'?'0.5–0.8':'<0.5'})`, b.count, b.pct]));
+  const sg = cur.signals;
+  [["MX valido","mx_pct"],["SPF","spf_pct"],["DKIM","dkim_pct"],["Gateway anti-spam","gateway_pct"]].forEach(([t,k]) => qrows.push([t, null, sg[k]]));
+  document.getElementById("qualBody").innerHTML = qrows.map(([t,c,p]) =>
+    `<tr><td>${esc(t)}</td><td class="num">${c==null?p+"%":fmt(c)+" ("+p+"%)"}</td>` +
+    `<td><div class="bar"><span style="width:${p}%"></span></div></td></tr>`
+  ).join("");
+
+  // andamento nel tempo (gated: disponibile dal run #1)
+  document.getElementById("trendBox").innerHTML = (runs && runs.length)
+    ? `Serie storiche disponibili nella pagina <a href="storia.html">Storia</a> (${runs.length} run).`
+    : `<div class="banner" style="margin:0">Le serie storiche partiranno dal <strong>primo scan ufficiale (run #1)</strong>, dopo la chiusura delle <a href="anomalie.html">anomalie</a>. Da quel momento qui comparirà l'andamento di ogni KPI nel tempo; il diario dei cambiamenti è in <a href="storia.html">Storia</a>.</div>`;
+
+  document.getElementById("gen").textContent =
+    `Fotografia: ${cur.generated || "—"} · ${fmt(cur.n_entities)} enti IT · ISD ${cur.isd}% · sorgente: data.json (gli stessi dati della mappa).`;
+})();
+</script>
+</body>
+</html>

@@ -172,6 +172,10 @@ jobs:
         run: uv run python3 scripts/build_frontend.py
       - name: Build public dataset (CSV/JSON/XLSX)
         run: uv run python3 scripts/build_public_dataset.py
+      # KPI correnti per statistiche.html — NON-gated (fotografia di oggi, solo
+      # aggregato di data.json). Le serie storiche restano gated (historicize sotto).
+      - name: Build current KPIs (pagina Statistiche)
+        run: uv run python3 scripts/build_stats.py --country IT
       # --- Storicizzazione (F1) — DISATTIVATA finché non risolviamo le anomalie.
       # Il run #1 ufficiale dello storico dev'essere il primo scan su dati "da
       # rollout" (anomalie risolte), non un run sporco. Per attivarla: togliere
