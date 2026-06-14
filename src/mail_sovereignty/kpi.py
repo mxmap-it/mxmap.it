@@ -1,7 +1,8 @@
 """KPI aggregati per l'Osservatorio Nazionale Sovranità Digitale — logica pura.
 
-Produce il payload di `dist/kpi.json`, file statico pubblico (CC BY-SA 4.0)
-consumato dal sito Hugo dell'Osservatorio per sostituire i placeholder `—%`.
+Produce il payload di `kpi.json` (servito alla root del deploy GitHub Pages,
+come data-summary.json), file statico pubblico (CC BY-SA 4.0) consumato dal
+sito Hugo dell'Osservatorio per sostituire i placeholder `—%`.
 Schema concordato (vedi docs/STATS_KPI.md §Osservatorio): totals, sovereignty a
 4 bucket, top_providers, by_cluster, confidence.
 

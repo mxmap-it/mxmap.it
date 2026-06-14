@@ -215,7 +215,7 @@ jobs:
           # Stage SOLO i path esistenti: i report opzionali (step continue-on-error)
           # possono mancare, e un `git add` su un path inesistente farebbe fallire
           # tutto lo step.
-          for p in data.json data-regions.json data-summary.json data-detail.json \
+          for p in data.json data-regions.json data-summary.json data-detail.json kpi.json \
                    data/summary dist validation_report.json validation_report.csv data/dns_cache \
                    data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
                    data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json \

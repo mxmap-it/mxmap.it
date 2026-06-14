@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Genera dist/kpi.json — KPI aggregati pubblici per l'Osservatorio Sovranità Digitale.
+"""Genera kpi.json — KPI aggregati pubblici per l'Osservatorio Sovranità Digitale.
 
 Logica pura in src/mail_sovereignty/kpi.py. File statico pubblico (CC BY-SA 4.0)
 consumato dal sito Hugo dell'Osservatorio (sostituisce i placeholder —%).
 NON-gated: fotografia da data.json a ogni build. Il run_id si legge da
 history/runs.jsonl se presente (storicizzazione gated → altrimenti null).
 
-A OGNI build esegue assert_kpi_integrity(): se i numeri non sono coerenti lo
-script fallisce (exit 1) → intercettato da CI smoke / nightly.
+Scritto alla ROOT del repo (come data-summary.json), così è servito alla root
+del deploy GitHub Pages. A OGNI build esegue assert_kpi_integrity(): se i numeri
+non sono coerenti lo script fallisce (exit 1) → intercettato da CI smoke / nightly.
 
 Uso: uv run python3 scripts/build_kpi.py [--country IT]
-URL pubblico: https://fpietrosanti.github.io/mxmap.it/dist/kpi.json
+URL pubblico: https://fpietrosanti.github.io/mxmap.it/kpi.json
 """
 
 from __future__ import annotations
@@ -52,7 +53,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", type=Path, default=ROOT / "data.json")
     ap.add_argument("--country", default="IT")
-    ap.add_argument("--out", type=Path, default=ROOT / "dist" / "kpi.json")
+    ap.add_argument("--out", type=Path, default=ROOT / "kpi.json")
     args = ap.parse_args()
 
     d = json.loads(args.data.read_text(encoding="utf-8"))

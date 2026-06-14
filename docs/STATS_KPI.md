@@ -206,11 +206,12 @@ nessun "other".
 ## 9. Feed pubblico per l'Osservatorio (`kpi.json`)
 
 [`scripts/build_kpi.py`](../scripts/build_kpi.py) (+ logica [`src/mail_sovereignty/kpi.py`](../src/mail_sovereignty/kpi.py))
-produce **`dist/kpi.json`**, file statico pubblico (CC BY-SA 4.0) consumato dal sito Hugo
+produce **`kpi.json`** alla **root del repo** (servito alla root del deploy GitHub Pages,
+come `data-summary.json`), file statico pubblico (CC BY-SA 4.0) consumato dal sito Hugo
 dell'[Osservatorio Nazionale Sovranità Digitale](https://github.com/fpietrosanti/osservatorio-nazionale-sovranita-digitale)
 per sostituire i placeholder `—%`.
 
-- **URL pubblico:** `https://fpietrosanti.github.io/mxmap.it/dist/kpi.json`
+- **URL pubblico:** `https://fpietrosanti.github.io/mxmap.it/kpi.json`
 - **Schema:** `generated_at`, `run_id` (da `history/runs.jsonl`, `null` finché lo storico è
   gated), `totals{n_entities,n_with_mx,coverage_pct}`, `sovereignty{extra_eu,eu_non_it,it,unknown}`
   (count/pct/label, pct sul totale → somma 100), `top_providers[≤10]` (aggregati per nome-display,
@@ -223,5 +224,5 @@ per sostituire i placeholder `—%`.
   scuole), più ampio del set `{microsoft,google,aws}` di `report_it_by_cluster.py`.
 - **Integrità:** `assert_kpi_integrity()` (somma bucket = enti, quote ~100, range, cluster = totale)
   girata a ogni build (exit 1 se viola) + 11 unit test in [`tests/test_kpi.py`](../tests/test_kpi.py).
-- **Pipeline:** eseguito nella nightly dopo `build_stats.py` e nel job CI `smoke`. `dist/kpi.json`
-  è già nel git-add notturno e nell'artifact Pages → servito automaticamente.
+- **Pipeline:** eseguito nella nightly dopo `build_stats.py` e nel job CI `smoke`. `kpi.json`
+  (root) è già nel git-add notturno e nell'artifact Pages → servito alla root del deploy.
