@@ -25,6 +25,20 @@ Then `git add` the reformatted files. There is a committed `.pre-commit-config.y
 
 **Dev-machine note:** if the working machine has no `uv` (e.g. a Windows laptop driving a remote server), run the format on the server, then copy the formatted files back before committing. CI checks only `src tests`, **not** `scripts/` — do not bulk-commit a repo-wide reformat of `scripts/`.
 
+## CRITICAL: Nightly must never break
+
+The nightly (`.github/workflows/nightly.yml`) broke twice on the data commit/push and stopped the public site from updating. The fix is **structural** and must be preserved — never patch around it:
+
+1. **The deploy NEVER depends on a git commit/push.** `update-data` builds the data and publishes it with `actions/upload-pages-artifact` (path `.`); the `deploy` job only runs `actions/deploy-pages` on that artifact. **Do not** re-introduce `actions/checkout` + `ref: main` in the `deploy` job — that re-couples the site to a successful push and is exactly the bug that recurred. The site must update from the in-run artifact regardless of git.
+
+2. **Data commits are best-effort and non-blocking.** The "Commit and push data" step in `update-data` is `continue-on-error: true` with `id: commit`. A commit/push failure must **never** fail the job or block the deploy. Keep the git history of data as a side-effect, never on the critical path.
+
+3. **Every script invoked by `nightly.yml` MUST be covered by the `smoke` job in `ci.yml`.** The `smoke` job `py_compile`s every nightly script (catches import/syntax breakage, including the network-only ones) and runs the deterministic pipeline tail (`compute_confidence`, `report_confidence`, `report_anomalies`, `validate`, `build_frontend`, `build_public_dataset`, `historicize`, `build_dcat`) on the committed `data.json`. **If you add or rename a step in `nightly.yml`, add/update it in the `smoke` job in the SAME PR.** This is what guarantees a code change can never silently break the 04:00 run — it goes red in CI first.
+
+4. **Failures auto-open a GitHub issue (auto-detection).** A commit failure opens/updates an issue labeled `nightly-commit`; any hard step failure (build/pipeline) opens/updates one labeled `nightly-failure` via a final `if: failure()` step. Do not remove these and do not let the labels go missing (the steps create them idempotently).
+
+5. **Before merging any change that touches the nightly or its scripts:** confirm `ci.yml`'s `smoke` job is green. Locally/on the server you can dry-run the tail with the same commands the smoke job uses (see `ci.yml`). Network steps (`fetch_indicepa`, `preprocess`, `postprocess`, `recover/finalize`, `enrich`) can't run in CI — they are only `py_compile`d; their runtime failures are transient (network) and surface via the `nightly-failure` issue, never by silently dropping the site.
+
 ## Commands
 
 ```bash

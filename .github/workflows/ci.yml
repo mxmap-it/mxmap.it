@@ -17,3 +17,74 @@ jobs:
       - run: uv run ruff check src tests
       - run: uv run ruff format src tests --check
       - run: uv run pytest --cov --cov-report=term-missing
+
+  # ── SMOKE DELLA NIGHTLY ────────────────────────────────────────────────────
+  # Esegue gli STESSI script che la nightly invoca, su OGNI push/PR. Scopo:
+  # qualunque modifica di codice che rompa uno script della nightly diventa
+  # rosso QUI (a costo zero di notte), non alle 4 del mattino. È il pilastro
+  # "nessuna modifica di codice romperà la nightly" del fix definitivo.
+  # Regola di progetto: ogni nuovo step aggiunto a nightly.yml DEVE essere
+  # aggiunto qui nello stesso PR. Vedi CLAUDE.md §"CRITICAL: Nightly must never break".
+  smoke:
+    name: Nightly scripts smoke test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - run: uv python install 3.13
+      - run: uv sync --group dev
+
+      # 1) Import-check di OGNI script invocato dalla nightly, inclusi quelli di
+      #    rete che qui non possiamo eseguire (fetch_indicepa, recover/finalize,
+      #    enrich). Esegue il top-level del modulo (import + def) SENZA lanciare
+      #    il main(): intercetta sia errori di sintassi sia errori di import
+      #    (es. una funzione rinominata in mail_sovereignty usata da uno script).
+      #    È la rete di sicurezza per "nessuna modifica di codice romperà la nightly".
+      - name: Import-check every nightly script (syntax + imports, no main)
+        run: |
+          uv run python - <<'PY'
+          import importlib.util, pathlib, signal, sys
+          scripts = """
+            fetch_indicepa enrich_from_aoo_uo recover_it_unknowns finalize_it_unknowns
+            cleanup_invalid_mx_attributions backfill_mx_discovery aggregate_istruzione_per_comune
+            compute_confidence report_confidence report_anomalies build_frontend
+            build_public_dataset historicize build_dcat
+          """.split()
+          # Guardia: un import non deve fare I/O. Se un modulo "appende" (es. rete a
+          # livello di modulo) lo facciamo fallire in 30s invece di bloccare la CI.
+          def _on_timeout(signum, frame):
+              raise TimeoutError("import >30s (I/O a livello di modulo?)")
+          signal.signal(signal.SIGALRM, _on_timeout)
+          failed = []
+          for name in scripts:
+              p = pathlib.Path("scripts") / f"{name}.py"
+              spec = importlib.util.spec_from_file_location(f"_smoke_{name}", p)
+              mod = importlib.util.module_from_spec(spec)
+              signal.alarm(30)
+              try:
+                  spec.loader.exec_module(mod)  # top-level only; __name__ != "__main__"
+                  print("OK  ", name)
+              except Exception as e:  # noqa: BLE001
+                  failed.append(name); print("FAIL", name, "->", repr(e))
+              finally:
+                  signal.alarm(0)
+          if failed:
+              print(f"\n{len(failed)} script non importabili: {failed}", file=sys.stderr)
+              sys.exit(1)
+          PY
+
+      # 2) Esecuzione REALE della coda deterministica della pipeline sul data.json
+      #    committato (nessuna rete): se una modifica rompe a RUNTIME uno di
+      #    questi script, il job va rosso PRIMA del merge. Stesso ordine della
+      #    nightly. historicize/build_dcat sono inclusi così che, quando li
+      #    riattiveremo nella nightly, siano già provati verdi in CI.
+      - name: Run deterministic pipeline tail on committed data.json
+        run: |
+          uv run python3 scripts/compute_confidence.py --country IT
+          uv run python3 scripts/report_confidence.py --country IT
+          uv run python3 scripts/report_anomalies.py --country IT
+          uv run validate || true   # il quality gate è un SEGNALE, non deve bloccare la CI
+          uv run python3 scripts/build_frontend.py
+          uv run python3 scripts/build_public_dataset.py
+          uv run python3 scripts/historicize.py --run-id ci-smoke --git-sha "${GITHUB_SHA}" --pipeline-version ci-smoke
+          uv run python3 scripts/build_dcat.py

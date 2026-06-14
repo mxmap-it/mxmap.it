@@ -11,7 +11,13 @@ name: Nightly data update
 #     backfill_mx_discovery (provenance taxonomy)
 #     aggregate_istruzione_per_comune (mappa scuole)
 #   Common:
-#     validate + build_frontend + build_public_dataset + commit + deploy
+#     validate + build_frontend + build_public_dataset
+#     → upload-pages-artifact → deploy (job `deploy`, via artifact)
+#     → commit best-effort (non-bloccante: NON sul cammino del deploy)
+#
+# DEPLOY DISACCOPPIATO DAL GIT: il sito si pubblica dall'artifact costruito nel
+# run, non da un commit. Un fallimento del commit/push non può più bloccare
+# l'aggiornamento del sito. Vedi CLAUDE.md §"CRITICAL: Nightly must never break".
 
 on:
   schedule:
@@ -176,14 +182,32 @@ jobs:
       #       --git-sha "${{ github.sha }}" --pipeline-version "0.1.0"
       # - name: DCAT-AP_IT metadata (harvesting dati.gov.it)
       #   run: uv run python3 scripts/build_dcat.py
-      - name: Commit and push if changed
+      # --- PUBBLICAZIONE DEL SITO (disaccoppiata dal commit git) ---------------
+      # Carica i dati appena costruiti come artifact Pages. Il job `deploy`
+      # (needs: update-data) pubblica QUESTO artifact. Sta PRIMA del commit git:
+      # così, qualunque cosa succeda al commit/push (che storicamente si rompeva),
+      # il sito si aggiorna comunque. È il pilastro del fix definitivo.
+      - name: Upload Pages artifact (sito + dati freschi)
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      # --- COMMIT DEI DATI: BEST-EFFORT, NON BLOCCANTE -------------------------
+      # `continue-on-error: true` ⇒ un fallimento qui NON rompe più il job né
+      # blocca il deploy (i dati sono già nell'artifact sopra). Conserviamo lo
+      # storico git dei dati (scelta di progetto), ma non è più sul cammino
+      # critico della pubblicazione. L'esito viene catturato (id: commit) per
+      # aprire un issue di rilevamento automatico se fallisce.
+      - name: Commit and push data (best-effort, non-blocking)
+        id: commit
+        continue-on-error: true
         run: |
           git diff --quiet data.json && { echo "data.json invariato: niente da committare"; exit 0; }
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # Stage SOLO i path esistenti: i report opzionali (step continue-on-error)
           # possono mancare, e un `git add` su un path inesistente farebbe fallire
-          # tutto lo step → la nightly non deve mai rompersi per questo.
+          # tutto lo step.
           for p in data.json data-regions.json data-summary.json data-detail.json \
                    data/summary dist validation_report.json validation_report.csv data/dns_cache \
                    data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
@@ -193,11 +217,9 @@ jobs:
             [ -e "$p" ] && git add "$p"
           done
           git commit -m "chore: nightly data update" || { echo "niente di staged: esco pulito"; exit 0; }
-          # Pubblica sul tip di main ANCHE se main è avanzato durante il run (push
-          # manuali concorrenti): fetch+rebase+push con retry. I file dati sono
-          # rigenerati in modo deterministico dalla pipeline → in caso di conflitto
-          # vince la versione appena costruita (`rebase -X theirs`). Così il push
-          # notturno non fallisce mai per una corsa con altri commit.
+          # Pubblica sul tip di main ANCHE se main è avanzato durante il run:
+          # fetch+rebase+push con retry. In caso di conflitto vince la versione
+          # appena costruita (`rebase -X theirs`), i dati essendo deterministici.
           for attempt in 1 2 3 4 5; do
             git fetch origin main || { echo "fetch fallito (tentativo $attempt)"; sleep 5; continue; }
             if ! git rebase -X theirs origin/main; then
@@ -211,7 +233,10 @@ jobs:
             echo "push rifiutato (main avanzato): retry (tentativo $attempt)"
             sleep 5
           done
-          echo "::error::commit/push notturno fallito dopo 5 tentativi"; exit 1
+          # Non più `::error`/exit fatale: con continue-on-error il job prosegue e
+          # il deploy avviene comunque. Segnaliamo (warning + outcome=failure) per
+          # far scattare l'auto-issue sotto.
+          echo "::warning::commit/push notturno fallito dopo 5 tentativi (deploy NON impattato)"; exit 1
       - name: Create issue on quality gate failure
         if: steps.validate.outcome == 'failure'
         continue-on-error: true
@@ -231,9 +256,58 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # NB: nessuno step "exit 1" sul gate — il gate è un segnale, non un
-      # blocco. Il job update-data deve concludersi con successo affinché
-      # il job deploy (needs: update-data) pubblichi sempre il dato corretto.
+
+      # --- AUTO-RILEVAMENTO 1/2: commit dei dati fallito -----------------------
+      # Il commit è best-effort (continue-on-error) e NON rompe il job, ma se
+      # fallisce vogliamo accorgercene: apre/aggiorna un issue. Il sito è già
+      # stato aggiornato dall'artifact, quindi l'issue è informativo, non urgente.
+      - name: Open issue if data commit failed (auto-detection)
+        if: steps.commit.outcome == 'failure'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create nightly-commit --color FBCA04 --description "Commit notturno dei dati fallito (deploy non impattato)" 2>/dev/null || true
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --label nightly-commit --state open --limit 1 --json number -q '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Commit dei dati di nuovo fallito il $(date -u +%Y-%m-%d). Il sito è stato comunque aggiornato (deploy via artifact). [Run]($run_url)."
+          else
+            gh issue create \
+              --title "Nightly: commit dei dati fallito (sito comunque aggiornato)" \
+              --label nightly-commit \
+              --body "Il commit/push notturno dei dati è fallito il $(date -u +%Y-%m-%d) dopo i retry.
+
+          **Impatto:** nessuno sul sito — il deploy avviene via artifact Pages, indipendente dal git. Lo storico git dei dati ha però saltato questo run.
+
+          **Azione:** verificare lo stato di main / eventuali branch protection sul push del token. [Run]($run_url)."
+          fi
+
+      # --- AUTO-RILEVAMENTO 2/2: hard-failure di uno step della pipeline --------
+      # Catch-all: scatta solo se uno step NON best-effort è fallito (build,
+      # preprocess, ecc.) — quindi NON per il commit (continue-on-error sopra).
+      # Deve restare l'ULTIMO step del job per "vedere" i fallimenti precedenti.
+      - name: Report nightly hard failure (auto-detection)
+        if: failure()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create nightly-failure --color B60205 --description "Step della nightly fallito (build/pipeline)" 2>/dev/null || true
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --label nightly-failure --state open --limit 1 --json number -q '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "La nightly è di nuovo fallita su uno step hard il $(date -u +%Y-%m-%d). [Run]($run_url)."
+          else
+            gh issue create \
+              --title "Nightly: fallimento di uno step della pipeline" \
+              --label nightly-failure \
+              --body "Uno step NON best-effort della nightly è fallito il $(date -u +%Y-%m-%d) (build/pipeline, non il commit).
+
+          Cause tipiche: (a) una modifica di codice che rompe uno script — dovrebbe già essere stata intercettata dal job CI 'smoke' su push (vedi ci.yml); (b) errore transitorio di rete (IndicePA/DNS/SMTP), che di norma si risolve da solo al run successivo.
+
+          **Impatto sul sito:** se il fallimento è prima della build, il sito resta all'ultimo deploy valido (dati non aggiornati, NON rotti). [Run]($run_url)."
+          fi
 
   deploy:
     needs: update-data
@@ -245,16 +319,13 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v6
-        with:
-          # Deploy dal branch di lavoro corrente (main). Il commit notturno
-          # di update-data ha già pushato i dati freschi su main; qui li
-          # serviamo. NB: in passato era 'baltic' (branch storico del fork
-          # Baltic) — un bug latente che avrebbe sovrascritto il sito con
-          # contenuto stale a ogni run notturno.
-          ref: main
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: .
+      # DEPLOY DISACCOPPIATO DAL GIT. Pubblichiamo l'artifact Pages costruito
+      # DENTRO il job update-data (step "Upload Pages artifact"), NON un
+      # checkout di main. Motivo: il vecchio design faceva `checkout main` e
+      # serviva i dati solo se il commit/push notturno era riuscito — e quel
+      # commit si è rotto due volte (push race / rebase), bloccando ogni
+      # aggiornamento del sito. Ora il sito si aggiorna SEMPRE coi dati appena
+      # costruiti nel run, indipendentemente dall'esito del commit git.
+      # Regola di progetto: CLAUDE.md §"CRITICAL: Nightly must never break".
       - id: deployment
         uses: actions/deploy-pages@v4
