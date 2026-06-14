@@ -239,7 +239,7 @@
   </div>
   <div class="header-right">
     <span class="updated" id="generated"></span>
-    <button class="toggle-info" id="toggle-stats" aria-expanded="false" aria-controls="stats-bar">Statistiche &#9662;</button>
+    <button class="toggle-info" id="toggle-stats" title="Apri la pagina Statistiche">Statistiche</button>
     <button class="toggle-info" id="toggle-info" aria-expanded="false" aria-controls="info-bar">Informazioni &#9662;</button>
   </div>
 </header>
@@ -557,23 +557,15 @@ function toggleInfo() {
   const collapsed = bar.classList.contains('collapsed');
   btn.innerHTML = collapsed ? 'Informazioni \u25be' : 'Informazioni \u25b4';
   btn.setAttribute('aria-expanded', String(!collapsed));
-  if (wasCollapsed) collapsePanel('stats-bar', 'toggle-stats', 'Statistiche');
   map.invalidateSize({ animate: false });
 }
 document.getElementById('toggle-info').addEventListener('click', toggleInfo);
 
-function toggleStats() {
-  const bar = document.getElementById('stats-bar');
-  const btn = document.getElementById('toggle-stats');
-  const wasCollapsed = bar.classList.contains('collapsed');
-  bar.classList.toggle('collapsed');
-  const collapsed = bar.classList.contains('collapsed');
-  btn.innerHTML = collapsed ? 'Statistiche \u25be' : 'Statistiche \u25b4';
-  btn.setAttribute('aria-expanded', String(!collapsed));
-  if (wasCollapsed) collapsePanel('info-bar', 'toggle-info', 'Informazioni');
-  map.invalidateSize({ animate: false });
-}
-document.getElementById('toggle-stats').addEventListener('click', toggleStats);
+// Il tab "Statistiche" naviga alla pagina dedicata (statistiche.html), non pi\u00f9
+// un pannello inline. La pagina ha il link "\u2190 Torna alla mappa".
+document.getElementById('toggle-stats').addEventListener('click', function () {
+  window.location.href = 'statistiche.html';
+});
 
 // --- Legend ---
 function toggleLegend() {
