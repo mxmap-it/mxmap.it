@@ -143,6 +143,10 @@ jobs:
       - name: Aggregate istruzione per comune (mappa scuole)
         continue-on-error: true
         run: uv run python3 scripts/aggregate_istruzione_per_comune.py
+      # Arricchimento geografico strutturale: regione/provincia/comune da ISTAT
+      # (chiave-sede ipa_codice_comune_istat). Sblocca l'asse "per aree".
+      - name: Enrich geo (regione/provincia da crosswalk ISTAT)
+        run: uv run python3 scripts/enrich_geo.py --country IT
       # Confidence ESORICS + sovranità DOMESTIC/FOREIGN + domestic-MX-override.
       # Dopo recovery/cleanup (provider finale), prima di build_frontend
       # (così i campi confidence/jurisdiction finiscono in data-detail.json).
