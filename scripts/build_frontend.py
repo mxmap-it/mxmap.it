@@ -32,6 +32,12 @@ SUMMARY_FIELDS = {
     "gateway",
     "isp_name",
     "population",
+    # Geo ISTAT puliti (enrich_geo): la mappa IT raggruppa le Province per
+    # `provincia` (sigla, 100%) — il vecchio `district` del seed era al 34%.
+    "provincia",
+    "regione",
+    "comune",
+    "macroarea",
 }
 
 # Fields needed only for popups (loaded in background)
@@ -188,8 +194,17 @@ def build_region_data(munis: dict, generated: str) -> dict:
 
     for bfs, m in munis.items():
         cc = m.get("country", "")
-        region = m.get("canton", "") or ""
-        district = m.get("district", "") or ""
+        # Italy groups the "Regioni" level by the clean ISTAT `regione` (enrich_geo,
+        # 100%, 20 valori) — the legacy seed `canton` was ~33% populated and full of
+        # garbage (entity/assembly names), producing dozens of fake regions. Other
+        # countries keep `canton`. Region polygons matched by name / name:it.
+        region = m.get("regione") or m.get("canton") or ""
+        # Italy groups the "Province" level by the clean ISTAT sigla `provincia`
+        # (enrich_geo, 100%) — the legacy seed `district` was only ~34% populated,
+        # which silently broke the province choropleth. Other countries keep their
+        # own `district` field. The province polygons are matched by sigla
+        # (ISO3166-2 / short_name) in index.html's matchGroupFeature.
+        district = m.get("provincia") or m.get("district") or ""
         raw_provider = m.get("provider", "unknown")
         provider = PROVIDER_DISPLAY.get(raw_provider, raw_provider)
         pop = m.get("population", 0) or 0
@@ -325,6 +340,32 @@ def build_region_data(munis: dict, generated: str) -> dict:
     return {"generated": generated, "total": len(munis), "countries": countries}
 
 
+def _assert_it_geo_coverage(munis: dict) -> None:
+    """Guardia di regressione (mxmap.it): la mappa IT raggruppa Regioni e Province
+    per i campi puliti `regione`/`provincia` (da enrich_geo, crosswalk ISTAT). I
+    vecchi campi seed `canton`/`district` erano popolati solo al ~33-34% (e `canton`
+    pieno di nomi-ente), il che svuotava silenziosamente i choropleth regionale e
+    provinciale. Qui FALLIAMO forte (exit 1) se la copertura non è totale, così
+    CI-smoke/nightly lo intercettano prima del deploy.
+    """
+    it = [m for m in munis.values() if (m.get("country") or "").upper() == "IT"]
+    if not it:
+        return
+    for field, livello in (("regione", "Regioni"), ("provincia", "Province")):
+        missing = [m.get("bfs") for m in it if not m.get(field)]
+        cov = 100 * (len(it) - len(missing)) / len(it)
+        print(f"  IT {livello} coverage ({field}): {cov:.1f}% "
+              f"({len(it) - len(missing)}/{len(it)})")
+        if missing:
+            sample = ", ".join(str(b) for b in missing[:5])
+            print(
+                f"  ERRORE: {len(missing)} enti IT senza `{field}` (es. {sample}). "
+                "Esegui scripts/enrich_geo.py prima di build_frontend.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
+
 def main():
     data_path = ROOT / "data.json"
     if not data_path.exists():
@@ -339,6 +380,10 @@ def main():
         munis = {m["bfs"]: m for m in munis}
 
     generated = raw.get("generated", raw.get("generated_at", ""))
+
+    # Guardia di regressione: la mappa IT (Regioni/Province) dipende da
+    # `regione`/`provincia` al 100%.
+    _assert_it_geo_coverage(munis)
 
     summary_munis = {}
     detail_munis = {}

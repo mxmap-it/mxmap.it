@@ -825,13 +825,16 @@ function escapeHtml(str) {
 
 // --- Aggregation ---
 function getGroupKey(m, fileLevelName) {
-  if (fileLevelName === 'region') return m.region || '';
+  if (fileLevelName === 'region') return m.regione || m.region || m.canton || '';
   if (fileLevelName === 'district') {
     if (m.country === 'AT') return m.id.substring(0, 6);
     if (m.country === 'BE') return m.id.substring(0, 5);
     if (m.country === 'DE') return m.id.substring(0, 8); // "DE-01001" (5-digit Kreis)
     if (m.country === 'GB') return m.district || m.name;
-    if (m.country === 'IT') return m.district || m.region || '';
+    // IT: raggruppa per la sigla provincia pulita (enrich_geo, 100%); il vecchio
+    // `district` del seed era al 34%. I poligoni si matchano per sigla in
+    // matchGroupFeature (ISO3166-2 / short_name).
+    if (m.country === 'IT') return m.provincia || m.district || m.region || '';
     return m.region || '';
   }
   // Countries with province-only topo: always group by region
@@ -934,7 +937,12 @@ function matchGroupFeature(feature, groups) {
   // not by name. Match the feature's own id directly.
   if (feature.id && groups[feature.id]) return groups[feature.id];
   const props = feature.properties || {};
-  const names = [props.name || '', props.name_en || '', props['name:en'] || '', props.region || ''];
+  // IT province polygons are keyed in the data by car-plate sigla (provincia).
+  // The bilingual `name` ("Tàttari/Sassari", "Roma Capitale") is unreliable, so
+  // also match by the polygon's own sigla: short_name and ISO3166-2 ("IT-SS").
+  const isoSigla = (props['ISO3166-2'] || '').replace(/^[A-Z]{2}-/, '');
+  const names = [props.name || '', props.name_en || '', props['name:en'] || '',
+                 props['name:it'] || '', props.region || '', props.short_name || '', isoSigla];
   for (const name of names) {
     if (!name) continue;
     if (groups[name]) return groups[name];
@@ -1955,8 +1963,8 @@ function transformMuni(m) {
   return {
     ...m,
     id: m.bfs || '',
-    region: m.canton || '',
-    district: m.district || '',
+    region: m.regione || m.canton || '',
+    district: m.provincia || m.district || '',
     domain: m.domain || '',
     classification: {
       provider: displayProvider,
