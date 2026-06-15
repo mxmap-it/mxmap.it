@@ -43,6 +43,19 @@ Nessuna euristica permissiva: ogni metodo di scoperta segue regole esplicite e v
 mai assegnato a un MX "plausibile ma non provato".
 </div>
 
+<div class="principle">
+<strong>Limite della fonte (dipendenza core).</strong> IndicePA è l'anagrafe ufficiale degli enti,
+ma <strong>non è una base dati pulita da cui inferire in modo immediato e senza rielaborazioni
+il dominio di posta "normale" (non-PEC) di ciascun ente</strong>: i domini email vi sono spesso
+incoerenti, incompleti o assenti. L'intera pipeline qui descritta esiste proprio per
+<em>rielaborare</em> IndicePA (estrazione, correzione, validazione, arricchimento) — i nostri dati
+<strong>non sono una lettura diretta</strong> della fonte. La bonifica continua di IndicePA è una
+<strong>dipendenza funzionale core</strong>, tracciata come progetto dedicato:
+<a href="https://github.com/fpietrosanti/mxmap.it/issues/2" target="_blank" rel="noopener">mxmap.it#2 —
+Software per un IndicePA ben manutenuto e bonificato</a> (misura autonoma della qualità del dato +
+cicli di segnalazione, anche via PEC, verso enti e AgID).
+</div>
+
 <nav class="toc">
 <strong>Indice</strong>
 <ul>
