@@ -217,10 +217,16 @@ per sostituire i placeholder `—%`.
 
 - **URL pubblico:** `https://mxmap.it/kpi.json`
 - **Schema:** `generated_at`, `run_id` (da `history/runs.jsonl`, `null` finché lo storico è
-  gated), `totals{n_entities,n_with_mx,coverage_pct}`, `sovereignty{extra_eu,eu_non_it,it,unknown}`
-  (count/pct/label, pct sul totale → somma 100), `top_providers[≤10]` (aggregati per nome-display,
-  con bucket a 4 valori), `by_cluster` (15 cluster citizen: n, `usa_pct`, `dominant_provider`),
-  `confidence{mean,high_pct}`.
+  gated), `totals{n_entities,n_with_mx,coverage_pct}`, **`indices{isd,cloud_act_pct,n_classified}`**
+  (numeri di **testata**: ISD e CLOUD Act calcolati **sui classificati** — definizione canonica,
+  identici a `statistiche.html`/`report.html`), `sovereignty{extra_eu,eu_non_it,it,unknown}`
+  (count/pct/label, pct **sul totale** → somma 100; la fetta `it` ≠ l'ISD), `top_providers[≤10]`
+  (aggregati per nome-display, con bucket a 4 valori), `by_cluster` (15 cluster citizen: n,
+  `usa_pct`, `dominant_provider`), `confidence{mean,high_pct}`.
+- **ISD vs composizione (importante):** la **testata** usa `indices.isd` (sovranità IT *sui
+  classificati*, 52–53%); la **torta** usa `sovereignty.it.pct` (*sul totale*, ~51%, perché include
+  il bucket `unknown`). Sono due denominatori diversi: non confonderli mostrandoli come lo stesso
+  numero. `assert_kpi_integrity` verifica entrambi.
 - **Mappatura 6→4 bucket** (a livello provider, `kpi.provider_to_sov4`):
   `extra_eu` = USA (CLOUD Act) + esteri non-UE (zoho/yandex) · `eu_non_it` = `EU_NON_IT_PROVIDERS`
   (oggi vuoto, punto di estensione per OVH/Hetzner/…) · `it` = i 3 bucket Italia · `unknown`.

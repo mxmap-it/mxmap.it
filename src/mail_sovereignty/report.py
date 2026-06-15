@@ -132,9 +132,14 @@ def build_report(
     regions = by_region["regions"]
 
     sov = kpi["sovereignty"]
-    it_pct = sov["it"]["pct"]
-    usa_pct = sov["extra_eu"]["pct"]
+    # Numeri di TESTATA = indici canonici sui CLASSIFICATI (come statistiche.html e
+    # la metodologia): ISD = sovranità IT, e quota CLOUD Act. NON la composizione a
+    # 4 bucket `sov[*].pct` (sul totale, con il bucket "ignoto"): quella resta solo
+    # negli exhibit a torta della «fotografia». Così le due pagine non mostrano due
+    # cifre diverse per lo stesso indicatore (era 52,65 vs 51,2).
     isd = cur["isd"]
+    it_pct = isd
+    usa_pct = cur["headline"]["cloud_act_pct"]
     jur = {j["key"]: j["pct"] for j in cur["jurisdiction"]}
     spot = _spotlight(clusters)
     most_sovereign, most_exposed = _region_extremes(regions)
@@ -179,7 +184,7 @@ def build_report(
                         "label": "Enti monitorati",
                         "value": f"{cur['n_entities']:,}".replace(",", "."),
                     },
-                    {"label": "Sovranità italiana", "value": f"{it_pct}%"},
+                    {"label": "Sovranità italiana (ISD)", "value": f"{it_pct}%"},
                     {"label": "Soggette al CLOUD Act", "value": f"{usa_pct}%"},
                     {"label": "Copertura del dato", "value": f"{cur['coverage_pct']}%"},
                 ],

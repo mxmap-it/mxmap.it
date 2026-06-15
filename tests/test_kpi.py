@@ -113,6 +113,16 @@ def test_totals_and_confidence(kpi):
     assert kpi["confidence"]["high_pct"] == round(100 * 5 / 9, 1)  # 5 enti ≥0.8
 
 
+# ── indici-bandiera (sui classificati) ──────────────────────────────────────
+def test_indices(kpi):
+    idx = kpi["indices"]
+    assert idx["n_classified"] == 8  # 9 - 1 unknown
+    assert idx["isd"] == 50.0  # 4 ITA su 8 classificati (identico a statistiche.html)
+    assert idx["cloud_act_pct"] == 37.5  # 3 USA (CLOUD Act) su 8
+    # l'ISD (sui classificati) ≠ la fetta "it" della composizione (sul totale)
+    assert idx["isd"] != kpi["sovereignty"]["it"]["pct"]
+
+
 # ── integrità ───────────────────────────────────────────────────────────────
 def test_integrity_passes(kpi):
     assert_kpi_integrity(kpi)
@@ -137,4 +147,10 @@ def test_integrity_catches_cluster_tamper(kpi):
 def test_integrity_catches_bad_bucket_key(kpi):
     kpi["sovereignty"]["mars"] = {"count": 0, "pct": 0.0, "label": "Marte"}
     with pytest.raises(ValueError, match="chiavi"):
+        assert_kpi_integrity(kpi)
+
+
+def test_integrity_catches_indices_tamper(kpi):
+    kpi["indices"]["isd"] = 150.0  # fuori range
+    with pytest.raises(ValueError, match="indices"):
         assert_kpi_integrity(kpi)

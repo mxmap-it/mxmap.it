@@ -3,8 +3,9 @@
 Produce il payload di `kpi.json` (servito alla root del deploy GitHub Pages,
 come data-summary.json), file statico pubblico (CC BY-SA 4.0) consumato dal
 sito Hugo dell'Osservatorio per sostituire i placeholder `—%`.
-Schema concordato (vedi docs/STATS_KPI.md §Osservatorio): totals, sovereignty a
-4 bucket, top_providers, by_cluster, confidence.
+Schema concordato (vedi docs/STATS_KPI.md §Osservatorio): totals, indices (ISD e
+CLOUD Act sui classificati, numeri di testata), sovereignty a 4 bucket
+(composizione sul totale), top_providers, by_cluster, confidence.
 
 Riusa `stats.compute_current` (numeri già validati da assert_integrity) e
 rimappa i **6 bucket MxMap → 4 bucket Osservatorio**:
@@ -163,6 +164,15 @@ def build_kpi(entities: list[dict], *, generated_at: str, run_id: str | None) ->
             "n_with_mx": n_with_mx,
             "coverage_pct": cur["coverage_pct"],
         },
+        # Indici-bandiera sui CLASSIFICATI (unknown esclusi) — definizione canonica
+        # della metodologia, identica a statistiche.html / report.html. Da usare per
+        # la TESTATA. Distinti dalla composizione `sovereignty` qui sotto, che è sul
+        # TOTALE (somma 100, include il bucket "unknown"): l'ISD ≠ la fetta "it".
+        "indices": {
+            "isd": cur["isd"],
+            "cloud_act_pct": cur["headline"]["cloud_act_pct"],
+            "n_classified": cur["n_classified"],
+        },
         "sovereignty": sovereignty,
         "top_providers": top_providers,
         "by_cluster": _by_cluster(rows),
@@ -217,6 +227,15 @@ def assert_kpi_integrity(kpi: dict) -> None:
         errs.append(f"confidence.mean {conf['mean']} fuori [0,1]")
     if not 0 <= conf["high_pct"] <= 100:
         errs.append(f"confidence.high_pct {conf['high_pct']} fuori range")
+    # 7. indici-bandiera (sui classificati) presenti, coerenti e nel range
+    idx = kpi.get("indices", {})
+    nclass = idx.get("n_classified")
+    if nclass is None or not 0 <= nclass <= n:
+        errs.append(f"indices.n_classified {nclass} fuori [0,{n}]")
+    for k in ("isd", "cloud_act_pct"):
+        v = idx.get(k)
+        if v is None or not 0 <= v <= 100:
+            errs.append(f"indices.{k} {v} non valido / fuori range")
 
     if errs:
         raise ValueError(
