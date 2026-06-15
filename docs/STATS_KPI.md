@@ -211,7 +211,7 @@ come `data-summary.json`), file statico pubblico (CC BY-SA 4.0) consumato dal si
 dell'[Osservatorio Nazionale Sovranità Digitale](https://github.com/fpietrosanti/osservatorio-nazionale-sovranita-digitale)
 per sostituire i placeholder `—%`.
 
-- **URL pubblico:** `https://fpietrosanti.github.io/mxmap.it/kpi.json`
+- **URL pubblico:** `https://mxmap.it/kpi.json`
 - **Schema:** `generated_at`, `run_id` (da `history/runs.jsonl`, `null` finché lo storico è
   gated), `totals{n_entities,n_with_mx,coverage_pct}`, `sovereignty{extra_eu,eu_non_it,it,unknown}`
   (count/pct/label, pct sul totale → somma 100), `top_providers[≤10]` (aggregati per nome-display,

@@ -54,7 +54,7 @@ RECOMMENDATIONS = [
 SOURCES = [
     {
         "name": "MxMap.it — fonte dati",
-        "url": "https://fpietrosanti.github.io/mxmap.it/",
+        "url": "https://mxmap.it/",
     },
     {
         "name": "Osservatorio Nazionale Sovranità Digitale",
@@ -79,11 +79,23 @@ def _edition(generated_at: str) -> str:
         return ""
 
 
+# Cluster da NON mettere in evidenza nell'allarme di testata. La PA Centrale
+# (ministeri, autorità, forze di polizia) è un tema sensibile e su numeri piccoli
+# (~52 enti, di cui pochissimi per segmento): un allarme di testata sarebbe
+# politicamente troppo "acceso" e statisticamente fragile. Resta nella tabella
+# settori (trasparenza piena) e va trattata a parte, per segmenti specifici e con
+# framing di policy (es. comparti a missione di sicurezza), non come percentuale.
+SPOTLIGHT_EXCLUDE = {"central"}
+
+
 def _spotlight(clusters: list[dict], n_min: int = 50, top: int = 3) -> list[dict]:
-    """Settori più esposti al CLOUD Act (con massa minima ≥50 enti per evitare il
-    rumore dei cluster minuscoli), per la narrazione. La soglia 50 fa emergere la
-    PA Centrale (i ministeri, ~52 enti) — il finding politicamente più rilevante."""
-    eligible = [c for c in clusters if c["n"] >= n_min]
+    """Settori più esposti al CLOUD Act per la narrazione di testata. Filtra i
+    cluster minuscoli (massa < n_min) e quelli in SPOTLIGHT_EXCLUDE (PA Centrale)."""
+    eligible = [
+        c
+        for c in clusters
+        if c["n"] >= n_min and c.get("cluster") not in SPOTLIGHT_EXCLUDE
+    ]
     return sorted(eligible, key=lambda c: c["cloud_act_pct"], reverse=True)[:top]
 
 
@@ -111,8 +123,10 @@ def build_report(
         f"(domestico {jur.get('domestic', 0)}%): è esso stesso un segnale.",
     ]
     if spot:
-        sectors_str = " · ".join(f"{c['label']} {c['cloud_act_pct']}%" for c in spot)
-        findings.append(f"Settori a dati sensibili più esposti: {sectors_str}.")
+        sectors_str = " · ".join(
+            f"{c['label'].split(' (')[0]} {c['cloud_act_pct']}%" for c in spot
+        )
+        findings.append(f"Settori più esposti al CLOUD Act: {sectors_str}.")
 
     return {
         "generated_at": generated_at,

@@ -83,8 +83,8 @@ async function main(){
     </div>
 
     <h2>${esc(settori.title)}</h2>
-    <div class="callout"><div class="t">Settori critici — dove si concentrano i dati sensibili</div>
-      <div style="font-size:14px">${settori.spotlight.map(c=>`<strong>${esc(shortLabel(c.cluster))} ${c.usa_pct}%</strong>`).join(" · ")} di esposizione al CLOUD Act.</div></div>
+    <div class="callout"><div class="t">Settori più esposti al CLOUD Act</div>
+      <div style="font-size:14px">${settori.spotlight.map(c=>`<strong>${esc(shortLabel(c.cluster))} ${c.usa_pct}%</strong>`).join(" · ")} di esposizione. Istruzione e Sanità trattano dati particolarmente sensibili (minori, salute).</div></div>
     <table class="tbl"><thead><tr><th>Settore</th><th class="num">Enti</th><th class="num">CLOUD Act</th><th style="width:34%">&nbsp;</th></tr></thead><tbody id="settBody"></tbody></table>
 
     <h2>${esc(aree.title)}</h2>

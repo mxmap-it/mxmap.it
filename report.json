@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T08:58:30Z",
+  "generated_at": "2026-06-15T09:32:36Z",
   "run_id": null,
   "edition": "giugno 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -14,7 +14,7 @@
         "Il 46.1% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
         "I provider italiani restano la prima scelta (51.2%), ma frammentati.",
         "Scarto tra controllo legale (51.2%) e collocazione tecnica dell'MX (domestico 46.1%): è esso stesso un segnale.",
-        "Settori a dati sensibili più esposti: Istruzione (Scuole, Università, AFAM) 78.16% · Stato centrale, Ministeri e Autorità 67.35% · Sanità (ASL, Aziende ospedaliere) 60.96%."
+        "Settori più esposti al CLOUD Act: Istruzione 78.16% · Sanità 60.96% · Ricerca 56.72%."
       ],
       "metrics": [
         {
@@ -262,14 +262,14 @@
           "n_entities": 8403
         },
         {
-          "cluster": "Stato centrale, Ministeri e Autorità",
-          "usa_pct": 67.35,
-          "n_entities": 52
-        },
-        {
           "cluster": "Sanità (ASL, Aziende ospedaliere)",
           "usa_pct": 60.96,
           "n_entities": 234
+        },
+        {
+          "cluster": "Ricerca",
+          "usa_pct": 56.72,
+          "n_entities": 68
         }
       ]
     },
@@ -306,7 +306,7 @@
   "sources": [
     {
       "name": "MxMap.it — fonte dati",
-      "url": "https://fpietrosanti.github.io/mxmap.it/"
+      "url": "https://mxmap.it/"
     },
     {
       "name": "Osservatorio Nazionale Sovranità Digitale",

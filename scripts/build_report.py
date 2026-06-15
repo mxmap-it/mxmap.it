@@ -10,7 +10,7 @@ A OGNI build esegue assert_report_integrity (+ assert_kpi_integrity): se i numer
 non sono coerenti lo script fallisce (exit 1) → intercettato da CI smoke / nightly.
 
 Uso: uv run python3 scripts/build_report.py [--country IT]
-URL pubblico: https://fpietrosanti.github.io/mxmap.it/report.json
+URL pubblico: https://mxmap.it/report.json
 """
 
 from __future__ import annotations

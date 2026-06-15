@@ -100,10 +100,17 @@ def test_spotlight_orders_by_exposure_with_mass():
         {"label": "Grande esposto", "n": 8000, "cloud_act_pct": 78.0, "isd": 22.0},
         {"label": "Piccolo estremo", "n": 10, "cloud_act_pct": 99.0, "isd": 1.0},
         {"label": "Medio esposto", "n": 200, "cloud_act_pct": 60.0, "isd": 40.0},
+        {
+            "label": "Stato centrale",
+            "cluster": "central",
+            "n": 5000,
+            "cloud_act_pct": 90.0,
+        },
     ]
     spot = _spotlight(clusters, n_min=50)
     labels = [c["label"] for c in spot]
     assert "Piccolo estremo" not in labels  # escluso per massa < 50
+    assert "Stato centrale" not in labels  # PA Centrale esclusa dallo spotlight
     assert labels[0] == "Grande esposto"  # ordinato per esposizione
 
 

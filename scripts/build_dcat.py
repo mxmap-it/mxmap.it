@@ -9,7 +9,7 @@ Descrive il dataset (titolo, descrizione, publisher, licenza, frequenza
 giornaliera, temi, keyword) e le sue distribuzioni (CSV/JSON/XLSX + snapshot
 storici). Letto da data.json/runs.jsonl per i numeri correnti.
 
-Uso: python3 scripts/build_dcat.py [--base-url https://fpietrosanti.github.io/mxmap.it]
+Uso: python3 scripts/build_dcat.py [--base-url https://mxmap.it]
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE_DEFAULT = "https://fpietrosanti.github.io/mxmap.it"
+BASE_DEFAULT = "https://mxmap.it"
 
 CONTEXT = {
     "dcat": "http://www.w3.org/ns/dcat#",

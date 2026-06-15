@@ -11,7 +11,7 @@ del deploy GitHub Pages. A OGNI build esegue assert_kpi_integrity(): se i numeri
 non sono coerenti lo script fallisce (exit 1) → intercettato da CI smoke / nightly.
 
 Uso: uv run python3 scripts/build_kpi.py [--country IT]
-URL pubblico: https://fpietrosanti.github.io/mxmap.it/kpi.json
+URL pubblico: https://mxmap.it/kpi.json
 """
 
 from __future__ import annotations
