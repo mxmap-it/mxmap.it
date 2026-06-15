@@ -63,7 +63,13 @@ jobs:
         continue-on-error: true
         run: uv run python3 scripts/enrich_from_aoo_uo.py
 
+      # --- SCANSIONI NON-IT DISATTIVATE -------------------------------------
+      # Il progetto attivo è l'Osservatorio italiano → data.json è IT-only
+      # (vedi "Strip data.json to Italy only" + scripts/strip_to_it.py). Le
+      # scansioni del fork mondiale restano nel repo ma disabilitate (if: false):
+      # rimuovi gli `if: false` per riattivare il multi-paese.
       - name: Preprocess (small + medium countries)
+        if: false
         run: |
           # Countries with <1000 municipalities — scan every night
           SMALL=$(uv run python3 -c "
@@ -82,6 +88,7 @@ jobs:
           echo "Small/medium countries: $SMALL"
           uv run preprocess $SMALL
       - name: Preprocess large countries (rotating)
+        if: false
         run: |
           # Countries with >=1000 municipalities rotate on a 3-day cycle.
           # Esclusi: DE (rotazione 3-statestate-per-night sotto) e IT
@@ -115,7 +122,11 @@ jobs:
       # Sostituisce la rotazione perchè IT è il focus primario del progetto.
       - name: Preprocess IT (daily, full)
         run: uv run preprocess IT
+      # data.json IT-only: rimuove eventuali enti non-IT residui + ricalcola counts.
+      - name: Strip data.json to Italy only
+        run: uv run python3 scripts/strip_to_it.py --keep IT
       - name: Preprocess DE (rotating 3 states per night)
+        if: false
         run: |
           DAY=$(date +%j)
           IDX=$(( DAY % 6 ))

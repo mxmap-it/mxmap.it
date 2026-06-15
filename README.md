@@ -81,6 +81,19 @@ verità**, riusata da stats, kpi e report.
 | `storia.html` | Andamento nel tempo *(gated: parte dal run #1)*. |
 | `dist/mxmap_it_dataset.{csv,json,xlsx}` | Dataset completo opendata. |
 
+## Dati aperti — download (sempre l'ultima versione)
+
+`data.json` contiene **solo l'Italia** (gli enti del fork mondiale sono rimossi da
+[`scripts/strip_to_it.py`](scripts/strip_to_it.py)). I file sotto sono **rigenerati ogni notte**:
+il link punta **sempre all'ultima versione disponibile** (la data è nel campo `generated`).
+
+- **CSV** — <https://mxmap.it/dist/mxmap_it_dataset.csv>
+- **JSON** — <https://mxmap.it/dist/mxmap_it_dataset.json>
+- **XLSX** — <https://mxmap.it/dist/mxmap_it_dataset.xlsx>
+- **KPI aggregati** — <https://mxmap.it/kpi.json> · **Report** — <https://mxmap.it/report.json>
+
+Licenza **CC BY-SA 4.0**.
+
 ## Corner case (la fonte è sporca — è il cuore del progetto)
 
 - **IndicePA non è una base dati pulita.** I domini email sono incoerenti/incompleti: l'intera pipeline esiste per *rielaborarla*. È una dipendenza funzionale core → **[issue #2](https://github.com/fpietrosanti/mxmap.it/issues/2)**.

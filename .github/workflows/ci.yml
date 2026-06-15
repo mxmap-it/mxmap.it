@@ -45,7 +45,7 @@ jobs:
           uv run python - <<'PY'
           import importlib.util, pathlib, signal, sys
           scripts = """
-            fetch_indicepa enrich_from_aoo_uo recover_it_unknowns finalize_it_unknowns
+            fetch_indicepa strip_to_it enrich_from_aoo_uo recover_it_unknowns finalize_it_unknowns
             cleanup_invalid_mx_attributions backfill_mx_discovery aggregate_istruzione_per_comune
             enrich_geo compute_confidence report_confidence report_anomalies build_frontend
             build_public_dataset build_stats build_kpi build_report historicize build_dcat
@@ -80,6 +80,7 @@ jobs:
       #    riattiveremo nella nightly, siano già provati verdi in CI.
       - name: Run deterministic pipeline tail on committed data.json
         run: |
+          uv run python3 scripts/strip_to_it.py --keep IT
           uv run python3 scripts/enrich_geo.py --country IT
           uv run python3 scripts/compute_confidence.py --country IT
           uv run python3 scripts/report_confidence.py --country IT
