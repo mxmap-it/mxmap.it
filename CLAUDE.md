@@ -43,6 +43,7 @@ IndicePA is **not** a clean source: email domains are incoherent/incomplete. The
 - Logic in `src/mail_sovereignty/` (importable, ruff-gated, coverage `fail_under=84`); thin CLI in `scripts/`; viewer HTML + public artifacts at root. Every KPI generator follows the **numbers-tested** rule (below).
 - Driven from a Windows laptop **without `uv`**: for `stats`-style logic (stdlib + `mail_sovereignty` only), `pip install ruff==0.15.5 pytest` into the system Python to format/lint/test locally; else round-trip via the server. **Push from the laptop** (server deploy key is read-only); PowerShell for `git push` (HTTPS creds), Bash tool for commits.
 - See **`docs/ROADMAP.md`** for the issue-driven roadmap.
+- **Keep the docs in sync (mandatory).** On **every feature commit or significant change**, update the relevant sections of **`README.md`** (Italian, contributor-facing: how it works, corner cases, artifacts) and **`docs/ROADMAP.md`** (phases/issues). Treat docs drift as a bug. The README A-to-Z + roadmap are how a new contributor (or Claude) onboards.
 
 ## Important: Always use `uv run`
 

@@ -1,133 +1,158 @@
-# MX Map — Email Providers of Municipalities Worldwide
+# MX Map Italia — Sovranità digitale della posta elettronica della PA
 
-[![Nightly](https://github.com/livenson/mxmap/actions/workflows/nightly.yml/badge.svg)](https://github.com/livenson/mxmap/actions/workflows/nightly.yml)
+[![Nightly](https://github.com/fpietrosanti/mxmap.it/actions/workflows/nightly.yml/badge.svg)](https://github.com/fpietrosanti/mxmap.it/actions/workflows/nightly.yml)
+[![CI](https://github.com/fpietrosanti/mxmap.it/actions/workflows/ci.yml/badge.svg)](https://github.com/fpietrosanti/mxmap.it/actions/workflows/ci.yml)
+[![Licenza CC BY-SA 4.0](https://img.shields.io/badge/licenza-CC%20BY--SA%204.0-blue)](https://creativecommons.org/licenses/by-sa/4.0/deed.it)
 
-An interactive map showing where ~46,000 municipalities across 166 countries host their official email — whether with US hyperscalers (Microsoft, Google, AWS), local providers, or self-hosted solutions.
+Motore dati dell'**[Osservatorio Nazionale Sovranità Digitale](https://github.com/fpietrosanti/osservatorio-nazionale-sovranita-digitale)**.
+Classifica, tramite **analisi DNS pubblica** (record MX, SPF, DKIM, CNAME), *chi gestisce
+la posta elettronica* di **~22.987 enti** della Pubblica Amministrazione italiana
+(registrati in IndicePA) e ne misura la **sovranità**: italiana, UE o **extra-UE soggetta
+al CLOUD Act** statunitense. Ne produce una mappa interattiva, statistiche, un report e dati aperti.
 
-Coverage spans Europe (48 countries), Africa (54), the Americas (21), Asia (30), Oceania (8), and the Middle East (11).
+🌐 **[mxmap.it](https://mxmap.it/)** · 📊 [Statistiche](https://mxmap.it/statistiche.html) · 📄 [Report](https://mxmap.it/report.html) · 📖 [Metodologia](https://mxmap.it/methodology.html) · ⚠️ [Anomalie](https://mxmap.it/anomalie.html)
 
-**[View the live map](https://livenson.github.io/mxmap/)**
+> **Nota.** Questo repo nasce come fork *mondiale* (166 paesi) di [mxmap.ch](https://mxmap.ch);
+> **dal 2026 il focus attivo è l'Italia**, come motore dell'Osservatorio. L'infrastruttura
+> multi-paese resta disponibile e documentata (vedi [`CLAUDE.md`](CLAUDE.md)). Questo README
+> descrive il progetto **Italia**.
 
-[![Screenshot of MX Map](og-image.jpg)](https://livenson.github.io/mxmap/)
+---
 
-## How it works
+## Ecosistema a due progetti
 
-The data pipeline has three steps:
+| | |
+|---|---|
+| **MxMap (questo repo)** | Il **motore dati**. Misura e classifica; produce `data.json` + artefatti pubblici statici alla root del deploy. |
+| **[Osservatorio Nazionale Sovranità Digitale](https://github.com/fpietrosanti/osservatorio-nazionale-sovranita-digitale)** | Il livello di **presentazione/advocacy** (sito Hugo). **Scarica e pesca** i nostri artefatti (`kpi.json`, `report.json`) e li renderizza per gli stakeholder. |
 
-1. **Preprocess** — Loads ~46,000 municipalities from curated seed data across 166 countries, performs MX, SPF, CNAME, DKIM, autodiscover, and TXT DNS lookups on their official domains (with domain guessing for missing entries), detects email security gateways (SeppMail, Barracuda, Hornetsecurity, etc.), and classifies each municipality's email provider. TXT domain verification tokens (e.g., `MS=` for Microsoft 365, `google-site-verification=` for Google Workspace) serve as tiebreakers when other signals are ambiguous.
-2. **Postprocess** — Applies manual overrides for edge cases, retries DNS for unresolved domains, checks SMTP banners of independent MX hosts for hidden providers, then scrapes websites of still-unclassified municipalities for email addresses.
-3. **Validate** — Cross-validates MX and SPF records, assigns a confidence score (0–100) to each entry, and generates a validation report.
+Il confine è netto: **qui si misura, lì si racconta.** Il contratto sono file statici (no API, no auth, CC BY-SA 4.0).
+
+## Come funziona — dalla A alla Z
+
+### 1. La pipeline notturna
 
 ```mermaid
 flowchart TD
-    trigger["Nightly trigger"] --> seed
-
-    subgraph pre ["1 · Preprocess"]
-        seed[/"Seed data (166 countries)"/] --> fetch["Load ~46,000 municipalities"]
-        fetch --> domains["Extract domains +<br/>guess candidates"]
-        domains --> dns["MX + TXT lookups<br/>(3 resolvers)"]
-        dns --> spf_resolve["Resolve SPF includes<br/>& redirects"]
-        spf_resolve --> cname["Follow CNAME chains"]
-        cname --> asn["ASN lookups<br/>(Team Cymru)"]
-        asn --> autodiscover["Autodiscover DNS<br/>(CNAME + SRV)"]
-        autodiscover --> dkim["DKIM selector<br/>CNAME lookups"]
-        dkim --> gateway["Detect gateways<br/>(SeppMail, Barracuda,<br/>Proofpoint, Sophos ...)"]
-        gateway --> classify["Classify providers<br/>MX → CNAME → SPF →<br/>Autodiscover → DKIM → TXT"]
-    end
-
-    classify --> overrides
-
-    subgraph post ["2 · Postprocess"]
-        overrides["Apply manual overrides"] --> retry["Retry DNS<br/>for unknowns"]
-        retry --> smtp["SMTP banner check<br/>(EHLO on port 25)"]
-        smtp --> scrape_urls["Probe municipal websites<br/>(/kontaktid, /kontakti, /kontaktai …)"]
-        scrape_urls --> extract["Extract emails<br/>+ decrypt TYPO3 obfuscation"]
-        extract --> scrape_dns["DNS lookup on<br/>email domains"]
-        scrape_dns --> reclassify["Reclassify<br/>resolved entries"]
-    end
-
-    reclassify --> data[("data.json")]
-    data --> score
-
-    subgraph val ["3 · Validate"]
-        score["Confidence scoring · 0–100"] --> gwarn["Flag potential<br/>unknown gateways"]
-        gwarn --> gate{"Quality gate<br/>avg ≥ 70 · high-conf ≥ 80%"}
-    end
-
-    gate -- "Pass" --> deploy["Commit & deploy to Pages"]
-    gate -- "Fail" --> issue["Open GitHub issue"]
-
-    style trigger fill:#e8f4fd,stroke:#4a90d9,color:#1a5276
-    style seed fill:#e8f4fd,stroke:#4a90d9,color:#1a5276
-    style data fill:#d5f5e3,stroke:#27ae60,color:#1e8449
-    style deploy fill:#d5f5e3,stroke:#27ae60,color:#1e8449
-    style issue fill:#fadbd8,stroke:#e74c3c,color:#922b21
-    style gate fill:#fdebd0,stroke:#e67e22,color:#935116
+    ipa[/"IndicePA (anagrafe PA)"/] --> seed["fetch_indicepa.py<br/>seed + correzioni a 6 tier"]
+    seed --> aoo["enrich AOO/UO,<br/>recover, finalize"]
+    aoo --> dns["preprocess: DNS<br/>MX·SPF·DKIM·CNAME·ASN"]
+    dns --> classify["classify: provider<br/>+ gateway look-through"]
+    classify --> cleanup["cleanup + backfill<br/>+ aggregate scuole"]
+    cleanup --> geo["enrich_geo: regione/provincia<br/>da crosswalk ISTAT"]
+    geo --> conf["compute_confidence:<br/>sovranità + ISD (ESORICS)"]
+    conf --> build["build: frontend · dataset ·<br/>stats · kpi · report"]
+    build --> art["artefatti pubblici<br/>(root del deploy)"]
+    art --> deploy["upload-pages-artifact<br/>→ deploy (disaccoppiato dal git)"]
+    conf -. "gated fino al run #1" .-> hist["historicize · dcat<br/>(serie storiche)"]
+    style ipa fill:#fff8e6,stroke:#E8A33D
+    style art fill:#e1f5ee,stroke:#009246
+    style deploy fill:#e1f5ee,stroke:#009246
+    style hist fill:#f1efe8,stroke:#888,stroke-dasharray:4
 ```
 
-## Coverage
+Tre stadi classici (`preprocess` → `postprocess` → `validate`) operano su `data.json`, poi una
+**coda deterministica** lo arricchisce e ne deriva gli artefatti pubblici. Dettaglio in
+[`CLAUDE.md`](CLAUDE.md) e [`methodology.html`](methodology.html).
 
-| Region | Countries | Municipalities | With domains |
-|--------|:---------:|:--------------:|:------------:|
-| Europe | 48 | ~25,000 | ~22,000 |
-| Africa | 54 | ~8,500 | ~2,400 |
-| Americas | 21 | ~7,700 | ~5,500 |
-| Asia | 30 | ~4,200 | ~2,100 |
-| Middle East | 11 | ~700 | ~200 |
-| Oceania | 8 | ~400 | ~200 |
-| **Total** | **166** | **~46,000** | **~32,000** |
+### 2. Il modello di sovranità
 
-Seed data is sourced from Wikidata (SPARQL queries for municipal entities per country) and supplemented with domain pattern discovery (e.g., `{name}.go.ke` for Kenya, `{name}dc.go.tz` for Tanzania, `muni{name}.go.cr` for Costa Rica, `{name}.municipios.gob.pa` for Panama).
+La classificazione canonica è `sovereignty_of()` / `material_row()` in
+[`src/mail_sovereignty/historicize.py`](src/mail_sovereignty/historicize.py) — **unica fonte di
+verità**, riusata da stats, kpi e report.
 
-## Quick start
+- **6 bucket MxMap:** `USA (CLOUD Act)` · `Altri provider esteri` · `Italia — Cloud sovrano` · `Italia — Provider commerciali` · `Italia — Infrastruttura autonoma` · `Sconosciuto`.
+- **4 bucket Osservatorio** (`kpi.provider_to_sov4`): `extra_eu` · `eu_non_it` (oggi vuoto, punto di estensione per OVH/Hetzner…) · `it` · `unknown`.
+- **ISD — Indice di Sovranità Digitale:** % enti in giurisdizione italiana, **sui classificati**, basato sulla sovranità del *provider* (controllo legale). `mx_jurisdiction` (dove risiede l'MX) è l'indicatore *tecnico* complementare — lo scarto fra i due è esso stesso un dato.
+
+### 3. I due assi di lettura
+
+- **Per gruppo** — 15 cluster citizen (Comuni, Istruzione, Sanità, …) dal codice categoria del seed. Copertura totale.
+- **Per area** — regione/provincia da `enrich_geo` (crosswalk ufficiale ISTAT sulla chiave-sede `ipa_codice_comune_istat`): **20/20 regioni, 100% di copertura**.
+
+### 4. Artefatti pubblici (alla root del deploy)
+
+| File / pagina | Cosa |
+|---|---|
+| [`kpi.json`](https://mxmap.it/kpi.json) | KPI aggregati (sovranità 4-bucket, top provider, per cluster). Fetchato dall'Osservatorio. |
+| [`report.json`](https://mxmap.it/report.json) | Il report strutturato (sintesi, fotografia, settori, aree, andamento, metodologia). |
+| [`statistiche.html`](https://mxmap.it/statistiche.html) | Cruscotto KPI live. |
+| [`report.html`](https://mxmap.it/report.html) | Report stile management-consulting (grafici a torta, raccomandazioni, metodologia in calce). |
+| `storia.html` | Andamento nel tempo *(gated: parte dal run #1)*. |
+| `dist/mxmap_it_dataset.{csv,json,xlsx}` | Dataset completo opendata. |
+
+## Corner case (la fonte è sporca — è il cuore del progetto)
+
+- **IndicePA non è una base dati pulita.** I domini email sono incoerenti/incompleti: l'intera pipeline esiste per *rielaborarla*. È una dipendenza funzionale core → **[issue #2](https://github.com/fpietrosanti/mxmap.it/issues/2)**.
+- **Geografia (ISTAT).** Il campo `region` del seed è sporco (a volte è il nome dell'ente); usiamo la chiave-sede `ipa_codice_comune_istat` sul crosswalk ISTAT. **Sardegna:** IndicePA usa i codici provincia *legacy* pre-riforma 2016 (prefissi 112-119) assenti dal crosswalk → mappati esplicitamente a regione Sardegna (vedi `geo.py`).
+- **Storicizzazione gated.** Le serie storiche partono dal **run #1** (primo scan pulito dopo la chiusura delle ~700 anomalie, [issue #4](https://github.com/fpietrosanti/mxmap.it/issues/4)). Fino ad allora `historicize`/`dcat` sono disattivati.
+- **Una sola realtà.** Nessuna distinzione "reality vs methodology": la metodologia si congela al run #1.
+- **Vincoli editoriali del report.** Stile consulting; si guida con gli estremi segmentati; la PA Centrale (ministeri, numeri piccoli, tema sensibile) è tenuta **fuori dall'allarme di testata** (`SPOTLIGHT_EXCLUDE`).
+- **I numeri non devono mai sbagliare.** Ogni KPI ha unit test + `assert_integrity()` a runtime (vedi sotto).
+- **Nightly indistruttibile.** Il deploy è **disaccoppiato** dal commit git (pubblica l'artifact costruito nel run); un fallimento del commit non blocca il sito.
+
+## Avvio rapido
 
 ```bash
 uv sync
-
-uv run preprocess          # All countries
-uv run preprocess DE       # Single country
-uv run preprocess DE:BY    # Single Bundesland
-
+uv run preprocess IT        # DNS + classificazione (Italia)
 uv run postprocess
-uv run validate
-
-# Serve the map locally
-python -m http.server
+uv run python3 scripts/enrich_geo.py --country IT     # regione/provincia (ISTAT)
+uv run python3 scripts/compute_confidence.py --country IT
+uv run python3 scripts/build_stats.py   # → data/summary/stats_*.json
+uv run python3 scripts/build_kpi.py     # → kpi.json
+uv run python3 scripts/build_report.py  # → report.json
+python -m http.server       # mappa + pagine in locale
 ```
 
-## Development
+## Sviluppo & test
 
 ```bash
 uv sync --group dev
-
-# Run tests with coverage
-uv run pytest --cov --cov-report=term-missing
-
-# Lint the codebase
+uv run pytest --cov --cov-report=term-missing   # soglia copertura: fail_under=84
 uv run ruff check src tests
-uv run ruff format src tests
+uv run ruff format src tests                     # OBBLIGATORIO prima di committare src/tests
 ```
 
-## Nightly pipeline
+**Regola: i numeri vanno sempre testati e verificati.** Ogni generatore di KPI vive in
+`src/mail_sovereignty/` con (1) unit test su fixture a valori noti e (2) `assert_integrity()`
+eseguito a ogni build (la pipeline fallisce se i numeri non tornano). Vedi
+[`docs/STATS_KPI.md`](docs/STATS_KPI.md) e [`CLAUDE.md`](CLAUDE.md).
 
-A [GitHub Actions workflow](.github/workflows/nightly.yml) runs every night at 04:00 UTC:
+## Roadmap
 
-- **Small/medium countries** (<1,000 municipalities) are scanned every night
-- **Large countries** (>=1,000 municipalities: BR, CA, DZ, MA, etc.) rotate on a 3-day cycle
-- **Germany** (11K Gemeinden) rotates 3 Bundesländer per night on a 6-day cycle
-- Results are validated, committed, and deployed to GitHub Pages
+La roadmap completa è in **[`docs/ROADMAP.md`](docs/ROADMAP.md)**, derivata dalle
+[issue aperte](https://github.com/fpietrosanti/mxmap.it/issues):
 
-## Attribution
+1. **Baseline dato** → sistemare le ~700 anomalie (#4) → run #1 → storicizzazione live.
+2. **Asse geografico** → ✅ crosswalk comune→regione strutturale; resta l'affinamento provincia/comune Sardegna.
+3. **Bonifica fonte** → software qualità IndicePA (#2).
+4. **Attendibilità** → metodo Email-Bounce (#5).
+5. **Diagnostica** → pagina dimensioni + segnala-errore (#6).
+6. **Attivazione stakeholder** → emailing per-stakeholder + integrazione Osservatorio (#3).
 
-This project is a fork of [mxmap.ch](https://mxmap.ch) by [David Huser](https://github.com/davidhuser/mxmap), which maps email providers of Swiss municipalities. Extended to 166 countries worldwide with region-specific provider detection, gateway look-through, DKIM/TXT verification-based classification, curated seed data, and per-country TopoJSON geodata.
+## Architettura & come contribuire
 
-## Related work
+- **[`CLAUDE.md`](CLAUDE.md)** — contesto completo per chi contribuisce (anche assistito da Claude): ecosistema, modello di sovranità, decisioni, vincoli, convenzioni.
+- **[`docs/`](docs/)** — `STATS_KPI.md` (catalogo KPI), `ROADMAP.md`, `HISTORICIZATION_DESIGN.md`, `BOUNCE_VERIFIER_DESIGN.md`, `countries/` (guide per-paese).
+- Segnalazioni di misclassificazione: apri una issue con l'ID dell'ente e il provider corretto, oppure aggiungi una correzione a `MANUAL_OVERRIDES` in `postprocess.py`.
 
-* [mxmap.ch](https://mxmap.ch) — the original Swiss municipality email provider map
-* [hpr4379 :: Mapping Municipalities' Digital Dependencies](https://hackerpublicradio.org/eps/hpr4379/index.html)
-* If you know of similar projects for other countries, please open an issue or submit a PR!
+## Attribuzione & progetto originale
 
-## Contributing
+Fork di **[mxmap.ch](https://mxmap.ch)** di **[David Huser](https://github.com/davidhuser/mxmap)**
+(mappa dei provider email dei comuni svizzeri). Esteso da
+[livenson/mxmap](https://github.com/livenson/mxmap) a 166 paesi, e qui specializzato sull'Italia
+con il modello di sovranità, il crosswalk ISTAT, la storicizzazione e gli artefatti per
+l'Osservatorio.
 
-If you spot a misclassification, please open an issue with the municipality ID and the correct provider.
-For municipalities where automated detection fails, corrections can be added to the `MANUAL_OVERRIDES` dict in `src/mail_sovereignty/postprocess.py`.
+- [mxmap.ch](https://mxmap.ch) — la mappa svizzera originale
+- [hpr4379 — Mapping Municipalities' Digital Dependencies](https://hackerpublicradio.org/eps/hpr4379/index.html)
+
+## Licenza
+
+Dati e contenuti rilasciati sotto **[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it)**.
+
+---
+
+> 🛠️ *Questo README va tenuto aggiornato: ad ogni commit di una feature o di un cambiamento
+> significativo, aggiorna le sezioni rilevanti (come funziona, corner case, roadmap, artefatti).*
