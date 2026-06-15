@@ -6,6 +6,44 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 MX Map is a DNS-based email provider classifier for European municipalities (92 countries, ~20,000 municipalities). It runs a 3-stage async pipeline that produces `data.json`, which powers an interactive Leaflet.js map showing where municipalities host their official email. Forked from [mxmap.ch](https://mxmap.ch) (Swiss municipalities). Covers all 27 EU member states plus 20 non-EU European countries.
 
+## Project context (2026): the Italian digital-sovereignty observatory
+
+The classifier above (92 countries) is the inherited infrastructure; **since 2026 the active focus is Italy**, as the data engine behind the **Osservatorio Nazionale Sovranità Digitale**. Read this section before touching any public-facing or KPI logic — it captures the framing, the analytical model, and the decisions/assumptions/constraints accumulated so far, so a new contributor can pick up the project.
+
+### Two-project ecosystem (keep the boundary)
+- **MxMap (this repo) = the *data engine*.** Classifies the email provider of ~22,987 Italian PA entities (from IndicePA) → `data.json` + **public static artifacts at the deploy root**: `kpi.json` (aggregate KPIs) and `report.json` (the structured report), plus the pages `statistiche.html`, `report.html`, `storia.html` (gated), `anomalie.html`, `methodology.html`.
+- **Osservatorio Nazionale Sovranità Digitale = the *presentation/advocacy* layer.** A *separate* Hugo repo (`fpietrosanti/osservatorio-nazionale-sovranita-digitale`; local `C:\Users\admin\osservatorio-nazionale-sovranita-digitale`). Stakeholder-oriented; it **fetches** our artifacts (a `update-kpi.yml` Action downloads `kpi.json`; same pattern planned for `report.json`) and renders them with its own styling.
+- **Contract:** MxMap *produces*, the Osservatorio *consumes*. Artifacts are static files at the deploy root — no API, no auth, CC BY-SA 4.0. **Measurement belongs here; editorial/presentation belongs to the Osservatorio.** If you change an artifact's schema, update `docs/STATS_KPI.md` and tell the Osservatorio side.
+- **Custom domain:** `mxmap.it` (CNAME). Canonical URLs are `https://mxmap.it/...`; old `fpietrosanti.github.io/mxmap.it/...` redirect there.
+
+### The sovereignty model (single source of truth)
+- `sovereignty_of(provider)` + `material_row(entity)` in [`historicize.py`](src/mail_sovereignty/historicize.py) are **canonical** — `stats`, `kpi`, `report` all reuse them. **Never re-derive sovereignty elsewhere.**
+- **6 MxMap buckets:** `USA (CLOUD Act)`, `Altri provider esteri`, `Italia — Cloud sovrano`, `Italia — Provider commerciali`, `Italia — Infrastruttura autonoma`, `Sconosciuto`.
+- **4 Osservatorio buckets** (`kpi.provider_to_sov4`): `extra_eu` (USA + non-EU foreign), `eu_non_it` (empty today — extension point `EU_NON_IT_PROVIDERS` for OVH/Hetzner/…), `it` (the 3 Italian buckets), `unknown`.
+- **ISD — Indice di Sovranità Digitale:** % entities under Italian jurisdiction, computed **over classified** (unknowns excluded), on **provider sovereignty** (legal control). `mx_jurisdiction` (where the MX physically sits) is a **complementary technical** indicator — the gap between the two is itself a finding.
+
+### Two segmentation axes
+- **By GROUP (works):** 15 citizen-friendly clusters keyed on the `bfs` category code. NB: the `bfs` uses the project's **own** codes (`COM`=Comuni, `PRO`=Province, `CMM`, `REG`), **not** IndicePA `L6`/`L5` — the 54 real codes are mapped in `stats.CLUSTERS` (full coverage, no `other`).
+- **By AREA (blocked):** `data.json` has **no `region` field** per entity (0/22987). Regional analysis (report "per aree" + local-administrator activation) needs a `comune→regione` crosswalk (ISTAT, or the seed region field) — blocked by IndicePA dirtiness. **This is the #1 data dependency.**
+
+### The IndicePA constraint ([#2](https://github.com/fpietrosanti/mxmap.it/issues/2))
+IndicePA is **not** a clean source: email domains are incoherent/incomplete. The whole pipeline exists to *reprocess* it; our data is **not** a direct read. Continuous remediation is a **core functional dependency** (issue #2), disclosed in the methodology. The same dirtiness blocks the region axis.
+
+### Gating & "one reality"
+- **Historicization is gated:** the `historicize`/`build_dcat` steps in `nightly.yml` are commented out and `storia.html`/per-entity timelines are empty **until run #1** — the first clean scan after the ~700 anomalies ([#4](https://github.com/fpietrosanti/mxmap.it/issues/4)) are fixed. Do not activate before then.
+- **One reality:** no "reality vs methodology" distinction. Methodology freezes at run #1; everything after is real change.
+- **Fotografia anticipata:** the *current* snapshot KPIs (`kpi.json`, `report.json`, `stats_current`) are **live now** (non-gated); only the *time-series* wait for run #1.
+
+### Editorial & political constraints (public-facing)
+- Lead with **segmented extremes**, not the national average (citable/actionable findings).
+- Report style = **management consulting**: answer-first titles, exhibits (pie charts), recommendations with owners, **methodology in calce**, both site links. The "andamento" section is pre-built but shows **"just started"** until historicization is live.
+- **Tone down politically-sensitive, small-N segments.** PA Centrale (ministries, ~52 entities) is deliberately **kept out of the headline spotlight** (`SPOTLIGHT_EXCLUDE` in `report.py`): small numbers + a charged "attack-the-state" reading. The spotlight features robust, citizen-data sectors (Istruzione, Sanità, Ricerca). Security/defense segments, if surfaced, go via **policy framing**, not loud percentages. Frame as *protecting citizens*, not *accusing institutions*.
+
+### Build conventions & dev machine
+- Logic in `src/mail_sovereignty/` (importable, ruff-gated, coverage `fail_under=84`); thin CLI in `scripts/`; viewer HTML + public artifacts at root. Every KPI generator follows the **numbers-tested** rule (below).
+- Driven from a Windows laptop **without `uv`**: for `stats`-style logic (stdlib + `mail_sovereignty` only), `pip install ruff==0.15.5 pytest` into the system Python to format/lint/test locally; else round-trip via the server. **Push from the laptop** (server deploy key is read-only); PowerShell for `git push` (HTTPS creds), Bash tool for commits.
+- See **`docs/ROADMAP.md`** for the issue-driven roadmap.
+
 ## Important: Always use `uv run`
 
 **Never use system `python3` directly.** Always use `uv run python3` or `uv run` for all Python commands. The system Python may be an older version (e.g., 3.9) that doesn't support the type annotations and features used in this codebase.
@@ -210,7 +248,7 @@ Tests use `pytest-asyncio` (auto mode) and `respx` for HTTP mocking. DNS is mock
 
 ## Deployment
 
-GitHub Actions nightly workflow (`.github/workflows/nightly.yml`) runs preprocess → postprocess → validate → commit data.json → deploy to GitHub Pages. Quality gate failure creates a GitHub issue. Default branch is `baltic`.
+GitHub Actions nightly workflow (`.github/workflows/nightly.yml`) runs preprocess → postprocess → validate → build (frontend, public dataset, stats, kpi, report) → **upload Pages artifact → deploy**, with a separate **best-effort** data commit. The deploy is **decoupled from the git commit** (see "CRITICAL: Nightly must never break"). Default branch is **`main`**. The custom domain is `mxmap.it` (CNAME at repo root — keep it in the deploy artifact).
 
 **DE nightly rotation:** Germany's 11K Gemeinden are too many to scan every night. The workflow rotates 3 Bundesländer per night (6-day cycle), while all other countries are scanned every night.
 
