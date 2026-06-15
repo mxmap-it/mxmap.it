@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Report — Stato della sovranità digitale della posta elettronica della PA italiana</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{color-scheme:light}
+html,body{background:#fff}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:880px;margin:0 auto;padding:32px 28px;line-height:1.6;color:#1d1d1f}
+.eyebrow{display:flex;justify-content:space-between;font-size:12px;color:#666}
+h1{font-size:25px;font-weight:600;margin:6px 0 0;line-height:1.25}
+.rule{height:3px;width:64px;background:#009246;margin-top:10px}
+.headline{font-size:19px;font-weight:600;line-height:1.45;margin:1.4rem 0 0}
+h2{font-size:18px;font-weight:600;color:#0f6e56;margin:2.2rem 0 0;padding-bottom:4px;border-bottom:1px solid #e7e7e7}
+.note{font-size:12px;color:#777;margin:4px 0 14px}
+.cards{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.card{flex:1;min-width:120px;background:#f6f6f4;border-radius:8px;padding:10px 14px}
+.card .lbl{font-size:12px;color:#666}
+.card .big{font-size:23px;font-weight:600;font-variant-numeric:tabular-nums}
+ul.find{margin:14px 0 0;padding-left:18px;font-size:15px}
+ul.find li{margin-bottom:5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;margin-top:8px}
+.chartbox{position:relative;width:100%;height:230px}
+.legend{display:flex;flex-direction:column;gap:3px;margin-top:8px;font-size:12px;color:#555}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block;margin-right:6px;vertical-align:-1px}
+.rec{display:flex;gap:12px;align-items:flex-start;background:#f6f6f4;border-radius:8px;padding:10px 14px;margin-top:8px}
+.rec .n{font-size:18px;font-weight:600;color:#0f6e56;min-width:18px}
+.owner{font-size:11px;background:#e6f1fb;color:#0c447c;padding:2px 8px;border-radius:6px;display:inline-block;margin-top:4px}
+.callout{background:#fceaea;border-left:3px solid #a32d2d;padding:12px 14px;margin-top:14px}
+.callout .t{font-size:13px;font-weight:600;color:#a32d2d;margin-bottom:3px}
+.pending{background:#fff8e6;border-left:3px solid #E8A33D;padding:12px 14px;margin-top:8px;font-size:13.5px}
+table.tbl{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+table.tbl th,table.tbl td{padding:5px 9px;border-bottom:1px solid #eee;text-align:left}
+table.tbl th{background:#f4f4f4}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.bar{position:relative;background:#eee;border-radius:3px;height:13px;min-width:50px}
+.bar>span{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+footer{border-top:1px solid #e7e7e7;margin-top:2.4rem;padding-top:14px;font-size:12px;color:#888;line-height:1.6}
+footer a{color:#0f6e56}
+.src{display:flex;gap:20px;flex-wrap:wrap;margin-top:8px}
+a{color:#0f6e56}
+</style>
+</head>
+<body>
+<p style="font-size:13px;margin:0"><a href="index.html">← Mappa</a> · <a href="statistiche.html">Statistiche</a> · <a href="methodology.html">Metodologia</a></p>
+<div id="root"><p style="color:#888">Caricamento del report…</p></div>
+
+<script>
+const SOV4_COLOR = { it:"#009246", eu_non_it:"#185FA5", extra_eu:"#D42E2E", unknown:"#9aa0a6" };
+const PROV_PALETTE = ["#009246","#D42E2E","#b3261e","#6b8e23","#0f6e56","#185FA5","#E8A33D","#9aa0a6"];
+function provColor(s){ return s==="extra_eu" ? "#D42E2E" : s==="unknown" ? "#9aa0a6" : s==="eu_non_it" ? "#185FA5" : "#009246"; }
+function esc(s){ const e=document.createElement("div"); e.textContent=s==null?"":s; return e.innerHTML; }
+function shortLabel(s){ return String(s).split(" (")[0]; }
+
+async function main(){
+  let r;
+  try { const res = await fetch("report.json?cb="+Date.now()); r = await res.json(); }
+  catch(e){ document.getElementById("root").innerHTML = "<p>Report non disponibile.</p>"; return; }
+  const sec = Object.fromEntries(r.sections.map(s => [s.id, s]));
+  const root = document.getElementById("root");
+
+  const sintesi = sec.sintesi, foto = sec.fotografia, settori = sec.settori, aree = sec.aree, andamento = sec.andamento, meto = sec.metodologia;
+
+  root.innerHTML = `
+    <div class="eyebrow"><span>Osservatorio nazionale sovranità digitale</span><span>Edizione · ${esc(r.edition)}</span></div>
+    <h1>${esc(r.title)}</h1><div class="rule"></div>
+    <p class="headline">${esc(r.headline)}</p>
+
+    <h2>${esc(sintesi.title)}</h2>
+    <ul class="find">${sintesi.findings.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>
+    <div class="cards">${sintesi.metrics.map(m=>`<div class="card"><div class="lbl">${esc(m.label)}</div><div class="big">${esc(m.value)}</div></div>`).join("")}</div>
+    <div style="margin-top:10px">${sintesi.recommendations.map(x=>`<div class="rec"><span class="n">${x.n}</span><div>${esc(x.text)}<div><span class="owner">${esc(x.owner)}</span></div></div></div>`).join("")}</div>
+
+    <h2>${esc(foto.title)}</h2>
+    <div class="grid2">
+      <div><p class="note">Composizione della sovranità della posta PA.</p><div class="chartbox"><canvas id="sovPie" role="img" aria-label="Torta della sovranità"></canvas></div>
+        <div class="legend" id="sovLeg"></div></div>
+      <div><p class="note">Provider di posta per quota (colore = sovranità).</p><div class="chartbox"><canvas id="provPie" role="img" aria-label="Torta dei provider"></canvas></div>
+        <div class="legend" id="provLeg"></div></div>
+    </div>
+
+    <h2>${esc(settori.title)}</h2>
+    <div class="callout"><div class="t">Settori critici — dove si concentrano i dati sensibili</div>
+      <div style="font-size:14px">${settori.spotlight.map(c=>`<strong>${esc(shortLabel(c.cluster))} ${c.usa_pct}%</strong>`).join(" · ")} di esposizione al CLOUD Act.</div></div>
+    <table class="tbl"><thead><tr><th>Settore</th><th class="num">Enti</th><th class="num">CLOUD Act</th><th style="width:34%">&nbsp;</th></tr></thead><tbody id="settBody"></tbody></table>
+
+    <h2>${esc(aree.title)}</h2>
+    <div class="pending"><i class="ti"></i>${esc(aree.note)}</div>
+
+    <h2>${esc(andamento.title)}</h2>
+    <div class="chartbox" style="height:160px"><canvas id="trend" role="img" aria-label="Andamento dell'indice di sovranità, monitoraggio appena avviato"></canvas></div>
+    <p class="note">▶ ${esc(andamento.note)}</p>
+
+    <h2>${esc(meto.title)}</h2>
+    <p style="font-size:14px">Copertura del dato <strong>${meto.coverage_pct}%</strong> · confidenza media <strong>${meto.mean_confidence}</strong>. ${esc(meto.limits)}</p>
+
+    <footer>
+      <span style="color:#666">Nota metodologica.</span> ${esc(r.methodology_footer)}
+      <div class="src">${r.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join("")}</div>
+      <div style="margin-top:6px">Generato il ${esc((r.generated_at||"").slice(0,10))} · run ${esc(r.run_id||"—")}.</div>
+    </footer>`;
+
+  if (!window.Chart) return;
+  Chart.defaults.font.family = "-apple-system,Segoe UI,Roboto,sans-serif";
+
+  new Chart(document.getElementById("sovPie"), {
+    type:"doughnut",
+    data:{ labels: foto.sovereignty.map(b=>b.label), datasets:[{ data: foto.sovereignty.map(b=>b.pct),
+      backgroundColor: foto.sovereignty.map(b=>SOV4_COLOR[b.key]), borderColor:"#fff", borderWidth:2 }] },
+    options:{ responsive:true, maintainAspectRatio:false, cutout:"56%",
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>c.label+": "+c.parsed+"%"}} } }
+  });
+  document.getElementById("sovLeg").innerHTML = foto.sovereignty.map(b=>`<span><i style="background:${SOV4_COLOR[b.key]}"></i>${esc(b.label)} · ${b.pct}%</span>`).join("");
+
+  const tp = foto.top_providers.slice(0,7);
+  new Chart(document.getElementById("provPie"), {
+    type:"doughnut",
+    data:{ labels: tp.map(p=>p.name), datasets:[{ data: tp.map(p=>p.pct),
+      backgroundColor: tp.map(p=>provColor(p.sovereignty)), borderColor:"#fff", borderWidth:2 }] },
+    options:{ responsive:true, maintainAspectRatio:false, cutout:"56%",
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>c.label+": "+c.parsed+"%"}} } }
+  });
+  document.getElementById("provLeg").innerHTML = tp.map(p=>`<span><i style="background:${provColor(p.sovereignty)}"></i>${esc(p.name)} · ${p.pct}%</span>`).join("");
+
+  const cl = settori.clusters.slice().sort((a,b)=>b.usa_pct-a.usa_pct);
+  const maxU = Math.max(...cl.map(c=>c.usa_pct));
+  document.getElementById("settBody").innerHTML = cl.map(c=>{
+    const col = c.usa_pct>=50 ? "#D42E2E" : c.usa_pct>=33 ? "#E8A33D" : "#4a9e5c";
+    return `<tr><td>${esc(shortLabel(c.cluster))}</td><td class="num">${c.n_entities.toLocaleString("it")}</td><td class="num">${c.usa_pct}%</td>`+
+      `<td><div class="bar"><span style="width:${Math.max(2,100*c.usa_pct/maxU)}%;background:${col}"></span></div></td></tr>`;
+  }).join("");
+
+  new Chart(document.getElementById("trend"), {
+    type:"line",
+    data:{ labels:[andamento.series[0].date, "", "", "", "", ""],
+      datasets:[{ data:[andamento.series[0].isd, null,null,null,null,null], borderColor:"#009246",
+        backgroundColor:"#00924622", pointRadius:[5,0,0,0,0,0], pointBackgroundColor:"#009246", tension:0 }] },
+    options:{ responsive:true, maintainAspectRatio:false,
+      scales:{ y:{ suggestedMin:40, suggestedMax:60, ticks:{callback:v=>v+"%"} }, x:{ grid:{display:false} } },
+      plugins:{ legend:{display:false} } }
+  });
+}
+main();
+</script>
+</body>
+</html>
