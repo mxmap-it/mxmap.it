@@ -82,6 +82,12 @@ qui sono quelli correnti (live), ma <strong>le serie storiche partiranno dal run
 <p class="note">Composizione della sovranità dentro ogni categoria di PA (ordinate dalla meno alla più sovrana). Le scuole e lo Stato centrale sono i più esposti al CLOUD Act; Comuni e Ordini i più sovrani.</p>
 <div class="chartbox tall"><canvas id="catChart"></canvas></div>
 
+<h2>Sovranità per area geografica</h2>
+<p class="note">Composizione della sovranità per <strong>macroarea</strong> e per <strong>regione</strong> (ordinate dalla meno alla più sovrana), dal dato territoriale ricostruito col crosswalk ufficiale ISTAT (copertura 100%). Il divario territoriale è esso stesso un dato.</p>
+<div class="cards" id="areaCards"></div>
+<div class="chartbox short" style="height:190px"><canvas id="macroChart"></canvas></div>
+<div class="chartbox" style="height:640px"><canvas id="regChart"></canvas></div>
+
 <h2>Struttura del mercato</h2>
 <p class="note">Provider di posta per quota sugli enti classificati.</p>
 <div class="cards" id="marketCards"></div>
@@ -185,6 +191,22 @@ function stackedBar(canvasId, rows, segKeys, colorOf, labelOf, opts){
       return { label: `${c.label.split(" (")[0]} (${fmt(c.n)})`, seg, totals: c.n };
     });
     stackedBar("catChart", rows, SOV_ORDER, k=>SOV_COLORS[k], k=>k, { legend:true });
+  }
+
+  // sovranità per area geografica (macroaree + regioni, da stats_by_region.json)
+  const byReg = await getJSON("data/summary/stats_by_region.json");
+  if (byReg && byReg.regions && byReg.regions.length){
+    const toRows = (arr, key) => arr.slice().sort((a,b)=>a.isd-b.isd).map(x => {
+      const seg = {}; x.sovereignty.forEach(s => seg[s.bucket] = s.count);
+      return { label: `${x[key]} (${fmt(x.n)})`, seg, totals: x.n };
+    });
+    const bySov = byReg.regions.slice().sort((a,b)=>b.isd-a.isd);
+    const byExp = byReg.regions.slice().sort((a,b)=>b.cloud_act_pct-a.cloud_act_pct);
+    document.getElementById("areaCards").innerHTML =
+      card(`${bySov[0].regione} · ${bySov[0].isd}%`, "regione più sovrana (ISD 🇮🇹)") +
+      card(`${byExp[0].regione} · ${byExp[0].cloud_act_pct}%`, "regione più esposta al CLOUD Act", true);
+    stackedBar("macroChart", toRows(byReg.macroaree, "macroarea"), SOV_ORDER, k=>SOV_COLORS[k], k=>k, { legend:false });
+    stackedBar("regChart", toRows(byReg.regions, "regione"), SOV_ORDER, k=>SOV_COLORS[k], k=>k, { legend:true });
   }
 
   // mercato
