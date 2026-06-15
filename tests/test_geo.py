@@ -55,6 +55,17 @@ def test_resolve_via_alias():
     assert resolve_geo("015146-old", idx)["regione"] == "Lombardia"
 
 
+def test_resolve_sardegna_legacy():
+    # i codici provincia legacy sardi (112-119) non sono nel crosswalk ma la
+    # regione è certa: devono risolvere a Sardegna (asse "per aree" completo).
+    idx = build_istat_index(ISTAT)  # nessun codice 11X nella fixture
+    for code in ("118006", "112050", "119003"):
+        g = resolve_geo(code, idx)
+        assert g["regione"] == "Sardegna" and g["macroarea"] == "Isole"
+        assert g["codice_regione"] == "20"
+        assert g["comune"] is None  # comune non ricavabile dal codice rotto
+
+
 def test_resolve_unknown_and_none():
     idx = build_istat_index(ISTAT)
     for code in ("999999", None, ""):

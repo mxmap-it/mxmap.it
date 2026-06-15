@@ -38,6 +38,17 @@ REGIONI: dict[str, tuple[str, str]] = {
 }
 SCONOSCIUTA = "Sconosciuta"
 
+# Sardegna: IndicePA usa per le sedi sarde i codici provincia LEGACY pre-riforma
+# 2016 (8 province, prefissi 112-119) che NON esistono in nessuna vintage del
+# crosswalk ISTAT corrente (verificato: nessun clash con codici correnti). Il
+# codice comune esatto non è ricavabile da questi codici rotti (limite IndicePA,
+# mxmap.it#2), ma la REGIONE è certa: tutti i prefissi 112-119 sono sardi. Li
+# mappiamo a regione 20 (Sardegna) così l'asse "per aree" è completo a 20/20.
+SARDEGNA_LEGACY_PREFIXES = frozenset(
+    {"112", "113", "114", "115", "116", "117", "118", "119"}
+)
+SARDEGNA_CODICE = "20"
+
 # campi che l'arricchimento scrive su ogni ente
 GEO_FIELDS = ("comune", "provincia", "codice_regione", "regione", "macroarea")
 
@@ -61,6 +72,16 @@ def resolve_geo(istat_code: str | None, index: dict[str, dict]) -> dict:
     mai un'attribuzione inventata)."""
     c = index.get(istat_code) if istat_code else None
     if not c:
+        # Fallback Sardegna: codici provincia legacy (112-119) non nel crosswalk.
+        if istat_code and istat_code[:3] in SARDEGNA_LEGACY_PREFIXES:
+            nome, macro = REGIONI[SARDEGNA_CODICE]
+            return {
+                "comune": None,
+                "provincia": None,
+                "codice_regione": SARDEGNA_CODICE,
+                "regione": nome,
+                "macroarea": macro,
+            }
         return {
             "comune": None,
             "provincia": None,
