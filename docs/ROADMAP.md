@@ -27,9 +27,16 @@ Le issue vivono nel repo MxMap: <https://github.com/fpietrosanti/mxmap.it/issues
 ## Fase 2 — Asse geografico → attiva gli amministratori locali
 **Obiettivo:** analisi "per aree" (regione → comune), la leva politica più forte (sindaci).
 
-- **Costruire il mapping `comune→regione`** (crosswalk ISTAT / campo regione del seed) e attaccare
-  una regione a ogni ente → sezione "per aree" del report, classifiche regionali, pagine per-regione.
-- *Dipende in parte da #2 (qualità della fonte per un comune/territorio puliti).*
+- ✅ **Fatto — mapping `comune→regione` strutturale.** [`scripts/enrich_geo.py`](../scripts/enrich_geo.py)
+  risolve la chiave-sede pulita `ipa_codice_comune_istat` sul crosswalk ufficiale ISTAT
+  ([`geo.py`](../src/mail_sovereignty/geo.py)) e scrive `regione`/`provincia`/`comune`/`macroarea`
+  su ogni ente: **20/20 regioni, 100% di copertura** (Sardegna via prefissi provincia legacy 112-119).
+- ✅ **Fatto — sezione "Analisi per aree" del report.** `stats.compute_by_region` (unit-testata +
+  `assert_integrity`) → `stats_by_region.json` + sezione attiva in `report.json`/`report.html`:
+  classifica regionale per ISD, sintesi per macroarea, regione più sovrana / più esposta al CLOUD Act.
+- ⏳ **Resta:** affinamento al **comune esatto** per la Sardegna (oggi regione+provincia), pagine
+  per-regione dedicate, e — quando #2 ripulisce la fonte — il dato territoriale a grana fine.
+- *La grana comune/territorio fine dipende in parte da #2 (qualità della fonte).*
 
 ## Fase 3 — Bonifica della fonte (fondazionale)
 - **[#2] Software per un IndicePA ben manutenuto e bonificato** — misura autonoma della qualità del

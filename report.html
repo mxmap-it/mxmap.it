@@ -96,7 +96,14 @@ async function main(){
     <table class="tbl"><thead><tr><th>Settore</th><th class="num">Enti</th><th class="num">CLOUD Act</th><th style="width:34%">&nbsp;</th></tr></thead><tbody id="settBody"></tbody></table>
 
     <h2>${esc(aree.title)}</h2>
-    <div class="pending"><i class="ti"></i>${esc(aree.note)}</div>
+    ${aree.status === "active" ? `
+      ${aree.most_sovereign && aree.most_exposed ? `<div class="callout" style="background:#eef6ee;border-left-color:#0f6e56"><div class="t" style="color:#0f6e56">Divario territoriale</div>
+        <div style="font-size:14px">Regione più sovrana: <strong>${esc(aree.most_sovereign.regione)}</strong> (ISD ${aree.most_sovereign.isd}%) · più esposta al CLOUD Act: <strong>${esc(aree.most_exposed.regione)}</strong> (${aree.most_exposed.usa_pct}%).</div></div>` : ""}
+      <p class="note">Sovranità per macroarea (ISD = % enti sotto giurisdizione italiana, sui classificati).</p>
+      <div class="cards" id="macroCards"></div>
+      <p class="note" style="margin-top:14px">Classifica regionale per Indice di Sovranità Digitale. ${esc(aree.note)}</p>
+      <table class="tbl"><thead><tr><th>Regione</th><th class="num">Enti</th><th class="num">ISD</th><th class="num">CLOUD Act</th><th style="width:30%">&nbsp;</th></tr></thead><tbody id="areeBody"></tbody></table>
+    ` : `<div class="pending"><i class="ti"></i>${esc(aree.note)}</div>`}
 
     <h2>${esc(andamento.title)}</h2>
     <div class="chartbox" style="height:160px"><canvas id="trend" role="img" aria-label="Andamento dell'indice di sovranità, monitoraggio appena avviato"></canvas></div>
@@ -110,6 +117,21 @@ async function main(){
       <div class="src">${r.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join("")}</div>
       <div style="margin-top:6px">Generato il ${esc((r.generated_at||"").slice(0,10))} · run ${esc(r.run_id||"—")}.</div>
     </footer>`;
+
+  // Analisi per aree — macroaree + classifica regionale (tabella, no Chart.js)
+  if (aree.status === "active") {
+    document.getElementById("macroCards").innerHTML = (aree.macroaree||[]).map(m=>
+      `<div class="card"><div class="lbl">${esc(m.macroarea)} · ${m.n.toLocaleString("it")} enti</div>`+
+      `<div class="big">${m.isd}%</div><div class="lbl">ISD · CLOUD Act ${m.usa_pct}%</div></div>`
+    ).join("");
+    const regs = (aree.regions||[]).slice().sort((a,b)=>b.isd-a.isd);
+    document.getElementById("areeBody").innerHTML = regs.map(r=>{
+      const col = r.isd>=60 ? "#0f6e56" : r.isd>=45 ? "#4a9e5c" : r.isd>=35 ? "#E8A33D" : "#D42E2E";
+      return `<tr><td>${esc(r.regione)}</td><td class="num">${r.n.toLocaleString("it")}</td>`+
+        `<td class="num">${r.isd}%</td><td class="num">${r.usa_pct}%</td>`+
+        `<td><div class="bar"><span style="width:${Math.max(2,r.isd)}%;background:${col}"></span></div></td></tr>`;
+    }).join("");
+  }
 
   if (!window.Chart) return;
   Chart.defaults.font.family = "-apple-system,Segoe UI,Roboto,sans-serif";

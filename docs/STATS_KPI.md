@@ -198,10 +198,14 @@ attuale senza le serie temporali). Le `timeseries/*` restano gated col run #1.
 `build_stats.py` (`CLUSTERS`) è stato verificato sui 54 codici reali → copertura totale,
 nessun "other".
 
-**Aperte / differite:**
-5. **Cat.6 — Sovranità per regione** → **DIFFERITA**: `data.json` non ha un campo `region`
-   (0/22987). Serve decidere la fonte (`data-regions.json`, crosswalk ISTAT, o derivazione
-   dal `bfs`/seed comune→regione) prima di produrre `stats_by_region.json`.
+**Chiuse — aggiornamento:**
+5. **Cat.6 — Sovranità per regione** → ✅ **FATTA**. La fonte è la chiave-sede pulita
+   `ipa_codice_comune_istat` (100%) risolta sul crosswalk ufficiale ISTAT da
+   [`scripts/enrich_geo.py`](../scripts/enrich_geo.py) (logica in
+   [`geo.py`](../src/mail_sovereignty/geo.py)), che scrive `regione`/`provincia`/`comune`/`macroarea`
+   su ogni ente — **non** dal campo `region` sporco del seed. `stats.compute_by_region`
+   (unit-testata + `assert_integrity` esteso a regioni/macroaree) produce
+   `data/summary/stats_by_region.json` e alimenta la sezione **"Analisi per aree"** del report.
 
 ## 9. Feed pubblico per l'Osservatorio (`kpi.json`)
 

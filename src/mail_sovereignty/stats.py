@@ -15,6 +15,7 @@ from __future__ import annotations
 
 from collections import Counter
 
+from mail_sovereignty.geo import SCONOSCIUTA
 from mail_sovereignty.historicize import PROVIDER_DISPLAY, material_row
 
 # Bucket di sovranità (vedi historicize.sovereignty_of). Gruppi per l'ISD.
@@ -213,8 +214,51 @@ def compute_by_category(entities: list[dict]) -> dict:
     return {"clusters": clusters}
 
 
+def compute_by_region(entities: list[dict]) -> dict:
+    """ISD + breakdown sovranità per regione e per macroarea (asse «per aree»).
+
+    Usa i campi `regione`/`macroarea` iniettati da enrich_geo (crosswalk ISTAT
+    ufficiale, copertura 100%). Gli enti senza geo risolto confluiscono in
+    "Sconosciuta" — onesto, mai scartati: la loro quota è essa stessa un dato di
+    copertura. Regioni e macroaree sono ordinate per ISD discendente (classifica),
+    con "Sconosciuta" sempre in fondo."""
+    rows_by_region: dict[str, list[dict]] = {}
+    rows_by_macro: dict[str, list[dict]] = {}
+    for e in entities:
+        r = material_row(e)
+        rows_by_region.setdefault(e.get("regione") or SCONOSCIUTA, []).append(r)
+        rows_by_macro.setdefault(e.get("macroarea") or SCONOSCIUTA, []).append(r)
+
+    def _aggregate(id_key: str, groups: dict[str, list[dict]]) -> list[dict]:
+        out = []
+        for name, rows in groups.items():
+            breakdown, n_class = _sovereignty_breakdown(rows)
+            cloud_act = sum(1 for r in rows if r["sovereignty"] == B_CLOUD_ACT)
+            out.append(
+                {
+                    id_key: name,
+                    "n": len(rows),
+                    "n_classified": n_class,
+                    "isd": _isd(rows, n_class),
+                    "cloud_act_pct": _pct(cloud_act, n_class),
+                    "sovereignty": breakdown,
+                }
+            )
+        out.sort(key=lambda c: (c[id_key] == SCONOSCIUTA, -c["isd"], -c["n"]))
+        return out
+
+    return {
+        "regions": _aggregate("regione", rows_by_region),
+        "macroaree": _aggregate("macroarea", rows_by_macro),
+    }
+
+
 def assert_integrity(
-    current: dict, by_cat: dict, *, max_other_pct: float = 1.0
+    current: dict,
+    by_cat: dict,
+    by_region: dict | None = None,
+    *,
+    max_other_pct: float = 1.0,
 ) -> None:
     """Verifica la coerenza interna dei KPI. Solleva ValueError elencando TUTTE
     le violazioni trovate. È la rete di sicurezza "i numeri non devono sbagliare":
@@ -294,6 +338,25 @@ def assert_integrity(
             f"({_pct(other['n'], n)}% > {max_other_pct}%) — codici categoria non mappati"
         )
 
+    # 13. asse geografico (se fornito): ogni regione/macroarea somma agli enti; i
+    #     totali coprono tutto il campo; ISD e CLOUD Act nel range [0, 100].
+    if by_region is not None:
+        for grp_key, id_key in (("regions", "regione"), ("macroaree", "macroarea")):
+            grp = by_region.get(grp_key, [])
+            grp_total = 0
+            for c in grp:
+                cl_sov = sum(s["count"] for s in c["sovereignty"])
+                if cl_sov != c["n"]:
+                    errs.append(
+                        f"{id_key} {c[id_key]}: somma sovranità {cl_sov} != n {c['n']}"
+                    )
+                for k in ("isd", "cloud_act_pct"):
+                    if not 0 <= c[k] <= 100 + _EPS:
+                        errs.append(f"{id_key} {c[id_key]}: {k} fuori range ({c[k]})")
+                grp_total += c["n"]
+            if grp_total != n:
+                errs.append(f"{grp_key}: somma {grp_total} != n_entities {n}")
+
     if errs:
         raise ValueError(
             "Integrità KPI VIOLATA (" + str(len(errs)) + "):\n- " + "\n- ".join(errs)
@@ -308,5 +371,6 @@ __all__ = [
     "ITA_BUCKETS",
     "compute_current",
     "compute_by_category",
+    "compute_by_region",
     "assert_integrity",
 ]

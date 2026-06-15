@@ -13,8 +13,13 @@ build e nei test (regola CLAUDE.md "numeri sempre testati-verificati").
 
 from __future__ import annotations
 
+from mail_sovereignty.geo import SCONOSCIUTA
 from mail_sovereignty.kpi import assert_kpi_integrity, build_kpi
-from mail_sovereignty.stats import compute_by_category, compute_current
+from mail_sovereignty.stats import (
+    compute_by_category,
+    compute_by_region,
+    compute_current,
+)
 
 MESI_IT = [
     "gennaio",
@@ -99,6 +104,22 @@ def _spotlight(clusters: list[dict], n_min: int = 50, top: int = 3) -> list[dict
     return sorted(eligible, key=lambda c: c["cloud_act_pct"], reverse=True)[:top]
 
 
+def _region_extremes(
+    regions: list[dict], n_min: int = 50
+) -> tuple[dict | None, dict | None]:
+    """Regione più sovrana (ISD max) e più esposta al CLOUD Act, per la narrazione
+    del divario territoriale. Esclude "Sconosciuta" e le regioni a massa < n_min
+    (robustezza statistica). Ritorna (più_sovrana, più_esposta) o (None, None)."""
+    eligible = [
+        r for r in regions if r.get("regione") != SCONOSCIUTA and r["n"] >= n_min
+    ]
+    if not eligible:
+        return None, None
+    most_sovereign = max(eligible, key=lambda r: r["isd"])
+    most_exposed = max(eligible, key=lambda r: r["cloud_act_pct"])
+    return most_sovereign, most_exposed
+
+
 def build_report(
     entities: list[dict], *, generated_at: str, run_id: str | None
 ) -> dict:
@@ -106,7 +127,9 @@ def build_report(
     kpi = build_kpi(entities, generated_at=generated_at, run_id=run_id)
     cur = compute_current(entities)
     by_cat = compute_by_category(entities)
+    by_region = compute_by_region(entities)
     clusters = by_cat["clusters"]
+    regions = by_region["regions"]
 
     sov = kpi["sovereignty"]
     it_pct = sov["it"]["pct"]
@@ -114,6 +137,7 @@ def build_report(
     isd = cur["isd"]
     jur = {j["key"]: j["pct"] for j in cur["jurisdiction"]}
     spot = _spotlight(clusters)
+    most_sovereign, most_exposed = _region_extremes(regions)
 
     # finding derivati dai dati (brevi, citabili)
     findings = [
@@ -127,6 +151,12 @@ def build_report(
             f"{c['label'].split(' (')[0]} {c['cloud_act_pct']}%" for c in spot
         )
         findings.append(f"Settori più esposti al CLOUD Act: {sectors_str}.")
+    if most_sovereign and most_exposed and most_sovereign != most_exposed:
+        findings.append(
+            f"Divario territoriale: {most_sovereign['regione']} guida la sovranità "
+            f"(ISD {most_sovereign['isd']}%), {most_exposed['regione']} è la più "
+            f"esposta al CLOUD Act ({most_exposed['cloud_act_pct']}%)."
+        )
 
     return {
         "generated_at": generated_at,
@@ -198,10 +228,49 @@ def build_report(
                 "id": "aree",
                 "title": "Analisi per aree — la geografia della sovranità",
                 "kind": "areas",
-                "status": "pending",
+                "status": "active",
+                "n_total": cur["n_entities"],
+                "regions": [
+                    {
+                        "regione": r["regione"],
+                        "n": r["n"],
+                        "isd": r["isd"],
+                        "usa_pct": r["cloud_act_pct"],
+                    }
+                    for r in regions
+                ],
+                "macroaree": [
+                    {
+                        "macroarea": m["macroarea"],
+                        "n": m["n"],
+                        "isd": m["isd"],
+                        "usa_pct": m["cloud_act_pct"],
+                    }
+                    for m in by_region["macroaree"]
+                ],
+                "most_sovereign": (
+                    {
+                        "regione": most_sovereign["regione"],
+                        "isd": most_sovereign["isd"],
+                        "usa_pct": most_sovereign["cloud_act_pct"],
+                    }
+                    if most_sovereign
+                    else None
+                ),
+                "most_exposed": (
+                    {
+                        "regione": most_exposed["regione"],
+                        "isd": most_exposed["isd"],
+                        "usa_pct": most_exposed["cloud_act_pct"],
+                    }
+                    if most_exposed
+                    else None
+                ),
                 "note": (
-                    "Sezione in allestimento: richiede il dato regionale per ente, "
-                    "oggi vincolato alla qualità della fonte IndicePA (vedi mxmap.it#2)."
+                    "Sovranità per regione e macroarea: dato territoriale ricostruito "
+                    "dal crosswalk ufficiale ISTAT sul comune-sede di ogni ente "
+                    "(copertura 100%), non dal campo territoriale sporco di IndicePA "
+                    "(vedi mxmap.it#2)."
                 ),
             },
             {
@@ -264,6 +333,24 @@ def assert_report_integrity(report: dict) -> None:
             errs.append(f"settori: usa_pct fuori range per {c['cluster']}")
     if not settori.get("clusters"):
         errs.append("settori: nessun cluster")
+
+    # asse geografico: quando la sezione è attiva, regioni e macroaree devono
+    # coprire esattamente n_total e avere indici nel range [0, 100].
+    aree = sec.get("aree", {})
+    if aree.get("status") == "active":
+        regs = aree.get("regions", [])
+        if not regs:
+            errs.append("aree: stato 'active' ma nessuna regione")
+        n_total = aree.get("n_total")
+        for grp_key, id_key in (("regions", "regione"), ("macroaree", "macroarea")):
+            grp = aree.get(grp_key, [])
+            grp_total = sum(r["n"] for r in grp)
+            if grp and n_total is not None and grp_total != n_total:
+                errs.append(f"aree.{grp_key}: somma {grp_total} != n_total {n_total}")
+            for r in grp:
+                for k in ("isd", "usa_pct"):
+                    if not 0 <= r[k] <= 100:
+                        errs.append(f"aree.{grp_key}: {k} fuori range per {r[id_key]}")
 
     trend = sec.get("andamento", {})
     if trend.get("status") != "just_started" and not trend.get("series"):

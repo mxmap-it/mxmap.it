@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T09:32:36Z",
+  "generated_at": "2026-06-15T17:04:16Z",
   "run_id": null,
   "edition": "giugno 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -14,7 +14,8 @@
         "Il 46.1% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
         "I provider italiani restano la prima scelta (51.2%), ma frammentati.",
         "Scarto tra controllo legale (51.2%) e collocazione tecnica dell'MX (domestico 46.1%): è esso stesso un segnale.",
-        "Settori più esposti al CLOUD Act: Istruzione 78.16% · Sanità 60.96% · Ricerca 56.72%."
+        "Settori più esposti al CLOUD Act: Istruzione 78.16% · Sanità 60.96% · Ricerca 56.72%.",
+        "Divario territoriale: Molise guida la sovranità (ISD 73.83%), Veneto è la più esposta al CLOUD Act (58.67%)."
       ],
       "metrics": [
         {
@@ -277,8 +278,167 @@
       "id": "aree",
       "title": "Analisi per aree — la geografia della sovranità",
       "kind": "areas",
-      "status": "pending",
-      "note": "Sezione in allestimento: richiede il dato regionale per ente, oggi vincolato alla qualità della fonte IndicePA (vedi mxmap.it#2)."
+      "status": "active",
+      "n_total": 22987,
+      "regions": [
+        {
+          "regione": "Molise",
+          "n": 275,
+          "isd": 73.83,
+          "usa_pct": 26.17
+        },
+        {
+          "regione": "Basilicata",
+          "n": 342,
+          "isd": 70.24,
+          "usa_pct": 29.76
+        },
+        {
+          "regione": "Piemonte",
+          "n": 2272,
+          "isd": 67.0,
+          "usa_pct": 32.96
+        },
+        {
+          "regione": "Abruzzo",
+          "n": 709,
+          "isd": 66.32,
+          "usa_pct": 33.68
+        },
+        {
+          "regione": "Calabria",
+          "n": 928,
+          "isd": 65.52,
+          "usa_pct": 34.48
+        },
+        {
+          "regione": "Valle d'Aosta",
+          "n": 169,
+          "isd": 64.0,
+          "usa_pct": 36.0
+        },
+        {
+          "regione": "Sardegna",
+          "n": 912,
+          "isd": 63.11,
+          "usa_pct": 36.89
+        },
+        {
+          "regione": "Marche",
+          "n": 689,
+          "isd": 59.29,
+          "usa_pct": 40.56
+        },
+        {
+          "regione": "Liguria",
+          "n": 593,
+          "isd": 58.16,
+          "usa_pct": 41.84
+        },
+        {
+          "regione": "Sicilia",
+          "n": 1787,
+          "isd": 57.01,
+          "usa_pct": 42.99
+        },
+        {
+          "regione": "Campania",
+          "n": 1928,
+          "isd": 53.54,
+          "usa_pct": 46.46
+        },
+        {
+          "regione": "Lazio",
+          "n": 1812,
+          "isd": 50.23,
+          "usa_pct": 49.77
+        },
+        {
+          "regione": "Friuli-Venezia Giulia",
+          "n": 582,
+          "isd": 49.65,
+          "usa_pct": 50.35
+        },
+        {
+          "regione": "Toscana",
+          "n": 1190,
+          "isd": 49.19,
+          "usa_pct": 50.81
+        },
+        {
+          "regione": "Umbria",
+          "n": 344,
+          "isd": 47.46,
+          "usa_pct": 52.54
+        },
+        {
+          "regione": "Trentino-Alto Adige",
+          "n": 904,
+          "isd": 45.79,
+          "usa_pct": 54.21
+        },
+        {
+          "regione": "Puglia",
+          "n": 1223,
+          "isd": 45.77,
+          "usa_pct": 54.23
+        },
+        {
+          "regione": "Emilia-Romagna",
+          "n": 1313,
+          "isd": 43.4,
+          "usa_pct": 56.6
+        },
+        {
+          "regione": "Lombardia",
+          "n": 3348,
+          "isd": 41.92,
+          "usa_pct": 58.08
+        },
+        {
+          "regione": "Veneto",
+          "n": 1667,
+          "isd": 41.33,
+          "usa_pct": 58.67
+        }
+      ],
+      "macroaree": [
+        {
+          "macroarea": "Isole",
+          "n": 2699,
+          "isd": 59.09,
+          "usa_pct": 40.91
+        },
+        {
+          "macroarea": "Sud",
+          "n": 5405,
+          "isd": 57.53,
+          "usa_pct": 42.47
+        },
+        {
+          "macroarea": "Centro",
+          "n": 4035,
+          "isd": 51.25,
+          "usa_pct": 48.73
+        },
+        {
+          "macroarea": "Nord",
+          "n": 10848,
+          "isd": 49.19,
+          "usa_pct": 50.8
+        }
+      ],
+      "most_sovereign": {
+        "regione": "Molise",
+        "isd": 73.83,
+        "usa_pct": 26.17
+      },
+      "most_exposed": {
+        "regione": "Veneto",
+        "isd": 41.33,
+        "usa_pct": 58.67
+      },
+      "note": "Sovranità per regione e macroarea: dato territoriale ricostruito dal crosswalk ufficiale ISTAT sul comune-sede di ogni ente (copertura 100%), non dal campo territoriale sporco di IndicePA (vedi mxmap.it#2)."
     },
     {
       "id": "andamento",

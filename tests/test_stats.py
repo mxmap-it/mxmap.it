@@ -11,6 +11,7 @@ import pytest
 from mail_sovereignty.stats import (
     assert_integrity,
     compute_by_category,
+    compute_by_region,
     compute_current,
 )
 
@@ -46,6 +47,26 @@ FIXTURE = [
     _e(
         "IT-COM-i", "aruba", "mixed", 0.80, spf="v=spf1"
     ),  # ITA commerciali, territoriale
+]
+
+# Stessa fixture con il dato geografico (asse «per aree»). Tre regioni da 3 enti:
+#   Lazio (Centro):    a aruba-ITAcomm · b microsoft-USA · i aruba-ITAcomm
+#   Lombardia (Nord):  c google-USA · d istruzione-USA · e regional-public-ITAsovrano
+#   Sicilia (Isole):   f independent-ITAauto · g zoho-AltriEst · h unknown
+_REGIONI = [
+    "Lazio",
+    "Lazio",
+    "Lombardia",
+    "Lombardia",
+    "Lombardia",
+    "Sicilia",
+    "Sicilia",
+    "Sicilia",
+    "Lazio",
+]
+_MACRO = {"Lazio": "Centro", "Lombardia": "Nord", "Sicilia": "Isole"}
+GEO_FIXTURE = [
+    {**e, "regione": r, "macroarea": _MACRO[r]} for e, r in zip(FIXTURE, _REGIONI)
 ]
 
 
@@ -127,13 +148,72 @@ def test_by_category(bycat):
     assert sum(c["n"] for c in bycat["clusters"]) == 9
 
 
+# ── segmentazione per area geografica ───────────────────────────────────────
+def test_by_region():
+    byreg = compute_by_region(GEO_FIXTURE)
+    reg = {c["regione"]: c for c in byreg["regions"]}
+    # Lazio: 2 ITA su 3 classificati, 1 USA
+    assert reg["Lazio"]["n"] == 3 and reg["Lazio"]["isd"] == round(100 * 2 / 3, 2)
+    assert reg["Lazio"]["cloud_act_pct"] == round(100 * 1 / 3, 2)
+    # Lombardia: 1 ITA su 3, 2 USA
+    assert reg["Lombardia"]["n"] == 3 and reg["Lombardia"]["isd"] == round(
+        100 * 1 / 3, 2
+    )
+    assert reg["Lombardia"]["cloud_act_pct"] == round(100 * 2 / 3, 2)
+    # Sicilia: 1 ITA su 2 classificati (1 unknown escluso), 0 USA
+    assert reg["Sicilia"]["n"] == 3 and reg["Sicilia"]["isd"] == 50.0
+    assert reg["Sicilia"]["cloud_act_pct"] == 0.0
+    # ogni regione: la sovranità somma a n; il totale copre tutto il campo
+    for c in byreg["regions"]:
+        assert sum(s["count"] for s in c["sovereignty"]) == c["n"]
+    assert sum(c["n"] for c in byreg["regions"]) == 9
+    # ordinata per ISD discendente (classifica)
+    assert byreg["regions"][0]["regione"] == "Lazio"
+
+
+def test_by_region_macroaree():
+    byreg = compute_by_region(GEO_FIXTURE)
+    macro = {c["macroarea"]: c for c in byreg["macroaree"]}
+    assert macro["Centro"]["n"] == 3 and macro["Nord"]["n"] == 3
+    assert macro["Isole"]["n"] == 3
+    assert sum(c["n"] for c in byreg["macroaree"]) == 9
+
+
+def test_by_region_unknown_bucket():
+    # enti senza geo → confluiscono in "Sconosciuta", non scartati
+    ents = [_e("IT-COM-x", "aruba", "domestic", 0.9)]  # nessun campo regione
+    byreg = compute_by_region(ents)
+    assert byreg["regions"][0]["regione"] == "Sconosciuta"
+    assert byreg["regions"][0]["n"] == 1
+
+
 # ── integrità ───────────────────────────────────────────────────────────────
 def test_integrity_passes(cur, bycat):
     assert_integrity(cur, bycat)  # non solleva
 
 
+def test_integrity_passes_with_region(cur, bycat):
+    assert_integrity(cur, bycat, compute_by_region(GEO_FIXTURE))  # non solleva
+
+
 def test_integrity_passes_empty():
-    assert_integrity(compute_current([]), compute_by_category([]))
+    assert_integrity(
+        compute_current([]), compute_by_category([]), compute_by_region([])
+    )
+
+
+def test_integrity_catches_region_tamper(cur, bycat):
+    byreg = compute_by_region(GEO_FIXTURE)
+    byreg["regions"][0]["sovereignty"][0]["count"] += 7  # rompe la somma di regione
+    with pytest.raises(ValueError, match="somma sovranità"):
+        assert_integrity(cur, bycat, byreg)
+
+
+def test_integrity_catches_region_total_tamper(cur, bycat):
+    byreg = compute_by_region(GEO_FIXTURE)
+    byreg["macroaree"][0]["n"] += 5  # somma macroaree != n_entities
+    with pytest.raises(ValueError, match="macroaree"):
+        assert_integrity(cur, bycat, byreg)
 
 
 def test_integrity_catches_sovereignty_tamper(cur, bycat):

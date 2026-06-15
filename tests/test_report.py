@@ -8,6 +8,7 @@ import pytest
 
 from mail_sovereignty.report import (
     _edition,
+    _region_extremes,
     _spotlight,
     assert_report_integrity,
     build_and_check,
@@ -15,8 +16,8 @@ from mail_sovereignty.report import (
 )
 
 
-def _e(bfs, provider, jur, conf, mx=True):
-    return {
+def _e(bfs, provider, jur, conf, mx=True, regione=None, macroarea=None):
+    e = {
         "bfs": bfs,
         "country": "IT",
         "provider": provider,
@@ -24,18 +25,53 @@ def _e(bfs, provider, jur, conf, mx=True):
         "classification_confidence": conf,
         "mx": ["mx.example.it"] if mx else [],
     }
+    if regione:
+        e["regione"] = regione
+    if macroarea:
+        e["macroarea"] = macroarea
+    return e
 
 
+# 3 regioni da 3 enti (vedi test_stats.GEO_FIXTURE per le somme attese)
 FIXTURE = [
-    _e("IT-COM-a", "aruba", "domestic", 0.90),
-    _e("IT-COM-b", "microsoft", "foreign", 0.95),
-    _e("IT-L33-c", "google", "foreign", 0.85),
-    _e("IT-L33-d", "istruzione-miur-tenant", "foreign", 0.92),
-    _e("IT-C1-e", "regional-public", "domestic", 0.70),
-    _e("IT-COM-f", "independent", "domestic", 0.60),
-    _e("IT-COM-g", "zoho", "foreign", 0.55),
-    _e("IT-L33-h", "unknown", "unknown", 0.30, mx=False),
-    _e("IT-COM-i", "aruba", "mixed", 0.80),
+    _e("IT-COM-a", "aruba", "domestic", 0.90, regione="Lazio", macroarea="Centro"),
+    _e("IT-COM-b", "microsoft", "foreign", 0.95, regione="Lazio", macroarea="Centro"),
+    _e("IT-L33-c", "google", "foreign", 0.85, regione="Lombardia", macroarea="Nord"),
+    _e(
+        "IT-L33-d",
+        "istruzione-miur-tenant",
+        "foreign",
+        0.92,
+        regione="Lombardia",
+        macroarea="Nord",
+    ),
+    _e(
+        "IT-C1-e",
+        "regional-public",
+        "domestic",
+        0.70,
+        regione="Lombardia",
+        macroarea="Nord",
+    ),
+    _e(
+        "IT-COM-f",
+        "independent",
+        "domestic",
+        0.60,
+        regione="Sicilia",
+        macroarea="Isole",
+    ),
+    _e("IT-COM-g", "zoho", "foreign", 0.55, regione="Sicilia", macroarea="Isole"),
+    _e(
+        "IT-L33-h",
+        "unknown",
+        "unknown",
+        0.30,
+        mx=False,
+        regione="Sicilia",
+        macroarea="Isole",
+    ),
+    _e("IT-COM-i", "aruba", "mixed", 0.80, regione="Lazio", macroarea="Centro"),
 ]
 
 GEN = "2026-06-15T08:00:00Z"
@@ -114,6 +150,40 @@ def test_spotlight_orders_by_exposure_with_mass():
     assert labels[0] == "Grande esposto"  # ordinato per esposizione
 
 
+# ── analisi per aree ────────────────────────────────────────────────────────
+def test_aree(report):
+    aree = next(x for x in report["sections"] if x["id"] == "aree")
+    assert aree["status"] == "active"
+    assert aree["n_total"] == 9
+    reg = {r["regione"]: r for r in aree["regions"]}
+    assert set(reg) == {"Lazio", "Lombardia", "Sicilia"}
+    assert reg["Lazio"]["n"] == 3 and reg["Lazio"]["isd"] == round(100 * 2 / 3, 2)
+    assert sum(r["n"] for r in aree["regions"]) == 9
+    assert sum(m["n"] for m in aree["macroaree"]) == 9
+    assert aree["regions"][0]["regione"] == "Lazio"  # ordinata per ISD desc
+    # massa < 50 nella fixture sintetica → estremi non calcolati (robustezza)
+    assert aree["most_sovereign"] is None
+
+
+def test_region_extremes():
+    regions = [
+        {"regione": "Alpha", "n": 1000, "isd": 70.0, "cloud_act_pct": 20.0},
+        {"regione": "Beta", "n": 800, "isd": 30.0, "cloud_act_pct": 65.0},
+        {"regione": "Mini", "n": 10, "isd": 99.0, "cloud_act_pct": 0.0},
+        {"regione": "Sconosciuta", "n": 5000, "isd": 95.0, "cloud_act_pct": 0.0},
+    ]
+    sov, exp = _region_extremes(regions, n_min=50)
+    assert sov["regione"] == "Alpha"  # ISD max tra gli eleggibili
+    assert exp["regione"] == "Beta"  # esposizione CLOUD Act max
+    assert sov["regione"] not in ("Mini", "Sconosciuta")  # massa / unknown esclusi
+
+
+def test_region_extremes_empty():
+    assert _region_extremes([], n_min=50) == (None, None)
+    sub = [{"regione": "X", "n": 3, "isd": 50.0, "cloud_act_pct": 1.0}]
+    assert _region_extremes(sub) == (None, None)  # tutte sotto soglia
+
+
 # ── integrità ───────────────────────────────────────────────────────────────
 def test_integrity_passes(report):
     assert_report_integrity(report)
@@ -143,4 +213,11 @@ def test_integrity_catches_sovereignty_sum(report):
     foto = next(x for x in report["sections"] if x["id"] == "fotografia")
     foto["sovereignty"][0]["pct"] += 20
     with pytest.raises(ValueError, match="sovranità"):
+        assert_report_integrity(report)
+
+
+def test_integrity_catches_region_sum(report):
+    aree = next(x for x in report["sections"] if x["id"] == "aree")
+    aree["regions"][0]["n"] += 50  # somma regioni != n_total
+    with pytest.raises(ValueError, match="aree"):
         assert_report_integrity(report)

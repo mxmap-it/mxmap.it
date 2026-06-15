@@ -67,8 +67,8 @@ verità**, riusata da stats, kpi e report.
 
 ### 3. I due assi di lettura
 
-- **Per gruppo** — 15 cluster citizen (Comuni, Istruzione, Sanità, …) dal codice categoria del seed. Copertura totale.
-- **Per area** — regione/provincia da `enrich_geo` (crosswalk ufficiale ISTAT sulla chiave-sede `ipa_codice_comune_istat`): **20/20 regioni, 100% di copertura**.
+- **Per gruppo** — 15 cluster citizen (Comuni, Istruzione, Sanità, …) dal codice categoria del seed. Copertura totale. → sezione **"Analisi per gruppi"** del report.
+- **Per area** — regione/provincia/macroarea da `enrich_geo` (crosswalk ufficiale ISTAT sulla chiave-sede `ipa_codice_comune_istat`): **20/20 regioni, 100% di copertura**. → `stats.compute_by_region` produce `data/summary/stats_by_region.json` e alimenta la sezione **"Analisi per aree"** del report (classifica regionale per ISD, sintesi per macroarea, regione più sovrana / più esposta).
 
 ### 4. Artefatti pubblici (alla root del deploy)
 
@@ -138,7 +138,7 @@ La roadmap completa è in **[`docs/ROADMAP.md`](docs/ROADMAP.md)**, derivata dal
 [issue aperte](https://github.com/fpietrosanti/mxmap.it/issues):
 
 1. **Baseline dato** → sistemare le ~700 anomalie (#4) → run #1 → storicizzazione live.
-2. **Asse geografico** → ✅ crosswalk comune→regione strutturale; resta l'affinamento provincia/comune Sardegna.
+2. **Asse geografico** → ✅ crosswalk comune→regione strutturale + ✅ sezione **"Analisi per aree"** del report (classifica regionale); resta l'affinamento comune-esatto Sardegna (oggi regione+provincia).
 3. **Bonifica fonte** → software qualità IndicePA (#2).
 4. **Attendibilità** → metodo Email-Bounce (#5).
 5. **Diagnostica** → pagina dimensioni + segnala-errore (#6).

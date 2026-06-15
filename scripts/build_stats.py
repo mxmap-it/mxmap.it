@@ -13,6 +13,8 @@ Output:
   data/summary/stats_current.json       KPI di oggi (testata, sovranità,
                                          giurisdizione MX, mercato, qualità, segnali)
   data/summary/stats_by_category.json   ISD + breakdown sovranità per cluster IPA
+  data/summary/stats_by_region.json     ISD + breakdown sovranità per regione e
+                                         macroarea (asse «per aree», crosswalk ISTAT)
 
 Uso: uv run python3 scripts/build_stats.py [--country IT]
 """
@@ -36,6 +38,7 @@ except Exception:  # noqa: BLE001
 from mail_sovereignty.stats import (  # noqa: E402
     assert_integrity,
     compute_by_category,
+    compute_by_region,
     compute_current,
 )
 
@@ -59,14 +62,16 @@ def main() -> int:
 
     current = compute_current(entities)
     by_cat = compute_by_category(entities)
+    by_region = compute_by_region(entities)
 
     # rete di sicurezza: i numeri DEVONO essere coerenti, altrimenti exit 1.
-    assert_integrity(current, by_cat)
+    assert_integrity(current, by_cat, by_region)
     print("  ✓ integrità KPI verificata")
 
     current["generated"] = generated
     current["country"] = args.country
     by_cat["generated"] = generated
+    by_region["generated"] = generated
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     (args.out_dir / "stats_current.json").write_text(
@@ -75,11 +80,17 @@ def main() -> int:
     (args.out_dir / "stats_by_category.json").write_text(
         json.dumps(by_cat, ensure_ascii=False, indent=1), encoding="utf-8"
     )
+    (args.out_dir / "stats_by_region.json").write_text(
+        json.dumps(by_region, ensure_ascii=False, indent=1), encoding="utf-8"
+    )
 
     h = current["headline"]
     print(f"  ISD (sovranità IT): {h['isd']}%   CLOUD Act: {h['cloud_act_pct']}%")
     print(f"  Coverage: {h['coverage_pct']}%   enti: {h['n_entities']}")
-    print(f"  Scritti: {args.out_dir}/stats_current.json + stats_by_category.json")
+    print(
+        f"  Scritti: {args.out_dir}/stats_current.json + stats_by_category.json"
+        " + stats_by_region.json"
+    )
     return 0
 
 
