@@ -57,6 +57,14 @@
   .separator { color: #555; font-size: 15px; }
   .tagline { color: #a0a0b0; font-size: 13px; white-space: nowrap; }
   .header-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .beta-wrap { position: relative; display: inline-flex; align-self: center; }
+  .beta-badge { background:#E8A33D; color:#fff; font-size:10px; font-weight:700; letter-spacing:.5px; padding:2px 6px; border-radius:4px; cursor:help; }
+  .beta-wrap:focus { outline:2px solid #fff; outline-offset:1px; border-radius:4px; }
+  .beta-tip { position:absolute; top:calc(100% + 9px); left:-4px; width:300px; max-width:calc(100vw - 28px); background:#fff; color:#222; border:1px solid #d0d7de; border-radius:8px; box-shadow:0 10px 28px rgba(0,0,0,.22); padding:12px 14px; font-size:12.5px; font-weight:400; line-height:1.55; letter-spacing:normal; white-space:normal; z-index:3000; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s; }
+  .beta-wrap:hover .beta-tip, .beta-wrap:focus-within .beta-tip { opacity:1; visibility:visible; transform:translateY(0); }
+  .beta-tip a { color:#0066CC; font-weight:600; text-decoration:none; }
+  .beta-tip a:hover { text-decoration:underline; }
+  .beta-tip .arr { position:absolute; top:-6px; left:14px; width:11px; height:11px; background:#fff; border-left:1px solid #d0d7de; border-top:1px solid #d0d7de; transform:rotate(45deg); }
   .updated { font-size: 11px; color: #888; }
   .toggle-info {
     background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
@@ -250,7 +258,14 @@
   <div class="header-left">
     <img src="brand/favicon.svg" width="26" height="26" alt="" aria-hidden="true" style="flex-shrink:0">
     <h1 class="brand">MxMap<span style="color:#0066CC">.it</span></h1>
-    <span title="Progetto in versione beta" style="background:#E8A33D;color:#fff;font-size:10px;font-weight:700;letter-spacing:.5px;padding:2px 6px;border-radius:4px;flex-shrink:0;align-self:center">BETA</span>
+    <span class="beta-wrap" tabindex="0" role="note" aria-label="Stato del progetto: versione beta — work in progress">
+      <span class="beta-badge">BETA</span>
+      <span class="beta-tip" role="tooltip">
+        <span class="arr"></span>
+        <strong>Progetto in evoluzione.</strong> MxMap.it è un <em>work in progress</em> in costante sviluppo. La <strong>prima scansione ufficiale</strong> — da cui partirà la misurazione quotidiana — <strong>non è ancora partita</strong>.<br><br>
+        Aiutaci a completare la roadmap: <a href="https://github.com/fpietrosanti/mxmap.it/issues" target="_blank" rel="noopener">collabora su GitHub Issues</a> e <a href="https://t.me/+Ot-M_g0dkh1kMGI0" target="_blank" rel="noopener">unisciti al canale Telegram</a>.
+      </span>
+    </span>
     <span class="separator">|</span>
     <span class="tagline">Sovranità digitale della posta elettronica della PA italiana</span>
   </div>
