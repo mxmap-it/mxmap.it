@@ -63,7 +63,7 @@ SOURCES = [
     },
     {
         "name": "Osservatorio Nazionale Sovranità Digitale",
-        "url": "https://fpietrosanti.github.io/osservatorio-nazionale-sovranita-digitale/",
+        "url": "https://osservatorio.mxmap.it/",
     },
 ]
 
