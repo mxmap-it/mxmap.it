@@ -63,7 +63,7 @@ incoerenti, incompleti o assenti. L'intera pipeline qui descritta esiste proprio
 <em>rielaborare</em> IndicePA (estrazione, correzione, validazione, arricchimento) — i nostri dati
 <strong>non sono una lettura diretta</strong> della fonte. La bonifica continua di IndicePA è una
 <strong>dipendenza funzionale core</strong>, tracciata come progetto dedicato:
-<a href="https://github.com/fpietrosanti/mxmap.it/issues/2" target="_blank" rel="noopener">mxmap.it#2 —
+<a href="https://github.com/mxmap-it/mxmap.it/issues/2" target="_blank" rel="noopener">mxmap.it#2 —
 Software per un IndicePA ben manutenuto e bonificato</a> (misura autonoma della qualità del dato +
 cicli di segnalazione, anche via PEC, verso enti e AgID).
 </div>
@@ -105,7 +105,7 @@ cicli di segnalazione, anche via PEC, verso enti e AgID).
   <li><strong>Label concatenation</strong> (rule 6.6) — un singolo label del candidato (≥ 5 caratteri) contiene come substring 2 o più label dell'ente (ciascuno ≥ 3 caratteri), con copertura non-sovrapposta ≥ 80% del label candidato. Cattura il pattern molto comune dell'IndicePA dove l'ente è registrato come <code>{città}.aci.it</code> ma il sito reale è <code>aci{città}.it</code>: ad esempio <code>aciarezzo.it</code> ↔ <code>arezzo.aci.it</code> dove <em>aciarezzo</em> = <em>arezzo</em> + <em>aci</em> (copertura 100%). Recupera ~16 enti del cluster ACI provinciali + ordini professionali.</li>
   <li><strong>Rigetto PEC</strong> — domini di provider PEC (<code>legalmail.it</code>, <code>arubapec.it</code>, <code>postecert.it</code>, ecc.) sono sempre rigettati come base di classificazione MX (per design: la PEC non è considerata posta "operativa" per scopo di sovranità).</li>
 </ol>
-<p>Codice: <a href="https://github.com/fpietrosanti/mxmap.it/blob/main/src/mail_sovereignty/scrape_validator.py" target="_blank" rel="noopener">src/mail_sovereignty/scrape_validator.py</a>. Test: <a href="https://github.com/fpietrosanti/mxmap.it/blob/main/scripts/_test_scrape_validator.py" target="_blank" rel="noopener">scripts/_test_scrape_validator.py</a>.</p>
+<p>Codice: <a href="https://github.com/mxmap-it/mxmap.it/blob/main/src/mail_sovereignty/scrape_validator.py" target="_blank" rel="noopener">src/mail_sovereignty/scrape_validator.py</a>. Test: <a href="https://github.com/mxmap-it/mxmap.it/blob/main/scripts/_test_scrape_validator.py" target="_blank" rel="noopener">scripts/_test_scrape_validator.py</a>.</p>
 
 <h2 id="methods">Metodi di scoperta — taxonomia completa</h2>
 <p>Ogni voce mostra: la tag stabile (citabile come anchor di questa pagina), una descrizione estesa, la regola formale che la attiva, le sorgenti di evidenza, e il comportamento in caso di fallimento.</p>
@@ -266,7 +266,7 @@ cicli di segnalazione, anche via PEC, verso enti e AgID).
 
 <h3 style="margin-top:28px">Anticipazione: validazione via bounce</h3>
 <p>La confidenza è anche una <strong>mappa di dove verificare</strong>. Gli enti a confidenza bassa (&lt; 0,60) pur essendo classificati sono i candidati prioritari per la futura validazione attiva via <em>bounce-probing</em> (invio a indirizzo inesistente + analisi del messaggio di ritorno NDR, che rivela il MTA reale del backend). Il <strong>report completo</strong> — distribuzione aggregata, confidenza per provider, regole attivate, sovranità e lista dei candidati bounce — è rigenerato a ogni run:</p>
-<div class="gate"><strong>Report:</strong> <a href="https://github.com/fpietrosanti/mxmap.it/blob/main/data/reports/confidence_report.md" target="_blank" rel="noopener">confidence_report.md</a> (leggibile) · <a href="data/reports/confidence_report.json" target="_blank" rel="noopener">confidence_report.json</a> (machine-readable). Codice: <code>src/mail_sovereignty/classification_confidence.py</code> (port + test di fedeltà), <code>scripts/compute_confidence.py</code>, <code>scripts/report_confidence.py</code>.</div>
+<div class="gate"><strong>Report:</strong> <a href="https://github.com/mxmap-it/mxmap.it/blob/main/data/reports/confidence_report.md" target="_blank" rel="noopener">confidence_report.md</a> (leggibile) · <a href="data/reports/confidence_report.json" target="_blank" rel="noopener">confidence_report.json</a> (machine-readable). Codice: <code>src/mail_sovereignty/classification_confidence.py</code> (port + test di fedeltà), <code>scripts/compute_confidence.py</code>, <code>scripts/report_confidence.py</code>.</div>
 
 <h2 id="riferimenti">Riferimenti</h2>
 <p>Questo osservatorio è un fork del lavoro di <strong>David Huser</strong> e colleghi, a cui va il credito per il metodo di classificazione e per il modello di confidence qui adottato.</p>
@@ -277,7 +277,7 @@ cicli di segnalazione, anche via PEC, verso enti e AgID).
 
 <hr style="margin-top:48px;border:none;border-top:1px solid #ddd">
 <p style="font-size:12px;color:#888;text-align:center">
-Osservatorio Sovranità Digitale PA — <a href="https://github.com/fpietrosanti/mxmap.it" target="_blank" rel="noopener">codice e dati su GitHub</a> · Licenza dati: ODbL-1.0 + CC-BY-4.0 · Codice: MIT · Metodo: <a href="https://github.com/mxmap/esorics2026" target="_blank" rel="noopener">mxmap/ESORICS 2026</a>
+Osservatorio Sovranità Digitale PA — <a href="https://github.com/mxmap-it/mxmap.it" target="_blank" rel="noopener">codice e dati su GitHub</a> · Licenza dati: ODbL-1.0 + CC-BY-4.0 · Codice: MIT · Metodo: <a href="https://github.com/mxmap/esorics2026" target="_blank" rel="noopener">mxmap/ESORICS 2026</a>
 </p>
 
 <script>

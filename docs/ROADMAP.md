@@ -4,7 +4,7 @@ Derivata dalle **issue GitHub aperte** + le **dipendenze sui dati** accumulate. 
 dipendenza e impatto. Stato: giugno 2026. Vedi il contesto in [`CLAUDE.md`](../CLAUDE.md)
 (§"Project context: the Italian digital-sovereignty observatory").
 
-Le issue vivono nel repo MxMap: <https://github.com/fpietrosanti/mxmap.it/issues>.
+Le issue vivono nel repo MxMap: <https://github.com/mxmap-it/mxmap.it/issues>.
 
 ---
 

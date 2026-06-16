@@ -54,7 +54,7 @@ def main() -> int:
     if args.refresh or not args.cache.exists():
         print(f"Downloading ISTAT comuni list from {ISTAT_URL}...")
         req = urllib.request.Request(ISTAT_URL, headers={
-            "User-Agent": "mxmap.it-istat-fetcher/1.0 (+https://github.com/fpietrosanti/mxmap.it)"
+            "User-Agent": "mxmap.it-istat-fetcher/1.0 (+https://github.com/mxmap-it/mxmap.it)"
         })
         with urllib.request.urlopen(req, timeout=120) as r:
             data = r.read()

@@ -280,7 +280,7 @@ Serve esclusivamente a verificare la configurazione tecnica del servizio di
 posta di questo dominio pubblico. NON richiede alcuna azione: può essere
 ignorato. Nessun dato personale è raccolto.
 
-Informazioni e contatto: https://github.com/fpietrosanti/mxmap.it
+Informazioni e contatto: https://github.com/mxmap-it/mxmap.it
 """
 
 

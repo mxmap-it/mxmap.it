@@ -55,7 +55,7 @@ SEED_FILE = DATA / "municipalities_it.json"
 OUT_FILE = DATA / "it_istruzione_points.json"
 
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
-USER_AGENT = "mxmap.it-geocode/0.1 (+https://github.com/fpietrosanti/mxmap.it; contact: github)"
+USER_AGENT = "mxmap.it-geocode/0.1 (+https://github.com/mxmap-it/mxmap.it; contact: github)"
 NOMINATIM_DELAY_S = 1.1  # >1 req/s violates the policy
 
 ISTRUZIONE_CATS = {"L33", "L17", "L43", "L15", "L28"}

@@ -212,7 +212,7 @@ nessun "other".
 [`scripts/build_kpi.py`](../scripts/build_kpi.py) (+ logica [`src/mail_sovereignty/kpi.py`](../src/mail_sovereignty/kpi.py))
 produce **`kpi.json`** alla **root del repo** (servito alla root del deploy GitHub Pages,
 come `data-summary.json`), file statico pubblico (CC BY-SA 4.0) consumato dal sito Hugo
-dell'[Osservatorio Nazionale Sovranità Digitale](https://github.com/fpietrosanti/osservatorio-nazionale-sovranita-digitale)
+dell'[Osservatorio Nazionale Sovranità Digitale](https://github.com/mxmap-it/osservatorio-nazionale-sovranita-digitale)
 per sostituire i placeholder `—%`.
 
 - **URL pubblico:** `https://mxmap.it/kpi.json`

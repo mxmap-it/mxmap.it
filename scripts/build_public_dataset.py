@@ -286,7 +286,7 @@ def main() -> int:
         "_meta": {
             "name": "mxmap.it — Italian PA Email Sovereignty Dataset",
             "generated": generated,
-            "source": "https://github.com/fpietrosanti/mxmap.it",
+            "source": "https://github.com/mxmap-it/mxmap.it",
             "license": "ODbL-1.0 + CC-BY-4.0 (data); MIT (code)",
             "rows": len(rows),
             "fields": fields,

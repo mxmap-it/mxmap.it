@@ -26,7 +26,7 @@ DATA = ROOT / "data"
 REPORTS = DATA / "reports"
 
 SPARQL_URL = "https://query.wikidata.org/sparql"
-USER_AGENT = "mxmap.it-correct-discovery/0.1 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it-correct-discovery/0.1 (+https://github.com/mxmap-it/mxmap.it)"
 
 
 def sparql_query(query: str) -> list[dict]:

@@ -37,7 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 SPARQL_URL = "https://query.wikidata.org/sparql"
-USER_AGENT = "mxmap.it-crosswalk-builder/0.1 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it-crosswalk-builder/0.1 (+https://github.com/mxmap-it/mxmap.it)"
 
 # All Italian items (P17=Q38) with both an OSM relation (P402) and an ISTAT ID
 # (P635). Optionally include the IndicePA ID (P6832) when present.

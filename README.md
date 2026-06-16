@@ -1,10 +1,10 @@
 # MX Map Italia — Sovranità digitale della posta elettronica della PA
 
-[![Nightly](https://github.com/fpietrosanti/mxmap.it/actions/workflows/nightly.yml/badge.svg)](https://github.com/fpietrosanti/mxmap.it/actions/workflows/nightly.yml)
-[![CI](https://github.com/fpietrosanti/mxmap.it/actions/workflows/ci.yml/badge.svg)](https://github.com/fpietrosanti/mxmap.it/actions/workflows/ci.yml)
+[![Nightly](https://github.com/mxmap-it/mxmap.it/actions/workflows/nightly.yml/badge.svg)](https://github.com/mxmap-it/mxmap.it/actions/workflows/nightly.yml)
+[![CI](https://github.com/mxmap-it/mxmap.it/actions/workflows/ci.yml/badge.svg)](https://github.com/mxmap-it/mxmap.it/actions/workflows/ci.yml)
 [![Licenza CC BY-SA 4.0](https://img.shields.io/badge/licenza-CC%20BY--SA%204.0-blue)](https://creativecommons.org/licenses/by-sa/4.0/deed.it)
 
-Motore dati dell'**[Osservatorio Nazionale Sovranità Digitale](https://github.com/fpietrosanti/osservatorio-nazionale-sovranita-digitale)**.
+Motore dati dell'**[Osservatorio Nazionale Sovranità Digitale](https://github.com/mxmap-it/osservatorio-nazionale-sovranita-digitale)**.
 Classifica, tramite **analisi DNS pubblica** (record MX, SPF, DKIM, CNAME), *chi gestisce
 la posta elettronica* di **~22.987 enti** della Pubblica Amministrazione italiana
 (registrati in IndicePA) e ne misura la **sovranità**: italiana, UE o **extra-UE soggetta
@@ -24,7 +24,7 @@ al CLOUD Act** statunitense. Ne produce una mappa interattiva, statistiche, un r
 | | |
 |---|---|
 | **MxMap (questo repo)** | Il **motore dati**. Misura e classifica; produce `data.json` + artefatti pubblici statici alla root del deploy. |
-| **[Osservatorio Nazionale Sovranità Digitale](https://github.com/fpietrosanti/osservatorio-nazionale-sovranita-digitale)** | Il livello di **presentazione/advocacy** (sito Hugo). **Scarica e pesca** i nostri artefatti (`kpi.json`, `report.json`) e li renderizza per gli stakeholder. |
+| **[Osservatorio Nazionale Sovranità Digitale](https://github.com/mxmap-it/osservatorio-nazionale-sovranita-digitale)** | Il livello di **presentazione/advocacy** (sito Hugo). **Scarica e pesca** i nostri artefatti (`kpi.json`, `report.json`) e li renderizza per gli stakeholder. |
 
 Il confine è netto: **qui si misura, lì si racconta.** Il contratto sono file statici (no API, no auth, CC BY-SA 4.0).
 
@@ -96,9 +96,9 @@ Licenza **CC BY-SA 4.0**.
 
 ## Corner case (la fonte è sporca — è il cuore del progetto)
 
-- **IndicePA non è una base dati pulita.** I domini email sono incoerenti/incompleti: l'intera pipeline esiste per *rielaborarla*. È una dipendenza funzionale core → **[issue #2](https://github.com/fpietrosanti/mxmap.it/issues/2)**.
+- **IndicePA non è una base dati pulita.** I domini email sono incoerenti/incompleti: l'intera pipeline esiste per *rielaborarla*. È una dipendenza funzionale core → **[issue #2](https://github.com/mxmap-it/mxmap.it/issues/2)**.
 - **Geografia (ISTAT).** Il campo `region` del seed è sporco (a volte è il nome dell'ente); usiamo la chiave-sede `ipa_codice_comune_istat` sul crosswalk ISTAT. **Sardegna:** IndicePA usa i codici provincia *legacy* pre-riforma 2016 (prefissi 112-119) assenti dal crosswalk → mappati esplicitamente a regione Sardegna (vedi `geo.py`).
-- **Storicizzazione gated.** Le serie storiche partono dal **run #1** (primo scan pulito dopo la chiusura delle ~700 anomalie, [issue #4](https://github.com/fpietrosanti/mxmap.it/issues/4)). Fino ad allora `historicize`/`dcat` sono disattivati.
+- **Storicizzazione gated.** Le serie storiche partono dal **run #1** (primo scan pulito dopo la chiusura delle ~700 anomalie, [issue #4](https://github.com/mxmap-it/mxmap.it/issues/4)). Fino ad allora `historicize`/`dcat` sono disattivati.
 - **Una sola realtà.** Nessuna distinzione "reality vs methodology": la metodologia si congela al run #1.
 - **Vincoli editoriali del report.** Stile consulting; si guida con gli estremi segmentati; la PA Centrale (ministeri, numeri piccoli, tema sensibile) è tenuta **fuori dall'allarme di testata** (`SPOTLIGHT_EXCLUDE`).
 - **I numeri non devono mai sbagliare.** Ogni KPI ha unit test + `assert_integrity()` a runtime (vedi sotto).
@@ -135,7 +135,7 @@ eseguito a ogni build (la pipeline fallisce se i numeri non tornano). Vedi
 ## Roadmap
 
 La roadmap completa è in **[`docs/ROADMAP.md`](docs/ROADMAP.md)**, derivata dalle
-[issue aperte](https://github.com/fpietrosanti/mxmap.it/issues):
+[issue aperte](https://github.com/mxmap-it/mxmap.it/issues):
 
 1. **Baseline dato** → sistemare le ~700 anomalie (#4) → run #1 → storicizzazione live.
 2. **Asse geografico** → ✅ crosswalk comune→regione strutturale + ✅ sezione **"Analisi per aree"** del report (classifica regionale); resta l'affinamento comune-esatto Sardegna (oggi regione+provincia).

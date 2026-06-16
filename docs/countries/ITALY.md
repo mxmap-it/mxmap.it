@@ -24,7 +24,7 @@ Treating **città metropolitane** as province-equivalent (post-Delrio 2014, they
 mxmap.it shows only Italy, in **Italian primary / English secondary**. The codebase remains multi-country compatible upstream — the Italy-only behaviour is a build-time configuration of `index.html`, not a fork of the engine.
 
 ## Repo
-- Origin: `https://github.com/fpietrosanti/mxmap.it`
+- Origin: `https://github.com/mxmap-it/mxmap.it`
 - Upstream reference: `https://github.com/livenson/mxmap` (Baltic fork, used as starting point)
 - Branch: `main` (single-branch fork; no `italy` branch).
 
@@ -34,7 +34,7 @@ The whole Italian build is wired up as a single shell script. Run it from a
 fresh clone — every artifact below regenerates from public sources.
 
 ```bash
-git clone https://github.com/fpietrosanti/mxmap.it.git mxmap
+git clone https://github.com/mxmap-it/mxmap.it.git mxmap
 cd mxmap
 curl -LsSf https://astral.sh/uv/install.sh | sh    # install uv if missing
 uv sync                                             # install Python + deps
@@ -478,7 +478,7 @@ Implement as a `translations` object keyed by `lang` + DOM-attribute swap on tog
    ```
 2. Clone the repo into `/home/mxmap.it/mxmap`:
    ```
-   sudo -u mxmap.it git clone https://github.com/fpietrosanti/mxmap.it.git /home/mxmap.it/mxmap
+   sudo -u mxmap.it git clone https://github.com/mxmap-it/mxmap.it.git /home/mxmap.it/mxmap
    ```
 3. `uv sync` once to populate `.venv`:
    ```

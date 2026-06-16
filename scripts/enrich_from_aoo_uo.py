@@ -55,7 +55,7 @@ RAW = DATA / "indicepa_raw"
 RAW.mkdir(parents=True, exist_ok=True)
 OUT = DATA / "indicepa_extended_emails.json"
 
-USER_AGENT = "mxmap.it-aoo-uo-enrichment/0.1 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it-aoo-uo-enrichment/0.1 (+https://github.com/mxmap-it/mxmap.it)"
 
 # Discovered via package_show; cached here for clarity.
 DATASETS = {

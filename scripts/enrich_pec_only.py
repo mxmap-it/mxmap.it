@@ -53,7 +53,7 @@ OUT_FILE = DATA / "enrichment_pec_only.json"
 CKAN_BASE = "https://indicepa.gov.it/ipa-dati/api/3/action"
 RESOURCE_ID = "d09adf99-dc10-4349-8c53-27b1e5aa97b6"
 PAGE_SIZE = 5000
-USER_AGENT = "mxmap.it-pec-enrichment/0.1 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it-pec-enrichment/0.1 (+https://github.com/mxmap-it/mxmap.it)"
 
 WD_SPARQL = "https://query.wikidata.org/sparql"
 

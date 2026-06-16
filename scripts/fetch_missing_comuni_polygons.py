@@ -43,7 +43,7 @@ OVERPASS_MIRRORS = [
     "https://overpass.osm.ch/api/interpreter",
     "https://overpass.openstreetmap.fr/api/interpreter",
 ]
-USER_AGENT = "mxmap.it-missing-comuni/0.1 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it-missing-comuni/0.1 (+https://github.com/mxmap-it/mxmap.it)"
 
 
 def overpass_query(rel_id: int, *, timeout: int = 30) -> dict | None:

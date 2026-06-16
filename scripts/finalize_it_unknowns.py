@@ -75,7 +75,7 @@ SPARQL_URL = "https://query.wikidata.org/sparql"
 
 DDG_HTML_URL = "https://html.duckduckgo.com/html/"
 
-USER_AGENT = "mxmap.it/0.2 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it/0.2 (+https://github.com/mxmap-it/mxmap.it)"
 
 CONCURRENCY_DNS = 10
 CONCURRENCY_HTTP = 8

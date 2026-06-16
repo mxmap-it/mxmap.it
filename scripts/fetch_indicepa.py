@@ -264,7 +264,7 @@ PROV_AUTONOME_IPA_TO_PROVINCE_ISTAT = {
 HOSTNAME_RE = re.compile(r"^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$")
 
 PAGE_SIZE = 5000  # CKAN datastore_search limit
-USER_AGENT = "mxmap.it-indicepa-fetcher/0.1 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it-indicepa-fetcher/0.1 (+https://github.com/mxmap-it/mxmap.it)"
 
 
 # Italian ISTAT 3-digit province code -> region name (Italian).

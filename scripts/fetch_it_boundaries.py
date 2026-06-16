@@ -53,7 +53,7 @@ OVERPASS_MIRRORS: list[str] = [
     "https://overpass.private.coffee/api/interpreter",
 ]
 
-USER_AGENT = "mxmap.it-topo-fetcher/0.2 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it-topo-fetcher/0.2 (+https://github.com/mxmap-it/mxmap.it)"
 
 # Italy mainland + islands bounding box (Pantelleria/Lampedusa to South Tyrol).
 IT_BBOX = [6.6, 35.4, 18.6, 47.1]

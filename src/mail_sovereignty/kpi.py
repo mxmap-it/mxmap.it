@@ -158,7 +158,7 @@ def build_kpi(entities: list[dict], *, generated_at: str, run_id: str | None) ->
         "generated_at": generated_at,
         "run_id": run_id,
         "license": "CC BY-SA 4.0",
-        "source": "https://github.com/fpietrosanti/mxmap.it",
+        "source": "https://github.com/mxmap-it/mxmap.it",
         "totals": {
             "n_entities": n,
             "n_with_mx": n_with_mx,

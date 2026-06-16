@@ -55,7 +55,7 @@ DATA = ROOT / "data"
 OUT_FILE = DATA / "enrichment_consorzi_members.json"
 SEED_FILE = DATA / "municipalities_it.json"
 
-USER_AGENT = "mxmap.it-consorzi-enrichment/0.1 (+https://github.com/fpietrosanti/mxmap.it)"
+USER_AGENT = "mxmap.it-consorzi-enrichment/0.1 (+https://github.com/mxmap-it/mxmap.it)"
 WD_SPARQL = "https://query.wikidata.org/sparql"
 
 
