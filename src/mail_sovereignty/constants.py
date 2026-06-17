@@ -578,7 +578,14 @@ GATEWAY_KEYWORDS = {
     "carbonio": ["carboniocloud.com", "carbonio.com"],
     "zimbraopen": ["zimbraopen.it"],
     "widestore": ["widestore.net"],
-    "libraesva": ["libraesva.com"],
+    # Libraesva (ESVA = Email Security Virtual Appliance): gateway antivirus IT
+    # molto diffuso nella PA. Gli MX reali usano tante forme — esvacloud.com,
+    # esva.<reseller>.it, esva-cloud.*, esva2.*, esvacloud1.* — quindi il solo
+    # "libraesva.com" mancava ~150 enti, mascherando il backend reale (spesso
+    # Microsoft 365) dietro l'override ASN→aruba. La sottostringa "esva" copre
+    # 110/110 hostname osservati; un eventuale falso positivo passa comunque dal
+    # look-through SPF/DKIM/tenant (non mislabella). Vedi issue #14.
+    "libraesva": ["esva", "libraesva.com"],
     "datalab-it": ["datalab.it"],
     "iconto": ["iconto.it"],
     # Gap-analysis additions (mxmap.it post-launch): private Italian PA SaaS
