@@ -46,6 +46,13 @@ def test_provider_keywords_has_all_providers():
         "pa-contractor-private",
         # Italian commercial ISPs (AIIP)
         "local-isp",
+        # European non-Italian providers (eu_non_it bucket, #21)
+        "ovh",
+        "hetzner",
+        "ionos",
+        "scaleway",
+        "gandi",
+        "infomaniak",
     }
 
 
