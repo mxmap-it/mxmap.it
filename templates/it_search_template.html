@@ -112,6 +112,13 @@
   .conf.lo { color: #cf222e; } .conf.na { color: #999; }
 
   .domain { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; }
+  .report-err { margin-top: 5px; font-size: 11px; }
+  .report-err > summary { cursor: pointer; color: #a15c00; font-weight: 600; list-style: none; white-space: nowrap; }
+  .report-err > summary::-webkit-details-marker { display: none; }
+  .report-choice { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; margin-top: 5px; }
+  .report-choice .rc-q { color: #666; }
+  .report-choice a { color: #0066CC; text-decoration: none; font-weight: 600; padding: 2px 8px; border: 1px solid #cfe0f5; border-radius: 6px; white-space: nowrap; }
+  .report-choice a:hover { background: #eef5ff; }
   .ipa-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #888; }
   .reason { font-size: 11px; color: #666; max-width: 320px; }
   .pagination { margin: 14px 0; text-align: center; font-size: 12px; }
@@ -339,6 +346,37 @@ function applyFilters() {
   render();
 }
 
+// Blocco "Riporta un errore" (scelta GitHub issue pre-compilata / Telegram share),
+// coerente con i popup della mappa.
+function reportErrorHTML(d) {
+  var page = location.origin + location.pathname;
+  var title = '[Segnalazione dato] ' + d.name + ' — ' + d.domain;
+  var L = [
+    '**Ente:** ' + d.name,
+    '**Dominio:** ' + d.domain,
+    d.id ? '**Codice IPA / ID:** ' + d.id : null,
+    '**Provider classificato:** ' + (d.provider || '—'),
+    d.reason ? '**Motivazione:** ' + d.reason : null,
+    d.area ? '**Categoria / area:** ' + d.area : null,
+    '',
+    '**Cosa risulta sbagliato e qual è il dato corretto:**',
+    '',
+    '',
+    '— inviato da ' + page
+  ];
+  var body = L.filter(function (x) { return x !== null; }).join('\n');
+  var gh = 'https://github.com/mxmap-it/mxmap.it/issues/new?title=' +
+    encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+  var tgText = 'Possibile errore su MxMap.it — ' + d.name + ' (' + d.domain +
+    '), classificato "' + (d.provider || '—') + '". ' + page;
+  var tg = 'https://t.me/share/url?url=' + encodeURIComponent('https://mxmap.it') +
+    '&text=' + encodeURIComponent(tgText);
+  return '<details class="report-err"><summary>⚠️ Riporta un errore</summary>' +
+    '<div class="report-choice"><span class="rc-q">Come segnalarlo?</span>' +
+    '<a href="' + gh + '" target="_blank" rel="noopener">🐙 Ticket GitHub</a>' +
+    '<a href="' + tg + '" target="_blank" rel="noopener">✈️ Telegram</a></div></details>';
+}
+
 function render() {
   const tbody = document.getElementById('tbody');
   const cnt = document.getElementById('result-count');
@@ -373,7 +411,9 @@ function render() {
         ? '<span class="conf ' + confClass(r.classification_confidence) + '">' + Math.round(r.classification_confidence * 100) + '%</span>'
         : '<span class="conf na">—</span>') + '</td>' +
       '<td><span class="badge ' + jurClass(r.mx_jurisdiction) + '">' + escapeHtml(r.jurisdiction_label || '') + '</span></td>' +
-      '<td><span class="reason">' + escapeHtml(r.classification_reason || '') + '</span></td>' +
+      '<td><span class="reason">' + escapeHtml(r.classification_reason || '') + '</span>' +
+        reportErrorHTML({ name: r.denominazione, domain: r.domain_used, id: r.codice_ipa,
+          provider: r.provider_display, reason: r.classification_reason, area: r.categoria_label }) + '</td>' +
     '</tr>';
   }).join('');
 

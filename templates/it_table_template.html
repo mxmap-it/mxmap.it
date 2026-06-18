@@ -108,6 +108,13 @@
   .badge.unknown { background: #ECEFF1; color: #607D8B; }
 
   .domain { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+  .report-err { margin-top: 5px; font-size: 11px; }
+  .report-err > summary { cursor: pointer; color: #a15c00; font-weight: 600; list-style: none; white-space: nowrap; }
+  .report-err > summary::-webkit-details-marker { display: none; }
+  .report-choice { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; margin-top: 5px; }
+  .report-choice .rc-q { color: #666; }
+  .report-choice a { color: #0066CC; text-decoration: none; font-weight: 600; padding: 2px 8px; border: 1px solid #cfe0f5; border-radius: 6px; white-space: nowrap; }
+  .report-choice a:hover { background: #eef5ff; }
   .reason { font-size: 11px; color: #666; max-width: 320px; }
 
   footer { margin-top: 24px; font-size: 12px; color: #777; text-align: center; }
@@ -241,6 +248,37 @@ function applyFilters() {
   render(rows);
 }
 
+// Blocco "Riporta un errore" (scelta GitHub issue pre-compilata / Telegram share),
+// coerente con i popup della mappa e la Ricerca PA.
+function reportErrorHTML(d) {
+  var page = location.origin + location.pathname;
+  var title = '[Segnalazione dato] ' + d.name + ' — ' + d.domain;
+  var L = [
+    '**Ente:** ' + d.name,
+    '**Dominio:** ' + d.domain,
+    d.id ? '**Codice IPA / ID:** ' + d.id : null,
+    '**Provider classificato:** ' + (d.provider || '—'),
+    d.reason ? '**Motivazione:** ' + d.reason : null,
+    d.area ? '**Categoria / area:** ' + d.area : null,
+    '',
+    '**Cosa risulta sbagliato e qual è il dato corretto:**',
+    '',
+    '',
+    '— inviato da ' + page
+  ];
+  var body = L.filter(function (x) { return x !== null; }).join('\n');
+  var gh = 'https://github.com/mxmap-it/mxmap.it/issues/new?title=' +
+    encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+  var tgText = 'Possibile errore su MxMap.it — ' + d.name + ' (' + d.domain +
+    '), classificato "' + (d.provider || '—') + '". ' + page;
+  var tg = 'https://t.me/share/url?url=' + encodeURIComponent('https://mxmap.it') +
+    '&text=' + encodeURIComponent(tgText);
+  return '<details class="report-err"><summary>⚠️ Riporta un errore</summary>' +
+    '<div class="report-choice"><span class="rc-q">Come segnalarlo?</span>' +
+    '<a href="' + gh + '" target="_blank" rel="noopener">🐙 Ticket GitHub</a>' +
+    '<a href="' + tg + '" target="_blank" rel="noopener">✈️ Telegram</a></div></details>';
+}
+
 function render(rows) {
   const tbody = document.getElementById('tbody');
   if (rows.length === 0) {
@@ -255,7 +293,9 @@ function render(rows) {
       '<td><span class="domain">' + escapeHtml(r.domain || '') + '</span></td>' +
       '<td>' + escapeHtml(r.provider_display || '') + '</td>' +
       '<td><span class="badge ' + sovClass + '">' + escapeHtml(r.sovereignty || '') + '</span></td>' +
-      '<td><span class="reason">' + escapeHtml(r.reason || '') + '</span></td>' +
+      '<td><span class="reason">' + escapeHtml(r.reason || '') + '</span>' +
+        reportErrorHTML({ name: r.name, domain: r.domain, id: r.ipa_codice_ipa,
+          provider: r.provider_display, reason: r.reason, area: r.ipa_categoria_label }) + '</td>' +
     '</tr>';
   }).join('');
   document.querySelectorAll('thead th').forEach(th => {
