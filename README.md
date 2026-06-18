@@ -80,6 +80,7 @@ verità**, riusata da stats, kpi e report.
 | [`report.html`](https://mxmap.it/report.html) | Report stile management-consulting (grafici a torta, raccomandazioni, metodologia in calce). |
 | `storia.html` | Andamento nel tempo *(gated: parte dal run #1)*. |
 | `dist/mxmap_it_dataset.{csv,json,xlsx}` | Dataset completo opendata. |
+| [`sitemap.xml`](https://mxmap.it/sitemap.xml) · `robots.txt` · `site.webmanifest` | SEO. Il sitemap è **rigenerato ogni notte** da [`scripts/build_sitemap.py`](scripts/build_sitemap.py) (`<lastmod>` = `generated_at` di `kpi.json`, così resta manutenuto nel tempo); `robots.txt`/manifest sono statici. Le pagine portano `<meta>` keywords/canonical e `index.html` espone JSON-LD (`WebSite`/`Organization`/`Dataset`, alternateName *MxMap Italia*) per Google Dataset Search. |
 
 ## Dati aperti — download (sempre l'ultima versione)
 

@@ -9,13 +9,21 @@
 <link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossorigin>
 <link rel="preconnect" href="https://d.basemaps.cartocdn.com" crossorigin>
 <title>MxMap.it — Sovranità digitale della posta elettronica della PA italiana</title>
-<meta name="description" content="Osservatorio sulla Sovranità Digitale della Posta Elettronica della Pubblica Amministrazione Italiana — mappa interattiva di ~23.000 enti pubblici italiani (comuni, province, regioni, ministeri, scuole, ASL, università, ordini professionali) con il provider email reale classificato via analisi DNS (MX, SPF, CNAME, DKIM). Espone la dipendenza della PA italiana da hyperscaler statunitensi soggetti al CLOUD Act.">
+<meta name="description" content="MxMap Italia — Osservatorio sulla Sovranità Digitale della Posta Elettronica della Pubblica Amministrazione Italiana. Mappa interattiva di ~23.000 enti pubblici italiani (comuni, province, regioni, ministeri, scuole, ASL, università, ordini professionali) con il provider email reale classificato via analisi DNS (MX, SPF, CNAME, DKIM). Espone la dipendenza della PA italiana da hyperscaler statunitensi soggetti al CLOUD Act.">
+<meta name="keywords" content="MxMap Italia, MXMap Italia, MxMap.it, sovranità digitale, sovranità digitale Italia, posta elettronica PA, provider email pubblica amministrazione, email PA italiana, CLOUD Act, IndicePA, analisi DNS, record MX, mappa PA italiana, dati aperti PA, Osservatorio Sovranità Digitale">
+<meta name="application-name" content="MxMap Italia">
+<meta name="author" content="MxMap Italia · Osservatorio Nazionale Sovranità Digitale">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://mxmap.it/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="brand/favicon-16.png">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0066CC">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="MxMap.it">
 <meta property="og:title" content="MxMap.it — Sovranità digitale della posta elettronica della PA italiana">
 <meta property="og:description" content="Mappa di ~22.987 enti pubblici italiani con il provider email reale (analisi DNS). Quota di PA su provider USA soggetti al CLOUD Act. Dati aperti CC BY-SA 4.0.">
@@ -26,6 +34,56 @@
     <meta name="twitter:image" content="https://mxmap.it/brand/og-image.png">
 <meta property="og:url" content="https://mxmap.it/">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mxmap.it/#website",
+      "name": "MxMap.it",
+      "alternateName": ["MxMap Italia", "MXMap Italia", "MX Map Italia"],
+      "url": "https://mxmap.it/",
+      "inLanguage": "it-IT",
+      "description": "Osservatorio sulla sovranità digitale della posta elettronica della Pubblica Amministrazione italiana: il provider email reale di ~23.000 enti pubblici, classificato via analisi DNS.",
+      "publisher": {"@id": "https://mxmap.it/#org"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://mxmap.it/#org",
+      "name": "MxMap Italia",
+      "alternateName": "MxMap.it",
+      "url": "https://mxmap.it/",
+      "logo": "https://mxmap.it/brand/icon-512.png",
+      "sameAs": [
+        "https://github.com/mxmap-it/mxmap.it",
+        "https://osservatorio.mxmap.it/",
+        "https://t.me/+Ot-M_g0dkh1kMGI0"
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://mxmap.it/#dataset",
+      "name": "MxMap Italia — Sovranità digitale della posta elettronica della PA italiana",
+      "alternateName": "MxMap Italia dataset",
+      "description": "Classificazione del provider email reale di ~23.000 enti della Pubblica Amministrazione italiana (comuni, province, regioni, ministeri, scuole, ASL, università, ordini professionali) tramite analisi DNS (MX, SPF, CNAME, DKIM). Espone la quota di PA su provider statunitensi soggetti al CLOUD Act e l'Indice di Sovranità Digitale.",
+      "url": "https://mxmap.it/",
+      "inLanguage": "it-IT",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "isAccessibleForFree": true,
+      "creator": {"@id": "https://mxmap.it/#org"},
+      "publisher": {"@id": "https://mxmap.it/#org"},
+      "keywords": ["sovranità digitale", "Pubblica Amministrazione", "posta elettronica", "CLOUD Act", "IndicePA", "DNS", "record MX", "Italia"],
+      "spatialCoverage": {"@type": "Place", "name": "Italia"},
+      "distribution": [
+        {"@type": "DataDownload", "name": "Dataset CSV", "encodingFormat": "text/csv", "contentUrl": "https://mxmap.it/dist/mxmap_it_dataset.csv"},
+        {"@type": "DataDownload", "name": "Dataset JSON", "encodingFormat": "application/json", "contentUrl": "https://mxmap.it/dist/mxmap_it_dataset.json"},
+        {"@type": "DataDownload", "name": "Dataset XLSX", "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "contentUrl": "https://mxmap.it/dist/mxmap_it_dataset.xlsx"}
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

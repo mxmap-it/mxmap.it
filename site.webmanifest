@@ -1,0 +1,17 @@
+{
+  "name": "MxMap Italia — Sovranità digitale della posta elettronica della PA italiana",
+  "short_name": "MxMap Italia",
+  "description": "Osservatorio sulla sovranità digitale della posta elettronica della Pubblica Amministrazione italiana: il provider email reale di ~23.000 enti pubblici, classificato via analisi DNS.",
+  "lang": "it-IT",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066CC",
+  "icons": [
+    {"src": "/brand/favicon-16.png", "sizes": "16x16", "type": "image/png"},
+    {"src": "/brand/favicon-32.png", "sizes": "32x32", "type": "image/png"},
+    {"src": "/brand/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"},
+    {"src": "/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

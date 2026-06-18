@@ -197,6 +197,11 @@ jobs:
       # Report pubblico (report.json) scaricato/pescato dall'Osservatorio.
       - name: Build public report (Osservatorio)
         run: uv run python3 scripts/build_report.py --country IT
+      # Sitemap.xml (SEO) — <lastmod> preso da kpi.json:generated_at, quindi
+      # rigenerato a ogni run e "manutenuto nel tempo". robots.txt è statico.
+      # Deve stare DOPO build_kpi (kpi.json) per leggere il timestamp del run.
+      - name: Build sitemap.xml (SEO)
+        run: uv run python3 scripts/build_sitemap.py
       # --- Storicizzazione (F1) — DISATTIVATA finché non risolviamo le anomalie.
       # Il run #1 ufficiale dello storico dev'essere il primo scan su dati "da
       # rollout" (anomalie risolte), non un run sporco. Per attivarla: togliere
@@ -233,7 +238,7 @@ jobs:
           # Stage SOLO i path esistenti: i report opzionali (step continue-on-error)
           # possono mancare, e un `git add` su un path inesistente farebbe fallire
           # tutto lo step.
-          for p in data.json data-regions.json data-summary.json data-detail.json kpi.json report.json \
+          for p in data.json data-regions.json data-summary.json data-detail.json kpi.json report.json sitemap.xml \
                    data/summary dist validation_report.json validation_report.csv data/dns_cache \
                    data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
                    data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json \

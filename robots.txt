@@ -1,0 +1,19 @@
+# robots.txt — mxmap.it / MxMap Italia
+# Osservatorio sulla sovranità digitale della posta elettronica della PA italiana
+
+User-agent: *
+Allow: /
+
+# Internal build artifacts (large, machine-only) — keep them out of search
+# results to preserve crawl budget. The public, citable dataset lives under
+# /dist/ and stays indexable.
+Disallow: /data.json
+Disallow: /data-detail.json
+Disallow: /data-summary.json
+Disallow: /data-regions.json
+Disallow: /baltic-municipalities.topo.json
+Disallow: /topo/
+Disallow: /validation_report.json
+Disallow: /validation_report.csv
+
+Sitemap: https://mxmap.it/sitemap.xml
