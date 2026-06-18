@@ -35,7 +35,10 @@ TYPE_LABEL = {
 
 def anomaly_tags(v: dict) -> list[str]:
     tags = []
-    if not v.get("mx"):
+    # MX valido = almeno un hostname non vuoto. NB: usare la truthiness di v["mx"]
+    # mancava il caso [''] (NULL MX RFC 7505 → lista non vuota = truthy). mxmap.it#18.
+    has_mx = any((h or "").strip() for h in (v.get("mx") or []))
+    if not has_mx:
         tags.append("no_mx")
     elif not v.get("mx_countries"):
         tags.append("geo_unknown")
@@ -111,7 +114,9 @@ def main() -> int:
     for t, c in type_counts.most_common():
         md.append(f"| {TYPE_LABEL.get(t, t)} | {c} |")
     (REPORTS / "anomalies.md").write_text("\n".join(md), encoding="utf-8")
-    print(f"anomalies: {len(entries)}/{n} ({report['anomalies_pct']}%) -> {REPORTS}/anomalies.json")
+    print(
+        f"anomalies: {len(entries)}/{n} ({report['anomalies_pct']}%) -> {REPORTS}/anomalies.json"
+    )
     return 0
 
 

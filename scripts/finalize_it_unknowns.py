@@ -9,10 +9,12 @@ domain that actually worked, and full mxmap classify() runs against it —
 so the typo / migration / wrong-domain fix flows through the standard MX
 pipeline rather than a hardcoded override.
 
-  S1. PEC publicly-owned infrastructure (RUPAR Piemonte, ASMEPEC):
-      If the IndicePA record has any Mail{n} on cert.ruparpiemonte.it
-      (CSI Piemonte, sovereign regional ICT), classify as regional-public.
-      Same treatment for asmepec.it (ASMEL — consortium owned by comuni).
+  S1. RIMOSSA (mxmap.it#18). Dedurre `regional-public` dal provider della PEC,
+      per enti con SOLA PEC e nessun MX ordinario, li collocava in un bucket di
+      sovranità senza alcun dato di posta ordinaria. Principio: niente MX = niente
+      dato → l'ente resta `unknown` + anomalia `no_mx`. (Il rilevatore
+      `detect_public_pec` / `PUBLIC_PEC_DOMAINS` resta per eventuale uso futuro
+      come metadato, ma non assegna più un provider.)
 
   S2. Wikidata P856 correction:
       Query Wikidata for the comune's official website by ISTAT 6-digit
@@ -81,33 +83,65 @@ CONCURRENCY_DNS = 10
 CONCURRENCY_HTTP = 8
 
 # Third-party email vendors to ignore when scraping comune homepages.
-EMAIL_BLOCKLIST = frozenset({
-    "iubenda.com", "cookiebot.com", "cookieyes.com", "onetrust.com",
-    "sentry.io", "google-analytics.com", "googletagmanager.com",
-    "wpbeginner.com", "wordpress.com", "automattic.com",
-    "example.com", "example.it", "test.it", "domain.com",
-    "localhost", "yourcompany.com",
-    "sitiwp.com", "designerthemes.com", "templatemonster.com",
-    "elegantthemes.com", "linkedin.com", "facebook.com", "twitter.com",
-    "instagram.com", "youtube.com", "tiktok.com",
-})
+EMAIL_BLOCKLIST = frozenset(
+    {
+        "iubenda.com",
+        "cookiebot.com",
+        "cookieyes.com",
+        "onetrust.com",
+        "sentry.io",
+        "google-analytics.com",
+        "googletagmanager.com",
+        "wpbeginner.com",
+        "wordpress.com",
+        "automattic.com",
+        "example.com",
+        "example.it",
+        "test.it",
+        "domain.com",
+        "localhost",
+        "yourcompany.com",
+        "sitiwp.com",
+        "designerthemes.com",
+        "templatemonster.com",
+        "elegantthemes.com",
+        "linkedin.com",
+        "facebook.com",
+        "twitter.com",
+        "instagram.com",
+        "youtube.com",
+        "tiktok.com",
+    }
+)
 
 # When DDG returns multiple URLs, we discard hosts on these properties.
-SEARCH_RESULT_HOST_BLOCKLIST = frozenset({
-    "wikipedia.org", "it.wikipedia.org", "en.wikipedia.org", "wikidata.org",
-    "facebook.com", "instagram.com", "twitter.com", "youtube.com",
-    "linkedin.com", "tripadvisor.it", "tripadvisor.com",
-    "tuttitalia.it", "comuni-italiani.it", "italia.indettaglio.it",
-    "italymap.com",
-})
+SEARCH_RESULT_HOST_BLOCKLIST = frozenset(
+    {
+        "wikipedia.org",
+        "it.wikipedia.org",
+        "en.wikipedia.org",
+        "wikidata.org",
+        "facebook.com",
+        "instagram.com",
+        "twitter.com",
+        "youtube.com",
+        "linkedin.com",
+        "tripadvisor.it",
+        "tripadvisor.com",
+        "tuttitalia.it",
+        "comuni-italiani.it",
+        "italia.indettaglio.it",
+        "italymap.com",
+    }
+)
 
 # Italian regional/consortium PEC domains owned by comuni or sovereign
 # regional ICT — when an entry has only PEC mail and one of these is the
 # host, we classify the entry as `regional-public` with reason crediting
 # the consortium. ANY pure-PEC entry on these domains qualifies.
 PUBLIC_PEC_DOMAINS = {
-    "cert.ruparpiemonte.it":  "RUPAR Piemonte / CSI Piemonte (publicly-owned regional ICT)",
-    "asmepec.it":             "ASMEPEC (ASMEL — consortium owned by Italian comuni)",
+    "cert.ruparpiemonte.it": "RUPAR Piemonte / CSI Piemonte (publicly-owned regional ICT)",
+    "asmepec.it": "ASMEPEC (ASMEL — consortium owned by Italian comuni)",
 }
 
 
@@ -193,7 +227,9 @@ def hostname_of(url: str) -> str:
     return h
 
 
-HOSTNAME_RE = re.compile(r"^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$")
+HOSTNAME_RE = re.compile(
+    r"^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$"
+)
 
 
 def looks_like_valid_host(h: str) -> bool:
@@ -243,7 +279,9 @@ async def classify_domain(domain: str) -> dict | None:
         "reason": reason,
         "mx_cnames": mx_cnames,
         "mx_asns": sorted(mx_asns) if isinstance(mx_asns, set) else list(mx_asns or []),
-        "mx_countries": sorted(mx_countries) if isinstance(mx_countries, set) else list(mx_countries or []),
+        "mx_countries": sorted(mx_countries)
+        if isinstance(mx_countries, set)
+        else list(mx_countries or []),
         "autodiscover": autodiscover,
         "dkim": dkim,
         "txt_verifications": txt_verifications,
@@ -251,7 +289,9 @@ async def classify_domain(domain: str) -> dict | None:
     }
 
 
-async def fetch_homepage(client: httpx.AsyncClient, domain: str) -> tuple[str | None, str]:
+async def fetch_homepage(
+    client: httpx.AsyncClient, domain: str
+) -> tuple[str | None, str]:
     """Try https://domain/, fall back to http://. Return (text, status)
     where status is 'ok' / 'dns_fail' / 'http_fail' / 'empty'."""
     for scheme in ("https", "http"):
@@ -260,7 +300,13 @@ async def fetch_homepage(client: httpx.AsyncClient, domain: str) -> tuple[str | 
             r = await client.get(url, follow_redirects=True, timeout=10.0)
         except httpx.ConnectError as e:
             msg = str(e).lower()
-            if "name" in msg or "resolve" in msg or "dns" in msg or "nodename" in msg or "getaddrinfo" in msg:
+            if (
+                "name" in msg
+                or "resolve" in msg
+                or "dns" in msg
+                or "nodename" in msg
+                or "getaddrinfo" in msg
+            ):
                 return None, "dns_fail"
             continue
         except (httpx.ReadTimeout, httpx.ConnectTimeout, httpx.RemoteProtocolError):
@@ -290,7 +336,11 @@ def extract_emails(html: str, primary_domain: str) -> list[str]:
         host_reg = ".".join(host.split(".")[-2:])
         if host_reg in EMAIL_BLOCKLIST:
             continue
-        if host == primary_domain or host.endswith(f".{primary_domain}") or host_reg == primary_reg:
+        if (
+            host == primary_domain
+            or host.endswith(f".{primary_domain}")
+            or host_reg == primary_reg
+        ):
             same_dom.append(addr)
         else:
             other.append(addr)
@@ -333,8 +383,9 @@ async def search_for_comune_website(
     hostnames (filtered)."""
     query = f"{name} sito ufficiale"
     try:
-        r = await client.post(DDG_HTML_URL, data={"q": query}, timeout=15.0,
-                              follow_redirects=True)
+        r = await client.post(
+            DDG_HTML_URL, data={"q": query}, timeout=15.0, follow_redirects=True
+        )
     except Exception as e:
         print(f"    DDG error for {name!r}: {e!r}")
         return []
@@ -357,6 +408,7 @@ async def search_for_comune_website(
         # registrable suffix (e.g. *.<prov>.it for the comune's province).
         seen.add(h)
         hosts.append(h)
+
     # Re-rank: comune-named first, then same-registrable, then rest.
     def score(h: str) -> int:
         s = 0
@@ -368,11 +420,14 @@ async def search_for_comune_website(
         if h.endswith(".it"):
             s += 1
         return -s
+
     hosts.sort(key=score)
     return hosts[:6]
 
 
-async def try_domain_for_classify(domain: str, dns_sem: asyncio.Semaphore) -> dict | None:
+async def try_domain_for_classify(
+    domain: str, dns_sem: asyncio.Semaphore
+) -> dict | None:
     async with dns_sem:
         try:
             return await classify_domain(domain)
@@ -452,18 +507,12 @@ async def finalize_one(
                 mutation.update(result)
                 return key, mutation, "aoo_uo_tier6"
 
-    # S1 — PEC publicly-owned (RUPAR Piemonte / ASMEPEC)
-    if raw:
-        matched, evidence = detect_public_pec(raw)
-        if matched:
-            return key, {
-                "domain_used": matched.split(".")[-2] + ".it" if matched.endswith(".it") else matched,
-                "provider": "regional-public",
-                "reason": f"only-PEC entry on {matched} -> {evidence}",
-                "public_pec_match": matched,
-                "mx_discovery_method": "public_pec_inference",
-                "mx_discovery_evidence": matched,
-            }, "public_pec"
+    # S1 RIMOSSO (mxmap.it#18). Un ente con SOLA PEC e NESSUN MX ordinario non ha un
+    # dato di posta ordinaria classificabile: dedurre "regional-public" dal provider
+    # della PEC (RUPAR Piemonte / ASMEPEC) lo collocava in un bucket di sovranità
+    # senza dato. Principio: niente MX = niente dato → deve restare "unknown" +
+    # anomalia no_mx (mai sovrano né non-sovrano). Questi enti proseguono comunque
+    # con S2-S4 per cercare un eventuale MX ordinario; se non c'è, restano unknown.
 
     # S2 — Wikidata P856 correction
     wd_host = wd_corrections.get(istat)
@@ -482,7 +531,11 @@ async def finalize_one(
     # S3 — Homepage scrape on primary domain
     if primary:
         result, addr, host, tried = await try_scrape_for_email_mx(
-            client, primary, primary, http_sem, dns_sem,
+            client,
+            primary,
+            primary,
+            http_sem,
+            dns_sem,
         )
         if result:
             mutation = {
@@ -503,7 +556,11 @@ async def finalize_one(
             if cand == primary:
                 continue
             result, addr, host, tried = await try_scrape_for_email_mx(
-                client, cand, primary, http_sem, dns_sem,
+                client,
+                cand,
+                primary,
+                http_sem,
+                dns_sem,
             )
             if result:
                 mutation = {
@@ -519,13 +576,23 @@ async def finalize_one(
                 mutation.update(result)
                 return key, mutation, "search_engine"
         # S4 ran but found no working candidate
-        return key, {
-            "reason": f"search engine returned {len(candidates)} candidates; none yielded MX",
-            "search_engine_candidates": candidates,
-        }, "search_no_mx"
+        return (
+            key,
+            {
+                "reason": f"search engine returned {len(candidates)} candidates; none yielded MX",
+                "search_engine_candidates": candidates,
+            },
+            "search_no_mx",
+        )
 
     # All strategies failed
-    return key, {"reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"}, "all_failed"
+    return (
+        key,
+        {
+            "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+        },
+        "all_failed",
+    )
 
 
 def load_aoo_uo_extension() -> dict[str, list[str]]:
@@ -533,13 +600,17 @@ def load_aoo_uo_extension() -> dict[str, list[str]]:
     Each domain has been is_legit-validated at harvest time."""
     p = DATA / "indicepa_extended_emails.json"
     if not p.exists():
-        print(f"  WARN: {p} missing — Tier-6 (S0) skipped. "
-              f"Run scripts/enrich_from_aoo_uo.py first.")
+        print(
+            f"  WARN: {p} missing — Tier-6 (S0) skipped. "
+            f"Run scripts/enrich_from_aoo_uo.py first."
+        )
         return {}
     d = json.loads(p.read_text(encoding="utf-8"))
-    return {k.lower(): (v.get("non_pec_domains") or [])
-            for k, v in d.get("by_ipa", {}).items()
-            if v.get("non_pec_domains")}
+    return {
+        k.lower(): (v.get("non_pec_domains") or [])
+        for k, v in d.get("by_ipa", {}).items()
+        if v.get("non_pec_domains")
+    }
 
 
 async def main_async() -> int:
@@ -580,8 +651,13 @@ async def main_async() -> int:
 
     # Pre-fetch Wikidata corrections (single batched SPARQL query)
     print("Batch-querying Wikidata P856 for all candidate ISTAT codes...")
-    istat_codes = sorted({(s.get("ipa_codice_comune_istat") or "").zfill(6)
-                           for _, _, s in candidates if s.get("ipa_codice_comune_istat")})
+    istat_codes = sorted(
+        {
+            (s.get("ipa_codice_comune_istat") or "").zfill(6)
+            for _, _, s in candidates
+            if s.get("ipa_codice_comune_istat")
+        }
+    )
     wd_corrections = fetch_wikidata_websites(istat_codes)
     print(f"  Wikidata returned {len(wd_corrections)} entries with P856")
 
@@ -597,8 +673,17 @@ async def main_async() -> int:
         max_redirects=4,
     ) as client:
         tasks = [
-            finalize_one(k, e, s, raw_by_key.get(k), wd_corrections,
-                         aoo_uo_ext, client, dns_sem, http_sem)
+            finalize_one(
+                k,
+                e,
+                s,
+                raw_by_key.get(k),
+                wd_corrections,
+                aoo_uo_ext,
+                client,
+                dns_sem,
+                http_sem,
+            )
             for k, e, s in candidates
         ]
         n_done = 0
@@ -616,8 +701,9 @@ async def main_async() -> int:
 
     counts: Counter[str] = Counter(v.get("provider", "unknown") for v in muns.values())
     data["counts"] = dict(counts)
-    data_path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")),
-                         encoding="utf-8")
+    data_path.write_text(
+        json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
+    )
 
     print()
     print("=== Status breakdown ===")

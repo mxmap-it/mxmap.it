@@ -129,6 +129,10 @@ def classify(
     4. MX exists but unrecognized → check DKIM, then independent or Local ISP (by ASN)
     5. No MX → unknown
     """
+    # Scarta gli hostname MX vuoti/whitespace (NULL MX RFC 7505, dato sporco): senza
+    # un MX reale non c'è alcun provider classificabile → deve risultare "unknown"
+    # (mai sovrano né non-sovrano). Vedi mxmap.it#18.
+    mx_records = [h for h in mx_records if h and h.strip()]
     mx_blob = " ".join(mx_records).lower()
     mx_display = ", ".join(mx_records[:2])
 

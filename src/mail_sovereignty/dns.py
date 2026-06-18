@@ -70,7 +70,11 @@ async def lookup_mx(domain: str) -> list[str]:
     answers = await resolve_robust(domain, "MX")
     if answers is None:
         return []
-    return sorted(str(r.exchange).rstrip(".").lower() for r in answers)
+    # NULL MX (RFC 7505: exchange "." → rstrip → "") = "nessuna posta": va scartato,
+    # altrimenti finisce in data.json come [''] (truthy) e sfugge ai controlli "no MX".
+    return sorted(
+        h for h in (str(r.exchange).rstrip(".").lower() for r in answers) if h
+    )
 
 
 _VERIFICATION_PREFIXES: dict[str, str] = {

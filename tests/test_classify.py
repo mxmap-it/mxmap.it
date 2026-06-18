@@ -64,6 +64,12 @@ class TestClassify:
     def test_no_mx_no_spf(self):
         assert provider(classify([], "")) == "unknown"
 
+    def test_empty_string_mx_stays_unknown(self):
+        # NULL MX (RFC 7505 ".") arriva come [''] (lista truthy): deve risultare
+        # unknown, non "independent/self-hosted". mxmap.it#18.
+        assert provider(classify([""], "")) == "unknown"
+        assert provider(classify(["", "  "], "v=spf1 -all")) == "unknown"
+
     def test_independent_mx_with_microsoft_spf_stays_independent(self):
         """Self-hosted MX stays independent — SPF only means authorized sender."""
         result = classify(
