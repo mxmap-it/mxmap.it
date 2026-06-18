@@ -342,6 +342,10 @@ MANUAL_OVERRIDES = {
     "AT-70929": {"domain": "steinberg-rofan.gv.at"},
     "AT-70930": {"domain": "strass-zillertal.gv.at"},
     "AT-70941": {"domain": "gemeinde-zellberg.at"},
+    # --- Italia (mxmap.it): dominio ente ≠ dominio posta (static domain mapping) ---
+    # CSI Piemonte: csipiemonte.it ha NULL MX (RFC 7505); la posta è su csi.it,
+    # che risolve su csi-it.mail.protection.outlook.com → Microsoft 365.
+    "IT-SA-csi_piem": {"domain": "csi.it"},
 }
 
 
