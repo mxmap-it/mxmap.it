@@ -599,6 +599,20 @@ GATEWAY_KEYWORDS = {
     "host-it": ["host.it"],  # 105 entries (Italian hosting)
     "interhost": ["interhost.it"],
     "cbsolt": ["cbsolt.net"],  # 49 entries
+    # Censimento gateway non mappati (post issue #14, via
+    # scripts/find_gateway_candidates.py): MX di terzi classificati
+    # italiano/independent ma con backend cloud estero nello SPF + tenant
+    # Microsoft confermato (getuserrealm) o nome inequivocabile di security
+    # gateway. Il look-through risolve poi il backend reale (qui ~Microsoft 365).
+    "myantispam": ["myantispam.it"],
+    "stopspam": ["stop-spam.it"],
+    "cloudfabric": ["cloudfabric.it"],
+    "mtaroutes": ["mtaroutes.com"],
+    "cdesigngroup": ["cdesign-group.com"],
+    "astea-cloudfilter": ["cloudfilter.gruppoastea.it"],
+    "safemail-cloud": ["safe-mail.cloud"],
+    "safetycloud": ["safetycloud.it"],
+    "zimbraoffice-gw": ["antispam.zimbraoffice.it"],
 }
 
 # ASN-based provider override: when an MX hostname doesn't match any of the
