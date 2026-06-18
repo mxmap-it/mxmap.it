@@ -607,12 +607,15 @@ GATEWAY_KEYWORDS = {
     "myantispam": ["myantispam.it"],
     "stopspam": ["stop-spam.it"],
     "cloudfabric": ["cloudfabric.it"],
-    "mtaroutes": ["mtaroutes.com"],
+    "mtaroutes": ["mtaroutes.com"],  # N-able Mail Assure (cloud email filtering/relay)
     "cdesigngroup": ["cdesign-group.com"],
     "astea-cloudfilter": ["cloudfilter.gruppoastea.it"],
     "safemail-cloud": ["safe-mail.cloud"],
     "safetycloud": ["safetycloud.it"],
     "zimbraoffice-gw": ["antispam.zimbraoffice.it"],
+    # Welcome Italia "Defender": antispam dell'ISP welcomeitalia.it. Solo gli host
+    # "defenderN.welcomeitalia.it" (il servizio gateway), non tutto welcomeitalia.it.
+    "welcomeitalia": ["defender.welcomeitalia.it", "defender2.welcomeitalia.it"],
 }
 
 # ASN-based provider override: when an MX hostname doesn't match any of the
