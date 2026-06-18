@@ -240,8 +240,10 @@ def main() -> int:
             "denominazione":        m.get("name") or sd.get("name") or "",
             "codice_istat":         sd.get("ipa_codice_istat") or "",
             "codice_comune_istat":  sd.get("ipa_codice_comune_istat") or "",
-            "regione":              sd.get("region") or m.get("canton") or "",
-            "provincia":            sd.get("district") or m.get("district") or "",
+            # Campi puliti da enrich_geo (crosswalk ISTAT), NON i campi seed sporchi
+            # region/canton/district (che contengono il nome dell'ente). mxmap.it#19.
+            "regione":              m.get("regione") or "",
+            "provincia":            m.get("provincia") or "",
             "sito_istituzionale":   sd.get("domain") or "",
             "domain_used":          m.get("domain") or "",
             "domain_source":        sd.get("domain_source") or "",
@@ -391,7 +393,7 @@ def main() -> int:
         wb.save(XLSX_OUT)
         print(f"  XLSX : {XLSX_OUT}  ({XLSX_OUT.stat().st_size:,} bytes)")
     except ImportError:
-        print(f"  XLSX : skipped (openpyxl not installed). pip install openpyxl to enable.")
+        print("  XLSX : skipped (openpyxl not installed). pip install openpyxl to enable.")
 
     print(f"\nDataset built. {len(rows)} rows. Generated: {generated}")
     return 0
