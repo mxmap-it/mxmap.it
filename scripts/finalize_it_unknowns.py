@@ -9,12 +9,11 @@ domain that actually worked, and full mxmap classify() runs against it —
 so the typo / migration / wrong-domain fix flows through the standard MX
 pipeline rather than a hardcoded override.
 
-  S1. RIMOSSA (mxmap.it#18). Dedurre `regional-public` dal provider della PEC,
-      per enti con SOLA PEC e nessun MX ordinario, li collocava in un bucket di
-      sovranità senza alcun dato di posta ordinaria. Principio: niente MX = niente
-      dato → l'ente resta `unknown` + anomalia `no_mx`. (Il rilevatore
-      `detect_public_pec` / `PUBLIC_PEC_DOMAINS` resta per eventuale uso futuro
-      come metadato, ma non assegna più un provider.)
+  S1. ASMEL → ASMENET (override su conoscenza nota). I comuni ASMEL con sola PEC
+      su asmepec.it usano la piattaforma ASMENET (asmenet.it → MX mail.asmenet.it,
+      ICT consortile pubblico = regional-public): override esplicito, risolto via
+      asmenet.it. RUPAR Piemonte (cert.ruparpiemonte.it) NON gode di questa
+      certezza → senza MX ordinario resta `unknown` + anomalia `no_mx`. mxmap.it#18.
 
   S2. Wikidata P856 correction:
       Query Wikidata for the comune's official website by ISTAT 6-digit
@@ -507,12 +506,29 @@ async def finalize_one(
                 mutation.update(result)
                 return key, mutation, "aoo_uo_tier6"
 
-    # S1 RIMOSSO (mxmap.it#18). Un ente con SOLA PEC e NESSUN MX ordinario non ha un
-    # dato di posta ordinaria classificabile: dedurre "regional-public" dal provider
-    # della PEC (RUPAR Piemonte / ASMEPEC) lo collocava in un bucket di sovranità
-    # senza dato. Principio: niente MX = niente dato → deve restare "unknown" +
-    # anomalia no_mx (mai sovrano né non-sovrano). Questi enti proseguono comunque
-    # con S2-S4 per cercare un eventuale MX ordinario; se non c'è, restano unknown.
+    # S1 — ASMEL → ASMENET (override su conoscenza nota). I comuni ASMEL con SOLA
+    # PEC su asmepec.it usano la piattaforma ASMENET per la posta ordinaria
+    # (asmenet.it → MX mail.asmenet.it, ICT consortile pubblico = regional-public):
+    # non è "nessun dato", sappiamo dov'è la posta → risolviamo via asmenet.it.
+    # NB: RUPAR Piemonte (cert.ruparpiemonte.it) NON gode di questa certezza →
+    # senza MX ordinario resta unknown + anomalia no_mx. mxmap.it#18.
+    if raw:
+        matched, _ = detect_public_pec(raw)
+        if matched == "asmepec.it":
+            result = await try_domain_for_classify("asmenet.it", dns_sem)
+            if result:
+                mutation = {
+                    "domain_used": "asmenet.it",
+                    "public_pec_match": matched,
+                    "mx_discovery_method": "asmel_asmenet_override",
+                    "mx_discovery_evidence": "asmenet.it",
+                }
+                mutation.update(result)
+                mutation["reason"] = (
+                    "ASMEL member (solo-PEC asmepec.it) → posta su ASMENET "
+                    "(mail.asmenet.it)"
+                )
+                return key, mutation, "asmel_asmenet"
 
     # S2 — Wikidata P856 correction
     wd_host = wd_corrections.get(istat)
