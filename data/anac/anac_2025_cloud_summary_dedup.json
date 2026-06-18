@@ -1,0 +1,73 @@
+{
+  "by_category": {
+    "italian_commercial": {
+      "count": 6,
+      "value_eur": 2058660.7000000002,
+      "top_suppliers": {
+        "TELECOM ITALIA SPA": 644470.5225,
+        "SIEMENS HEALTHCARE SRL": 468957.065,
+        "FASTWEB S.P.A.": 300000.0,
+        "ENTERPRISE SERVICES ITALIA SRL": 143249.7075,
+        "POSTEL SPA": 143249.7075
+      }
+    },
+    "hyperscaler_usa": {
+      "count": 29,
+      "value_eur": 38183166.34,
+      "top_suppliers": {
+        "DEDAGROUP": 12850362.0,
+        "TELECOM ITALIA S.P.A.": 9703653.600000001,
+        "TELECOM ITALIA SPA": 4005180.0,
+        "ITALWARE S.R.L.": 2603488.05,
+        "MICROSOFT S.R.L.": 2499732.0
+      }
+    },
+    "hyperscaler_eu": {
+      "count": 7,
+      "value_eur": 1859789.3699999999,
+      "top_suppliers": {
+        "ITALWARE SRL": 995752.97,
+        "SAP ITALIA S.P.A.": 257701.06,
+        "HERA COMM S.P.A.": 220000.0,
+        "RUN TIME SOLUTIONS": 98957.64,
+        "DERGA CONSULTING SPA": 91459.66666666666
+      }
+    },
+    "mixed": {
+      "count": 4,
+      "value_eur": 10867640.98,
+      "top_suppliers": {
+        "ALMAWAVE S.P.A.": 2406900.4299999997,
+        "INDRA ITALIA SPA": 2406900.4299999997,
+        "INTELLERA CONSULTING S.R.L.": 2406900.4299999997,
+        "ALMAVIVA S.P.A.": 2406900.4299999997,
+        "ENTERPRISE SERVICES ITALIA SRL": 295001.3525
+      }
+    }
+  },
+  "by_hyperscaler": {
+    "microsoft": {
+      "count": 9,
+      "value_eur": 12098476.760000002
+    },
+    "oracle": {
+      "count": 9,
+      "value_eur": 5614779.13
+    },
+    "ibm": {
+      "count": 5,
+      "value_eur": 14338068.11
+    },
+    "aws": {
+      "count": 3,
+      "value_eur": 1907129.8599999999
+    },
+    "google": {
+      "count": 3,
+      "value_eur": 4224712.48
+    }
+  },
+  "total_ocid": 58,
+  "ocid_with_value": 46,
+  "total_value_eur": 52969257.39
+}

@@ -1,0 +1,91 @@
+{
+  "matched": [
+    {
+      "bfs": "IT-L37-pis_058",
+      "mxmap_name": "Poste Italiane Spa",
+      "anac_buyer": "POSTE ITALIANE SPA",
+      "anac_ocid": "ocds-hu01ve-8656615",
+      "value": 114623.64,
+      "supplier": [
+        "SOFTWAREONE ITALIA S.R.L."
+      ],
+      "detected_provider": "microsoft",
+      "mxmap_cloud_tenant": "aws",
+      "regione": "Lazio"
+    },
+    {
+      "bfs": "IT-L37-pis_058",
+      "mxmap_name": "Poste Italiane Spa",
+      "anac_buyer": "POSTE ITALIANE SPA",
+      "anac_ocid": "ocds-hu01ve-8703543",
+      "value": 98957.64,
+      "supplier": [
+        "RUN TIME SOLUTIONS"
+      ],
+      "detected_provider": "sap",
+      "mxmap_cloud_tenant": "aws",
+      "regione": "Lazio"
+    },
+    {
+      "bfs": "IT-L37-pis_058",
+      "mxmap_name": "Poste Italiane Spa",
+      "anac_buyer": "POSTE ITALIANE SPA",
+      "anac_ocid": "ocds-hu01ve-8709998",
+      "value": 568615.49,
+      "supplier": [
+        "IBM ITALIA S.P.A."
+      ],
+      "detected_provider": "ibm",
+      "mxmap_cloud_tenant": "aws",
+      "regione": "Lazio"
+    },
+    {
+      "bfs": "IT-L37-pis_058",
+      "mxmap_name": "Poste Italiane Spa",
+      "anac_buyer": "POSTE ITALIANE SPA",
+      "anac_ocid": "ocds-hu01ve-8738675",
+      "value": 235000.01,
+      "supplier": [
+        "KYNDRYL ITALIA SPA",
+        "IBM ITALIA S.P.A."
+      ],
+      "detected_provider": "ibm",
+      "mxmap_cloud_tenant": "aws",
+      "regione": "Lazio"
+    },
+    {
+      "bfs": "IT-L7-atspv",
+      "mxmap_name": "Agenzia di Tutela della Salute di Pavia",
+      "anac_buyer": "AGENZIA DI TUTELA DELLA SALUTE DI PAVIA",
+      "anac_ocid": "ocds-hu01ve-8466526",
+      "value": 0.0,
+      "supplier": [],
+      "detected_provider": "oracle",
+      "mxmap_cloud_tenant": "microsoft",
+      "regione": "Lombardia"
+    },
+    {
+      "bfs": "IT-REG-17977853",
+      "mxmap_name": "Regione Calabria",
+      "anac_buyer": "REGIONE CALABRIA",
+      "anac_ocid": "ocds-hu01ve-8724329",
+      "value": 0.0,
+      "supplier": [],
+      "detected_provider": "almaviva",
+      "mxmap_cloud_tenant": "microsoft",
+      "regione": "Calabria"
+    },
+    {
+      "bfs": "IT-REG-701101",
+      "mxmap_name": "Regione Abruzzo",
+      "anac_buyer": "REGIONE ABRUZZO",
+      "anac_ocid": "ocds-hu01ve-8573960",
+      "value": 0.0,
+      "supplier": [],
+      "detected_provider": "cloud_generic",
+      "mxmap_cloud_tenant": "microsoft",
+      "regione": "Abruzzo"
+    }
+  ],
+  "total_matched": 7
+}

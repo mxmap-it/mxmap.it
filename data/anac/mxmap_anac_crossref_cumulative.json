@@ -1,0 +1,492 @@
+{
+  "total_unique_entita": 14,
+  "total_app_appearances": 24,
+  "entita_per_anni": {
+    "4": 1,
+    "3": 2,
+    "2": 3,
+    "1": 8
+  },
+  "matches_per_entita": {
+    "IT-L37-pis_058": {
+      "name": "Poste Italiane Spa",
+      "regione": "Lazio",
+      "mxmap_cloud_tenant": "aws",
+      "contracts": [
+        {
+          "year": 2022,
+          "ocid": "ocds-hu01ve-7623230",
+          "value": 864445.97,
+          "supplier": [
+            "ENGINEERING DHUB S.P.A.",
+            "AVANADE ITALY SRL",
+            "EY ADVISORY S.P.A.",
+            "IBM ITALIA S.P.A."
+          ],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2022,
+          "ocid": "ocds-hu01ve-7824089",
+          "value": 958379.0,
+          "supplier": [
+            "IBM ITALIA S.P.A."
+          ],
+          "detected_provider": "ibm"
+        },
+        {
+          "year": 2022,
+          "ocid": "ocds-hu01ve-8303671",
+          "value": 79018.0,
+          "supplier": [
+            "FOCELDA"
+          ],
+          "detected_provider": "tim"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8025612",
+          "value": 129012.95,
+          "supplier": [
+            "ORACLE ITALIA - S.R.L."
+          ],
+          "detected_provider": "oracle"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8576900",
+          "value": 497000.04,
+          "supplier": [
+            "ORACLE ITALIA - S.R.L."
+          ],
+          "detected_provider": "oracle"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8579381",
+          "value": 12503.71,
+          "supplier": [
+            "M.P.G. S.P.A."
+          ],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8469176",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "ibm"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8506941",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "oracle"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-7687948",
+          "value": 288000.0,
+          "supplier": [
+            "BISY SRL"
+          ],
+          "detected_provider": "cloud_generic"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8076612",
+          "value": 3018.18,
+          "supplier": [
+            "M.P.G. S.P.A."
+          ],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8096591",
+          "value": 7552488.3,
+          "supplier": [
+            "ORACLE ITALIA - S.R.L."
+          ],
+          "detected_provider": "oracle"
+        },
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8587603",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "sap"
+        },
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8648218",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "oracle"
+        },
+        {
+          "year": 2025,
+          "ocid": "ocds-hu01ve-8656615",
+          "value": 114623.64,
+          "supplier": [
+            "SOFTWAREONE ITALIA S.R.L."
+          ],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2025,
+          "ocid": "ocds-hu01ve-8703543",
+          "value": 98957.64,
+          "supplier": [
+            "RUN TIME SOLUTIONS"
+          ],
+          "detected_provider": "sap"
+        },
+        {
+          "year": 2025,
+          "ocid": "ocds-hu01ve-8709998",
+          "value": 568615.49,
+          "supplier": [
+            "IBM ITALIA S.P.A."
+          ],
+          "detected_provider": "ibm"
+        },
+        {
+          "year": 2025,
+          "ocid": "ocds-hu01ve-8738675",
+          "value": 235000.01,
+          "supplier": [
+            "KYNDRYL ITALIA SPA",
+            "IBM ITALIA S.P.A."
+          ],
+          "detected_provider": "ibm"
+        }
+      ]
+    },
+    "IT-REG-17977853": {
+      "name": "Regione Calabria",
+      "regione": "Calabria",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2022,
+          "ocid": "ocds-hu01ve-7513877",
+          "value": 1074910.84,
+          "supplier": [
+            "ALMAVIVA S.P.A.",
+            "ALMAWAVE SRL"
+          ],
+          "detected_provider": "cloud_generic"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8573253",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8644394",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "cloud_generic"
+        },
+        {
+          "year": 2025,
+          "ocid": "ocds-hu01ve-8724329",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "almaviva"
+        }
+      ]
+    },
+    "IT-C17-iepad": {
+      "name": "INARCASSA CASSA NAZIONALE PREVIDENZA ASSISTENZA INGG. ARCH. LIBERI PROFESSIONISTI",
+      "regione": "Lazio",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-7698581",
+          "value": 170000.0,
+          "supplier": [
+            "ORACLE ITALIA - S.R.L."
+          ],
+          "detected_provider": "oracle"
+        },
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8421230",
+          "value": 65574.0,
+          "supplier": [
+            "R1"
+          ],
+          "detected_provider": "microsoft"
+        }
+      ]
+    },
+    "IT-COM-012070": {
+      "name": "Comune di Gallarate",
+      "regione": "Lombardia",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-7688938",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "microsoft"
+        }
+      ]
+    },
+    "IT-L7-asl_bo": {
+      "name": "Azienda USL di Bologna",
+      "regione": "Emilia-Romagna",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-7821766",
+          "value": 3056932.0,
+          "supplier": [
+            "ENGINEERING INGEGNERIA INFORMATICA S.P.A."
+          ],
+          "detected_provider": "engineering"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-7997601",
+          "value": 910829.0,
+          "supplier": [
+            "TELECOM ITALIA SPA"
+          ],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-7998411",
+          "value": 257445.0,
+          "supplier": [
+            "TELECOM ITALIA SPA"
+          ],
+          "detected_provider": "microsoft"
+        }
+      ]
+    },
+    "IT-L8-asstlo": {
+      "name": "Azienda Socio Sanitaria Territoriale di Lodi",
+      "regione": "Lombardia",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8066856",
+          "value": 195000.0,
+          "supplier": [
+            "CS2 SOLUTIONS"
+          ],
+          "detected_provider": "oracle"
+        }
+      ]
+    },
+    "IT-PRO-123395": {
+      "name": "Provincia di Verona",
+      "regione": "Veneto",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8631347",
+          "value": 44760.5,
+          "supplier": [
+            "TELECOM ITALIA SPA",
+            "POSTEL SPA",
+            "POSTE ITALIANE SPA",
+            "ENTERPRISE SERVICES ITALIA SRL"
+          ],
+          "detected_provider": "cloud_generic"
+        },
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8635134",
+          "value": 215163.84,
+          "supplier": [
+            "POSTEL SPA",
+            "POSTE ITALIANE SPA",
+            "ENTERPRISE SERVICES ITALIA SRL",
+            "TELECOM ITALIA SPA"
+          ],
+          "detected_provider": "cloud_generic"
+        },
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8736656",
+          "value": 51514.23,
+          "supplier": [
+            "ORACLE ITALIA S.R.L."
+          ],
+          "detected_provider": "oracle"
+        }
+      ]
+    },
+    "IT-PRO-699440": {
+      "name": "Provincia di Mantova",
+      "regione": "Lombardia",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8252480",
+          "value": 45400.0,
+          "supplier": [
+            "ASTER S.R.L."
+          ],
+          "detected_provider": "sap"
+        }
+      ]
+    },
+    "IT-REG-701101": {
+      "name": "Regione Abruzzo",
+      "regione": "Abruzzo",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8569625",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8626885",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "cloud_generic"
+        },
+        {
+          "year": 2025,
+          "ocid": "ocds-hu01ve-8573960",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "cloud_generic"
+        }
+      ]
+    },
+    "IT-S01-tnspa": {
+      "name": "Trentino Sviluppo S.P.A.",
+      "regione": "Trentino-Alto Adige",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8484465",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "engineering"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8059593",
+          "value": 260751.6,
+          "supplier": [
+            "TELECOM ITALIA SPA"
+          ],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2023,
+          "ocid": "ocds-hu01ve-8089471",
+          "value": 55900.0,
+          "supplier": [
+            "A.C.S. DATA SYSTEMS SPA"
+          ],
+          "detected_provider": "microsoft"
+        },
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8573515",
+          "value": 144000.0,
+          "supplier": [
+            "INTELLERA CONSULTING S.P.A.",
+            "META GROUP SRL"
+          ],
+          "detected_provider": "aws"
+        }
+      ]
+    },
+    "IT-C5-consob": {
+      "name": "Commissione Nazionale per Le Societa' e La Borsa",
+      "regione": "Lazio",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8466552",
+          "value": 60000.0,
+          "supplier": [
+            "MICROSOFT S.R.L."
+          ],
+          "detected_provider": "microsoft"
+        }
+      ]
+    },
+    "IT-L7-atsm": {
+      "name": "Agenzia di Tutela della Salute della Montagna",
+      "regione": "Lombardia",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8358840",
+          "value": 61963.84,
+          "supplier": [
+            "TIM SPA"
+          ],
+          "detected_provider": "microsoft"
+        }
+      ]
+    },
+    "IT-PRO-702462": {
+      "name": "Provincia di Como",
+      "regione": "Lombardia",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8335783",
+          "value": 350070.02,
+          "supplier": [
+            "GECO S.R.L."
+          ],
+          "detected_provider": "sap"
+        },
+        {
+          "year": 2024,
+          "ocid": "ocds-hu01ve-8335823",
+          "value": 289212.92,
+          "supplier": [
+            "COSTRUIRE SRL"
+          ],
+          "detected_provider": "sap"
+        }
+      ]
+    },
+    "IT-L7-atspv": {
+      "name": "Agenzia di Tutela della Salute di Pavia",
+      "regione": "Lombardia",
+      "mxmap_cloud_tenant": "microsoft",
+      "contracts": [
+        {
+          "year": 2025,
+          "ocid": "ocds-hu01ve-8466526",
+          "value": 0.0,
+          "supplier": [],
+          "detected_provider": "oracle"
+        }
+      ]
+    }
+  }
+}

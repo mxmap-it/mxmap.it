@@ -1,0 +1,264 @@
+{
+  "method": "keyword-search: SI name in supplier + hyperscaler keyword in tender",
+  "caveat": "Conservativo: contratti 'cloud generico' senza vendor esplicito non sono catturati. Sub-subfornitori non visibili.",
+  "years_analyzed": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "total_matches": 168,
+  "si_value_per_year": {
+    "kpmg": {
+      "2022": 150600.0,
+      "2023": 65000.0,
+      "2024": 4311000.0,
+      "2025": 172067.04
+    },
+    "engineering": {
+      "2022": 52332884.3,
+      "2023": 1874662.06,
+      "2025": 46260.13
+    },
+    "ag": {
+      "2022": 1500190.51,
+      "2023": 1723435.52,
+      "2024": 312136.0,
+      "2025": 13022429.04
+    },
+    "italware": {
+      "2022": 13337377.08,
+      "2023": 21124401.950000003,
+      "2024": 34110550.3,
+      "2025": 5324365.55
+    },
+    "ntt data": {
+      "2022": 2072400.0,
+      "2023": 1139185.99,
+      "2024": 1333087.1500000001,
+      "2025": 274379.0
+    },
+    "var group": {
+      "2022": 57280.0,
+      "2023": 4950492.64,
+      "2024": 17119067.150000002
+    },
+    "ey": {
+      "2022": 864445.97,
+      "2023": 633333.33,
+      "2024": 572000.0,
+      "2025": 740000.0
+    },
+    "finmeccanica": {
+      "2022": 186421.5,
+      "2023": 1099819.0
+    },
+    "blueit": {
+      "2023": 74000.0
+    },
+    "postel": {
+      "2023": 3968691.21,
+      "2024": 7276426.01
+    },
+    "capgemini": {
+      "2023": 984625.2,
+      "2024": 675000.0
+    },
+    "deloitte": {
+      "2023": 1103292.0,
+      "2024": 159500.0
+    },
+    "gpi": {
+      "2023": 592124.0,
+      "2024": 333122.8,
+      "2025": 274379.0
+    },
+    "reply": {
+      "2023": 5160460.91,
+      "2024": 136500.0,
+      "2025": 680000.0
+    },
+    "lutech": {
+      "2023": 173547.45,
+      "2024": 12069942.24
+    },
+    "accenture": {
+      "2023": 312830.4,
+      "2024": 1155000.0
+    },
+    "fini": {
+      "2023": 132860.41999999998
+    },
+    "technisblu": {
+      "2023": 323493.53,
+      "2024": 8160721.03
+    },
+    "almaviva": {
+      "2024": 60000.0,
+      "2025": 172067.04
+    },
+    "poste italiane": {
+      "2024": 1983644.0
+    },
+    "enterprise services italia": {
+      "2024": 1983644.0
+    },
+    "maticmind": {
+      "2024": 27748000.0
+    }
+  },
+  "si_value_per_hyperscaler": {
+    "kpmg": {
+      "sap": 215600.0,
+      "oracle": 4483067.04
+    },
+    "engineering": {
+      "microsoft": 3376473.4,
+      "oracle": 49674472.1,
+      "salesforce": 215000.0,
+      "sap": 987860.99
+    },
+    "ag": {
+      "microsoft": 653991.0,
+      "oracle": 798634.41,
+      "ibm": 14605571.16,
+      "sap": 499994.5
+    },
+    "italware": {
+      "ibm": 18757291.25,
+      "oracle": 42998375.05,
+      "sap": 9446091.98,
+      "microsoft": 2694936.5999999996
+    },
+    "ntt data": {
+      "oracle": 2072400.0,
+      "sap": 2627028.6399999997,
+      "microsoft": 119623.5
+    },
+    "var group": {
+      "sap": 57280.0,
+      "microsoft": 3498041.09,
+      "ibm": 6016247.17,
+      "oracle": 12555271.53
+    },
+    "ey": {
+      "microsoft": 864445.97,
+      "oracle": 633333.33,
+      "sap": 572000.0,
+      "aws": 740000.0
+    },
+    "finmeccanica": {
+      "ibm": 1286240.5
+    },
+    "blueit": {
+      "ibm": 74000.0
+    },
+    "postel": {
+      "microsoft": 9261473.219999999,
+      "oracle": 1983644.0
+    },
+    "capgemini": {
+      "sap": 984625.2,
+      "microsoft": 675000.0
+    },
+    "deloitte": {
+      "sap": 923292.0,
+      "salesforce": 339500.0
+    },
+    "gpi": {
+      "sap": 1119625.8,
+      "oracle": 80000.0
+    },
+    "reply": {
+      "aws": 58000.0,
+      "oracle": 5782460.91,
+      "sap": 136500.0
+    },
+    "lutech": {
+      "aws": 68344.26,
+      "salesforce": 11966645.43,
+      "oracle": 135000.0,
+      "microsoft": 73500.0
+    },
+    "accenture": {
+      "sap": 1338000.0,
+      "oracle": 129830.4
+    },
+    "fini": {
+      "microsoft": 132860.41999999998
+    },
+    "technisblu": {
+      "sap": 8484214.559999999
+    },
+    "almaviva": {
+      "aws": 60000.0,
+      "oracle": 172067.04
+    },
+    "poste italiane": {
+      "oracle": 1983644.0
+    },
+    "enterprise services italia": {
+      "oracle": 1983644.0
+    },
+    "maticmind": {
+      "ibm": 15488000.0,
+      "oracle": 12260000.0
+    }
+  },
+  "si_total_value": {
+    "kpmg": 4698667.04,
+    "engineering": 54253806.49,
+    "ag": 16558191.07,
+    "italware": 73896694.88000001,
+    "ntt data": 4819052.14,
+    "var group": 22126839.79,
+    "ey": 2809779.3,
+    "finmeccanica": 1286240.5,
+    "blueit": 74000.0,
+    "postel": 11245117.219999999,
+    "capgemini": 1659625.2,
+    "deloitte": 1262792.0,
+    "gpi": 1199625.8,
+    "reply": 5976960.91,
+    "lutech": 12243489.69,
+    "accenture": 1467830.4,
+    "fini": 132860.41999999998,
+    "technisblu": 8484214.559999999,
+    "almaviva": 232067.04,
+    "poste italiane": 1983644.0,
+    "enterprise services italia": 1983644.0,
+    "maticmind": 27748000.0
+  },
+  "si_count": {
+    "kpmg": 4,
+    "engineering": 15,
+    "ag": 16,
+    "italware": 37,
+    "ntt data": 13,
+    "var group": 20,
+    "ey": 4,
+    "finmeccanica": 2,
+    "blueit": 1,
+    "postel": 10,
+    "capgemini": 3,
+    "deloitte": 4,
+    "gpi": 10,
+    "reply": 5,
+    "lutech": 6,
+    "accenture": 3,
+    "fini": 2,
+    "technisblu": 7,
+    "almaviva": 2,
+    "poste italiane": 1,
+    "enterprise services italia": 1,
+    "maticmind": 2
+  },
+  "hyperscaler_indirect_total": {
+    "sap": 27392113.67,
+    "microsoft": 21350345.2,
+    "oracle": 137725843.80999997,
+    "ibm": 56227350.08,
+    "salesforce": 12521145.43,
+    "aws": 926344.26
+  }
+}

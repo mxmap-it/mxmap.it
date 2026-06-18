@@ -430,6 +430,112 @@ class TestDetectGateway:
     def test_case_insensitive(self):
         assert detect_gateway(["CUSTOMER.SEPPMAIL.CLOUD"]) == "seppmail"
 
+    # ── 2026-06-17 gap-analysis round (mxmap.it) ──
+    # Regression coverage for previously-missing keywords that caused
+    # detect_gateway() to return None for real Italian PA entities whose
+    # MX hostname was a subdomain of a known gateway's main domain.
+    def test_libraesva_esvacloud(self):
+        # issue #14: ESVA substring catches ~167 additional entries that
+        # were masked as "aruba" / "independent" by ASN-based overrides.
+        assert detect_gateway(["comune-moncalieri.esvacloud.com"]) == "libraesva"
+
+    def test_libraesva_reseller(self):
+        # Reseller-hosted ESVA: esva.<reseller>.it
+        assert detect_gateway(["esva.amicobit.com"]) == "libraesva"
+        assert detect_gateway(["esva.gaia-spa.it", "esva2.gaia-spa.it"]) == "libraesva"
+
+    def test_libraesva_gov(self):
+        assert detect_gateway(["lavoro.gov1.esvacloud.com"]) == "libraesva"
+
+    def test_leonet(self):
+        # 48 entries; previously had gateway='leonet' in data but no keyword
+        # in GATEWAY_KEYWORDS, so detect_gateway() regressed them to None.
+        assert detect_gateway(["mx.leonet.it", "mx02.leonet.it"]) == "leonet"
+        assert detect_gateway(["mx.leonet.it"]) == "leonet"
+
+    def test_a2asmartcity(self):
+        # 24 entries; A2A Smart City — Lombardy municipal IT
+        assert detect_gateway(["mx01.a2asmartcity.it"]) == "a2asmartcity"
+        assert (
+            detect_gateway(["mx02.a2asmartcity.it", "mx01.a2asmartcity.it"])
+            == "a2asmartcity"
+        )
+
+    def test_naquadria(self):
+        # 18 entries; Naquadria — Italian MSP
+        assert detect_gateway(["mail-gw01.naquadria.it"]) == "naquadria"
+
+    def test_omitech(self):
+        # 16 entries; Omitech — Italian PA contractor
+        assert detect_gateway(["mailbox15.omitech.it"]) == "omitech"
+        assert detect_gateway(["mx1.ot-mail.it"]) == "omitech"
+
+    def test_host_it_mailgw_variants(self):
+        # MX hostname variants previously lost to dict-key collision.
+        assert detect_gateway(["host.it"]) == "host-it"  # bare keyword still wins
+        assert detect_gateway(["mailgw01.host.it"]) == "host-it"
+        assert detect_gateway(["mailgw02.host.it"]) == "host-it"
+        assert detect_gateway(["mx.host.it"]) == "host-it"
+
+    def test_interhost_subdomain_variants(self):
+        # Multiple subdomains of interhost.it used as MX.
+        assert detect_gateway(["mx.sec.interhost.it"]) == "interhost"
+        assert detect_gateway(["mxsec.interhost.it"]) == "interhost"
+        assert detect_gateway(["leastigov.interhost.it"]) == "interhost"
+        assert detect_gateway(["leshared1.interhost.it"]) == "interhost"
+        assert detect_gateway(["mxsecded.interhost.it"]) == "interhost"
+        assert detect_gateway(["mxsec01.interhost.it"]) == "interhost"
+        # Mixed with custom domain — IT-COM-114051 (Comune di Tiana)
+        assert (
+            detect_gateway(["mail.comune.tiana.nu.it", "mxsec.interhost.it"])
+            == "interhost"
+        )
+
+    def test_cbsolt_mx_variants(self):
+        assert detect_gateway(["mx01.cbsolt.net"]) == "cbsolt"
+        assert detect_gateway(["mx02.cbsolt.net"]) == "cbsolt"
+
+    def test_epublic_le_epublic_it(self):
+        # 347/389 epublic entries use le.epublic.it
+        assert detect_gateway(["le.epublic.it"]) == "epublic"
+
+    def test_sitek_mx_variant(self):
+        assert detect_gateway(["mx.sitek.it"]) == "sitek"
+
+    def test_halley_mx_variant(self):
+        assert detect_gateway(["mx.halley.it"]) == "halley"
+
+    def test_vianova_mail_variant(self):
+        assert detect_gateway(["mail.vianova.it"]) == "vianova"
+
+    # ── 2026-06-18 remote additions (censimento gateway) ──
+    def test_myantispam(self):
+        assert detect_gateway(["mx.myantispam.it"]) == "myantispam"
+
+    def test_stopspam(self):
+        assert detect_gateway(["mx.stop-spam.it"]) == "stopspam"
+
+    def test_cloudfabric(self):
+        assert detect_gateway(["mx.cloudfabric.it"]) == "cloudfabric"
+
+    def test_mtaroutes(self):
+        assert detect_gateway(["mx.mtaroutes.com"]) == "mtaroutes"
+
+    def test_cdesigngroup(self):
+        assert detect_gateway(["mx.cdesign-group.com"]) == "cdesigngroup"
+
+    def test_astea_cloudfilter(self):
+        assert detect_gateway(["cloudfilter.gruppoastea.it"]) == "astea-cloudfilter"
+
+    def test_safemail_cloud(self):
+        assert detect_gateway(["mx.safe-mail.cloud"]) == "safemail-cloud"
+
+    def test_safetycloud(self):
+        assert detect_gateway(["mx.safetycloud.it"]) == "safetycloud"
+
+    def test_zimbraoffice_gw(self):
+        assert detect_gateway(["antispam.zimbraoffice.it"]) == "zimbraoffice-gw"
+
 
 # ── classify_from_mx() ──────────────────────────────────────────────
 

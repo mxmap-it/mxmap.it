@@ -1,0 +1,88 @@
+{
+  "total_contracts_cloud": 866,
+  "contracts_with_value": 563,
+  "total_value_eur": 10910371355.61,
+  "by_category": {
+    "mixed": {
+      "count": 125,
+      "value_eur": 196089011.62000015,
+      "top_suppliers": {
+        "TELECOM ITALIA SPA": 40199093.46000001,
+        "ENTERPRISE SERVICES ITALIA SRL": 27174067.810000002,
+        "POSTE ITALIANE SPA": 26109513.810000002,
+        "POSTEL SPA": 25656269.11,
+        "04839740489": 11067802.53
+      }
+    },
+    "italian_sovereign": {
+      "count": 8,
+      "value_eur": 10262991545.99,
+      "top_suppliers": {
+        "SOGEI S.P.A.": 2563675000.0,
+        "TELECOM ITALIA S.P.A.": 2563675000.0,
+        "LEONARDO S.P.A.": 2563675000.0,
+        "CDP EQUITY": 2563675000.0,
+        "COGEA SRL": 7898375.0
+      }
+    },
+    "hyperscaler_eu": {
+      "count": 81,
+      "value_eur": 44804107.07999998,
+      "top_suppliers": {
+        "SAP ITALIA SPA": 12021389.28,
+        "TECHNISBLU SRL": 8160721.03,
+        "ITALWARE SRL": 7847721.58,
+        "S.A.P. ITALIA S.P.A.": 2190241.79,
+        "NTT DATA ITALIA S.P.A.": 1333087.1500000001
+      }
+    },
+    "hyperscaler_usa": {
+      "count": 241,
+      "value_eur": 297586543.18,
+      "top_suppliers": {
+        "ORACLE ITALIA S.R.L.": 43756464.669999994,
+        "IBM ITALIA S.P.A.": 35126795.85,
+        "MATICMIND S.P.A.": 27748000.0,
+        "FASTWEB SPA": 21045000.0,
+        "ITALWARE SRL": 20918188.15
+      }
+    },
+    "italian_commercial": {
+      "count": 108,
+      "value_eur": 108900147.74,
+      "top_suppliers": {
+        "TELECOM ITALIA S.P.A.": 13805817.19,
+        "WEBKORNER SRL": 12835500.0,
+        "GPI SPA": 12656000.0,
+        "COMPUTER CARE": 12656000.0,
+        "FASTWEB SPA": 7595895.0
+      }
+    }
+  },
+  "by_hyperscaler": {
+    "oracle": {
+      "count": 76,
+      "value_eur": 110259020.96
+    },
+    "salesforce": {
+      "count": 18,
+      "value_eur": 13230466.469999999
+    },
+    "microsoft": {
+      "count": 81,
+      "value_eur": 26239984.42
+    },
+    "google": {
+      "count": 17,
+      "value_eur": 4433206.109999999
+    },
+    "ibm": {
+      "count": 26,
+      "value_eur": 79118807.82
+    },
+    "aws": {
+      "count": 23,
+      "value_eur": 64305057.400000006
+    }
+  }
+}

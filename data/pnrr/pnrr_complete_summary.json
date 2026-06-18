@@ -1,0 +1,337 @@
+{
+  "datasets": {
+    "altrienti": {
+      "count": 3054,
+      "size_bytes": 975320
+    },
+    "comuni": {
+      "count": 72402,
+      "size_bytes": 19982424
+    },
+    "scuole": {
+      "count": 18515,
+      "size_bytes": 5622203
+    }
+  },
+  "totale_pa_records": 93971,
+  "cloud_pnrr_importi": {
+    "altrienti": {
+      "count": 805,
+      "importo_eur": 508409573.0
+    },
+    "comuni": {
+      "count": 10887,
+      "importo_eur": 996221189.0
+    },
+    "scuole": {
+      "count": 10947,
+      "importo_eur": 60681243.0
+    }
+  },
+  "cloud_pnrr_totale_eur": 1565312005.0,
+  "per_regione": {
+    "Sicilia": {
+      "importo_eur": {
+        "comuni": 85531966.0,
+        "altri": 40964775.0,
+        "scuole": 5762813.0
+      },
+      "count": {
+        "comuni": 621,
+        "altri": 61,
+        "scuole": 1083
+      }
+    },
+    "Puglia": {
+      "importo_eur": {
+        "comuni": 65634140.0,
+        "altri": 21628546.0,
+        "scuole": 6710102.0
+      },
+      "count": {
+        "comuni": 446,
+        "altri": 42,
+        "scuole": 1048
+      }
+    },
+    "Veneto": {
+      "importo_eur": {
+        "comuni": 90311357.0,
+        "altri": 19773653.0,
+        "scuole": 3776437.0
+      },
+      "count": {
+        "comuni": 792,
+        "altri": 47,
+        "scuole": 780
+      }
+    },
+    "Lazio": {
+      "importo_eur": {
+        "comuni": 61138093.0,
+        "altri": 125505247.0,
+        "scuole": 6939597.0
+      },
+      "count": {
+        "comuni": 583,
+        "altri": 133,
+        "scuole": 1002
+      }
+    },
+    "Campania": {
+      "importo_eur": {
+        "comuni": 97393013.0,
+        "altri": 56441705.0,
+        "scuole": 7385315.0
+      },
+      "count": {
+        "comuni": 940,
+        "altri": 53,
+        "scuole": 1270
+      }
+    },
+    "Calabria": {
+      "importo_eur": {
+        "comuni": 49312107.0,
+        "altri": 13186669.0,
+        "scuole": 3866023.0
+      },
+      "count": {
+        "comuni": 697,
+        "altri": 26,
+        "scuole": 543
+      }
+    },
+    "Emilia-Romagna": {
+      "importo_eur": {
+        "comuni": 58345956.0,
+        "altri": 25596424.0,
+        "scuole": 2548777.0
+      },
+      "count": {
+        "comuni": 468,
+        "altri": 45,
+        "scuole": 613
+      }
+    },
+    "Friuli-Venezia Giulia": {
+      "importo_eur": {
+        "comuni": 14582784.0,
+        "altri": 2424880.0,
+        "scuole": 749868.0
+      },
+      "count": {
+        "comuni": 233,
+        "altri": 10,
+        "scuole": 179
+      }
+    },
+    "Lombardia": {
+      "importo_eur": {
+        "comuni": 156520863.0,
+        "altri": 69413735.0,
+        "scuole": 8444863.0
+      },
+      "count": {
+        "comuni": 1818,
+        "altri": 111,
+        "scuole": 1473
+      }
+    },
+    "Abruzzo": {
+      "importo_eur": {
+        "comuni": 30482327.0,
+        "altri": 7653280.0,
+        "scuole": 1443883.0
+      },
+      "count": {
+        "comuni": 450,
+        "altri": 17,
+        "scuole": 283
+      }
+    },
+    "Marche": {
+      "importo_eur": {
+        "comuni": 23538755.0,
+        "altri": 11848130.0,
+        "scuole": 1335495.0
+      },
+      "count": {
+        "comuni": 302,
+        "altri": 24,
+        "scuole": 281
+      }
+    },
+    "Sardegna": {
+      "importo_eur": {
+        "comuni": 30228304.0,
+        "altri": 24349814.0,
+        "scuole": 1381947.0
+      },
+      "count": {
+        "comuni": 440,
+        "altri": 42,
+        "scuole": 265
+      }
+    },
+    "Basilicata": {
+      "importo_eur": {
+        "comuni": 14713194.0,
+        "altri": 6034295.0,
+        "scuole": 401478.0
+      },
+      "count": {
+        "comuni": 209,
+        "altri": 20,
+        "scuole": 140
+      }
+    },
+    "Liguria": {
+      "importo_eur": {
+        "comuni": 27204252.0,
+        "altri": 27240767.0,
+        "scuole": 984340.0
+      },
+      "count": {
+        "comuni": 331,
+        "altri": 41,
+        "scuole": 203
+      }
+    },
+    "Toscana": {
+      "importo_eur": {
+        "comuni": 50108364.0,
+        "altri": 21759583.0,
+        "scuole": 3541412.0
+      },
+      "count": {
+        "comuni": 352,
+        "altri": 38,
+        "scuole": 686
+      }
+    },
+    "Molise": {
+      "importo_eur": {
+        "comuni": 10046594.0,
+        "altri": 3432185.0,
+        "scuole": 851620.0
+      },
+      "count": {
+        "comuni": 189,
+        "altri": 6,
+        "scuole": 99
+      }
+    },
+    "Umbria": {
+      "importo_eur": {
+        "comuni": 14990018.0,
+        "altri": 5341785.0,
+        "scuole": 915215.0
+      },
+      "count": {
+        "comuni": 152,
+        "altri": 13,
+        "scuole": 176
+      }
+    },
+    "Piemonte": {
+      "importo_eur": {
+        "comuni": 89527304.0,
+        "altri": 15996753.0,
+        "scuole": 3087952.0
+      },
+      "count": {
+        "comuni": 1441,
+        "altri": 66,
+        "scuole": 629
+      }
+    },
+    "Trentino-Alto Adige/Südtirol": {
+      "importo_eur": {
+        "comuni": 22676026.0,
+        "altri": 8792442.0,
+        "scuole": 402584.0
+      },
+      "count": {
+        "comuni": 347,
+        "altri": 8,
+        "scuole": 166
+      }
+    },
+    "Valle d'Aosta/Vallée d'Aoste": {
+      "importo_eur": {
+        "comuni": 3935772.0,
+        "altri": 1024905.0,
+        "scuole": 151522.0
+      },
+      "count": {
+        "comuni": 76,
+        "altri": 2,
+        "scuole": 28
+      }
+    }
+  },
+  "crossref_mxmap": {
+    "comuni": {
+      "count": 10871,
+      "importo_eur": 995378256.0
+    },
+    "altri": {
+      "count": 677,
+      "importo_eur": 474037338.0
+    },
+    "scuole": {
+      "count": 10449,
+      "importo_eur": 57717163.0
+    },
+    "totale_matched": 21997,
+    "totale_eur_matched": 1527132757.0
+  },
+  "misure_breakdown": {
+    "1.4_Servizi_digitali": {
+      "counts": {
+        "altrienti": 1980,
+        "comuni": 49928,
+        "scuole": 7568
+      },
+      "importi_eur": {
+        "altrienti": 87116841.0,
+        "comuni": 1479802427.000522,
+        "scuole": 55253968.0
+      }
+    },
+    "1.2_Abilitazione_cloud": {
+      "counts": {
+        "altrienti": 567,
+        "comuni": 10887,
+        "scuole": 10947
+      },
+      "importi_eur": {
+        "altrienti": 406171484.0,
+        "comuni": 996221189.0,
+        "scuole": 60681243.0
+      }
+    },
+    "1.3_PDND": {
+      "counts": {
+        "altrienti": 269,
+        "comuni": 11587,
+        "scuole": 0
+      },
+      "importi_eur": {
+        "altrienti": 92387278.55000004,
+        "comuni": 151375057.18001664
+      }
+    },
+    "1.1_Infrastrutture_digitali": {
+      "counts": {
+        "altrienti": 238,
+        "comuni": 0,
+        "scuole": 0
+      },
+      "importi_eur": {
+        "altrienti": 102238089.0
+      }
+    }
+  }
+}

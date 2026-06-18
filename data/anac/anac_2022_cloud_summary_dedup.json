@@ -1,0 +1,81 @@
+{
+  "by_category": {
+    "hyperscaler_eu": {
+      "count": 7,
+      "value_eur": 10222341.24,
+      "top_suppliers": {
+        "PHOENIX TECHNOLOGY SRL": 5327630.0,
+        "SIDI SPA": 4336597.25,
+        "SAP ITALIA SPA": 184533.0,
+        "SAP ITALIA SISTEMI APPLICAZIONI PRODOTTI SPA": 165700.99,
+        "PAABS SRL": 75300.0
+      }
+    },
+    "hyperscaler_usa": {
+      "count": 58,
+      "value_eur": 172085095.21000004,
+      "top_suppliers": {
+        "TELECOM ITALIA S.P.A.": 68149044.4,
+        "ORACLE ITALIA S.R.L.": 32408451.06,
+        "SWS ENGINEERING SPA": 10660958.6,
+        "ANSALDO STS": 10660958.6,
+        "COMESVIL SPA": 10660958.6
+      }
+    },
+    "italian_commercial": {
+      "count": 14,
+      "value_eur": 6076500.88,
+      "top_suppliers": {
+        "TELECOM ITALIA S.P.A.": 1141197.388,
+        "TELECOM ITALIA SPA": 811480.21,
+        "FASTWEB SPA": 790248.638,
+        "BT ITALIA": 665787.5480000001,
+        "VITROCISET S.P.A.": 665787.5480000001
+      }
+    },
+    "italian_sovereign": {
+      "count": 2,
+      "value_eur": 194433.33000000002,
+      "top_suppliers": {
+        "SILICON BIOSYSTEMS SPA": 144900.0,
+        "RICCA IT S.R.L. ": 49533.33
+      }
+    },
+    "mixed": {
+      "count": 7,
+      "value_eur": 10494985.1,
+      "top_suppliers": {
+        "S.A.P. ITALIA SPA": 2636898.8,
+        "AICOF SRL": 1806500.0,
+        "ACCENTURE S.P.A.": 1806500.0,
+        "ACCENTURE TECHNOLOGY SOLUTIONS - IT": 1806500.0,
+        "ALMAVIVA S.P.A.": 537455.42
+      }
+    }
+  },
+  "by_hyperscaler": {
+    "oracle": {
+      "count": 28,
+      "value_eur": 83604527.05000001
+    },
+    "microsoft": {
+      "count": 13,
+      "value_eur": 70140792.05
+    },
+    "ibm": {
+      "count": 8,
+      "value_eur": 15516299.51
+    },
+    "google": {
+      "count": 6,
+      "value_eur": 1474677.6
+    },
+    "salesforce": {
+      "count": 3,
+      "value_eur": 1348799.0
+    }
+  },
+  "total_ocid": 98,
+  "ocid_with_value": 88,
+  "total_value_eur": 199073355.76
+}

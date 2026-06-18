@@ -1,0 +1,88 @@
+{
+  "by_category": {
+    "mixed": {
+      "count": 51,
+      "value_eur": 62204601.69000001,
+      "top_suppliers": {
+        "TELECOM ITALIA SPA": 12493587.37166667,
+        "ENTERPRISE SERVICES ITALIA SRL": 7146593.619166667,
+        "POSTE ITALIANE SPA": 6557653.054166667,
+        "POSTEL SPA": 6402675.2125,
+        "FINMECCANICA": 3186033.8
+      }
+    },
+    "italian_sovereign": {
+      "count": 5,
+      "value_eur": 2571966545.99,
+      "top_suppliers": {
+        "SOGEI S.P.A.": 640918750.0,
+        "TELECOM ITALIA S.P.A.": 640918750.0,
+        "LEONARDO S.P.A.": 640918750.0,
+        "CDP EQUITY": 640918750.0,
+        "COGEA SRL": 7898375.0
+      }
+    },
+    "hyperscaler_eu": {
+      "count": 68,
+      "value_eur": 35959989.88,
+      "top_suppliers": {
+        "SAP ITALIA SPA": 12021389.28,
+        "TECHNISBLU SRL": 4173560.515,
+        "ITALWARE SRL": 4146561.065,
+        "S.A.P. ITALIA S.P.A.": 2190241.79,
+        "ACCENTURE S.P.A.": 1155000.0
+      }
+    },
+    "hyperscaler_usa": {
+      "count": 205,
+      "value_eur": 187246178.03,
+      "top_suppliers": {
+        "ORACLE ITALIA S.R.L.": 43756464.669999994,
+        "IBM ITALIA S.P.A.": 35065880.94,
+        "LUTECH SPA": 11230774.14,
+        "ITALWARE SRL": 11079209.19,
+        "ORACLE ITALIA S.R.L. SOCIO UNICO": 8526278.65
+      }
+    },
+    "italian_commercial": {
+      "count": 69,
+      "value_eur": 39398953.110000014,
+      "top_suppliers": {
+        "TELECOM ITALIA SPA": 4181212.5075000003,
+        "TELECOM ITALIA S.P.A.": 4117470.138333333,
+        "FASTWEB SPA": 3978771.0,
+        "WEBKORNER SRL": 3223833.3333333335,
+        "GPI SPA": 3164000.0
+      }
+    }
+  },
+  "by_hyperscaler": {
+    "oracle": {
+      "count": 63,
+      "value_eur": 84158087.82999998
+    },
+    "salesforce": {
+      "count": 15,
+      "value_eur": 13060996.469999999
+    },
+    "microsoft": {
+      "count": 81,
+      "value_eur": 30864984.42
+    },
+    "google": {
+      "count": 17,
+      "value_eur": 4433206.109999999
+    },
+    "ibm": {
+      "count": 16,
+      "value_eur": 45686023.96
+    },
+    "aws": {
+      "count": 13,
+      "value_eur": 9042879.24
+    }
+  },
+  "total_ocid": 701,
+  "ocid_with_value": 398,
+  "total_value_eur": 2896776268.7
+}

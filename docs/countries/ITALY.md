@@ -16,6 +16,7 @@ mxmap.it focuses exclusively on Italian **territorial public administrations** �
 Treating **città metropolitane** as province-equivalent (post-Delrio 2014, they replaced the old province in 14 metro areas).
 
 **Out of scope for v1** (revisit in dedicated sessions, see `Future Work` below):
+
 - Schools, healthcare, ministries, ordini professionali, gestori pubblici servizi, stazioni appaltanti, partecipate, consorzi, unioni di comuni, comunità montane.
 - **PEC (legal email)** — never used to derive the MX target. Italian PEC infrastructure is dominated by 5–6 providers (Aruba PEC, Poste, InfoCert, Register.it, Namirial, LegalMail) and does not represent the office email infrastructure we want to classify.
 
@@ -24,6 +25,7 @@ Treating **città metropolitane** as province-equivalent (post-Delrio 2014, they
 mxmap.it shows only Italy, in **Italian primary / English secondary**. The codebase remains multi-country compatible upstream — the Italy-only behaviour is a build-time configuration of `index.html`, not a fork of the engine.
 
 ## Repo
+
 - Origin: `https://github.com/mxmap-it/mxmap.it`
 - Upstream reference: `https://github.com/livenson/mxmap` (Baltic fork, used as starting point)
 - Branch: `main` (single-branch fork; no `italy` branch).
@@ -244,6 +246,7 @@ NAMIRIAL_KEYWORDS = ["namirial.com", "namirial.it"]
 ```
 
 Wire each into `PROVIDER_KEYWORDS` and the two provider-matching loops in `classify()`. Display labels (Italian-first) in `index.html`:
+
 - `aruba` → "Aruba"
 - `register-it` → "Register.it"
 - `seeweb` → "Seeweb"
@@ -339,6 +342,7 @@ The discovery loop is likely to surface other private PA outsourcers — add the
 ### Italian gateway keywords (initial)
 
 Add to `GATEWAY_KEYWORDS`:
+
 - `libraesva` — Italian email security appliance, Pisa-based, common in Italian PAs
 - `datalab` — Italian email security
 - `iconto` — Italian gateway (less common)
@@ -385,6 +389,7 @@ Italian quality-gate target: average score ≥ 70, ≥ 80% above 80 confidence �
 ## Phase 6: TopoJSON boundaries
 
 Italy already has partial TopoJSON in the repo:
+
 - `topo/it_municipality.topo.json` — verify completeness vs ~7,900 comuni
 - `topo/it_region.topo.json` — verify completeness vs 22 regioni (20 + 2 prov. autonome)
 
@@ -403,6 +408,7 @@ uv run python3 scripts/fetch_boundaries.py IT
 ```
 
 Verify feature IDs are `relation/{N}` matching `osm_relation_id` in seed data. Mind the Overpass pitfalls listed in `CLAUDE.md`:
+
 - Area ID format: `3600000000 + relation_id`
 - Rate limiting: 10–15s between states, 90s on 429
 - Italy is moderately sized → expect 3–5 minute fetch per level
@@ -464,6 +470,7 @@ Implement as a `translations` object keyed by `lang` + DOM-attribute swap on tog
 ## Phase 9: Deployment
 
 ### Server
+
 - Host: `51.158.36.151` (Scaleway baremetal, fr-par-2 — same as `selective-copy-trader`)
 - SSH user: `mxmap.it` (uid 1001, home `/home/mxmap.it`, SSH key already deployed)
 - HTTP server: existing `mini_httpd` on port 80 (running as `nobody`)
@@ -473,17 +480,23 @@ Implement as a `translations` object keyed by `lang` + DOM-attribute swap on tog
 ### One-time setup (as ubuntu, sudo NOPASSWD)
 
 1. Install `uv` for the `mxmap.it` user:
+
    ```
    sudo -u mxmap.it bash -lc 'curl -LsSf https://astral.sh/uv/install.sh | sh'
    ```
+
 2. Clone the repo into `/home/mxmap.it/mxmap`:
+
    ```
    sudo -u mxmap.it git clone https://github.com/mxmap-it/mxmap.it.git /home/mxmap.it/mxmap
    ```
+
 3. `uv sync` once to populate `.venv`:
+
    ```
    sudo -u mxmap.it bash -lc 'cd /home/mxmap.it/mxmap && ~/.local/bin/uv sync'
    ```
+
 4. Configure mini_httpd to serve `/home/mxmap.it/public_html` at the IP. Inspect `/etc/mini-httpd.conf`; either:
    - Change `dir` to `/home/mxmap.it/public_html`, or
    - Add a virtual-host directory mapping using mini_httpd's `-v` host-dir feature later when DNS is in place.
@@ -492,12 +505,14 @@ Implement as a `translations` object keyed by `lang` + DOM-attribute swap on tog
 ### Deploy workflow (after each pipeline run)
 
 Static artifacts to publish:
+
 - `index.html`
 - `data-summary.json`, `data-detail.json`
 - `topo/manifest.json`, `topo/it_region.topo.json`, `topo/it_province.topo.json`, `topo/it_municipality.topo.json`
 - Translations JSON (if extracted from `index.html`)
 
 Sequence:
+
 ```bash
 # On dev machine
 uv run python3 scripts/build_frontend.py
@@ -536,11 +551,13 @@ Set `TZ=Europe/Rome` in the crontab.
 ### Domain + TLS (deferred)
 
 When `mxmap.it` DNS is pointed at `51.158.36.151`:
+
 - Option A: front mini_httpd with **Caddy** as reverse proxy on 443 (auto Let's Encrypt). mini_httpd stays on 80 for the trader / other content.
 - Option B: drop mini_httpd, run Caddy as the sole web server.
 - Decide in a separate session; do not block the IP-based launch.
 
 ## Do NOT
+
 - Push without review
 - Push to `main` (use `italy` branch first)
 - Include PEC domains in MX classification

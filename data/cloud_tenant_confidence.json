@@ -1,0 +1,3050 @@
+[
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C14-cdpid_0",
+    "name": "Ordine Dei Periti Industriali e Dei Periti Industriali Laureati della Provincia di Novara",
+    "regione": "Piemonte",
+    "comune": "Novara"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C14-cnpi",
+    "name": "Consiglio Nazionale dei Periti Industriali e dei Periti Industriali Laureati",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "google",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C14-cptsrca",
+    "name": "Ordine dei Tecnici Sanitari di Radiologia Medica e delle Professioni Sanitarie Tecniche, della Riabilitazione e della Prevenzione delle Province di Caltanissetta - Agrigento",
+    "regione": "Sicilia",
+    "comune": "Caltanissetta"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C14-oddc_024",
+    "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Vicenza",
+    "regione": "Veneto",
+    "comune": "Vicenza"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C14-odfpg",
+    "name": "Ordine Dei Farmacisti della Provincia di Genova",
+    "regione": "Liguria",
+    "comune": "Genova"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C14-omvpc",
+    "name": "Ordine Dei Medici Veterinari della Provincia di Chieti",
+    "regione": "Abruzzo",
+    "comune": "Chieti"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C14-ordav_lc",
+    "name": "Consiglio dell'Ordine degli Avvocati di Lecco",
+    "regione": "Lombardia",
+    "comune": "Lecco"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C14-oring_tn",
+    "name": "Ordine degli Ingegneri della Provincia di Trento",
+    "regione": "Trentino-Alto Adige",
+    "comune": "Trento"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C16-inps",
+    "name": "Istituto Nazionale Previdenza Sociale - INPS",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C17-iepad",
+    "name": "INARCASSA CASSA NAZIONALE PREVIDENZA ASSISTENZA INGG. ARCH. LIBERI PROFESSIONISTI",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C2-corte_cost",
+    "name": "Corte Costituzionale",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C3-anla_080",
+    "name": "Agenzia Nazionale per L'Amministrazione e La Destinazione Dei Beni Sequestrati e Confiscati alla Criminalita' Organizzata",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C5-agpia",
+    "name": "Autorita Garante per L'Infanzia e L'Adolescenza",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C5-consob",
+    "name": "Commissione Nazionale per Le Societa' e La Borsa",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-C7-crsams",
+    "name": "Azienda di Servizi alla Persona disabile visiva S. Alessio - Margherita di Savoia",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-CMM-001272",
+    "name": "Citta' Metropolitana di Torino",
+    "regione": "Piemonte",
+    "comune": "Torino"
+  },
+  {
+    "provider": "aws",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-001302",
+    "name": "Comune di Villarbasse",
+    "regione": "Piemonte",
+    "comune": "Villarbasse"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-009009",
+    "name": "Comune di Bardineto",
+    "regione": "Liguria",
+    "comune": "Bardineto"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-010006",
+    "name": "Comune di Busalla",
+    "regione": "Liguria",
+    "comune": "Busalla"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-012070",
+    "name": "Comune di Gallarate",
+    "regione": "Lombardia",
+    "comune": "Gallarate"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-012086",
+    "name": "Comune di Lavena Ponte Tresa",
+    "regione": "Lombardia",
+    "comune": "Lavena Ponte Tresa"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-012102",
+    "name": "Comune di Mesenzana",
+    "regione": "Lombardia",
+    "comune": "Mesenzana"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-013045",
+    "name": "Comune di Carbonate",
+    "regione": "Lombardia",
+    "comune": "Carbonate"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-015158",
+    "name": "Comune di Noviglio",
+    "regione": "Lombardia",
+    "comune": "Noviglio"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-015194",
+    "name": "Comune di San Giorgio Su Legnano",
+    "regione": "Lombardia",
+    "comune": "San Giorgio su Legnano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-017004",
+    "name": "Comune di Alfianello",
+    "regione": "Lombardia",
+    "comune": "Alfianello"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-017096",
+    "name": "Comune di Lumezzane",
+    "regione": "Lombardia",
+    "comune": "Lumezzane"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-018160",
+    "name": "Comune di Torrevecchia Pia",
+    "regione": "Lombardia",
+    "comune": "Torrevecchia Pia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-018163",
+    "name": "Comune di Trivolzio",
+    "regione": "Lombardia",
+    "comune": "Trivolzio"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-018176",
+    "name": "Comune di Vidigulfo",
+    "regione": "Lombardia",
+    "comune": "Vidigulfo"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-018192",
+    "name": "Comune di Corteolona e Genzone",
+    "regione": "Lombardia",
+    "comune": "Corteolona e Genzone"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-020035",
+    "name": "Comune di Moglia",
+    "regione": "Lombardia",
+    "comune": "Moglia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-023021",
+    "name": "Comune di Castel D'Azzano",
+    "regione": "Veneto",
+    "comune": "Castel d'Azzano"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-027008",
+    "name": "Comune di Chioggia",
+    "regione": "Veneto",
+    "comune": "Chioggia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-027042",
+    "name": "Comune di Venezia",
+    "regione": "Veneto",
+    "comune": "Venezia"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-029051",
+    "name": "Comune di Villanova Marchesana",
+    "regione": "Veneto",
+    "comune": "Villanova Marchesana"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-034033",
+    "name": "Comune di San Secondo Parmense",
+    "regione": "Emilia-Romagna",
+    "comune": "San Secondo Parmense"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-034045",
+    "name": "Comune di Varano de'  Melegari",
+    "regione": "Emilia-Romagna",
+    "comune": "Varano de' Melegari"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-036042",
+    "name": "Comune di Serramazzoni",
+    "regione": "Emilia-Romagna",
+    "comune": "Serramazzoni"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039001",
+    "name": "Comune di Alfonsine",
+    "regione": "Emilia-Romagna",
+    "comune": "Alfonsine"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039002",
+    "name": "Comune di Bagnacavallo",
+    "regione": "Emilia-Romagna",
+    "comune": "Bagnacavallo"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039003",
+    "name": "Comune di Bagnara di Romagna",
+    "regione": "Emilia-Romagna",
+    "comune": "Bagnara di Romagna"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039004",
+    "name": "Comune di Brisighella",
+    "regione": "Emilia-Romagna",
+    "comune": "Brisighella"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039005",
+    "name": "Comune di Casola Valsenio",
+    "regione": "Emilia-Romagna",
+    "comune": "Casola Valsenio"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039006",
+    "name": "Comune di Castel Bolognese",
+    "regione": "Emilia-Romagna",
+    "comune": "Castel Bolognese"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039008",
+    "name": "Comune di Conselice",
+    "regione": "Emilia-Romagna",
+    "comune": "Conselice"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039009",
+    "name": "Comune di Cotignola",
+    "regione": "Emilia-Romagna",
+    "comune": "Cotignola"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039010",
+    "name": "Comune di Faenza",
+    "regione": "Emilia-Romagna",
+    "comune": "Faenza"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039011",
+    "name": "Comune di Fusignano",
+    "regione": "Emilia-Romagna",
+    "comune": "Fusignano"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039012",
+    "name": "Comune di Lugo",
+    "regione": "Emilia-Romagna",
+    "comune": "Lugo"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039013",
+    "name": "Comune di Massa Lombarda",
+    "regione": "Emilia-Romagna",
+    "comune": "Massa Lombarda"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039015",
+    "name": "Comune di Riolo Terme",
+    "regione": "Emilia-Romagna",
+    "comune": "Riolo Terme"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039017",
+    "name": "Comune di Sant'Agata Sul Santerno",
+    "regione": "Emilia-Romagna",
+    "comune": "Sant'Agata sul Santerno"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-039018",
+    "name": "Comune di Solarolo",
+    "regione": "Emilia-Romagna",
+    "comune": "Solarolo"
+  },
+  {
+    "provider": "google",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-057036",
+    "name": "Comune di Marcetelli",
+    "regione": "Lazio",
+    "comune": "Marcetelli"
+  },
+  {
+    "provider": "google",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-109033",
+    "name": "Comune di Porto San Giorgio",
+    "regione": "Marche",
+    "comune": "Porto San Giorgio"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-113009",
+    "name": "Comune di Budoni",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "google",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-116015",
+    "name": "Comune di Talana",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-COM-118007",
+    "name": "Comune di Capoterra",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-CONS-JZXL7734",
+    "name": "Servizio Affari Generali e Amministrativi",
+    "regione": "Abruzzo",
+    "comune": "L'Aquila"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-CONS-XO5GKXJH",
+    "name": "AZIENDA SPECIALE CONSORZIO TIFATA",
+    "regione": "Campania",
+    "comune": "Maddaloni"
+  },
+  {
+    "provider": "aws",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-CONS-ciss_chi",
+    "name": "Consorzio Intercomunale Servizi Sociali di Chivasso",
+    "regione": "Piemonte",
+    "comune": "Chivasso"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-CONS-dsc",
+    "name": "Azienda Speciale Consortile del Distretto Sociale Cremonese",
+    "regione": "Lombardia",
+    "comune": "Cremona"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-CONS-r_friuli",
+    "name": "Consiglio Regionale Friuli Venezia Giulia",
+    "regione": "Friuli-Venezia Giulia",
+    "comune": "Trieste"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L1-aiplv_bz",
+    "name": "Agenzia per i contratti pubblici - ACP",
+    "regione": "Trentino-Alto Adige",
+    "comune": "Bolzano"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L1-assapcbz",
+    "name": "Agenzia per la protezione civile",
+    "regione": "Trentino-Alto Adige",
+    "comune": "Bolzano"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L1-csaapfs",
+    "name": "Commissario Straordinario Attuazione Accordo di Programma 21-11-2014 Ferriera di Servola",
+    "regione": "Friuli-Venezia Giulia",
+    "comune": "Trieste"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L1-eram_042",
+    "name": "Ente Regionale per L'Abitazione Pubblica Delle Marche",
+    "regione": "Marche",
+    "comune": "Ancona"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L1-saecc",
+    "name": "Soggetto Attuatore Emergenza Covid-19 Calabria",
+    "regione": "Calabria",
+    "comune": "Catanzaro"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L11-aspmalo",
+    "name": "Autorità di Sistema Portuale del Mar Ligure Occidentale",
+    "regione": "Liguria",
+    "comune": "Genova"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L12-cmack",
+    "name": "Comunita' Montana Alto Crotone",
+    "regione": "Calabria",
+    "comune": "Cerenzia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L12-cmmvc",
+    "name": "Comunita' Montana Media Valle Crati - Serre Cosentine",
+    "regione": "Calabria",
+    "comune": "Mendicino"
+  },
+  {
+    "provider": "google",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L12-cmtam",
+    "name": "Comunita' Montana Tanagro Alto e Medio Sele",
+    "regione": "Campania",
+    "comune": "Buccino"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L15-ERDaSUM",
+    "name": "Ente Regionale per il Diritto allo Studio Universitario di Messina",
+    "regione": "Sicilia",
+    "comune": "Messina"
+  },
+  {
+    "provider": "google",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L15-cuptp",
+    "name": "Consorzio Universitario della Provincia di Trapani",
+    "regione": "Sicilia",
+    "comune": "Erice"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L15-rseu_087",
+    "name": "Regione Siciliana Ersu Universita Degli Studi di Catania",
+    "regione": "Sicilia",
+    "comune": "Catania"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L17-units",
+    "name": "Universita' degli Studi di Trieste",
+    "regione": "Friuli-Venezia Giulia",
+    "comune": "Trieste"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L18-uctms",
+    "name": "Unione Dei Comuni Le Terre della Marca Senone",
+    "regione": "Marche",
+    "comune": "Senigallia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L18-uctvp_00",
+    "name": "Unione Collinare Terre di Vigneti e Pietra da Cantoni",
+    "regione": "Piemonte",
+    "comune": "Rosignano Monferrato"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L18-udcb_ra",
+    "name": "Unione della Romagna Faentina",
+    "regione": "Emilia-Romagna",
+    "comune": "Faenza"
+  },
+  {
+    "provider": "aws",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L18-udcmtl",
+    "name": "Unione Dei Comuni di Moncalieri, Trofarello, La Loggia",
+    "regione": "Piemonte",
+    "comune": "Moncalieri"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L18-umvasa",
+    "name": "Unione Montana Valle Sacra",
+    "regione": "Piemonte",
+    "comune": "Colleretto Castelnuovo"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L2-arltl_0",
+    "name": "Agenzia Regionale per La Tecnologia e L'Innovazione della Regione Puglia",
+    "regione": "Puglia",
+    "comune": "Bari"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L31-eatsg",
+    "name": "Ente Autonomo Teatro Stabile di Genova",
+    "regione": "Liguria",
+    "comune": "Genova"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-Sgf_Bz",
+    "name": "Sozialwissenschaftliches Gymnasium Und Fachoberschule Fuer Tourismus",
+    "regione": "Trentino-Alto Adige",
+    "comune": "Bolzano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-cpiarg",
+    "name": "C.P.I.A. Ragusa",
+    "regione": "Sicilia",
+    "comune": "Ragusa"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-icaca",
+    "name": "Istituto Comprensivo Antonelli - Casalegno",
+    "regione": "Piemonte",
+    "comune": "Torino"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-iccmo",
+    "name": "Istituto Comprensivo \"Giacomo Masi\"",
+    "regione": "Emilia-Romagna",
+    "comune": "Cavezzo"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-icgtl",
+    "name": "Istituto Comprensivo G.T.Lampedusa - Santa Margherita di Belice",
+    "regione": "Sicilia",
+    "comune": "Santa Margherita di Belice"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-isa_",
+    "name": "Emile Lexert",
+    "regione": "Valle d'Aosta",
+    "comune": "Aosta"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-isgtoc",
+    "name": "Istituto Superiore Giuseppe Terragni",
+    "regione": "Lombardia",
+    "comune": "Olgiate Comasco"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-isica",
+    "name": "Liceo Classico, Artistico e Musicale",
+    "regione": "Valle d'Aosta",
+    "comune": "Aosta"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-issf_",
+    "name": "Istituzione Scolastica San Francesco",
+    "regione": "Valle d'Aosta",
+    "comune": "Aosta"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istfpv",
+    "name": "Istituto Superiore Taramelli-foscolo",
+    "regione": "Lombardia",
+    "comune": "Pavia"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_AQIC82400V",
+    "name": "ISTITUTO COMPRENSIVO - IC MAGLIANO DEI MARSI",
+    "regione": "Abruzzo",
+    "comune": "Magliano de' Marsi"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_agic805003",
+    "name": "Istituto Comprensivo G. Galilei",
+    "regione": "Sicilia",
+    "comune": "Raffadali"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_agic83100g",
+    "name": "ISTITUTO COMPRENSIVO - IC 'V.BRANCATI'",
+    "regione": "Sicilia",
+    "comune": "Favara"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_aqic84200c",
+    "name": "ISTITUTO COMPRENSIVO - I.C. VIVENZA- GIOVANNI XXIII",
+    "regione": "Abruzzo",
+    "comune": "Avezzano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_aqic843008",
+    "name": "ISTITUTO COMPRENSIVO - I.C. 'COLLODI-L.MARINI'",
+    "regione": "Abruzzo",
+    "comune": "Avezzano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_avic871008",
+    "name": "ISTITUTO COMPRENSIVO - F. DE SANCTIS - CAPOSELE",
+    "regione": "Campania",
+    "comune": "Caposele"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_bgic826001",
+    "name": "ISTITUTO COMPRENSIVO - BONATE SOPRA - ALDO MORO",
+    "regione": "Lombardia",
+    "comune": "Bonate Sopra"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_caee038005",
+    "name": "DIREZIONE DIDATTICA - ASSEMINI 2 'DIONIGI SCALAS'",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_ceic82300q",
+    "name": "ISTITUTO COMPRENSIVO - I.A.C.' ALIGHIERI' BELLONA",
+    "regione": "Campania",
+    "comune": "Bellona"
+  },
+  {
+    "provider": "google",
+    "score": 0.95,
+    "label": "definitive",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "mx_cname",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_cops04000g",
+    "name": "LICEO SCIENTIFICO - ENRICO FERMI",
+    "regione": "Lombardia",
+    "comune": "Cantù"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_ctic8an003",
+    "name": "ISTITUTO COMPRENSIVO - I.C. ' G. VERGA' SCORDIA",
+    "regione": "Sicilia",
+    "comune": "Scordia"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_czps02000r",
+    "name": "LICEO SCIENTIFICO - LS 'GALILEI' LAMEZIA TERME",
+    "regione": "Calabria",
+    "comune": "Lamezia Terme"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_enic817002",
+    "name": "ISTITUTO COMPRENSIVO - 'G.MAZZINI'",
+    "regione": "Sicilia",
+    "comune": "Valguarnera Caropepe"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_geic84800p",
+    "name": "ISTITUTO COMPRENSIVO - I.C. COGORNO",
+    "regione": "Liguria",
+    "comune": "Cogorno"
+  },
+  {
+    "provider": "google",
+    "score": 0.95,
+    "label": "definitive",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "mx_cname",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_lcis01100x",
+    "name": "ISTRUZIONE SECONDARIA SUPERIORE - G.PARINI",
+    "regione": "Lombardia",
+    "comune": "Lecco"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_lepc03000r",
+    "name": "LICEO CLASSICO - LICEO CLASSICO'PALMIERI'-LECCE",
+    "regione": "Puglia",
+    "comune": "Lecce"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_liis00100t",
+    "name": "ISTRUZIONE SECONDARIA SUPERIORE - RAFFAELLO FORESI",
+    "regione": "Toscana",
+    "comune": "Portoferraio"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_meic8ac006",
+    "name": "ISTITUTO COMPRENSIVO - I.C.TREMESTIERI",
+    "regione": "Sicilia",
+    "comune": "Messina"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_miic8d5001",
+    "name": "ISTITUTO COMPRENSIVO - VIA VIQUARTERIO",
+    "regione": "Lombardia",
+    "comune": "Pieve Emanuele"
+  },
+  {
+    "provider": "google",
+    "score": 0.55,
+    "label": "moderate",
+    "signals": [
+      "spf_include",
+      "mx_cname",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_mitn02000x",
+    "name": "ISTITUTO TECNICO PER IL TURISMO - PIER PAOLO PASOLINI",
+    "regione": "Lombardia",
+    "comune": "Milano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_mnic83600p",
+    "name": "ISTITUTO COMPRENSIVO - I.C. MANTOVA 3",
+    "regione": "Lombardia",
+    "comune": "Mantova"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_msic806006",
+    "name": "ISTITUTO COMPRENSIVO - IC D. ALIGHIERI",
+    "regione": "Toscana",
+    "comune": "Aulla"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_naee177001",
+    "name": "DIREZIONE DIDATTICA - S. GIUSEPPE VES. 1 - CAPOLUOGO",
+    "regione": "Campania",
+    "comune": "San Giuseppe Vesuviano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_nuic827005",
+    "name": "Istituto Comprensivo di Orotelli",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_oric810007",
+    "name": "ISTITUTO COMPRENSIVO - I.C . MARRUBIU",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_paic85200e",
+    "name": "ISTITUTO COMPRENSIVO - I.C. G.DI VITTORIO",
+    "regione": "Sicilia",
+    "comune": "Palermo"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_paic854006",
+    "name": "ISTITUTO COMPRENSIVO - I.C. KAROL WOJTYLA EX MARABITTI",
+    "regione": "Sicilia",
+    "comune": "Palermo"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_paic8ac00x",
+    "name": "ISTITUTO COMPRENSIVO - I.C. SCINA'/COSTA",
+    "regione": "Sicilia",
+    "comune": "Palermo"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_pais00100t",
+    "name": "ISTRUZIONE SECONDARIA SUPERIORE - IS G. UGDULENA",
+    "regione": "Sicilia",
+    "comune": "Termini Imerese"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_pais026006",
+    "name": "ISTITUTO SUPERIORE - ISTITUTO SUPERIORE STATALE MARIO RUTELLI",
+    "regione": "Sicilia",
+    "comune": "Palermo"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_pzsd030003",
+    "name": "ISTITUTO D'ARTE - ISTITUTO STATALE D'ARTE",
+    "regione": "Basilicata",
+    "comune": "Potenza"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_rgic816006",
+    "name": "ISTITUTO COMPRENSIVO - G. VERGA",
+    "regione": "Sicilia",
+    "comune": "Comiso"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_rgis01300v",
+    "name": "ISTRUZIONE SECONDARIA SUPERIORE - GALILEO FERRARIS",
+    "regione": "Sicilia",
+    "comune": "Ragusa"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_riic806008",
+    "name": "ISTITUTO COMPRENSIVO - LEONESSA",
+    "regione": "Lazio",
+    "comune": "Leonessa"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_riic81700p",
+    "name": "ISTITUTO COMPRENSIVO - 'PROF. FERRUCCIO ULIVI'",
+    "regione": "Lazio",
+    "comune": "Poggio Moiano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_rips070005",
+    "name": "LICEO SCIENTIFICO - LICEO ST. CLASSICO SCIENTIFICO L. ROCCI",
+    "regione": "Lazio",
+    "comune": "Fara in Sabina"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_saic89000v",
+    "name": "ISTITUTO COMPRENSIVO - IST.COMPR. FISCIANO",
+    "regione": "Campania",
+    "comune": "Fisciano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_sais00100b",
+    "name": "ISTRUZIONE SECONDARIA SUPERIORE - PUBLIO VIRGILIO MARONE",
+    "regione": "Campania",
+    "comune": "Mercato San Severino"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_samm29100d",
+    "name": "SCUOLA PRIMO GRADO - ANGRI 'L.GALVANI-OPROM.-SMALD.'",
+    "regione": "Campania",
+    "comune": "Angri"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_sric828009",
+    "name": "ISTITUTO COMPRENSIVO - III I.C. S. LUCIA SIRACUSA",
+    "regione": "Sicilia",
+    "comune": "Siracusa"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_sric837004",
+    "name": "ISTITUTO COMPRENSIVO - I I.C. 'P. DI NAPOLI' AUGUSTA",
+    "regione": "Sicilia",
+    "comune": "Augusta"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_sric86200r",
+    "name": "ISTITUTO COMPRENSIVO - I.C. G. LOMBARDO RADICE SR",
+    "regione": "Sicilia",
+    "comune": "Siracusa"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_ssic84600a",
+    "name": "Istituto Comprensivo N. 2 Alghero",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_tvic83600e",
+    "name": "ISTITUTO COMPRENSIVO - IC VAZZOLA",
+    "regione": "Veneto",
+    "comune": "Mareno di Piave"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_vtis00900l",
+    "name": "ISTITUTO SUPERIORE - C.A. DALLA CHIESA",
+    "regione": "Lazio",
+    "comune": "Montefiascone"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsc_vtpm010007",
+    "name": "ISTITUTO MAGISTRALE - I.M. S. ROSA DA VITERBO",
+    "regione": "Lazio",
+    "comune": "Viterbo"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-istsuse",
+    "name": "Istituto Superiore Secusio",
+    "regione": "Sicilia",
+    "comune": "Caltagirone"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L33-itisgd",
+    "name": "Istituto Tecnico Tecnologico \"Guido Dorso\"",
+    "regione": "Campania",
+    "comune": "Avellino"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L34-apsprm",
+    "name": "A.P.S.P. Residenza Molino",
+    "regione": "Trentino-Alto Adige",
+    "comune": "Dro"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L34-aspvm",
+    "name": "Asp Valloni Marecchia",
+    "regione": "Emilia-Romagna",
+    "comune": "Rimini"
+  },
+  {
+    "provider": "aws",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L36-CISCIRIE",
+    "name": "CIS Consorzio Intercomunale Dei Servizi Socio Assistenziali di Cirie",
+    "regione": "Piemonte",
+    "comune": "Ciriè"
+  },
+  {
+    "provider": "google",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L36-ca_na",
+    "name": "Consorzio Asmez",
+    "regione": "Campania",
+    "comune": "Napoli"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L36-ciais",
+    "name": "Consorzio Isola di Ariano per I Servizi Sociali",
+    "regione": "Veneto",
+    "comune": "Corbola"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L36-cis_orba",
+    "name": "Consorzio Intercomunale di  Servizi",
+    "regione": "Piemonte",
+    "comune": "Orbassano"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L36-cisa12",
+    "name": "CISA 12 Consorzio intercomunale Socio Ass.",
+    "regione": "Piemonte",
+    "comune": "Nichelino"
+  },
+  {
+    "provider": "aws",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L36-cisa_to",
+    "name": "Consorzio Intercomunale Socio Assistenziale C.I.S.A di Gassino Torinese",
+    "regione": "Piemonte",
+    "comune": "Gassino Torinese"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-9NWJC70B",
+    "name": "Istituto Europeo di Oncologia",
+    "regione": "Lombardia",
+    "comune": "Milano"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-A9OYQOCS",
+    "name": "GEAT SRL",
+    "regione": "Emilia-Romagna",
+    "comune": "Riccione"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-GK3D3DQN",
+    "name": "VALLI DI LANZO CERONDA E CASTERNONE - GRUPPO DI AZIONE LOCALE SOC.CONS. A R.L.",
+    "regione": "Piemonte",
+    "comune": "Ceres"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-GPK9BU0B",
+    "name": "Azienda Territoriale Edilizia Residenziale della Provincia di Padova",
+    "regione": "Veneto",
+    "comune": "Padova"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-LKQSFID5",
+    "name": "Centro Cardiologico Monzino",
+    "regione": "Lombardia",
+    "comune": "Milano"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-T2AC6MDW",
+    "name": "InfoCert S.p.A.",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-VN3OVAXT",
+    "name": "CAFC SPA",
+    "regione": "Friuli-Venezia Giulia",
+    "comune": "Udine"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-Y5H2310W",
+    "name": "ACQUAMBIENTE MARCHE SRL",
+    "regione": "Marche",
+    "comune": "Castelfidardo"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-Z7N0LXUT",
+    "name": "Register Società per Azioni",
+    "regione": "Toscana",
+    "comune": "Firenze"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-ZYWJZ379",
+    "name": "AZIENDA CASA EMILIA-ROMAGNA DELLA PROVINCIA DI MODENA",
+    "regione": "Emilia-Romagna",
+    "comune": "Modena"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-acerpfc",
+    "name": "Azienda Casa Emilia Romagna della Provincia di Forli' Cesena",
+    "regione": "Emilia-Romagna",
+    "comune": "Forlì"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.75,
+    "label": "strong",
+    "signals": [
+      "dkim_cname",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-basrl",
+    "name": "Brianzacque Srl",
+    "regione": "Lombardia",
+    "comune": "Monza"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-cbec_",
+    "name": "Consorzio di Bonifica dell'Emilia Centrale",
+    "regione": "Emilia-Romagna",
+    "comune": "Reggio nell'Emilia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-cbmpb",
+    "name": "Consorzio di Bonifica della Media Pianura Bergamasca",
+    "regione": "Lombardia",
+    "comune": "Bergamo"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-cbr_040",
+    "name": "Consorzio di Bonifica della Romagna",
+    "regione": "Emilia-Romagna",
+    "comune": "Cesena"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-cbsgi_",
+    "name": "Consorzio di Bonifica di Secondo Grado per Il Canale Emiliano Romagnolo",
+    "regione": "Emilia-Romagna",
+    "comune": "Bologna"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-cvspa",
+    "name": "Cordar Valsesia Spa",
+    "regione": "Piemonte",
+    "comune": "Serravalle Sesia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-es",
+    "name": "Ecoambiente Srl",
+    "regione": "Veneto",
+    "comune": "Rovigo"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.75,
+    "label": "strong",
+    "signals": [
+      "autodiscover_cname",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-fccors",
+    "name": "Farmacie Comunali Corsichesi Spa",
+    "regione": "Lombardia",
+    "comune": "Corsico"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-galc",
+    "name": "G.A.L. Campidano",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-ltaspa",
+    "name": "Livenza Tagliamento Acque S.P.A.",
+    "regione": "Veneto",
+    "comune": "Portogruaro"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-mlscr",
+    "name": "Montagna Leader S.C. A R.L",
+    "regione": "Friuli-Venezia Giulia",
+    "comune": "Maniago"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-picap",
+    "name": "Pio Istituto Campana Azienda Pubblica di Servizi alla Persona",
+    "regione": "Toscana",
+    "comune": "Seravezza"
+  },
+  {
+    "provider": "aws",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "mx_cname",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-pis_058",
+    "name": "Poste Italiane Spa",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-scss",
+    "name": "Societa' Canavesana Servizi Spa",
+    "regione": "Piemonte",
+    "comune": "Ivrea"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L37-sercom",
+    "name": "Servizi Comunali Spa",
+    "regione": "Lombardia",
+    "comune": "Sarnico"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L47-FIB31K6N",
+    "name": "Commissario ad acta art. 3, comma 3, D.L.150_2020",
+    "regione": "Calabria",
+    "comune": "Catanzaro"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L47-PYJ2GTZX",
+    "name": "Commissario straordinario per la valorizzazione energetica e la gestione del ciclo dei rifiuti nella Regione Siciliana",
+    "regione": "Sicilia",
+    "comune": "Palermo"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L47-csgiubt",
+    "name": "Commissario Straordinario per Gli Interventi Urgenti di Bonifica di Taranto",
+    "regione": "Puglia",
+    "comune": "Taranto"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L47-pracdaq",
+    "name": "PRESIDENTE REGIONE ABRUZZO - COMMISSARIO DISSESTO IDROGEOLOGICO",
+    "regione": "Abruzzo",
+    "comune": "L'Aquila"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L7-ASL_TO4",
+    "name": "Azienda Sanitaria Locale TO4",
+    "regione": "Piemonte",
+    "comune": "Chivasso"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L7-as_PE",
+    "name": "Azienda USL Pescara",
+    "regione": "Abruzzo",
+    "comune": "Pescara"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L7-asl_bo",
+    "name": "Azienda USL di Bologna",
+    "regione": "Emilia-Romagna",
+    "comune": "Bologna"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L7-asl_lt",
+    "name": "Azienda USL Latina",
+    "regione": "Lazio",
+    "comune": "Latina"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L7-atsm",
+    "name": "Agenzia di Tutela della Salute della Montagna",
+    "regione": "Lombardia",
+    "comune": "Sondrio"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L7-atspv",
+    "name": "Agenzia di Tutela della Salute di Pavia",
+    "regione": "Lombardia",
+    "comune": "Pavia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L8-IOR",
+    "name": "Istituto Ortopedico Rizzoli",
+    "regione": "Emilia-Romagna",
+    "comune": "Bologna"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L8-aopso_bo",
+    "name": "Azienda Ospedaliero-Universitaria di Bologna IRCCS Istituto di Ricerca e di Cura a Carattere Scientifico",
+    "regione": "Emilia-Romagna",
+    "comune": "Bologna"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L8-aou_ge",
+    "name": "IRCCS Azienda Ospedaliera Metropolitana",
+    "regione": "Liguria",
+    "comune": "Genova"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L8-asstlo",
+    "name": "Azienda Socio Sanitaria Territoriale di Lodi",
+    "regione": "Lombardia",
+    "comune": "Lodi"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L8-asstn",
+    "name": "Azienda Socio Sanitaria Territoriale Grande Ospedale Metropolitano Niguarda",
+    "regione": "Lombardia",
+    "comune": "Milano"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-L8-asstvo",
+    "name": "Azienda Socio Sanitaria Territoriale della Valle Olona",
+    "regione": "Lombardia",
+    "comune": "Busto Arsizio"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.45,
+    "label": "moderate",
+    "signals": [
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-PRO-123395",
+    "name": "Provincia di Verona",
+    "regione": "Veneto",
+    "comune": "Verona"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-PRO-699440",
+    "name": "Provincia di Mantova",
+    "regione": "Lombardia",
+    "comune": "Mantova"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.75,
+    "label": "strong",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-PRO-702462",
+    "name": "Provincia di Como",
+    "regione": "Lombardia",
+    "comune": "Como"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-REG-17977853",
+    "name": "Regione Calabria",
+    "regione": "Calabria",
+    "comune": "Catanzaro"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-REG-701101",
+    "name": "Regione Abruzzo",
+    "regione": "Abruzzo",
+    "comune": "L'Aquila"
+  },
+  {
+    "provider": "aws",
+    "score": 0.15,
+    "label": "weak",
+    "signals": [
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-S01-asscu",
+    "name": "Abruzzo Sviluppo Spa Con Unico Socio",
+    "regione": "Abruzzo",
+    "comune": "Pescara"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-S01-tnspa",
+    "name": "Trentino Sviluppo S.P.A.",
+    "regione": "Trentino-Alto Adige",
+    "comune": "Rovereto"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-84IX3L0P",
+    "name": "CONSORZIO INDUSTRIALE PROVINCIALE DI CAGLIARI",
+    "regione": "Sardegna",
+    "comune": null
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-BGK42KE5",
+    "name": "RAI - RADIOTELEVISIONE ITALIANA S.P.A.",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-CV1LIPNQ",
+    "name": "Scuola nazionale del patrimonio e delle attività culturali",
+    "regione": "Lazio",
+    "comune": "Roma"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-IF74V0C0",
+    "name": "SOCIETA' NOLANA PER IMPRESE ELETTRICHE - S.N.I.E. S.P.A.",
+    "regione": "Campania",
+    "comune": "Nola"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-ILZABIQR",
+    "name": "Start S.p.A.",
+    "regione": "Marche",
+    "comune": "Ascoli Piceno"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-MH1SG6PS",
+    "name": "ASMia S.r.l.",
+    "regione": "Lombardia",
+    "comune": "Mortara"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-MJSP89IF",
+    "name": "Azienda Servizi Mortara S.p.A.",
+    "regione": "Lombardia",
+    "comune": "Mortara"
+  },
+  {
+    "provider": "aws",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "mx_cname",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-OSB50GD5",
+    "name": "Associazione Irrigazione Est Sesia",
+    "regione": "Piemonte",
+    "comune": "Novara"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-TRYWP65W",
+    "name": "AUTOSTAZIONE DI BOLOGNA S.R.L.",
+    "regione": "Emilia-Romagna",
+    "comune": "Bologna"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-UANQS8JQ",
+    "name": "ASMare S.r.l.",
+    "regione": "Lombardia",
+    "comune": "Mortara"
+  },
+  {
+    "provider": "aws",
+    "score": 0.35,
+    "label": "weak",
+    "signals": [
+      "mx_cname",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-VZXHMF59",
+    "name": "Consorzio Irriguo Miglioramento Fondiario Angiono Foglietti",
+    "regione": "Piemonte",
+    "comune": "Villareggia"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-Z6I5EVZ8",
+    "name": "Consorzio di Bonifica Veronese",
+    "regione": "Veneto",
+    "comune": "Verona"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-cdctsc",
+    "name": "Consorzio Dei Comuni Trentini Societa' Cooperativa",
+    "regione": "Trentino-Alto Adige",
+    "comune": "Trento"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SA-trmark",
+    "name": "Trentino Marketing S.r.l.",
+    "regione": "Trentino-Alto Adige",
+    "comune": "Trento"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SAG-7HP3V1V6",
+    "name": "ALEA Ambiente SpA",
+    "regione": "Emilia-Romagna",
+    "comune": "Forlì"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SAG-9X4DJYVC",
+    "name": "Lereti S.p.A.",
+    "regione": "Lombardia",
+    "comune": "Como"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SAG-DEMNMOS8",
+    "name": "TPER S.p.A.",
+    "regione": "Emilia-Romagna",
+    "comune": "Bologna"
+  },
+  {
+    "provider": "microsoft",
+    "score": 0.65,
+    "label": "strong",
+    "signals": [
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SAG-ED28KAEQ",
+    "name": "ACEA ATO5 SPA",
+    "regione": "Lazio",
+    "comune": "Frosinone"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SAG-NK0O5Q85",
+    "name": "Navigazione Lago d'Iseo s.r.l. con socio unico",
+    "regione": "Lombardia",
+    "comune": "Costa Volpino"
+  },
+  {
+    "provider": "microsoft",
+    "score": 1.0,
+    "label": "definitive",
+    "signals": [
+      "dkim_cname",
+      "autodiscover_cname",
+      "spf_include",
+      "txt_verification",
+      "upstream_cloud_tenant_only"
+    ],
+    "bfs": "IT-SAG-WU7SOOU2",
+    "name": "AZIENDA TERRITORIALE PER L'EDILIZIA RESIDENZIALE DELLA REGIONE UMBRIA",
+    "regione": "Umbria",
+    "comune": "Terni"
+  }
+]

@@ -567,11 +567,17 @@ GATEWAY_KEYWORDS = {
     # NOTE: ASMECAL/ASMECAM/ASMENET/ASMEPEC and GVCC moved to
     # ITALIAN_REGIONAL_PUBLIC_KEYWORDS (those are publicly-owned consortia
     # of comuni, not third-party vendors).
-    "halley": ["halleylombardia.it", "halley.it", "halleynt.it", "halleyveneto.it"],
+    "halley": [
+        "halleylombardia.it",
+        "halley.it",
+        "halleynt.it",
+        "halleyveneto.it",
+        "mx.halley.it",
+    ],
     "ilger": ["ilger.com"],
     "demosdata": ["demosdata.it"],
-    "epublic": ["epublic.it"],
-    "sitek": ["si-tek.net"],
+    "epublic": ["epublic.it", "le.epublic.it"],  # ~359 MX use le.epublic.it
+    "sitek": ["si-tek.net", "mx.sitek.it"],  # add MX hostname variants
     "invallee": ["invallee.it"],
     "cliocom": ["cliocom.it"],
     "antispamsolution": ["antispamsolution.it"],
@@ -590,15 +596,50 @@ GATEWAY_KEYWORDS = {
     "iconto": ["iconto.it"],
     # Gap-analysis additions (mxmap.it post-launch): private Italian PA SaaS
     # gateways found in the "independent" residue.
-    "gecomail": ["gecomail.net", "gecom.it"],  # 432 entries
-    "vianova": ["vianova.it", "vi-pa.cloud"],  # 47+32 entries
-    "leonet": ["leonet.it"],  # 49 entries
-    "omitech": ["omitech.it"],  # 20 entries
-    "a2asmartcity": ["a2asmartcity.it"],  # 26 entries
-    "naquadria": ["naquadria.it"],
-    "host-it": ["host.it"],  # 105 entries (Italian hosting)
-    "interhost": ["interhost.it"],
-    "cbsolt": ["cbsolt.net"],  # 49 entries
+    "gecomail": ["gecomail.net", "gecom.it"],  # ~432 entries; MX = mail.gecomail.net
+    "interhost": [
+        "interhost.it",
+        "mx.sec.interhost.it",
+        "mxsec.interhost.it",
+        "leastigov.interhost.it",
+        "mxsecded.interhost.it",
+        "leshared1.interhost.it",
+    ],  # ~45 entries; MUST appear before host-it — "host.it" is a substring of "interhost.it"
+    "host-it": [
+        "host.it",
+        "mailgw01.host.it",
+        "mailgw02.host.it",
+        "mx.host.it",
+    ],  # ~180 entries; add MX variants for mailgw01/02
+    "cbsolt": ["cbsolt.net", "mx01.cbsolt.net", "mx02.cbsolt.net"],  # add MX variants
+    "vianova": [
+        "vianova.it",
+        "vi-pa.cloud",
+        "mail.vianova.it",
+    ],  # MX variant for some entries
+    # Gap-analysis additions (2026-06-17 round): gateways with stale data but
+    # no entry in this dict, so detect_gateway() regresses them to None.
+    # All four use Italian private ISP/hosting infrastructure as MX backend.
+    "leonet": [
+        "leonet.it",
+        "mx.leonet.it",
+        "mx02.leonet.it",
+    ],  # 48 entries (LeoNet / UAN Company — Tuscany ISP)
+    "a2asmartcity": [
+        "a2asmartcity.it",
+        "mx01.a2asmartcity.it",
+        "mx02.a2asmartcity.it",
+    ],  # 24 entries (A2A Smart City — Lombardy municipal IT)
+    "naquadria": [
+        "naquadria.it",
+        "mail-gw01.naquadria.it",
+    ],  # 18 entries (Naquadria — Italian MSP)
+    "omitech": [
+        "omitech.it",
+        "ot-mail.it",
+        "mailbox15.omitech.it",
+        "mx1.ot-mail.it",
+    ],  # 16 entries (Omitech — Italian PA contractor)
     # Censimento gateway non mappati (post issue #14, via
     # scripts/find_gateway_candidates.py): MX di terzi classificati
     # italiano/independent ma con backend cloud estero nello SPF + tenant
