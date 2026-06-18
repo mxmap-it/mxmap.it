@@ -346,6 +346,10 @@ MANUAL_OVERRIDES = {
     # CSI Piemonte: csipiemonte.it ha NULL MX (RFC 7505); la posta è su csi.it,
     # che risolve su csi-it.mail.protection.outlook.com → Microsoft 365.
     "IT-SA-csi_piem": {"domain": "csi.it"},
+    # ATC Roma 2 (Ambito Territoriale Caccia Roma 2): IndicePA espone la PEC
+    # (pec.net → mx.pec-email.com) come dominio — è posta certificata, non
+    # ordinaria. La posta ordinaria è su atcrm2.it (MX mx.atcrm2.it, Aruba).
+    "IT-SA-PFE26O18": {"domain": "atcrm2.it"},
 }
 
 
