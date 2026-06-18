@@ -407,6 +407,8 @@ const COLORS = {
   // Foreign minor senders
   'Zoho':                       '#7C3AED',
   'Yandex':                     '#FFCC00',
+  // Provider europei non italiani (eu_non_it) — blu UE
+  'Provider europeo':           '#1E5FB4',
   // Backwards-compatible aliases (in case some old code references the original keys)
   'Microsoft':                  '#D42E2E',
   'Google':                     '#FF6B6B',
@@ -431,6 +433,7 @@ const TIERS = {
   'Cloud Italiano (sovrano)': ['Cloud Italiano'],
   'Provider Italiano': ['Provider Italiano', 'Contractor PA privato'],
   'Infrastruttura autonoma': ['Infrastruttura autonoma', 'Mail provinciale condivisa'],
+  'Europeo (non IT)': ['Provider europeo'],
   'Altro': ['Zoho', 'Yandex', 'Sconosciuto'],
 };
 
@@ -2037,6 +2040,13 @@ const providerDisplayMap = {
   // Foreign minor (not Italian)
   'zoho':   'Zoho',
   'yandex': 'Yandex',
+  // Provider europei non italiani (mxmap.it#21) → collassati in "Provider europeo"
+  'ovh': 'Provider europeo',
+  'hetzner': 'Provider europeo',
+  'ionos': 'Provider europeo',
+  'scaleway': 'Provider europeo',
+  'gandi': 'Provider europeo',
+  'infomaniak': 'Provider europeo',
   'unknown': 'Sconosciuto',
 };
 

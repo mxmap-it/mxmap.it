@@ -63,6 +63,14 @@ def test_provider_to_sov4():
     assert provider_to_sov4("unknown") == "unknown"
 
 
+def test_provider_to_sov4_eu_non_it():
+    # provider europei non italiani → eu_non_it (mxmap.it#21)
+    for p in ("ovh", "hetzner", "ionos", "scaleway", "gandi", "infomaniak"):
+        assert provider_to_sov4(p) == "eu_non_it"
+    assert provider_to_sov4("zoho") == "extra_eu"  # estero NON europeo
+    assert provider_to_sov4("aruba") == "it"
+
+
 def test_eu_non_it_extension(monkeypatch):
     # punto di estensione: se un provider è marcato UE-non-IT, finisce in eu_non_it
     monkeypatch.setattr(kpi_mod, "EU_NON_IT_PROVIDERS", frozenset({"aruba"}))

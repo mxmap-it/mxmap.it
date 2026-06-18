@@ -30,6 +30,16 @@ ELKDATA_KEYWORDS = ["elkdata.ee"]
 ZOHO_KEYWORDS = ["zoho.com", "zoho.eu", "zoho.in", "zohocorp.com"]
 YANDEX_KEYWORDS = ["yandex.net", "yandex.ru"]
 
+# Provider europei NON italiani (UE + CH/UK trattati come europei per semplicità).
+# Vanno nel bucket Osservatorio "eu_non_it" (giurisdizione UE/europea: GDPR, no
+# CLOUD Act USA), non in "it" né "extra_eu". Vedi mxmap.it#21.
+OVH_KEYWORDS = ["ovh.net", "ovh.com", "ovhcloud"]  # 🇫🇷
+HETZNER_KEYWORDS = ["your-server.de", "hetzner"]  # 🇩🇪
+IONOS_KEYWORDS = ["ionos", "1and1", "kundenserver"]  # 🇩🇪
+SCALEWAY_KEYWORDS = ["scaleway", "scw.cloud"]  # 🇫🇷
+GANDI_KEYWORDS = ["gandi.net"]  # 🇫🇷
+INFOMANIAK_KEYWORDS = ["infomaniak"]  # 🇨🇭 (europeo non-UE, trattato come europeo)
+
 # Italian commercial providers (mxmap.it Phase 3 — see docs/countries/ITALY.md)
 ARUBA_KEYWORDS = [
     "aruba.it",
@@ -182,6 +192,13 @@ PROVIDER_KEYWORDS = {
     "telia": TELIA_KEYWORDS,
     "tet": TET_KEYWORDS,
     "elkdata": ELKDATA_KEYWORDS,
+    # Provider europei non italiani → bucket eu_non_it (mxmap.it#21)
+    "ovh": OVH_KEYWORDS,
+    "hetzner": HETZNER_KEYWORDS,
+    "ionos": IONOS_KEYWORDS,
+    "scaleway": SCALEWAY_KEYWORDS,
+    "gandi": GANDI_KEYWORDS,
+    "infomaniak": INFOMANIAK_KEYWORDS,
     # Italian commercial providers
     "aruba": ARUBA_KEYWORDS,
     "register-it": REGISTER_IT_KEYWORDS,

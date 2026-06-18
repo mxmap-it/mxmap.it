@@ -98,6 +98,13 @@ PROVIDER_DISPLAY = {
     # Foreign minor
     "zoho": "Zoho",
     "yandex": "Yandex",
+    # Provider europei non italiani (mxmap.it#21) — collassati in "Provider europeo"
+    "ovh": "Provider europeo",
+    "hetzner": "Provider europeo",
+    "ionos": "Provider europeo",
+    "scaleway": "Provider europeo",
+    "gandi": "Provider europeo",
+    "infomaniak": "Provider europeo",
     "unknown": "Sconosciuto",
 }
 
@@ -107,13 +114,15 @@ COLORS = {
     "Google Workspace": "#FF6B6B",
     "AWS": "#FF8C42",
     # Italian palette — green family
-    "Cloud Italiano": "#009246",         # Italian flag green (sovereign)
-    "Provider Italiano": "#2E7D32",      # commercial Italian
+    "Cloud Italiano": "#009246",  # Italian flag green (sovereign)
+    "Provider Italiano": "#2E7D32",  # commercial Italian
     "Infrastruttura autonoma": "#558B2F",
     "Mail provinciale condivisa": "#7CB342",
     # Foreign minor
     "Zoho": "#7C3AED",
     "Yandex": "#FFCC00",
+    # Provider europei non italiani (eu_non_it) — blu UE
+    "Provider europeo": "#1E5FB4",
     # Backwards-compatible aliases
     "Microsoft": "#D42E2E",
     "Google": "#FF6B6B",
@@ -281,39 +290,51 @@ def build_region_data(munis: dict, generated: str) -> dict:
     for cc, cd in countries.items():
         for region_name, rd in cd.get("regions", {}).items():
             if rd["popTotal"] > rd["count"]:
-                rd["blendedColor"] = blend_provider_colors(rd["popProviders"], rd["popTotal"])
+                rd["blendedColor"] = blend_provider_colors(
+                    rd["popProviders"], rd["popTotal"]
+                )
             else:
                 rd["blendedColor"] = blend_provider_colors(rd["providers"], rd["count"])
             top = sorted(rd["providers"].items(), key=lambda kv: -kv[1])
             rd["dominant"] = top[0][0] if top else "Unknown"
-            rd["dominance"] = (top[0][1] / rd["count"]) if (top and rd["count"]) else 0.0
+            rd["dominance"] = (
+                (top[0][1] / rd["count"]) if (top and rd["count"]) else 0.0
+            )
         for district_name, dd in cd.get("districts", {}).items():
             if dd["popTotal"] > dd["count"]:
-                dd["blendedColor"] = blend_provider_colors(dd["popProviders"], dd["popTotal"])
+                dd["blendedColor"] = blend_provider_colors(
+                    dd["popProviders"], dd["popTotal"]
+                )
             else:
                 dd["blendedColor"] = blend_provider_colors(dd["providers"], dd["count"])
             top = sorted(dd["providers"].items(), key=lambda kv: -kv[1])
             dd["dominant"] = top[0][0] if top else "Unknown"
-            dd["dominance"] = (top[0][1] / dd["count"]) if (top and dd["count"]) else 0.0
+            dd["dominance"] = (
+                (top[0][1] / dd["count"]) if (top and dd["count"]) else 0.0
+            )
         # Country-level blended color
         if cd["popTotal"] > cd["total"]:
-            cd["blendedColor"] = blend_provider_colors(cd["popProviders"], cd["popTotal"])
+            cd["blendedColor"] = blend_provider_colors(
+                cd["popProviders"], cd["popTotal"]
+            )
         else:
             cd["blendedColor"] = blend_provider_colors(cd["providers"], cd["total"])
         sorted_providers = sorted(cd["providers"].items(), key=lambda x: -x[1])
         cd["dominant"] = sorted_providers[0][0] if sorted_providers else "Unknown"
 
         for rname, rd in cd["regions"].items():
-            sorted_providers = sorted(
-                rd["providers"].items(), key=lambda x: -x[1]
-            )
+            sorted_providers = sorted(rd["providers"].items(), key=lambda x: -x[1])
             rd["dominant"] = sorted_providers[0][0] if sorted_providers else "Unknown"
-            rd["dominance"] = round(
-                sorted_providers[0][1] / rd["count"], 3
-            ) if sorted_providers else 0
+            rd["dominance"] = (
+                round(sorted_providers[0][1] / rd["count"], 3)
+                if sorted_providers
+                else 0
+            )
             # Use population-weighted color if we have real population data
             if rd["popTotal"] > rd["count"]:
-                rd["blendedColor"] = blend_provider_colors(rd["popProviders"], rd["popTotal"])
+                rd["blendedColor"] = blend_provider_colors(
+                    rd["popProviders"], rd["popTotal"]
+                )
             else:
                 rd["blendedColor"] = blend_provider_colors(rd["providers"], rd["count"])
 
@@ -332,8 +353,10 @@ def build_region_data(munis: dict, generated: str) -> dict:
             # (~8K points = ~1MB) — kept inline because the user's intent
             # is to see them on the map, not lazy-load.
             countries["IT"]["istruzione_points"] = ist.get("points", [])
-            print(f"  IT istruzione: {ist.get('total_schools')} schools across "
-                  f"{ist.get('comuni_with_schools')} comuni")
+            print(
+                f"  IT istruzione: {ist.get('total_schools')} schools across "
+                f"{ist.get('comuni_with_schools')} comuni"
+            )
         except Exception as e:
             print(f"  WARN: cannot load it_istruzione_by_comune.json: {e!r}")
 
@@ -354,8 +377,10 @@ def _assert_it_geo_coverage(munis: dict) -> None:
     for field, livello in (("regione", "Regioni"), ("provincia", "Province")):
         missing = [m.get("bfs") for m in it if not m.get(field)]
         cov = 100 * (len(it) - len(missing)) / len(it)
-        print(f"  IT {livello} coverage ({field}): {cov:.1f}% "
-              f"({len(it) - len(missing)}/{len(it)})")
+        print(
+            f"  IT {livello} coverage ({field}): {cov:.1f}% "
+            f"({len(it) - len(missing)}/{len(it)})"
+        )
         if missing:
             sample = ", ".join(str(b) for b in missing[:5])
             print(
@@ -403,6 +428,7 @@ def main():
     # Per-method counts across IT enti — also gets used in the methodology
     # page table. Keep alongside data/reports/ so it's served statically.
     from collections import Counter as _Counter
+
     _disc = _Counter()
     _disc_total = 0
     for _m in munis.values():
@@ -413,8 +439,12 @@ def main():
     _disc_out = ROOT / "data" / "reports" / "mx_discovery_stats.json"
     _disc_out.parent.mkdir(parents=True, exist_ok=True)
     with open(_disc_out, "w", encoding="utf-8") as f:
-        json.dump({"total": _disc_total, "by_method": dict(_disc)}, f,
-                  ensure_ascii=False, indent=2)
+        json.dump(
+            {"total": _disc_total, "by_method": dict(_disc)},
+            f,
+            ensure_ascii=False,
+            indent=2,
+        )
     print(f"  mx_discovery_stats.json: {_disc_total} enti, {len(_disc)} metodi")
 
     # Write region-level aggregations (lightweight, loaded first)
@@ -436,8 +466,17 @@ def main():
         entry = {k: m[k] for k in SUMMARY_FIELDS if k in m}
         entry["has_mx"] = len(m.get("mx", [])) > 0
         # Add detail fields needed for drill-down
-        for field in ("mx", "reason", "gateway", "spf", "autodiscover",
-                      "dkim", "txt_verifications", "tenant", "smtp_software"):
+        for field in (
+            "mx",
+            "reason",
+            "gateway",
+            "spf",
+            "autodiscover",
+            "dkim",
+            "txt_verifications",
+            "tenant",
+            "smtp_software",
+        ):
             if m.get(field):
                 entry[field] = m[field]
         by_country.setdefault(cc, []).append(entry)
@@ -447,7 +486,9 @@ def main():
         with open(cc_path, "w", encoding="utf-8") as f:
             json.dump(entries, f, separators=(",", ":"), ensure_ascii=False)
         total_country_size += cc_path.stat().st_size
-    print(f"  data/summary/*.json: {len(by_country)} files, {total_country_size:,} bytes total")
+    print(
+        f"  data/summary/*.json: {len(by_country)} files, {total_country_size:,} bytes total"
+    )
 
     # Write summary
     summary_out = ROOT / "data-summary.json"

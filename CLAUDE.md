@@ -19,7 +19,7 @@ The classifier above (92 countries) is the inherited infrastructure; **since 202
 ### The sovereignty model (single source of truth)
 - `sovereignty_of(provider)` + `material_row(entity)` in [`historicize.py`](src/mail_sovereignty/historicize.py) are **canonical** — `stats`, `kpi`, `report` all reuse them. **Never re-derive sovereignty elsewhere.**
 - **6 MxMap buckets:** `USA (CLOUD Act)`, `Altri provider esteri`, `Italia — Cloud sovrano`, `Italia — Provider commerciali`, `Italia — Infrastruttura autonoma`, `Sconosciuto`.
-- **4 Osservatorio buckets** (`kpi.provider_to_sov4`): `extra_eu` (USA + non-EU foreign), `eu_non_it` (empty today — extension point `EU_NON_IT_PROVIDERS` for OVH/Hetzner/…), `it` (the 3 Italian buckets), `unknown`.
+- **4 Osservatorio buckets** (`kpi.provider_to_sov4`): `extra_eu` (USA + non-European foreign, e.g. Zoho/Yandex), `eu_non_it` (European non-IT providers — OVH, Hetzner, IONOS, Scaleway, Gandi, Infomaniak; CH/UK counted as European for simplicity — via `EU_NON_IT_PROVIDERS`, [#21](https://github.com/mxmap-it/mxmap.it/issues/21)), `it` (the 3 Italian buckets), `unknown`. In the 6-bucket model these European providers sit in `Altri provider esteri`; the `eu_non_it`/`extra_eu` split happens only in the 4-bucket.
 - **ISD — Indice di Sovranità Digitale:** % entities under Italian jurisdiction, computed **over classified** (unknowns excluded), on **provider sovereignty** (legal control). `mx_jurisdiction` (where the MX physically sits) is a **complementary technical** indicator — the gap between the two is itself a finding.
 
 ### Two segmentation axes

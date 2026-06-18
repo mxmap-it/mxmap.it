@@ -34,15 +34,18 @@ from mail_sovereignty.stats import (
 # Bucket di sovranità a 4 valori dell'Osservatorio (chiave → etichetta IT).
 SOV4_LABELS = {
     "extra_eu": "Extra-UE (CLOUD Act)",
-    "eu_non_it": "UE (non italiano)",
+    "eu_non_it": "Europeo (non italiano)",
     "it": "Italiano",
     "unknown": "Sconosciuto",
 }
 
-# Provider con sede legale in UE ma non Italia. OGGI VUOTO: nessun provider del
-# dataset è classificato così. Punto di estensione: aggiungere qui le chiavi
-# provider quando si distingueranno (es. "ovh", "hetzner", "ionos", "scaleway").
-EU_NON_IT_PROVIDERS: frozenset[str] = frozenset()
+# Provider europei NON italiani → bucket eu_non_it (giurisdizione europea: GDPR,
+# no CLOUD Act USA). UE + CH/UK trattati come "europei" per semplicità. Vedi
+# mxmap.it#21. In 6-bucket (historicize) stanno in "Altri provider esteri"; qui
+# il check (primo in provider_to_sov4) li separa da extra_eu (USA + non-europei).
+EU_NON_IT_PROVIDERS: frozenset[str] = frozenset(
+    {"ovh", "hetzner", "ionos", "scaleway", "gandi", "infomaniak"}
+)
 
 # Etichette cluster citizen-friendly (mirror di data/it_citizen_clusters.json),
 # keyed sulle chiavi cluster di stats.CLUSTERS.

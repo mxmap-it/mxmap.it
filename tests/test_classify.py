@@ -51,6 +51,13 @@ class TestClassify:
     def test_aws_mx(self):
         assert provider(classify(["inbound-smtp.us-east-1.amazonaws.com"], "")) == "aws"
 
+    def test_ovh_eu_provider(self):
+        # provider europeo non italiano (mxmap.it#21), non più local-isp/italiano
+        assert provider(classify(["mx1.mail.ovh.net"], "")) == "ovh"
+
+    def test_hetzner_eu_provider(self):
+        assert provider(classify(["dedivirt1171.your-server.de"], "")) == "hetzner"
+
     def test_independent_mx(self):
         assert provider(classify(["mail.example.ee"], "")) == "independent"
 

@@ -62,7 +62,7 @@ La classificazione canonica è `sovereignty_of()` / `material_row()` in
 verità**, riusata da stats, kpi e report.
 
 - **6 bucket MxMap:** `USA (CLOUD Act)` · `Altri provider esteri` · `Italia — Cloud sovrano` · `Italia — Provider commerciali` · `Italia — Infrastruttura autonoma` · `Sconosciuto`.
-- **4 bucket Osservatorio** (`kpi.provider_to_sov4`): `extra_eu` · `eu_non_it` (oggi vuoto, punto di estensione per OVH/Hetzner…) · `it` · `unknown`.
+- **4 bucket Osservatorio** (`kpi.provider_to_sov4`): `extra_eu` (USA + esteri non europei) · `eu_non_it` (provider europei non italiani: OVH, Hetzner, IONOS, Scaleway, Gandi, Infomaniak; CH/UK contati come europei) · `it` · `unknown`.
 - **ISD — Indice di Sovranità Digitale:** % enti in giurisdizione italiana, **sui classificati**, basato sulla sovranità del *provider* (controllo legale). `mx_jurisdiction` (dove risiede l'MX) è l'indicatore *tecnico* complementare — lo scarto fra i due è esso stesso un dato.
 
 ### 3. I due assi di lettura

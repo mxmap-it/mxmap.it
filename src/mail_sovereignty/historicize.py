@@ -45,6 +45,16 @@ PROVIDER_DISPLAY = {
     "istruzione-miur-tenant": "Microsoft 365",
     "zoho": "Zoho",
     "yandex": "Yandex",
+    # Provider europei non italiani (mxmap.it#21): collassati in un unico display
+    # "Provider europeo" (come gli italiani → "Provider Italiano"). La chiave grezza
+    # (ovh/hetzner/…) resta in data.json per audit; il bucket 4-valori eu_non_it usa
+    # le chiavi (EU_NON_IT_PROVIDERS), non il display.
+    "ovh": "Provider europeo",
+    "hetzner": "Provider europeo",
+    "ionos": "Provider europeo",
+    "scaleway": "Provider europeo",
+    "gandi": "Provider europeo",
+    "infomaniak": "Provider europeo",
     "unknown": "Sconosciuto",
 }
 
@@ -60,7 +70,9 @@ def sovereignty_of(provider: str) -> str:
         return "Italia — Provider commerciali"
     if disp == "Infrastruttura autonoma":
         return "Italia — Infrastruttura autonoma"
-    if disp in {"Zoho", "Yandex"}:
+    if disp in {"Zoho", "Yandex", "Provider europeo"}:
+        # estero non-USA (6-bucket). La distinzione UE vs extra-UE avviene nel
+        # 4-bucket Osservatorio via EU_NON_IT_PROVIDERS (kpi). mxmap.it#21.
         return "Altri provider esteri"
     return "Sconosciuto"
 

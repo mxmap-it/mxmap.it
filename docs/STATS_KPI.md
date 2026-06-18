@@ -228,8 +228,9 @@ per sostituire i placeholder `—%`.
   il bucket `unknown`). Sono due denominatori diversi: non confonderli mostrandoli come lo stesso
   numero. `assert_kpi_integrity` verifica entrambi.
 - **Mappatura 6→4 bucket** (a livello provider, `kpi.provider_to_sov4`):
-  `extra_eu` = USA (CLOUD Act) + esteri non-UE (zoho/yandex) · `eu_non_it` = `EU_NON_IT_PROVIDERS`
-  (oggi vuoto, punto di estensione per OVH/Hetzner/…) · `it` = i 3 bucket Italia · `unknown`.
+  `extra_eu` = USA (CLOUD Act) + esteri non europei (zoho/yandex) · `eu_non_it` =
+  `EU_NON_IT_PROVIDERS` (OVH, Hetzner, IONOS, Scaleway, Gandi, Infomaniak; CH/UK
+  contati come europei — mxmap.it#21) · `it` = i 3 bucket Italia · `unknown`.
 - **`usa_pct`** per cluster = quota del bucket *USA (CLOUD Act)* (include il tenant MIM delle
   scuole), più ampio del set `{microsoft,google,aws}` di `report_it_by_cluster.py`.
 - **Integrità:** `assert_kpi_integrity()` (somma bucket = enti, quote ~100, range, cluster = totale)
