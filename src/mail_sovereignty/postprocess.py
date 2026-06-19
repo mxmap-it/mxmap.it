@@ -354,6 +354,9 @@ MANUAL_OVERRIDES = {
     # posta ministeriale è su istruzione.it → istruzione-it.mail.protection.outlook.com
     # (Microsoft 365). Mappatura statica del dominio.
     "IT-C1-m_pi": {"domain": "istruzione.it"},
+    # Ministero della Salute: salute.gov.it ha NULL MX; la posta è su sanita.it
+    # → sanita-it.mail.protection.outlook.com (Microsoft 365). Mappatura statica.
+    "IT-C1-m_sa": {"domain": "sanita.it"},
 }
 
 
