@@ -10,8 +10,11 @@ missing or unparseable.
 
 Run: ``python3 scripts/build_sitemap.py`` (from the repo root).
 
-Wired into ``.github/workflows/nightly.yml`` (build step) and the ``smoke`` job
-in ``.github/workflows/ci.yml`` (regression guard).
+NOTE: in the pipeline the sitemap is now owned by ``build_entity_pages.py``,
+which writes a **sitemap index** + per-section children and reuses ``PAGES`` /
+``_lastmod`` from this module for the core child. This standalone script remains
+as that importable library and as a dev convenience (flat sitemap of the core
+pages); it is still import-checked by the ``smoke`` job in ``ci.yml``.
 """
 
 from __future__ import annotations

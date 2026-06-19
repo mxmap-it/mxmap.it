@@ -49,8 +49,16 @@ Le issue vivono nel repo MxMap: <https://github.com/mxmap-it/mxmap.it/issues>.
   Valida le classificazioni a bassa confidenza via smarthost + analisi NDR.
 
 ## Fase 5 — Fiducia & diagnostica
+- ✅ **Fatto — [#15] scheda per-ente + hub geografici (SEO).** [`scripts/build_entity_pages.py`](../scripts/build_entity_pages.py)
+  genera ~53k pagine statiche: una per ente (`/ente/{sigla-prov}/{nome-ente}/`) con tutti i dati di
+  rilevamento, verdetto di sovranità (riusa il modello canonico), affidabilità, **enti vicini** come
+  spinta reputazionale, e «Riporta un errore» → CTA **«Aiutaci a risolvere l'anomalia»** per anomalie/
+  bassa confidence; più hub regione/provincia/comune, facet per categoria, alias dominio e **sitemap a
+  indice** (`sitemap-enti-{regione}` ×20). URL deterministici/collision-free in
+  [`src/mail_sovereignty/pages.py`](../src/mail_sovereignty/pages.py) (unit-testati); git-ignored
+  (solo nell'artifact), coperto dal job `smoke`.
 - **[#6] Pagina di diagnostica** — mostra ogni dimensione di raccolta/classificazione da IndicePA in
-  poi, con un pulsante di **rendiconto problema** per ente. Si lega alla *scheda per-ente* + al
+  poi, con un pulsante di **rendiconto problema** per ente. Si lega alla *scheda per-ente* (#15) + al
   controllo "Segnala errore" pre-compilato (task #12).
 
 ## Fase 6 — Attivazione degli stakeholder (motore di advocacy)

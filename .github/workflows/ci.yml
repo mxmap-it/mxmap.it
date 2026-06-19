@@ -48,7 +48,7 @@ jobs:
             fetch_indicepa strip_to_it enrich_from_aoo_uo recover_it_unknowns finalize_it_unknowns
             cleanup_invalid_mx_attributions backfill_mx_discovery aggregate_istruzione_per_comune
             enrich_geo compute_confidence report_confidence report_anomalies build_frontend
-            build_public_dataset build_stats build_kpi build_report build_sitemap historicize build_dcat
+            build_public_dataset build_stats build_kpi build_report build_sitemap build_entity_pages historicize build_dcat
           """.split()
           # Guardia: un import non deve fare I/O. Se un modulo "appende" (es. rete a
           # livello di modulo) lo facciamo fallire in 30s invece di bloccare la CI.
@@ -91,6 +91,8 @@ jobs:
           uv run python3 scripts/build_stats.py --country IT
           uv run python3 scripts/build_kpi.py --country IT
           uv run python3 scripts/build_report.py --country IT
-          uv run python3 scripts/build_sitemap.py
+          # SEO pages (#15): subset for speed — exercises entity/hub/category/alias
+          # rendering + sitemap-index + integrity assertions without 48k files.
+          uv run python3 scripts/build_entity_pages.py --country IT --limit 300
           uv run python3 scripts/historicize.py --run-id ci-smoke --git-sha "${GITHUB_SHA}" --pipeline-version ci-smoke
           uv run python3 scripts/build_dcat.py

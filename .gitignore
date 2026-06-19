@@ -222,3 +222,15 @@ __marimo__/
 config/bounce.toml
 config/*.local.toml
 tmp/
+
+# mxmap.it — pagine SEO per-ente/area/categoria/dominio generate da
+# scripts/build_entity_pages.py (#15). Migliaia di file: NON nel git, solo
+# nell'artifact Pages (deploy disaccoppiato dal commit — vedi CLAUDE.md).
+# Anche i sitemap (index + figli) sono rigenerati a ogni run.
+/ente/
+/aree/
+/dominio/
+/categoria/
+/sitemap.xml
+/sitemap-*.xml
+_scratch/

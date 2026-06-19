@@ -6,7 +6,7 @@
 
 Motore dati dell'**[Osservatorio Nazionale Sovranità Digitale](https://github.com/mxmap-it/osservatorio-nazionale-sovranita-digitale)**.
 Classifica, tramite **analisi DNS pubblica** (record MX, SPF, DKIM, CNAME), *chi gestisce
-la posta elettronica* di **~22.987 enti** della Pubblica Amministrazione italiana
+la posta elettronica* di **~23.000 enti** della Pubblica Amministrazione italiana
 (registrati in IndicePA) e ne misura la **sovranità**: italiana, UE o **extra-UE soggetta
 al CLOUD Act** statunitense. Ne produce una mappa interattiva, statistiche, un report e dati aperti.
 
@@ -80,7 +80,29 @@ verità**, riusata da stats, kpi e report.
 | [`report.html`](https://mxmap.it/report.html) | Report stile management-consulting (grafici a torta, raccomandazioni, metodologia in calce). |
 | `storia.html` | Andamento nel tempo *(gated: parte dal run #1)*. |
 | `dist/mxmap_it_dataset.{csv,json,xlsx}` | Dataset completo opendata. |
-| [`sitemap.xml`](https://mxmap.it/sitemap.xml) · `robots.txt` · `site.webmanifest` | SEO. Il sitemap è **rigenerato ogni notte** da [`scripts/build_sitemap.py`](scripts/build_sitemap.py) (`<lastmod>` = `generated_at` di `kpi.json`, così resta manutenuto nel tempo); `robots.txt`/manifest sono statici. Le pagine portano `<meta>` keywords/canonical e `index.html` espone JSON-LD (`WebSite`/`Organization`/`Dataset`, alternateName *MxMap Italia*) per Google Dataset Search. |
+| `/ente/{prov}/{nome}/` · `/aree/…` · `/categoria/…` | **~53.000 pagine SEO** (#15): una per ente con tutti i dati di rilevamento + hub regione/provincia/comune + facet per categoria. Git-ignored, solo nell'artifact. Vedi sotto. |
+| [`sitemap.xml`](https://mxmap.it/sitemap.xml) · `robots.txt` · `site.webmanifest` | SEO. `sitemap.xml` è un **indice** rigenerato ogni notte da [`scripts/build_entity_pages.py`](scripts/build_entity_pages.py) (`<lastmod>` = `generated_at` di `kpi.json`); `robots.txt`/manifest sono statici. Le pagine portano `<meta>` keywords/canonical; `index.html` espone JSON-LD (`WebSite`/`Organization`/`Dataset`, alternateName *MxMap Italia*) per Google Dataset Search. |
+
+### 5. Pagine per ente e hub geografici (SEO aggressivo — #15)
+
+[`scripts/build_entity_pages.py`](scripts/build_entity_pages.py) genera, a ogni
+nightly, **una pagina statica per ogni ente** (`/ente/{sigla-prov}/{nome-ente}/`)
+con il verdetto di sovranità (6- e 4-bucket, **riusando** `sovereignty_of` /
+`provider_to_sov4`), le evidenze DNS (MX/SPF/DKIM/autodiscover/ASN), l'affidabilità
+(`classification_confidence` + regola + segnali), lo storico (gated) e gli **enti
+vicini** come spinta reputazionale (#15). Più gli **hub geografici** (regione →
+provincia → comune, con ISD e league-table) e le **facet per categoria**. Ogni
+pagina ha il pulsante *«Riporta un errore»*; per gli enti **anomali / a bassa
+confidence** diventa la CTA enfatizzata *«Aiutaci a risolvere l'anomalia»*.
+
+- **URL**: nome completo dell'ente, namespace per provincia, slug deterministici
+  e **collision-free** (0 collisioni su 22.987 enti); stabili nel tempo.
+- **Sitemap a indice**: `sitemap.xml` → `sitemap-core/aree/categorie` +
+  `sitemap-enti-{regione}.xml` (20 file) — dà in pasto ai motori *tutta* l'Italia.
+- **Manutenibilità**: ~53.000 file generati in ~50 s, **git-ignored** (solo
+  nell'artifact Pages, deploy disaccoppiato dal git), coperti dal job `smoke`
+  (subset). Logica URL pura in [`src/mail_sovereignty/pages.py`](src/mail_sovereignty/pages.py)
+  con unit-test, integrity-assert a fine generazione.
 
 ## Dati aperti — download (sempre l'ultima versione)
 
