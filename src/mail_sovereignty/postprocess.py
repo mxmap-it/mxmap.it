@@ -350,6 +350,10 @@ MANUAL_OVERRIDES = {
     # (pec.net → mx.pec-email.com) come dominio — è posta certificata, non
     # ordinaria. La posta ordinaria è su atcrm2.it (MX mx.atcrm2.it, Aruba).
     "IT-SA-PFE26O18": {"domain": "atcrm2.it"},
+    # Ministero dell'istruzione e del merito (MIM): mim.gov.it ha NULL MX; la
+    # posta ministeriale è su istruzione.it → istruzione-it.mail.protection.outlook.com
+    # (Microsoft 365). Mappatura statica del dominio.
+    "IT-C1-m_pi": {"domain": "istruzione.it"},
 }
 
 
