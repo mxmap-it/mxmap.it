@@ -21,6 +21,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      # Le pagine SEO per-ente/area/categoria + i sitemap (#15) sono GIT-IGNORED
+      # (artifact-only): vanno rigenerate qui dai dati COMMITTATI (data.json /
+      # data-detail.json / kpi.json dell'ultima nightly) prima dell'upload, così
+      # un deploy-on-push include l'intero albero /ente /aree /categoria /dominio
+      # + sitemap.xml e non lascia 404. Stesso generatore della nightly.
+      - uses: astral-sh/setup-uv@v7
+      - run: uv python install 3.13
+      - run: uv sync
+      - name: Build per-entity & area SEO pages + sitemap index (#15)
+        run: uv run python3 scripts/build_entity_pages.py --country IT
       - uses: actions/upload-pages-artifact@v4
         with:
           path: .
