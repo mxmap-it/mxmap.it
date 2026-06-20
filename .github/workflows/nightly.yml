@@ -254,10 +254,15 @@ jobs:
           # Pubblica sul tip di main ANCHE se main è avanzato durante il run:
           # fetch+rebase+push con retry. In caso di conflitto vince la versione
           # appena costruita (`rebase -X theirs`), i dati essendo deterministici.
+          # --autostash: la pipeline lascia il working tree sporco (file tracciati
+          # NON nella lista del commit — es. uv.lock toccato da `uv sync`, cache).
+          # Senza autostash il rebase moriva con "cannot rebase: You have unstaged
+          # changes" a OGNI run (#10). autostash le mette da parte e le riapplica,
+          # senza committarle.
           for attempt in 1 2 3 4 5; do
             git fetch origin main || { echo "fetch fallito (tentativo $attempt)"; sleep 5; continue; }
-            if ! git rebase -X theirs origin/main; then
-              echo "rebase non risolvibile: abort e retry (tentativo $attempt)"
+            if ! git rebase --autostash -X theirs origin/main; then
+              echo "rebase in conflitto reale: abort e retry (tentativo $attempt)"
               git rebase --abort || true
               sleep 5; continue
             fi
