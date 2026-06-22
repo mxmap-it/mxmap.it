@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main, baltic]
+  workflow_dispatch: # redeploy manuale (es. dopo un cambio di config Pages)
 
 permissions:
   contents: read
@@ -21,6 +22,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      # IMPORTANTE: GitHub Pages DEVE restare in modalità "GitHub Actions"
+      # (build_type=workflow). Se Pages torna in modalità "legacy/branch" serve i
+      # SOLI file committati su main → l'intero albero #15 (git-ignored) va 404.
+      # configure-pages riafferma la modalità Actions a ogni deploy (idempotente).
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       # Le pagine SEO per-ente/area/categoria + i sitemap (#15) sono GIT-IGNORED
       # (artifact-only): vanno rigenerate qui dai dati COMMITTATI (data.json /
       # data-detail.json / kpi.json dell'ultima nightly) prima dell'upload, così
