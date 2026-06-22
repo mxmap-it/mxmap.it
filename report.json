@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T10:07:06Z",
+  "generated_at": "2026-06-22T10:37:57Z",
   "run_id": null,
   "edition": "giugno 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -12,10 +12,10 @@
       "kind": "executive",
       "findings": [
         "Il 47.9% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
-        "I provider italiani restano la prima scelta (51.53%), ma frammentati.",
-        "Scarto tra controllo legale (51.53%) e collocazione tecnica dell'MX (domestico 46.27%): è esso stesso un segnale.",
+        "I provider italiani restano la prima scelta (51.54%), ma frammentati.",
+        "Scarto tra controllo legale (51.54%) e collocazione tecnica dell'MX (domestico 46.27%): è esso stesso un segnale.",
         "Settori più esposti al CLOUD Act: Istruzione 77.98% · Sanità 63.16% · Ricerca 56.72%.",
-        "Divario territoriale: Molise guida la sovranità (ISD 73.23%), Veneto è la più esposta al CLOUD Act (60.47%)."
+        "Divario territoriale: Molise guida la sovranità (ISD 73.23%), Veneto è la più esposta al CLOUD Act (60.44%)."
       ],
       "metrics": [
         {
@@ -24,7 +24,7 @@
         },
         {
           "label": "Sovranità italiana (ISD)",
-          "value": "51.53%"
+          "value": "51.54%"
         },
         {
           "label": "Soggette al CLOUD Act",
@@ -32,7 +32,7 @@
         },
         {
           "label": "Copertura del dato",
-          "value": "97.3%"
+          "value": "97.29%"
         }
       ],
       "recommendations": [
@@ -74,13 +74,13 @@
           "key": "extra_eu",
           "label": "Extra-UE (CLOUD Act)",
           "pct": 46.6,
-          "count": 10665
+          "count": 10664
         },
         {
           "key": "unknown",
           "label": "Sconosciuto",
           "pct": 2.7,
-          "count": 618
+          "count": 619
         }
       ],
       "top_providers": [
@@ -92,7 +92,7 @@
         },
         {
           "name": "Google Workspace",
-          "count": 6394,
+          "count": 6393,
           "pct": 27.9,
           "sovereignty": "extra_eu"
         },
@@ -116,7 +116,7 @@
         },
         {
           "name": "Sconosciuto",
-          "count": 618,
+          "count": 619,
           "pct": 2.7,
           "sovereignty": "unknown"
         },
@@ -147,7 +147,7 @@
         },
         {
           "key": "foreign",
-          "count": 11348,
+          "count": 11347,
           "pct": 49.6
         },
         {
@@ -157,13 +157,13 @@
         },
         {
           "key": "unknown",
-          "count": 687,
-          "pct": 3.0
+          "count": 688,
+          "pct": 3.01
         }
       ],
       "market": {
-        "top3_pct": 67.17,
-        "hhi": 1876.1
+        "top3_pct": 67.16,
+        "hhi": 1875.6
       }
     },
     {
@@ -210,8 +210,8 @@
         {
           "cluster": "Welfare, ASP/IPAB e case popolari",
           "n_entities": 463,
-          "usa_pct": 30.25,
-          "isd": 69.28
+          "usa_pct": 30.09,
+          "isd": 69.44
         },
         {
           "cluster": "Ambiente, parchi e bacini",
@@ -404,8 +404,8 @@
         {
           "regione": "Veneto",
           "n": 1664,
-          "isd": 39.04,
-          "usa_pct": 60.47
+          "isd": 39.06,
+          "usa_pct": 60.44
         }
       ],
       "macroaree": [
@@ -430,8 +430,8 @@
         {
           "macroarea": "Nord",
           "n": 10812,
-          "isd": 47.55,
-          "usa_pct": 51.87
+          "isd": 47.56,
+          "usa_pct": 51.86
         }
       ],
       "most_sovereign": {
@@ -441,8 +441,8 @@
       },
       "most_exposed": {
         "regione": "Veneto",
-        "isd": 39.04,
-        "usa_pct": 60.47
+        "isd": 39.06,
+        "usa_pct": 60.44
       },
       "note": "Sovranità per regione e macroarea: dato territoriale ricostruito dal crosswalk ufficiale ISTAT sul comune-sede di ogni ente (copertura 100%), non dal campo territoriale sporco di IndicePA (vedi mxmap.it#2)."
     },
@@ -454,7 +454,7 @@
       "series": [
         {
           "date": "2026-06",
-          "isd": 51.53
+          "isd": 51.54
         }
       ],
       "note": "Monitoraggio appena avviato: la serie storica parte da questa edizione; i trend compariranno dai prossimi rilevamenti."
@@ -463,8 +463,8 @@
       "id": "metodologia",
       "title": "Metodologia, limiti e dati aperti",
       "kind": "methodology",
-      "coverage_pct": 97.3,
-      "mean_confidence": 0.8502,
+      "coverage_pct": 97.29,
+      "mean_confidence": 0.8501,
       "limits": "IndicePA non è una base dati pulita da cui inferire in modo immediato e senza rielaborazioni i domini email (non-PEC) degli enti: la bonifica continua è una dipendenza funzionale core, tracciata in mxmap.it#2.",
       "license": "CC BY-SA 4.0"
     }

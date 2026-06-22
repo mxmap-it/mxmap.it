@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-06-21T10:07:06Z",
+  "generated_at": "2026-06-22T10:37:56Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
     "n_entities": 22877,
-    "n_with_mx": 22259,
-    "coverage_pct": 97.3
+    "n_with_mx": 22258,
+    "coverage_pct": 97.29
   },
   "indices": {
-    "isd": 51.53,
+    "isd": 51.54,
     "cloud_act_pct": 47.9,
-    "n_classified": 22259
+    "n_classified": 22258
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10665,
+      "count": 10664,
       "pct": 46.6,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -30,7 +30,7 @@
       "label": "Italiano"
     },
     "unknown": {
-      "count": 618,
+      "count": 619,
       "pct": 2.7,
       "label": "Sconosciuto"
     }
@@ -44,7 +44,7 @@
     },
     {
       "name": "Google Workspace",
-      "count": 6394,
+      "count": 6393,
       "pct": 27.9,
       "sovereignty": "extra_eu"
     },
@@ -68,7 +68,7 @@
     },
     {
       "name": "Sconosciuto",
-      "count": 618,
+      "count": 619,
       "pct": 2.7,
       "sovereignty": "unknown"
     },
@@ -131,7 +131,7 @@
     {
       "cluster": "Welfare e politiche sociali",
       "n_entities": 463,
-      "usa_pct": 28.3,
+      "usa_pct": 28.1,
       "dominant_provider": "Provider Italiano"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8502,
+    "mean": 0.8501,
     "high_pct": 91.6
   }
 }

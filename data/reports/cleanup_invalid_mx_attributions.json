@@ -1,5 +1,5 @@
 {
-  "n_purged": 504,
+  "n_purged": 505,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -3927,6 +3927,17 @@
       "old_mx": "mailbox15.omitech.it",
       "old_provider": "microsoft",
       "old_reason": "MX is omitech gateway; MS365 tenant detected (Managed)"
+    },
+    {
+      "id": "IT-L34-iavvmcr",
+      "name": "Ipab Associazione Volontariato Villaggio Marino Ca' Roman",
+      "codice_ipa": "iavvmcr",
+      "seed_domain": "villaggiocaroman.weebly.com",
+      "claimed_domain": "comune.padova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-padova-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-padova-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-L34-idb",

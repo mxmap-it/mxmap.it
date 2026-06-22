@@ -8,17 +8,17 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 
 | fascia | enti | % |
 |---|---:|---:|
-| 0.90-1.00 (molto alta) | 17286 | 75.6% |
-| 0.80-0.89 (alta) | 3659 | 16.0% |
+| 0.90-1.00 (molto alta) | 17284 | 75.6% |
+| 0.80-0.89 (alta) | 3660 | 16.0% |
 | 0.60-0.79 (media) | 1247 | 5.5% |
 | 0.01-0.59 (bassa) | 67 | 0.3% |
-| 0.00 (nulla / unknown) | 618 | 2.7% |
+| 0.00 (nulla / unknown) | 619 | 2.7% |
 
 ## 2. Confidenza media per provider
 
 | provider | enti | confidenza media | min | max |
 |---|---:|---:|---:|---:|
-| google | 6394 | 0.879 | 0.80 | 0.92 |
+| google | 6393 | 0.879 | 0.80 | 0.92 |
 | aruba | 5175 | 0.896 | 0.80 | 0.92 |
 | microsoft | 3382 | 0.928 | 0.80 | 0.96 |
 | independent | 3047 | 0.720 | 0.50 | 0.80 |
@@ -26,7 +26,7 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 | regional-public | 936 | 0.890 | 0.80 | 0.90 |
 | istruzione-miur-tenant | 880 | 0.960 | 0.96 | 0.96 |
 | register-it | 668 | 0.890 | 0.80 | 0.90 |
-| unknown | 618 | 0.000 | 0.00 | 0.00 |
+| unknown | 619 | 0.000 | 0.00 | 0.00 |
 | seeweb | 79 | 0.899 | 0.80 | 0.90 |
 | ovh | 77 | 0.900 | 0.90 | 0.90 |
 | hetzner | 31 | 0.900 | 0.90 | 0.90 |
@@ -41,11 +41,11 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 
 | regola | enti | % |
 |---|---:|---:|
-| `mx_spf` | 17286 | 75.6% |
-| `mx_only` | 1926 | 8.4% |
+| `mx_spf` | 17284 | 75.6% |
+| `mx_only` | 1927 | 8.4% |
 | `dom_mx_spf` | 1733 | 7.6% |
 | `frgn_mx_spf` | 988 | 4.3% |
-| `no_mx` | 618 | 2.7% |
+| `no_mx` | 619 | 2.7% |
 | `dom_mx_only` | 259 | 1.1% |
 | `frgn_mx_only` | 67 | 0.3% |
 
@@ -57,8 +57,8 @@ Dove risiede fisicamente il server di posta in entrata (Team Cymru ASN country):
 |---|---:|---:|
 | 🇮🇹 Domestica (IT) | 10586 | 46.3% |
 | Mista (IT + estero) | 256 | 1.1% |
-| 🌍 Estera | 11348 | 49.6% |
-| Sconosciuta | 687 | 3.0% |
+| 🌍 Estera | 11347 | 49.6% |
+| Sconosciuta | 688 | 3.0% |
 
 **Domestic MX override** applicato a **174** enti: classificati cloud (Microsoft/Google) per segnale tenant/DKIM, ma con MX in entrata self-hosted domestico → riclassificati `independent` (il tenant cloud riflette Teams/SharePoint, non la posta).
 
