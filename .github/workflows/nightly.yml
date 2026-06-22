@@ -259,23 +259,35 @@ jobs:
           # Senza autostash il rebase moriva con "cannot rebase: You have unstaged
           # changes" a OGNI run (#10). autostash le mette da parte e le riapplica,
           # senza committarle.
+          # Catturiamo stderr di ogni git per documentare la CAUSA REALE su #10
+          # (vedi auto-issue sotto), così ogni fallimento è auto-documentato.
+          DIAG="(nessun dettaglio catturato)"
           for attempt in 1 2 3 4 5; do
-            git fetch origin main || { echo "fetch fallito (tentativo $attempt)"; sleep 5; continue; }
-            if ! git rebase --autostash -X theirs origin/main; then
-              echo "rebase in conflitto reale: abort e retry (tentativo $attempt)"
-              git rebase --abort || true
-              sleep 5; continue
+            if ! out=$(git fetch origin main 2>&1); then
+              DIAG="fetch fallito (tentativo $attempt):"$'\n'"$out"; echo "$DIAG"; sleep 5; continue
             fi
-            if git push origin HEAD:main; then
+            if ! out=$(git rebase --autostash -X theirs origin/main 2>&1); then
+              DIAG="rebase fallito (tentativo $attempt):"$'\n'"$out"; echo "$DIAG"
+              git rebase --abort || true; sleep 5; continue
+            fi
+            if out=$(git push origin HEAD:main 2>&1); then
               echo "push ok al tentativo $attempt"; exit 0
             fi
-            echo "push rifiutato (main avanzato): retry (tentativo $attempt)"
-            sleep 5
+            DIAG="push rifiutato (tentativo $attempt):"$'\n'"$out"; echo "$DIAG"; sleep 5
           done
-          # Non più `::error`/exit fatale: con continue-on-error il job prosegue e
-          # il deploy avviene comunque. Segnaliamo (warning + outcome=failure) per
-          # far scattare l'auto-issue sotto.
-          echo "::warning::commit/push notturno fallito dopo 5 tentativi (deploy NON impattato)"; exit 1
+          # Tutti i tentativi falliti: il deploy NON è impattato (artifact). Segnaliamo
+          # (warning + outcome=failure) ed ESPORTIAMO una diagnostica (errore git +
+          # stato del working tree) così l'auto-issue documenta SEMPRE la causa su #10.
+          echo "::warning::commit/push notturno fallito dopo 5 tentativi (deploy NON impattato)"
+          {
+            echo "diag<<__DIAG_EOF__"
+            echo "**Ultimo errore git:**"
+            printf '```\n%s\n```\n' "$(echo "$DIAG" | head -20)"
+            echo "**Working tree al fallimento (\`git status --short\`):**"
+            printf '```\n%s\n```\n' "$(git status --short | head -30)"
+            echo "__DIAG_EOF__"
+          } >> "$GITHUB_OUTPUT"
+          exit 1
       - name: Create issue on quality gate failure
         if: steps.validate.outcome == 'failure'
         continue-on-error: true
@@ -305,21 +317,29 @@ jobs:
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIAG: ${{ steps.commit.outputs.diag }}
         run: |
           gh label create nightly-commit --color FBCA04 --description "Commit notturno dei dati fallito (deploy non impattato)" 2>/dev/null || true
           run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           existing=$(gh issue list --label nightly-commit --state open --limit 1 --json number -q '.[0].number')
+          # Corpo via file: include la DIAGNOSTICA reale ($DIAG da env, anti-injection)
+          # + la causa nota e la soluzione → #10 si auto-documenta a OGNI fallimento.
+          body=$(mktemp)
+          {
+            echo "Commit/push dei dati notturno **fallito** il $(date -u +%Y-%m-%d) dopo 5 retry. Il sito è stato comunque aggiornato (deploy via artifact Pages, indipendente dal git). [Run]($run_url)."
+            echo ""
+            echo "### Diagnostica del fallimento"
+            echo "${DIAG:-(diagnostica non disponibile)}"
+            echo ""
+            echo "### Causa nota e soluzione"
+            echo "Causa storica: \`git rebase\` si rifiutava su working tree sporco — *\"cannot rebase: You have unstaged changes\"* — perché la pipeline lascia file tracciati fuori dalla lista del commit (es. \`uv.lock\` da \`uv sync\`). **Soluzione applicata:** \`git rebase --autostash\` (commit \`824bbc57\`)."
+            echo ""
+            echo "Se la diagnostica qui sopra mostra un errore **diverso** (es. push rifiutato per branch protection, o un conflitto di rebase reale), è un caso nuovo da indagare separatamente."
+          } > "$body"
           if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body "Commit dei dati di nuovo fallito il $(date -u +%Y-%m-%d). Il sito è stato comunque aggiornato (deploy via artifact). [Run]($run_url)."
+            gh issue comment "$existing" --body-file "$body"
           else
-            gh issue create \
-              --title "Nightly: commit dei dati fallito (sito comunque aggiornato)" \
-              --label nightly-commit \
-              --body "Il commit/push notturno dei dati è fallito il $(date -u +%Y-%m-%d) dopo i retry.
-
-          **Impatto:** nessuno sul sito — il deploy avviene via artifact Pages, indipendente dal git. Lo storico git dei dati ha però saltato questo run.
-
-          **Azione:** verificare lo stato di main / eventuali branch protection sul push del token. [Run]($run_url)."
+            gh issue create --title "Nightly: commit dei dati fallito (sito comunque aggiornato)" --label nightly-commit --body-file "$body"
           fi
 
       # --- AUTO-RILEVAMENTO 2/2: hard-failure di uno step della pipeline --------
