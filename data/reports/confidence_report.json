@@ -1,32 +1,32 @@
 {
   "country": "IT",
-  "n": 22877,
-  "mean": 0.85,
+  "n": 22878,
+  "mean": 0.849,
   "median": 0.9,
   "mean_nonzero": 0.874,
   "buckets": {
-    "0.90-1.00 (molto alta)": 17284,
-    "0.80-0.89 (alta)": 3660,
-    "0.00 (nulla / unknown)": 619,
-    "0.60-0.79 (media)": 1247,
+    "0.90-1.00 (molto alta)": 17272,
+    "0.80-0.89 (alta)": 3654,
+    "0.00 (nulla / unknown)": 639,
+    "0.60-0.79 (media)": 1246,
     "0.01-0.59 (bassa)": 67
   },
   "rules": {
-    "mx_spf": 17284,
-    "dom_mx_spf": 1733,
-    "no_mx": 619,
-    "mx_only": 1927,
-    "frgn_mx_spf": 988,
+    "mx_spf": 17272,
+    "dom_mx_spf": 1728,
+    "no_mx": 639,
+    "mx_only": 1926,
+    "frgn_mx_spf": 987,
     "dom_mx_only": 259,
     "frgn_mx_only": 67
   },
   "jurisdiction": {
-    "foreign": 11347,
-    "domestic": 10586,
+    "foreign": 11341,
+    "domestic": 10573,
     "mixed": 256,
-    "unknown": 688
+    "unknown": 708
   },
-  "domestic_mx_override": 174,
+  "domestic_mx_override": 170,
   "bounce_candidates": 67,
   "bounce_by_provider": {
     "independent": 67
@@ -47,9 +47,9 @@
     "ovh": 0.9,
     "ionos": 0.9,
     "hetzner": 0.9,
-    "regional-public": 0.89,
     "aws": 0.9,
     "gandi": 0.9,
+    "regional-public": 0.89,
     "zoho": 0.9,
     "infomaniak": 0.9,
     "istruzione-miur-tenant": 0.96,
