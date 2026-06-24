@@ -1,30 +1,30 @@
 {
   "country": "IT",
-  "n": 22878,
+  "n": 22879,
   "mean": 0.849,
   "median": 0.9,
   "mean_nonzero": 0.874,
   "buckets": {
-    "0.90-1.00 (molto alta)": 17272,
-    "0.80-0.89 (alta)": 3654,
-    "0.00 (nulla / unknown)": 639,
+    "0.90-1.00 (molto alta)": 17275,
+    "0.80-0.89 (alta)": 3655,
+    "0.00 (nulla / unknown)": 636,
     "0.60-0.79 (media)": 1246,
     "0.01-0.59 (bassa)": 67
   },
   "rules": {
-    "mx_spf": 17272,
-    "dom_mx_spf": 1728,
-    "no_mx": 639,
+    "mx_spf": 17275,
+    "dom_mx_spf": 1729,
+    "no_mx": 636,
     "mx_only": 1926,
     "frgn_mx_spf": 987,
     "dom_mx_only": 259,
     "frgn_mx_only": 67
   },
   "jurisdiction": {
-    "foreign": 11341,
-    "domestic": 10573,
+    "foreign": 11343,
+    "domestic": 10575,
     "mixed": 256,
-    "unknown": 708
+    "unknown": 705
   },
   "domestic_mx_override": 170,
   "bounce_candidates": 67,
@@ -49,7 +49,7 @@
     "hetzner": 0.9,
     "aws": 0.9,
     "gandi": 0.9,
-    "regional-public": 0.89,
+    "regional-public": 0.889,
     "zoho": 0.9,
     "infomaniak": 0.9,
     "istruzione-miur-tenant": 0.96,
