@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-06-24T08:39:40Z",
+  "generated_at": "2026-06-25T08:37:28Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22879,
-    "n_with_mx": 22243,
-    "coverage_pct": 97.22
+    "n_entities": 22878,
+    "n_with_mx": 22260,
+    "coverage_pct": 97.3
   },
   "indices": {
-    "isd": 51.51,
-    "cloud_act_pct": 47.93,
-    "n_classified": 22243
+    "isd": 51.53,
+    "cloud_act_pct": 47.91,
+    "n_classified": 22260
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10662,
+      "count": 10666,
       "pct": 46.6,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,51 +25,51 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11458,
+      "count": 11471,
       "pct": 50.1,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 636,
-      "pct": 2.8,
+      "count": 618,
+      "pct": 2.7,
       "label": "Sconosciuto"
     }
   },
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7483,
+      "count": 7489,
       "pct": 32.7,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6396,
+      "count": 6397,
       "pct": 28.0,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4257,
+      "count": 4260,
       "pct": 18.6,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3042,
+      "count": 3045,
       "pct": 13.3,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 933,
+      "count": 937,
       "pct": 4.1,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 636,
-      "pct": 2.8,
+      "count": 618,
+      "pct": 2.7,
       "sovereignty": "unknown"
     },
     {
@@ -94,7 +94,7 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8342,
+      "n_entities": 8341,
       "usa_pct": 77.5,
       "dominant_provider": "Google Workspace"
     },
@@ -107,13 +107,13 @@
     {
       "cluster": "Ordini professionali e Camere",
       "n_entities": 2015,
-      "usa_pct": 22.4,
+      "usa_pct": 22.5,
       "dominant_provider": "Provider Italiano"
     },
     {
       "cluster": "Consorzi e Unioni di enti locali",
       "n_entities": 1427,
-      "usa_pct": 24.3,
+      "usa_pct": 24.4,
       "dominant_provider": "Provider Italiano"
     },
     {
@@ -125,7 +125,7 @@
     {
       "cluster": "Stazioni Appaltanti",
       "n_entities": 607,
-      "usa_pct": 48.8,
+      "usa_pct": 48.9,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8495,
-    "high_pct": 91.5
+    "mean": 0.8502,
+    "high_pct": 91.6
   }
 }
