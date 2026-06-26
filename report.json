@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T08:37:29Z",
+  "generated_at": "2026-06-26T08:52:29Z",
   "run_id": null,
   "edition": "giugno 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -14,8 +14,8 @@
         "Il 47.91% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
         "I provider italiani restano la prima scelta (51.53%), ma frammentati.",
         "Scarto tra controllo legale (51.53%) e collocazione tecnica dell'MX (domestico 46.27%): è esso stesso un segnale.",
-        "Settori più esposti al CLOUD Act: Istruzione 77.98% · Sanità 63.16% · Ricerca 56.72%.",
-        "Divario territoriale: Molise guida la sovranità (ISD 73.23%), Veneto è la più esposta al CLOUD Act (60.47%)."
+        "Settori più esposti al CLOUD Act: Istruzione 77.97% · Sanità 63.16% · Ricerca 56.72%.",
+        "Divario territoriale: Molise guida la sovranità (ISD 73.23%), Veneto è la più esposta al CLOUD Act (60.53%)."
       ],
       "metrics": [
         {
@@ -104,13 +104,13 @@
         },
         {
           "name": "Infrastruttura autonoma",
-          "count": 3045,
+          "count": 3046,
           "pct": 13.3,
           "sovereignty": "it"
         },
         {
           "name": "Cloud Italiano",
-          "count": 937,
+          "count": 936,
           "pct": 4.1,
           "sovereignty": "it"
         },
@@ -162,8 +162,8 @@
         }
       ],
       "market": {
-        "top3_pct": 67.19,
-        "hhi": 1876.8
+        "top3_pct": 67.18,
+        "hhi": 1876.4
       }
     },
     {
@@ -174,14 +174,14 @@
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
           "n_entities": 8341,
-          "usa_pct": 77.98,
-          "isd": 21.67
+          "usa_pct": 77.97,
+          "isd": 21.68
         },
         {
           "cluster": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
           "n_entities": 8004,
-          "usa_pct": 25.77,
-          "isd": 73.89
+          "usa_pct": 25.79,
+          "isd": 73.88
         },
         {
           "cluster": "Ordini professionali, Camere di commercio, ACI",
@@ -265,7 +265,7 @@
       "spotlight": [
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
-          "usa_pct": 77.98,
+          "usa_pct": 77.97,
           "n_entities": 8341
         },
         {
@@ -332,8 +332,8 @@
         {
           "regione": "Sicilia",
           "n": 1774,
-          "isd": 57.22,
-          "usa_pct": 42.49
+          "isd": 57.28,
+          "usa_pct": 42.43
         },
         {
           "regione": "Liguria",
@@ -355,9 +355,9 @@
         },
         {
           "regione": "Lazio",
-          "n": 1804,
-          "isd": 49.88,
-          "usa_pct": 49.6
+          "n": 1805,
+          "isd": 49.86,
+          "usa_pct": 49.63
         },
         {
           "regione": "Friuli-Venezia Giulia",
@@ -367,9 +367,9 @@
         },
         {
           "regione": "Umbria",
-          "n": 344,
-          "isd": 46.87,
-          "usa_pct": 52.54
+          "n": 343,
+          "isd": 47.01,
+          "usa_pct": 52.4
         },
         {
           "regione": "Toscana",
@@ -404,16 +404,16 @@
         {
           "regione": "Veneto",
           "n": 1664,
-          "isd": 39.04,
-          "usa_pct": 60.47
+          "isd": 38.98,
+          "usa_pct": 60.53
         }
       ],
       "macroaree": [
         {
           "macroarea": "Isole",
           "n": 2680,
-          "isd": 58.98,
-          "usa_pct": 40.55
+          "isd": 59.02,
+          "usa_pct": 40.51
         },
         {
           "macroarea": "Sud",
@@ -430,8 +430,8 @@
         {
           "macroarea": "Nord",
           "n": 10812,
-          "isd": 47.55,
-          "usa_pct": 51.87
+          "isd": 47.54,
+          "usa_pct": 51.88
         }
       ],
       "most_sovereign": {
@@ -441,8 +441,8 @@
       },
       "most_exposed": {
         "regione": "Veneto",
-        "isd": 39.04,
-        "usa_pct": 60.47
+        "isd": 38.98,
+        "usa_pct": 60.53
       },
       "note": "Sovranità per regione e macroarea: dato territoriale ricostruito dal crosswalk ufficiale ISTAT sul comune-sede di ogni ente (copertura 100%), non dal campo territoriale sporco di IndicePA (vedi mxmap.it#2)."
     },

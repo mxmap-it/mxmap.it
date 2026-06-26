@@ -8,9 +8,9 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 
 | fascia | enti | % |
 |---|---:|---:|
-| 0.90-1.00 (molto alta) | 17289 | 75.6% |
-| 0.80-0.89 (alta) | 3656 | 16.0% |
-| 0.60-0.79 (media) | 1248 | 5.5% |
+| 0.90-1.00 (molto alta) | 17287 | 75.6% |
+| 0.80-0.89 (alta) | 3659 | 16.0% |
+| 0.60-0.79 (media) | 1247 | 5.5% |
 | 0.01-0.59 (bassa) | 67 | 0.3% |
 | 0.00 (nulla / unknown) | 618 | 2.7% |
 
@@ -19,11 +19,11 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 | provider | enti | confidenza media | min | max |
 |---|---:|---:|---:|---:|
 | google | 6397 | 0.879 | 0.80 | 0.92 |
-| aruba | 5177 | 0.896 | 0.80 | 0.92 |
+| aruba | 5176 | 0.896 | 0.80 | 0.92 |
 | microsoft | 3382 | 0.928 | 0.80 | 0.96 |
-| independent | 3045 | 0.720 | 0.50 | 0.80 |
-| local-isp | 1565 | 0.892 | 0.80 | 0.92 |
-| regional-public | 937 | 0.890 | 0.80 | 0.90 |
+| independent | 3046 | 0.720 | 0.50 | 0.80 |
+| local-isp | 1566 | 0.892 | 0.80 | 0.92 |
+| regional-public | 936 | 0.890 | 0.80 | 0.90 |
 | istruzione-miur-tenant | 878 | 0.960 | 0.96 | 0.96 |
 | register-it | 667 | 0.890 | 0.80 | 0.90 |
 | unknown | 618 | 0.000 | 0.00 | 0.00 |
@@ -41,12 +41,12 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 
 | regola | enti | % |
 |---|---:|---:|
-| `mx_spf` | 17289 | 75.6% |
-| `mx_only` | 1926 | 8.4% |
-| `dom_mx_spf` | 1730 | 7.6% |
+| `mx_spf` | 17287 | 75.6% |
+| `mx_only` | 1927 | 8.4% |
+| `dom_mx_spf` | 1732 | 7.6% |
 | `frgn_mx_spf` | 989 | 4.3% |
 | `no_mx` | 618 | 2.7% |
-| `dom_mx_only` | 259 | 1.1% |
+| `dom_mx_only` | 258 | 1.1% |
 | `frgn_mx_only` | 67 | 0.3% |
 
 ## 4. Giurisdizione dell'infrastruttura MX (sovranità)
