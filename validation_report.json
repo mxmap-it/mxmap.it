@@ -14036,7 +14036,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "na.archiworld.it",
+      "domain": "napoli.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -81694,14 +81694,12 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "microsoft",
-      "domain": "comune.fontenuova.rm.it",
-      "confidence": 95,
+      "provider": "independent",
+      "domain": "cert.fonte-nuova.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-059001": {
@@ -102450,7 +102448,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "comune.baucina.pa.it",
+      "domain": "egov.comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -131074,11 +131072,10 @@
     },
     "IT-L18-udcmc_": {
       "name": "Unione Dei Comuni Montani del Casentino",
-      "provider": "independent",
-      "domain": "postacert.toscana.it",
-      "confidence": 90,
+      "provider": "regional-public",
+      "domain": "uc.casentino.toscana.it",
+      "confidence": 85,
       "flags": [
-        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -169318,13 +169315,13 @@
     },
     "IT-L33-istsc_cnis01100d": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - CEVA - 'G. BARUFFI'",
-      "provider": "google",
-      "domain": "barufficevaormea.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "barufficevaormea.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -174236,13 +174233,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175739,7 +175736,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -196945,7 +196942,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.it",
+      "domain": "liceorespighi.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -218939,7 +218936,7 @@
     "IT-L33-istsc_tris00100e": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - NARNI I.I.S. SC. MAG. GEOM. GANDHI",
       "provider": "google",
-      "domain": "gandhinarni.it",
+      "domain": "gandhinarni.edu.it",
       "confidence": 73,
       "flags": [
         "multiple_mx",
@@ -236887,7 +236884,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "cri.it",
+      "domain": "latina.cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -243205,7 +243202,7 @@
     "IT-L37-apsrl": {
       "name": "Aciclub Prato S.R.L.",
       "provider": "google",
-      "domain": "prato.aci.it",
+      "domain": "aciprato.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -243395,7 +243392,7 @@
     "IT-L37-asaspa": {
       "name": "PLURES S.P.A.",
       "provider": "microsoft",
-      "domain": "aliaserviziambientali.it",
+      "domain": "plures.aliaserviziambientali.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -260865,14 +260862,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {

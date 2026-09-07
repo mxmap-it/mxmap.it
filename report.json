@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T09:29:12Z",
+  "generated_at": "2026-09-07T09:49:42Z",
   "run_id": null,
   "edition": "settembre 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -11,9 +11,9 @@
       "title": "Sintesi per i decisori",
       "kind": "executive",
       "findings": [
-        "Il 48.25% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
-        "I provider italiani restano la prima scelta (51.2%), ma frammentati.",
-        "Scarto tra controllo legale (51.2%) e collocazione tecnica dell'MX (domestico 45.93%): è esso stesso un segnale.",
+        "Il 48.24% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
+        "I provider italiani restano la prima scelta (51.21%), ma frammentati.",
+        "Scarto tra controllo legale (51.21%) e collocazione tecnica dell'MX (domestico 45.93%): è esso stesso un segnale.",
         "Settori più esposti al CLOUD Act: Istruzione 78.36% · Sanità 64.47% · Ricerca 56.72%.",
         "Divario territoriale: Molise guida la sovranità (ISD 73.44%), Veneto è la più esposta al CLOUD Act (60.87%)."
       ],
@@ -24,11 +24,11 @@
         },
         {
           "label": "Sovranità italiana (ISD)",
-          "value": "51.2%"
+          "value": "51.21%"
         },
         {
           "label": "Soggette al CLOUD Act",
-          "value": "48.25%"
+          "value": "48.24%"
         },
         {
           "label": "Copertura del dato",
@@ -62,7 +62,7 @@
           "key": "it",
           "label": "Italiano",
           "pct": 49.8,
-          "count": 11397
+          "count": 11399
         },
         {
           "key": "eu_non_it",
@@ -74,7 +74,7 @@
           "key": "extra_eu",
           "label": "Extra-UE (CLOUD Act)",
           "pct": 46.9,
-          "count": 10741
+          "count": 10739
         },
         {
           "key": "unknown",
@@ -86,14 +86,14 @@
       "top_providers": [
         {
           "name": "Provider Italiano",
-          "count": 7432,
+          "count": 7433,
           "pct": 32.5,
           "sovereignty": "it"
         },
         {
           "name": "Google Workspace",
-          "count": 6443,
-          "pct": 28.2,
+          "count": 6441,
+          "pct": 28.1,
           "sovereignty": "extra_eu"
         },
         {
@@ -110,7 +110,7 @@
         },
         {
           "name": "Cloud Italiano",
-          "count": 929,
+          "count": 930,
           "pct": 4.1,
           "sovereignty": "it"
         },
@@ -142,13 +142,13 @@
       "jurisdiction": [
         {
           "key": "domestic",
-          "count": 10510,
+          "count": 10512,
           "pct": 45.93
         },
         {
           "key": "foreign",
-          "count": 11435,
-          "pct": 49.97
+          "count": 11433,
+          "pct": 49.96
         },
         {
           "key": "mixed",
@@ -162,8 +162,8 @@
         }
       ],
       "market": {
-        "top3_pct": 67.45,
-        "hhi": 1885.0
+        "top3_pct": 67.43,
+        "hhi": 1884.3
       }
     },
     {
@@ -180,8 +180,8 @@
         {
           "cluster": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
           "n_entities": 8005,
-          "usa_pct": 26.07,
-          "isd": 73.61
+          "usa_pct": 26.06,
+          "isd": 73.62
         },
         {
           "cluster": "Ordini professionali, Camere di commercio, ACI",
@@ -204,8 +204,8 @@
         {
           "cluster": "Stazioni appaltanti",
           "n_entities": 615,
-          "usa_pct": 50.42,
-          "isd": 48.75
+          "usa_pct": 50.25,
+          "isd": 48.92
         },
         {
           "cluster": "Welfare, ASP/IPAB e case popolari",
@@ -356,8 +356,8 @@
         {
           "regione": "Lazio",
           "n": 1811,
-          "isd": 49.2,
-          "usa_pct": 50.29
+          "isd": 49.31,
+          "usa_pct": 50.17
         },
         {
           "regione": "Friuli-Venezia Giulia",
@@ -424,8 +424,8 @@
         {
           "macroarea": "Centro",
           "n": 4016,
-          "isd": 49.33,
-          "usa_pct": 50.03
+          "isd": 49.39,
+          "usa_pct": 49.97
         },
         {
           "macroarea": "Nord",
@@ -454,7 +454,7 @@
       "series": [
         {
           "date": "2026-09",
-          "isd": 51.2
+          "isd": 51.21
         }
       ],
       "note": "Monitoraggio appena avviato: la serie storica parte da questa edizione; i trend compariranno dai prossimi rilevamenti."
