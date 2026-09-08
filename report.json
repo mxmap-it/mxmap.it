@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T09:49:42Z",
+  "generated_at": "2026-09-08T09:40:02Z",
   "run_id": null,
   "edition": "settembre 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -13,14 +13,14 @@
       "findings": [
         "Il 48.24% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
         "I provider italiani restano la prima scelta (51.21%), ma frammentati.",
-        "Scarto tra controllo legale (51.21%) e collocazione tecnica dell'MX (domestico 45.93%): è esso stesso un segnale.",
+        "Scarto tra controllo legale (51.21%) e collocazione tecnica dell'MX (domestico 45.94%): è esso stesso un segnale.",
         "Settori più esposti al CLOUD Act: Istruzione 78.36% · Sanità 64.47% · Ricerca 56.72%.",
         "Divario territoriale: Molise guida la sovranità (ISD 73.44%), Veneto è la più esposta al CLOUD Act (60.87%)."
       ],
       "metrics": [
         {
           "label": "Enti monitorati",
-          "value": "22.885"
+          "value": "22.884"
         },
         {
           "label": "Sovranità italiana (ISD)",
@@ -80,7 +80,7 @@
           "key": "unknown",
           "label": "Sconosciuto",
           "pct": 2.7,
-          "count": 627
+          "count": 626
         }
       ],
       "top_providers": [
@@ -92,31 +92,31 @@
         },
         {
           "name": "Google Workspace",
-          "count": 6441,
+          "count": 6440,
           "pct": 28.1,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Microsoft 365",
-          "count": 4291,
+          "count": 4292,
           "pct": 18.8,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Infrastruttura autonoma",
-          "count": 3036,
+          "count": 3037,
           "pct": 13.3,
           "sovereignty": "it"
         },
         {
           "name": "Cloud Italiano",
-          "count": 930,
+          "count": 929,
           "pct": 4.1,
           "sovereignty": "it"
         },
         {
           "name": "Sconosciuto",
-          "count": 627,
+          "count": 626,
           "pct": 2.7,
           "sovereignty": "unknown"
         },
@@ -142,12 +142,12 @@
       "jurisdiction": [
         {
           "key": "domestic",
-          "count": 10512,
-          "pct": 45.93
+          "count": 10513,
+          "pct": 45.94
         },
         {
           "key": "foreign",
-          "count": 11433,
+          "count": 11432,
           "pct": 49.96
         },
         {
@@ -157,13 +157,13 @@
         },
         {
           "key": "unknown",
-          "count": 697,
-          "pct": 3.05
+          "count": 696,
+          "pct": 3.04
         }
       ],
       "market": {
-        "top3_pct": 67.43,
-        "hhi": 1884.3
+        "top3_pct": 67.42,
+        "hhi": 1883.7
       }
     },
     {
@@ -173,15 +173,15 @@
       "clusters": [
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
-          "n_entities": 8319,
+          "n_entities": 8318,
           "usa_pct": 78.36,
           "isd": 21.29
         },
         {
           "cluster": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
           "n_entities": 8005,
-          "usa_pct": 26.06,
-          "isd": 73.62
+          "usa_pct": 26.05,
+          "isd": 73.63
         },
         {
           "cluster": "Ordini professionali, Camere di commercio, ACI",
@@ -204,8 +204,8 @@
         {
           "cluster": "Stazioni appaltanti",
           "n_entities": 615,
-          "usa_pct": 50.25,
-          "isd": 48.92
+          "usa_pct": 50.42,
+          "isd": 48.75
         },
         {
           "cluster": "Welfare, ASP/IPAB e case popolari",
@@ -266,7 +266,7 @@
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
           "usa_pct": 78.36,
-          "n_entities": 8319
+          "n_entities": 8318
         },
         {
           "cluster": "Sanità (ASL, Aziende ospedaliere)",
@@ -285,7 +285,7 @@
       "title": "Analisi per aree — la geografia della sovranità",
       "kind": "areas",
       "status": "active",
-      "n_total": 22885,
+      "n_total": 22884,
       "regions": [
         {
           "regione": "Molise",
@@ -308,8 +308,8 @@
         {
           "regione": "Abruzzo",
           "n": 707,
-          "isd": 65.62,
-          "usa_pct": 33.18
+          "isd": 65.67,
+          "usa_pct": 33.13
         },
         {
           "regione": "Calabria",
@@ -349,15 +349,15 @@
         },
         {
           "regione": "Campania",
-          "n": 1908,
-          "isd": 53.72,
-          "usa_pct": 46.06
+          "n": 1909,
+          "isd": 53.75,
+          "usa_pct": 46.04
         },
         {
           "regione": "Lazio",
           "n": 1811,
-          "isd": 49.31,
-          "usa_pct": 50.17
+          "isd": 49.25,
+          "usa_pct": 50.23
         },
         {
           "regione": "Friuli-Venezia Giulia",
@@ -373,9 +373,9 @@
         },
         {
           "regione": "Toscana",
-          "n": 1173,
-          "isd": 46.36,
-          "usa_pct": 53.03
+          "n": 1172,
+          "isd": 46.4,
+          "usa_pct": 52.99
         },
         {
           "regione": "Puglia",
@@ -385,9 +385,9 @@
         },
         {
           "regione": "Emilia-Romagna",
-          "n": 1313,
-          "isd": 40.84,
-          "usa_pct": 58.7
+          "n": 1312,
+          "isd": 40.79,
+          "usa_pct": 58.74
         },
         {
           "regione": "Trentino-Alto Adige",
@@ -417,19 +417,19 @@
         },
         {
           "macroarea": "Sud",
-          "n": 5373,
-          "isd": 57.14,
-          "usa_pct": 42.36
+          "n": 5374,
+          "isd": 57.15,
+          "usa_pct": 42.35
         },
         {
           "macroarea": "Centro",
-          "n": 4016,
-          "isd": 49.39,
-          "usa_pct": 49.97
+          "n": 4015,
+          "isd": 49.37,
+          "usa_pct": 49.99
         },
         {
           "macroarea": "Nord",
-          "n": 10817,
+          "n": 10816,
           "isd": 47.14,
           "usa_pct": 52.3
         }

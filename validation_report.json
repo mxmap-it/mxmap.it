@@ -1,5 +1,5 @@
 {
-  "total": 22885,
+  "total": 22884,
   "average_score": 80.7,
   "high_confidence_pct": 73.8,
   "quality_passed": false,
@@ -28433,14 +28433,13 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 93,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-001224": {
@@ -30838,13 +30837,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -90450,13 +90449,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -102448,7 +102446,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -122147,11 +122145,10 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "calabriaverde.regione.calabria.it",
-      "confidence": 78,
+      "domain": "pec.calabriaverde.eu",
+      "confidence": 50,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -131072,10 +131069,11 @@
     },
     "IT-L18-udcmc_": {
       "name": "Unione Dei Comuni Montani del Casentino",
-      "provider": "regional-public",
-      "domain": "uc.casentino.toscana.it",
-      "confidence": 85,
+      "provider": "independent",
+      "domain": "postacert.toscana.it",
+      "confidence": 90,
       "flags": [
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -139060,6 +139058,17 @@
       "flags": [
         "spf_strict",
         "mx_spf_mismatch",
+        "provider_classified"
+      ]
+    },
+    "IT-L33-XNWYZ3QA": {
+      "name": "ISTITUTO COMPRENSIVO CICCONE",
+      "provider": "local-isp",
+      "domain": "iccicconesaviano.edu.it",
+      "confidence": 88,
+      "flags": [
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -174233,13 +174242,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceocevolani.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "liceocevolani.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175736,7 +175745,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.edu.it",
+      "domain": "agrariofirenze.eu",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -175900,7 +175909,7 @@
       ]
     },
     "IT-L33-istsc_fipc030003": {
-      "name": "LICEO CLASSICO - GALILEO",
+      "name": "Liceo Classico \"Galileo-Michelangiolo\"",
       "provider": "microsoft",
       "domain": "liceoclassicogalileo.edu.it",
       "confidence": 95,
@@ -176096,18 +176105,6 @@
         "spf_softfail",
         "mx_spf_match",
         "provider_classified"
-      ]
-    },
-    "IT-L33-istsc_foee03000x": {
-      "name": "DIREZIONE DIDATTICA - CD CESENATICO 1",
-      "provider": "aruba",
-      "domain": "dd1cesenatico.edu.it",
-      "confidence": 83,
-      "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
       ]
     },
     "IT-L33-istsc_foee03100q": {
@@ -200071,13 +200068,13 @@
     },
     "IT-L33-istsc_pnic82800x": {
       "name": "ISTITUTO COMPRENSIVO - IC MANIAGO",
-      "provider": "google",
-      "domain": "icmaniago.it",
-      "confidence": 53,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icmaniago.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_mismatch",
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -201779,18 +201776,6 @@
         "mx_spf_match",
         "provider_classified",
         "provider_via_gateway_spf"
-      ]
-    },
-    "IT-L33-istsc_ptic81800q": {
-      "name": "ISTITUTO COMPRENSIVO - STATALE LAMPORECCHIO",
-      "provider": "google",
-      "domain": "iclamporecchio.edu.it",
-      "confidence": 93,
-      "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
       ]
     },
     "IT-L33-istsc_ptic81900g": {
@@ -243202,7 +243187,7 @@
     "IT-L37-apsrl": {
       "name": "Aciclub Prato S.R.L.",
       "provider": "google",
-      "domain": "aciprato.it",
+      "domain": "prato.aci.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -243392,7 +243377,7 @@
     "IT-L37-asaspa": {
       "name": "PLURES S.P.A.",
       "provider": "microsoft",
-      "domain": "plures.aliaserviziambientali.it",
+      "domain": "aliaserviziambientali.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -253849,7 +253834,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "commissariobonificadiscariche.governo.it",
+      "domain": "governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
@@ -259516,7 +259501,8 @@
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "smtp_suggests:microsoft"
       ]
     },
     "IT-SA-0D7QKFH5": {
@@ -260862,12 +260848,14 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "aruba",
-      "domain": "pec.portmobility.it",
-      "confidence": 68,
+      "provider": "microsoft",
+      "domain": "civitavecchia.portmobility.it",
+      "confidence": 95,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-SA-AKP3SCHD": {

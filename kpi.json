@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-07T09:49:42Z",
+  "generated_at": "2026-09-08T09:40:01Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22885,
+    "n_entities": 22884,
     "n_with_mx": 22258,
     "coverage_pct": 97.26
   },
@@ -30,7 +30,7 @@
       "label": "Italiano"
     },
     "unknown": {
-      "count": 627,
+      "count": 626,
       "pct": 2.7,
       "label": "Sconosciuto"
     }
@@ -44,31 +44,31 @@
     },
     {
       "name": "Google Workspace",
-      "count": 6441,
+      "count": 6440,
       "pct": 28.1,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4291,
+      "count": 4292,
       "pct": 18.8,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3036,
+      "count": 3037,
       "pct": 13.3,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 930,
+      "count": 929,
       "pct": 4.1,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 627,
+      "count": 626,
       "pct": 2.7,
       "sovereignty": "unknown"
     },
@@ -94,7 +94,7 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8319,
+      "n_entities": 8318,
       "usa_pct": 77.9,
       "dominant_provider": "Google Workspace"
     },
@@ -125,7 +125,7 @@
     {
       "cluster": "Stazioni Appaltanti",
       "n_entities": 615,
-      "usa_pct": 49.1,
+      "usa_pct": 49.3,
       "dominant_provider": "Microsoft 365"
     },
     {
