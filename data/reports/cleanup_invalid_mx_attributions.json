@@ -768,8 +768,8 @@
       "claimed_domain": "comune.ra.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "independent",
+      "old_reason": "MX is sophos gateway; backend provider unknown"
     },
     {
       "id": "IT-C14-odafna",

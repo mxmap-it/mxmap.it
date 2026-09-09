@@ -1,14 +1,14 @@
 {
- "n_entities": 22884,
- "n_classified": 22258,
+ "n_entities": 22883,
+ "n_classified": 22257,
  "coverage_pct": 97.26,
  "mean_confidence": 0.8513,
- "isd": 51.21,
+ "isd": 51.24,
  "headline": {
-  "isd": 51.21,
-  "cloud_act_pct": 48.24,
+  "isd": 51.24,
+  "cloud_act_pct": 48.21,
   "coverage_pct": 97.26,
-  "n_entities": 22884
+  "n_entities": 22883
  },
  "sovereignty": [
   {
@@ -20,14 +20,14 @@
   {
    "bucket": "Italia — Provider commerciali",
    "group": "ITA",
-   "count": 7433,
-   "pct": 33.39
+   "count": 7438,
+   "pct": 33.42
   },
   {
    "bucket": "Italia — Infrastruttura autonoma",
    "group": "ITA",
    "count": 3037,
-   "pct": 13.64
+   "pct": 13.65
   },
   {
    "bucket": "Altri provider esteri",
@@ -38,8 +38,8 @@
   {
    "bucket": "USA (CLOUD Act)",
    "group": "EST",
-   "count": 10737,
-   "pct": 48.24
+   "count": 10731,
+   "pct": 48.21
   },
   {
    "bucket": "Sconosciuto",
@@ -51,13 +51,13 @@
  "jurisdiction": [
   {
    "key": "domestic",
-   "count": 10513,
-   "pct": 45.94
+   "count": 10517,
+   "pct": 45.96
   },
   {
    "key": "foreign",
-   "count": 11432,
-   "pct": 49.96
+   "count": 11427,
+   "pct": 49.94
   },
   {
    "key": "mixed",
@@ -74,32 +74,32 @@
   {
    "provider": "google",
    "display": "Google Workspace",
-   "count": 6440,
+   "count": 6438,
    "pct": 28.93
   },
   {
    "provider": "aruba",
    "display": "Provider Italiano",
-   "count": 5141,
-   "pct": 23.1
+   "count": 5144,
+   "pct": 23.11
   },
   {
    "provider": "microsoft",
    "display": "Microsoft 365",
-   "count": 3426,
+   "count": 3425,
    "pct": 15.39
   },
   {
    "provider": "independent",
    "display": "Infrastruttura autonoma",
    "count": 3037,
-   "pct": 13.64
+   "pct": 13.65
   },
   {
    "provider": "local-isp",
    "display": "Provider Italiano",
-   "count": 1551,
-   "pct": 6.97
+   "count": 1553,
+   "pct": 6.98
   },
   {
    "provider": "regional-public",
@@ -110,8 +110,8 @@
   {
    "provider": "istruzione-miur-tenant",
    "display": "Microsoft 365",
-   "count": 866,
-   "pct": 3.89
+   "count": 863,
+   "pct": 3.88
   },
   {
    "provider": "register-it",
@@ -181,18 +181,18 @@
   }
  ],
  "market": {
-  "top3_pct": 67.42,
-  "hhi": 1883.7
+  "top3_pct": 67.43,
+  "hhi": 1884.5
  },
  "confidence_bands": [
   {
    "band": "alta",
-   "count": 20965,
+   "count": 20963,
    "pct": 91.61
   },
   {
    "band": "media",
-   "count": 1293,
+   "count": 1294,
    "pct": 5.65
   },
   {
@@ -204,9 +204,9 @@
  "signals": {
   "mx_pct": 97.26,
   "spf_pct": 87.73,
-  "dkim_pct": 15.62,
+  "dkim_pct": 15.61,
   "gateway_pct": 15.14
  },
- "generated": "2026-09-08T08:50:08Z",
+ "generated": "2026-09-09T08:56:51Z",
  "country": "IT"
 }
