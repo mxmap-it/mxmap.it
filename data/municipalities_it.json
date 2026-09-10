@@ -29357,7 +29357,7 @@
     "country": "IT",
     "region": "Campania",
     "district": "Benevento",
-    "domain": "halleyweb.com",
+    "domain": "comune.castelvenere.bn.it",
     "osm_relation_id": 41165,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "c_c280",
@@ -161254,6 +161254,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L1-asdbuct",
+    "name": "Amministrazione Separata Dei Beni D'Uso Civico della Frazione di Trodena",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "trodena.eu",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "asdbuct",
+    "ipa_codice_categoria": "L1",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "021102",
+    "domain_source": "email_non_pec_fallback"
+  },
+  {
     "id": "IT-L1-asdbusm",
     "name": "Amministrazione Separata Dei Beni di Uso Civico di Santa Maddalena Vallalta",
     "country": "IT",
@@ -181051,6 +181066,21 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "082053",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L33-A92VTEIY",
+    "name": "ISTITUTO ISTRUZIONE SUPERIORE M. DELPOZZO",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "delpozzo.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "A92VTEIY",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "004078",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -215288,23 +215318,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-L33-istsc_boic82900a",
-    "name": "ISTITUTO COMPRENSIVO - I.C. DI RASTIGNANO",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "icsangiovanniboscodecarolis.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_boic82900a",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "037047",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-L33-istsc_boic83000e",
     "name": "I.C. PIANORO - RASTIGNANO",
     "country": "IT",
@@ -221482,23 +221495,6 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "061010",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-L33-istsc_ceic82300q",
-    "name": "ISTITUTO COMPRENSIVO - I.A.C.' ALIGHIERI' BELLONA",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "iacbellona.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_ceic82300q",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "061007",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -256127,23 +256123,6 @@
       "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_naee00300e",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "063049",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-L33-istsc_naee03300a",
-    "name": "DIREZIONE DIDATTICA - NA 33 - RISORGIMENTO",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "33circolonapoli.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_naee03300a",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "063049",
@@ -312061,7 +312040,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icarenzano-cogoleto.edu.it",
+    "domain": "icareco.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -355861,21 +355840,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-SA-28B1JW1G",
-    "name": "CTM S.P.A.",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "ctmcagliari.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [],
-    "ipa_codice_ipa": "28B1JW1G",
-    "ipa_codice_categoria": "SA",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "118006",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-SA-28WXF4F1",
     "name": "Salerno Pompei Napoli S.p.A.",
     "country": "IT",
@@ -362677,6 +362641,21 @@
     "ipa_codice_categoria": "SAG",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "058091",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SAG-28B1JW1G",
+    "name": "CTM S.P.A.",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "ctmcagliari.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "28B1JW1G",
+    "ipa_codice_categoria": "SAG",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "118006",
     "domain_source": "sito_istituzionale"
   },
   {
