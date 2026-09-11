@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-10T09:46:09Z",
+  "generated_at": "2026-09-11T10:06:45Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
     "n_entities": 22882,
-    "n_with_mx": 22256,
-    "coverage_pct": 97.26
+    "n_with_mx": 22253,
+    "coverage_pct": 97.25
   },
   "indices": {
-    "isd": 51.22,
-    "cloud_act_pct": 48.23,
-    "n_classified": 22256
+    "isd": 51.19,
+    "cloud_act_pct": 48.26,
+    "n_classified": 22253
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10737,
+      "count": 10741,
       "pct": 46.9,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11399,
+      "count": 11392,
       "pct": 49.8,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 626,
+      "count": 629,
       "pct": 2.7,
       "label": "Sconosciuto"
     }
@@ -38,37 +38,37 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7435,
+      "count": 7430,
       "pct": 32.5,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6441,
-      "pct": 28.1,
+      "count": 6442,
+      "pct": 28.2,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4289,
-      "pct": 18.7,
+      "count": 4292,
+      "pct": 18.8,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3033,
+      "count": 3032,
       "pct": 13.3,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 931,
+      "count": 930,
       "pct": 4.1,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 626,
+      "count": 629,
       "pct": 2.7,
       "sovereignty": "unknown"
     },
@@ -118,14 +118,14 @@
     },
     {
       "cluster": "Gestori di pubblici servizi",
-      "n_entities": 1145,
-      "usa_pct": 46.5,
+      "n_entities": 1146,
+      "usa_pct": 46.4,
       "dominant_provider": "Microsoft 365"
     },
     {
       "cluster": "Stazioni Appaltanti",
-      "n_entities": 615,
-      "usa_pct": 49.3,
+      "n_entities": 614,
+      "usa_pct": 49.5,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -143,7 +143,7 @@
     {
       "cluster": "Sanità",
       "n_entities": 234,
-      "usa_pct": 62.8,
+      "usa_pct": 63.2,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8514,
+    "mean": 0.8513,
     "high_pct": 91.6
   }
 }

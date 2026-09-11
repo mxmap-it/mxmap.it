@@ -1,5 +1,5 @@
 {
-  "n_purged": 508,
+  "n_purged": 510,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -2483,9 +2483,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2530,6 +2530,17 @@
       "old_mx": "mcc.evnom.com",
       "old_provider": "seeweb",
       "old_reason": "MX record (mcc.evnom.com, smtp-avas.seeweb.it) matches Seeweb"
+    },
+    {
+      "id": "IT-L12-cm_alto21",
+      "name": "Comunita' Montana Alto Basento",
+      "codice_ipa": "cm_alto21",
+      "seed_domain": "altobasento.web.it",
+      "claimed_domain": "comune.potenza.it",
+      "reject_reason": "unrelated",
+      "old_mx": "alt1.aspmx.l.google.com",
+      "old_provider": "google",
+      "old_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google"
     },
     {
       "id": "IT-L12-cm_intem",
@@ -2879,9 +2890,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L18-uco",
@@ -3421,6 +3432,17 @@
       "old_mx": "comune-torino-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-torino-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
+      "id": "IT-L33-7NB71QES",
+      "name": "IIS GIOVANNI XXIII-S.CATERINA AMENDOLA",
+      "codice_ipa": "7nb71qes",
+      "seed_domain": "iisgiovanni23-santacaterina-amendola.edu.it",
+      "claimed_domain": "comune.salerno.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is sophos gateway; SPF+DKIM confirm microsoft"
     },
     {
       "id": "IT-L33-CER2CUZ8",
