@@ -1,5 +1,5 @@
 {
-  "n_purged": 510,
+  "n_purged": 511,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -768,8 +768,8 @@
       "claimed_domain": "comune.ra.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "independent",
+      "old_reason": "MX is sophos gateway; backend provider unknown"
     },
     {
       "id": "IT-C14-odafna",
@@ -1861,6 +1861,17 @@
       "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
     },
     {
+      "id": "IT-CONS-camt",
+      "name": "Consorzio Acquedotto Medio Tirreno in Liquidazione",
+      "codice_ipa": "camt",
+      "seed_domain": "acquemediotirreno.it",
+      "claimed_domain": "comune.civitavecchia.rm.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-civitavecchia-rm-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-civitavecchia-rm-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
       "id": "IT-CONS-cbsap",
       "name": "Consorzio Bassa Sabina Acqua Peschiera",
       "codice_ipa": "cbsap",
@@ -2483,9 +2494,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2890,9 +2901,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L18-uco",

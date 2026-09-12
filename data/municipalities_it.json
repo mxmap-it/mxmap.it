@@ -144106,7 +144106,9 @@
     "district": null,
     "domain": "assistentisociali.veneto.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "pec.assistentisociali.veneto.it"
+    ],
     "ipa_codice_ipa": "odas_027",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -262631,23 +262633,6 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "113021",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-L33-istsc_nuic849002",
-    "name": "ISTITUTO COMPRENSIVO - TERTENIA",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "ictertenia.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_nuic849002",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "116016",
     "domain_source": "sito_istituzionale"
   },
   {
