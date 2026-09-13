@@ -1,5 +1,5 @@
 {
-  "n_purged": 511,
+  "n_purged": 510,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -768,8 +768,8 @@
       "claimed_domain": "comune.ra.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "independent",
-      "old_reason": "MX is sophos gateway; backend provider unknown"
+      "old_provider": "microsoft",
+      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
     },
     {
       "id": "IT-C14-odafna",
@@ -1595,17 +1595,6 @@
       "old_mx": "mx.comune.guardialombardi.av.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comune.guardialombardi.av.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
-    },
-    {
-      "id": "IT-COM-064115",
-      "name": "Comune di Vallesaccarda",
-      "codice_ipa": "c_l616",
-      "seed_domain": "comune.vallesaccarda.av.it",
-      "claimed_domain": "comune-vallesaccarda.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx.comune-vallesaccarda.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx.comune-vallesaccarda.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-COM-064120",

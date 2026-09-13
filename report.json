@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T09:24:46Z",
+  "generated_at": "2026-09-13T10:03:21Z",
   "run_id": null,
   "edition": "settembre 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -13,8 +13,8 @@
       "findings": [
         "Il 48.23% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
         "I provider italiani restano la prima scelta (51.22%), ma frammentati.",
-        "Scarto tra controllo legale (51.22%) e collocazione tecnica dell'MX (domestico 45.94%): è esso stesso un segnale.",
-        "Settori più esposti al CLOUD Act: Istruzione 78.37% · Sanità 64.47% · Ricerca 56.72%.",
+        "Scarto tra controllo legale (51.22%) e collocazione tecnica dell'MX (domestico 45.95%): è esso stesso un segnale.",
+        "Settori più esposti al CLOUD Act: Istruzione 78.36% · Sanità 64.47% · Ricerca 56.72%.",
         "Divario territoriale: Molise guida la sovranità (ISD 73.44%), Veneto è la più esposta al CLOUD Act (60.9%)."
       ],
       "metrics": [
@@ -62,7 +62,7 @@
           "key": "it",
           "label": "Italiano",
           "pct": 49.8,
-          "count": 11397
+          "count": 11398
         },
         {
           "key": "eu_non_it",
@@ -74,7 +74,7 @@
           "key": "extra_eu",
           "label": "Extra-UE (CLOUD Act)",
           "pct": 46.9,
-          "count": 10735
+          "count": 10734
         },
         {
           "key": "unknown",
@@ -86,7 +86,7 @@
       "top_providers": [
         {
           "name": "Provider Italiano",
-          "count": 7429,
+          "count": 7430,
           "pct": 32.5,
           "sovereignty": "it"
         },
@@ -98,19 +98,19 @@
         },
         {
           "name": "Microsoft 365",
-          "count": 4295,
+          "count": 4294,
           "pct": 18.8,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Infrastruttura autonoma",
-          "count": 3037,
+          "count": 3038,
           "pct": 13.3,
           "sovereignty": "it"
         },
         {
           "name": "Cloud Italiano",
-          "count": 931,
+          "count": 930,
           "pct": 4.1,
           "sovereignty": "it"
         },
@@ -142,12 +142,12 @@
       "jurisdiction": [
         {
           "key": "domestic",
-          "count": 10512,
-          "pct": 45.94
+          "count": 10513,
+          "pct": 45.95
         },
         {
           "key": "foreign",
-          "count": 11425,
+          "count": 11424,
           "pct": 49.93
         },
         {
@@ -174,8 +174,8 @@
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
           "n_entities": 8312,
-          "usa_pct": 78.37,
-          "isd": 21.28
+          "usa_pct": 78.36,
+          "isd": 21.29
         },
         {
           "cluster": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
@@ -265,7 +265,7 @@
       "spotlight": [
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
-          "usa_pct": 78.37,
+          "usa_pct": 78.36,
           "n_entities": 8312
         },
         {
@@ -302,8 +302,8 @@
         {
           "regione": "Piemonte",
           "n": 2269,
-          "isd": 66.38,
-          "usa_pct": 33.35
+          "isd": 66.37,
+          "usa_pct": 33.36
         },
         {
           "regione": "Abruzzo",
@@ -314,8 +314,8 @@
         {
           "regione": "Calabria",
           "n": 924,
-          "isd": 65.41,
-          "usa_pct": 34.15
+          "isd": 65.52,
+          "usa_pct": 34.04
         },
         {
           "regione": "Valle d'Aosta",
@@ -350,8 +350,8 @@
         {
           "regione": "Campania",
           "n": 1907,
-          "isd": 53.73,
-          "usa_pct": 46.06
+          "isd": 53.75,
+          "usa_pct": 46.03
         },
         {
           "regione": "Lazio",
@@ -418,8 +418,8 @@
         {
           "macroarea": "Sud",
           "n": 5372,
-          "isd": 57.15,
-          "usa_pct": 42.35
+          "isd": 57.18,
+          "usa_pct": 42.32
         },
         {
           "macroarea": "Centro",
