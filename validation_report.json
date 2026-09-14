@@ -28441,13 +28441,14 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-001224": {
@@ -122167,10 +122168,11 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "pec.calabriaverde.eu",
-      "confidence": 50,
+      "domain": "calabriaverde.regione.calabria.it",
+      "confidence": 78,
       "flags": [
-        "no_spf",
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -131090,11 +131092,10 @@
     },
     "IT-L18-udcmc_": {
       "name": "Unione Dei Comuni Montani del Casentino",
-      "provider": "independent",
-      "domain": "postacert.toscana.it",
-      "confidence": 90,
+      "provider": "regional-public",
+      "domain": "uc.casentino.toscana.it",
+      "confidence": 85,
       "flags": [
-        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -197648,13 +197649,13 @@
     },
     "IT-L33-istsc_pdis003009": {
       "name": "IIS CATTANEO-MATTEI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "cattaneo-mattei.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "cattaneomattei.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -260817,12 +260818,14 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "aruba",
-      "domain": "pec.portmobility.it",
-      "confidence": 68,
+      "provider": "microsoft",
+      "domain": "civitavecchia.portmobility.it",
+      "confidence": 95,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-SA-AKP3SCHD": {
