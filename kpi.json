@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-14T10:27:51Z",
+  "generated_at": "2026-09-15T10:12:37Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22881,
-    "n_with_mx": 22253,
+    "n_entities": 22882,
+    "n_with_mx": 22254,
     "coverage_pct": 97.26
   },
   "indices": {
     "isd": 51.22,
     "cloud_act_pct": 48.23,
-    "n_classified": 22253
+    "n_classified": 22254
   },
   "sovereignty": {
     "extra_eu": {
@@ -25,7 +25,7 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11398,
+      "count": 11399,
       "pct": 49.8,
       "label": "Italiano"
     },
@@ -38,31 +38,31 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7429,
+      "count": 7430,
       "pct": 32.5,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6434,
+      "count": 6433,
       "pct": 28.1,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4294,
+      "count": 4295,
       "pct": 18.8,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3038,
+      "count": 3039,
       "pct": 13.3,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 931,
+      "count": 930,
       "pct": 4.1,
       "sovereignty": "it"
     },
@@ -106,7 +106,7 @@
     },
     {
       "cluster": "Ordini professionali e Camere",
-      "n_entities": 2016,
+      "n_entities": 2017,
       "usa_pct": 22.8,
       "dominant_provider": "Provider Italiano"
     },
@@ -119,7 +119,7 @@
     {
       "cluster": "Gestori di pubblici servizi",
       "n_entities": 1146,
-      "usa_pct": 46.4,
+      "usa_pct": 46.5,
       "dominant_provider": "Microsoft 365"
     },
     {

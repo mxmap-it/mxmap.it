@@ -2,14 +2,14 @@
 
 Livelli di confidenza della classificazione email, analitici e aggregati. Metodologia: regole ESORICS 2026 (7 regole MX/SPF/DKIM + modello DOMESTIC/FOREIGN via ASN). Anticipazione per la futura validazione via **bounce-probing**: gli enti a confidenza bassa sono i candidati prioritari.
 
-**22881 enti** analizzati. Confidenza media **0.851** (mediana 0.9; media esclusi unknown 0.875).
+**22882 enti** analizzati. Confidenza media **0.851** (mediana 0.9; media esclusi unknown 0.875).
 
 ## 1. Distribuzione aggregata della confidenza
 
 | fascia | enti | % |
 |---|---:|---:|
 | 0.90-1.00 (molto alta) | 17357 | 75.9% |
-| 0.80-0.89 (alta) | 3599 | 15.7% |
+| 0.80-0.89 (alta) | 3600 | 15.7% |
 | 0.60-0.79 (media) | 1228 | 5.4% |
 | 0.01-0.59 (bassa) | 69 | 0.3% |
 | 0.00 (nulla / unknown) | 628 | 2.7% |
@@ -18,12 +18,12 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 
 | provider | enti | confidenza media | min | max |
 |---|---:|---:|---:|---:|
-| google | 6434 | 0.883 | 0.80 | 0.92 |
-| aruba | 5140 | 0.896 | 0.80 | 0.92 |
-| microsoft | 3428 | 0.929 | 0.80 | 0.96 |
-| independent | 3038 | 0.721 | 0.50 | 0.80 |
+| google | 6433 | 0.883 | 0.80 | 0.92 |
+| aruba | 5141 | 0.896 | 0.80 | 0.92 |
+| microsoft | 3429 | 0.929 | 0.80 | 0.96 |
+| independent | 3039 | 0.721 | 0.50 | 0.80 |
 | local-isp | 1547 | 0.892 | 0.80 | 0.92 |
-| regional-public | 931 | 0.894 | 0.80 | 0.90 |
+| regional-public | 930 | 0.894 | 0.80 | 0.90 |
 | istruzione-miur-tenant | 866 | 0.960 | 0.96 | 0.96 |
 | register-it | 667 | 0.890 | 0.80 | 0.90 |
 | unknown | 628 | 0.000 | 0.00 | 0.00 |
@@ -43,7 +43,7 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 |---|---:|---:|
 | `mx_spf` | 17357 | 75.9% |
 | `mx_only` | 1858 | 8.1% |
-| `dom_mx_spf` | 1741 | 7.6% |
+| `dom_mx_spf` | 1742 | 7.6% |
 | `frgn_mx_spf` | 979 | 4.3% |
 | `no_mx` | 628 | 2.7% |
 | `dom_mx_only` | 249 | 1.1% |
@@ -55,9 +55,9 @@ Dove risiede fisicamente il server di posta in entrata (Team Cymru ASN country):
 
 | giurisdizione | enti | % |
 |---|---:|---:|
-| 🇮🇹 Domestica (IT) | 10512 | 45.9% |
+| 🇮🇹 Domestica (IT) | 10514 | 45.9% |
 | Mista (IT + estero) | 244 | 1.1% |
-| 🌍 Estera | 11426 | 49.9% |
+| 🌍 Estera | 11425 | 49.9% |
 | Sconosciuta | 699 | 3.1% |
 
 **Domestic MX override** applicato a **198** enti: classificati cloud (Microsoft/Google) per segnale tenant/DKIM, ma con MX in entrata self-hosted domestico → riclassificati `independent` (il tenant cloud riflette Teams/SharePoint, non la posta).

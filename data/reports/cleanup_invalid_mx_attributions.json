@@ -1097,7 +1097,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "ms78257242.msv1.invalid",
+      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -2483,9 +2483,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2890,9 +2890,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L18-uco",

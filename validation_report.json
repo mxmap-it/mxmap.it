@@ -1,5 +1,5 @@
 {
-  "total": 22881,
+  "total": 22882,
   "average_score": 80.7,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
@@ -5167,7 +5167,7 @@
       ]
     },
     "IT-C14-cidot_1": {
-      "name": "Ordine della Professione di Ostetrica interprovinciale di Torino e Asti",
+      "name": "Ordine della Professione di Ostetrica interprovinciale di Torino, Asti, Cuneo, Alessandria e Aosta",
       "provider": "local-isp",
       "domain": "ostetrichetorinoasticuneo.it",
       "confidence": 88,
@@ -8250,6 +8250,17 @@
       "name": "Collegio Provinciale Degli Agrotecnici Ed Agrotecnici Laureati di L'Aquila",
       "provider": "aruba",
       "domain": "agrotecnicilaquila.it",
+      "confidence": 90,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified"
+      ]
+    },
+    "IT-C14-cpdae_1": {
+      "name": "Collegio Provinciale Degli Agrotecnici e E Degli Agrotecnici Laureati di Catania",
+      "provider": "aruba",
+      "domain": "collegioagrotecnicicatania.it",
       "confidence": 90,
       "flags": [
         "spf_strict",
@@ -28441,14 +28452,13 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 93,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-001224": {
@@ -131092,10 +131102,11 @@
     },
     "IT-L18-udcmc_": {
       "name": "Unione Dei Comuni Montani del Casentino",
-      "provider": "regional-public",
-      "domain": "uc.casentino.toscana.it",
-      "confidence": 85,
+      "provider": "independent",
+      "domain": "postacert.toscana.it",
+      "confidence": 90,
       "flags": [
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -135566,7 +135577,7 @@
       ]
     },
     "IT-L33-4EMXGJX3": {
-      "name": "IC DON P. UVA-BATTISTI-FERRARIS (COSMAI)",
+      "name": "I.C. Don P. Uva-S. Cosmai",
       "provider": "google",
       "domain": "icdonuvacosmai.edu.it",
       "confidence": 50,
@@ -172314,13 +172325,13 @@
     },
     "IT-L33-istsc_ctic860001": {
       "name": "ISTITUTO COMPRENSIVO - IC F.DE ROBERTO -ZAFFERANA",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icderobertozafferana.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icderobertozafferana.edu.it",
+      "confidence": 53,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -174274,13 +174285,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175777,7 +175788,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -178712,14 +178723,13 @@
     },
     "IT-L33-istsc_gris00400r": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO ISTR.SUPERIORE - P.ALDI",
-      "provider": "istruzione-miur-tenant",
+      "provider": "independent",
       "domain": "pololiceale.edu.it",
-      "confidence": 80,
+      "confidence": 85,
       "flags": [
-        "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-istsc_gris00600c": {
@@ -196901,7 +196911,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.it",
+      "domain": "liceorespighi.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -197649,13 +197659,13 @@
     },
     "IT-L33-istsc_pdis003009": {
       "name": "IIS CATTANEO-MATTEI",
-      "provider": "google",
-      "domain": "cattaneomattei.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "cattaneo-mattei.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -214111,7 +214121,7 @@
       ]
     },
     "IT-L33-istsc_ssic80200l": {
-      "name": "ISTITUTO COMPRENSIVO - POZZOMAGGIORE PINNA PARPAGLIA",
+      "name": "ISTITUTO COMPRENSIVO \"PINNA PARPAGLIA\" POZZOMAGGIORE - THIESI",
       "provider": "independent",
       "domain": "icpozzomaggiore.edu.it",
       "confidence": 85,
@@ -258915,13 +258925,15 @@
     },
     "IT-S01-ptvbssv": {
       "name": "Parco Tecnologico Val Bormida Srl",
-      "provider": "unknown",
-      "domain": "parcotecnologicovalbormida.filse.it",
-      "confidence": 15,
+      "provider": "microsoft",
+      "domain": "filse.it",
+      "confidence": 85,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-S01-pusv": {

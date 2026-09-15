@@ -1,6 +1,6 @@
 {
- "n_entities": 22881,
- "n_classified": 22253,
+ "n_entities": 22882,
+ "n_classified": 22254,
  "coverage_pct": 97.26,
  "mean_confidence": 0.8513,
  "isd": 51.22,
@@ -8,26 +8,26 @@
   "isd": 51.22,
   "cloud_act_pct": 48.23,
   "coverage_pct": 97.26,
-  "n_entities": 22881
+  "n_entities": 22882
  },
  "sovereignty": [
   {
    "bucket": "Italia — Cloud sovrano",
    "group": "ITA",
-   "count": 931,
+   "count": 930,
    "pct": 4.18
   },
   {
    "bucket": "Italia — Provider commerciali",
    "group": "ITA",
-   "count": 7429,
-   "pct": 33.38
+   "count": 7430,
+   "pct": 33.39
   },
   {
    "bucket": "Italia — Infrastruttura autonoma",
    "group": "ITA",
-   "count": 3038,
-   "pct": 13.65
+   "count": 3039,
+   "pct": 13.66
   },
   {
    "bucket": "Altri provider esteri",
@@ -51,13 +51,13 @@
  "jurisdiction": [
   {
    "key": "domestic",
-   "count": 10512,
-   "pct": 45.94
+   "count": 10514,
+   "pct": 45.95
   },
   {
    "key": "foreign",
-   "count": 11426,
-   "pct": 49.94
+   "count": 11425,
+   "pct": 49.93
   },
   {
    "key": "mixed",
@@ -74,26 +74,26 @@
   {
    "provider": "google",
    "display": "Google Workspace",
-   "count": 6434,
+   "count": 6433,
    "pct": 28.91
   },
   {
    "provider": "aruba",
    "display": "Provider Italiano",
-   "count": 5140,
+   "count": 5141,
    "pct": 23.1
   },
   {
    "provider": "microsoft",
    "display": "Microsoft 365",
-   "count": 3428,
-   "pct": 15.4
+   "count": 3429,
+   "pct": 15.41
   },
   {
    "provider": "independent",
    "display": "Infrastruttura autonoma",
-   "count": 3038,
-   "pct": 13.65
+   "count": 3039,
+   "pct": 13.66
   },
   {
    "provider": "local-isp",
@@ -104,7 +104,7 @@
   {
    "provider": "regional-public",
    "display": "Cloud Italiano",
-   "count": 931,
+   "count": 930,
    "pct": 4.18
   },
   {
@@ -181,13 +181,13 @@
   }
  ],
  "market": {
-  "top3_pct": 67.41,
-  "hhi": 1883.0
+  "top3_pct": 67.42,
+  "hhi": 1883.6
  },
  "confidence_bands": [
   {
    "band": "alta",
-   "count": 20956,
+   "count": 20957,
    "pct": 91.59
   },
   {
@@ -205,8 +205,8 @@
   "mx_pct": 97.26,
   "spf_pct": 87.75,
   "dkim_pct": 15.71,
-  "gateway_pct": 15.14
+  "gateway_pct": 15.15
  },
- "generated": "2026-09-14T09:48:42Z",
+ "generated": "2026-09-15T09:26:06Z",
  "country": "IT"
 }

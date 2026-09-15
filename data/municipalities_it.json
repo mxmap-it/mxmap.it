@@ -130970,7 +130970,7 @@
   },
   {
     "id": "IT-C14-cidot_1",
-    "name": "Ordine della Professione di Ostetrica interprovinciale di Torino e Asti",
+    "name": "Ordine della Professione di Ostetrica interprovinciale di Torino, Asti, Cuneo, Alessandria e Aosta",
     "country": "IT",
     "region": null,
     "district": null,
@@ -135348,6 +135348,23 @@
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "066006",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-C14-cpdae_1",
+    "name": "Collegio Provinciale Degli Agrotecnici e E Degli Agrotecnici Laureati di Catania",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "collegioagrotecnicicatania.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "agrotecnici.it"
+    ],
+    "ipa_codice_ipa": "cpdae_1",
+    "ipa_codice_categoria": "C14",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "087017",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -144106,9 +144123,7 @@
     "district": null,
     "domain": "assistentisociali.veneto.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.assistentisociali.veneto.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "odas_027",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -174711,9 +174726,7 @@
     "district": null,
     "domain": "unionecomuniterreufita.av.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.unionecomuniterreufita.av.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "udctu",
     "ipa_codice_categoria": "L18",
     "ipa_codice_istat": "28055290",
@@ -177173,9 +177186,7 @@
     "district": null,
     "domain": "moliselavoro.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.moliselavoro.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "armoli",
     "ipa_codice_categoria": "L19",
     "ipa_codice_istat": "21321543",
@@ -180155,7 +180166,7 @@
   },
   {
     "id": "IT-L33-4EMXGJX3",
-    "name": "IC DON P. UVA-BATTISTI-FERRARIS (COSMAI)",
+    "name": "I.C. Don P. Uva-S. Cosmai",
     "country": "IT",
     "region": null,
     "district": null,
@@ -181097,7 +181108,9 @@
     "district": null,
     "domain": "delpozzo.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "A92VTEIY",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -229392,7 +229405,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icderobertozafferana.it",
+    "domain": "icderobertozafferana.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -292198,7 +292211,7 @@
   },
   {
     "id": "IT-L33-istsc_ssic80200l",
-    "name": "ISTITUTO COMPRENSIVO - POZZOMAGGIORE PINNA PARPAGLIA",
+    "name": "ISTITUTO COMPRENSIVO \"PINNA PARPAGLIA\" POZZOMAGGIORE - THIESI",
     "country": "IT",
     "region": null,
     "district": null,
