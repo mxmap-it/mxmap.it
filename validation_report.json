@@ -1,5 +1,5 @@
 {
-  "total": 22882,
+  "total": 22883,
   "average_score": 80.7,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
@@ -23425,7 +23425,7 @@
     "IT-C3-AGENAS": {
       "name": "Agenzia Nazionale per i Servizi Sanitari Regionali - AGENAS",
       "provider": "microsoft",
-      "domain": "agenas.it",
+      "domain": "agenas.gov.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -59422,7 +59422,7 @@
     },
     "IT-COM-022129": {
       "name": "Comune di Novaledo",
-      "provider": "independent",
+      "provider": "google",
       "domain": "comune.novaledo.tn.it",
       "confidence": 95,
       "flags": [
@@ -65234,7 +65234,7 @@
     },
     "IT-COM-027043": {
       "name": "Comune di Vigonovo",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.vigonovo.ve.it",
       "confidence": 95,
       "flags": [
@@ -77169,13 +77169,12 @@
     "IT-COM-052010": {
       "name": "Comune di Chiusdino",
       "provider": "independent",
-      "domain": "comune.chiusdino.siena.it",
+      "domain": "comune.chiusdino.si.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-052011": {
@@ -77335,14 +77334,13 @@
     },
     "IT-COM-052025": {
       "name": "Comune di Radicondoli",
-      "provider": "google",
-      "domain": "comune.radicondoli.siena.it",
+      "provider": "independent",
+      "domain": "comune.radicondoli.si.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-052026": {
@@ -92532,10 +92530,12 @@
       "name": "Comune di Roccascalegna",
       "provider": "aruba",
       "domain": "comune.roccascalegna.ch.it",
-      "confidence": 50,
+      "confidence": 83,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-069076": {
@@ -114814,7 +114814,7 @@
     "IT-COM-113023": {
       "name": "Comune di Sant'Antonio di Gallura",
       "provider": "aruba",
-      "domain": "comune.santantoniodigallura.ot.it",
+      "domain": "comune.santantoniodigallura.ss.it",
       "confidence": 78,
       "flags": [
         "spf_softfail",
@@ -119759,18 +119759,6 @@
         "autodiscover_confirms"
       ]
     },
-    "IT-CONS-inform": {
-      "name": "Informest",
-      "provider": "microsoft",
-      "domain": "informest.it",
-      "confidence": 95,
-      "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
-      ]
-    },
     "IT-CONS-iscmfav": {
       "name": "Istituzione Scuola Comunale di Musica F.A.Vallotti",
       "provider": "regional-public",
@@ -122178,11 +122166,10 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "calabriaverde.regione.calabria.it",
-      "confidence": 78,
+      "domain": "pec.calabriaverde.eu",
+      "confidence": 50,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -135496,6 +135483,17 @@
         "provider_classified"
       ]
     },
+    "IT-L33-3DJZ495A": {
+      "name": "I.I.S.S. \"S. PERTINI\"",
+      "provider": "independent",
+      "domain": "ipeoaalberghierobrindisi.edu.it",
+      "confidence": 85,
+      "flags": [
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
+      ]
+    },
     "IT-L33-3KJ3AED2": {
       "name": "ISTITUTO COMPRENSIVO CARDUCCI",
       "provider": "google",
@@ -138813,6 +138811,16 @@
       "confidence": 55,
       "flags": [
         "multiple_mx",
+        "no_spf",
+        "provider_classified"
+      ]
+    },
+    "IT-L33-VIECHVRL": {
+      "name": "ISTITUTO D'ISTRUZIONE SUPERIORE \"F.DE PINEDO - M.COLONNA\"",
+      "provider": "google",
+      "domain": "depinedo-colonna.edu.it",
+      "confidence": 50,
+      "flags": [
         "no_spf",
         "provider_classified"
       ]
@@ -189450,18 +189458,6 @@
         "provider_classified"
       ]
     },
-    "IT-L33-istsc_msic81200d": {
-      "name": "ISTITUTO COMPRENSIVO - MASSA 6",
-      "provider": "aruba",
-      "domain": "icmassa6.edu.it",
-      "confidence": 83,
-      "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
-      ]
-    },
     "IT-L33-istsc_msic813009": {
       "name": "ISTITUTO COMPRENSIVO - MONTIGNOSO",
       "provider": "independent",
@@ -189520,7 +189516,7 @@
       ]
     },
     "IT-L33-istsc_msic81800c": {
-      "name": "ISTITUTO COMPRENSIVO MALASPINA",
+      "name": "ISTITUTO COMPRENSIVO MALASPINA MASSA  VI",
       "provider": "google",
       "domain": "malaspina.edu.it",
       "confidence": 93,
@@ -196911,7 +196907,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -246606,7 +246602,7 @@
       ]
     },
     "IT-L37-ipspa": {
-      "name": "Ivrea Parcheggi Spa",
+      "name": "Ivrea Parcheggi srl",
       "provider": "google",
       "domain": "ivreaparcheggi.it",
       "confidence": 90,
@@ -260830,14 +260826,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {
@@ -264828,6 +264822,18 @@
         "independent_mx_with_cloud_spf",
         "provider_classified",
         "provider_via_gateway_spf",
+        "autodiscover_confirms"
+      ]
+    },
+    "IT-SA-inform": {
+      "name": "Informest",
+      "provider": "microsoft",
+      "domain": "informest.it",
+      "confidence": 95,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
         "autodiscover_confirms"
       ]
     },

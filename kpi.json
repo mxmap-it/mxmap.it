@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-15T10:12:37Z",
+  "generated_at": "2026-09-16T09:54:56Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22882,
-    "n_with_mx": 22254,
+    "n_entities": 22883,
+    "n_with_mx": 22255,
     "coverage_pct": 97.26
   },
   "indices": {
     "isd": 51.22,
     "cloud_act_pct": 48.23,
-    "n_classified": 22254
+    "n_classified": 22255
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10735,
+      "count": 10736,
       "pct": 46.9,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -44,7 +44,7 @@
     },
     {
       "name": "Google Workspace",
-      "count": 6433,
+      "count": 6434,
       "pct": 28.1,
       "sovereignty": "extra_eu"
     },
@@ -94,7 +94,7 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8312,
+      "n_entities": 8313,
       "usa_pct": 77.9,
       "dominant_provider": "Google Workspace"
     },
@@ -112,8 +112,8 @@
     },
     {
       "cluster": "Consorzi e Unioni di enti locali",
-      "n_entities": 1426,
-      "usa_pct": 24.8,
+      "n_entities": 1425,
+      "usa_pct": 24.7,
       "dominant_provider": "Provider Italiano"
     },
     {
@@ -124,8 +124,8 @@
     },
     {
       "cluster": "Stazioni Appaltanti",
-      "n_entities": 614,
-      "usa_pct": 49.5,
+      "n_entities": 615,
+      "usa_pct": 49.4,
       "dominant_provider": "Microsoft 365"
     },
     {

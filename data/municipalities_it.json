@@ -289,21 +289,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-CONS-inform",
-    "name": "Informest",
-    "country": "IT",
-    "region": "Informest",
-    "district": null,
-    "domain": "informest.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [],
-    "ipa_codice_ipa": "inform",
-    "ipa_codice_categoria": "L4",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "031007",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-CONS-itaca",
     "name": "Itaca- Istituto per L'Innovazione e Trasparenza Degli Appalti e La Compatibilita Ambientale",
     "country": "IT",
@@ -91305,9 +91290,7 @@
     "district": "Latina",
     "domain": "comune.sabaudia.lt.it",
     "osm_relation_id": 41208,
-    "domain_fallbacks": [
-      "comune.sabaudia.latina.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_h647",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "702074",
@@ -120851,9 +120834,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "comune.santantoniodigallura.ot.it",
+    "domain": "comune.santantoniodigallura.ss.it",
     "osm_relation_id": 40950,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "comune.santantoniodigallura.ot.it"
+    ],
     "ipa_codice_ipa": "c_m276",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "11141812",
@@ -180048,6 +180033,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-3DJZ495A",
+    "name": "I.I.S.S. \"S. PERTINI\"",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "ipeoaalberghierobrindisi.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "3DJZ495A",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "074001",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-3KJ3AED2",
     "name": "ISTITUTO COMPRENSIVO CARDUCCI",
     "country": "IT",
@@ -180757,7 +180757,9 @@
     "district": null,
     "domain": "iceboli1matteoripa.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "8ATK48M4",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -185258,7 +185260,7 @@
     "domain": "icsdeamicisgiovanni23.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "yahoo.it"
+      "istruzione.it"
     ],
     "ipa_codice_ipa": "GEKD2ETR",
     "ipa_codice_categoria": "L33",
@@ -255297,23 +255299,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-L33-istsc_msic81200d",
-    "name": "ISTITUTO COMPRENSIVO - MASSA 6",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "icmassa6.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_msic81200d",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "045010",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-L33-istsc_msic813009",
     "name": "ISTITUTO COMPRENSIVO - MONTIGNOSO",
     "country": "IT",
@@ -255400,7 +255385,7 @@
   },
   {
     "id": "IT-L33-istsc_msic81800c",
-    "name": "ISTITUTO COMPRENSIVO MALASPINA",
+    "name": "ISTITUTO COMPRENSIVO MALASPINA MASSA  VI",
     "country": "IT",
     "region": null,
     "district": null,
@@ -315877,6 +315862,23 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-VIECHVRL",
+    "name": "ISTITUTO D'ISTRUZIONE SUPERIORE \"F.DE PINEDO - M.COLONNA\"",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "depinedo-colonna.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
+    "ipa_codice_ipa": "VIECHVRL",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "058091",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-VIHU3K26",
     "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
     "country": "IT",
@@ -337007,7 +337009,7 @@
   },
   {
     "id": "IT-L37-ipspa",
-    "name": "Ivrea Parcheggi Spa",
+    "name": "Ivrea Parcheggi srl",
     "country": "IT",
     "region": null,
     "district": null,
@@ -359177,6 +359179,21 @@
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "044007",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SA-inform",
+    "name": "Informest",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "informest.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "inform",
+    "ipa_codice_categoria": "SA",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "031007",
     "domain_source": "sito_istituzionale"
   },
   {

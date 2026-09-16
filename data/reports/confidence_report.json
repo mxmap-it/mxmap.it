@@ -1,6 +1,6 @@
 {
   "country": "IT",
-  "n": 22882,
+  "n": 22883,
   "mean": 0.851,
   "median": 0.9,
   "mean_nonzero": 0.875,
@@ -8,25 +8,25 @@
     "0.90-1.00 (molto alta)": 17357,
     "0.80-0.89 (alta)": 3600,
     "0.00 (nulla / unknown)": 628,
-    "0.60-0.79 (media)": 1228,
+    "0.60-0.79 (media)": 1229,
     "0.01-0.59 (bassa)": 69
   },
   "rules": {
     "mx_spf": 17357,
-    "dom_mx_spf": 1742,
+    "dom_mx_spf": 1741,
     "no_mx": 628,
-    "mx_only": 1858,
-    "frgn_mx_spf": 979,
+    "mx_only": 1859,
+    "frgn_mx_spf": 980,
     "dom_mx_only": 249,
     "frgn_mx_only": 69
   },
   "jurisdiction": {
-    "foreign": 11425,
+    "foreign": 11426,
     "domestic": 10514,
     "mixed": 244,
     "unknown": 699
   },
-  "domestic_mx_override": 198,
+  "domestic_mx_override": 199,
   "bounce_candidates": 69,
   "bounce_by_provider": {
     "independent": 69

@@ -1,6 +1,6 @@
 {
- "n_entities": 22882,
- "n_classified": 22254,
+ "n_entities": 22883,
+ "n_classified": 22255,
  "coverage_pct": 97.26,
  "mean_confidence": 0.8513,
  "isd": 51.22,
@@ -8,7 +8,7 @@
   "isd": 51.22,
   "cloud_act_pct": 48.23,
   "coverage_pct": 97.26,
-  "n_entities": 22882
+  "n_entities": 22883
  },
  "sovereignty": [
   {
@@ -38,7 +38,7 @@
   {
    "bucket": "USA (CLOUD Act)",
    "group": "EST",
-   "count": 10733,
+   "count": 10734,
    "pct": 48.23
   },
   {
@@ -56,7 +56,7 @@
   },
   {
    "key": "foreign",
-   "count": 11425,
+   "count": 11426,
    "pct": 49.93
   },
   {
@@ -74,7 +74,7 @@
   {
    "provider": "google",
    "display": "Google Workspace",
-   "count": 6433,
+   "count": 6434,
    "pct": 28.91
   },
   {
@@ -188,11 +188,11 @@
   {
    "band": "alta",
    "count": 20957,
-   "pct": 91.59
+   "pct": 91.58
   },
   {
    "band": "media",
-   "count": 1297,
+   "count": 1298,
    "pct": 5.67
   },
   {
@@ -203,10 +203,10 @@
  ],
  "signals": {
   "mx_pct": 97.26,
-  "spf_pct": 87.75,
+  "spf_pct": 87.74,
   "dkim_pct": 15.71,
   "gateway_pct": 15.15
  },
- "generated": "2026-09-15T09:26:06Z",
+ "generated": "2026-09-16T09:17:16Z",
  "country": "IT"
 }
