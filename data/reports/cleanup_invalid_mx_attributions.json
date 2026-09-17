@@ -1,5 +1,5 @@
 {
-  "n_purged": 510,
+  "n_purged": 509,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -629,17 +629,6 @@
       "old_reason": "MX record (comune-milano-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
-      "id": "IT-C14-crmsc",
-      "name": "Collegio Regionale Maestri di Sci Campania",
-      "codice_ipa": "crmsc",
-      "seed_domain": "maestridiscicampania.it",
-      "claimed_domain": "comune.napoli.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-napoli-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-napoli-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
       "id": "IT-C14-ctsr_070",
       "name": "Ordine dei Tecnici Sanitari di Radiologia Medica e delle Professioni Sanitarie Tecniche, della Riabilitazione e della Prevenzione di Campobasso-Isernia",
       "codice_ipa": "ctsr_070",
@@ -1097,7 +1086,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -2483,9 +2472,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2890,9 +2879,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L18-uco",
@@ -3826,8 +3815,8 @@
       "claimed_domain": "comune.pontsaintmartin.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is invallee gateway; MS365 tenant detected (Managed)"
+      "old_provider": "independent",
+      "old_reason": "MX is invallee gateway; backend provider unknown"
     },
     {
       "id": "IT-L33-itr",

@@ -126818,9 +126818,7 @@
     "district": null,
     "domain": "rieti.aci.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "delegazioni.aci.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "acri",
     "ipa_codice_categoria": "C13",
     "ipa_codice_istat": null,
@@ -129263,7 +129261,9 @@
     "district": null,
     "domain": "periti-industriali.rieti.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "gmail.com"
+    ],
     "ipa_codice_ipa": "cdpidrie",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -136483,7 +136483,7 @@
   },
   {
     "id": "IT-C14-cpil_fc",
-    "name": "Collegio dei Periti Industriali e dei Periti Industriali Laureati della Provincia di Forli'",
+    "name": "ORDINE DEI PERITI INDUSTRIALI DI FORLI' CESENA",
     "country": "IT",
     "region": null,
     "district": null,
@@ -142847,7 +142847,9 @@
     "district": null,
     "domain": "ordinesiena.conaf.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "outlook.it"
+    ],
     "ipa_codice_ipa": "odafsi",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -165061,7 +165063,7 @@
   },
   {
     "id": "IT-L10-arlpt",
-    "name": "Agenzia Regionale per La Promozione del Turismo della Campania",
+    "name": "AGENZIA CAMPANIA TURISMO",
     "country": "IT",
     "region": null,
     "district": null,
@@ -177846,7 +177848,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "sardegnaagricoltura.it",
+    "domain": "agenziaargea.it",
     "osm_relation_id": null,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "argea",
@@ -179629,7 +179631,9 @@
     "district": null,
     "domain": "ic2piacenza.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.gov.it"
+    ],
     "ipa_codice_ipa": "09Q0MK8F",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -179861,7 +179865,9 @@
     "district": null,
     "domain": "pascoliaversa.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "217XZ2VA",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -184385,7 +184391,9 @@
     "district": null,
     "domain": "stendhalcalamatta.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "D6BJVA30",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -190085,15 +190093,16 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "iclodi4.edu.it",
+    "domain": "istitutocapannoli.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
+      "iclodi4.edu.it",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "icicl",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "098031",
+    "ipa_codice_comune_istat": "050005",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -265165,7 +265174,6 @@
     "domain": "iismandralisca.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "gmail.com",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_pais00200n",
@@ -273737,7 +273745,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icscaponnetto.edu.it",
+    "domain": "icscaponnettoiozzelli.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -309626,7 +309634,9 @@
     "district": null,
     "domain": "iis-silva-ricci.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "istsc_vris01400d",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -335433,6 +335443,21 @@
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "015182",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L37-F3DETGNF",
+    "name": "Centro Studi Interdisciplinari Gaiola ETS",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "areamarinaprotettagaiola.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "F3DETGNF",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "063049",
     "domain_source": "sito_istituzionale"
   },
   {

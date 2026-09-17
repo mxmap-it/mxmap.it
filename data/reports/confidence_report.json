@@ -1,30 +1,30 @@
 {
   "country": "IT",
-  "n": 22883,
+  "n": 22884,
   "mean": 0.851,
   "median": 0.9,
   "mean_nonzero": 0.875,
   "buckets": {
-    "0.90-1.00 (molto alta)": 17357,
-    "0.80-0.89 (alta)": 3600,
-    "0.00 (nulla / unknown)": 628,
-    "0.60-0.79 (media)": 1229,
+    "0.90-1.00 (molto alta)": 17367,
+    "0.80-0.89 (alta)": 3592,
+    "0.00 (nulla / unknown)": 624,
+    "0.60-0.79 (media)": 1232,
     "0.01-0.59 (bassa)": 69
   },
   "rules": {
-    "mx_spf": 17357,
-    "dom_mx_spf": 1741,
-    "no_mx": 628,
-    "mx_only": 1859,
-    "frgn_mx_spf": 980,
+    "mx_spf": 17367,
+    "dom_mx_spf": 1735,
+    "no_mx": 624,
+    "mx_only": 1857,
+    "frgn_mx_spf": 983,
     "dom_mx_only": 249,
     "frgn_mx_only": 69
   },
   "jurisdiction": {
-    "foreign": 11426,
-    "domestic": 10514,
+    "foreign": 11429,
+    "domestic": 10516,
     "mixed": 244,
-    "unknown": 699
+    "unknown": 695
   },
   "domestic_mx_override": 199,
   "bounce_candidates": 69,
@@ -37,7 +37,7 @@
   },
   "provider_confidence": {
     "microsoft": 0.929,
-    "independent": 0.721,
+    "independent": 0.72,
     "local-isp": 0.892,
     "unknown": 0.0,
     "google": 0.883,
@@ -46,7 +46,7 @@
     "register-it": 0.89,
     "ovh": 0.9,
     "ionos": 0.9,
-    "regional-public": 0.894,
+    "regional-public": 0.895,
     "aws": 0.9,
     "gandi": 0.9,
     "zoho": 0.9,
