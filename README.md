@@ -82,6 +82,7 @@ verità**, riusata da stats, kpi e report.
 | `dist/mxmap_it_dataset.{csv,json,xlsx}` | Dataset completo opendata. |
 | `/ente/{prov}/{nome}/` · `/aree/…` · `/categoria/…` | **~53.000 pagine SEO** (#15): una per ente con tutti i dati di rilevamento + hub regione/provincia/comune + facet per categoria. Git-ignored, solo nell'artifact. Vedi sotto. |
 | [`sitemap.xml`](https://mxmap.it/sitemap.xml) · `robots.txt` · `site.webmanifest` | SEO. `sitemap.xml` è un **indice** rigenerato ogni notte da [`scripts/build_entity_pages.py`](scripts/build_entity_pages.py) (`<lastmod>` = `generated_at` di `kpi.json`); `robots.txt`/manifest sono statici. Le pagine portano `<meta>` keywords/canonical; `index.html` espone JSON-LD (`WebSite`/`Organization`/`Dataset`, alternateName *MxMap Italia*) per Google Dataset Search. |
+| `scripts/indexnow_submit.py` + workflow `indexnow.yml` | **IndexNow**: ogni giorno una fetta rotante (~1000 URL) del sitemap viene sottomessa a `api.indexnow.org` — una submission raggiunge **Bing, Yandex, Seznam, Naver, Yep** (ciclo completo ~1 mese sui ~30k URL, poi ricomincia). Chiave pubblica hostata alla root (`<key>.txt`). NB: **Google non aderisce a IndexNow** e ha ritirato il ping sitemap (2023) — per Google valgono sitemap `lastmod`, link interni e autorità. |
 
 ### 5. Pagine per ente e hub geografici (SEO aggressivo — #15)
 

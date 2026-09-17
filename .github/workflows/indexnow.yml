@@ -1,0 +1,39 @@
+name: IndexNow daily submit
+
+# "Pingback" pagina-per-pagina, schedulato e con calma (richiesta 2026-09-17):
+# ogni giorno sottomette a IndexNow UNA fetta rotante (~1000 URL) del sitemap
+# live. Una submission a api.indexnow.org viene condivisa con TUTTI i motori
+# aderenti (Bing, Yandex, Seznam, Naver, Yep). Ciclo completo ~1 mese sui
+# ~30k URL, poi ricomincia (ri-segnala freschezza dopo i refresh notturni).
+#
+# NB Google NON aderisce a IndexNow e ha ritirato il ping sitemap nel 2023:
+# per Google valgono sitemap <lastmod> (già manutenuto), link interni,
+# autorità e la Search Console. Nessun ping per-pagina esiste lì.
+#
+# La chiave IndexNow è pubblica by design (file <key>.txt alla root del sito).
+
+on:
+  schedule:
+    - cron: '30 12 * * *' # ogni giorno 12:30 UTC (ben dopo nightly+deploy)
+  workflow_dispatch:
+    inputs:
+      per_day:
+        description: "URL per fetta (default 1000)"
+        required: false
+        default: "1000"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Submit today's rolling slice to IndexNow
+        run: python3 scripts/indexnow_submit.py --per-day "${{ github.event.inputs.per_day || '1000' }}"
