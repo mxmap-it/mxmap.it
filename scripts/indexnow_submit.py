@@ -110,6 +110,11 @@ def main() -> None:
     elif status in (400, 403, 422):
         # 400 = payload malformato, 403 = chiave non valida, 422 = URL/host mismatch:
         # sono errori di CONFIGURAZIONE → devono rendere rosso il run.
+        # ECCEZIONE NOTA (cold-start): nei primi minuti dopo la pubblicazione di
+        # una chiave NUOVA il validatore può ancora vedere il 404 in cache → 403
+        # transitorio. Osservato al primo run (2026-09-17): riprovato dopo pochi
+        # minuti → 200. Se il 403 appare subito dopo una rotazione della chiave,
+        # riprova prima di debuggare.
         sys.exit(
             f"::error::IndexNow http={status} — configurazione da correggere (chiave/host/payload)"
         )
