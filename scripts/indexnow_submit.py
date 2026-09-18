@@ -29,6 +29,7 @@ import argparse
 import json
 import re
 import sys
+import time
 import urllib.request
 from datetime import date
 
@@ -103,18 +104,22 @@ def main() -> None:
         return
 
     status = submit(batch)
+    if status == 403:
+        # Il 403 ("chiave non valida") può essere TRANSIENTE anche a chiave
+        # perfettamente valida: osservato al primo run (2026-09-17, cold-start
+        # della chiave appena pubblicata: 403 → 200 dopo pochi minuti) ed è un
+        # comportamento noto di api.indexnow.org. Un retry ritardato assorbe il
+        # blip senza produrre un run rosso (e la relativa email) per nulla.
+        print("::warning::IndexNow http=403 — retry tra 90s (403 transiente noto)")
+        time.sleep(90)
+        status = submit(batch)
     if status in (200, 202):
         print(
             f"[indexnow] OK http={status} — fetta accettata (condivisa con tutti i motori IndexNow)"
         )
     elif status in (400, 403, 422):
-        # 400 = payload malformato, 403 = chiave non valida, 422 = URL/host mismatch:
-        # sono errori di CONFIGURAZIONE → devono rendere rosso il run.
-        # ECCEZIONE NOTA (cold-start): nei primi minuti dopo la pubblicazione di
-        # una chiave NUOVA il validatore può ancora vedere il 404 in cache → 403
-        # transitorio. Osservato al primo run (2026-09-17): riprovato dopo pochi
-        # minuti → 200. Se il 403 appare subito dopo una rotazione della chiave,
-        # riprova prima di debuggare.
+        # 400 = payload malformato, 403 = chiave non valida (persistente, dopo
+        # retry), 422 = URL/host mismatch: errori di CONFIGURAZIONE → run rosso.
         sys.exit(
             f"::error::IndexNow http={status} — configurazione da correggere (chiave/host/payload)"
         )
