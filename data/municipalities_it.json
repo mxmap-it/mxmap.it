@@ -62753,7 +62753,7 @@
     "country": "IT",
     "region": "Abruzzo",
     "district": "Chieti",
-    "domain": "miglianico.gov.it",
+    "domain": "comune.miglianico.ch.it",
     "osm_relation_id": 41959,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "c_f196",
@@ -225306,24 +225306,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-L33-istsc_cntf010005",
-    "name": "ISTITUTO TECNICO INDUSTRIALE - CUNEO 'MARIO DELPOZZO'",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "itiscuneo.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it",
-      "cnnet.it"
-    ],
-    "ipa_codice_ipa": "istsc_cntf010005",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "004078",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-L33-istsc_coic80100b",
     "name": "ISTITUTO COMPRENSIVO MAGISTRI INTELVESI",
     "country": "IT",
@@ -244771,7 +244753,7 @@
   },
   {
     "id": "IT-L33-istsc_luic84100e",
-    "name": "ISTITUTO COMPRENSIVO - IC PORCARI",
+    "name": "ISTITUTO COMPRENSIVO PORCARI MONTECARLO VILLA BASILICA",
     "country": "IT",
     "region": null,
     "district": null,
@@ -273205,7 +273187,6 @@
     "domain": "gandigliosanlazzaro.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "scuola.istruzione.it",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_psic83800t",
@@ -281306,7 +281287,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "comprensivo-genazzano.edu.it",
+    "domain": "icgenazzano.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -313013,6 +312994,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-LNVVI0PR",
+    "name": "ISTITUTO COMPRENSIVO 7",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "ic7piacenza.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "LNVVI0PR",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "033032",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-lpngf",
     "name": "Liceo P.Nervi G.Ferrari",
     "country": "IT",
@@ -314893,7 +314889,9 @@
     "district": null,
     "domain": "ic5piacenza.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "R79NF8V6",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -315960,7 +315958,9 @@
     "district": null,
     "domain": "ic3piacenza.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "VT5GWEFZ",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -316099,6 +316099,23 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "110003",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L33-WMAO35T5",
+    "name": "ISTITUTO COMPRENSIVO PESCARA 1",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "icpescarauno.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
+    "ipa_codice_ipa": "WMAO35T5",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "068028",
     "domain_source": "sito_istituzionale"
   },
   {
