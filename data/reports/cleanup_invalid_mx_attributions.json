@@ -1,5 +1,5 @@
 {
-  "n_purged": 512,
+  "n_purged": 508,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -44,17 +44,6 @@
       "old_mx": "comune-catanzaro-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-catanzaro-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
-      "id": "IT-C14-GB6QL6FQ",
-      "name": "Ordine dei Dottori Agronomi e dei Dottori Forestali della Provincia di Pescara",
-      "codice_ipa": "gb6ql6fq",
-      "seed_domain": "ordinepescara.conaf.it",
-      "claimed_domain": "comune.pescara.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx1.hc1174-38.eu.iphmx.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is cisco-ironport gateway; MS365 tenant detected (Managed)"
     },
     {
       "id": "IT-C14-M1GDRYTZ",
@@ -772,17 +761,6 @@
       "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
     },
     {
-      "id": "IT-C14-odafbr",
-      "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Brindisi",
-      "codice_ipa": "odafbr",
-      "seed_domain": "ordinebrindisi.conaf.it",
-      "claimed_domain": "comune.ostuni.br.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx.zimbraopen.it",
-      "old_provider": "independent",
-      "old_reason": "MX is zimbraopen gateway; backend provider unknown"
-    },
-    {
       "id": "IT-C14-odafna",
       "name": "Federazione Regionale Degli Ordini Dei Dottori Agronomi e Dei Dottori Forestali della Campania",
       "codice_ipa": "odafna",
@@ -1003,17 +981,6 @@
       "old_reason": "MX is libraesva gateway; TXT verification proves microsoft tenant"
     },
     {
-      "id": "IT-C14-odft",
-      "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Torino",
-      "codice_ipa": "odft",
-      "seed_domain": "ordinetorino.conaf.it",
-      "claimed_domain": "comune.torino.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-torino-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-torino-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
       "id": "IT-C14-odmcd",
       "name": "Ordine Dei Medici Chirurghi e Degli Odontoiatri della Provincia di Catanzaro",
       "codice_ipa": "odmcd",
@@ -1119,7 +1086,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -1870,17 +1837,6 @@
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
       "old_provider": "google",
       "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
-    },
-    {
-      "id": "IT-CONS-camt",
-      "name": "Consorzio Acquedotto Medio Tirreno in Liquidazione",
-      "codice_ipa": "camt",
-      "seed_domain": "acquemediotirreno.it",
-      "claimed_domain": "comune.civitavecchia.rm.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-civitavecchia-rm-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-civitavecchia-rm-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-CONS-cbsap",

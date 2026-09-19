@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-09-18T10:01:49Z",
+  "generated_at": "2026-09-19T09:35:14Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
     "n_entities": 22885,
-    "n_with_mx": 22255,
-    "coverage_pct": 97.25
+    "n_with_mx": 22261,
+    "coverage_pct": 97.27
   },
   "indices": {
     "isd": 51.19,
     "cloud_act_pct": 48.26,
-    "n_classified": 22255
+    "n_classified": 22261
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10743,
-      "pct": 46.9,
+      "count": 10746,
+      "pct": 47.0,
       "label": "Extra-UE (CLOUD Act)"
     },
     "eu_non_it": {
@@ -25,32 +25,32 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11392,
+      "count": 11395,
       "pct": 49.8,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 630,
-      "pct": 2.8,
+      "count": 624,
+      "pct": 2.7,
       "label": "Sconosciuto"
     }
   },
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7427,
+      "count": 7431,
       "pct": 32.5,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6434,
+      "count": 6436,
       "pct": 28.1,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4302,
+      "count": 4303,
       "pct": 18.8,
       "sovereignty": "extra_eu"
     },
@@ -62,14 +62,14 @@
     },
     {
       "name": "Cloud Italiano",
-      "count": 930,
+      "count": 929,
       "pct": 4.1,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 630,
-      "pct": 2.8,
+      "count": 624,
+      "pct": 2.7,
       "sovereignty": "unknown"
     },
     {
@@ -94,7 +94,7 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8314,
+      "n_entities": 8313,
       "usa_pct": 77.8,
       "dominant_provider": "Google Workspace"
     },
@@ -118,8 +118,8 @@
     },
     {
       "cluster": "Gestori di pubblici servizi",
-      "n_entities": 1147,
-      "usa_pct": 46.5,
+      "n_entities": 1148,
+      "usa_pct": 46.4,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8512,
+    "mean": 0.8515,
     "high_pct": 91.6
   }
 }
