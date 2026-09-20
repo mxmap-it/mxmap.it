@@ -1,6 +1,6 @@
 {
-  "total": 22885,
-  "average_score": 80.8,
+  "total": 22886,
+  "average_score": 80.7,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
   "entries": {
@@ -2791,7 +2791,7 @@
     "IT-C14-cdadapp": {
       "name": "Collegio Degli Agrotecnici e Degli Agrotecnici Laureati di Piacenza e Parma",
       "provider": "aruba",
-      "domain": "agrotecnici.it",
+      "domain": "agrotecnici-piacenza-parma.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -14046,7 +14046,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "na.archiworld.it",
+      "domain": "napoli.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -28669,12 +28669,11 @@
     },
     "IT-COM-001242": {
       "name": "Comune di San Germano Chisone",
-      "provider": "regional-public",
-      "domain": "comune.sangermanochisone.to.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.comune.sangermanochisone.to.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -30859,13 +30858,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "comune.cureggio.no.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-003060": {
@@ -35777,7 +35776,7 @@
     "IT-COM-006002": {
       "name": "Comune di Albera Ligure",
       "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
+      "domain": "comune.alberaligure.al.it",
       "confidence": 80,
       "flags": [
         "spf_strict",
@@ -87299,12 +87298,13 @@
     },
     "IT-COM-064093": {
       "name": "Comune di Santa Paolina",
-      "provider": "register-it",
+      "provider": "unknown",
       "domain": "comunesantapaolina.gov.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-064095": {
@@ -90474,12 +90474,13 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.scanno.aq.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-066094": {
@@ -102470,7 +102471,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "comune.baucina.pa.it",
+      "domain": "egov.comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -196914,7 +196915,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -200875,13 +200876,12 @@
     },
     "IT-L33-istsc_pric83500v": {
       "name": "ISTITUTO COMPRENSIVO - I. C. DI VIA BOCCHI 33 PARMA",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icbocchi.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icbocchi.istruzioneer.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -253845,7 +253845,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "governo.it",
+      "domain": "commissariobonificadiscariche.governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
@@ -263376,6 +263376,18 @@
         "spf_softfail",
         "mx_spf_match",
         "provider_classified"
+      ]
+    },
+    "IT-SA-S3EUKFVX": {
+      "name": "AZIENDA SOCIALE",
+      "provider": "microsoft",
+      "domain": "aziendacastano.it",
+      "confidence": 95,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-SA-S4WZR3UI": {

@@ -50,21 +50,21 @@
    "cluster": "territorial",
    "label": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
    "n": 8005,
-   "n_classified": 7874,
-   "isd": 73.55,
-   "cloud_act_pct": 26.14,
+   "n_classified": 7871,
+   "isd": 73.54,
+   "cloud_act_pct": 26.15,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 749,
-     "pct": 9.51
+     "count": 748,
+     "pct": 9.5
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 3225,
-     "pct": 40.96
+     "count": 3223,
+     "pct": 40.95
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
@@ -82,13 +82,13 @@
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 2058,
-     "pct": 26.14
+     "pct": 26.15
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 131,
-     "pct": 1.64
+     "count": 134,
+     "pct": 1.67
     }
    ]
   },
@@ -233,10 +233,10 @@
   {
    "cluster": "procurement",
    "label": "Stazioni appaltanti",
-   "n": 615,
-   "n_classified": 601,
-   "isd": 47.92,
-   "cloud_act_pct": 51.25,
+   "n": 616,
+   "n_classified": 602,
+   "isd": 47.84,
+   "cloud_act_pct": 51.33,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -248,13 +248,13 @@
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 226,
-     "pct": 37.6
+     "pct": 37.54
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
      "count": 60,
-     "pct": 9.98
+     "pct": 9.97
     },
     {
      "bucket": "Altri provider esteri",
@@ -265,14 +265,14 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 308,
-     "pct": 51.25
+     "count": 309,
+     "pct": 51.33
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
      "count": 14,
-     "pct": 2.28
+     "pct": 2.27
     }
    ]
   },
@@ -691,5 +691,5 @@
    ]
   }
  ],
- "generated": "2026-09-19T08:59:04Z"
+ "generated": "2026-09-20T09:17:40Z"
 }

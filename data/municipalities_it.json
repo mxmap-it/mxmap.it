@@ -127711,9 +127711,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "agrotecnici.it",
+    "domain": "agrotecnici-piacenza-parma.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "agrotecnici.it"
+    ],
     "ipa_codice_ipa": "cdadapp",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -146019,8 +146021,7 @@
     "domain": "agronomiforestaliumbria.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "gmail.com",
-      "virgilio.it"
+      "gmail.com"
     ],
     "ipa_codice_ipa": "oddadfte",
     "ipa_codice_categoria": "C14",
@@ -361135,6 +361136,21 @@
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "023091",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SA-S3EUKFVX",
+    "name": "AZIENDA SOCIALE",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "aziendacastano.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "S3EUKFVX",
+    "ipa_codice_categoria": "SA",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "015062",
     "domain_source": "sito_istituzionale"
   },
   {
