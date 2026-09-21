@@ -3,10 +3,10 @@
   {
    "cluster": "education",
    "label": "Istruzione (Scuole, Università, AFAM)",
-   "n": 8313,
-   "n_classified": 8262,
-   "isd": 21.33,
-   "cloud_act_pct": 78.32,
+   "n": 8314,
+   "n_classified": 8263,
+   "isd": 21.34,
+   "cloud_act_pct": 78.31,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -23,8 +23,8 @@
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 509,
-     "pct": 6.16
+     "count": 510,
+     "pct": 6.17
     },
     {
      "bucket": "Altri provider esteri",
@@ -36,7 +36,7 @@
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 6471,
-     "pct": 78.32
+     "pct": 78.31
     },
     {
      "bucket": "Sconosciuto",
@@ -50,21 +50,21 @@
    "cluster": "territorial",
    "label": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
    "n": 8005,
-   "n_classified": 7871,
-   "isd": 73.54,
-   "cloud_act_pct": 26.15,
+   "n_classified": 7873,
+   "isd": 73.56,
+   "cloud_act_pct": 26.13,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 748,
-     "pct": 9.5
+     "count": 749,
+     "pct": 9.51
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 3223,
-     "pct": 40.95
+     "count": 3225,
+     "pct": 40.96
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
@@ -81,14 +81,14 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 2058,
-     "pct": 26.15
+     "count": 2057,
+     "pct": 26.13
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 134,
-     "pct": 1.67
+     "count": 132,
+     "pct": 1.65
     }
    ]
   },
@@ -149,8 +149,8 @@
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 103,
-     "pct": 8.31
+     "count": 104,
+     "pct": 8.39
     },
     {
      "bucket": "Italia — Provider commerciali",
@@ -161,8 +161,8 @@
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 233,
-     "pct": 18.81
+     "count": 232,
+     "pct": 18.72
     },
     {
      "bucket": "Altri provider esteri",
@@ -373,8 +373,8 @@
    "label": "Sanità (ASL, Aziende ospedaliere)",
    "n": 234,
    "n_classified": 228,
-   "isd": 35.53,
-   "cloud_act_pct": 64.47,
+   "isd": 35.09,
+   "cloud_act_pct": 64.91,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -391,8 +391,8 @@
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 31,
-     "pct": 13.6
+     "count": 30,
+     "pct": 13.16
     },
     {
      "bucket": "Altri provider esteri",
@@ -403,8 +403,8 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 147,
-     "pct": 64.47
+     "count": 148,
+     "pct": 64.91
     },
     {
      "bucket": "Sconosciuto",
@@ -691,5 +691,5 @@
    ]
   }
  ],
- "generated": "2026-09-20T09:17:40Z"
+ "generated": "2026-09-21T09:54:10Z"
 }

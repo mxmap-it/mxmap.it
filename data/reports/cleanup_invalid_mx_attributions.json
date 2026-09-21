@@ -1086,7 +1086,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -1586,6 +1586,17 @@
       "old_reason": "MX (mx.comune.guardialombardi.av.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
+      "id": "IT-COM-064115",
+      "name": "Comune di Vallesaccarda",
+      "codice_ipa": "c_l616",
+      "seed_domain": "comune.vallesaccarda.av.it",
+      "claimed_domain": "comune-vallesaccarda.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mx.comune-vallesaccarda.it",
+      "old_provider": "aruba",
+      "old_reason": "MX (mx.comune-vallesaccarda.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
       "id": "IT-COM-064120",
       "name": "Comune di Zungoli",
       "codice_ipa": "c_m203",
@@ -1837,17 +1848,6 @@
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
       "old_provider": "google",
       "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
-    },
-    {
-      "id": "IT-CONS-cbsap",
-      "name": "Consorzio Bassa Sabina Acqua Peschiera",
-      "codice_ipa": "cbsap",
-      "seed_domain": "consorzioacquapeschiera.it",
-      "claimed_domain": "galsabina.com",
-      "reject_reason": "unrelated",
-      "old_mx": "localhost",
-      "old_provider": "independent",
-      "old_reason": "MX (localhost) is self-hosted"
     },
     {
       "id": "IT-CONS-cccfgnf",

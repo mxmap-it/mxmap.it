@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-20 10:03 UTC",
+ "generated_at": "2026-09-21 11:00 UTC",
  "country": "IT",
- "total_entities": 22886,
- "anomalies_total": 733,
- "anomalies_pct": 3.2,
+ "total_entities": 22887,
+ "anomalies_total": 731,
+ "anomalies_pct": 3.19,
  "by_type": {
-  "no_mx": 627,
+  "no_mx": 625,
   "geo_unknown": 71,
   "low_confidence": 71
  },
@@ -15,7 +15,7 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 627,
+  "unknown": 625,
   "independent": 97,
   "microsoft": 5,
   "google": 4
@@ -691,7 +691,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Azienda Speciale Vola",
@@ -834,7 +834,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Centro di Formazione Professionale Brunico",
@@ -1673,17 +1673,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "Comune di Cureggio",
-   "domain": "comune.cureggio.no.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
-  },
-  {
    "name": "Comune di Domegge di Cadore",
    "domain": "comune.domeggedicadore.bl.it",
    "provider": "unknown",
@@ -1714,7 +1703,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Germagnano",
@@ -1758,7 +1747,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Loano",
@@ -1835,7 +1824,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Massazza",
@@ -2000,7 +1989,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Reggio Emilia",
@@ -2165,22 +2154,11 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sarule",
    "domain": "comune.sarule.nu.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
-   "name": "Comune di Scanno",
-   "domain": "comune.scanno.aq.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -2319,7 +2297,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Tusa",
@@ -2331,6 +2309,17 @@
    ],
    "mx": null,
    "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+  },
+  {
+   "name": "Comune di Vallesaccarda",
+   "domain": "comune.vallesaccarda.av.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Vallinfreda",
@@ -2396,7 +2385,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Berzano di Tortona",
@@ -2506,7 +2495,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Amministrazione Separata Beni Uso Civico Dobbiaco",
@@ -2638,7 +2627,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ricadi",
@@ -2698,17 +2687,6 @@
   {
    "name": "Comune di San Sebastiano al Vesuvio",
    "domain": "comunesansebastiano.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
-  },
-  {
-   "name": "Comune di Santa Paolina",
-   "domain": "comunesantapaolina.gov.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -2979,7 +2957,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Consorzio Gestione Giardino Alpinia",
@@ -3419,7 +3397,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Liceo Andrea Maffei",
@@ -3463,7 +3441,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni dall'Eleuterio a Rocca Busambra",
@@ -3595,7 +3573,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Consorzio Acquedotto Intercomunale del Peschiera",
@@ -3606,7 +3584,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Tribuzio Mobility Srl",
@@ -3793,7 +3771,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "I.C. 3 CATULLO",
@@ -4365,7 +4343,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Istituzione Scolastica Unite Des Communes Valdotaines Mont Emilius 1",
@@ -4750,7 +4728,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Ordine Delle Ostetriche della Provincia di L'Aquila",
@@ -4926,7 +4904,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Ordine Dottori Agronomi e Dottori Forestali della Provincia di Verona",
@@ -6180,7 +6158,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Ordine dei Tecnici Sanitari di Radiologia Medica, e delle Professioni Sanitarie Tecniche, della Riabilitazione e della Prevenzione della Provincia di Enna",
@@ -6411,7 +6389,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione Collinare Canavesana",
@@ -6620,7 +6598,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione di Comuni Lombarda di Lomello e Galliavola",
@@ -6796,7 +6774,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Unione Comuni Vette Dei Nebrodi",
@@ -6941,6 +6919,17 @@
    ],
    "mx": "mx1.hostinger.it",
    "reason": "MX (mx1.hostinger.it) is self-hosted"
+  },
+  {
+   "name": "DIREZIONE DIDATTICA - CD CESENATICO 2",
+   "domain": "cd-cesenatico2.edu.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.cd-cesenatico2.edu.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "Nuovo Centro Estero Delle Camere di Commercio del Veneto",
@@ -7365,17 +7354,6 @@
    ],
    "mx": "relay-rupar-pri.regione.fvg.it",
    "reason": "MX (relay-rupar-pri.regione.fvg.it, relay-rupar-sec.regione.fvg.it) is self-hosted"
-  },
-  {
-   "name": "Comune di Vallesaccarda",
-   "domain": "comune.vallesaccarda.av.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.comune.vallesaccarda.av.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "Comune di Venzone",

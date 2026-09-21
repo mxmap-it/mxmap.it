@@ -1,6 +1,6 @@
 {
-  "total": 22886,
-  "average_score": 80.7,
+  "total": 22887,
+  "average_score": 80.8,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
   "entries": {
@@ -30858,13 +30858,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -35776,7 +35776,7 @@
     "IT-COM-006002": {
       "name": "Comune di Albera Ligure",
       "provider": "independent",
-      "domain": "comune.alberaligure.al.it",
+      "domain": "cert.ruparpiemonte.it",
       "confidence": 80,
       "flags": [
         "spf_strict",
@@ -74856,7 +74856,7 @@
     },
     "IT-COM-045010": {
       "name": "Comune di Massa",
-      "provider": "microsoft",
+      "provider": "google",
       "domain": "comune.massa.ms.it",
       "confidence": 93,
       "flags": [
@@ -87298,13 +87298,12 @@
     },
     "IT-COM-064093": {
       "name": "Comune di Santa Paolina",
-      "provider": "unknown",
+      "provider": "register-it",
       "domain": "comunesantapaolina.gov.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-064095": {
@@ -87538,12 +87537,13 @@
     },
     "IT-COM-064115": {
       "name": "Comune di Vallesaccarda",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "comune.vallesaccarda.av.it",
-      "confidence": 50,
+      "confidence": 15,
       "flags": [
+        "no_mx",
         "no_spf",
-        "provider_classified"
+        "provider_unknown"
       ]
     },
     "IT-COM-064116": {
@@ -90474,13 +90474,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -102471,7 +102470,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -130504,7 +130503,7 @@
     "IT-L18-udccs": {
       "name": "Unione Dei Comuni Costa del Sinis Terra Dei Giganti",
       "provider": "aruba",
-      "domain": "pec.unionesinisgiganti.it",
+      "domain": "unionesinisgiganti.it",
       "confidence": 68,
       "flags": [
         "spf_softfail",
@@ -131096,11 +131095,10 @@
     },
     "IT-L18-udcmc_": {
       "name": "Unione Dei Comuni Montani del Casentino",
-      "provider": "independent",
-      "domain": "postacert.toscana.it",
-      "confidence": 90,
+      "provider": "regional-public",
+      "domain": "uc.casentino.toscana.it",
+      "confidence": 85,
       "flags": [
-        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -143258,6 +143256,18 @@
       "name": "ISTITUTO COMPRENSIVO CAVA CARDUCCI TREZZA",
       "provider": "google",
       "domain": "ic-carduccitrezza.edu.it",
+      "confidence": 93,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
+      ]
+    },
+    "IT-L33-iccuor": {
+      "name": "Istituto Comprensivo di Cuorgne'",
+      "provider": "google",
+      "domain": "iccuorgne.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -176168,13 +176178,11 @@
     },
     "IT-L33-istsc_foee03100q": {
       "name": "DIREZIONE DIDATTICA - CD CESENATICO 2",
-      "provider": "istruzione-miur-tenant",
+      "provider": "independent",
       "domain": "cd-cesenatico2.edu.it",
-      "confidence": 80,
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -200876,12 +200884,13 @@
     },
     "IT-L33-istsc_pric83500v": {
       "name": "ISTITUTO COMPRENSIVO - I. C. DI VIA BOCCHI 33 PARMA",
-      "provider": "google",
-      "domain": "icbocchi.istruzioneer.it",
-      "confidence": 55,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icbocchi.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -218883,7 +218892,7 @@
     "IT-L33-istsc_tris00100e": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - NARNI I.I.S. SC. MAG. GEOM. GANDHI",
       "provider": "google",
-      "domain": "gandhinarni.edu.it",
+      "domain": "gandhinarni.it",
       "confidence": 73,
       "flags": [
         "multiple_mx",
@@ -253845,7 +253854,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "commissariobonificadiscariche.governo.it",
+      "domain": "governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
@@ -255849,11 +255858,12 @@
     },
     "IT-L8-aouora": {
       "name": "Azienda ospedaliero-universitaria delle Marche",
-      "provider": "independent",
-      "domain": "emarche.it",
-      "confidence": 90,
+      "provider": "google",
+      "domain": "portale.ospedaliriuniti.marche.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -256652,15 +256662,14 @@
     },
     "IT-PRO-123395": {
       "name": "Provincia di Verona",
-      "provider": "microsoft",
-      "domain": "provincia.vr.it",
+      "provider": "independent",
+      "domain": "web.provincia.vr.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-PRO-12537612": {
@@ -257018,12 +257027,11 @@
     },
     "IT-PRO-698996": {
       "name": "Provincia di Pisa",
-      "provider": "independent",
+      "provider": "regional-public",
       "domain": "provincia.pisa.it",
-      "confidence": 65,
+      "confidence": 50,
       "flags": [
-        "independent_mx_with_cloud_spf",
-        "multi_provider_spf:aws+google",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -257521,7 +257529,7 @@
     "IT-PRO-7503982": {
       "name": "Provincia di Massa Carrara",
       "provider": "google",
-      "domain": "provincia.ms.it",
+      "domain": "portale.provincia.ms.it",
       "confidence": 90,
       "flags": [
         "spf_strict",
