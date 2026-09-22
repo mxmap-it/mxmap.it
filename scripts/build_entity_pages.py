@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import hashlib
 import html
 import json
 import os
@@ -616,16 +617,17 @@ def alias_page(domain, entity_path, entity_name):
 # --------------------------------------------------------------------------- #
 #  Sitemaps
 # --------------------------------------------------------------------------- #
-def _urlset(entries, lastmod):
+def _urlset(entries):
+    """entries: iterable di (loc, changefreq, priority, lastmod) — lastmod PER-URL."""
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
-    for loc, cf, pr in entries:
+    for loc, cf, pr, lm in entries:
         out += [
             "  <url>",
             f"    <loc>{html.escape(loc)}</loc>",
-            f"    <lastmod>{lastmod}</lastmod>",
+            f"    <lastmod>{lm}</lastmod>",
             f"    <changefreq>{cf}</changefreq>",
             f"    <priority>{pr}</priority>",
             "  </url>",
@@ -653,11 +655,45 @@ def _sitemapindex(children, lastmod):
 # --------------------------------------------------------------------------- #
 #  Orchestration
 # --------------------------------------------------------------------------- #
+# Stato "lastmod onesto": {path: [hash16, "YYYY-MM-DD"]}. La data avanza SOLO
+# quando l'hash del contenuto cambia — così il sitemap dichiara date vere e i
+# motori tornano a fidarsi del <lastmod> (dichiarare "tutto cambiato ogni
+# notte" insegna a Google a ignorarlo). Persistito in data/page_lastmod.json,
+# committato dalla nightly. Contesto a livello di modulo per non toccare le
+# firme dei call-site di write_page.
+LASTMOD_STATE_PATH = ROOT / "data" / "page_lastmod.json"
+_LM_STATE: dict[str, list[str]] = {}
+_LM_TODAY: str = ""
+
+
+def load_lastmod_state() -> dict[str, list[str]]:
+    try:
+        return json.loads(LASTMOD_STATE_PATH.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def page_lastmod(key: str, content: str) -> str:
+    """Ritorna la data di modifica reale: bump solo se l'hash cambia."""
+    h = hashlib.sha1(content.encode("utf-8")).hexdigest()[:16]
+    prev = _LM_STATE.get(key)
+    if prev and prev[0] == h:
+        return prev[1]
+    _LM_STATE[key] = [h, _LM_TODAY]
+    return _LM_TODAY
+
+
+def lastmod_of(key: str, fallback: str) -> str:
+    prev = _LM_STATE.get(key)
+    return prev[1] if prev else fallback
+
+
 def write_page(out_dir: Path, path: str, htmlstr: str, written: set):
     fp = out_dir / path.strip("/") / "index.html"
     fp.parent.mkdir(parents=True, exist_ok=True)
     fp.write_text(htmlstr, encoding="utf-8")
     written.add(path)
+    page_lastmod(path, htmlstr)
 
 
 def main():
@@ -706,6 +742,10 @@ def main():
 
     written: set[str] = set()
     lastmod = build_sitemap._lastmod()
+    # Stato lastmod-onesto: data di bump = data kpi (deterministica per commit).
+    global _LM_TODAY
+    _LM_TODAY = lastmod
+    _LM_STATE.update(load_lastmod_state())
     collisions = sum(1 for p in paths.values() if not p.rstrip("/").split("/")[-1])
 
     # --- entity pages ---
@@ -880,51 +920,79 @@ def main():
             )
             alias_count += 1
 
-    # --- sitemaps (index + children) ---
+    # --- sitemaps (index + children), con lastmod PER-URL onesto ---
     smdir = out_dir
     children = []
-    # core (the 8 static pages)
-    (smdir / "sitemap-core.xml").write_text(
-        _urlset(
-            [
-                (BASE + p["loc"], p["changefreq"], p["priority"])
-                for p in build_sitemap.PAGES
-            ],
-            lastmod,
-        ),
-        encoding="utf-8",
-    )
+    # core (le pagine statiche): hash del file reale a repo-root → data vera.
+    core_entries = []
+    for p in build_sitemap.PAGES:
+        loc = p["loc"]
+        fname = "index.html" if loc == "/" else loc.lstrip("/")
+        try:
+            content = (ROOT / fname).read_text(encoding="utf-8")
+            lm = page_lastmod(loc, content)
+        except OSError:
+            lm = lastmod
+        core_entries.append((BASE + loc, p["changefreq"], p["priority"], lm))
+    (smdir / "sitemap-core.xml").write_text(_urlset(core_entries), encoding="utf-8")
     children.append("sitemap-core.xml")
-    # aree + categorie
+    # aree + categorie (lastmod dallo stato: bumpa solo se l'hub è cambiato)
     aree = [
-        (BASE + p, "weekly", "0.6") for p in sorted(written) if p.startswith("/aree/")
+        (BASE + p, "weekly", "0.6", lastmod_of(p, lastmod))
+        for p in sorted(written)
+        if p.startswith("/aree/")
     ]
     cats = [
-        (BASE + p, "weekly", "0.5")
+        (BASE + p, "weekly", "0.5", lastmod_of(p, lastmod))
         for p in sorted(written)
         if p.startswith("/categoria/")
     ]
-    (smdir / "sitemap-aree.xml").write_text(_urlset(aree, lastmod), encoding="utf-8")
-    (smdir / "sitemap-categorie.xml").write_text(
-        _urlset(cats, lastmod), encoding="utf-8"
-    )
+    (smdir / "sitemap-aree.xml").write_text(_urlset(aree), encoding="utf-8")
+    (smdir / "sitemap-categorie.xml").write_text(_urlset(cats), encoding="utf-8")
     children += ["sitemap-aree.xml", "sitemap-categorie.xml"]
-    # entities chunked by region
-    ent_paths_by_region = collections.defaultdict(list)
+    # Enti in 3 SEGMENTI per tipologia (misurabili separatamente in GSC):
+    # territoriali (comuni/province/regioni/unioni), scuole (il long-tail più
+    # grosso), istituzioni (tutto il resto: centrale, sanità, ordini, agenzie…).
+    TIER_TERRITORIALI = {"territorial", "consortia"}
+    TIER_SCUOLE = {"education"}
+    tiers: dict[str, list] = {
+        "sitemap-enti-territoriali.xml": [],
+        "sitemap-enti-scuole.xml": [],
+        "sitemap-enti-istituzioni.xml": [],
+    }
     for e in entities:
-        ent_paths_by_region[P.region_slug(e.get("regione"))].append(
-            BASE + paths[e["bfs"]]
-        )
-    for rslug, locs in sorted(ent_paths_by_region.items()):
-        fn = f"sitemap-enti-{rslug}.xml"
-        (smdir / fn).write_text(
-            _urlset([(u, "monthly", "0.7") for u in sorted(locs)], lastmod),
-            encoding="utf-8",
-        )
+        ckey, _ = P.cluster_of(e.get("bfs"))
+        if ckey in TIER_TERRITORIALI:
+            fn = "sitemap-enti-territoriali.xml"
+        elif ckey in TIER_SCUOLE:
+            fn = "sitemap-enti-scuole.xml"
+        else:
+            fn = "sitemap-enti-istituzioni.xml"
+        p = paths[e["bfs"]]
+        tiers[fn].append((BASE + p, "monthly", "0.7", lastmod_of(p, lastmod)))
+    for fn, entries in tiers.items():
+        if not entries:
+            continue
+        (smdir / fn).write_text(_urlset(sorted(entries)), encoding="utf-8")
         children.append(fn)
     # index
     (smdir / "sitemap.xml").write_text(
         _sitemapindex(children, lastmod), encoding="utf-8"
+    )
+
+    # --- persisti lo stato lastmod (potato ai path correnti solo su run PIENI:
+    # gli smoke con --limit/--solo-regione non devono cancellare lo storico) ---
+    if not args.limit and not args.solo_regione:
+        keep = written | {p["loc"] for p in build_sitemap.PAGES}
+        for k in list(_LM_STATE):
+            if k not in keep:
+                del _LM_STATE[k]
+    LASTMOD_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    LASTMOD_STATE_PATH.write_text(
+        json.dumps(
+            _LM_STATE, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+        ),
+        encoding="utf-8",
     )
 
     # --- integrity ---

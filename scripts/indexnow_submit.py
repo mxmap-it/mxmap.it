@@ -47,25 +47,40 @@ def fetch(url: str, timeout: int = 25) -> str:
         return r.read().decode("utf-8", errors="ignore")
 
 
-def collect_urls() -> list[str]:
-    """All page URLs from the live sitemap (index + children, or flat urlset)."""
+_URL_RE = re.compile(
+    r"<url>\s*<loc>\s*([^<\s]+)\s*</loc>(?:\s*<lastmod>\s*([^<\s]+)\s*</lastmod>)?"
+)
+
+
+def collect_urls() -> dict[str, str]:
+    """{url: lastmod} dal sitemap LIVE (indice + figli, o urlset piatto)."""
     root = fetch(f"{BASE}/sitemap.xml")
-    locs = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", root)
     if "<sitemapindex" in root:
-        pages: list[str] = []
-        for child in locs:
+        pages: dict[str, str] = {}
+        for child in re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", root):
             try:
-                pages += re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", fetch(child))
+                for loc, lm in _URL_RE.findall(fetch(child)):
+                    pages[loc] = lm or ""
             except Exception as e:  # noqa: BLE001 — un figlio rotto non blocca il giro
                 print(f"::warning::figlio sitemap illeggibile {child}: {e}")
-        return sorted(set(pages))
-    return sorted(set(locs))
+        return pages
+    return {loc: lm or "" for loc, lm in _URL_RE.findall(root)}
 
 
-def todays_slice(urls: list[str], per_day: int) -> tuple[int, int, list[str]]:
+def todays_batch(
+    pages: dict[str, str], per_day: int
+) -> tuple[int, int, int, list[str]]:
+    """Delta-first: le pagine cambiate di recente (lastmod ≤3 giorni, margine su
+    ritardi di deploy/cron) hanno precedenza; il resto del budget giornaliero è
+    la fetta rotante deterministica che in ~1 mese copre tutto il sito."""
+    urls = sorted(pages)
+    cutoff = date.fromordinal(date.today().toordinal() - 3).isoformat()
+    delta = [u for u in urls if pages[u] >= cutoff]
     chunks = max(1, -(-len(urls) // per_day))  # ceil
     idx = date.today().toordinal() % chunks
-    return idx, chunks, urls[idx * per_day : (idx + 1) * per_day]
+    rotation = urls[idx * per_day : (idx + 1) * per_day]
+    batch = list(dict.fromkeys(delta + rotation))[:9500]  # cap sotto il max 10k
+    return idx, chunks, len(delta), batch
 
 
 def submit(urls: list[str]) -> int:
@@ -91,13 +106,14 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    urls = collect_urls()
-    if not urls:
+    pages = collect_urls()
+    if not pages:
         sys.exit("::error::sitemap vuoto o irraggiungibile — niente da sottomettere")
-    idx, chunks, batch = todays_slice(urls, args.per_day)
+    idx, chunks, n_delta, batch = todays_batch(pages, args.per_day)
     print(
-        f"[indexnow] URL nel sitemap: {len(urls)} | fetta {idx + 1}/{chunks} "
-        f"({len(batch)} URL): {batch[0]} … {batch[-1]}"
+        f"[indexnow] URL nel sitemap: {len(pages)} | delta cambiati (≤3gg): {n_delta} "
+        f"| fetta {idx + 1}/{chunks} | batch totale: {len(batch)} URL: "
+        f"{batch[0]} … {batch[-1]}"
     )
     if args.dry_run:
         print("[indexnow] dry-run: nessuna submission")
