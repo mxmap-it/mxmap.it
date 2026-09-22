@@ -1,39 +1,39 @@
 {
   "country": "IT",
-  "n": 22887,
+  "n": 22889,
   "mean": 0.851,
   "median": 0.9,
   "mean_nonzero": 0.875,
   "buckets": {
-    "0.90-1.00 (molto alta)": 17370,
+    "0.90-1.00 (molto alta)": 17368,
     "0.80-0.89 (alta)": 3595,
-    "0.00 (nulla / unknown)": 625,
+    "0.00 (nulla / unknown)": 628,
     "0.60-0.79 (media)": 1226,
-    "0.01-0.59 (bassa)": 71
+    "0.01-0.59 (bassa)": 72
   },
   "rules": {
-    "mx_spf": 17370,
-    "dom_mx_spf": 1737,
-    "no_mx": 625,
-    "mx_only": 1858,
+    "mx_spf": 17368,
+    "dom_mx_spf": 1738,
+    "no_mx": 628,
+    "mx_only": 1857,
     "frgn_mx_spf": 978,
     "dom_mx_only": 248,
-    "frgn_mx_only": 71
+    "frgn_mx_only": 72
   },
   "jurisdiction": {
     "foreign": 11437,
-    "domestic": 10511,
+    "domestic": 10510,
     "mixed": 243,
-    "unknown": 696
+    "unknown": 699
   },
   "domestic_mx_override": 201,
-  "bounce_candidates": 71,
+  "bounce_candidates": 72,
   "bounce_by_provider": {
-    "independent": 71
+    "independent": 72
   },
   "bounce_by_jurisdiction": {
     "unknown": 36,
-    "foreign": 35
+    "foreign": 36
   },
   "provider_confidence": {
     "microsoft": 0.929,
@@ -46,7 +46,7 @@
     "register-it": 0.89,
     "ovh": 0.9,
     "ionos": 0.9,
-    "regional-public": 0.894,
+    "regional-public": 0.895,
     "aws": 0.9,
     "gandi": 0.9,
     "zoho": 0.9,

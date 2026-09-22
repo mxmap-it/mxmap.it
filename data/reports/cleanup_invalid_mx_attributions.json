@@ -1,5 +1,5 @@
 {
-  "n_purged": 508,
+  "n_purged": 509,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1086,7 +1086,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "ms78257242.msv1.invalid",
+      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -1848,6 +1848,17 @@
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
       "old_provider": "google",
       "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
+    },
+    {
+      "id": "IT-CONS-cbsap",
+      "name": "Consorzio Bassa Sabina Acqua Peschiera",
+      "codice_ipa": "cbsap",
+      "seed_domain": "consorzioacquapeschiera.it",
+      "claimed_domain": "galsabina.com",
+      "reject_reason": "unrelated",
+      "old_mx": "localhost",
+      "old_provider": "independent",
+      "old_reason": "MX (localhost) is self-hosted"
     },
     {
       "id": "IT-CONS-cccfgnf",

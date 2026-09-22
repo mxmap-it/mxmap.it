@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-21T11:00:50Z",
+  "generated_at": "2026-09-22T10:02:53Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22887,
-    "n_with_mx": 22262,
-    "coverage_pct": 97.27
+    "n_entities": 22889,
+    "n_with_mx": 22261,
+    "coverage_pct": 97.26
   },
   "indices": {
-    "isd": 51.19,
+    "isd": 51.18,
     "cloud_act_pct": 48.27,
-    "n_classified": 22262
+    "n_classified": 22261
   },
   "sovereignty": {
     "extra_eu": {
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11395,
+      "count": 11394,
       "pct": 49.8,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 625,
+      "count": 628,
       "pct": 2.7,
       "label": "Sconosciuto"
     }
@@ -38,37 +38,37 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7431,
+      "count": 7429,
       "pct": 32.5,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6439,
+      "count": 6438,
       "pct": 28.1,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4301,
+      "count": 4302,
       "pct": 18.8,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3034,
+      "count": 3036,
       "pct": 13.3,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 930,
+      "count": 929,
       "pct": 4.1,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 625,
+      "count": 628,
       "pct": 2.7,
       "sovereignty": "unknown"
     },
@@ -94,7 +94,7 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8314,
+      "n_entities": 8315,
       "usa_pct": 77.8,
       "dominant_provider": "Google Workspace"
     },
@@ -118,7 +118,7 @@
     },
     {
       "cluster": "Gestori di pubblici servizi",
-      "n_entities": 1148,
+      "n_entities": 1149,
       "usa_pct": 46.4,
       "dominant_provider": "Microsoft 365"
     },
@@ -143,7 +143,7 @@
     {
       "cluster": "Sanità",
       "n_entities": 234,
-      "usa_pct": 63.2,
+      "usa_pct": 62.8,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8514,
+    "mean": 0.8513,
     "high_pct": 91.6
   }
 }

@@ -1,6 +1,6 @@
 {
-  "total": 22887,
-  "average_score": 80.8,
+  "total": 22889,
+  "average_score": 80.7,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
   "entries": {
@@ -14727,13 +14727,15 @@
     },
     "IT-C14-odc_pcr": {
       "name": "Ordine Provinciale dei Chimici e dei Fisici di Cremona",
-      "provider": "aruba",
-      "domain": "chimici.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "chimicicremona.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-C14-odc_pv": {
@@ -30858,13 +30860,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "comune.cureggio.no.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-003060": {
@@ -64531,7 +64533,7 @@
     },
     "IT-COM-026080": {
       "name": "Comune di Sernaglia della Battaglia",
-      "provider": "independent",
+      "provider": "google",
       "domain": "comune.sernaglia.tv.it",
       "confidence": 90,
       "flags": [
@@ -87298,12 +87300,13 @@
     },
     "IT-COM-064093": {
       "name": "Comune di Santa Paolina",
-      "provider": "register-it",
+      "provider": "unknown",
       "domain": "comunesantapaolina.gov.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-064095": {
@@ -90474,12 +90477,13 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.scanno.aq.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-066094": {
@@ -102470,7 +102474,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "comune.baucina.pa.it",
+      "domain": "egov.comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -130503,7 +130507,7 @@
     "IT-L18-udccs": {
       "name": "Unione Dei Comuni Costa del Sinis Terra Dei Giganti",
       "provider": "aruba",
-      "domain": "unionesinisgiganti.it",
+      "domain": "pec.unionesinisgiganti.it",
       "confidence": 68,
       "flags": [
         "spf_softfail",
@@ -131095,10 +131099,11 @@
     },
     "IT-L18-udcmc_": {
       "name": "Unione Dei Comuni Montani del Casentino",
-      "provider": "regional-public",
-      "domain": "uc.casentino.toscana.it",
-      "confidence": 85,
+      "provider": "independent",
+      "domain": "postacert.toscana.it",
+      "confidence": 90,
       "flags": [
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -138380,6 +138385,19 @@
       "flags": [
         "spf_softfail",
         "provider_classified"
+      ]
+    },
+    "IT-L33-QG3VR7IW": {
+      "name": "CUNEO BIANCHI BONELLI VIRGINIO",
+      "provider": "microsoft",
+      "domain": "istruzione.it",
+      "confidence": 85,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-QL1G28WV": {
@@ -158995,14 +159013,13 @@
     },
     "IT-L33-istsc_baee06400r": {
       "name": "DIREZIONE DIDATTICA - 6 C.D.'GIRONDI' - BARLETTA",
-      "provider": "istruzione-miur-tenant",
-      "domain": "scuolagirondi.gov.it",
-      "confidence": 80,
+      "provider": "independent",
+      "domain": "scuolagirondi.it",
+      "confidence": 85,
       "flags": [
-        "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-istsc_baee068004": {
@@ -161582,11 +161599,11 @@
     "IT-L33-istsc_bgis00900b": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - 'OSCAR ARNULFO ROMERO'",
       "provider": "google",
-      "domain": "isisromero.it",
-      "confidence": 55,
+      "domain": "isisromero.edu.it",
+      "confidence": 88,
       "flags": [
-        "multiple_mx",
-        "no_spf",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -161920,13 +161937,13 @@
     },
     "IT-L33-istsc_biic801009": {
       "name": "ISTITUTO COMPRENSIVO - IC CAVAGLIA'",
-      "provider": "independent",
-      "domain": "istitutomajoranaavola.edu.it",
-      "confidence": 85,
+      "provider": "google",
+      "domain": "istitutocomprensivo-cavaglia.edu.it",
+      "confidence": 55,
       "flags": [
-        "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "multiple_mx",
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_biic802005": {
@@ -162279,7 +162296,7 @@
     "IT-L33-istsc_blis003003": {
       "name": "ISTITUTO OMNICOMPRENSIVO AMPEZZO E CADORE",
       "provider": "google",
-      "domain": "polovalboite.edu.it",
+      "domain": "ameca.edu.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -174182,12 +174199,13 @@
       ]
     },
     "IT-L33-istsc_feic81700v": {
-      "name": "ISTITUTO COMPRENSIVO N. 4 CENTO",
+      "name": "ISTITUTO COMPRENSIVO CENTO NORD",
       "provider": "google",
-      "domain": "ic4cento.edu.it",
-      "confidence": 70,
+      "domain": "iccentonord.edu.it",
+      "confidence": 88,
       "flags": [
-        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -174311,13 +174329,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175814,7 +175832,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -207471,13 +207489,11 @@
     },
     "IT-L33-istsc_rmic8ce00v": {
       "name": "ISTITUTO COMPRENSIVO - LEONARDO DA VINCI",
-      "provider": "istruzione-miur-tenant",
+      "provider": "independent",
       "domain": "scuolalabico.edu.it",
-      "confidence": 80,
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -213640,7 +213656,7 @@
     "IT-L33-istsc_sric82100e": {
       "name": "ISTITUTO COMPRENSIVO - I I.C. 'E. DE AMICIS' FLORIDIA",
       "provider": "aruba",
-      "domain": "istitutodeamicisfloridia.it",
+      "domain": "istitutodeamicisfloridia.edu.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -218892,7 +218908,7 @@
     "IT-L33-istsc_tris00100e": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - NARNI I.I.S. SC. MAG. GEOM. GANDHI",
       "provider": "google",
-      "domain": "gandhinarni.it",
+      "domain": "gandhinarni.edu.it",
       "confidence": 73,
       "flags": [
         "multiple_mx",
@@ -228425,8 +228441,8 @@
     },
     "IT-L33-st_tlbz": {
       "name": "Schulsprengel Terlan",
-      "provider": "google",
-      "domain": "sspterlan.it",
+      "provider": "independent",
+      "domain": "gspbozen.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -239287,6 +239303,17 @@
         "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
+      ]
+    },
+    "IT-L37-GNZ0CGYX": {
+      "name": "UNIVERSITA' PER STRANIERI DANTE ALIGHIERI",
+      "provider": "aruba",
+      "domain": "unidarc.it",
+      "confidence": 78,
+      "flags": [
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-L37-GPK9BU0B": {
@@ -253854,7 +253881,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "governo.it",
+      "domain": "commissariobonificadiscariche.governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
@@ -255858,12 +255885,11 @@
     },
     "IT-L8-aouora": {
       "name": "Azienda ospedaliero-universitaria delle Marche",
-      "provider": "google",
-      "domain": "portale.ospedaliriuniti.marche.it",
-      "confidence": 93,
+      "provider": "independent",
+      "domain": "emarche.it",
+      "confidence": 90,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -256662,14 +256688,15 @@
     },
     "IT-PRO-123395": {
       "name": "Provincia di Verona",
-      "provider": "independent",
-      "domain": "web.provincia.vr.it",
+      "provider": "microsoft",
+      "domain": "provincia.vr.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-PRO-12537612": {
@@ -257029,9 +257056,10 @@
       "name": "Provincia di Pisa",
       "provider": "regional-public",
       "domain": "provincia.pisa.it",
-      "confidence": 50,
+      "confidence": 90,
       "flags": [
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -257529,7 +257557,7 @@
     "IT-PRO-7503982": {
       "name": "Provincia di Massa Carrara",
       "provider": "google",
-      "domain": "portale.provincia.ms.it",
+      "domain": "provincia.ms.it",
       "confidence": 90,
       "flags": [
         "spf_strict",

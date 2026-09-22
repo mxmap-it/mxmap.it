@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-09-21 11:00 UTC",
+ "generated_at": "2026-09-22 10:02 UTC",
  "country": "IT",
- "total_entities": 22887,
- "anomalies_total": 731,
- "anomalies_pct": 3.19,
+ "total_entities": 22889,
+ "anomalies_total": 735,
+ "anomalies_pct": 3.21,
  "by_type": {
-  "no_mx": 625,
+  "no_mx": 628,
   "geo_unknown": 71,
-  "low_confidence": 71
+  "low_confidence": 72
  },
  "by_type_label": {
   "no_mx": "Nessun MX",
@@ -15,12 +15,12 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 625,
-  "independent": 97,
+  "unknown": 628,
+  "independent": 98,
   "microsoft": 5,
   "google": 4
  },
- "classified_but_anomalous": 106,
+ "classified_but_anomalous": 107,
  "entries": [
   {
    "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
@@ -130,7 +130,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Agenzia Demanio provinciale",
@@ -141,7 +141,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia Regionale per Il Lavoro",
@@ -702,7 +702,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Consorzio di Bonifica Integrale Dei Bacini Meridionali del Cosentino",
@@ -1263,7 +1263,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Collegio Delle Ostetriche della Provincia di Mantova",
@@ -1527,7 +1527,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Capriana",
@@ -1560,7 +1560,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Castello-Molina di Fiemme",
@@ -1673,6 +1673,17 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
+   "name": "Comune di Cureggio",
+   "domain": "comune.cureggio.no.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 6 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Domegge di Cadore",
    "domain": "comune.domeggedicadore.bl.it",
    "provider": "unknown",
@@ -1769,7 +1780,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Maenza",
@@ -2168,6 +2179,17 @@
    "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
+   "name": "Comune di Scanno",
+   "domain": "comune.scanno.aq.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Sciolze",
    "domain": "comune.sciolze.to.it",
    "provider": "unknown",
@@ -2242,7 +2264,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 5 candidates; none yielded MX"
   },
   {
    "name": "Comune di Tione di Trento",
@@ -2696,6 +2718,17 @@
    "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
+   "name": "Comune di Santa Paolina",
+   "domain": "comunesantapaolina.gov.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 6 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di San Zeno di Montagna",
    "domain": "comunesanzenodimontagna.it",
    "provider": "unknown",
@@ -2957,7 +2990,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Gestione Giardino Alpinia",
@@ -3100,7 +3133,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Consorzio di Bonifica Pratica di Mare",
@@ -4728,7 +4761,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Ordine Delle Ostetriche della Provincia di L'Aquila",
@@ -5388,7 +5421,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comunita' Montana Trigno medio Biferno",
@@ -6400,7 +6433,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione di Comunita' Collinare Roero Tartufo Ed Arneis",
@@ -7656,6 +7689,17 @@
     "low_confidence"
    ],
    "mx": "mx.platanimagazzoloambiente.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
+  },
+  {
+   "name": "ISTITUTO COMPRENSIVO - LEONARDO DA VINCI",
+   "domain": "scuolalabico.edu.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.scuolalabico.edu.it",
    "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
