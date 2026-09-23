@@ -1,6 +1,6 @@
 {
-  "total": 22889,
-  "average_score": 80.7,
+  "total": 22892,
+  "average_score": 80.8,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
   "entries": {
@@ -23429,7 +23429,7 @@
     "IT-C3-AGENAS": {
       "name": "Agenzia Nazionale per i Servizi Sanitari Regionali - AGENAS",
       "provider": "microsoft",
-      "domain": "agenas.it",
+      "domain": "agenas.gov.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -28671,11 +28671,12 @@
     },
     "IT-COM-001242": {
       "name": "Comune di San Germano Chisone",
-      "provider": "independent",
-      "domain": "cert.comune.sangermanochisone.to.it",
-      "confidence": 50,
+      "provider": "regional-public",
+      "domain": "comune.sangermanochisone.to.it",
+      "confidence": 90,
       "flags": [
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -29150,7 +29151,7 @@
     },
     "IT-COM-001284": {
       "name": "Comune di Val della Torre",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.valdellatorre.to.it",
       "confidence": 90,
       "flags": [
@@ -77162,7 +77163,7 @@
     "IT-COM-052009": {
       "name": "Comune di Chianciano Terme",
       "provider": "microsoft",
-      "domain": "comune.chianciano-terme.si.it",
+      "domain": "comune.chianciano-terme.siena.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -77174,13 +77175,12 @@
     "IT-COM-052010": {
       "name": "Comune di Chiusdino",
       "provider": "independent",
-      "domain": "comune.chiusdino.siena.it",
+      "domain": "comune.chiusdino.si.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-052011": {
@@ -77340,14 +77340,13 @@
     },
     "IT-COM-052025": {
       "name": "Comune di Radicondoli",
-      "provider": "google",
-      "domain": "comune.radicondoli.siena.it",
+      "provider": "independent",
+      "domain": "comune.radicondoli.si.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-052026": {
@@ -102474,7 +102473,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -106197,12 +106196,13 @@
     },
     "IT-COM-087058": {
       "name": "Comune di Ragalna",
-      "provider": "local-isp",
-      "domain": "comune.ragalna.ct-egov.it",
-      "confidence": 55,
+      "provider": "aruba",
+      "domain": "comune.ragalna.ct.it",
+      "confidence": 95,
       "flags": [
         "multiple_mx",
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -135652,6 +135652,16 @@
         "provider_classified"
       ]
     },
+    "IT-L33-58PR4QPT": {
+      "name": "IC 39 LEOPARDI DORIA MINNITI",
+      "provider": "local-isp",
+      "domain": "scuolaleopardi.edu.it",
+      "confidence": 50,
+      "flags": [
+        "no_spf",
+        "provider_classified"
+      ]
+    },
     "IT-L33-5B67E3T4": {
       "name": "ISTITUTO COMPRENSIVO CAPOTERRA N. 2",
       "provider": "google",
@@ -137105,13 +137115,14 @@
     },
     "IT-L33-HO3UNG48": {
       "name": "I.C.BOSCO-S.VILLA-SOMMA VES.3",
-      "provider": "unknown",
+      "provider": "istruzione-miur-tenant",
       "domain": "smsangiovannibosco.edu.it",
-      "confidence": 15,
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
+        "provider_classified"
       ]
     },
     "IT-L33-HOBQFJ85": {
@@ -138387,17 +138398,26 @@
         "provider_classified"
       ]
     },
+    "IT-L33-QAHDBGZA": {
+      "name": "I.C. 17 ANGIULLI-VOLINO-CROCE-ARCOLEO",
+      "provider": "local-isp",
+      "domain": "icangiullivolinocrocearcoleo.edu.it",
+      "confidence": 88,
+      "flags": [
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
+      ]
+    },
     "IT-L33-QG3VR7IW": {
       "name": "CUNEO BIANCHI BONELLI VIRGINIO",
-      "provider": "microsoft",
-      "domain": "istruzione.it",
-      "confidence": 85,
+      "provider": "google",
+      "domain": "bianchibonellivirginio.edu.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified",
-        "autodiscover_confirms"
+        "provider_classified"
       ]
     },
     "IT-L33-QL1G28WV": {
@@ -140191,14 +140211,13 @@
     },
     "IT-L33-cpiabs": {
       "name": "Centro istruzione Adulti di Gavardo",
-      "provider": "microsoft",
-      "domain": "cpiagavardo.edu.it",
-      "confidence": 95,
+      "provider": "google",
+      "domain": "cpia2brescia.edu.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "provider_classified"
       ]
     },
     "IT-L33-cpiac": {
@@ -144500,10 +144519,12 @@
     },
     "IT-L33-icicl": {
       "name": "Istituto Comprensivo Iv Circolo Lodi",
-      "provider": "independent",
-      "domain": "istitutocapannoli.it",
-      "confidence": 85,
+      "provider": "google",
+      "domain": "iclodi4.edu.it",
+      "confidence": 93,
       "flags": [
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -147699,14 +147720,14 @@
     },
     "IT-L33-icsta": {
       "name": "Istituto Comprensivo Budoni-San Teodoro",
-      "provider": "istruzione-miur-tenant",
+      "provider": "aruba",
       "domain": "icbudoni.edu.it",
-      "confidence": 80,
+      "confidence": 83,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-icstd": {
@@ -147734,13 +147755,14 @@
     },
     "IT-L33-icstre": {
       "name": "Istituto Comprensivo Settimo III",
-      "provider": "unknown",
-      "domain": "amministrazionecentrale.it",
-      "confidence": 15,
+      "provider": "google",
+      "domain": "icsettimo3.edu.it",
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-L33-icstt": {
@@ -153254,18 +153276,6 @@
         "provider_classified"
       ]
     },
-    "IT-L33-istsc_BAIS046009": {
-      "name": "ISTITUTO SUPERIORE - GARRONE",
-      "provider": "google",
-      "domain": "iissdenittis.edu.it",
-      "confidence": 53,
-      "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_mismatch",
-        "provider_classified"
-      ]
-    },
     "IT-L33-istsc_BAMM059008": {
       "name": "SCUOLA PRIMO GRADO - S. MERCADANTE",
       "provider": "google",
@@ -153560,14 +153570,12 @@
     },
     "IT-L33-istsc_CEIS022004": {
       "name": "ISTITUTO SUPERIORE - E.MATTEI",
-      "provider": "microsoft",
-      "domain": "matteicaserta.edu.it",
-      "confidence": 95,
+      "provider": "google",
+      "domain": "matteiferraris.edu.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_CEIS02300X": {
@@ -156440,12 +156448,11 @@
     "IT-L33-istsc_anic83600x": {
       "name": "ISTITUTO COMPRENSIVO - MONTEROBERTO 'BENIAMINO GIGLI'",
       "provider": "google",
-      "domain": "icmonteroberto.edu.it",
-      "confidence": 93,
+      "domain": "icgalileoferraris.edu.it",
+      "confidence": 55,
       "flags": [
         "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -167957,14 +167964,15 @@
     },
     "IT-L33-istsc_cerh02000g": {
       "name": "ISTITUTO PROFESSIONALE PER I SERVIZI ALBERGHIERI E RISTORAZIONE - IPSSART TEANO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "istitutoalberghieroteano.edu.it",
-      "confidence": 80,
+      "provider": "microsoft",
+      "domain": "istruzione.it",
+      "confidence": 85,
       "flags": [
         "spf_strict",
         "mx_spf_match",
         "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-istsc_cerh030006": {
@@ -173055,13 +173063,12 @@
     },
     "IT-L33-istsc_ctmm029002": {
       "name": "ISTITUTO SECONDARIO DI I GRADO - SMS D.ALIGHIERI - CATANIA",
-      "provider": "istruzione-miur-tenant",
+      "provider": "independent",
       "domain": "dantect.it",
-      "confidence": 80,
+      "confidence": 90,
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -178767,11 +178774,11 @@
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO ISTR.SUPERIORE - P.ALDI",
       "provider": "google",
       "domain": "pololiceale.edu.it",
-      "confidence": 85,
+      "confidence": 88,
       "flags": [
+        "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_gris00600c": {
@@ -222763,7 +222770,7 @@
       ]
     },
     "IT-L33-istsc_veic80800a": {
-      "name": "ISTITUTO COMPRENSIVO STATALE DI CAMPOLONGO MAGGIORE E CAMPAGNA LUPIA",
+      "name": "ISTITUTO COMPRENSIVO STATALE RIT LEVI MONTALCINI",
       "provider": "istruzione-miur-tenant",
       "domain": "icvaleri.edu.it",
       "confidence": 80,
@@ -228046,7 +228053,7 @@
       ]
     },
     "IT-L33-np_052": {
-      "name": "ISTITUTO SCOLASTICO COMPRENSIVO N. 2 POGGIBONSI",
+      "name": "ISTITUTO COMPRENSIVO FOLGORE DA SAN GIMIGNANO - 2 POGGIBONSI",
       "provider": "google",
       "domain": "comprensivo2poggibonsi.edu.it",
       "confidence": 53,
@@ -236855,7 +236862,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "latina.cri.it",
+      "domain": "cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -237004,6 +237011,18 @@
         "spf_softfail",
         "mx_spf_match",
         "provider_classified"
+      ]
+    },
+    "IT-L37-2SWLAIU2": {
+      "name": "Catanzaro Servizi spa",
+      "provider": "aruba",
+      "domain": "catanzaroservizi.it",
+      "confidence": 83,
+      "flags": [
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L37-2YNKW2LR": {
@@ -239571,6 +239590,19 @@
         "autodiscover_confirms"
       ]
     },
+    "IT-L37-ISARZUR6": {
+      "name": "RES Publica S.r.l.",
+      "provider": "ovh",
+      "domain": "respublicasrl.com",
+      "confidence": 98,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
     "IT-L37-ISVQ0VAD": {
       "name": "AUSER LEUCUM ODV-ETS",
       "provider": "local-isp",
@@ -240889,7 +240921,7 @@
     "IT-L37-QXSJ8M2L": {
       "name": "AZIENDA SPECIALE COMUNALE \"CAPRAROLA SERVIZI\"",
       "provider": "aruba",
-      "domain": "caprarolaservizi.it",
+      "domain": "ascaprarolaservizi.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -248639,14 +248671,13 @@
     "IT-L38-aspnr_": {
       "name": "Azienda Speciale Parco di Porto Conte",
       "provider": "ovh",
-      "domain": "parcodiportoconte.it",
-      "confidence": 98,
+      "domain": "algheroparks.it",
+      "confidence": 93,
       "flags": [
         "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "provider_classified"
       ]
     },
     "IT-L38-cgamp": {

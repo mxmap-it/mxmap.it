@@ -1,5 +1,5 @@
 {
-  "n_purged": 509,
+  "n_purged": 507,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -3467,17 +3467,6 @@
       "old_reason": "MX record (mail-av.comune.pomiglianodarco.na.it, mail.comune.pomiglianodarco.na.it) matches Seeweb"
     },
     {
-      "id": "IT-L33-HO3UNG48",
-      "name": "I.C.BOSCO-S.VILLA-SOMMA VES.3",
-      "codice_ipa": "ho3ung48",
-      "seed_domain": "smsangiovannibosco.edu.it",
-      "claimed_domain": "comune.sommavesuviana.na.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mailserver2.vhosting-it.com",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mailserver2.vhosting-it.com) hosted on Local ISP (IT.Gate (IT))"
-    },
-    {
       "id": "IT-L33-LAR",
       "name": "Liceo Antonio Rosmini Trento",
       "codice_ipa": "lar",
@@ -3586,17 +3575,6 @@
       "old_mx": "smtp.google.com",
       "old_provider": "google",
       "old_reason": "MX record (smtp.google.com) matches Google"
-    },
-    {
-      "id": "IT-L33-icstre",
-      "name": "Istituto Comprensivo Settimo III",
-      "codice_ipa": "icstre",
-      "seed_domain": "amministrazionecentrale.it",
-      "claimed_domain": "comune.settimo-torinese.to.it",
-      "reject_reason": "unrelated",
-      "old_mx": "cloudscan10.ilger.com",
-      "old_provider": "google",
-      "old_reason": "MX is ilger gateway; TXT verification proves google tenant"
     },
     {
       "id": "IT-L33-icsvm_bz",

@@ -3,10 +3,10 @@
   {
    "cluster": "education",
    "label": "Istruzione (Scuole, Università, AFAM)",
-   "n": 8315,
-   "n_classified": 8264,
-   "isd": 21.36,
-   "cloud_act_pct": 78.29,
+   "n": 8316,
+   "n_classified": 8267,
+   "isd": 21.39,
+   "cloud_act_pct": 78.26,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -17,14 +17,14 @@
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 1250,
-     "pct": 15.13
+     "count": 1253,
+     "pct": 15.16
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
      "count": 512,
-     "pct": 6.2
+     "pct": 6.19
     },
     {
      "bucket": "Altri provider esteri",
@@ -36,13 +36,13 @@
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 6470,
-     "pct": 78.29
+     "pct": 78.26
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 51,
-     "pct": 0.61
+     "count": 49,
+     "pct": 0.59
     }
    ]
   },
@@ -57,8 +57,8 @@
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 749,
-     "pct": 9.52
+     "count": 750,
+     "pct": 9.53
     },
     {
      "bucket": "Italia — Provider commerciali",
@@ -69,8 +69,8 @@
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 1814,
-     "pct": 23.05
+     "count": 1813,
+     "pct": 23.04
     },
     {
      "bucket": "Altri provider esteri",
@@ -187,10 +187,10 @@
   {
    "cluster": "soe",
    "label": "Società partecipate e fondazioni pubbliche",
-   "n": 1149,
-   "n_classified": 1088,
+   "n": 1151,
+   "n_classified": 1090,
    "isd": 50.28,
-   "cloud_act_pct": 48.99,
+   "cloud_act_pct": 48.9,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -201,32 +201,32 @@
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 438,
-     "pct": 40.26
+     "count": 439,
+     "pct": 40.28
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
      "count": 94,
-     "pct": 8.64
+     "pct": 8.62
     },
     {
      "bucket": "Altri provider esteri",
      "group": "EST",
-     "count": 8,
-     "pct": 0.74
+     "count": 9,
+     "pct": 0.83
     },
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 533,
-     "pct": 48.99
+     "pct": 48.9
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
      "count": 61,
-     "pct": 5.31
+     "pct": 5.3
     }
    ]
   },
@@ -691,5 +691,5 @@
    ]
   }
  ],
- "generated": "2026-09-22T09:18:26Z"
+ "generated": "2026-09-23T09:19:59Z"
 }

@@ -121000,7 +121000,7 @@
     "country": "IT",
     "region": "Sicilia",
     "district": "Catania",
-    "domain": "comune.ragalna.ct-egov.it",
+    "domain": "comune.ragalna.ct.it",
     "osm_relation_id": 39306,
     "domain_fallbacks": [
       "gmail.com"
@@ -153930,7 +153930,9 @@
     "district": null,
     "domain": "ordinefarmacistigr.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "libero.it"
+    ],
     "ipa_codice_ipa": "orfap_gr",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -156604,7 +156606,9 @@
     "district": null,
     "domain": "agenzia.roma.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "pec.agenzia.roma.it"
+    ],
     "ipa_codice_ipa": "aiclq",
     "ipa_codice_categoria": "C3",
     "ipa_codice_istat": "20220462",
@@ -180271,6 +180275,23 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-58PR4QPT",
+    "name": "IC 39 LEOPARDI DORIA MINNITI",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "scuolaleopardi.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
+    "ipa_codice_ipa": "58PR4QPT",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "063049",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-5B67E3T4",
     "name": "ISTITUTO COMPRENSIVO CAPOTERRA N. 2",
     "country": "IT",
@@ -180933,7 +180954,9 @@
     "district": null,
     "domain": "icgiannone.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "91NN57DH",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -182557,7 +182580,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "cpiagavardo.edu.it",
+    "domain": "cpia2brescia.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -185541,7 +185564,9 @@
     "district": null,
     "domain": "smsangiovannibosco.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "HO3UNG48",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -190099,16 +190124,15 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "istitutocapannoli.it",
+    "domain": "iclodi4.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "iclodi4.edu.it",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "icicl",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "050005",
+    "ipa_codice_comune_istat": "098031",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -194967,9 +194991,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "amministrazionecentrale.it",
+    "domain": "icsettimo3.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "icstre",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -204785,7 +204811,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icmonteroberto.edu.it",
+    "domain": "icgalileoferraris.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -204793,7 +204819,7 @@
     "ipa_codice_ipa": "istsc_anic83600x",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "042029",
+    "ipa_codice_comune_istat": "042018",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -210547,23 +210573,6 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "110001",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-L33-istsc_BAIS046009",
-    "name": "ISTITUTO SUPERIORE - GARRONE",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "iissdenittis.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_BAIS046009",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "110002",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -222290,7 +222299,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "matteicaserta.edu.it",
+    "domain": "matteiferraris.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -222665,11 +222674,9 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "istitutoalberghieroteano.edu.it",
+    "domain": "istruzione.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "istsc_cerh02000g",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -235639,7 +235646,6 @@
     "domain": "viapascolicesena.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "gmail.com",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_fomm03100p",
@@ -305233,7 +305239,7 @@
   },
   {
     "id": "IT-L33-istsc_veic80800a",
-    "name": "ISTITUTO COMPRENSIVO STATALE DI CAMPOLONGO MAGGIORE E CAMPAGNA LUPIA",
+    "name": "ISTITUTO COMPRENSIVO STATALE RIT LEVI MONTALCINI",
     "country": "IT",
     "region": null,
     "district": null,
@@ -311927,7 +311933,10 @@
     "district": null,
     "domain": "liceoserao.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "gmail.com",
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "J3MFVBSM",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -313010,7 +313019,9 @@
     "district": null,
     "domain": "ic7piacenza.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "LNVVI0PR",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -314050,7 +314061,7 @@
   },
   {
     "id": "IT-L33-np_052",
-    "name": "ISTITUTO SCOLASTICO COMPRENSIVO N. 2 POGGIBONSI",
+    "name": "ISTITUTO COMPRENSIVO FOLGORE DA SAN GIMIGNANO - 2 POGGIBONSI",
     "country": "IT",
     "region": null,
     "district": null,
@@ -314683,7 +314694,9 @@
     "district": null,
     "domain": "icrbpd.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "Q0G8SZGZ",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -314725,12 +314738,27 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-QAHDBGZA",
+    "name": "I.C. 17 ANGIULLI-VOLINO-CROCE-ARCOLEO",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "icangiullivolinocrocearcoleo.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "QAHDBGZA",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "063049",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-QG3VR7IW",
     "name": "CUNEO BIANCHI BONELLI VIRGINIO",
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "istruzione.it",
+    "domain": "bianchibonellivirginio.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "QG3VR7IW",
@@ -315755,7 +315783,10 @@
     "district": null,
     "domain": "iclombardoradicevirgilio.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.gov.it",
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "UKTOXGZB",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -328250,6 +328281,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-2SWLAIU2",
+    "name": "Catanzaro Servizi spa",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "catanzaroservizi.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "2SWLAIU2",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "079023",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-2YNKW2LR",
     "name": "Artemedia Srl",
     "country": "IT",
@@ -337177,6 +337223,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-ISARZUR6",
+    "name": "RES Publica S.r.l.",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "respublicasrl.com",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "ISARZUR6",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "063049",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-ISVQ0VAD",
     "name": "AUSER LEUCUM ODV-ETS",
     "country": "IT",
@@ -339868,7 +339929,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "caprarolaservizi.it",
+    "domain": "ascaprarolaservizi.it",
     "osm_relation_id": null,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "QXSJ8M2L",
@@ -343059,9 +343120,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "parcodiportoconte.it",
+    "domain": "algheroparks.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "parcodiportoconte.it"
+    ],
     "ipa_codice_ipa": "aspnr_",
     "ipa_codice_categoria": "L38",
     "ipa_codice_istat": "19075269",
@@ -348105,9 +348168,7 @@
     "district": null,
     "domain": "atoambientecl1.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.atoambientecl1.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "aacsl1",
     "ipa_codice_categoria": "L44",
     "ipa_codice_istat": "20708627",
@@ -357033,7 +357094,9 @@
     "district": null,
     "domain": "agenzia.roma.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "pec.agenzia.roma.it"
+    ],
     "ipa_codice_ipa": "8D20RCTE",
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,
