@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "generated": "2026-09-23T09:13:04Z",
+    "generated": "2026-09-24T09:08:40Z",
     "source_datasets": [
       "aoo",
       "uo"
     ],
-    "n_enriched": 12026,
-    "n_total_domains": 12709
+    "n_enriched": 12036,
+    "n_total_domains": 12718
   },
   "by_ipa": {
     "013e014u": {
@@ -608,10 +608,13 @@
       "source_record_count": 2
     },
     "21m650rw": {
-      "non_pec_domains": [
-        "farmaciecomunalicrema.it"
+      "non_pec_domains": [],
+      "filtered_out": [
+        {
+          "dom": "farmaciecomunalicrema.it",
+          "reason": "unrelated"
+        }
       ],
-      "filtered_out": [],
       "source_record_count": 1
     },
     "21w263te": {
@@ -1421,6 +1424,13 @@
       "filtered_out": [],
       "source_record_count": 1
     },
+    "56fg6xpq": {
+      "non_pec_domains": [
+        "oirmsantanna.piemonte.it"
+      ],
+      "filtered_out": [],
+      "source_record_count": 2
+    },
     "56wklhox": {
       "non_pec_domains": [
         "itsturismo.it"
@@ -1472,6 +1482,10 @@
     "5b67e3t4": {
       "non_pec_domains": [],
       "filtered_out": [
+        {
+          "dom": "tiscali.it",
+          "reason": "unrelated"
+        },
         {
           "dom": "istruzione.it",
           "reason": "unrelated"
@@ -4091,7 +4105,7 @@
         "trieste.aci.it"
       ],
       "filtered_out": [],
-      "source_record_count": 2
+      "source_record_count": 3
     },
     "act_022": {
       "non_pec_domains": [
@@ -4901,15 +4915,15 @@
           "reason": "unrelated"
         },
         {
+          "dom": "asl5.liguria.it",
+          "reason": "unrelated"
+        },
+        {
           "dom": "regione.liguria.it",
           "reason": "pa_shared_platform_out_of_scope:regione.liguria.it"
         },
         {
           "dom": "asl4.liguria.it",
-          "reason": "unrelated"
-        },
-        {
-          "dom": "asl5.liguria.it",
           "reason": "unrelated"
         },
         {
@@ -5058,11 +5072,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "touriseum.it",
+          "dom": "museumladin.it",
           "reason": "unrelated"
         },
         {
-          "dom": "museumladin.it",
+          "dom": "touriseum.it",
           "reason": "unrelated"
         },
         {
@@ -5082,14 +5096,6 @@
           "reason": "unrelated"
         },
         {
-          "dom": "fortezza.info",
-          "reason": "unrelated"
-        },
-        {
-          "dom": "landesmuseen.it",
-          "reason": "unrelated"
-        },
-        {
           "dom": "casteltirolo.it",
           "reason": "unrelated"
         },
@@ -5098,11 +5104,19 @@
           "reason": "unrelated"
         },
         {
+          "dom": "landesmuseen.it",
+          "reason": "unrelated"
+        },
+        {
           "dom": "storiaregionale.it",
           "reason": "unrelated"
         },
         {
           "dom": "regionalgeschichte.it",
+          "reason": "unrelated"
+        },
+        {
+          "dom": "fortezza.info",
           "reason": "unrelated"
         }
       ],
@@ -5552,11 +5566,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "ploclinico.pa.it",
+          "dom": "unipa.it",
           "reason": "unrelated"
         },
         {
-          "dom": "unipa.it",
+          "dom": "ploclinico.pa.it",
           "reason": "unrelated"
         },
         {
@@ -7511,11 +7525,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "taorminaservizipubblici.it",
           "reason": "unrelated"
         },
         {
-          "dom": "taorminaservizipubblici.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -7558,11 +7572,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         },
         {
-          "dom": "virgilio.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
@@ -7633,11 +7647,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "alice.it",
           "reason": "unrelated"
         },
         {
-          "dom": "alice.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -8383,7 +8397,7 @@
         "asst-val.it"
       ],
       "filtered_out": [],
-      "source_record_count": 24
+      "source_record_count": 25
     },
     "asstvo": {
       "non_pec_domains": [
@@ -8560,7 +8574,7 @@
         "atcpiemontenord.it"
       ],
       "filtered_out": [],
-      "source_record_count": 13
+      "source_record_count": 14
     },
     "atcpf": {
       "non_pec_domains": [
@@ -11503,11 +11517,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "polizialocalebriantea.it",
+          "dom": "alzatebrianza.org",
           "reason": "unrelated"
         },
         {
-          "dom": "alzatebrianza.org",
+          "dom": "polizialocalebriantea.it",
           "reason": "unrelated"
         }
       ],
@@ -11943,11 +11957,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "bb.it",
+          "dom": "aa.it",
           "reason": "unrelated"
         },
         {
-          "dom": "aa.it",
+          "dom": "bb.it",
           "reason": "unrelated"
         }
       ],
@@ -12658,11 +12672,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "rete.basilicata.it",
+          "dom": "yahoo.it",
           "reason": "unrelated"
         },
         {
-          "dom": "yahoo.it",
+          "dom": "rete.basilicata.it",
           "reason": "unrelated"
         },
         {
@@ -13499,7 +13513,7 @@
         "bardonecchia.it"
       ],
       "filtered_out": [],
-      "source_record_count": 3
+      "source_record_count": 4
     },
     "c_a652": {
       "non_pec_domains": [
@@ -14898,11 +14912,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
@@ -14918,15 +14932,15 @@
       ],
       "filtered_out": [
         {
+          "dom": "libero.it",
+          "reason": "unrelated"
+        },
+        {
           "dom": "inwind.it",
           "reason": "unrelated"
         },
         {
           "dom": "gmail.com",
-          "reason": "unrelated"
-        },
-        {
-          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -15360,11 +15374,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "comunedibonito.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comunedibonito.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -17828,11 +17842,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -18693,7 +18707,7 @@
           "reason": "unrelated"
         }
       ],
-      "source_record_count": 30
+      "source_record_count": 31
     },
     "c_b641": {
       "non_pec_domains": [
@@ -20337,11 +20351,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -21344,11 +21358,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "virgilio.it",
+          "dom": "comunecastelguidone.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comunecastelguidone.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         }
       ],
@@ -22466,11 +22480,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "unionemontanaaltalanga.it",
+          "dom": "reteunitaria.piemonte.it",
           "reason": "unrelated"
         },
         {
-          "dom": "reteunitaria.piemonte.it",
+          "dom": "unionemontanaaltalanga.it",
           "reason": "unrelated"
         }
       ],
@@ -23137,10 +23151,6 @@
         {
           "dom": "comunecelledibulgheria.it",
           "reason": "unrelated"
-        },
-        {
-          "dom": "alice.it",
-          "reason": "unrelated"
         }
       ],
       "source_record_count": 5
@@ -23562,11 +23572,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "empolese-valdelsa.it",
+          "dom": "empolese-valdelsa.fi.it",
           "reason": "unrelated"
         },
         {
-          "dom": "empolese-valdelsa.fi.it",
+          "dom": "empolese-valdelsa.it",
           "reason": "unrelated"
         }
       ],
@@ -24036,12 +24046,7 @@
       "non_pec_domains": [
         "comune.chiaramonti.ss.it"
       ],
-      "filtered_out": [
-        {
-          "dom": "x.it",
-          "reason": "unrelated"
-        }
-      ],
+      "filtered_out": [],
       "source_record_count": 6
     },
     "c_c614": {
@@ -24175,11 +24180,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "teatromarrucino.eu",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "teatromarrucino.eu",
           "reason": "unrelated"
         }
       ],
@@ -24474,11 +24479,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "polizialocalesinistrapiave.it",
+          "dom": "unionesxpiave.gov.it",
           "reason": "unrelated"
         },
         {
-          "dom": "unionesxpiave.gov.it",
+          "dom": "polizialocalesinistrapiave.it",
           "reason": "unrelated"
         }
       ],
@@ -24587,6 +24592,13 @@
     "c_c712": {
       "non_pec_domains": [
         "comune.cintetesino.tn.it"
+      ],
+      "filtered_out": [],
+      "source_record_count": 3
+    },
+    "c_c713": {
+      "non_pec_domains": [
+        "comune.cintoeuganeo.pd.it"
       ],
       "filtered_out": [],
       "source_record_count": 3
@@ -24850,11 +24862,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "certgov.fvg.it",
+          "dom": "friuliorientale.comunitafvg.it",
           "reason": "unrelated"
         },
         {
-          "dom": "friuliorientale.comunitafvg.it",
+          "dom": "certgov.fvg.it",
           "reason": "unrelated"
         }
       ],
@@ -25424,12 +25436,10 @@
       "source_record_count": 9
     },
     "c_c859": {
-      "non_pec_domains": [],
+      "non_pec_domains": [
+        "comune.collegiove.ri.it"
+      ],
       "filtered_out": [
-        {
-          "dom": "comunecollegiove.it",
-          "reason": "unrelated"
-        },
         {
           "dom": "gmail.com",
           "reason": "unrelated"
@@ -25534,11 +25544,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "yahoo.it",
+          "dom": "comunecollisulvelino.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comunecollisulvelino.it",
+          "dom": "yahoo.it",
           "reason": "unrelated"
         },
         {
@@ -25585,11 +25595,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "virgilio.it",
+          "dom": "rete.basilicata.it",
           "reason": "unrelated"
         },
         {
-          "dom": "rete.basilicata.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         },
         {
@@ -26127,11 +26137,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "messaggipec.it",
           "reason": "unrelated"
         },
         {
-          "dom": "messaggipec.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -27642,11 +27652,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "tiscali.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
@@ -28188,11 +28198,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "magnificamontagna.comunitafvg.it",
+          "dom": "certgov.fvg.it",
           "reason": "unrelated"
         },
         {
-          "dom": "certgov.fvg.it",
+          "dom": "magnificamontagna.comunitafvg.it",
           "reason": "unrelated"
         }
       ],
@@ -30229,12 +30239,7 @@
       "non_pec_domains": [
         "comune.frignano.ce.it"
       ],
-      "filtered_out": [
-        {
-          "dom": "x.it",
-          "reason": "unrelated"
-        }
-      ],
+      "filtered_out": [],
       "source_record_count": 6
     },
     "c_d801": {
@@ -31223,11 +31228,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         },
         {
-          "dom": "virgilio.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -31674,7 +31679,7 @@
         "comune.giugliano.na.it"
       ],
       "filtered_out": [],
-      "source_record_count": 6
+      "source_record_count": 7
     },
     "c_e056": {
       "non_pec_domains": [
@@ -33412,11 +33417,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "alice.it",
+          "dom": "comuneitala.me.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comuneitala.me.it",
+          "dom": "alice.it",
           "reason": "unrelated"
         }
       ],
@@ -33499,11 +33504,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "interno.it",
           "reason": "unrelated"
         },
         {
-          "dom": "interno.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -35682,13 +35687,8 @@
       "non_pec_domains": [
         "comune.macomer.nu.it"
       ],
-      "filtered_out": [
-        {
-          "dom": "tiscali.it",
-          "reason": "unrelated"
-        }
-      ],
-      "source_record_count": 3
+      "filtered_out": [],
+      "source_record_count": 8
     },
     "c_e789": {
       "non_pec_domains": [
@@ -35927,11 +35927,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -36784,11 +36784,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "carnia.comunitafvg.it",
+          "dom": "carnia.comunita.fvg.it",
           "reason": "unrelated"
         },
         {
-          "dom": "carnia.comunita.fvg.it",
+          "dom": "carnia.comunitafvg.it",
           "reason": "unrelated"
         }
       ],
@@ -39156,11 +39156,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "certificatamail.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "certificatamail.it",
           "reason": "unrelated"
         }
       ],
@@ -41157,11 +41157,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -41919,11 +41919,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "interno.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "interno.it",
           "reason": "unrelated"
         }
       ],
@@ -42871,11 +42871,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "postacert.toscana.it",
+          "dom": "x.it",
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "postacert.toscana.it",
           "reason": "unrelated"
         }
       ],
@@ -44138,11 +44138,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -44761,6 +44761,10 @@
       "filtered_out": [
         {
           "dom": "gmail.com",
+          "reason": "unrelated"
+        },
+        {
+          "dom": "comune.peglio.co.it",
           "reason": "unrelated"
         }
       ],
@@ -49102,11 +49106,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "comune.introd.ao.it",
+          "dom": "cm-grandparadis.vda.it",
           "reason": "unrelated"
         },
         {
-          "dom": "cm-grandparadis.vda.it",
+          "dom": "comune.introd.ao.it",
           "reason": "unrelated"
         },
         {
@@ -50105,15 +50109,15 @@
           "reason": "unrelated"
         },
         {
+          "dom": "revisori.it",
+          "reason": "unrelated"
+        },
+        {
           "dom": "libero.it",
           "reason": "unrelated"
         },
         {
           "dom": "gmail.com",
-          "reason": "unrelated"
-        },
-        {
-          "dom": "revisori.it",
           "reason": "unrelated"
         }
       ],
@@ -50123,11 +50127,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "hotmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "hotmail.com",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
@@ -50197,11 +50201,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "tiscanet.it",
+          "dom": "tiscalinet.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscalinet.it",
+          "dom": "tiscanet.it",
           "reason": "unrelated"
         }
       ],
@@ -52256,11 +52260,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "virgilio.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         }
       ],
@@ -54104,11 +54108,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gemeide.stchristina.bz.it",
+          "dom": "gemeinde.stchristina.bz.it",
           "reason": "unrelated"
         },
         {
-          "dom": "gemeinde.stchristina.bz.it",
+          "dom": "gemeide.stchristina.bz.it",
           "reason": "unrelated"
         }
       ],
@@ -54794,10 +54798,12 @@
       "source_record_count": 11
     },
     "c_i315": {
-      "non_pec_domains": [
-        "svittoria.it"
-      ],
+      "non_pec_domains": [],
       "filtered_out": [
+        {
+          "dom": "svittoria.it",
+          "reason": "unrelated"
+        },
         {
           "dom": "libero.it",
           "reason": "unrelated"
@@ -55618,11 +55624,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune.fiorano-modenese.mo.it",
+          "dom": "comune.maranello.mo.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.maranello.mo.it",
+          "dom": "comune.fiorano-modenese.mo.it",
           "reason": "unrelated"
         },
         {
@@ -56081,13 +56087,10 @@
       "source_record_count": 3
     },
     "c_i556": {
-      "non_pec_domains": [],
-      "filtered_out": [
-        {
-          "dom": "comuneseborga.it",
-          "reason": "unrelated"
-        }
+      "non_pec_domains": [
+        "comune.seborga.im.it"
       ],
+      "filtered_out": [],
       "source_record_count": 2
     },
     "c_i558": {
@@ -57025,11 +57028,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         }
       ],
@@ -58101,7 +58104,7 @@
         "comune.stornara.fg.it"
       ],
       "filtered_out": [],
-      "source_record_count": 3
+      "source_record_count": 4
     },
     "c_i963": {
       "non_pec_domains": [
@@ -58208,7 +58211,9 @@
       "source_record_count": 7
     },
     "c_i984": {
-      "non_pec_domains": [],
+      "non_pec_domains": [
+        "comune.stroppiana.vc.it"
+      ],
       "filtered_out": [
         {
           "dom": "comuniubv.it",
@@ -58748,11 +58753,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "hotmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "hotmail.com",
           "reason": "unrelated"
         },
         {
@@ -59453,11 +59458,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -60067,7 +60072,7 @@
           "reason": "unrelated"
         }
       ],
-      "source_record_count": 3
+      "source_record_count": 2
     },
     "c_l302": {
       "non_pec_domains": [
@@ -60737,11 +60742,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "comunetriei.gov.it",
+          "dom": "comunetriei.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comunetriei.it",
+          "dom": "comunetriei.gov.it",
           "reason": "unrelated"
         }
       ],
@@ -62373,11 +62378,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -64318,6 +64323,18 @@
       "filtered_out": [],
       "source_record_count": 3
     },
+    "c_m120": {
+      "non_pec_domains": [
+        "comune.volpedo.al.it"
+      ],
+      "filtered_out": [
+        {
+          "dom": "pcert.it",
+          "reason": "unrelated"
+        }
+      ],
+      "source_record_count": 2
+    },
     "c_m122": {
       "non_pec_domains": [
         "comune.volpiano.to.it"
@@ -64918,11 +64935,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
@@ -65976,11 +65993,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "inwind.it",
           "reason": "unrelated"
         },
         {
-          "dom": "inwind.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -65994,11 +66011,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "agrotecnici.it",
           "reason": "unrelated"
         },
         {
-          "dom": "agrotecnici.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -66830,7 +66847,7 @@
           "reason": "unrelated"
         }
       ],
-      "source_record_count": 8566
+      "source_record_count": 8571
     },
     "cc_bress": {
       "non_pec_domains": [],
@@ -68716,11 +68733,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "virgilio.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         },
         {
@@ -68987,11 +69004,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -69367,11 +69384,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "x.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -69623,11 +69640,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "agrotecnici.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "agrotecnici.it",
           "reason": "unrelated"
         },
         {
@@ -70232,11 +70249,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "yahoo.it",
           "reason": "unrelated"
         },
         {
-          "dom": "yahoo.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -72525,11 +72542,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune.chianni.pisa.it",
+          "dom": "comune.calcinaia.pi.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.calcinaia.pi.it",
+          "dom": "comune.chianni.pisa.it",
           "reason": "unrelated"
         },
         {
@@ -73837,11 +73854,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -74065,11 +74082,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "tiscalinet.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscalinet.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -75359,11 +75376,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "x.it",
+          "dom": "datelsrl.it",
           "reason": "unrelated"
         },
         {
-          "dom": "datelsrl.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -75515,11 +75532,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "damianotruglia.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "damianotruglia.it",
           "reason": "unrelated"
         }
       ],
@@ -76367,15 +76384,15 @@
           "reason": "unrelated"
         },
         {
+          "dom": "tsrm.org",
+          "reason": "unrelated"
+        },
+        {
           "dom": "tsrmpa.org",
           "reason": "unrelated"
         },
         {
           "dom": "gmail.com",
-          "reason": "unrelated"
-        },
-        {
-          "dom": "tsrm.org",
           "reason": "unrelated"
         }
       ],
@@ -77116,11 +77133,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "bonificamarche.it",
+          "dom": "comune.castignano.ap.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.castignano.ap.it",
+          "dom": "bonificamarche.it",
           "reason": "unrelated"
         },
         {
@@ -77132,11 +77149,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune.pesaro.pu.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "comune.pesaro.pu.it",
           "reason": "unrelated"
         },
         {
@@ -77156,15 +77173,15 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune.recanati.mc.it",
-          "reason": "unrelated"
-        },
-        {
           "dom": "comune.casteldilama.ap.it",
           "reason": "unrelated"
         },
         {
           "dom": "comune.genga.an.it",
+          "reason": "unrelated"
+        },
+        {
+          "dom": "comune.recanati.mc.it",
           "reason": "unrelated"
         },
         {
@@ -79910,7 +79927,7 @@
         "ferrovieappulolucane.it"
       ],
       "filtered_out": [],
-      "source_record_count": 2
+      "source_record_count": 3
     },
     "fb9oxpek": {
       "non_pec_domains": [
@@ -81409,6 +81426,13 @@
       ],
       "source_record_count": 3
     },
+    "gzrb6wce": {
+      "non_pec_domains": [
+        "cidiu.it"
+      ],
+      "filtered_out": [],
+      "source_record_count": 2
+    },
     "h0lxe15f": {
       "non_pec_domains": [
         "scuolarosselloroma.it"
@@ -81843,6 +81867,13 @@
       ],
       "filtered_out": [],
       "source_record_count": 21
+    },
+    "iacp_cb": {
+      "non_pec_domains": [
+        "iacpcampobasso.it"
+      ],
+      "filtered_out": [],
+      "source_record_count": 2
     },
     "iacp_fg": {
       "non_pec_domains": [
@@ -83025,11 +83056,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "istitutocomprensivocaluso.it",
           "reason": "unrelated"
         },
         {
-          "dom": "istitutocomprensivocaluso.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -84187,11 +84218,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "x.it",
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -88402,11 +88433,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "virgilio.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         }
       ],
@@ -90370,11 +90401,15 @@
       ],
       "filtered_out": [
         {
+          "dom": "infermieribergamo.it",
+          "reason": "unrelated"
+        },
+        {
           "dom": "x.it",
           "reason": "unrelated"
         }
       ],
-      "source_record_count": 2
+      "source_record_count": 3
     },
     "ipasvicr": {
       "non_pec_domains": [
@@ -91610,11 +91645,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
+          "dom": "istitutoterragni.it",
           "reason": "unrelated"
         },
         {
-          "dom": "istitutoterragni.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -92026,11 +92061,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "poliartibg.it",
           "reason": "unrelated"
         },
         {
-          "dom": "poliartibg.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -101324,11 +101359,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "posta.istruzione.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         },
         {
-          "dom": "istruzione.it",
+          "dom": "posta.istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -110063,11 +110098,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "virgilio.it",
+          "dom": "goiss.it",
           "reason": "unrelated"
         },
         {
-          "dom": "goiss.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         }
       ],
@@ -110785,11 +110820,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "istruzione.it",
+          "dom": "pec-legal.it",
           "reason": "unrelated"
         },
         {
-          "dom": "pec-legal.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -116545,7 +116580,7 @@
           "reason": "unrelated"
         }
       ],
-      "source_record_count": 2
+      "source_record_count": 3
     },
     "istsc_miis01900l": {
       "non_pec_domains": [
@@ -116918,7 +116953,9 @@
       "source_record_count": 2
     },
     "istsc_mipc020003": {
-      "non_pec_domains": [],
+      "non_pec_domains": [
+        "liceozucchi.edu.it"
+      ],
       "filtered_out": [
         {
           "dom": "istruzione.it",
@@ -117953,10 +117990,6 @@
       "filtered_out": [
         {
           "dom": "istruzione.it",
-          "reason": "unrelated"
-        },
-        {
-          "dom": "alice.it",
           "reason": "unrelated"
         }
       ],
@@ -123833,16 +123866,6 @@
       ],
       "source_record_count": 2
     },
-    "istsc_pcmm00400b": {
-      "non_pec_domains": [],
-      "filtered_out": [
-        {
-          "dom": "istruzione.it",
-          "reason": "unrelated"
-        }
-      ],
-      "source_record_count": 3
-    },
     "istsc_pcpm010008": {
       "non_pec_domains": [],
       "filtered_out": [
@@ -124141,11 +124164,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -129985,11 +130008,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "boiardo-re.gov.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         },
         {
-          "dom": "istruzione.it",
+          "dom": "boiardo-re.gov.it",
           "reason": "unrelated"
         }
       ],
@@ -136442,11 +136465,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "istruzione.it",
+          "dom": "isrtuzione.it",
           "reason": "unrelated"
         },
         {
-          "dom": "isrtuzione.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -146564,6 +146587,10 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
+          "dom": "gmail.com",
+          "reason": "unrelated"
+        },
+        {
           "dom": "istruzione.it",
           "reason": "unrelated"
         }
@@ -147934,6 +147961,13 @@
       ],
       "source_record_count": 3
     },
+    "kdl0oete": {
+      "non_pec_domains": [
+        "settimopero.it"
+      ],
+      "filtered_out": [],
+      "source_record_count": 1
+    },
     "kdpadr44": {
       "non_pec_domains": [
         "aido.it"
@@ -148338,11 +148372,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "scuole.provincia.tn.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         },
         {
-          "dom": "istruzione.it",
+          "dom": "scuole.provincia.tn.it",
           "reason": "unrelated"
         }
       ],
@@ -149307,7 +149341,7 @@
           "reason": "unrelated"
         }
       ],
-      "source_record_count": 859
+      "source_record_count": 860
     },
     "m_dg": {
       "non_pec_domains": [
@@ -149364,11 +149398,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "tesoro.it",
+          "dom": "finanze.it",
           "reason": "unrelated"
         },
         {
-          "dom": "finanze.it",
+          "dom": "tesoro.it",
           "reason": "unrelated"
         }
       ],
@@ -150891,11 +150925,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "cnappc.it",
           "reason": "unrelated"
         },
         {
-          "dom": "cnappc.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -151046,7 +151080,7 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "x.it",
           "reason": "unrelated"
         },
         {
@@ -151054,7 +151088,7 @@
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -151283,15 +151317,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune.trecastagni.ct.it",
-          "reason": "unrelated"
-        },
-        {
           "dom": "comune.santavenerina.ct.it",
           "reason": "unrelated"
         },
         {
-          "dom": "protezionecivilesicilia.it",
+          "dom": "comune.trecastagni.ct.it",
           "reason": "unrelated"
         },
         {
@@ -151303,11 +151333,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune.acisantantonio.ct.it",
+          "dom": "protezionecivilesicilia.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.acireale.ct.it",
+          "dom": "comune.acisantantonio.ct.it",
           "reason": "unrelated"
         },
         {
@@ -151315,11 +151345,15 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comunezafferanaetenea.it",
+          "dom": "comune.acireale.ct.it",
           "reason": "unrelated"
         },
         {
           "dom": "comunezafferanaetnea.it",
+          "reason": "unrelated"
+        },
+        {
+          "dom": "comunezafferanaetenea.it",
           "reason": "unrelated"
         }
       ],
@@ -152254,11 +152288,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "ancona.archiworld.it",
+          "dom": "archiworld.it",
           "reason": "unrelated"
         },
         {
-          "dom": "archiworld.it",
+          "dom": "ancona.archiworld.it",
           "reason": "unrelated"
         }
       ],
@@ -152463,11 +152497,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "ascolipiceno.awn.it",
           "reason": "unrelated"
         },
         {
-          "dom": "ascolipiceno.awn.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -154192,7 +154226,7 @@
       ],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "studiodenicolis.it",
           "reason": "unrelated"
         }
       ],
@@ -154454,7 +154488,7 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "studiosolution.it",
           "reason": "unrelated"
         },
         {
@@ -154462,7 +154496,7 @@
           "reason": "unrelated"
         },
         {
-          "dom": "studiosolution.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -154641,11 +154675,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -155172,11 +155206,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "inpa.com",
           "reason": "unrelated"
         },
         {
-          "dom": "inpa.com",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -156043,11 +156077,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "chimicibologna.it",
           "reason": "unrelated"
         },
         {
-          "dom": "chimicibologna.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -156385,12 +156419,7 @@
       "non_pec_domains": [
         "ordinemedici.ancona.it"
       ],
-      "filtered_out": [
-        {
-          "dom": "x.it",
-          "reason": "unrelated"
-        }
-      ],
+      "filtered_out": [],
       "source_record_count": 2
     },
     "ompuh8e0": {
@@ -156882,11 +156911,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "consulentidellavoro.it",
           "reason": "unrelated"
         },
         {
-          "dom": "consulentidellavoro.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -157915,7 +157944,7 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "uslsudest.toscana.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
@@ -161455,6 +161484,13 @@
       "filtered_out": [],
       "source_record_count": 3
     },
+    "rvdl": {
+      "non_pec_domains": [
+        "residenzavalledeilaghi.it"
+      ],
+      "filtered_out": [],
+      "source_record_count": 4
+    },
     "rvdngvw3": {
       "non_pec_domains": [],
       "filtered_out": [
@@ -161937,6 +161973,16 @@
       "filtered_out": [
         {
           "dom": "yahoo.it",
+          "reason": "unrelated"
+        }
+      ],
+      "source_record_count": 3
+    },
+    "sjrp4qs0": {
+      "non_pec_domains": [],
+      "filtered_out": [
+        {
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -163831,11 +163877,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune.lizzanello.le.it",
+          "dom": "comune.cavallino.le.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.cavallino.le.it",
+          "dom": "comune.lizzanello.le.it",
           "reason": "unrelated"
         }
       ],
@@ -163979,11 +164025,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "comune.santacesareaterme.le.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.santacesareaterme.le.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -164523,11 +164569,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "comunedimassafra.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "comunedimassafra.it",
           "reason": "unrelated"
         },
         {
@@ -165522,7 +165568,7 @@
         "unioncamere.it"
       ],
       "filtered_out": [],
-      "source_record_count": 24
+      "source_record_count": 19
     },
     "uinwmseq": {
       "non_pec_domains": [
@@ -166201,7 +166247,7 @@
         "univr.it"
       ],
       "filtered_out": [],
-      "source_record_count": 48
+      "source_record_count": 49
     },
     "unibz": {
       "non_pec_domains": [
@@ -166921,11 +166967,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "plvalnurevalchero.it",
+          "dom": "plvalnurevalcheroaltavalnure.it",
           "reason": "unrelated"
         },
         {
-          "dom": "plvalnurevalcheroaltavalnure.it",
+          "dom": "plvalnurevalchero.it",
           "reason": "unrelated"
         }
       ],
@@ -168168,11 +168214,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "interno.it.it",
+          "dom": "interno.it",
           "reason": "unrelated"
         },
         {
-          "dom": "interno.it",
+          "dom": "interno.it.it",
           "reason": "unrelated"
         },
         {
@@ -168612,6 +168658,16 @@
       "source_record_count": 3
     },
     "zag3d6x6": {
+      "non_pec_domains": [],
+      "filtered_out": [
+        {
+          "dom": "istruzione.it",
+          "reason": "unrelated"
+        }
+      ],
+      "source_record_count": 3
+    },
+    "zcimz69u": {
       "non_pec_domains": [],
       "filtered_out": [
         {
@@ -169406,13 +169462,6 @@
           "reason": "unrelated"
         }
       ],
-      "source_record_count": 1
-    },
-    "56fg6xpq": {
-      "non_pec_domains": [
-        "oirmsantanna.piemonte.it"
-      ],
-      "filtered_out": [],
       "source_record_count": 1
     },
     "5ag3zh7v": {
@@ -170517,7 +170566,12 @@
       "non_pec_domains": [
         "visitbergamo.net"
       ],
-      "filtered_out": [],
+      "filtered_out": [
+        {
+          "dom": "registerpec.it",
+          "reason": "unrelated"
+        }
+      ],
       "source_record_count": 1
     },
     "alsvi": {
@@ -170579,11 +170633,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "legailmail.it",
+          "dom": "x.it",
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "legailmail.it",
           "reason": "unrelated"
         }
       ],
@@ -171264,11 +171318,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "bb44.it",
+          "dom": "rolmail.net",
           "reason": "unrelated"
         },
         {
-          "dom": "rolmail.net",
+          "dom": "bb44.it",
           "reason": "unrelated"
         }
       ],
@@ -171278,11 +171332,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "bb44.it",
+          "dom": "rolmail.net",
           "reason": "unrelated"
         },
         {
-          "dom": "rolmail.net",
+          "dom": "bb44.it",
           "reason": "unrelated"
         }
       ],
@@ -171393,11 +171447,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "bb44.it",
+          "dom": "rolmail.net",
           "reason": "unrelated"
         },
         {
-          "dom": "rolmail.net",
+          "dom": "bb44.it",
           "reason": "unrelated"
         }
       ],
@@ -173724,11 +173778,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "officine.it",
           "reason": "unrelated"
         },
         {
-          "dom": "officine.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
@@ -173749,11 +173803,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "unionemontanaaltalanga.it",
+          "dom": "reteunitaria.piemonte.it",
           "reason": "unrelated"
         },
         {
-          "dom": "reteunitaria.piemonte.it",
+          "dom": "unionemontanaaltalanga.it",
           "reason": "unrelated"
         }
       ],
@@ -174565,11 +174619,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "rete.basilicata.it",
           "reason": "unrelated"
         },
         {
-          "dom": "rete.basilicata.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -175537,7 +175591,6 @@
     },
     "c_c094": {
       "non_pec_domains": [
-        "casteldilucio.eu",
         "comune.casteldilucio.me.it"
       ],
       "filtered_out": [
@@ -175642,11 +175695,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "unionemontanaaltalanga.it",
+          "dom": "reteunitaria.piemonte.it",
           "reason": "unrelated"
         },
         {
-          "dom": "reteunitaria.piemonte.it",
+          "dom": "unionemontanaaltalanga.it",
           "reason": "unrelated"
         }
       ],
@@ -176047,11 +176100,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "comune.cerchiara.cs.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.cerchiara.cs.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -176225,11 +176278,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "mailcert.cremasconline.it",
+          "dom": "consorzioit.net",
           "reason": "unrelated"
         },
         {
-          "dom": "consorzioit.net",
+          "dom": "mailcert.cremasconline.it",
           "reason": "unrelated"
         }
       ],
@@ -176365,18 +176418,6 @@
       ],
       "filtered_out": [],
       "source_record_count": 1
-    },
-    "c_c713": {
-      "non_pec_domains": [
-        "comune.cintoeuganeo.pd.it"
-      ],
-      "filtered_out": [
-        {
-          "dom": "provincia.padova.it",
-          "reason": "unrelated"
-        }
-      ],
-      "source_record_count": 2
     },
     "c_c717": {
       "non_pec_domains": [
@@ -176867,11 +176908,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -177885,11 +177926,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "magnificamontagna.comunitafvg.it",
+          "dom": "certgov.fvg.it",
           "reason": "unrelated"
         },
         {
-          "dom": "certgov.fvg.it",
+          "dom": "magnificamontagna.comunitafvg.it",
           "reason": "unrelated"
         }
       ],
@@ -178120,11 +178161,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "alice.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "alice.it",
           "reason": "unrelated"
         }
       ],
@@ -178352,11 +178393,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "virgilio.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         }
       ],
@@ -178586,11 +178627,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "unionemontanaaltalanga.it",
+          "dom": "interfree.it",
           "reason": "unrelated"
         },
         {
-          "dom": "interfree.it",
+          "dom": "unionemontanaaltalanga.it",
           "reason": "unrelated"
         }
       ],
@@ -178720,13 +178761,10 @@
       "source_record_count": 3
     },
     "c_e356": {
-      "non_pec_domains": [],
-      "filtered_out": [
-        {
-          "dom": "unioneterredipieviecastelli.cr.it",
-          "reason": "unrelated"
-        }
+      "non_pec_domains": [
+        "comune.isoladovarese.cr.it"
       ],
+      "filtered_out": [],
       "source_record_count": 1
     },
     "c_e363": {
@@ -178943,11 +178981,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "reteunitaria.piemonte.it",
+          "dom": "unionemontanaaltalanga.it",
           "reason": "unrelated"
         },
         {
-          "dom": "unionemontanaaltalanga.it",
+          "dom": "reteunitaria.piemonte.it",
           "reason": "unrelated"
         }
       ],
@@ -178978,11 +179016,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "unionemontanaaltalanga.it",
+          "dom": "reteunitaria.piemonte.it",
           "reason": "unrelated"
         },
         {
-          "dom": "reteunitaria.piemonte.it",
+          "dom": "unionemontanaaltalanga.it",
           "reason": "unrelated"
         }
       ],
@@ -179172,7 +179210,7 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
@@ -179180,7 +179218,7 @@
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -179346,11 +179384,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "consorzioit.net",
+          "dom": "unionecenturiati.cr.it",
           "reason": "unrelated"
         },
         {
-          "dom": "unionecenturiati.cr.it",
+          "dom": "consorzioit.net",
           "reason": "unrelated"
         }
       ],
@@ -179371,7 +179409,7 @@
         "comune.mammola.rc.it"
       ],
       "filtered_out": [],
-      "source_record_count": 3
+      "source_record_count": 2
     },
     "c_e876": {
       "non_pec_domains": [],
@@ -180657,11 +180695,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "alice.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "alice.it",
           "reason": "unrelated"
         }
       ],
@@ -181813,11 +181851,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "inwind.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "inwind.it",
           "reason": "unrelated"
         }
       ],
@@ -181835,7 +181873,7 @@
         "comune.pinotorinese.to.it"
       ],
       "filtered_out": [],
-      "source_record_count": 2
+      "source_record_count": 4
     },
     "c_g680": {
       "non_pec_domains": [
@@ -182572,7 +182610,7 @@
           "reason": "unrelated"
         }
       ],
-      "source_record_count": 1
+      "source_record_count": 2
     },
     "c_h189": {
       "non_pec_domains": [
@@ -182872,7 +182910,7 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "x.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -183865,12 +183903,10 @@
       "source_record_count": 7
     },
     "c_i122": {
-      "non_pec_domains": [],
+      "non_pec_domains": [
+        "comune.sanpolomatese.cb.it"
+      ],
       "filtered_out": [
-        {
-          "dom": "tiscali.it",
-          "reason": "unrelated"
-        },
         {
           "dom": "libero.it",
           "reason": "unrelated"
@@ -183992,11 +184028,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -184666,7 +184702,9 @@
       "source_record_count": 1
     },
     "c_i648": {
-      "non_pec_domains": [],
+      "non_pec_domains": [
+        "comune.serramezzana.sa.it"
+      ],
       "filtered_out": [
         {
           "dom": "oneonline.it",
@@ -185175,11 +185213,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "comunedistrongoli.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comunedistrongoli.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -185244,11 +185282,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "alice.it",
+          "dom": "comune.supino.fr.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.supino.fr.it",
+          "dom": "alice.it",
           "reason": "unrelated"
         }
       ],
@@ -185617,11 +185655,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "magnificamontagna.comunitafvg.it",
+          "dom": "certgov.fvg.it",
           "reason": "unrelated"
         },
         {
-          "dom": "certgov.fvg.it",
+          "dom": "magnificamontagna.comunitafvg.it",
           "reason": "unrelated"
         }
       ],
@@ -186666,18 +186704,6 @@
       ],
       "source_record_count": 3
     },
-    "c_m120": {
-      "non_pec_domains": [
-        "comune.volpedo.al.it"
-      ],
-      "filtered_out": [
-        {
-          "dom": "x.it",
-          "reason": "unrelated"
-        }
-      ],
-      "source_record_count": 1
-    },
     "c_m121": {
       "non_pec_domains": [
         "comune.volpeglino.al.it"
@@ -186733,11 +186759,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "comune.zaccanopoli.vv.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.zaccanopoli.vv.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -186837,11 +186863,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "virgilio.it",
+          "dom": "comunezollino.le.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comunezollino.le.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         },
         {
@@ -188928,11 +188954,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "peritiagrari.it",
           "reason": "unrelated"
         },
         {
-          "dom": "peritiagrari.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -189295,11 +189321,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "tsrm.org",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "tsrm.org",
           "reason": "unrelated"
         }
       ],
@@ -189533,11 +189559,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "tiscalinet.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "tiscalinet.it",
           "reason": "unrelated"
         }
       ],
@@ -190024,11 +190050,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "x.it",
+          "dom": "rete.basilicata.it",
           "reason": "unrelated"
         },
         {
-          "dom": "rete.basilicata.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -191044,11 +191070,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "alice.it",
+          "dom": "ipasvienna.it",
           "reason": "unrelated"
         },
         {
-          "dom": "ipasvienna.it",
+          "dom": "alice.it",
           "reason": "unrelated"
         }
       ],
@@ -192164,12 +192190,12 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
-          "reason": "unrelated"
-        },
-        {
           "dom": "schule.suedtirol.it",
           "reason": "pa_shared_platform_out_of_scope:schule.suedtirol.it"
+        },
+        {
+          "dom": "istruzione.it",
+          "reason": "unrelated"
         }
       ],
       "source_record_count": 2
@@ -192745,11 +192771,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -192802,11 +192828,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "hotmail.com",
+          "dom": "hotmail.it",
           "reason": "unrelated"
         },
         {
-          "dom": "hotmail.it",
+          "dom": "hotmail.com",
           "reason": "unrelated"
         }
       ],
@@ -192843,12 +192869,12 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "studiobozzo.com",
-          "reason": "unrelated"
-        },
-        {
           "dom": "odcec.legalmail.it",
           "reason": "pec_provider:legalmail.it"
+        },
+        {
+          "dom": "studiobozzo.com",
+          "reason": "unrelated"
         }
       ],
       "source_record_count": 1
@@ -193554,11 +193580,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "cesarweb.com",
           "reason": "unrelated"
         },
         {
-          "dom": "cesarweb.com",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -193609,11 +193635,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -193885,13 +193911,6 @@
         }
       ],
       "source_record_count": 2
-    },
-    "gzrb6wce": {
-      "non_pec_domains": [
-        "cidiu.it"
-      ],
-      "filtered_out": [],
-      "source_record_count": 1
     },
     "h21ptbr9": {
       "non_pec_domains": [
@@ -194817,12 +194836,12 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
-          "reason": "unrelated"
-        },
-        {
           "dom": "schule.suedtirol.it",
           "reason": "pa_shared_platform_out_of_scope:schule.suedtirol.it"
+        },
+        {
+          "dom": "istruzione.it",
+          "reason": "unrelated"
         }
       ],
       "source_record_count": 2
@@ -196162,11 +196181,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "x.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -198976,11 +198995,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         },
         {
@@ -203925,11 +203944,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -206807,11 +206826,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
+          "dom": "scuola.istruzione.it",
           "reason": "unrelated"
         },
         {
-          "dom": "scuola.istruzione.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -206821,11 +206840,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
+          "dom": "istitutomotti.it",
           "reason": "unrelated"
         },
         {
-          "dom": "istitutomotti.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -208683,11 +208702,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         }
       ],
@@ -211326,12 +211345,12 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "schule.suedtirol.it",
-          "reason": "pa_shared_platform_out_of_scope:schule.suedtirol.it"
-        },
-        {
           "dom": "istruzione.it",
           "reason": "unrelated"
+        },
+        {
+          "dom": "schule.suedtirol.it",
+          "reason": "pa_shared_platform_out_of_scope:schule.suedtirol.it"
         }
       ],
       "source_record_count": 2
@@ -211340,11 +211359,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "istruzione.it",
+          "dom": "rosmini.eu",
           "reason": "unrelated"
         },
         {
-          "dom": "rosmini.eu",
+          "dom": "istruzione.it",
           "reason": "unrelated"
         },
         {
@@ -211412,11 +211431,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "cbnordsardegna.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "cbnordsardegna.it",
           "reason": "unrelated"
         }
       ],
@@ -212387,11 +212406,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "tin.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tin.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -212481,11 +212500,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "studiomastrandrea.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "studiomastrandrea.it",
           "reason": "unrelated"
         }
       ],
@@ -212512,11 +212531,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "libero.it",
+          "dom": "tiscali.it",
           "reason": "unrelated"
         },
         {
-          "dom": "tiscali.it",
+          "dom": "libero.it",
           "reason": "unrelated"
         }
       ],
@@ -212672,11 +212691,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "awn.it",
           "reason": "unrelated"
         },
         {
-          "dom": "awn.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -212739,11 +212758,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -212877,11 +212896,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "studiomazzone.it",
           "reason": "unrelated"
         },
         {
-          "dom": "studiomazzone.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -213123,11 +213142,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "gmail.com",
+          "dom": "x.it",
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         }
       ],
@@ -213824,11 +213843,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "x.it",
+          "dom": "ordvetlaspezia.it",
           "reason": "unrelated"
         },
         {
-          "dom": "ordvetlaspezia.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -214883,13 +214902,10 @@
       "source_record_count": 2
     },
     "pnr_mosa": {
-      "non_pec_domains": [],
-      "filtered_out": [
-        {
-          "dom": "x.it",
-          "reason": "unrelated"
-        }
+      "non_pec_domains": [
+        "parcomolentargius.it"
       ],
+      "filtered_out": [],
       "source_record_count": 1
     },
     "pnrgm": {
@@ -214972,6 +214988,13 @@
       ],
       "filtered_out": [],
       "source_record_count": 3
+    },
+    "pusv": {
+      "non_pec_domains": [
+        "pugliasviluppo.regione.puglia.it"
+      ],
+      "filtered_out": [],
+      "source_record_count": 1
     },
     "pvcsp": {
       "non_pec_domains": [
@@ -215339,18 +215362,6 @@
         }
       ],
       "source_record_count": 1
-    },
-    "rvdl": {
-      "non_pec_domains": [
-        "residenzavalledeilaghi.it"
-      ],
-      "filtered_out": [
-        {
-          "dom": "x.it",
-          "reason": "unrelated"
-        }
-      ],
-      "source_record_count": 3
     },
     "rvfsunru": {
       "non_pec_domains": [
@@ -215990,11 +216001,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "tsrm.org",
+          "dom": "libero.it",
           "reason": "unrelated"
         },
         {
-          "dom": "libero.it",
+          "dom": "tsrm.org",
           "reason": "unrelated"
         }
       ],
@@ -216421,11 +216432,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "ucvv.it",
+          "dom": "comune.pontassieve.fi.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.pontassieve.fi.it",
+          "dom": "ucvv.it",
           "reason": "unrelated"
         }
       ],
@@ -216567,11 +216578,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "x.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         },
         {
-          "dom": "virgilio.it",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -216852,11 +216863,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "virgilio.it",
+          "dom": "x.it",
           "reason": "unrelated"
         },
         {
-          "dom": "x.it",
+          "dom": "virgilio.it",
           "reason": "unrelated"
         }
       ],
@@ -216882,11 +216893,11 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune.budoni.ot.it",
+          "dom": "comune.loiriportosanpaolo.ss.it",
           "reason": "unrelated"
         },
         {
-          "dom": "comune.loiriportosanpaolo.ss.it",
+          "dom": "comune.budoni.ot.it",
           "reason": "unrelated"
         }
       ],
@@ -217169,11 +217180,11 @@
       "non_pec_domains": [],
       "filtered_out": [
         {
-          "dom": "comune.pontevico.bs.it",
+          "dom": "unionelombardapontevicorobeccodoglio.it",
           "reason": "unrelated"
         },
         {
-          "dom": "unionelombardapontevicorobeccodoglio.it",
+          "dom": "comune.pontevico.bs.it",
           "reason": "unrelated"
         }
       ],
@@ -217213,7 +217224,7 @@
       ],
       "filtered_out": [
         {
-          "dom": "comune.farini.pc.it",
+          "dom": "comune-pontedellolio.it",
           "reason": "unrelated"
         },
         {
@@ -217221,7 +217232,7 @@
           "reason": "unrelated"
         },
         {
-          "dom": "comune-pontedellolio.it",
+          "dom": "comune.farini.pc.it",
           "reason": "unrelated"
         }
       ],
@@ -217379,11 +217390,11 @@
       ],
       "filtered_out": [
         {
-          "dom": "x.it",
+          "dom": "gmail.com",
           "reason": "unrelated"
         },
         {
-          "dom": "gmail.com",
+          "dom": "x.it",
           "reason": "unrelated"
         }
       ],
@@ -217878,6 +217889,13 @@
       ],
       "filtered_out": [],
       "source_record_count": 2
+    },
+    "x5lgm6rw": {
+      "non_pec_domains": [
+        "resetpalermo.it"
+      ],
+      "filtered_out": [],
+      "source_record_count": 1
     },
     "x6uqoj3j": {
       "non_pec_domains": [

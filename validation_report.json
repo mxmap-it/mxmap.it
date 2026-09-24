@@ -1,5 +1,5 @@
 {
-  "total": 22892,
+  "total": 22896,
   "average_score": 80.8,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
@@ -14046,7 +14046,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "napoli.archiworld.it",
+      "domain": "na.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -23429,7 +23429,7 @@
     "IT-C3-AGENAS": {
       "name": "Agenzia Nazionale per i Servizi Sanitari Regionali - AGENAS",
       "provider": "microsoft",
-      "domain": "agenas.gov.it",
+      "domain": "agenas.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -28671,12 +28671,11 @@
     },
     "IT-COM-001242": {
       "name": "Comune di San Germano Chisone",
-      "provider": "regional-public",
-      "domain": "comune.sangermanochisone.to.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.comune.sangermanochisone.to.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -30861,13 +30860,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -90476,13 +90475,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -94759,15 +94757,14 @@
     },
     "IT-COM-072027": {
       "name": "Comune di Modugno",
-      "provider": "google",
-      "domain": "comune.modugno.ba.it",
+      "provider": "independent",
+      "domain": "servizi.comune.modugno.ba.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
         "spf_strict",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-072028": {
@@ -113641,7 +113638,7 @@
     "IT-COM-109036": {
       "name": "Comune di Santa Vittoria in Matenano",
       "provider": "register-it",
-      "domain": "svittoria.it",
+      "domain": "comune.santavittoria.fm.it",
       "confidence": 68,
       "flags": [
         "spf_softfail",
@@ -122175,11 +122172,10 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "calabriaverde.regione.calabria.it",
-      "confidence": 78,
+      "domain": "pec.calabriaverde.eu",
+      "confidence": 50,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -135938,13 +135934,13 @@
     },
     "IT-L33-7NB71QES": {
       "name": "IIS GIOVANNI XXIII-S.CATERINA AMENDOLA",
-      "provider": "unknown",
-      "domain": "iisgiovanni23-santacaterina-amendola.edu.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "iisgsa.edu.it",
+      "confidence": 85,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-7PH1CDSJ": {
@@ -138607,6 +138603,18 @@
         "provider_classified"
       ]
     },
+    "IT-L33-SJRP4QS0": {
+      "name": "ISTITUTO COMPRENSIVO STATALE DE CURTIS - RAGAZZI D'EUROPA",
+      "provider": "google",
+      "domain": "icdecurtisragazzideuropa.edu.it",
+      "confidence": 55,
+      "flags": [
+        "multiple_mx",
+        "spf_strict",
+        "mx_spf_mismatch",
+        "provider_classified"
+      ]
+    },
     "IT-L33-SPAM": {
       "name": "Schulsprengel Prad Am Stilfserjoch",
       "provider": "microsoft",
@@ -139419,6 +139427,17 @@
         "mx_spf_match",
         "provider_classified",
         "provider_via_gateway_spf"
+      ]
+    },
+    "IT-L33-ZCIMZ69U": {
+      "name": "Liceo Classico Scienze Umane e Musicale \"Giorgio Asproni - Sebastiano Satta\"",
+      "provider": "google",
+      "domain": "liceosebastianosattanuoro.edu.it",
+      "confidence": 55,
+      "flags": [
+        "multiple_mx",
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-ZDZODJJY": {
@@ -153569,7 +153588,7 @@
       ]
     },
     "IT-L33-istsc_CEIS022004": {
-      "name": "ISTITUTO SUPERIORE - E.MATTEI",
+      "name": "I.S.I.S. MATTEI-FERRARIS",
       "provider": "google",
       "domain": "matteiferraris.edu.it",
       "confidence": 68,
@@ -196910,18 +196929,6 @@
         "provider_classified"
       ]
     },
-    "IT-L33-istsc_pcmm00400b": {
-      "name": "ISTITUTO SECONDARIO DI I GRADO - SMS ITALO CALVINO",
-      "provider": "microsoft",
-      "domain": "italocalvino.edu.it",
-      "confidence": 95,
-      "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
-      ]
-    },
     "IT-L33-istsc_pcpc010004": {
       "name": "LICEO CLASSICO - LC M. GIOIA",
       "provider": "microsoft",
@@ -196948,7 +196955,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.it",
+      "domain": "liceorespighi.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -200063,13 +200070,13 @@
     },
     "IT-L33-istsc_pnic82800x": {
       "name": "ISTITUTO COMPRENSIVO - IC MANIAGO",
-      "provider": "google",
-      "domain": "icmaniago.it",
-      "confidence": 53,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icmaniago.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_mismatch",
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -200231,13 +200238,12 @@
     },
     "IT-L33-istsc_pnis00900p": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - IS IPSIA L. ZANUSSI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "isiszanussi.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "isiszanussi.pn.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -236862,7 +236868,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "cri.it",
+      "domain": "latina.cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -236873,14 +236879,13 @@
     },
     "IT-L37-21M650RW": {
       "name": "AZIENDA FARMACEUTICA MUNICIPALIZZATA DI CREMA",
-      "provider": "local-isp",
-      "domain": "farmaciecomunalicrema.com",
-      "confidence": 93,
+      "provider": "unknown",
+      "domain": "afmcrema.com",
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L37-2BLMCDR6": {
@@ -239856,6 +239861,18 @@
       "flags": [
         "spf_softfail",
         "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
+    "IT-L37-KDL0OETE": {
+      "name": "Settimopero Welfood srl",
+      "provider": "microsoft",
+      "domain": "settimopero.it",
+      "confidence": 95,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
       ]
@@ -250613,6 +250630,17 @@
         "autodiscover_confirms"
       ]
     },
+    "IT-L39-iacp_cb": {
+      "name": "Istituto Autonomo per le Case Popolari della Provincia di Campobasso",
+      "provider": "independent",
+      "domain": "iacpcampobasso.it",
+      "confidence": 88,
+      "flags": [
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
+      ]
+    },
     "IT-L39-iacp_fg": {
       "name": "Arca Capitanata",
       "provider": "aruba",
@@ -252768,7 +252796,7 @@
     },
     "IT-L44-atdaa": {
       "name": "Assemblea Territoriale D'Ambito Ato 2 Ancona",
-      "provider": "microsoft",
+      "provider": "google",
       "domain": "atarifiuti.an.it",
       "confidence": 78,
       "flags": [
@@ -253912,7 +253940,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "commissariobonificadiscariche.governo.it",
+      "domain": "governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
@@ -260918,14 +260946,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {
@@ -264111,6 +264137,18 @@
         "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
+      ]
+    },
+    "IT-SA-X5LGM6RW": {
+      "name": "RESET PALERMO SCPA",
+      "provider": "google",
+      "domain": "resetpalermo.it",
+      "confidence": 95,
+      "flags": [
+        "multiple_mx",
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-SA-X6UQOJ3J": {

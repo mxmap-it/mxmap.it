@@ -996,11 +996,11 @@
       "name": "Ordine Dei Medici Veterinari della Provincia di Bari",
       "codice_ipa": "odmv_072",
       "seed_domain": "ordineveterinaribari.it",
-      "claimed_domain": "bari-e.it",
+      "claimed_domain": "comune.bari.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx01.ergonet.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx01.ergonet.it, mx02.ergonet.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
     },
     {
       "id": "IT-C14-odopla",
@@ -1139,11 +1139,11 @@
       "name": "Commissario Straordinario per La Realizzazione dell'Intervento Schema Idrico Basento - Bradano Tronco di Acerenza - Distribuzione Iii Lotto",
       "codice_ipa": "cslri",
       "seed_domain": "schemaidricobasentobradanotroncodiacerenza.it",
-      "claimed_domain": "bari-e.it",
+      "claimed_domain": "comune.bari.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx01.ergonet.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx01.ergonet.it, mx02.ergonet.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
     },
     {
       "id": "IT-C3-ecstfgc",
@@ -2085,11 +2085,11 @@
       "name": "Commissario Delegato Ex O.P.C.M. N.3858 del 12.03.2010",
       "codice_ipa": "cdeop",
       "seed_domain": "sites.google.com",
-      "claimed_domain": "bari-e.it",
+      "claimed_domain": "comune.bari.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx01.ergonet.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx01.ergonet.it, mx02.ergonet.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
     },
     {
       "id": "IT-L1-cdon",
@@ -3405,11 +3405,11 @@
       "name": "Consorzio Interuniversitario Regionale Pugliese",
       "codice_ipa": "cirp",
       "seed_domain": "cirp.it",
-      "claimed_domain": "bari-e.it",
+      "claimed_domain": "comune.bari.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx01.ergonet.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx01.ergonet.it, mx02.ergonet.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
     },
     {
       "id": "IT-L28-inn",
@@ -3421,17 +3421,6 @@
       "old_mx": "comune-torino-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-torino-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
-      "id": "IT-L33-7NB71QES",
-      "name": "IIS GIOVANNI XXIII-S.CATERINA AMENDOLA",
-      "codice_ipa": "7nb71qes",
-      "seed_domain": "iisgiovanni23-santacaterina-amendola.edu.it",
-      "claimed_domain": "comune.salerno.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; SPF+DKIM confirm microsoft"
     },
     {
       "id": "IT-L33-CER2CUZ8",
@@ -3889,11 +3878,11 @@
       "name": "Azienda Pubblica di Servizi alla Persona Opera Pia di Venere",
       "codice_ipa": "apspopv",
       "seed_domain": "aspoperapiadivenere.it",
-      "claimed_domain": "bari-e.it",
+      "claimed_domain": "comune.bari.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx01.ergonet.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx01.ergonet.it, mx02.ergonet.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
     },
     {
       "id": "IT-L34-aspcc",
@@ -4457,6 +4446,17 @@
       "old_reason": "MX is vianova gateway; backend provider unknown"
     },
     {
+      "id": "IT-L37-21M650RW",
+      "name": "AZIENDA FARMACEUTICA MUNICIPALIZZATA DI CREMA",
+      "codice_ipa": "21m650rw",
+      "seed_domain": "afmcrema.com",
+      "claimed_domain": "comunecrema.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mx.comunecrema.it",
+      "old_provider": "aruba",
+      "old_reason": "MX (mx.comunecrema.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
       "id": "IT-L37-3VZPQX9H",
       "name": "Azienda Speciale Multiservizi del Comune di Fossano",
       "codice_ipa": "3vzpqx9h",
@@ -4516,11 +4516,11 @@
       "name": "FERROVIE DEL GARGANO S.R.L.",
       "codice_ipa": "nf5g6c6r",
       "seed_domain": "ferroviedelgargano.com",
-      "claimed_domain": "bari-e.it",
+      "claimed_domain": "comune.bari.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx01.ergonet.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx01.ergonet.it, mx02.ergonet.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
     },
     {
       "id": "IT-L37-agtmsr",

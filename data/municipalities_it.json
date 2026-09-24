@@ -63481,9 +63481,11 @@
     "country": "IT",
     "region": "Puglia",
     "district": "Bari",
-    "domain": "comune.modugno.ba.it",
+    "domain": "servizi.comune.modugno.ba.it",
     "osm_relation_id": 41079,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "comune.modugno.ba.it"
+    ],
     "ipa_codice_ipa": "c_f262",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "558264",
@@ -98779,11 +98781,9 @@
     "country": "IT",
     "region": "Marche",
     "district": "Fermo",
-    "domain": "svittoria.it",
+    "domain": "comune.santavittoria.fm.it",
     "osm_relation_id": 42268,
-    "domain_fallbacks": [
-      "libero.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_i315",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "65385",
@@ -125759,7 +125759,7 @@
     "domain": "aci.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "email.it"
+      "gmail.com"
     ],
     "ipa_codice_ipa": "ac_tp",
     "ipa_codice_categoria": "C13",
@@ -179803,7 +179803,9 @@
     "district": null,
     "domain": "isdecaprariis.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "1YY999AI",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -180299,7 +180301,9 @@
     "district": null,
     "domain": "capoterra2.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "5B67E3T4",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -180699,9 +180703,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "iisgiovanni23-santacaterina-amendola.edu.it",
+    "domain": "iisgsa.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "7NB71QES",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -222295,7 +222301,7 @@
   },
   {
     "id": "IT-L33-istsc_CEIS022004",
-    "name": "ISTITUTO SUPERIORE - E.MATTEI",
+    "name": "I.S.I.S. MATTEI-FERRARIS",
     "country": "IT",
     "region": null,
     "district": null,
@@ -266433,23 +266439,6 @@
       "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_pcmm00300g",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "033032",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-L33-istsc_pcmm00400b",
-    "name": "ISTITUTO SECONDARIO DI I GRADO - SMS ITALO CALVINO",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "italocalvino.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_pcmm00400b",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "033032",
@@ -314745,7 +314734,9 @@
     "district": null,
     "domain": "icangiullivolinocrocearcoleo.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "QAHDBGZA",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -315190,6 +315181,23 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "063066",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L33-SJRP4QS0",
+    "name": "ISTITUTO COMPRENSIVO STATALE DE CURTIS - RAGAZZI D'EUROPA",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "icdecurtisragazzideuropa.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
+    "ipa_codice_ipa": "SJRP4QS0",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "063017",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -315922,7 +315930,6 @@
     "domain": "icsbalsamo.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "istruzione.gov.it",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "VHXPU9RP",
@@ -316748,6 +316755,23 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "011026",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L33-ZCIMZ69U",
+    "name": "Liceo Classico Scienze Umane e Musicale \"Giorgio Asproni - Sebastiano Satta\"",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "liceosebastianosattanuoro.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
+    "ipa_codice_ipa": "ZCIMZ69U",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "114027",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -319876,9 +319900,7 @@
     "district": null,
     "domain": "aspumbertoprimo.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "asp-umbertoprimo.regione.fvg.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "cpau1",
     "ipa_codice_categoria": "L34",
     "ipa_codice_istat": null,
@@ -328104,7 +328126,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "farmaciecomunalicrema.com",
+    "domain": "afmcrema.com",
     "osm_relation_id": null,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "21M650RW",
@@ -337661,6 +337683,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-KDL0OETE",
+    "name": "Settimopero Welfood srl",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "settimopero.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "KDL0OETE",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "015211",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-KDPADR44",
     "name": "Associazione Italiana per la Donazione di Organi, Tessuti e Cellule",
     "country": "IT",
@@ -345818,6 +345855,21 @@
     "ipa_codice_categoria": "L39",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "072006",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L39-iacp_cb",
+    "name": "Istituto Autonomo per le Case Popolari della Provincia di Campobasso",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "iacpcampobasso.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "iacp_cb",
+    "ipa_codice_categoria": "L39",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "070006",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -354888,7 +354940,9 @@
     "district": null,
     "domain": "pugliasviluppo.eu",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "pugliasviluppo.regione.puglia.it"
+    ],
     "ipa_codice_ipa": "pusv",
     "ipa_codice_categoria": "S01",
     "ipa_codice_istat": "371219",
@@ -362216,6 +362270,21 @@
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "058091",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SA-X5LGM6RW",
+    "name": "RESET PALERMO SCPA",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "resetpalermo.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "X5LGM6RW",
+    "ipa_codice_categoria": "SA",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "082053",
     "domain_source": "sito_istituzionale"
   },
   {
