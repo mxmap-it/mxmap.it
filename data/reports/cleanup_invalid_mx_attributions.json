@@ -1,5 +1,5 @@
 {
-  "n_purged": 507,
+  "n_purged": 512,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -3412,6 +3412,17 @@
       "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
     },
     {
+      "id": "IT-L28-cisfa",
+      "name": "Consorzio Interuniversitario Scienze Fisiche Applicate",
+      "codice_ipa": "cisfa",
+      "seed_domain": "cisfa.net",
+      "claimed_domain": "comune.messina.it",
+      "reject_reason": "unrelated",
+      "old_mx": "smtp.google.com",
+      "old_provider": "google",
+      "old_reason": "MX record (smtp.google.com) matches Google"
+    },
+    {
       "id": "IT-L28-inn",
       "name": "Istituto Nazionale di Neuroscienze",
       "codice_ipa": "inn",
@@ -3896,6 +3907,17 @@
       "old_reason": "MX is leonet gateway; backend provider unknown"
     },
     {
+      "id": "IT-L34-asppp_mo",
+      "name": "A.S.P. Patronato pei Figli del Popolo e Fondazione San Paolo e San Geminiano",
+      "codice_ipa": "asppp_mo",
+      "seed_domain": "aspminori.it",
+      "claimed_domain": "comune.modena.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
+      "old_provider": "google",
+      "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
+    },
+    {
       "id": "IT-L34-cotl",
       "name": "Casa di Ospitalita' Tommaso Lucentini",
       "codice_ipa": "cotl",
@@ -4215,17 +4237,6 @@
       "old_reason": "MX is cliocom gateway; backend provider unknown"
     },
     {
-      "id": "IT-L36-cbm",
-      "name": "Consorzio del Bosco Montello",
-      "codice_ipa": "cbm",
-      "seed_domain": "consorzioboscomontello.it",
-      "claimed_domain": "comune.volpago-del-montello.tv.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mail.register.it",
-      "old_provider": "register-it",
-      "old_reason": "MX record (mail.register.it) matches Register.it"
-    },
-    {
       "id": "IT-L36-cgampg",
       "name": "Consorzio di Gestione dell'Area Marina Protetta Capo Gallo - Isola Delle Femmine",
       "codice_ipa": "cgampg",
@@ -4521,6 +4532,17 @@
       "old_mx": "cloudscan12.ilger.com",
       "old_provider": "microsoft",
       "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
+    },
+    {
+      "id": "IT-L37-OO0O6EDM",
+      "name": "Civitavecchia Servizi Pubblici S.r.l.",
+      "codice_ipa": "oo0o6edm",
+      "seed_domain": "civitavecchia-servizi-pubblici-srl.it",
+      "claimed_domain": "comune.civitavecchia.rm.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-civitavecchia-rm-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-civitavecchia-rm-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-L37-agtmsr",
@@ -5029,6 +5051,17 @@
       "old_reason": "MX (mail.comune.salbertrand.to.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
+      "id": "IT-L38-epdmsi",
+      "name": "Ente Parco Dei Monti Sicani",
+      "codice_ipa": "epdmsi",
+      "seed_domain": "parcodeimontisicani.it",
+      "claimed_domain": "comune.palazzoadriano.pa.it",
+      "reject_reason": "unrelated",
+      "old_mx": "in.arubabusiness.it",
+      "old_provider": "aruba",
+      "old_reason": "MX record (in.arubabusiness.it) matches Aruba"
+    },
+    {
       "id": "IT-L38-palili",
       "name": "Parco Archeologico di Lilibeo-Marsala",
       "codice_ipa": "palili",
@@ -5436,6 +5469,17 @@
       "old_reason": "MX record (comune-milano-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
+      "id": "IT-SA-4QYODNC5",
+      "name": "MIRABILIA NETWORK",
+      "codice_ipa": "4qyodnc5",
+      "seed_domain": "mirabilianetwork.eu",
+      "claimed_domain": "comune.roma.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-roma-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
       "id": "IT-SA-D2KJJHNO",
       "name": "Azienda Servizi Farmaceutici srl",
       "codice_ipa": "d2kjjhno",
@@ -5489,6 +5533,17 @@
       "old_mx": "mx.atcrm2.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.atcrm2.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
+      "id": "IT-SA-UJWU6NCD",
+      "name": "PLATANI MAGAZZOLO AMBIENTE SRL",
+      "codice_ipa": "ujwu6ncd",
+      "seed_domain": "platanimagazzoloambiente.it",
+      "claimed_domain": "comunesanbiagioplatani.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mx.comunesanbiagioplatani.it",
+      "old_provider": "aruba",
+      "old_reason": "MX (mx.comunesanbiagioplatani.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-SA-WUS4QGRD",

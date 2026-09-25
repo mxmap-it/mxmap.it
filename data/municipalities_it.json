@@ -120312,9 +120312,7 @@
     "district": "Udine / Udin / Videm",
     "domain": "comune.zuglio.ud.it",
     "osm_relation_id": 179143,
-    "domain_fallbacks": [
-      "com-zuglio.regione.fvg.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_m200",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "11142994",
@@ -146416,9 +146414,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "fr.odcec.com",
+    "domain": "frosinone.commercialisti.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "fr.odcec.com"
+    ],
     "ipa_codice_ipa": "oddc_060",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -146965,7 +146965,8 @@
     "domain": "commercialisti.brescia.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "dottcomm.bs.it"
+      "dottcomm.bs.it",
+      "odcec.bs.it"
     ],
     "ipa_codice_ipa": "oddcd1",
     "ipa_codice_categoria": "C14",
@@ -179745,6 +179746,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-1KAWR6TY",
+    "name": "ISTITUTO COMPRENSIVO 8",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "ic8piacenza.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "1KAWR6TY",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "033032",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-1OASUY2U",
     "name": "IC S.MARCO - BONITO - COSENZA",
     "country": "IT",
@@ -184902,7 +184918,9 @@
     "district": null,
     "domain": "pololicealelocri.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "EV3SSMUD",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -220394,11 +220412,11 @@
   },
   {
     "id": "IT-L33-istsc_caic890004",
-    "name": "ISTITUTO COMPRENSIVO - I.C SINNAI N.1",
+    "name": "ISTITUTO COMPRENSIVO STATALE SINNAI 1-2",
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icsinnaiuno.edu.it",
+    "domain": "icsinnaiunodue.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -233605,7 +233623,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "iclaurenzateano.edu.it",
+    "domain": "itcdantealighieri.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -273624,7 +273642,7 @@
   },
   {
     "id": "IT-L33-istsc_ptic81300l",
-    "name": "ISTITUTO COMPRENSIVO - STATALE 'FERRUCCI'",
+    "name": "ISTITUTO COMPRENSIVO BERNI- FERRUCCI LARCIANO PT",
     "country": "IT",
     "region": null,
     "district": null,
@@ -274429,7 +274447,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icbereguardo.gov.it",
+    "domain": "icbereguardo.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -311177,11 +311195,10 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "itcbitonto.gov.it",
+    "domain": "itesbitonto.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "istruzione.it",
-      "itcbitonto.it"
+      "istruzione.it"
     ],
     "ipa_codice_ipa": "itcvg",
     "ipa_codice_categoria": "L33",
@@ -316480,7 +316497,9 @@
     "district": null,
     "domain": "scuolabasiledefilippo.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "Y46K4EUB",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -325279,7 +325298,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "consorzioboscomontello.it",
+    "domain": "consorziodelboscomontello.it",
     "osm_relation_id": null,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "cbm",
@@ -339207,6 +339226,23 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-OO0O6EDM",
+    "name": "Civitavecchia Servizi Pubblici S.r.l.",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "civitavecchia-servizi-pubblici-srl.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "civitavecchiaservizipubblici.it"
+    ],
+    "ipa_codice_ipa": "OO0O6EDM",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "058032",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-oplgv",
     "name": "Opera Pia Leopoldo e Giovanni Vanni",
     "country": "IT",
@@ -347792,7 +347828,7 @@
   },
   {
     "id": "IT-L43-impvd",
-    "name": "Istituto Musicale Pareggiato della Valle D'Aosta",
+    "name": "Conservatoire de la Vallée d'Aoste",
     "country": "IT",
     "region": null,
     "district": null,
@@ -354934,7 +354970,7 @@
   },
   {
     "id": "IT-S01-pusv",
-    "name": "Puglia Sviluppo S.P.A.",
+    "name": "Puglia Sviluppo S.P.A. S.B.",
     "country": "IT",
     "region": null,
     "district": null,
