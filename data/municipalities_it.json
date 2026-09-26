@@ -134248,11 +134248,9 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "ostetrichesassari.it",
+    "domain": "ostetrichessot.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "ostetrichessot.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "coost_ss",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -156607,9 +156605,7 @@
     "district": null,
     "domain": "agenzia.roma.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.agenzia.roma.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "aiclq",
     "ipa_codice_categoria": "C3",
     "ipa_codice_istat": "20220462",
@@ -168891,9 +168887,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "teatroliricodicagliari.it",
+    "domain": "liricocagliari.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "teatroliricodicagliari.it"
+    ],
     "ipa_codice_ipa": "tlc",
     "ipa_codice_categoria": "L16",
     "ipa_codice_istat": "23842",
@@ -311041,6 +311039,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-IT0I7SD0",
+    "name": "POLO LICEALE",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "pololiceale.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "IT0I7SD0",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "064005",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-itads",
     "name": "Istituto Tecnico A.De Simoni - M.Quadrio",
     "country": "IT",
@@ -317834,11 +317847,9 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "casadiriposocordenons.it",
+    "domain": "aspcordenonese.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "aspcordenonese.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "apspc",
     "ipa_codice_categoria": "L34",
     "ipa_codice_istat": null,
@@ -337886,6 +337897,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-L71LJSAR",
+    "name": "Valle Camonica Servizi srl",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "vallecamonicaservizi.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "L71LJSAR",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "017065",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-L95LH6FN",
     "name": "Consorzio Industriale del Lazio",
     "country": "IT",
@@ -357184,9 +357210,7 @@
     "district": null,
     "domain": "agenzia.roma.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.agenzia.roma.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "8D20RCTE",
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,

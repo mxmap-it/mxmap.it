@@ -1,5 +1,5 @@
 {
-  "n_purged": 512,
+  "n_purged": 515,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -121,6 +121,17 @@
       "old_mx": "cloudscan3.ilger.com",
       "old_provider": "google",
       "old_reason": "MX is ilger gateway; TXT verification proves google tenant"
+    },
+    {
+      "id": "IT-C14-cdipas",
+      "name": "Ordine delle Professioni Infermieristiche di Crotone",
+      "codice_ipa": "cdipas",
+      "seed_domain": "opicrotone.it",
+      "claimed_domain": "comune.crotone.it",
+      "reject_reason": "unrelated",
+      "old_mx": "alt1.aspmx.l.google.com",
+      "old_provider": "google",
+      "old_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google"
     },
     {
       "id": "IT-C14-cdobn",
@@ -2015,6 +2026,17 @@
       "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
+      "id": "IT-L1-asbucry",
+      "name": "Amministrazione Separata Beni Usi Civici Oris",
+      "codice_ipa": "asbucry",
+      "seed_domain": "data.gvcc.net",
+      "claimed_domain": "comune.lasa.bz.it",
+      "reject_reason": "unrelated",
+      "old_mx": "es1.gvcc.net",
+      "old_provider": "regional-public",
+      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
+    },
+    {
       "id": "IT-L1-asbucter",
       "name": "Amministrazione Separata Beni Usi Civici di Termon",
       "codice_ipa": "asbucter",
@@ -2024,6 +2046,17 @@
       "old_mx": "mx.comunecampodenno.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comunecampodenno.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
+      "id": "IT-L1-asbucua",
+      "name": "Amministrazione Separata Beni Usi Civici di Ultimo-Alsago",
+      "codice_ipa": "asbucua",
+      "seed_domain": "data.gvcc.net",
+      "claimed_domain": "comune.malles.bz.it",
+      "reject_reason": "unrelated",
+      "old_mx": "es1.gvcc.net",
+      "old_provider": "regional-public",
+      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
       "id": "IT-L1-asbucval",
@@ -3874,17 +3907,6 @@
       "old_reason": "MX (mx.comune.tortoreto.te.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
-      "id": "IT-L34-apspc",
-      "name": "Azienda Pubblica di Servizi alla Persona Cordenonese \"Virginia Fabbri Taliento\"",
-      "codice_ipa": "apspc",
-      "seed_domain": "casadiriposocordenons.it",
-      "claimed_domain": "comune.cordenons.pn.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
-    },
-    {
       "id": "IT-L34-apspopv",
       "name": "Azienda Pubblica di Servizi alla Persona Opera Pia di Venere",
       "codice_ipa": "apspopv",
@@ -4697,6 +4719,17 @@
       "old_mx": "mx.comune.ardea.rm.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comune.ardea.rm.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
+      "id": "IT-L37-cbtar",
+      "name": "Consorzio di Bonifica Tevere e Agro Romano",
+      "codice_ipa": "cbtar",
+      "seed_domain": "cbtar.it",
+      "claimed_domain": "comune.roma.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-roma-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-L37-cbvps",
