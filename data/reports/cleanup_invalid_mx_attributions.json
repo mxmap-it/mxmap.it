@@ -1,5 +1,5 @@
 {
-  "n_purged": 515,
+  "n_purged": 513,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1097,7 +1097,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -2026,17 +2026,6 @@
       "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
-      "id": "IT-L1-asbucry",
-      "name": "Amministrazione Separata Beni Usi Civici Oris",
-      "codice_ipa": "asbucry",
-      "seed_domain": "data.gvcc.net",
-      "claimed_domain": "comune.lasa.bz.it",
-      "reject_reason": "unrelated",
-      "old_mx": "es1.gvcc.net",
-      "old_provider": "regional-public",
-      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
-    },
-    {
       "id": "IT-L1-asbucter",
       "name": "Amministrazione Separata Beni Usi Civici di Termon",
       "codice_ipa": "asbucter",
@@ -2046,17 +2035,6 @@
       "old_mx": "mx.comunecampodenno.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comunecampodenno.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
-    },
-    {
-      "id": "IT-L1-asbucua",
-      "name": "Amministrazione Separata Beni Usi Civici di Ultimo-Alsago",
-      "codice_ipa": "asbucua",
-      "seed_domain": "data.gvcc.net",
-      "claimed_domain": "comune.malles.bz.it",
-      "reject_reason": "unrelated",
-      "old_mx": "es1.gvcc.net",
-      "old_provider": "regional-public",
-      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
       "id": "IT-L1-asbucval",
