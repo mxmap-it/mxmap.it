@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-09-27T10:55:30Z",
+  "generated_at": "2026-09-28T11:29:07Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
     "n_entities": 22900,
-    "n_with_mx": 22268,
-    "coverage_pct": 97.24
+    "n_with_mx": 22266,
+    "coverage_pct": 97.23
   },
   "indices": {
     "isd": 51.17,
     "cloud_act_pct": 48.28,
-    "n_classified": 22268
+    "n_classified": 22266
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10752,
-      "pct": 47.0,
+      "count": 10751,
+      "pct": 46.9,
       "label": "Extra-UE (CLOUD Act)"
     },
     "eu_non_it": {
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11394,
+      "count": 11393,
       "pct": 49.8,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 632,
+      "count": 634,
       "pct": 2.8,
       "label": "Sconosciuto"
     }
@@ -44,7 +44,7 @@
     },
     {
       "name": "Google Workspace",
-      "count": 6443,
+      "count": 6442,
       "pct": 28.1,
       "sovereignty": "extra_eu"
     },
@@ -62,13 +62,13 @@
     },
     {
       "name": "Cloud Italiano",
-      "count": 929,
+      "count": 928,
       "pct": 4.1,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 632,
+      "count": 634,
       "pct": 2.8,
       "sovereignty": "unknown"
     },
@@ -113,7 +113,7 @@
     {
       "cluster": "Consorzi e Unioni di enti locali",
       "n_entities": 1425,
-      "usa_pct": 24.7,
+      "usa_pct": 24.6,
       "dominant_provider": "Provider Italiano"
     },
     {
@@ -125,7 +125,7 @@
     {
       "cluster": "Stazioni Appaltanti",
       "n_entities": 617,
-      "usa_pct": 50.2,
+      "usa_pct": 50.1,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8512,
+    "mean": 0.8511,
     "high_pct": 91.6
   }
 }

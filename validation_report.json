@@ -14051,7 +14051,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "na.archiworld.it",
+      "domain": "napoli.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -97680,13 +97680,13 @@
     },
     "IT-COM-076081": {
       "name": "Comune di Sarconi",
-      "provider": "regional-public",
+      "provider": "unknown",
       "domain": "comune.sarconi.potenza.it",
-      "confidence": 90,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-076082": {
@@ -116549,12 +116549,13 @@
     },
     "IT-COM-116005": {
       "name": "Comune di Elini",
-      "provider": "aruba",
-      "domain": "pec.elini.nu.it",
-      "confidence": 68,
+      "provider": "unknown",
+      "domain": "elini.nu.it",
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-116006": {
@@ -122179,10 +122180,11 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "pec.calabriaverde.eu",
-      "confidence": 50,
+      "domain": "calabriaverde.regione.calabria.it",
+      "confidence": 78,
       "flags": [
-        "no_spf",
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -163290,13 +163292,13 @@
     },
     "IT-L33-istsc_boic82800e": {
       "name": "ISTITUTO COMPRENSIVO - IC DI OZZANO DELL'EMILIA",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icozzano.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icozzano.istruzioneer.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -176248,11 +176250,13 @@
     },
     "IT-L33-istsc_foee03100q": {
       "name": "DIREZIONE DIDATTICA - CD CESENATICO 2",
-      "provider": "independent",
+      "provider": "istruzione-miur-tenant",
       "domain": "cd-cesenatico2.edu.it",
-      "confidence": 50,
+      "confidence": 80,
       "flags": [
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -217805,12 +217809,13 @@
     },
     "IT-L33-istsc_topc01000c": {
       "name": "LICEO CLASSICO - LC C. CAVOUR",
-      "provider": "google",
+      "provider": "istruzione-miur-tenant",
       "domain": "lcavour.edu.it",
-      "confidence": 55,
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -235193,15 +235198,13 @@
     },
     "IT-L36-cgfa": {
       "name": "Consorzio del Giardino della Flora Appenninica",
-      "provider": "google",
+      "provider": "unknown",
       "domain": "giardinocapracotta.unimol.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "multi_provider_spf:google+microsoft",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L36-cgga": {
@@ -236901,7 +236904,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "cri.it",
+      "domain": "latina.cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -238678,13 +238681,13 @@
     },
     "IT-L37-D1PM59HM": {
       "name": "ASPM SORESINA SERVIZI SRL",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "solregina.it",
-      "confidence": 15,
+      "confidence": 50,
       "flags": [
-        "no_mx",
         "no_spf",
-        "provider_unknown"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L37-D2K0HFUC": {
@@ -239047,7 +239050,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.portaletrasparenza.net",
+      "domain": "flegrealavoro.com",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242389,7 +242392,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.portaletrasparenza.net",
+      "domain": "unilavspa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -261000,14 +261003,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {

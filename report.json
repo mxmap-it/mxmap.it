@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T10:55:31Z",
+  "generated_at": "2026-09-28T11:29:08Z",
   "run_id": null,
   "edition": "settembre 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -14,8 +14,8 @@
         "Il 48.28% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
         "I provider italiani restano la prima scelta (51.17%), ma frammentati.",
         "Scarto tra controllo legale (51.17%) e collocazione tecnica dell'MX (domestico 45.89%): è esso stesso un segnale.",
-        "Settori più esposti al CLOUD Act: Istruzione 78.3% · Sanità 64.47% · Ricerca 56.72%.",
-        "Divario territoriale: Molise guida la sovranità (ISD 73.54%), Veneto è la più esposta al CLOUD Act (60.86%)."
+        "Settori più esposti al CLOUD Act: Istruzione 78.31% · Sanità 64.47% · Ricerca 56.72%.",
+        "Divario territoriale: Molise guida la sovranità (ISD 73.83%), Veneto è la più esposta al CLOUD Act (60.86%)."
       ],
       "metrics": [
         {
@@ -32,7 +32,7 @@
         },
         {
           "label": "Copertura del dato",
-          "value": "97.24%"
+          "value": "97.23%"
         }
       ],
       "recommendations": [
@@ -62,7 +62,7 @@
           "key": "it",
           "label": "Italiano",
           "pct": 49.8,
-          "count": 11394
+          "count": 11393
         },
         {
           "key": "eu_non_it",
@@ -73,14 +73,14 @@
         {
           "key": "extra_eu",
           "label": "Extra-UE (CLOUD Act)",
-          "pct": 47.0,
-          "count": 10752
+          "pct": 46.9,
+          "count": 10751
         },
         {
           "key": "unknown",
           "label": "Sconosciuto",
           "pct": 2.8,
-          "count": 632
+          "count": 634
         }
       ],
       "top_providers": [
@@ -92,7 +92,7 @@
         },
         {
           "name": "Google Workspace",
-          "count": 6443,
+          "count": 6442,
           "pct": 28.1,
           "sovereignty": "extra_eu"
         },
@@ -110,13 +110,13 @@
         },
         {
           "name": "Cloud Italiano",
-          "count": 929,
+          "count": 928,
           "pct": 4.1,
           "sovereignty": "it"
         },
         {
           "name": "Sconosciuto",
-          "count": 632,
+          "count": 634,
           "pct": 2.8,
           "sovereignty": "unknown"
         },
@@ -142,13 +142,13 @@
       "jurisdiction": [
         {
           "key": "domestic",
-          "count": 10509,
+          "count": 10508,
           "pct": 45.89
         },
         {
           "key": "foreign",
-          "count": 11440,
-          "pct": 49.96
+          "count": 11439,
+          "pct": 49.95
         },
         {
           "key": "mixed",
@@ -157,13 +157,13 @@
         },
         {
           "key": "unknown",
-          "count": 707,
-          "pct": 3.09
+          "count": 709,
+          "pct": 3.1
         }
       ],
       "market": {
-        "top3_pct": 67.44,
-        "hhi": 1883.6
+        "top3_pct": 67.45,
+        "hhi": 1884.1
       }
     },
     {
@@ -174,14 +174,14 @@
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
           "n_entities": 8319,
-          "usa_pct": 78.3,
-          "isd": 21.35
+          "usa_pct": 78.31,
+          "isd": 21.34
         },
         {
           "cluster": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
           "n_entities": 8005,
-          "usa_pct": 26.12,
-          "isd": 73.56
+          "usa_pct": 26.13,
+          "isd": 73.55
         },
         {
           "cluster": "Ordini professionali, Camere di commercio, ACI",
@@ -192,20 +192,20 @@
         {
           "cluster": "Consorzi, Unioni di Comuni, Comunità montane",
           "n_entities": 1425,
-          "usa_pct": 28.39,
-          "isd": 71.37
+          "usa_pct": 28.33,
+          "isd": 71.43
         },
         {
           "cluster": "Società partecipate e fondazioni pubbliche",
           "n_entities": 1154,
-          "usa_pct": 49.27,
-          "isd": 49.91
+          "usa_pct": 49.22,
+          "isd": 49.95
         },
         {
           "cluster": "Stazioni appaltanti",
           "n_entities": 617,
-          "usa_pct": 51.58,
-          "isd": 47.59
+          "usa_pct": 51.41,
+          "isd": 47.75
         },
         {
           "cluster": "Welfare, ASP/IPAB e case popolari",
@@ -265,7 +265,7 @@
       "spotlight": [
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
-          "usa_pct": 78.3,
+          "usa_pct": 78.31,
           "n_entities": 8319
         },
         {
@@ -290,14 +290,14 @@
         {
           "regione": "Molise",
           "n": 277,
-          "isd": 73.54,
-          "usa_pct": 26.07
+          "isd": 73.83,
+          "usa_pct": 25.78
         },
         {
           "regione": "Basilicata",
           "n": 341,
-          "isd": 69.76,
-          "usa_pct": 30.24
+          "isd": 69.67,
+          "usa_pct": 30.33
         },
         {
           "regione": "Piemonte",
@@ -326,8 +326,8 @@
         {
           "regione": "Sardegna",
           "n": 903,
-          "isd": 62.16,
-          "usa_pct": 37.04
+          "isd": 62.11,
+          "usa_pct": 37.08
         },
         {
           "regione": "Sicilia",
@@ -356,8 +356,8 @@
         {
           "regione": "Lazio",
           "n": 1812,
-          "isd": 49.4,
-          "usa_pct": 50.09
+          "isd": 49.45,
+          "usa_pct": 50.03
         },
         {
           "regione": "Friuli-Venezia Giulia",
@@ -386,8 +386,8 @@
         {
           "regione": "Emilia-Romagna",
           "n": 1312,
-          "isd": 40.93,
-          "usa_pct": 58.6
+          "isd": 40.86,
+          "usa_pct": 58.68
         },
         {
           "regione": "Trentino-Alto Adige",
@@ -398,8 +398,8 @@
         {
           "regione": "Lombardia",
           "n": 3352,
-          "isd": 39.82,
-          "usa_pct": 60.03
+          "isd": 39.84,
+          "usa_pct": 60.01
         },
         {
           "regione": "Veneto",
@@ -412,32 +412,32 @@
         {
           "macroarea": "Isole",
           "n": 2680,
-          "isd": 58.63,
-          "usa_pct": 40.9
+          "isd": 58.62,
+          "usa_pct": 40.91
         },
         {
           "macroarea": "Sud",
           "n": 5381,
-          "isd": 57.16,
+          "isd": 57.17,
           "usa_pct": 42.3
         },
         {
           "macroarea": "Centro",
           "n": 4013,
-          "isd": 49.47,
-          "usa_pct": 49.88
+          "isd": 49.5,
+          "usa_pct": 49.86
         },
         {
           "macroarea": "Nord",
           "n": 10826,
-          "isd": 47.03,
-          "usa_pct": 52.41
+          "isd": 47.02,
+          "usa_pct": 52.42
         }
       ],
       "most_sovereign": {
         "regione": "Molise",
-        "isd": 73.54,
-        "usa_pct": 26.07
+        "isd": 73.83,
+        "usa_pct": 25.78
       },
       "most_exposed": {
         "regione": "Veneto",
@@ -463,8 +463,8 @@
       "id": "metodologia",
       "title": "Metodologia, limiti e dati aperti",
       "kind": "methodology",
-      "coverage_pct": 97.24,
-      "mean_confidence": 0.8512,
+      "coverage_pct": 97.23,
+      "mean_confidence": 0.8511,
       "limits": "IndicePA non è una base dati pulita da cui inferire in modo immediato e senza rielaborazioni i domini email (non-PEC) degli enti: la bonifica continua è una dipendenza funzionale core, tracciata in mxmap.it#2.",
       "license": "CC BY-SA 4.0"
     }

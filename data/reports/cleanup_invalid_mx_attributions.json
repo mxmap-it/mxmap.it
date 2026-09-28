@@ -4248,6 +4248,17 @@
       "old_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google"
     },
     {
+      "id": "IT-L36-cgfa",
+      "name": "Consorzio del Giardino della Flora Appenninica",
+      "codice_ipa": "cgfa",
+      "seed_domain": "giardinocapracotta.unimol.it",
+      "claimed_domain": "capracotta.com",
+      "reject_reason": "unrelated",
+      "old_mx": "mail.capracotta.com",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.capracotta.com) hosted on Local ISP (Netsons (IT))"
+    },
+    {
       "id": "IT-L36-cgga",
       "name": "Consorzio Gestione Giardino Alpinia",
       "codice_ipa": "cgga",
@@ -4499,17 +4510,6 @@
       "old_mx": "comune-cuneo-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-cuneo-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
-      "id": "IT-L37-D1PM59HM",
-      "name": "ASPM SORESINA SERVIZI SRL",
-      "codice_ipa": "d1pm59hm",
-      "seed_domain": "solregina.it",
-      "claimed_domain": "comune.soresina.cr.it",
-      "reject_reason": "unrelated",
-      "old_mx": "lava.ildato.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (lava.ildato.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-L37-J0L7PD4N",
