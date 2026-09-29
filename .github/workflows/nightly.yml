@@ -151,6 +151,16 @@ jobs:
         run: uv run python3 scripts/cleanup_invalid_mx_attributions.py
       - name: Backfill mx_discovery_method taxonomy
         run: uv run python3 scripts/backfill_mx_discovery.py
+      # Geocoding INCREMENTALE scuole: la cache committata
+      # (data/it_istruzione_points.json — artefatto storico 2026-05, ripristinato
+      # dal server il 2026-09-29) copre già tutto; qui Nominatim viene toccato
+      # SOLO per gli enti nuovi apparsi in IndicePA (di norma 0-3/notte, 1.1s
+      # l'uno: rispettoso della policy OSMF). Guardia anti-shrink nello script:
+      # un run degradato non può consolidare una cache ridotta. MAI --refresh
+      # in automatico ("ripristinare, non rigenerare").
+      - name: Geocode istruzione (incrementale, solo enti nuovi)
+        continue-on-error: true
+        run: uv run python3 scripts/geocode_istruzione.py
       - name: Aggregate istruzione per comune (mappa scuole)
         continue-on-error: true
         run: uv run python3 scripts/aggregate_istruzione_per_comune.py
@@ -256,6 +266,7 @@ jobs:
                    data/page_lastmod.json \
                    data/summary dist validation_report.json validation_report.csv data/dns_cache \
                    data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
+                   data/it_istruzione_points.json \
                    data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json \
                    data/reports/mx_discovery_stats.json data/reports/confidence_report.json data/reports/confidence_report.md \
                    data/reports/anomalies.json data/reports/anomalies.md \

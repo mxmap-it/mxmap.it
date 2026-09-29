@@ -39,6 +39,7 @@ data source between "tutti gli enti" and "solo scuole".
 from __future__ import annotations
 
 import json
+import os
 import sys
 from collections import Counter, defaultdict
 from datetime import datetime
@@ -222,6 +223,37 @@ def main() -> int:
             "blendedColor": blend_color(national, sum(national.values()) or 1),
         },
     }
+
+    # ── GUARDIA ANTI-RIGENERAZIONE (resilienza, 2026-09-29) ──────────────────
+    # Incidente: la cache di geocoding mancava dal runner e questa aggregazione
+    # ha SILENZIOSAMENTE riscritto points=[] per settimane, svuotando la vista
+    # Scuole in produzione. Regola: un rebuild non può far COLLASSARE un
+    # dataset che prima era popolato — se l'output precedente aveva punti e il
+    # nuovo ne ha molti meno (input mancante/troncato), fermiamo la pipeline
+    # con errore invece di sovrascrivere dati buoni con dati vuoti.
+    # Override esplicito: AGGREGATE_ALLOW_SHRINK=1 (shrink legittimo e voluto).
+    if OUT_FILE.exists() and os.environ.get("AGGREGATE_ALLOW_SHRINK") != "1":
+        try:
+            prev = json.loads(OUT_FILE.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001 — file precedente corrotto: si riscrive
+            prev = {}
+        prev_pts = len(prev.get("points", []))
+        if prev_pts > 0 and len(points) < prev_pts * 0.7:
+            print(
+                f"::error::ANTI-SHRINK: points {prev_pts} -> {len(points)} "
+                f"(<70%). Probabile input mancante (data/it_istruzione_points.json?). "
+                "NON sovrascrivo l'output buono. Se lo shrink è voluto: "
+                "AGGREGATE_ALLOW_SHRINK=1."
+            )
+            return 1
+        prev_osm = len(prev.get("by_osm", {}))
+        if prev_osm > 0 and len(by_osm) < prev_osm * 0.7:
+            print(
+                f"::error::ANTI-SHRINK: by_osm {prev_osm} -> {len(by_osm)} (<70%). "
+                "NON sovrascrivo. Override: AGGREGATE_ALLOW_SHRINK=1."
+            )
+            return 1
+
     OUT_FILE.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")),
                         encoding="utf-8")
     print(f"Wrote {OUT_FILE}")

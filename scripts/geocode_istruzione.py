@@ -41,6 +41,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 import urllib.parse
@@ -138,10 +139,26 @@ def main() -> int:
     print(f"Istruzione enti in seed: {len(istr_enti)}")
 
     cache: dict[str, Any] = {}
+    prev_count = 0
+    if OUT_FILE.exists():
+        try:
+            prev_count = len(
+                json.loads(OUT_FILE.read_text(encoding="utf-8")).get("points", {})
+            )
+        except Exception:  # noqa: BLE001
+            prev_count = 0
     if OUT_FILE.exists() and not args.refresh:
         existing = json.loads(OUT_FILE.read_text(encoding="utf-8"))
         cache = existing.get("points", {})
         print(f"Loaded cache: {len(cache)} previously-geocoded points")
+    elif OUT_FILE.exists() and args.refresh:
+        # RESILIENZA (incidente 2026-09): --refresh butta la cache e riparte da
+        # zero, e i checkpoint sovrascrivono OUT_FILE già a metà run. Prima di
+        # distruggere un artefatto storico ne salviamo SEMPRE una copia .bak:
+        # "ripristinare, non rigenerare" — la storia deve restare recuperabile.
+        bak = OUT_FILE.with_suffix(".json.bak")
+        bak.write_bytes(OUT_FILE.read_bytes())
+        print(f"--refresh: cache precedente ({prev_count} punti) salvata in {bak}")
 
     # Identify what still needs geocoding
     todo: list[dict] = []
@@ -244,6 +261,30 @@ def main() -> int:
             }
             OUT_FILE.write_text(json.dumps(out, ensure_ascii=False, indent=2),
                                 encoding="utf-8")
+
+    # GUARDIA ANTI-SHRINK sul write finale: se il run (tipicamente un --refresh
+    # andato male: Nominatim giù, rete, kill a metà) produce MOLTI meno punti
+    # della cache che c'era prima, non consolidiamo la perdita — ripristiniamo
+    # il .bak e usciamo rossi. Override esplicito: GEOCODE_ALLOW_SHRINK=1.
+    if (
+        prev_count > 0
+        and len(cache) < prev_count * 0.7
+        and os.environ.get("GEOCODE_ALLOW_SHRINK") != "1"
+    ):
+        bak = OUT_FILE.with_suffix(".json.bak")
+        if args.refresh and bak.exists():
+            OUT_FILE.write_bytes(bak.read_bytes())
+            print(
+                f"::error::ANTI-SHRINK: {prev_count} -> {len(cache)} punti (<70%). "
+                f"Cache precedente RIPRISTINATA da {bak}. "
+                "Override: GEOCODE_ALLOW_SHRINK=1."
+            )
+        else:
+            print(
+                f"::error::ANTI-SHRINK: {prev_count} -> {len(cache)} punti (<70%). "
+                "NON scrivo l'output ridotto. Override: GEOCODE_ALLOW_SHRINK=1."
+            )
+        return 1
 
     out = {
         "generated": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
