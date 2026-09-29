@@ -2,7 +2,19 @@
   "label_it": "PA Centrale",
   "rows": [
     {
-      "id": null,
+      "id": "IT-C1-aeronautica_militare",
+      "name": "Aeronautica Militare",
+      "ipa_categoria": "C1",
+      "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
+      "domain": "aeronautica.difesa.it",
+      "provider": "independent",
+      "provider_display": "Infrastruttura autonoma",
+      "sovereignty": "🇮🇹 Self-hosted",
+      "reason": "MX (mx.difesa.it) is self-hosted",
+      "ipa_codice_ipa": "aeronautica_militare"
+    },
+    {
+      "id": "IT-C1-avvst",
       "name": "Avvocatura dello Stato",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -14,7 +26,19 @@
       "ipa_codice_ipa": "avvst"
     },
     {
-      "id": null,
+      "id": "IT-C1-esercito",
+      "name": "Esercito Italiano",
+      "ipa_categoria": "C1",
+      "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
+      "domain": "esercito.difesa.it",
+      "provider": "independent",
+      "provider_display": "Infrastruttura autonoma",
+      "sovereignty": "🇮🇹 Self-hosted",
+      "reason": "MX (mx.esercito.difesa.it, mx1.esercito.difesa.it) is self-hosted",
+      "ipa_codice_ipa": "esercito"
+    },
+    {
+      "id": "IT-C1-m_svec",
       "name": "MIMIT - Ministero delle Imprese e del Made in Italy",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -26,7 +50,7 @@
       "ipa_codice_ipa": "m_svec"
     },
     {
-      "id": null,
+      "id": "IT-C1-KH5RHFCV",
       "name": "MINISTERO DELL'UNIVERSITA' E DELLA RICERCA",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -38,7 +62,19 @@
       "ipa_codice_ipa": "KH5RHFCV"
     },
     {
-      "id": null,
+      "id": "IT-C1-marina_militare",
+      "name": "Marina Militare",
+      "ipa_categoria": "C1",
+      "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
+      "domain": "marina.difesa.it",
+      "provider": "independent",
+      "provider_display": "Infrastruttura autonoma",
+      "sovereignty": "🇮🇹 Self-hosted",
+      "reason": "MX (mx.difesa.it, mx2.marina.difesa.it) is self-hosted",
+      "ipa_codice_ipa": "marina_militare"
+    },
+    {
+      "id": "IT-C1-m_ae",
       "name": "Ministero degli Affari Esteri e della Cooperazione Internazionale",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -50,19 +86,19 @@
       "ipa_codice_ipa": "m_ae"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_lps",
       "name": "Ministero del Lavoro e delle Politiche Sociali",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
       "domain": "lavoro.gov.it",
-      "provider": "aruba",
-      "provider_display": "Provider Italiano",
-      "sovereignty": "🇮🇹 Provider italiano",
-      "reason": "MX (lavoro.gov1.esvacloud.com, lavoro.gov2.esvacloud.com) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)",
+      "provider": "microsoft",
+      "provider_display": "Microsoft 365",
+      "sovereignty": "🇺🇸 USA (CLOUD Act)",
+      "reason": "MX is libraesva gateway; SPF+autodiscover confirm microsoft",
       "ipa_codice_ipa": "m_lps"
     },
     {
-      "id": null,
+      "id": "IT-C1-WQF3ZW8F",
       "name": "Ministero del turismo",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -74,7 +110,7 @@
       "ipa_codice_ipa": "WQF3ZW8F"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_amte",
       "name": "Ministero dell'Ambiente e della Sicurezza Energetica",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -86,7 +122,7 @@
       "ipa_codice_ipa": "m_amte"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_ef",
       "name": "Ministero dell'Economia e delle Finanze",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -98,7 +134,7 @@
       "ipa_codice_ipa": "m_ef"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_it",
       "name": "Ministero dell'Interno",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -106,11 +142,11 @@
       "provider": "microsoft",
       "provider_display": "Microsoft 365",
       "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft",
+      "reason": "MX record (interno-gov-it.mail.protection.outlook.com) matches Microsoft",
       "ipa_codice_ipa": "m_it"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_paf",
       "name": "Ministero dell'agricoltura, della sovranità alimentare e delle foreste",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -122,19 +158,19 @@
       "ipa_codice_ipa": "m_paf"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_pi",
       "name": "Ministero dell'istruzione e del merito",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
       "domain": "mim.gov.it",
-      "provider": "microsoft",
-      "provider_display": "Microsoft 365",
-      "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX record (istruzione-it.mail.protection.outlook.com) matches Microsoft",
+      "provider": "unknown",
+      "provider_display": "Sconosciuto",
+      "sovereignty": "❓ Sconosciuto",
+      "reason": "cleared by is_legit gate: unrelated",
       "ipa_codice_ipa": "m_pi"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_bac",
       "name": "Ministero della Cultura",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -146,7 +182,7 @@
       "ipa_codice_ipa": "m_bac"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_d",
       "name": "Ministero della Difesa",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -158,7 +194,7 @@
       "ipa_codice_ipa": "m_d"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_dg",
       "name": "Ministero della Giustizia",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -170,19 +206,19 @@
       "ipa_codice_ipa": "m_dg"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_sa",
       "name": "Ministero della Salute",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
       "domain": "salute.gov.it",
-      "provider": "microsoft",
-      "provider_display": "Microsoft 365",
-      "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft",
+      "provider": "unknown",
+      "provider_display": "Sconosciuto",
+      "sovereignty": "❓ Sconosciuto",
+      "reason": "cleared by is_legit gate: unrelated",
       "ipa_codice_ipa": "m_sa"
     },
     {
-      "id": null,
+      "id": "IT-C1-m_inf",
       "name": "Ministero delle infrastrutture e dei trasporti",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -194,7 +230,7 @@
       "ipa_codice_ipa": "m_inf"
     },
     {
-      "id": null,
+      "id": "IT-C1-PCM",
       "name": "Presidenza del Consiglio dei Ministri",
       "ipa_categoria": "C1",
       "ipa_categoria_label": "Ministero / PCM / Avvocatura Stato",
@@ -202,11 +238,11 @@
       "provider": "microsoft",
       "provider_display": "Microsoft 365",
       "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX record (governo-it.mail.protection.outlook.com, mx3.palazzochigi.it) matches Microsoft",
+      "reason": "MX record (governo-it.mail.protection.outlook.com) matches Microsoft",
       "ipa_codice_ipa": "PCM"
     },
     {
-      "id": null,
+      "id": "IT-C10-agd",
       "name": "Agenzia del Demanio",
       "ipa_categoria": "C10",
       "ipa_categoria_label": "Agenzia Fiscale",
@@ -214,11 +250,11 @@
       "provider": "microsoft",
       "provider_display": "Microsoft 365",
       "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX is trendmicro gateway; DKIM signs via microsoft",
+      "reason": "MX is trendmicro gateway; autodiscover points to microsoft",
       "ipa_codice_ipa": "agd"
     },
     {
-      "id": null,
+      "id": "IT-C10-agdogane",
       "name": "Agenzia delle Dogane e dei Monopoli",
       "ipa_categoria": "C10",
       "ipa_categoria_label": "Agenzia Fiscale",
@@ -226,11 +262,11 @@
       "provider": "microsoft",
       "provider_display": "Microsoft 365",
       "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX is trendmicro gateway; DKIM signs via microsoft",
+      "reason": "MX is trendmicro gateway; autodiscover points to microsoft",
       "ipa_codice_ipa": "agdogane"
     },
     {
-      "id": null,
+      "id": "IT-C10-age",
       "name": "Agenzia delle Entrate",
       "ipa_categoria": "C10",
       "ipa_categoria_label": "Agenzia Fiscale",
@@ -242,7 +278,7 @@
       "ipa_codice_ipa": "age"
     },
     {
-      "id": null,
+      "id": "IT-C10-esrsris",
       "name": "Agenzia delle Entrate - Riscossione",
       "ipa_categoria": "C10",
       "ipa_categoria_label": "Agenzia Fiscale",
@@ -254,7 +290,7 @@
       "ipa_codice_ipa": "esrsris"
     },
     {
-      "id": null,
+      "id": "IT-C11-cc",
       "name": "Arma dei Carabinieri",
       "ipa_categoria": "C11",
       "ipa_categoria_label": "Forze di Polizia",
@@ -266,7 +302,7 @@
       "ipa_codice_ipa": "cc"
     },
     {
-      "id": null,
+      "id": "IT-C11-gdf",
       "name": "Guardia di Finanza",
       "ipa_categoria": "C11",
       "ipa_categoria_label": "Forze di Polizia",
@@ -278,7 +314,7 @@
       "ipa_codice_ipa": "gdf"
     },
     {
-      "id": null,
+      "id": "IT-C11-XZR4RNHR",
       "name": "Ministero dell'Interno - Dipartimento della Pubblica Sicurezza - Polizia di Stato",
       "ipa_categoria": "C11",
       "ipa_categoria_label": "Forze di Polizia",
@@ -290,7 +326,7 @@
       "ipa_codice_ipa": "XZR4RNHR"
     },
     {
-      "id": null,
+      "id": "IT-C2-camera",
       "name": "Camera dei Deputati",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
@@ -302,7 +338,7 @@
       "ipa_codice_ipa": "camera"
     },
     {
-      "id": null,
+      "id": "IT-C2-cnel",
       "name": "Consiglio Nazionale dell'Economia e del Lavoro - CNEL",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
@@ -314,7 +350,7 @@
       "ipa_codice_ipa": "cnel"
     },
     {
-      "id": null,
+      "id": "IT-C2-csm",
       "name": "Consiglio Superiore della Magistratura",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
@@ -326,19 +362,19 @@
       "ipa_codice_ipa": "csm"
     },
     {
-      "id": null,
+      "id": "IT-C2-corte_cost",
       "name": "Corte Costituzionale",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
       "domain": "cortecostituzionale.it",
-      "provider": "microsoft",
-      "provider_display": "Microsoft 365",
-      "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX (esg.cortecostituzionale.it) is local gateway; DKIM reveals microsoft backend",
+      "provider": "independent",
+      "provider_display": "Infrastruttura autonoma",
+      "sovereignty": "🇮🇹 Self-hosted",
+      "reason": "riclassificato da microsoft: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/SharePoint, non l'email)",
       "ipa_codice_ipa": "corte_cost"
     },
     {
-      "id": null,
+      "id": "IT-C2-cdc",
       "name": "Corte dei Conti",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
@@ -350,7 +386,7 @@
       "ipa_codice_ipa": "cdc"
     },
     {
-      "id": null,
+      "id": "IT-C2-sgpr",
       "name": "Segretariato Generale della Presidenza della Repubblica",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
@@ -362,7 +398,7 @@
       "ipa_codice_ipa": "sgpr"
     },
     {
-      "id": null,
+      "id": "IT-C2-sdr",
       "name": "Senato della Repubblica",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
@@ -374,7 +410,7 @@
       "ipa_codice_ipa": "sdr"
     },
     {
-      "id": null,
+      "id": "IT-C2-cds",
       "name": "Uffici Amministrativi del Consiglio di Stato e dei Tribunali Amministrativi Regionali 'non abilitato a ricevere atti giurisdizionali e ricorsi straordinari al Presidente della Repubblica'",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
@@ -386,7 +422,7 @@
       "ipa_codice_ipa": "cds"
     },
     {
-      "id": null,
+      "id": "IT-C2-upbil",
       "name": "Ufficio Parlamentare di Bilancio",
       "ipa_categoria": "C2",
       "ipa_categoria_label": "Organo Costituzionale",
@@ -398,7 +434,7 @@
       "ipa_codice_ipa": "upbil"
     },
     {
-      "id": null,
+      "id": "IT-C5-OU4SUHHP",
       "name": "AUTORITA GARANTE NAZIONALE DEI DIRITTI DELLE PERSONE CON DISABILITA",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -410,7 +446,7 @@
       "ipa_codice_ipa": "OU4SUHHP"
     },
     {
-      "id": null,
+      "id": "IT-C5-anvsu_rm",
       "name": "Agenzia Nazionale di Valutazione del Sistema Universitario e della Ricerca",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -422,7 +458,7 @@
       "ipa_codice_ipa": "anvsu_rm"
     },
     {
-      "id": null,
+      "id": "IT-C5-T0A9HLA8",
       "name": "Agenzia per la Cybersicurezza Nazionale",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -434,7 +470,7 @@
       "ipa_codice_ipa": "T0A9HLA8"
     },
     {
-      "id": null,
+      "id": "IT-C5-agcm_",
       "name": "Autorita Garante della Concorrenza e del Mercato",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -446,7 +482,7 @@
       "ipa_codice_ipa": "agcm_"
     },
     {
-      "id": null,
+      "id": "IT-C5-agpia",
       "name": "Autorita Garante per L'Infanzia e L'Adolescenza",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -454,11 +490,11 @@
       "provider": "microsoft",
       "provider_display": "Microsoft 365",
       "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX (mx3.palazzochigi.it, mx4.palazzochigi.it) is local gateway; DKIM reveals microsoft backend",
+      "reason": "MX record (garanteinfanzia-org.mail.protection.outlook.com) matches Microsoft",
       "ipa_codice_ipa": "agpia"
     },
     {
-      "id": null,
+      "id": "IT-C5-cvtiap",
       "name": "Autorita' Nazionale Anticorruzione - A.N.AC.",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -470,7 +506,7 @@
       "ipa_codice_ipa": "cvtiap"
     },
     {
-      "id": null,
+      "id": "IT-C5-art",
       "name": "Autorita' di Regolazione Dei Trasporti",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -482,7 +518,7 @@
       "ipa_codice_ipa": "art"
     },
     {
-      "id": null,
+      "id": "IT-C5-AEEG",
       "name": "Autorita' di Regolazione per Energia Reti e Ambiente",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -494,7 +530,7 @@
       "ipa_codice_ipa": "AEEG"
     },
     {
-      "id": null,
+      "id": "IT-C5-agcom",
       "name": "Autorita' per le Garanzie nelle Comunicazioni - AGCOM",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -506,7 +542,7 @@
       "ipa_codice_ipa": "agcom"
     },
     {
-      "id": null,
+      "id": "IT-C5-bdi_rm",
       "name": "Banca D'Italia",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -518,19 +554,19 @@
       "ipa_codice_ipa": "bdi_rm"
     },
     {
-      "id": null,
+      "id": "IT-C5-consob",
       "name": "Commissione Nazionale per Le Societa' e La Borsa",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
       "domain": "consob.it",
-      "provider": "microsoft",
-      "provider_display": "Microsoft 365",
-      "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX (sms1-mailin.consob.it, sms2-mailin.consob.it) is local gateway; DKIM reveals microsoft backend",
+      "provider": "independent",
+      "provider_display": "Infrastruttura autonoma",
+      "sovereignty": "🇮🇹 Self-hosted",
+      "reason": "riclassificato da microsoft: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/SharePoint, non l'email)",
       "ipa_codice_ipa": "consob"
     },
     {
-      "id": null,
+      "id": "IT-C5-cgds",
       "name": "Commissione di Garanzia dell'Attuazione della Legge sullo Sciopero nei Servizi Pubblici Essenziali - CGS",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -542,7 +578,7 @@
       "ipa_codice_ipa": "cgds"
     },
     {
-      "id": null,
+      "id": "IT-C5-cvfp",
       "name": "Commissione di Vigilanza Sui Fondi Pensione",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -554,7 +590,7 @@
       "ipa_codice_ipa": "cvfp"
     },
     {
-      "id": null,
+      "id": "IT-C5-721S6ANG",
       "name": "Commissione indipendente per la verifica dell'equilibrio economico e finanziario delle società sportive professionistiche",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -566,19 +602,19 @@
       "ipa_codice_ipa": "721S6ANG"
     },
     {
-      "id": null,
+      "id": "IT-C5-gnddp",
       "name": "Garante nazionale dei diritti delle persone private della liberta' personale",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
       "domain": "garantenazionaleprivatiliberta.it",
-      "provider": "microsoft",
-      "provider_display": "Microsoft 365",
-      "sovereignty": "🇺🇸 USA (CLOUD Act)",
-      "reason": "MX record (garantenpl-it.mail.protection.outlook.com) matches Microsoft",
+      "provider": "unknown",
+      "provider_display": "Sconosciuto",
+      "sovereignty": "❓ Sconosciuto",
+      "reason": "cleared by is_legit gate: unrelated",
       "ipa_codice_ipa": "gnddp"
     },
     {
-      "id": null,
+      "id": "IT-C5-gpdp",
       "name": "Garante per la protezione dei dati personali - GP",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -590,7 +626,7 @@
       "ipa_codice_ipa": "gpdp"
     },
     {
-      "id": null,
+      "id": "IT-C5-IVsAPIC",
       "name": "IVASS - Istituto per la Vigilanza sulle Assicurazioni",
       "ipa_categoria": "C5",
       "ipa_categoria_label": "Autorità Indipendente",
@@ -602,7 +638,7 @@
       "ipa_codice_ipa": "IVsAPIC"
     },
     {
-      "id": null,
+      "id": "IT-L46-ailcsvil",
       "name": "Agenzia Italiana per La Cooperazione allo Sviluppo",
       "ipa_categoria": "L46",
       "ipa_categoria_label": "Azienda Stato Autonomo",
@@ -614,7 +650,7 @@
       "ipa_codice_ipa": "ailcsvil"
     },
     {
-      "id": null,
+      "id": "IT-L46-XYRKHOW0",
       "name": "COMMISSIONE DI GARANZIA DEGLI STATUTI E PER LA TRASPARENZA E IL CONTROLLO DEI RENDICONTI DEI PARTITI POLITICI",
       "ipa_categoria": "L46",
       "ipa_categoria_label": "Azienda Stato Autonomo",

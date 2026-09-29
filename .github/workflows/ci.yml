@@ -47,7 +47,7 @@ jobs:
           scripts = """
             fetch_indicepa strip_to_it enrich_from_aoo_uo recover_it_unknowns finalize_it_unknowns
             cleanup_invalid_mx_attributions backfill_mx_discovery aggregate_istruzione_per_comune
-            enrich_geo compute_confidence report_confidence report_anomalies build_frontend
+            enrich_geo compute_confidence report_confidence report_anomalies report_it_by_cluster build_frontend
             build_public_dataset build_stats build_kpi build_report build_sitemap build_entity_pages historicize build_dcat
           """.split()
           # Guardia: un import non deve fare I/O. Se un modulo "appende" (es. rete a
@@ -85,6 +85,7 @@ jobs:
           uv run python3 scripts/compute_confidence.py --country IT
           uv run python3 scripts/report_confidence.py --country IT
           uv run python3 scripts/report_anomalies.py --country IT
+          uv run python3 scripts/report_it_by_cluster.py
           uv run validate || true   # il quality gate è un SEGNALE, non deve bloccare la CI
           uv run python3 scripts/build_frontend.py
           uv run python3 scripts/build_public_dataset.py

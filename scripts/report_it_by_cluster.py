@@ -211,7 +211,7 @@ def main() -> int:
         for e in pa_centrale:
             cat = e.get("_ipa_categoria", "")
             rows.append({
-                "id": e.get("id"),
+                "id": e.get("bfs") or e.get("id"),
                 "name": e.get("_seed_name") or e.get("name", ""),
                 "ipa_categoria": cat,
                 "ipa_categoria_label": _category_pretty_label(cat),

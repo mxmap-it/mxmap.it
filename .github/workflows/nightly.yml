@@ -197,6 +197,12 @@ jobs:
       # Report pubblico (report.json) scaricato/pescato dall'Osservatorio.
       - name: Build public report (Osservatorio)
         run: uv run python3 scripts/build_report.py --country IT
+      # Tabella "PA Centrale" (templates/it_table_template.html) + report per
+      # cluster. SENZA questo step la tabella committata resta stantia: gli
+      # enti aggiunti al seed (es. Esercito/Marina/Aeronautica, 2026-09) non
+      # comparivano perché il json era stato generato una volta sola a mano.
+      - name: Build PA Centrale cluster table + per-cluster report
+        run: uv run python3 scripts/report_it_by_cluster.py
       # Pagine SEO per-ente + hub geografici + categorie + alias dominio +
       # sitemap INDEX (#15). Genera ~48k file statici (una pagina per ente con
       # tutti i dati di rilevamento, hub regione/provincia/comune, facet per
@@ -252,7 +258,8 @@ jobs:
                    data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
                    data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json \
                    data/reports/mx_discovery_stats.json data/reports/confidence_report.json data/reports/confidence_report.md \
-                   data/reports/anomalies.json data/reports/anomalies.md history; do
+                   data/reports/anomalies.json data/reports/anomalies.md \
+                   data/reports/it_by_cluster.json data/reports/it_by_cluster.txt data/reports/it_pa_centrale_table.json history; do
             [ -e "$p" ] && git add "$p"
           done
           git commit -m "chore: nightly data update" || { echo "niente di staged: esco pulito"; exit 0; }
