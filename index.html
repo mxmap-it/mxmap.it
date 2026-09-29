@@ -690,16 +690,59 @@ window._map = map; // expose for debugging
 map.createPane('toponimi');
 map.getPane('toponimi').style.zIndex = 450; // sopra i poligoni (400), sotto i marker (600)
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+const osmBaseLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   maxZoom: 19,
   className: 'foreign-faded',
 }).addTo(map);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+const osmLabelLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   pane: 'toponimi',
 }).addTo(map);
+
+// FAILOVER BASEMAP (#26): OSMF è infrastruttura community senza SLA. Se il
+// layer base OSM accumula tileerror (outage, throttling, blocco), passiamo in
+// automatico alla riserva keyless documentata in CLAUDE.md §Basemap: Esri
+// World Light Gray. ATTENZIONE ai due trabocchetti Esri: ordine assi INVERTITO
+// (/tile/{z}/{y}/{x}) e zoom nativo max 16 (oltre, upscaling via maxNativeZoom).
+// La batteria (tests/test_basemap.py) verifica ogni giorno che la riserva
+// serva tile veri, così non si scopre morta il giorno del bisogno.
+const FALLBACK_BASE = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}';
+const FALLBACK_LABELS = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}';
+const FAILOVER_THRESHOLD = 8;
+let osmTileErrors = 0;
+let basemapFailoverDone = false;
+
+function activateBasemapFailover(reason) {
+  if (basemapFailoverDone) return;
+  basemapFailoverDone = true;
+  console.warn('[basemap] OSM non risponde (' + reason + '): failover alla riserva Esri World Light Gray');
+  map.removeLayer(osmBaseLayer);
+  map.removeLayer(osmLabelLayer);
+  L.tileLayer(FALLBACK_BASE, {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &middot; Tiles &copy; <a href="https://www.esri.com/">Esri</a>',
+    maxNativeZoom: 16,
+    maxZoom: 19,
+    className: 'foreign-faded',
+  }).addTo(map);
+  // Esri Reference = layer di sole etichette (PNG trasparente): sul pane
+  // 'toponimi' il blend darken continua a farle emergere sopra i poligoni.
+  L.tileLayer(FALLBACK_LABELS, {
+    maxNativeZoom: 16,
+    maxZoom: 19,
+    pane: 'toponimi',
+  }).addTo(map);
+}
+
+osmBaseLayer.on('tileerror', function () {
+  osmTileErrors += 1;
+  if (osmTileErrors >= FAILOVER_THRESHOLD) {
+    activateBasemapFailover(osmTileErrors + ' tileerror');
+  }
+});
+// Hook di test/manutenzione (usato anche dalla verifica in-browser di #26).
+window.__forceBasemapFailover = function () { activateBasemapFailover('attivazione manuale'); };
 
 var resizeTimer;
 window.addEventListener('resize', function () {

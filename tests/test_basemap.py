@@ -157,25 +157,29 @@ def test_foreign_faded_aesthetic(html: str, layers: list[tuple[str, str]]) -> No
     )
 
 
+def _assert_axis_rule(template: str) -> None:
+    """Regola ordine-assi per host. Un mismatch NON dà errori runtime (ogni
+    coordinata è un tile valido altrove): la mappa mostra il posto sbagliato."""
+    host = _host(template)
+    for var in ("{z}", "{x}", "{y}"):
+        assert var in template, f"variabile {var} assente nel template {template}"
+    if host.endswith("arcgisonline.com"):
+        assert "/tile/{z}/{y}/{x}" in template, (
+            f"Esri usa l'ordine /tile/{{z}}/{{y}}/{{x}}, trovato: {template}"
+        )
+        assert "{s}" not in template and "{r}" not in template, (
+            f"Esri non supporta subdomini {{s}} né retina {{r}}: {template}"
+        )
+    elif host.endswith("cartocdn.com") or host.endswith("openstreetmap.org"):
+        assert "/{z}/{x}/{y}" in template, (
+            f"{host} usa l'ordine slippy /{{z}}/{{x}}/{{y}}, trovato: {template}"
+        )
+
+
 def test_axis_order_matches_host(layers: list[tuple[str, str]]) -> None:
-    """L'ordine {z}/{x}/{y} vs {z}/{y}/{x} dipende dal provider: un mismatch
-    NON dà errori (ogni coordinata è un tile valido altrove) — la mappa mostra
-    semplicemente il posto sbagliato. Codifichiamo la regola per host."""
+    """Codifichiamo la regola ordine-assi per ogni layer attivo."""
     for template, _ in layers:
-        host = _host(template)
-        for var in ("{z}", "{x}", "{y}"):
-            assert var in template, f"variabile {var} assente nel template {template}"
-        if host.endswith("arcgisonline.com"):
-            assert "/tile/{z}/{y}/{x}" in template, (
-                f"Esri usa l'ordine /tile/{{z}}/{{y}}/{{x}}, trovato: {template}"
-            )
-            assert "{s}" not in template and "{r}" not in template, (
-                f"Esri non supporta subdomini {{s}} né retina {{r}}: {template}"
-            )
-        elif host.endswith("cartocdn.com") or host.endswith("openstreetmap.org"):
-            assert "/{z}/{x}/{y}" in template, (
-                f"{host} usa l'ordine slippy /{{z}}/{{x}}/{{y}}, trovato: {template}"
-            )
+        _assert_axis_rule(template)
 
 
 def test_no_keyless_carto(layers: list[tuple[str, str]]) -> None:
@@ -257,3 +261,51 @@ def test_leaflet_cdn_assets_reachable(html: str) -> None:
         assert status == 200, f"asset {url}: HTTP {status}"
         # Soglia bassa di proposito: MarkerCluster.css pesa 872 byte legittimi.
         assert len(body) > 500, f"asset {url}: solo {len(body)} byte"
+
+
+# ── RISERVA + FAILOVER (#26) ─────────────────────────────────────────────────
+
+FALLBACK_RE = re.compile(r"const FALLBACK_(BASE|LABELS)\s*=\s*'([^']+)'")
+
+
+@pytest.fixture(scope="module")
+def fallbacks(html: str) -> dict[str, str]:
+    """{'BASE': url, 'LABELS': url} della riserva keyless dichiarata nel
+    failover runtime di index.html."""
+    found = dict(FALLBACK_RE.findall(html))
+    assert set(found) == {"BASE", "LABELS"}, (
+        f"template di riserva FALLBACK_BASE/FALLBACK_LABELS non trovati: {found}"
+    )
+    return found
+
+
+def test_fallback_templates_valid(fallbacks: dict[str, str]) -> None:
+    """La riserva deve essere keyless, su host noto e con l'ordine assi giusto
+    (il trabocchetto Esri: /tile/{z}/{y}/{x}, invertito rispetto a slippy)."""
+    for name, template in fallbacks.items():
+        assert "key=" not in template and "apikey" not in template.lower(), (
+            f"la riserva {name} non deve richiedere chiavi: {template}"
+        )
+        _assert_axis_rule(template)
+
+
+def test_fallback_tiles_are_real(fallbacks: dict[str, str]) -> None:
+    """La riserva viene verificata OGNI GIORNO con gli stessi criteri del
+    provider primario (200 + image/* + peso + anti-segnaposto): non deve
+    scoprirsi morta il giorno in cui serve davvero."""
+    _assert_real_tiles(fallbacks["BASE"], MIN_BYTES_BASE)
+    _assert_real_tiles(fallbacks["LABELS"], MIN_BYTES_LABELS)
+
+
+def test_failover_wiring_present(html: str) -> None:
+    """Il meccanismo di failover deve restare cablato: contatore tileerror
+    sul layer base, soglia, swap dei DUE layer, hook di test manuale."""
+    for marker in (
+        "on('tileerror'",
+        "FAILOVER_THRESHOLD",
+        "activateBasemapFailover",
+        "removeLayer(osmBaseLayer)",
+        "removeLayer(osmLabelLayer)",
+        "window.__forceBasemapFailover",
+    ):
+        assert marker in html, f"failover basemap: manca '{marker}' in index.html"
