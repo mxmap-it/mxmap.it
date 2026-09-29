@@ -3,10 +3,10 @@
  "n_classified": 22266,
  "coverage_pct": 97.23,
  "mean_confidence": 0.8511,
- "isd": 51.17,
+ "isd": 51.15,
  "headline": {
-  "isd": 51.17,
-  "cloud_act_pct": 48.28,
+  "isd": 51.15,
+  "cloud_act_pct": 48.29,
   "coverage_pct": 97.23,
   "n_entities": 22900
  },
@@ -14,20 +14,20 @@
   {
    "bucket": "Italia — Cloud sovrano",
    "group": "ITA",
-   "count": 928,
-   "pct": 4.17
+   "count": 930,
+   "pct": 4.18
   },
   {
    "bucket": "Italia — Provider commerciali",
    "group": "ITA",
-   "count": 7425,
-   "pct": 33.35
+   "count": 7423,
+   "pct": 33.34
   },
   {
    "bucket": "Italia — Infrastruttura autonoma",
    "group": "ITA",
-   "count": 3040,
-   "pct": 13.65
+   "count": 3037,
+   "pct": 13.64
   },
   {
    "bucket": "Altri provider esteri",
@@ -38,8 +38,8 @@
   {
    "bucket": "USA (CLOUD Act)",
    "group": "EST",
-   "count": 10749,
-   "pct": 48.28
+   "count": 10752,
+   "pct": 48.29
   },
   {
    "bucket": "Sconosciuto",
@@ -51,17 +51,17 @@
  "jurisdiction": [
   {
    "key": "domestic",
-   "count": 10508,
-   "pct": 45.89
+   "count": 10504,
+   "pct": 45.87
   },
   {
    "key": "foreign",
-   "count": 11439,
-   "pct": 49.95
+   "count": 11442,
+   "pct": 49.97
   },
   {
    "key": "mixed",
-   "count": 244,
+   "count": 245,
    "pct": 1.07
   },
   {
@@ -74,14 +74,14 @@
   {
    "provider": "google",
    "display": "Google Workspace",
-   "count": 6442,
-   "pct": 28.93
+   "count": 6448,
+   "pct": 28.96
   },
   {
    "provider": "aruba",
    "display": "Provider Italiano",
-   "count": 5136,
-   "pct": 23.07
+   "count": 5133,
+   "pct": 23.05
   },
   {
    "provider": "microsoft",
@@ -92,8 +92,8 @@
   {
    "provider": "independent",
    "display": "Infrastruttura autonoma",
-   "count": 3040,
-   "pct": 13.65
+   "count": 3037,
+   "pct": 13.64
   },
   {
    "provider": "local-isp",
@@ -104,14 +104,14 @@
   {
    "provider": "regional-public",
    "display": "Cloud Italiano",
-   "count": 928,
-   "pct": 4.17
+   "count": 930,
+   "pct": 4.18
   },
   {
    "provider": "istruzione-miur-tenant",
    "display": "Microsoft 365",
-   "count": 862,
-   "pct": 3.87
+   "count": 859,
+   "pct": 3.86
   },
   {
    "provider": "register-it",
@@ -126,16 +126,16 @@
    "pct": 2.77
   },
   {
-   "provider": "ovh",
-   "display": "Provider europeo",
+   "provider": "seeweb",
+   "display": "Provider Italiano",
    "count": 77,
    "pct": 0.35
   },
   {
-   "provider": "seeweb",
-   "display": "Provider Italiano",
-   "count": 76,
-   "pct": 0.34
+   "provider": "ovh",
+   "display": "Provider europeo",
+   "count": 77,
+   "pct": 0.35
   },
   {
    "provider": "hetzner",
@@ -181,8 +181,8 @@
   }
  ],
  "market": {
-  "top3_pct": 67.45,
-  "hhi": 1884.1
+  "top3_pct": 67.46,
+  "hhi": 1884.6
  },
  "confidence_bands": [
   {
@@ -205,8 +205,8 @@
   "mx_pct": 97.23,
   "spf_pct": 87.74,
   "dkim_pct": 15.86,
-  "gateway_pct": 15.11
+  "gateway_pct": 15.12
  },
- "generated": "2026-09-28T10:51:50Z",
+ "generated": "2026-09-29T10:39:09Z",
  "country": "IT"
 }

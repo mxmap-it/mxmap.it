@@ -148584,11 +148584,9 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "ingegnerinuoro.it",
+    "domain": "nuoro.ordingegneri.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "nuoro.ordingegneri.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "odipnu",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -231751,7 +231749,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "direzionedidatticatroina.edu.it",
+    "domain": "icdonboscotroina.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -256462,23 +256460,6 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "063036",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-L33-istsc_naee147005",
-    "name": "DIREZIONE DIDATTICA - MARIGLIANO 1 - GIANCARLO SIANI",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "primocircolosianimarigliano.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_naee147005",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "063043",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -298066,7 +298047,6 @@
     "domain": "liceodarwin.net",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "liceodarwin.rivoli.to.it",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_tops10000t",
@@ -312167,6 +312147,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-KUA0LWFK",
+    "name": "ISTITUTO D'ISTRUZIONE SUPERIORE ARIANO IRPINO",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "istitutosuperioreariano.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "KUA0LWFK",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "064005",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-KWGN5WZY",
     "name": "I.C.-S.S. VESUVIO-SALVEMINI",
     "country": "IT",
@@ -315417,7 +315412,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "donmilanileopardimontessori.edu.it",
+    "domain": "donmilanileopardi.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "SR6XEJWO",
@@ -315822,7 +315817,6 @@
     "domain": "iclombardoradicevirgilio.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "istruzione.gov.it",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "UKTOXGZB",
@@ -327864,21 +327858,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-L37-0SGNV76C",
-    "name": "GEROPA SRL",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "geropa.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [],
-    "ipa_codice_ipa": "0SGNV76C",
-    "ipa_codice_categoria": "L37",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "058039",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-L37-0T2GMPK6",
     "name": "I.L.V.C. (IMPIANTI ELETTRICI) S.R.L.",
     "country": "IT",
@@ -329621,7 +329600,9 @@
     "district": null,
     "domain": "acquedottiscpa.com",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "acquedottiscpa.it"
+    ],
     "ipa_codice_ipa": "9BB8MUC4",
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
@@ -339017,9 +338998,7 @@
     "district": null,
     "domain": "itstirreno.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.itstirreno.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "NR0JFJIQ",
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
@@ -339932,6 +339911,21 @@
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "013133",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L37-QH47S5M1",
+    "name": "COORDINAMENTO VOLONTARIATO PROTEZIONE CIVILE BERGAMO ODV",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "ccv-bg.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "QH47S5M1",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "016091",
     "domain_source": "sito_istituzionale"
   },
   {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T11:29:07Z",
+  "generated_at": "2026-09-29T11:28:59Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
@@ -9,14 +9,14 @@
     "coverage_pct": 97.23
   },
   "indices": {
-    "isd": 51.17,
-    "cloud_act_pct": 48.28,
+    "isd": 51.15,
+    "cloud_act_pct": 48.29,
     "n_classified": 22266
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10751,
-      "pct": 46.9,
+      "count": 10754,
+      "pct": 47.0,
       "label": "Extra-UE (CLOUD Act)"
     },
     "eu_non_it": {
@@ -25,8 +25,8 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11393,
-      "pct": 49.8,
+      "count": 11390,
+      "pct": 49.7,
       "label": "Italiano"
     },
     "unknown": {
@@ -38,31 +38,31 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7425,
+      "count": 7423,
       "pct": 32.4,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6442,
-      "pct": 28.1,
+      "count": 6448,
+      "pct": 28.2,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4302,
+      "count": 4299,
       "pct": 18.8,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3040,
+      "count": 3037,
       "pct": 13.3,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 928,
+      "count": 930,
       "pct": 4.1,
       "sovereignty": "it"
     },
@@ -113,7 +113,7 @@
     {
       "cluster": "Consorzi e Unioni di enti locali",
       "n_entities": 1425,
-      "usa_pct": 24.6,
+      "usa_pct": 24.8,
       "dominant_provider": "Provider Italiano"
     },
     {
@@ -125,7 +125,7 @@
     {
       "cluster": "Stazioni Appaltanti",
       "n_entities": 617,
-      "usa_pct": 50.1,
+      "usa_pct": 50.2,
       "dominant_provider": "Microsoft 365"
     },
     {
