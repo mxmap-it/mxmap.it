@@ -373,6 +373,45 @@ jobs:
           **Impatto sul sito:** se il fallimento è prima della build, il sito resta all'ultimo deploy valido (dati non aggiornati, NON rotti). [Run]($run_url)."
           fi
 
+  # ── BATTERIA BASEMAP (indipendente dalla pipeline dati) ────────────────────
+  # Tripwire quotidiano contro il drift LATO PROVIDER dei tile (incidente
+  # CARTO 2026-09: watermark "API KEY REQUIRED" servito con HTTP 200 → mappa
+  # rotta in silenzio, invisibile a qualunque check di status). Job SEPARATO
+  # di proposito: un guasto del provider basemap NON deve bloccare
+  # l'aggiornamento dati né il deploy. La stessa batteria gira anche in CI su
+  # ogni push/PR (job `test`, pytest completo). Vedi tests/test_basemap.py.
+  basemap-battery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - run: uv python install 3.13
+      - run: uv sync --group dev
+      - name: Batteria funzionale basemap (tile veri dal provider)
+        run: uv run pytest tests/test_basemap.py -v
+      - name: Open issue if basemap battery failed (auto-detection)
+        if: failure()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create basemap --color D93F0B --description "Basemap della mappa rotto o degradato (provider tile)" 2>/dev/null || true
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --label basemap --state open --limit 1 --json number -q '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "La batteria basemap è fallita di nuovo il $(date -u +%Y-%m-%d). [Run]($run_url)."
+          else
+            gh issue create \
+              --title "Basemap: batteria funzionale fallita (provider tile)" \
+              --label basemap \
+              --body "La batteria di tests/test_basemap.py è fallita il $(date -u +%Y-%m-%d): il provider dei tile (OSM standard, tile.openstreetmap.org) serve tile non validi (segnaposto/4xx/5xx) oppure il config basemap di index.html è incoerente.
+
+          **Impatto:** la mappa può apparire senza sfondo o con watermark. I DATI e le pagine non sono impattati.
+
+          **Playbook:** CLAUDE.md §Basemap. Riserva keyless documentata: Esri World Light Gray (server.arcgisonline.com, ordine /tile/{z}/{y}/{x} INVERTITO rispetto a slippy, maxNativeZoom 16). [Run]($run_url)."
+          fi
+
   deploy:
     needs: update-data
     runs-on: ubuntu-latest

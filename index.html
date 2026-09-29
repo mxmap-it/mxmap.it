@@ -4,10 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
-<link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
-<link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossorigin>
-<link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossorigin>
-<link rel="preconnect" href="https://d.basemaps.cartocdn.com" crossorigin>
+<link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin>
 <title>Osservatorio Nazionale Sovranità Digitale — Posta elettronica della PA italiana</title>
 <meta name="description" content="Osservatorio Nazionale Sovranità Digitale: la sovranità digitale della posta elettronica della Pubblica Amministrazione Italiana. Mappa interattiva di ~23.000 enti pubblici italiani (comuni, province, regioni, ministeri, scuole, ASL, università, ordini professionali) con il provider email reale classificato via analisi DNS (MX, SPF, CNAME, DKIM). Espone la dipendenza della PA italiana da hyperscaler statunitensi soggetti al CLOUD Act.">
 <meta name="keywords" content="Osservatorio Nazionale Sovranità Digitale, MxMap Italia, MXMap Italia, MxMap.it, sovranità digitale, sovranità digitale Italia, posta elettronica PA, provider email pubblica amministrazione, email PA italiana, CLOUD Act, IndicePA, analisi DNS, record MX, mappa PA italiana, dati aperti PA">
@@ -101,8 +98,30 @@
   /* Italy-only branding: desaturate + lighten the world tile layer so
      surrounding countries (France, Slovenia, Austria, Tunisia, Malta, …)
      fade into the background. Italian polygons stay vivid on top. */
+  /* NB: Leaflet applica la className del tileLayer al CONTAINER del layer
+     (div.leaflet-layer), NON ai singoli <img class="leaflet-tile">: il vecchio
+     selettore .leaflet-tile.foreign-faded non matchava nulla (invisibile coi
+     tile CARTO/Esri già grigi; necessario coi tile OSM colorati). Teniamo
+     entrambi i selettori per robustezza tra versioni di Leaflet. */
+  .leaflet-layer.foreign-faded,
   .leaflet-tile.foreign-faded {
     filter: saturate(0) brightness(1.08) contrast(0.85) opacity(0.55);
+  }
+  /* Toponimi sopra i poligoni con tile OSM standard (che hanno le etichette
+     integrate nel raster): il pane "toponimi" ridisegna GLI STESSI tile sopra
+     l'overlayPane e li fonde con mix-blend-mode:darken — il bianco diventa
+     neutro, restano solo i pixel scuri (etichette, confini). Il filtro spinge
+     i mezzitoni (strade) verso il bianco per ridurre il rumore. Stessi URL dei
+     tile base ⇒ HTTP cache del browser, nessuna richiesta extra verso OSM.
+     Fallback: senza supporto blend il pane resta nascosto (mappa comunque
+     completa, etichette solo nel tile base sotto i poligoni). */
+  .leaflet-toponimi-pane { display: none; pointer-events: none; }
+  @supports (mix-blend-mode: darken) {
+    .leaflet-toponimi-pane {
+      display: block;
+      mix-blend-mode: darken;
+      filter: saturate(0) brightness(1.35) contrast(1.6);
+    }
   }
   .leaflet-container { background: #f4f4f4; }
 
@@ -660,18 +679,26 @@ window._map = map; // expose for debugging
 // Use grayscale, label-free tiles so foreign countries fade into the
 // background; the Italian polygons stay vivid on top. CSS filter (further
 // down in <style>) desaturates them.
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-  subdomains: 'abcd',
+// 2026-09-23: CARTO ha messo i basemap dietro API key (enforcement: watermark
+// "API KEY REQUIRED" servito con HTTP 200). Scelta di progetto: SOLO provider
+// aperti e keyless → OSM standard (tile.openstreetmap.org, community OSMF,
+// ordine slippy /{z}/{x}/{y}, nativo fino a z19). Il filtro .foreign-faded
+// desatura il tile base; i toponimi (integrati nel raster OSM) vengono
+// riportati SOPRA i poligoni dal pane "toponimi" (stessi tile + blend darken,
+// vedi CSS): sostituisce il vecchio layer label separato di CARTO/Esri.
+// Policy e batteria di guardia: CLAUDE.md §Basemap + tests/test_basemap.py.
+map.createPane('toponimi');
+map.getPane('toponimi').style.zIndex = 450; // sopra i poligoni (400), sotto i marker (600)
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   maxZoom: 19,
   className: 'foreign-faded',
 }).addTo(map);
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-  subdomains: 'abcd',
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
-  pane: 'shadowPane',
-  className: 'foreign-faded',
+  pane: 'toponimi',
 }).addTo(map);
 
 var resizeTimer;
