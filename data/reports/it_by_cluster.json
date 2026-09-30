@@ -1,14 +1,14 @@
 {
-  "total": 22900,
+  "total": 22903,
   "aggregate": {
     "providers": {
       "microsoft": 3440,
-      "independent": 3037,
-      "local-isp": 1547,
+      "independent": 3038,
+      "local-isp": 1548,
       "unknown": 634,
-      "google": 6448,
-      "aruba": 5133,
-      "regional-public": 930,
+      "google": 6452,
+      "aruba": 5132,
+      "regional-public": 929,
       "register-it": 665,
       "seeweb": 77,
       "ovh": 77,
@@ -19,19 +19,19 @@
       "zoho": 2,
       "infomaniak": 5,
       "hetzner": 30,
-      "istruzione-miur-tenant": 859
+      "istruzione-miur-tenant": 858
     },
-    "usa_share_pct": 43.2
+    "usa_share_pct": 43.21
   },
   "clusters": {
     "territoriale": {
       "label_it": "Enti territoriali",
       "label_en": "Territorial entities",
       "visualization": "map",
-      "n": 8164,
-      "usa_share_pct": 25.62,
+      "n": 8165,
+      "usa_share_pct": 25.63,
       "providers": {
-        "microsoft": 1413,
+        "microsoft": 1414,
         "google": 677,
         "regional-public": 756,
         "local-isp": 414,
@@ -58,9 +58,9 @@
           }
         },
         "L6": {
-          "n": 8009,
+          "n": 8010,
           "providers": {
-            "microsoft": 1349,
+            "microsoft": 1350,
             "aruba": 2425,
             "regional-public": 743,
             "independent": 1822,
@@ -110,19 +110,19 @@
       "label_it": "Istruzione",
       "label_en": "Education",
       "visualization": "map",
-      "n": 8319,
-      "usa_share_pct": 67.51,
+      "n": 8320,
+      "usa_share_pct": 67.54,
       "providers": {
-        "aruba": 829,
+        "aruba": 828,
         "independent": 510,
         "microsoft": 580,
         "register-it": 28,
-        "google": 5036,
+        "google": 5039,
         "unknown": 49,
         "regional-public": 3,
         "local-isp": 388,
         "seeweb": 8,
-        "istruzione-miur-tenant": 859,
+        "istruzione-miur-tenant": 858,
         "hetzner": 27,
         "ovh": 1,
         "ionos": 1
@@ -164,13 +164,13 @@
           }
         },
         "L33": {
-          "n": 8083,
+          "n": 8084,
           "providers": {
-            "google": 4948,
-            "aruba": 788,
+            "google": 4951,
+            "aruba": 787,
             "independent": 499,
             "microsoft": 515,
-            "istruzione-miur-tenant": 859,
+            "istruzione-miur-tenant": 858,
             "local-isp": 369,
             "hetzner": 27,
             "unknown": 42,
@@ -438,8 +438,8 @@
       "usa_share_pct": 26.55,
       "providers": {
         "aruba": 109,
-        "independent": 30,
-        "local-isp": 35,
+        "independent": 29,
+        "local-isp": 36,
         "google": 27,
         "microsoft": 50,
         "ovh": 1,
@@ -483,9 +483,8 @@
           "providers": {
             "microsoft": 2,
             "aruba": 10,
-            "local-isp": 2,
-            "unknown": 2,
-            "independent": 1
+            "local-isp": 3,
+            "unknown": 2
           }
         },
         "L44": {
@@ -643,32 +642,32 @@
       "label_it": "Consorzi e Unioni di enti locali",
       "label_en": "Local consortia & sub-municipal",
       "visualization": "table",
-      "n": 1249,
-      "usa_share_pct": 25.3,
+      "n": 1248,
+      "usa_share_pct": 25.24,
       "providers": {
-        "regional-public": 97,
+        "regional-public": 96,
         "register-it": 57,
         "aruba": 299,
-        "microsoft": 176,
+        "microsoft": 175,
         "unknown": 167,
         "google": 140,
         "local-isp": 94,
-        "independent": 213,
+        "independent": 214,
         "seeweb": 4,
         "ovh": 2
       },
       "categories": {
         "L1": {
-          "n": 351,
+          "n": 350,
           "providers": {
-            "regional-public": 59,
+            "regional-public": 58,
             "register-it": 7,
             "aruba": 50,
-            "microsoft": 60,
+            "microsoft": 59,
             "unknown": 42,
             "google": 71,
             "local-isp": 31,
-            "independent": 30,
+            "independent": 31,
             "seeweb": 1
           }
         },
@@ -882,14 +881,14 @@
       "label_it": "Stazioni Appaltanti (procurement)",
       "label_en": "Procurement entities",
       "visualization": "table",
-      "n": 617,
+      "n": 619,
       "usa_share_pct": 50.24,
       "providers": {
-        "google": 82,
+        "google": 83,
         "aruba": 145,
         "microsoft": 228,
         "register-it": 24,
-        "independent": 61,
+        "independent": 62,
         "unknown": 16,
         "local-isp": 53,
         "seeweb": 1,
@@ -899,13 +898,13 @@
       },
       "categories": {
         "SA": {
-          "n": 473,
+          "n": 475,
           "providers": {
-            "google": 67,
+            "google": 68,
             "aruba": 116,
             "microsoft": 168,
             "register-it": 21,
-            "independent": 42,
+            "independent": 43,
             "unknown": 12,
             "local-isp": 39,
             "seeweb": 1,

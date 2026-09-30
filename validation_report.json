@@ -1,5 +1,5 @@
 {
-  "total": 22900,
+  "total": 22903,
   "average_score": 80.7,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
@@ -28670,12 +28670,11 @@
     },
     "IT-COM-001242": {
       "name": "Comune di San Germano Chisone",
-      "provider": "regional-public",
-      "domain": "comune.sangermanochisone.to.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.comune.sangermanochisone.to.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -81723,12 +81722,14 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "independent",
-      "domain": "cert.fonte-nuova.it",
-      "confidence": 50,
+      "provider": "microsoft",
+      "domain": "comune.fontenuova.rm.it",
+      "confidence": 95,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-059001": {
@@ -119964,6 +119965,16 @@
         "autodiscover_confirms"
       ]
     },
+    "IT-CONS-sss": {
+      "name": "Societa' della Salute Senese",
+      "provider": "regional-public",
+      "domain": "sds-senese.it",
+      "confidence": 50,
+      "flags": [
+        "no_spf",
+        "provider_classified"
+      ]
+    },
     "IT-CONS-tr_fse": {
       "name": "Tecnostruttura Delle Regioni per Il Fondo Sociale Europeo",
       "provider": "microsoft",
@@ -124014,16 +124025,6 @@
         "provider_unknown"
       ]
     },
-    "IT-L1-sss": {
-      "name": "Societa' della Salute Senese",
-      "provider": "regional-public",
-      "domain": "sds-senese.it",
-      "confidence": 50,
-      "flags": [
-        "no_spf",
-        "provider_classified"
-      ]
-    },
     "IT-L1-sszav": {
       "name": "Societa' della Salute della Zona Alta Val D'Elsa",
       "provider": "regional-public",
@@ -124104,12 +124105,12 @@
     },
     "IT-L1-uslrps": {
       "name": "Ufficio Speciale per La Ricostruzione Post Sisma 2016 della Regione Lazio",
-      "provider": "microsoft",
-      "domain": "usrsisma.regione.lazio.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "pec.regione.lazio.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -135617,6 +135618,18 @@
         "provider_classified"
       ]
     },
+    "IT-L33-4F3UF6L5": {
+      "name": "I.I.S.S. Léontine e Giuseppe De Nittis",
+      "provider": "google",
+      "domain": "iissdenittis.edu.it",
+      "confidence": 53,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_mismatch",
+        "provider_classified"
+      ]
+    },
     "IT-L33-4FGHPC8A": {
       "name": "ISTITUTO MAGISTRALE DI CACCAMO",
       "provider": "google",
@@ -146960,13 +146973,13 @@
     },
     "IT-L33-icsch": {
       "name": "Istituto Comprensivo Schweitzer",
-      "provider": "istruzione-miur-tenant",
+      "provider": "google",
       "domain": "comprensivoschweitzer.edu.it",
-      "confidence": 80,
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -147787,14 +147800,14 @@
     },
     "IT-L33-icsta": {
       "name": "Istituto Comprensivo Budoni-San Teodoro",
-      "provider": "aruba",
+      "provider": "google",
       "domain": "icbudoni.edu.it",
-      "confidence": 83,
+      "confidence": 78,
       "flags": [
         "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "mx_spf_match",
+        "multi_provider_spf:aruba+google",
+        "provider_classified"
       ]
     },
     "IT-L33-icstd": {
@@ -175901,7 +175914,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.edu.it",
+      "domain": "agrariofirenze.eu",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -196991,7 +197004,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -251138,14 +251151,13 @@
     },
     "IT-L42-casimt": {
       "name": "Consorzio per L'Area di Sviluppo Industriale di Morbegno Talamona",
-      "provider": "independent",
-      "domain": "asimorbegno-talamona.it",
-      "confidence": 90,
+      "provider": "local-isp",
+      "domain": "halleyweb.com",
+      "confidence": 55,
       "flags": [
         "multiple_mx",
-        "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L42-casip_": {
@@ -259801,6 +259813,18 @@
         "provider_via_gateway_spf"
       ]
     },
+    "IT-SA-1FT5WNKD": {
+      "name": "LEVANTE MULTISERVIZI SRL",
+      "provider": "independent",
+      "domain": "levantemultiservizi.it",
+      "confidence": 93,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
+      ]
+    },
     "IT-SA-1K9JKE4Y": {
       "name": "AMIU Genova SPA",
       "provider": "aruba",
@@ -263567,6 +263591,18 @@
         "independent_mx_with_cloud_spf",
         "provider_classified",
         "autodiscover_confirms"
+      ]
+    },
+    "IT-SA-SJQ24AE4": {
+      "name": "Fondazione Enea Tech e Biomedical",
+      "provider": "google",
+      "domain": "techbiomedical.it",
+      "confidence": 93,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-SA-SLTPJCJI": {

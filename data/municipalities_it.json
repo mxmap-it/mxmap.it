@@ -99866,9 +99866,7 @@
     "district": "Pavia",
     "domain": "comune.sanzenonealpo.pv.it",
     "osm_relation_id": 44222,
-    "domain_fallbacks": [
-      "tin.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_i416",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "91211",
@@ -124838,6 +124836,23 @@
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "80189",
     "ipa_codice_comune_istat": "020059",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-CONS-sss",
+    "name": "Societa' della Salute Senese",
+    "country": "IT",
+    "region": "Toscana",
+    "district": "Siena",
+    "domain": "sds-senese.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "sdssenese.it"
+    ],
+    "ipa_codice_ipa": "sss",
+    "ipa_codice_categoria": "L6",
+    "ipa_codice_istat": "26356511",
+    "ipa_codice_comune_istat": "052032",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -164639,23 +164654,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-L1-sss",
-    "name": "Societa' della Salute Senese",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "sds-senese.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "sdssenese.it"
-    ],
-    "ipa_codice_ipa": "sss",
-    "ipa_codice_categoria": "L1",
-    "ipa_codice_istat": "26356511",
-    "ipa_codice_comune_istat": "052032",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-L1-sszav",
     "name": "Societa' della Salute della Zona Alta Val D'Elsa",
     "country": "IT",
@@ -179749,7 +179747,9 @@
     "district": null,
     "domain": "ic8piacenza.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "1KAWR6TY",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -180203,6 +180203,21 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "110003",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L33-4F3UF6L5",
+    "name": "I.I.S.S. Léontine e Giuseppe De Nittis",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "iissdenittis.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "4F3UF6L5",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "110002",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -346492,14 +346507,16 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "asimorbegno-talamona.it",
+    "domain": "halleyweb.com",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "asimorbegno-talamona.it"
+    ],
     "ipa_codice_ipa": "casimt",
     "ipa_codice_categoria": "L42",
     "ipa_codice_istat": "10737358",
     "ipa_codice_comune_istat": "014063",
-    "domain_source": "email_non_pec_fallback"
+    "domain_source": "sito_istituzionale"
   },
   {
     "id": "IT-L42-casip_",
@@ -355991,6 +356008,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-SA-1FT5WNKD",
+    "name": "LEVANTE MULTISERVIZI SRL",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "levantemultiservizi.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "1FT5WNKD",
+    "ipa_codice_categoria": "SA",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "011017",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-SA-1K9JKE4Y",
     "name": "AMIU Genova SPA",
     "country": "IT",
@@ -361482,6 +361514,21 @@
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "115020",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SA-SJQ24AE4",
+    "name": "Fondazione Enea Tech e Biomedical",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "techbiomedical.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "SJQ24AE4",
+    "ipa_codice_categoria": "SA",
+    "ipa_codice_istat": "33212770",
+    "ipa_codice_comune_istat": "058091",
     "domain_source": "sito_istituzionale"
   },
   {
