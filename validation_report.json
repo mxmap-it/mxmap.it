@@ -1,5 +1,5 @@
 {
-  "total": 22903,
+  "total": 22905,
   "average_score": 80.7,
   "high_confidence_pct": 73.9,
   "quality_passed": false,
@@ -28455,13 +28455,14 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-001224": {
@@ -29977,7 +29978,7 @@
     "IT-COM-002068": {
       "name": "Comune di Lenta",
       "provider": "regional-public",
-      "domain": "ruparpiemonte.it",
+      "domain": "comune.lenta.vc.it",
       "confidence": 90,
       "flags": [
         "spf_strict",
@@ -40157,14 +40158,13 @@
     },
     "IT-COM-009046": {
       "name": "Comune di Osiglia",
-      "provider": "independent",
-      "domain": "comune.osiglia.sv.it",
+      "provider": "aruba",
+      "domain": "comuneosiglia.it",
       "confidence": 90,
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-009047": {
@@ -138310,6 +138310,17 @@
         "provider_via_gateway_spf"
       ]
     },
+    "IT-L33-P42KP1VB": {
+      "name": "I.C. UNICO DI LUMEZZANE",
+      "provider": "local-isp",
+      "domain": "icunicodilumezzane.edu.it",
+      "confidence": 88,
+      "flags": [
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
+      ]
+    },
     "IT-L33-P6OMA9KA": {
       "name": "ISTITUTO COMPRENSIVO D'OVIDIO-NICOLARDI  - E.A. MARIO",
       "provider": "google",
@@ -138631,6 +138642,17 @@
       "flags": [
         "no_spf",
         "provider_classified"
+      ]
+    },
+    "IT-L33-RP8EQLPE": {
+      "name": "ISTITUTO COMPRENSIVO LUZZI",
+      "provider": "independent",
+      "domain": "icluzzi.edu.it",
+      "confidence": 85,
+      "flags": [
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-RPJ7MYHE": {
@@ -139224,7 +139246,7 @@
       ]
     },
     "IT-L33-XI61SUQO": {
-      "name": "I.C. \"G.RODARI-D.ALIGHIERI-MARCONI\"",
+      "name": "Istituto Comprensivo \"Emma Castelnuovo\"",
       "provider": "microsoft",
       "domain": "iccasamassima.edu.it",
       "confidence": 95,
@@ -219856,14 +219878,13 @@
     },
     "IT-L33-istsc_tvic85700g": {
       "name": "IC MASERADA E BREDA DI PIAVE",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icmaserada.edu.it",
-      "confidence": 80,
+      "provider": "independent",
+      "domain": "icmaseradaebreda.edu.it",
+      "confidence": 85,
       "flags": [
-        "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-istsc_tvic85800b": {
@@ -227680,14 +227701,13 @@
     },
     "IT-L33-ls_": {
       "name": "Liceo Scientifico",
-      "provider": "microsoft",
-      "domain": "rg-me.it",
-      "confidence": 95,
+      "provider": "google",
+      "domain": "rgtfo-me.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "multiple_mx",
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-lsal_063": {
@@ -261029,14 +261049,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {
@@ -265626,7 +265644,8 @@
         "multiple_mx",
         "spf_softfail",
         "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_suggests:microsoft"
       ]
     },
     "IT-SAG-EET9XGEV": {

@@ -212,7 +212,6 @@ IT-COM-035033,Comune di Reggio Emilia,unknown,comune.reggioemilia.it,15,no_mx; n
 IT-COM-102030,Comune di Ricadi,unknown,comunericadi.gov.it,15,no_mx; no_spf; provider_unknown
 IT-COM-069072,Comune di Ripa Teatina,unknown,comuneripateatina.gov.it,15,no_mx; no_spf; provider_unknown
 IT-COM-059023,Comune di Roccasecca Dei Volsci,unknown,comune.roccaseccadeivolsci.lt.it,15,no_mx; no_spf; provider_unknown
-IT-COM-001223,Comune di Romano Canavese,unknown,comune.romanocanavese.to.it,15,no_mx; no_spf; provider_unknown
 IT-COM-022157,Comune di Ronchi Valsugana,unknown,comune.ronchi.tn.it,15,no_mx; no_spf; provider_unknown
 IT-COM-096054,Comune di Roppolo,unknown,comune.roppolo.bi.it,15,no_mx; no_spf; provider_unknown
 IT-COM-069078,Comune di Rosello,unknown,comunerosello.it,15,no_mx; no_spf; provider_unknown
@@ -3677,6 +3676,7 @@ IT-L33-istsc_rnpc01000v,Liceo G. Cesare M. Valgimigli,google,liceocesarevalgimig
 IT-L33-lcgc,Liceo Galilei - Curie,google,pololicealemonopoli.edu.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-llpac,Liceo L.Pepe A. Calamo,google,liceopepecalamo.edu.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-lpngf,Liceo P.Nervi G.Ferrari,google,nerviferrari.edu.it,55,multiple_mx; no_spf; provider_classified
+IT-L33-ls_,Liceo Scientifico,google,rgtfo-me.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-lsal_063,Liceo Scientifico Arturo Labriola,google,liceolabriolanapoli.edu.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-lslvt_tn,Liceo Scientifico L. da Vinci - Trento,google,liceodavincitn.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-lST_Bz,Liceo Scientifico Torricelli,google,torricelli.edu.it,55,multiple_mx; no_spf; provider_classified
@@ -4395,6 +4395,7 @@ IT-C14-cipv_,Ordine delle Professioni Infermieristiche della Provincia di Vercel
 IT-C14-cif_,Ordine delle Professioni Infermieristiche di Fermo,register-it,opifermo.it,68,spf_softfail; provider_classified
 IT-C14-cdip_093,Ordine delle Professioni Infermieristiche di Pordenone,register-it,opipordenone.it,68,spf_softfail; provider_classified
 IT-C14-cipas_1,Ordine delle Professioni Infermieristiche di Sondrio,register-it,opisondrio.it,68,spf_softfail; provider_classified
+IT-SA-ADZ4T32G,PORT MOBILITY S.p.A. con Socio Unico,aruba,pec.portmobility.it,68,spf_softfail; provider_classified
 IT-SA-2M053FUA,PORT SECURITY S.R.L. società unipersonale,register-it,portsecuritypiombino.it,68,spf_softfail; provider_classified
 IT-SA-LIT1OX6Y,PRO-BRIXIA AZIENDA SPECIALE DELLA CAMERA DI COMMERCIO DI BRESCIA,register-it,probrixia.it,68,spf_softfail; provider_classified
 IT-PRO-35516125,PROVINCIA GALLURA NORD EST SARDEGNA,register-it,provincia.galluranordestsardegna.it,68,spf_softfail; provider_classified
@@ -6263,7 +6264,6 @@ IT-L33-istsc_tsis00200t,I.S.I.S. Nautico Tomaso di Savoia Duca di Genova - L. Ga
 IT-L33-isissns,I.S.I.S.S. Nicola Stefanelli,istruzione-miur-tenant,isisstefanelli.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-iistig,I.T.T. Allievi - Sangallo,istruzione-miur-tenant,ittterni.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-5B9J9SUG,IC COMUNE DI CORIANO,istruzione-miur-tenant,iccoriano.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
-IT-L33-istsc_tvic85700g,IC MASERADA E BREDA DI PIAVE,istruzione-miur-tenant,icmaserada.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-S01-igeasl,IGEA SPA,local-isp,igeaspa.it,80,spf_strict; independent_mx_with_cloud_spf; provider_classified
 IT-L33-istsc_svis00600t,IIS Boselli-Alberti-Mazzini-Da Vinci,istruzione-miur-tenant,iisboselli-alberti-mazzini-davinci.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_pdis003009,IIS CATTANEO-MATTEI,istruzione-miur-tenant,cattaneo-mattei.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
@@ -7115,7 +7115,7 @@ IT-L34-apspcl,A.P.S.P. Casa Laner,aruba,casalaner.it,83,spf_softfail; independen
 IT-L39-5S9EYT2J,A.R.C.A. PUGLIA,aruba,arcaregionepuglia.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L39-3ZDDLRZA,A.R.C.A. Sveva Ofantina,aruba,arcasvevaofantina.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L34-asptbr,A.S.P. Terra di Brindisi Canonico Latorre e Canonico Rossini,aruba,aspterradibrindisi.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
-IT-SAG-ED28KAEQ,ACEA ATO5 SPA,independent,aceaato5.a-acqua.it,83,multiple_mx; spf_softfail; independent_mx_with_cloud_spf; provider_classified
+IT-SAG-ED28KAEQ,ACEA ATO5 SPA,independent,aceaato5.a-acqua.it,83,multiple_mx; spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_suggests:microsoft
 IT-L37-9BB8MUC4,ACQUEDOTTI SCPA,aruba,acquedottiscpa.com,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-SAG-AMIR9TVI,AGENZIA REGIONALE SVILUPPO AREE INDUSTRIALI - ARSAI,aruba,arsai.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L37-agric,AGRICOM SRL IN LIQUIDAZIONE,microsoft,comune.fabriano.an.it,83,multiple_mx; spf_softfail; independent_mx_with_cloud_spf; provider_classified; provider_via_gateway_spf
@@ -10708,6 +10708,7 @@ IT-L33-JYLT99I8,I.T.E  DE VITI DE MARCO,aruba,itedevitidemarco.edu.it,85,spf_str
 IT-L33-istsc_metf040006,I.T.I.TORRICELLI - G.TOMASI DI LAMPEDUSA,independent,itisetorricelli.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-L33-istsc_naic8da007,"IC 3 ""de Curtis - Ungaretti - Iovino""",independent,ic3decurtisungaretti.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-L33-HXCEEL9A,IC IV NOVEMBRE - MERCADANTE,independent,icquattronovembremediamercadante.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
+IT-L33-istsc_tvic85700g,IC MASERADA E BREDA DI PIAVE,independent,icmaseradaebreda.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-L33-P0F5RGRO,IC MERCATO SAN SEVERINO II,independent,icmercatosanseverino2.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-SA-1TDVNB2B,IC OUTSOURCING S.C.R.L.,google,icoutsourcing.it,85,multiple_mx; spf_strict; mx_spf_match; multi_provider_spf:aws+google+mailgun; provider_classified
 IT-L33-iisip_0,IIS G.B. PIRANESI,local-isp,iispiranesi.edu.it,85,mx_spf_match; provider_classified
@@ -10984,6 +10985,7 @@ IT-L33-istsc_oric82200d,ISTITUTO COMPRENSIVO GHILARZA-ABBASANTA,independent,icgh
 IT-L33-istsc_rnic81300x,ISTITUTO COMPRENSIVO GIANFRANCO ZAVALLONI - RICCIONE,microsoft,iczavalloniriccione.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-L33-AV9ALT9C,ISTITUTO COMPRENSIVO GIOVANNI XXIII DE AMICIS,independent,secondocircolotriggiano.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-L33-istsc_pzic89200a,ISTITUTO COMPRENSIVO LAVELLO,independent,iclavello.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
+IT-L33-RP8EQLPE,ISTITUTO COMPRENSIVO LUZZI,independent,icluzzi.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-L33-istsc_mtic83200t,ISTITUTO COMPRENSIVO N. 2,independent,ic2policoro.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-L33-icvc_063,ISTITUTO COMPRENSIVO RITA LEVI MONTALCINI,independent,icritalevimontalcinigiugliano.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-L33-istsc_pzic828003,ISTITUTO COMPRENSIVO ROTONDA-VIGGIANELLO  di  ROTONDA (PZ),microsoft,comprensivorotonda.edu.it,85,mx_spf_match; provider_classified; provider_via_gateway_spf
@@ -12335,6 +12337,7 @@ IT-L33-icpppoli,I.C. Partinico Privitera Polizzi,google,icpriviterapolizzi.edu.i
 IT-L33-BTTD9TCM,I.C. S.G. BOSCO - STURZO,google,boscosturzo.edu.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-9EAEVWRB,I.C. SCHERILLO-PIRANDELLO-SVEVO,google,scherillopirandellosvevo.edu.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-AA5602E4,I.C. SIRAGUSA,google,icsiragusa.edu.it,88,spf_softfail; mx_spf_match; provider_classified
+IT-L33-P42KP1VB,I.C. UNICO DI LUMEZZANE,local-isp,icunicodilumezzane.edu.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-DC8B7IBD,I.C. VILLABATE 2,google,icvillabate2.edu.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L37-icaic,I.C.A. - IMPOSTE COMUNALI AFFINI - S.p.A.,google,icatributi.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-iiscar,I.I.S. Carducci,local-isp,iiscarduccicassino.edu.it,88,spf_softfail; mx_spf_match; provider_classified
@@ -13884,7 +13887,7 @@ IT-COM-076042,Comune di Lauria,regional-public,comune.lauria.pz.it,90,spf_strict
 IT-COM-017087,Comune di Lavenone,microsoft,comune.lavenone.bs.it,90,multiple_mx; spf_strict; independent_mx_with_cloud_spf; provider_classified; provider_via_gateway_spf; autodiscover_confirms
 IT-COM-066050,Comune di Lecce nei Marsi,local-isp,comune.lecceneimarsi.aq.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-017088,Comune di Leno,aruba,comune.leno.bs.it,90,spf_strict; mx_spf_match; provider_classified
-IT-COM-002068,Comune di Lenta,regional-public,ruparpiemonte.it,90,spf_strict; mx_spf_match; provider_classified
+IT-COM-002068,Comune di Lenta,regional-public,comune.lenta.vc.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-011016,Comune di Lerici,local-isp,comune.lerici.sp.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-003084,Comune di Lesa,aruba,comune.lesa.no.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-063039,Comune di Lettere,aruba,comune.lettere.na.it,90,spf_strict; mx_spf_match; provider_classified
@@ -14092,7 +14095,7 @@ IT-COM-006119,Comune di Orsara Bormida,aruba,comune.orsarabormida.al.it,90,spf_s
 IT-COM-109029,Comune di Ortezzano,microsoft,comune.ortezzano.fm.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-066064,Comune di Ortucchio,local-isp,comune.ortucchio.aq.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-017126,Comune di Orzivecchi,aruba,comune.orzivecchi.bs.it,90,spf_strict; mx_spf_match; provider_classified
-IT-COM-009046,Comune di Osiglia,independent,comune.osiglia.sv.it,90,spf_strict; mx_spf_match; provider_classified; provider_via_gateway_spf
+IT-COM-009046,Comune di Osiglia,aruba,comuneosiglia.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-028059,Comune di Ospedaletto Euganeo,aruba,comune.ospedalettoeuganeo.pd.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-098043,Comune di Ospedaletto Lodigiano,independent,comune.ospedalettolodigiano.lo.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-074012,Comune di Ostuni,independent,comune.ostuni.br.it,90,spf_strict; mx_spf_match; provider_classified; provider_via_gateway_spf
@@ -16558,6 +16561,7 @@ IT-COM-097072,Comune di Rogeno,google,comune.rogeno.lc.it,93,multiple_mx; spf_so
 IT-COM-080068,Comune di Roghudi,google,comune.roghudi.rc.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-COM-078105,Comune di Rogliano,regional-public,comune.rogliano.cs.it,93,spf_softfail; mx_spf_match; provider_classified; autodiscover_confirms
 IT-COM-065110,Comune di Romagnano al Monte,regional-public,comune.romagnanoalmonte.sa.it,93,spf_softfail; mx_spf_match; provider_classified; autodiscover_confirms
+IT-COM-001223,Comune di Romano Canavese,independent,comune.romanocanavese.to.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-COM-024086,Comune di Romano D'Ezzelino,microsoft,comune.romano.vi.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-COM-031015,Comune di Romans d'Isonzo,independent,comune.romans.go.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-COM-022155,Comune di Romeno,google,comune.romeno.tn.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
@@ -21666,7 +21670,6 @@ IT-SA-GBC5ULR1,Giubileo 2025 Spa,microsoft,societagiubileo2025.it,95,spf_strict;
 IT-L37-KM9238GS,Hera Spa,microsoft,gruppohera.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-istsc_teic84500c,I C TE1 TORRICELLA S. - ZIPPILLI - LUCIDI,microsoft,zippillinoelucidi.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L37-ACVDNQMY,I Crea Academy. Fondazione ITS per le imprese culturali e il territorio,microsoft,fondazioneicrea.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
-IT-L33-XI61SUQO,"I.C. ""G.RODARI-D.ALIGHIERI-MARCONI""",microsoft,iccasamassima.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-H18XUTYW,"I.C. ""UNGARETTI FUCINI""",local-isp,icungarettifucini.edu.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
 IT-L33-icef_015,I.C. Ezio Franceschini di Rho,microsoft,icsfranceschini.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-istsc_rmic8g6005,I.C. GIGI PROIETTI,microsoft,icgigiproietti.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
@@ -22031,6 +22034,7 @@ IT-L34-iaavr,Istituto Assistenza Anziani Verona,local-isp,iaaverona.it,95,multip
 IT-L39-iacpct,Istituto Autonomo Case Popolari di Catania,microsoft,iacpcatania.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-1ZEHMGHD,"Istituto Comprensivo ""A. Manzoni""",microsoft,manzonimottola.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-D0ZZDV0V,"Istituto Comprensivo ""Collegno Marconi""",microsoft,icmarconi.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
+IT-L33-XI61SUQO,"Istituto Comprensivo ""Emma Castelnuovo""",microsoft,iccasamassima.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-istsc_LUIC84500T,"Istituto Comprensivo ""Giacomo Puccini""",microsoft,iclucca4.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-icem_tn,Istituto Comprensivo - 'Levico Terme',google,iclevico.eu,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
 IT-L33-istsc_miic8dn009,Istituto Comprensivo - 'Villasanta',microsoft,icvillasanta.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
@@ -22198,7 +22202,6 @@ IT-L33-istsc_nasd04000b,Liceo Artistico Statale,microsoft,liceodechirico.edu.it,
 IT-L33-istsc_fipc030003,"Liceo Classico ""Galileo-Michelangiolo""",microsoft,liceoclassicogalileo.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-istsc_nopc07000l,Liceo Classico E Linguistico Statale Carlo Alberto,google,liceoclassiconovara.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
 IT-L33-lc_022,Liceo Classico G.Prati,google,liceoprati.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
-IT-L33-ls_,Liceo Scientifico,microsoft,rg-me.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-istsc_cepm010008,Liceo Statale A. Manzoni,aruba,liceomanzonicaserta.edu.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
 IT-L33-istsc_anps010009,Liceo Statale E.Medi,microsoft,liceoenricomedi.edu.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L33-istsc_napc22000a,Liceo Statale Ischia,local-isp,liceobuchner.edu.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
@@ -22439,7 +22442,6 @@ IT-C14-cpit,Ordine delle professioni Infermieristiche di Treviso,microsoft,opitr
 IT-S01-DYD3L88M,PARMA INFRASTRUTTURE SPA,microsoft,parmainfrastrutture.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-L37-asaspa,PLURES S.P.A.,microsoft,aliaserviziambientali.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-SAG-SFUOI6NZ,PONENTE ACQUE SCPA in liquidazione,microsoft,ponenteacque.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
-IT-SA-ADZ4T32G,PORT MOBILITY S.p.A. con Socio Unico,microsoft,civitavecchia.portmobility.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-SAG-padaspa,Padania Acque S.P.A.,microsoft,padania-acque.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-SA-7EIMQDFE,Padova Attiva S.r.l.,microsoft,padovattiva.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-SAG-5N2TR557,PagoPA S.p.A.,google,pagopa.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified

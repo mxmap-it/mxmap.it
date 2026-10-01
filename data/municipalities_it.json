@@ -74083,9 +74083,11 @@
     "country": "IT",
     "region": "Liguria",
     "district": "Savona",
-    "domain": "comune.osiglia.sv.it",
+    "domain": "comuneosiglia.it",
     "osm_relation_id": 43000,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "comune.osiglia.sv.it"
+    ],
     "ipa_codice_ipa": "c_g155",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "67258",
@@ -300832,7 +300834,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icmaserada.edu.it",
+    "domain": "icmaseradaebreda.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -313131,7 +313133,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "rg-me.it",
+    "domain": "rgtfo-me.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "schule.suedtirol.it"
@@ -314478,6 +314480,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-P42KP1VB",
+    "name": "I.C. UNICO DI LUMEZZANE",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "icunicodilumezzane.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "P42KP1VB",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "017096",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-P6OMA9KA",
     "name": "ISTITUTO COMPRENSIVO D'OVIDIO-NICOLARDI  - E.A. MARIO",
     "country": "IT",
@@ -315085,6 +315102,23 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "071051",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L33-RP8EQLPE",
+    "name": "ISTITUTO COMPRENSIVO LUZZI",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "icluzzi.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
+    "ipa_codice_ipa": "RP8EQLPE",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "078070",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -316398,7 +316432,7 @@
   },
   {
     "id": "IT-L33-XI61SUQO",
-    "name": "I.C. \"G.RODARI-D.ALIGHIERI-MARCONI\"",
+    "name": "Istituto Comprensivo \"Emma Castelnuovo\"",
     "country": "IT",
     "region": null,
     "district": null,
