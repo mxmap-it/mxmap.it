@@ -1,5 +1,5 @@
 {
-  "n_purged": 512,
+  "n_purged": 523,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1097,7 +1097,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -1276,6 +1276,17 @@
       "old_mx": "mx1.comune.laigueglia.sv.it",
       "old_provider": "local-isp",
       "old_reason": "MX (mx1.comune.laigueglia.sv.it) hosted on Local ISP (Genesys Informatica (IT))"
+    },
+    {
+      "id": "IT-COM-011015",
+      "name": "Comune di La Spezia",
+      "codice_ipa": "c_e463",
+      "seed_domain": "comune.sp.it",
+      "claimed_domain": "comune.laspezia.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mail.comune.laspezia.it",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.comune.laspezia.it) hosted on Local ISP (Fastweb (IT))"
     },
     {
       "id": "IT-COM-011028",
@@ -2422,6 +2433,17 @@
       "old_reason": "MX record (comune-napoli-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
+      "id": "IT-L10-arlpt_",
+      "name": "Agenzia Regionale per la promozione turistica, la comunicazione e il marketing territoriale in Liguria",
+      "codice_ipa": "arlpt_",
+      "seed_domain": "lamialiguria.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
+    },
+    {
       "id": "IT-L10-epitc",
       "name": "Ente Provinciale per Il Turismo di Campobasso",
       "codice_ipa": "epitc",
@@ -2442,6 +2464,17 @@
       "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
+    },
+    {
+      "id": "IT-L11-aspmalo",
+      "name": "Autorità di Sistema Portuale del Mar Ligure Occidentale",
+      "codice_ipa": "aspmalo",
+      "seed_domain": "portsofgenoa.com",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
     },
     {
       "id": "IT-L12-7UG4CTPM",
@@ -2706,6 +2739,17 @@
       "old_mx": "comune-milano-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-milano-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
+      "id": "IT-L16-ftcfge",
+      "name": "Fondazione Teatro Carlo Felice",
+      "codice_ipa": "ftcfge",
+      "seed_domain": "teatrocarlofelice.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
     },
     {
       "id": "IT-L16-tcbdf",
@@ -3344,6 +3388,28 @@
       "old_mx": "alt1.aspmx.l.google.com",
       "old_provider": "google",
       "old_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google"
+    },
+    {
+      "id": "IT-L19-arlfa",
+      "name": "Agenzia regionale per il lavoro, la formazione e l'accreditamento",
+      "codice_ipa": "arlfa",
+      "seed_domain": "alfaliguria.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
+    },
+    {
+      "id": "IT-L2-arlpa_ge",
+      "name": "Agenzia Regionale per la Protezione dell'Ambiente Ligure",
+      "codice_ipa": "arlpa_ge",
+      "seed_domain": "arpal.liguria.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
     },
     {
       "id": "IT-L2-serspa",
@@ -5381,6 +5447,17 @@
       "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
+      "id": "IT-L7-alisa",
+      "name": "Azienda Tutela della Salute Liguria",
+      "codice_ipa": "alisa",
+      "seed_domain": "atsliguria.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
+    },
+    {
       "id": "IT-L8-ao_grum",
       "name": "Azienda Ospedaliera S.Pio- Benevento",
       "codice_ipa": "ao_grum",
@@ -5436,6 +5513,17 @@
       "old_reason": "MX record (comune-carbonia-su-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
+      "id": "IT-S01-7PJKGTET",
+      "name": "LIGURCAPITAL SPA",
+      "codice_ipa": "7pjkgtet",
+      "seed_domain": "ligurcapital.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
+    },
+    {
       "id": "IT-S01-arcsp",
       "name": "Autostrada Regionale Cispadana S.P.A.",
       "codice_ipa": "arcsp",
@@ -5445,6 +5533,39 @@
       "old_mx": "alt1.aspmx.l.google.com",
       "old_provider": "google",
       "old_reason": "MX record (alt1.aspmx.l.google.com, aspmx.l.google.com) matches Google"
+    },
+    {
+      "id": "IT-S01-data",
+      "name": "Liguria Digitale Spa",
+      "codice_ipa": "data",
+      "seed_domain": "liguriadigitale.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
+    },
+    {
+      "id": "IT-S01-fllse",
+      "name": "Finanziaria Ligure per Lo Sviluppo Economico S.P.A.",
+      "codice_ipa": "fllse",
+      "seed_domain": "filse.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
+    },
+    {
+      "id": "IT-S01-scs",
+      "name": "Societa' per Cornigliano Spa",
+      "codice_ipa": "scs",
+      "seed_domain": "percornigliano.it",
+      "claimed_domain": "comune.genova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "cloudscan12.ilger.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is ilger gateway; SPF+DKIM confirm microsoft"
     },
     {
       "id": "IT-S01-scshpsrl",

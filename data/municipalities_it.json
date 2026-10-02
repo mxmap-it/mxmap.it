@@ -77170,7 +77170,7 @@
     "country": "IT",
     "region": "Lombardia",
     "district": "Como",
-    "domain": "comunepeglio.co.it",
+    "domain": "comune.peglio.co.it",
     "osm_relation_id": 372555,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "c_g415",
@@ -180247,7 +180247,9 @@
     "district": null,
     "domain": "giordanicaserta.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "4YP9RIEW",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -180860,6 +180862,23 @@
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "078033",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L33-8OS22M9I",
+    "name": "ISTITUTO COMPRENSIVO GUBBIO 3",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "icgubbio3.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
+    "ipa_codice_ipa": "8OS22M9I",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "054024",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -316916,6 +316935,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-ZM4G6UVW",
+    "name": "I.C. Verga G. M. Zuppetta",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "icvergazuppetta.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "ZM4G6UVW",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "063049",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-ZT10KK35",
     "name": "Istituto Comprensivo Giovanni Lilliu",
     "country": "IT",
@@ -332572,6 +332606,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-C336IR5R",
+    "name": "CENTRO MARCHE ACQUE SRL",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "centromarcheacque.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "C336IR5R",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "042034",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-C34TCSBL",
     "name": "Azienda Sociale del Legnanese (So.Le.)",
     "country": "IT",
@@ -339299,6 +339348,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-OP8ADQA2",
+    "name": "AZIENDA SPECIALE CONSORTILE FIERA DI MORCONE E DELL'ALTO TAMMARO",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "fieradimorcone.com",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "OP8ADQA2",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "062044",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-oplgv",
     "name": "Opera Pia Leopoldo e Giovanni Vanni",
     "country": "IT",
@@ -340383,6 +340447,21 @@
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "063004",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L37-S3EUKFVX",
+    "name": "AZIENDA SOCIALE",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "aziendacastano.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "S3EUKFVX",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "015062",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -361444,21 +361523,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-SA-S3EUKFVX",
-    "name": "AZIENDA SOCIALE",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "aziendacastano.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [],
-    "ipa_codice_ipa": "S3EUKFVX",
-    "ipa_codice_categoria": "SA",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "015062",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-SA-S4WZR3UI",
     "name": "Fondo Formazione Italia - FondItalia",
     "country": "IT",
@@ -363685,21 +363749,6 @@
     "ipa_codice_categoria": "SAG",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "024116",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-SAG-C336IR5R",
-    "name": "CENTRO MARCHE ACQUE SRL",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "centromarcheacque.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [],
-    "ipa_codice_ipa": "C336IR5R",
-    "ipa_codice_categoria": "SAG",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "042034",
     "domain_source": "sito_istituzionale"
   },
   {

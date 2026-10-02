@@ -3,10 +3,10 @@
   {
    "cluster": "education",
    "label": "Istruzione (Scuole, Università, AFAM)",
-   "n": 8322,
-   "n_classified": 8273,
-   "isd": 21.37,
-   "cloud_act_pct": 78.28,
+   "n": 8324,
+   "n_classified": 8275,
+   "isd": 21.35,
+   "cloud_act_pct": 78.3,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -17,14 +17,14 @@
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 1253,
+     "count": 1254,
      "pct": 15.15
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 512,
-     "pct": 6.19
+     "count": 510,
+     "pct": 6.16
     },
     {
      "bucket": "Altri provider esteri",
@@ -35,8 +35,8 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 6476,
-     "pct": 78.28
+     "count": 6479,
+     "pct": 78.3
     },
     {
      "bucket": "Sconosciuto",
@@ -50,27 +50,27 @@
    "cluster": "territorial",
    "label": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
    "n": 8005,
-   "n_classified": 7869,
-   "isd": 73.53,
-   "cloud_act_pct": 26.15,
+   "n_classified": 7864,
+   "isd": 73.52,
+   "cloud_act_pct": 26.16,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 749,
-     "pct": 9.52
+     "count": 741,
+     "pct": 9.42
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 3221,
-     "pct": 40.93
+     "count": 3223,
+     "pct": 40.98
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 1816,
-     "pct": 23.08
+     "count": 1818,
+     "pct": 23.12
     },
     {
      "bucket": "Altri provider esteri",
@@ -81,14 +81,14 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 2058,
-     "pct": 26.15
+     "count": 2057,
+     "pct": 26.16
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 136,
-     "pct": 1.7
+     "count": 141,
+     "pct": 1.76
     }
    ]
   },
@@ -149,20 +149,20 @@
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 103,
-     "pct": 8.31
+     "count": 102,
+     "pct": 8.23
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 549,
-     "pct": 44.27
+     "count": 551,
+     "pct": 44.44
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 233,
-     "pct": 18.79
+     "count": 232,
+     "pct": 18.71
     },
     {
      "bucket": "Altri provider esteri",
@@ -187,55 +187,55 @@
   {
    "cluster": "soe",
    "label": "Società partecipate e fondazioni pubbliche",
-   "n": 1154,
-   "n_classified": 1091,
-   "isd": 49.95,
-   "cloud_act_pct": 49.22,
+   "n": 1157,
+   "n_classified": 1089,
+   "isd": 50.05,
+   "cloud_act_pct": 49.13,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 15,
-     "pct": 1.37
+     "count": 14,
+     "pct": 1.29
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 433,
-     "pct": 39.69
+     "count": 434,
+     "pct": 39.85
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
      "count": 97,
-     "pct": 8.89
+     "pct": 8.91
     },
     {
      "bucket": "Altri provider esteri",
      "group": "EST",
      "count": 9,
-     "pct": 0.82
+     "pct": 0.83
     },
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 537,
-     "pct": 49.22
+     "count": 535,
+     "pct": 49.13
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 63,
-     "pct": 5.46
+     "count": 68,
+     "pct": 5.88
     }
    ]
   },
   {
    "cluster": "procurement",
    "label": "Stazioni appaltanti",
-   "n": 619,
-   "n_classified": 603,
-   "isd": 47.76,
+   "n": 617,
+   "n_classified": 601,
+   "isd": 47.75,
    "cloud_act_pct": 51.41,
    "sovereignty": [
     {
@@ -248,13 +248,13 @@
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 224,
-     "pct": 37.15
+     "pct": 37.27
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 62,
-     "pct": 10.28
+     "count": 61,
+     "pct": 10.15
     },
     {
      "bucket": "Altri provider esteri",
@@ -265,14 +265,14 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 310,
+     "count": 309,
      "pct": 51.41
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
      "count": 16,
-     "pct": 2.58
+     "pct": 2.59
     }
    ]
   },
@@ -281,20 +281,20 @@
    "label": "Welfare, ASP/IPAB e case popolari",
    "n": 466,
    "n_classified": 437,
-   "isd": 68.42,
-   "cloud_act_pct": 31.12,
+   "isd": 67.96,
+   "cloud_act_pct": 31.35,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 18,
-     "pct": 4.12
+     "count": 17,
+     "pct": 3.89
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 248,
-     "pct": 56.75
+     "count": 247,
+     "pct": 56.52
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
@@ -305,14 +305,14 @@
     {
      "bucket": "Altri provider esteri",
      "group": "EST",
-     "count": 2,
-     "pct": 0.46
+     "count": 3,
+     "pct": 0.69
     },
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 136,
-     "pct": 31.12
+     "count": 137,
+     "pct": 31.35
     },
     {
      "bucket": "Sconosciuto",
@@ -372,27 +372,27 @@
    "cluster": "healthcare",
    "label": "Sanità (ASL, Aziende ospedaliere)",
    "n": 234,
-   "n_classified": 228,
-   "isd": 35.53,
-   "cloud_act_pct": 64.47,
+   "n_classified": 227,
+   "isd": 35.68,
+   "cloud_act_pct": 64.32,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
      "count": 12,
-     "pct": 5.26
+     "pct": 5.29
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 38,
-     "pct": 16.67
+     "pct": 16.74
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
      "count": 31,
-     "pct": 13.6
+     "pct": 13.66
     },
     {
      "bucket": "Altri provider esteri",
@@ -403,14 +403,14 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 147,
-     "pct": 64.47
+     "count": 146,
+     "pct": 64.32
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 6,
-     "pct": 2.56
+     "count": 7,
+     "pct": 2.99
     }
    ]
   },
@@ -464,27 +464,27 @@
    "cluster": "agencies",
    "label": "Agenzie regionali",
    "n": 76,
-   "n_classified": 69,
-   "isd": 46.38,
-   "cloud_act_pct": 53.62,
+   "n_classified": 66,
+   "isd": 43.94,
+   "cloud_act_pct": 56.06,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 8,
-     "pct": 11.59
+     "count": 6,
+     "pct": 9.09
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 16,
-     "pct": 23.19
+     "count": 14,
+     "pct": 21.21
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 8,
-     "pct": 11.59
+     "count": 9,
+     "pct": 13.64
     },
     {
      "bucket": "Altri provider esteri",
@@ -496,13 +496,13 @@
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 37,
-     "pct": 53.62
+     "pct": 56.06
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 7,
-     "pct": 9.21
+     "count": 10,
+     "pct": 13.16
     }
    ]
   },
@@ -602,21 +602,21 @@
    "cluster": "culture",
    "label": "Cultura (teatri, fondazioni)",
    "n": 29,
-   "n_classified": 28,
-   "isd": 46.43,
-   "cloud_act_pct": 53.57,
+   "n_classified": 27,
+   "isd": 44.44,
+   "cloud_act_pct": 55.56,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 1,
-     "pct": 3.57
+     "count": 0,
+     "pct": 0.0
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 12,
-     "pct": 42.86
+     "pct": 44.44
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
@@ -634,13 +634,13 @@
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 15,
-     "pct": 53.57
+     "pct": 55.56
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 1,
-     "pct": 3.45
+     "count": 2,
+     "pct": 6.9
     }
    ]
   },
@@ -648,27 +648,27 @@
    "cluster": "transport",
    "label": "Trasporti e porti",
    "n": 17,
-   "n_classified": 16,
-   "isd": 31.25,
-   "cloud_act_pct": 68.75,
+   "n_classified": 15,
+   "isd": 26.67,
+   "cloud_act_pct": 73.33,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
      "count": 1,
-     "pct": 6.25
+     "pct": 6.67
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 3,
-     "pct": 18.75
+     "pct": 20.0
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 1,
-     "pct": 6.25
+     "count": 0,
+     "pct": 0.0
     },
     {
      "bucket": "Altri provider esteri",
@@ -680,16 +680,16 @@
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 11,
-     "pct": 68.75
+     "pct": 73.33
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 1,
-     "pct": 5.88
+     "count": 2,
+     "pct": 11.76
     }
    ]
   }
  ],
- "generated": "2026-10-01T10:54:38Z"
+ "generated": "2026-10-02T11:01:12Z"
 }
