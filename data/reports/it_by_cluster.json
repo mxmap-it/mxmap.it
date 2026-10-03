@@ -1,15 +1,15 @@
 {
-  "total": 22908,
+  "total": 22911,
   "aggregate": {
     "providers": {
-      "microsoft": 3434,
-      "independent": 3038,
-      "local-isp": 1553,
-      "unknown": 649,
-      "google": 6453,
-      "aruba": 5134,
-      "regional-public": 915,
-      "register-it": 664,
+      "microsoft": 3445,
+      "independent": 3036,
+      "local-isp": 1554,
+      "unknown": 636,
+      "google": 6459,
+      "aruba": 5136,
+      "regional-public": 917,
+      "register-it": 663,
       "seeweb": 77,
       "ovh": 77,
       "ionos": 8,
@@ -19,9 +19,9 @@
       "zoho": 2,
       "infomaniak": 6,
       "hetzner": 30,
-      "istruzione-miur-tenant": 860
+      "istruzione-miur-tenant": 857
     },
-    "usa_share_pct": 43.18
+    "usa_share_pct": 43.25
   },
   "clusters": {
     "territoriale": {
@@ -29,16 +29,16 @@
       "label_en": "Territorial entities",
       "visualization": "map",
       "n": 8165,
-      "usa_share_pct": 25.62,
+      "usa_share_pct": 25.71,
       "providers": {
-        "microsoft": 1414,
+        "microsoft": 1421,
         "google": 676,
-        "regional-public": 748,
+        "regional-public": 746,
         "local-isp": 414,
         "aruba": 2440,
-        "independent": 1837,
-        "register-it": 424,
-        "unknown": 157,
+        "independent": 1836,
+        "register-it": 423,
+        "unknown": 154,
         "zoho": 2,
         "aws": 2,
         "ovh": 16,
@@ -60,14 +60,14 @@
         "L6": {
           "n": 8010,
           "providers": {
-            "microsoft": 1350,
+            "microsoft": 1357,
             "aruba": 2428,
-            "regional-public": 735,
-            "independent": 1824,
+            "regional-public": 733,
+            "independent": 1823,
             "local-isp": 397,
-            "register-it": 421,
+            "register-it": 420,
             "google": 649,
-            "unknown": 152,
+            "unknown": 149,
             "zoho": 2,
             "aws": 2,
             "ovh": 15,
@@ -110,19 +110,19 @@
       "label_it": "Istruzione",
       "label_en": "Education",
       "visualization": "map",
-      "n": 8324,
-      "usa_share_pct": 67.5,
+      "n": 8325,
+      "usa_share_pct": 67.57,
       "providers": {
-        "aruba": 827,
-        "independent": 510,
+        "aruba": 826,
+        "independent": 509,
         "microsoft": 577,
         "register-it": 28,
-        "google": 5042,
+        "google": 5048,
         "unknown": 49,
         "regional-public": 3,
         "local-isp": 391,
         "seeweb": 8,
-        "istruzione-miur-tenant": 860,
+        "istruzione-miur-tenant": 857,
         "hetzner": 27,
         "ovh": 1,
         "ionos": 1
@@ -164,13 +164,13 @@
           }
         },
         "L33": {
-          "n": 8088,
+          "n": 8089,
           "providers": {
-            "google": 4955,
-            "aruba": 786,
-            "independent": 498,
+            "google": 4961,
+            "aruba": 785,
+            "independent": 497,
             "microsoft": 512,
-            "istruzione-miur-tenant": 860,
+            "istruzione-miur-tenant": 857,
             "local-isp": 372,
             "hetzner": 27,
             "unknown": 42,
@@ -199,11 +199,11 @@
       "label_en": "Healthcare",
       "visualization": "map",
       "n": 234,
-      "usa_share_pct": 62.39,
+      "usa_share_pct": 62.82,
       "providers": {
         "aruba": 14,
-        "unknown": 7,
-        "microsoft": 114,
+        "unknown": 6,
+        "microsoft": 115,
         "google": 32,
         "regional-public": 12,
         "independent": 31,
@@ -232,13 +232,13 @@
         "L7": {
           "n": 115,
           "providers": {
-            "microsoft": 56,
+            "microsoft": 57,
             "local-isp": 9,
             "independent": 17,
             "google": 17,
             "register-it": 2,
             "aruba": 7,
-            "unknown": 2,
+            "unknown": 1,
             "regional-public": 5
           }
         },
@@ -328,12 +328,12 @@
         "microsoft": 220,
         "google": 236,
         "seeweb": 24,
-        "independent": 194,
+        "independent": 193,
         "aruba": 782,
         "register-it": 64,
         "local-isp": 332,
         "ovh": 43,
-        "unknown": 112,
+        "unknown": 113,
         "ionos": 5,
         "regional-public": 2,
         "aws": 2,
@@ -373,10 +373,10 @@
           "n": 80,
           "providers": {
             "google": 57,
-            "independent": 12,
+            "independent": 11,
             "local-isp": 4,
             "microsoft": 2,
-            "unknown": 2,
+            "unknown": 3,
             "aruba": 2,
             "register-it": 1
           }
@@ -515,10 +515,11 @@
         "register-it": 2,
         "microsoft": 31,
         "local-isp": 11,
-        "unknown": 6,
+        "unknown": 5,
         "google": 9,
         "independent": 1,
-        "seeweb": 1
+        "seeweb": 1,
+        "regional-public": 1
       },
       "categories": {
         "C7": {
@@ -539,9 +540,10 @@
           "providers": {
             "google": 3,
             "aruba": 2,
-            "unknown": 2,
+            "regional-public": 1,
             "microsoft": 2,
-            "local-isp": 3
+            "local-isp": 3,
+            "unknown": 1
           }
         },
         "L31": {
@@ -617,10 +619,11 @@
       "providers": {
         "microsoft": 8,
         "google": 3,
-        "unknown": 2,
+        "unknown": 1,
         "aruba": 2,
         "regional-public": 1,
-        "register-it": 1
+        "register-it": 1,
+        "independent": 1
       },
       "categories": {
         "L11": {
@@ -628,10 +631,11 @@
           "providers": {
             "microsoft": 8,
             "google": 3,
-            "unknown": 2,
+            "unknown": 1,
             "aruba": 2,
             "regional-public": 1,
-            "register-it": 1
+            "register-it": 1,
+            "independent": 1
           }
         }
       }
@@ -755,12 +759,12 @@
       "providers": {
         "google": 11,
         "independent": 8,
-        "unknown": 10,
+        "unknown": 7,
         "aruba": 8,
         "register-it": 1,
-        "local-isp": 4,
-        "microsoft": 21,
-        "regional-public": 3
+        "regional-public": 5,
+        "local-isp": 5,
+        "microsoft": 21
       },
       "categories": {
         "L10": {
@@ -768,9 +772,10 @@
           "providers": {
             "google": 6,
             "independent": 3,
-            "unknown": 4,
+            "unknown": 3,
             "aruba": 2,
             "register-it": 1,
+            "regional-public": 1,
             "local-isp": 1,
             "microsoft": 3
           }
@@ -781,7 +786,8 @@
             "aruba": 3,
             "microsoft": 2,
             "independent": 1,
-            "unknown": 2,
+            "unknown": 1,
+            "local-isp": 1,
             "google": 3,
             "regional-public": 2
           }
@@ -791,9 +797,9 @@
           "providers": {
             "microsoft": 16,
             "local-isp": 3,
-            "regional-public": 1,
+            "regional-public": 2,
             "independent": 4,
-            "unknown": 4,
+            "unknown": 3,
             "aruba": 3,
             "google": 2
           }
@@ -804,16 +810,16 @@
       "label_it": "Gestori di pubblici servizi",
       "label_en": "Public-service operators",
       "visualization": "table",
-      "n": 1221,
-      "usa_share_pct": 46.19,
+      "n": 1223,
+      "usa_share_pct": 46.36,
       "providers": {
-        "aruba": 298,
-        "microsoft": 428,
+        "aruba": 301,
+        "microsoft": 431,
         "independent": 103,
-        "unknown": 73,
+        "unknown": 68,
         "google": 135,
         "local-isp": 118,
-        "regional-public": 16,
+        "regional-public": 17,
         "register-it": 33,
         "seeweb": 6,
         "aws": 1,
@@ -822,9 +828,9 @@
       },
       "categories": {
         "C3": {
-          "n": 64,
+          "n": 65,
           "providers": {
-            "aruba": 13,
+            "aruba": 14,
             "microsoft": 20,
             "independent": 6,
             "unknown": 5,
@@ -835,12 +841,12 @@
           }
         },
         "L37": {
-          "n": 1025,
+          "n": 1026,
           "providers": {
             "google": 110,
             "independent": 84,
-            "aruba": 260,
-            "microsoft": 353,
+            "aruba": 262,
+            "microsoft": 352,
             "local-isp": 100,
             "seeweb": 6,
             "register-it": 32,
@@ -855,12 +861,12 @@
           "n": 128,
           "providers": {
             "google": 15,
-            "microsoft": 52,
+            "microsoft": 56,
             "aruba": 25,
-            "unknown": 8,
             "independent": 13,
+            "unknown": 3,
             "local-isp": 10,
-            "regional-public": 4,
+            "regional-public": 5,
             "ovh": 1
           }
         },

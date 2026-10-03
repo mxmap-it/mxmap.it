@@ -1,9 +1,9 @@
 # Anomalie — Osservatorio Sovranità PA (IT)
 
-**749 enti anomali** su 22908 (3.27%). Di cui 100 classificati ma anomali.
+**732 enti anomali** su 22911 (3.19%). Di cui 96 classificati ma anomali.
 
 | tipo | enti |
 |---|---:|
-| Nessun MX | 649 |
-| MX non geolocalizzato | 71 |
-| Bassa confidenza (<0,60) | 65 |
+| Nessun MX | 636 |
+| MX non geolocalizzato | 70 |
+| Bassa confidenza (<0,60) | 62 |

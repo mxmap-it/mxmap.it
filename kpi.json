@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-10-02T11:48:16Z",
+  "generated_at": "2026-10-03T11:00:12Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22908,
-    "n_with_mx": 22259,
-    "coverage_pct": 97.17
+    "n_entities": 22911,
+    "n_with_mx": 22275,
+    "coverage_pct": 97.22
   },
   "indices": {
-    "isd": 51.13,
-    "cloud_act_pct": 48.3,
-    "n_classified": 22259
+    "isd": 51.11,
+    "cloud_act_pct": 48.33,
+    "n_classified": 22275
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10754,
-      "pct": 46.9,
+      "count": 10768,
+      "pct": 47.0,
       "label": "Extra-UE (CLOUD Act)"
     },
     "eu_non_it": {
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11382,
+      "count": 11384,
       "pct": 49.7,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 649,
+      "count": 636,
       "pct": 2.8,
       "label": "Sconosciuto"
     }
@@ -38,37 +38,37 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7429,
+      "count": 7431,
       "pct": 32.4,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6453,
+      "count": 6459,
       "pct": 28.2,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4294,
-      "pct": 18.7,
+      "count": 4302,
+      "pct": 18.8,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3038,
+      "count": 3036,
       "pct": 13.3,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 915,
+      "count": 917,
       "pct": 4.0,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 649,
+      "count": 636,
       "pct": 2.8,
       "sovereignty": "unknown"
     },
@@ -94,14 +94,14 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8324,
-      "usa_pct": 77.8,
+      "n_entities": 8325,
+      "usa_pct": 77.9,
       "dominant_provider": "Google Workspace"
     },
     {
       "cluster": "Enti territoriali",
       "n_entities": 8005,
-      "usa_pct": 25.7,
+      "usa_pct": 25.8,
       "dominant_provider": "Provider Italiano"
     },
     {
@@ -118,8 +118,8 @@
     },
     {
       "cluster": "Gestori di pubblici servizi",
-      "n_entities": 1157,
-      "usa_pct": 46.2,
+      "n_entities": 1158,
+      "usa_pct": 46.5,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -143,13 +143,13 @@
     {
       "cluster": "Sanità",
       "n_entities": 234,
-      "usa_pct": 62.4,
+      "usa_pct": 62.8,
       "dominant_provider": "Microsoft 365"
     },
     {
       "cluster": "Previdenza e Assistenza Sociale",
-      "n_entities": 145,
-      "usa_pct": 46.9,
+      "n_entities": 146,
+      "usa_pct": 46.6,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8505,
-    "high_pct": 91.5
+    "mean": 0.8511,
+    "high_pct": 91.6
   }
 }
