@@ -81748,14 +81748,12 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "microsoft",
-      "domain": "comune.fontenuova.rm.it",
-      "confidence": 95,
+      "provider": "independent",
+      "domain": "cert.fonte-nuova.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-059001": {
@@ -122219,11 +122217,10 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "calabriaverde.regione.calabria.it",
-      "confidence": 78,
+      "domain": "pec.calabriaverde.eu",
+      "confidence": 50,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -134876,13 +134873,12 @@
     },
     "IT-L28-cisfa": {
       "name": "Consorzio Interuniversitario Scienze Fisiche Applicate",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "cisfa.net",
-      "confidence": 15,
+      "confidence": 50,
       "flags": [
-        "no_mx",
         "no_spf",
-        "provider_unknown"
+        "provider_classified"
       ]
     },
     "IT-L28-cniln": {
@@ -174494,13 +174490,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175997,7 +175993,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -228778,7 +228774,7 @@
     "IT-L34-XQZEJ3XC": {
       "name": "arciconfraternita sant'angelo dei rossi",
       "provider": "aruba",
-      "domain": "arciconfraternitadeiross.altervista.org",
+      "domain": "arciconfraternitadeirossi.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -261170,14 +261166,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {

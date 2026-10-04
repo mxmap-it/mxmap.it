@@ -1,5 +1,5 @@
 {
-  "n_purged": 513,
+  "n_purged": 512,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -3421,17 +3421,6 @@
       "old_mx": "cloudscan12.ilger.com",
       "old_provider": "microsoft",
       "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
-    },
-    {
-      "id": "IT-L28-cisfa",
-      "name": "Consorzio Interuniversitario Scienze Fisiche Applicate",
-      "codice_ipa": "cisfa",
-      "seed_domain": "cisfa.net",
-      "claimed_domain": "comune.messina.it",
-      "reject_reason": "unrelated",
-      "old_mx": "smtp.google.com",
-      "old_provider": "google",
-      "old_reason": "MX record (smtp.google.com) matches Google"
     },
     {
       "id": "IT-L28-inn",

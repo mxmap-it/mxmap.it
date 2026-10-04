@@ -2,12 +2,12 @@
   "total": 22911,
   "aggregate": {
     "providers": {
-      "microsoft": 3445,
-      "independent": 3036,
+      "microsoft": 3443,
+      "independent": 3038,
       "local-isp": 1554,
-      "unknown": 636,
-      "google": 6459,
-      "aruba": 5136,
+      "unknown": 635,
+      "google": 6458,
+      "aruba": 5137,
       "regional-public": 917,
       "register-it": 663,
       "seeweb": 77,
@@ -19,9 +19,9 @@
       "zoho": 2,
       "infomaniak": 6,
       "hetzner": 30,
-      "istruzione-miur-tenant": 857
+      "istruzione-miur-tenant": 858
     },
-    "usa_share_pct": 43.25
+    "usa_share_pct": 43.24
   },
   "clusters": {
     "territoriale": {
@@ -29,14 +29,14 @@
       "label_en": "Territorial entities",
       "visualization": "map",
       "n": 8165,
-      "usa_share_pct": 25.71,
+      "usa_share_pct": 25.7,
       "providers": {
-        "microsoft": 1421,
+        "microsoft": 1420,
         "google": 676,
         "regional-public": 746,
         "local-isp": 414,
         "aruba": 2440,
-        "independent": 1836,
+        "independent": 1837,
         "register-it": 423,
         "unknown": 154,
         "zoho": 2,
@@ -60,10 +60,10 @@
         "L6": {
           "n": 8010,
           "providers": {
-            "microsoft": 1357,
+            "microsoft": 1356,
             "aruba": 2428,
             "regional-public": 733,
-            "independent": 1823,
+            "independent": 1824,
             "local-isp": 397,
             "register-it": 420,
             "google": 649,
@@ -111,18 +111,18 @@
       "label_en": "Education",
       "visualization": "map",
       "n": 8325,
-      "usa_share_pct": 67.57,
+      "usa_share_pct": 67.56,
       "providers": {
         "aruba": 826,
-        "independent": 509,
+        "independent": 510,
         "microsoft": 577,
         "register-it": 28,
-        "google": 5048,
-        "unknown": 49,
+        "google": 5047,
+        "unknown": 48,
         "regional-public": 3,
         "local-isp": 391,
         "seeweb": 8,
-        "istruzione-miur-tenant": 857,
+        "istruzione-miur-tenant": 858,
         "hetzner": 27,
         "ovh": 1,
         "ionos": 1
@@ -154,23 +154,23 @@
         "L28": {
           "n": 30,
           "providers": {
-            "unknown": 6,
+            "unknown": 5,
             "microsoft": 6,
             "local-isp": 8,
             "google": 2,
             "seeweb": 1,
             "aruba": 5,
-            "independent": 2
+            "independent": 3
           }
         },
         "L33": {
           "n": 8089,
           "providers": {
-            "google": 4961,
+            "google": 4960,
             "aruba": 785,
             "independent": 497,
             "microsoft": 512,
-            "istruzione-miur-tenant": 857,
+            "istruzione-miur-tenant": 858,
             "local-isp": 372,
             "hetzner": 27,
             "unknown": 42,
@@ -884,11 +884,11 @@
       "label_en": "Procurement entities",
       "visualization": "table",
       "n": 617,
-      "usa_share_pct": 50.08,
+      "usa_share_pct": 49.92,
       "providers": {
         "google": 83,
-        "aruba": 146,
-        "microsoft": 226,
+        "aruba": 147,
+        "microsoft": 225,
         "register-it": 24,
         "independent": 61,
         "unknown": 16,
@@ -903,8 +903,8 @@
           "n": 474,
           "providers": {
             "google": 68,
-            "aruba": 116,
-            "microsoft": 167,
+            "aruba": 117,
+            "microsoft": 166,
             "register-it": 21,
             "independent": 43,
             "unknown": 12,

@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-10-03 10:59 UTC",
+ "generated_at": "2026-10-04 11:13 UTC",
  "country": "IT",
  "total_entities": 22911,
  "anomalies_total": 732,
  "anomalies_pct": 3.19,
  "by_type": {
-  "no_mx": 636,
+  "no_mx": 635,
   "geo_unknown": 70,
-  "low_confidence": 62
+  "low_confidence": 63
  },
  "by_type_label": {
   "no_mx": "Nessun MX",
@@ -15,12 +15,12 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 636,
-  "independent": 89,
+  "unknown": 635,
+  "independent": 90,
   "microsoft": 5,
   "google": 2
  },
- "classified_but_anomalous": 96,
+ "classified_but_anomalous": 97,
  "entries": [
   {
    "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
@@ -141,7 +141,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia Demanio provinciale",
@@ -152,7 +152,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Agenzia Regionale per Il Lavoro",
@@ -845,7 +845,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Centro di Formazione Professionale Brunico",
@@ -1065,7 +1065,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Ceav Onlus Cancro e Assistenza Volontaria",
@@ -1098,7 +1098,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Istituto Tecnico-professionale Regionale",
@@ -1136,17 +1136,6 @@
   {
    "name": "Consorzio Interuniversitario Regionale Pugliese",
    "domain": "cirp.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
-   "name": "Consorzio Interuniversitario Scienze Fisiche Applicate",
-   "domain": "cisfa.net",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -1714,7 +1703,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Corropoli",
@@ -1769,7 +1758,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Fumane",
@@ -1934,7 +1923,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Montanaro",
@@ -1978,7 +1967,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Palu'",
@@ -2374,7 +2363,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Tre Ville",
@@ -2814,7 +2803,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 5 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sesta Godano",
@@ -3243,7 +3232,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Consorzio Intercomunale del Montefeltro",
@@ -3815,7 +3804,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Scuola dell Infanzia Giandanese Bernini",
@@ -3903,7 +3892,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Istituto Comprensivo Bolzano 4 - Oltrisarco",
@@ -3914,7 +3903,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Istituzione Comunale Culturale",
@@ -3980,7 +3969,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Azienda Autonoma Soggiorno Cura e Turismo di Napoli",
@@ -6180,7 +6169,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Schulsprengel Tschoegglberg",
@@ -6257,7 +6246,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione di Comuni Lombarda Terra Dei Gonzaga",
@@ -6521,7 +6510,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione di Comunita' Collinare Roero Tartufo Ed Arneis",
@@ -7040,6 +7029,17 @@
    ],
    "mx": "mx1.hostinger.it",
    "reason": "MX (mx1.hostinger.it) is self-hosted"
+  },
+  {
+   "name": "Consorzio Interuniversitario Scienze Fisiche Applicate",
+   "domain": "cisfa.net",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "cisfa.net",
+   "reason": "MX (cisfa.net) is self-hosted"
   },
   {
    "name": "Comune di Acquafondata",
