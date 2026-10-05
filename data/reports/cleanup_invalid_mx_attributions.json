@@ -1,5 +1,5 @@
 {
-  "n_purged": 512,
+  "n_purged": 513,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1097,7 +1097,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "ms78257242.msv1.invalid",
+      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -4499,6 +4499,17 @@
       "old_mx": "comune-cuneo-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-cuneo-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
+      "id": "IT-L37-D1PM59HM",
+      "name": "ASPM SORESINA SERVIZI SRL",
+      "codice_ipa": "d1pm59hm",
+      "seed_domain": "solregina.it",
+      "claimed_domain": "comune.soresina.cr.it",
+      "reject_reason": "unrelated",
+      "old_mx": "lava.ildato.it",
+      "old_provider": "aruba",
+      "old_reason": "MX (lava.ildato.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-L37-J0L7PD4N",
