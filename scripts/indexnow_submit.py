@@ -41,10 +41,33 @@ ENDPOINT = "https://api.indexnow.org/indexnow"
 UA = "mxmap.it-indexnow/1.0 (+https://mxmap.it)"
 
 
-def fetch(url: str, timeout: int = 25) -> str:
+# Budget di tempo RIGIDI (resilienza, incidente 2026-10-05): il timeout di
+# urllib scatta solo su INATTIVITÀ del socket — una risposta che "gocciola"
+# byte può trascinarsi per decine di minuti senza mai andare in timeout, fino
+# a far uccidere il job dal timeout-minutes del workflow (run "cancelled" +
+# email rossa) per un problema transiente del CDN. Qui imponiamo un tetto
+# WALL-CLOCK per singolo file (lettura a chunk con scadenza) e un tetto
+# globale alla raccolta: oltre, si procede con la fetta PARZIALE raccolta —
+# il design a rotazione recupera da solo nei giorni successivi.
+RUN_BUDGET_S = 8 * 60  # ben sotto il timeout-minutes del workflow
+_RUN_DEADLINE = time.monotonic() + RUN_BUDGET_S
+
+
+def fetch(url: str, timeout: int = 20, per_file_budget_s: int = 75) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8", errors="ignore")
+        chunks: list[bytes] = []
+        deadline = time.monotonic() + per_file_budget_s
+        while True:
+            chunk = r.read(65536)
+            if not chunk:
+                break
+            chunks.append(chunk)
+            if time.monotonic() > deadline:
+                raise TimeoutError(
+                    f"fetch oltre il budget di {per_file_budget_s}s (risposta a goccia): {url}"
+                )
+        return b"".join(chunks).decode("utf-8", errors="ignore")
 
 
 _URL_RE = re.compile(
@@ -58,6 +81,14 @@ def collect_urls() -> dict[str, str]:
     if "<sitemapindex" in root:
         pages: dict[str, str] = {}
         for child in re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", root):
+            if time.monotonic() > _RUN_DEADLINE:
+                # Meglio una fetta parziale oggi che un job ucciso dal timeout:
+                # la rotazione ricopre tutto comunque nei giorni successivi.
+                print(
+                    f"::warning::budget di {RUN_BUDGET_S}s esaurito: procedo con "
+                    f"{len(pages)} URL raccolti, salto i figli rimanenti"
+                )
+                break
             try:
                 for loc, lm in _URL_RE.findall(fetch(child)):
                     pages[loc] = lm or ""

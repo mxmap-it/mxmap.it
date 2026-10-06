@@ -32,7 +32,11 @@ concurrency:
 jobs:
   submit:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # 2026-10-05: run ucciso a 15m02s ("All jobs were cancelled") da un hang
+    # transiente a risposta-goccia. Lo script ora ha budget wall-clock interni
+    # (8 min globali + 75s/file, vedi indexnow_submit.py) e chiude SEMPRE
+    # prima di questo tetto, che resta come cintura di sicurezza.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
       - name: Submit today's rolling slice to IndexNow
