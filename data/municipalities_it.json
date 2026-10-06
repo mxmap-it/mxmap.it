@@ -17541,7 +17541,9 @@
     "district": "L'Aquila",
     "domain": "comune.bugnara.aq.it",
     "osm_relation_id": 41683,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "comunedibugnara.it"
+    ],
     "ipa_codice_ipa": "c_b256",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "11117246",
@@ -211328,7 +211330,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "lenoci.edu.it",
+    "domain": "lenocieuclide.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -329346,6 +329348,21 @@
     "domain_override_source": "manual_llm_enrichment"
   },
   {
+    "id": "IT-L37-74DCZJ8D",
+    "name": "Mercurio Service S.p.A.",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "mercurioservice.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "74DCZJ8D",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "066049",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-79URAT5P",
     "name": "ACQUAENNA SCPA",
     "country": "IT",
@@ -359306,6 +359323,21 @@
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "058091",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SA-GIQCXIL5",
+    "name": "Fondazione per la Promozione dell'Università nel Ponente Ligure (P.U.PO.LI.)",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "imperia.unige.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "GIQCXIL5",
+    "ipa_codice_categoria": "SA",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "008031",
     "domain_source": "sito_istituzionale"
   },
   {

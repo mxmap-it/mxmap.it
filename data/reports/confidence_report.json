@@ -1,39 +1,39 @@
 {
   "country": "IT",
-  "n": 22911,
+  "n": 22913,
   "mean": 0.851,
   "median": 0.9,
   "mean_nonzero": 0.875,
   "buckets": {
-    "0.90-1.00 (molto alta)": 17380,
+    "0.90-1.00 (molto alta)": 17384,
     "0.80-0.89 (alta)": 3600,
     "0.00 (nulla / unknown)": 632,
-    "0.60-0.79 (media)": 1237,
-    "0.01-0.59 (bassa)": 62
+    "0.60-0.79 (media)": 1236,
+    "0.01-0.59 (bassa)": 61
   },
   "rules": {
-    "mx_spf": 17380,
-    "dom_mx_spf": 1742,
+    "mx_spf": 17384,
+    "dom_mx_spf": 1743,
     "no_mx": 632,
-    "mx_only": 1858,
-    "frgn_mx_spf": 989,
-    "dom_mx_only": 248,
-    "frgn_mx_only": 62
+    "mx_only": 1857,
+    "frgn_mx_spf": 987,
+    "dom_mx_only": 249,
+    "frgn_mx_only": 61
   },
   "jurisdiction": {
-    "foreign": 11461,
+    "foreign": 11463,
     "domestic": 10501,
     "mixed": 247,
     "unknown": 702
   },
   "domestic_mx_override": 196,
-  "bounce_candidates": 62,
+  "bounce_candidates": 61,
   "bounce_by_provider": {
-    "independent": 62
+    "independent": 61
   },
   "bounce_by_jurisdiction": {
     "unknown": 36,
-    "foreign": 26
+    "foreign": 25
   },
   "provider_confidence": {
     "microsoft": 0.929,

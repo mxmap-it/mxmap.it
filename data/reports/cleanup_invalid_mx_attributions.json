@@ -1,5 +1,5 @@
 {
-  "n_purged": 513,
+  "n_purged": 510,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -891,17 +891,6 @@
       "old_mx": "mx.comune.isernia.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comune.isernia.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
-    },
-    {
-      "id": "IT-C14-odar",
-      "name": "Ordine degli Avvocati di Roma",
-      "codice_ipa": "odar",
-      "seed_domain": "ordineavvocatiroma.it",
-      "claimed_domain": "comune.roma.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-roma-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-C14-odda_077",
@@ -3258,17 +3247,6 @@
       "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
     },
     {
-      "id": "IT-L18-umcn",
-      "name": "Unione Montana del Catria e Nerone",
-      "codice_ipa": "umcn",
-      "seed_domain": "unione.catrianerone.pu.it",
-      "claimed_domain": "comune.cagli.ps.it",
-      "reject_reason": "unrelated",
-      "old_mx": "orione.provincia.ps.it",
-      "old_provider": "regional-public",
-      "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
-    },
-    {
       "id": "IT-L18-umtv",
       "name": "Unione Montana del Tronto e Valfluvione",
       "codice_ipa": "umtv",
@@ -4279,17 +4257,6 @@
       "old_mx": "mx.zimbraopen.it",
       "old_provider": "microsoft",
       "old_reason": "MX is zimbraopen gateway; MS365 tenant detected (Managed)"
-    },
-    {
-      "id": "IT-L36-cim",
-      "name": "Consorzio Intercomunale del Montefeltro",
-      "codice_ipa": "cim",
-      "seed_domain": "consorziomontefeltro.it",
-      "claimed_domain": "comune.montecalvo.pu.it",
-      "reject_reason": "unrelated",
-      "old_mx": "orione.provincia.ps.it",
-      "old_provider": "regional-public",
-      "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
     },
     {
       "id": "IT-L36-cisps",

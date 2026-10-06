@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-10-05T12:02:42Z",
+  "generated_at": "2026-10-06T11:54:07Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22911,
-    "n_with_mx": 22279,
+    "n_entities": 22913,
+    "n_with_mx": 22281,
     "coverage_pct": 97.24
   },
   "indices": {
-    "isd": 51.12,
-    "cloud_act_pct": 48.31,
-    "n_classified": 22279
+    "isd": 51.11,
+    "cloud_act_pct": 48.33,
+    "n_classified": 22281
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10766,
+      "count": 10771,
       "pct": 47.0,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,7 +25,7 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11390,
+      "count": 11387,
       "pct": 49.7,
       "label": "Italiano"
     },
@@ -38,25 +38,25 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7433,
+      "count": 7431,
       "pct": 32.4,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6458,
+      "count": 6462,
       "pct": 28.2,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 4301,
+      "count": 4302,
       "pct": 18.8,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3041,
+      "count": 3040,
       "pct": 13.3,
       "sovereignty": "it"
     },
@@ -118,14 +118,14 @@
     },
     {
       "cluster": "Gestori di pubblici servizi",
-      "n_entities": 1158,
+      "n_entities": 1159,
       "usa_pct": 46.5,
       "dominant_provider": "Microsoft 365"
     },
     {
       "cluster": "Stazioni Appaltanti",
-      "n_entities": 617,
-      "usa_pct": 50.1,
+      "n_entities": 618,
+      "usa_pct": 50.2,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -143,7 +143,7 @@
     {
       "cluster": "Sanità",
       "n_entities": 234,
-      "usa_pct": 62.8,
+      "usa_pct": 63.2,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8512,
+    "mean": 0.8513,
     "high_pct": 91.6
   }
 }
