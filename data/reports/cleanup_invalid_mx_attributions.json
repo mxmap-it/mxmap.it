@@ -1,5 +1,5 @@
 {
-  "n_purged": 510,
+  "n_purged": 511,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -893,6 +893,17 @@
       "old_reason": "MX (mx.comune.isernia.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
+      "id": "IT-C14-odar",
+      "name": "Ordine degli Avvocati di Roma",
+      "codice_ipa": "odar",
+      "seed_domain": "ordineavvocatiroma.it",
+      "claimed_domain": "comune.roma.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-roma-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
       "id": "IT-C14-odda_077",
       "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Matera",
       "codice_ipa": "odda_077",
@@ -1086,7 +1097,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -1298,17 +1309,6 @@
       "old_mx": "mx.comunetorreberetti.pv.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comunetorreberetti.pv.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
-    },
-    {
-      "id": "IT-COM-019051",
-      "name": "Comune di Grumello Cremonese ed Uniti",
-      "codice_ipa": "c_e217",
-      "seed_domain": "grumellocremonese.it",
-      "claimed_domain": "comune.grumellocremoneseeduniti.cr.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx.comune.grumellocremoneseeduniti.cr.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx.comune.grumellocremoneseeduniti.cr.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-COM-022040",
@@ -3247,6 +3247,17 @@
       "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
     },
     {
+      "id": "IT-L18-umcn",
+      "name": "Unione Montana del Catria e Nerone",
+      "codice_ipa": "umcn",
+      "seed_domain": "unione.catrianerone.pu.it",
+      "claimed_domain": "comune.cagli.ps.it",
+      "reject_reason": "unrelated",
+      "old_mx": "orione.provincia.ps.it",
+      "old_provider": "regional-public",
+      "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
+    },
+    {
       "id": "IT-L18-umtv",
       "name": "Unione Montana del Tronto e Valfluvione",
       "codice_ipa": "umtv",
@@ -3984,17 +3995,6 @@
       "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
-      "id": "IT-L34-ipabcoc",
-      "name": "I.P.A.B. Casa di Ospitalita' Collereale",
-      "codice_ipa": "ipabcoc",
-      "seed_domain": "ipabcollereale.it",
-      "claimed_domain": "comune.messina.it",
-      "reject_reason": "unrelated",
-      "old_mx": "smtp.google.com",
-      "old_provider": "google",
-      "old_reason": "MX record (smtp.google.com) matches Google"
-    },
-    {
       "id": "IT-L34-irsbs",
       "name": "Ipab Residence Salvatore Bellia San Luigi Gonzaga Costanzo Cutore",
       "codice_ipa": "irsbs",
@@ -4257,6 +4257,17 @@
       "old_mx": "mx.zimbraopen.it",
       "old_provider": "microsoft",
       "old_reason": "MX is zimbraopen gateway; MS365 tenant detected (Managed)"
+    },
+    {
+      "id": "IT-L36-cim",
+      "name": "Consorzio Intercomunale del Montefeltro",
+      "codice_ipa": "cim",
+      "seed_domain": "consorziomontefeltro.it",
+      "claimed_domain": "comune.montecalvo.pu.it",
+      "reject_reason": "unrelated",
+      "old_mx": "orione.provincia.ps.it",
+      "old_provider": "regional-public",
+      "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
     },
     {
       "id": "IT-L36-cisps",

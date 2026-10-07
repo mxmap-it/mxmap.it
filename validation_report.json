@@ -14049,7 +14049,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "na.archiworld.it",
+      "domain": "napoli.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -14379,13 +14379,13 @@
     },
     "IT-C14-odar": {
       "name": "Ordine degli Avvocati di Roma",
-      "provider": "independent",
-      "domain": "ordineavvocatiroma.org",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "ordineavvocatiroma.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-odari": {
@@ -29051,13 +29051,15 @@
     },
     "IT-COM-001274": {
       "name": "Comune di Torre Canavese",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "torrecanavese.piemonte.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-001275": {
@@ -55611,13 +55613,15 @@
     },
     "IT-COM-019051": {
       "name": "Comune di Grumello Cremonese ed Uniti",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "grumellocremonese.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-019052": {
@@ -73210,11 +73214,12 @@
     },
     "IT-COM-041067": {
       "name": "Comune di Urbino",
-      "provider": "independent",
-      "domain": "comune.urbino.pu.it",
-      "confidence": 50,
+      "provider": "regional-public",
+      "domain": "comune.urbino.ps.it",
+      "confidence": 90,
       "flags": [
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -137318,12 +137323,11 @@
     },
     "IT-L33-IBUHKTB1": {
       "name": "IC PARINI BERLINGUER",
-      "provider": "local-isp",
+      "provider": "google",
       "domain": "icpariniberlinguer.edu.it",
-      "confidence": 88,
+      "confidence": 68,
       "flags": [
         "spf_softfail",
-        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -163397,13 +163401,13 @@
     },
     "IT-L33-istsc_boic82800e": {
       "name": "ISTITUTO COMPRENSIVO - IC DI OZZANO DELL'EMILIA",
-      "provider": "google",
-      "domain": "icozzano.istruzioneer.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icozzano.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -174490,13 +174494,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175993,7 +175997,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -232691,13 +232695,14 @@
     },
     "IT-L34-ipabcoc": {
       "name": "I.P.A.B. Casa di Ospitalita' Collereale",
-      "provider": "unknown",
-      "domain": "ipabcollereale.it",
-      "confidence": 15,
+      "provider": "aruba",
+      "domain": "collereale.it",
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L34-ipabl": {
@@ -243681,7 +243686,7 @@
     "IT-L37-asaspa": {
       "name": "PLURES S.P.A.",
       "provider": "microsoft",
-      "domain": "aliaserviziambientali.it",
+      "domain": "plures.aliaserviziambientali.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -256168,12 +256173,11 @@
     },
     "IT-L8-aouora": {
       "name": "Azienda ospedaliero-universitaria delle Marche",
-      "provider": "google",
-      "domain": "portale.ospedaliriuniti.marche.it",
-      "confidence": 93,
+      "provider": "independent",
+      "domain": "emarche.it",
+      "confidence": 90,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -261181,14 +261185,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {

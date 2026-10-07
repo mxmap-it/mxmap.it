@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-06 11:53 UTC",
+ "generated_at": "2026-10-07 11:37 UTC",
  "country": "IT",
  "total_entities": 22913,
- "anomalies_total": 727,
- "anomalies_pct": 3.17,
+ "anomalies_total": 725,
+ "anomalies_pct": 3.16,
  "by_type": {
-  "no_mx": 632,
+  "no_mx": 630,
   "geo_unknown": 70,
   "low_confidence": 61
  },
@@ -15,7 +15,7 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 632,
+  "unknown": 630,
   "independent": 88,
   "microsoft": 5,
   "google": 2
@@ -702,7 +702,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Azienda Speciale Vola",
@@ -1065,7 +1065,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Ceav Onlus Cancro e Assistenza Volontaria",
@@ -1307,7 +1307,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Collegio Delle Ostetriche della Provincia di Mantova",
@@ -1516,7 +1516,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 4 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Caerano di San Marco",
@@ -1791,7 +1791,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 5 candidates; none yielded MX"
   },
   {
    "name": "Comune di Lapedona",
@@ -1802,7 +1802,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Loano",
@@ -1824,7 +1824,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Maenza",
@@ -1846,7 +1846,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Marano Equo",
@@ -1857,7 +1857,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Marrubiu",
@@ -1934,7 +1934,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Omignano",
@@ -1978,7 +1978,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Pietracupa",
@@ -2352,7 +2352,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Tusa",
@@ -2550,7 +2550,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Amministrazione Separata Beni Uso Civico Dobbiaco",
@@ -2649,7 +2649,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Picciano",
@@ -3210,7 +3210,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Progetto Solidarieta'",
@@ -3639,7 +3639,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Consorzio Acquedotto Intercomunale del Peschiera",
@@ -3787,17 +3787,6 @@
   {
    "name": "Consorzio per La Valorizzazione e Conservazione Delle Grotte di Pastena e Collepardo",
    "domain": "grottepastenacollepardo.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
-   "name": "Comune di Grumello Cremonese ed Uniti",
-   "domain": "grumellocremonese.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -4005,17 +3994,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "I.P.A.B. Casa di Ospitalita' Collereale",
-   "domain": "ipabcollereale.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
    "name": "Ipab Ss. Annunziata",
    "domain": "ipabsantissimannunziata.it",
    "provider": "unknown",
@@ -4079,7 +4057,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 4 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Istituto Comprensivo di Scuola Primaria e Secondaria di Primo Grado Rovereto - Sud Via Benacense, 32",
@@ -4398,7 +4376,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Istituzione Scolastica Unite Des Communes Valdotaines Mont Emilius 1",
@@ -4645,6 +4623,17 @@
   {
    "name": "Consiglio dell'Ordine Degli Avvocati di Orvieto",
    "domain": "ordineavvocatiorvieto.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
+   "name": "Ordine degli Avvocati di Roma",
+   "domain": "ordineavvocatiroma.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -5762,7 +5751,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia Regionale Conservatoria Delle Coste della Sardegna",
@@ -6205,17 +6194,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "Comune di Torre Canavese",
-   "domain": "torrecanavese.piemonte.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
    "name": "Unione di Comuni Lombarda Terra Dei Gonzaga",
    "domain": "trasparenza.unioneterradeigonzaga.it",
    "provider": "unknown",
@@ -6235,7 +6213,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Ordine dei Tecnici Sanitari di Radiologia Medica, e delle Professioni Sanitarie Tecniche, della Riabilitazione e della Prevenzione della Provincia di Enna",
@@ -6367,7 +6345,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Montana del Tronto e Valfluvione",
@@ -6466,7 +6444,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione Collinare Canavesana",
@@ -6477,7 +6455,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione di Comunita' Collinare Roero Tartufo Ed Arneis",
@@ -6675,7 +6653,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione di Comuni Lombarda di Lomello e Galliavola",
