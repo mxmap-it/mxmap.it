@@ -14248,9 +14248,7 @@
     "district": "Viterbo",
     "domain": "comune.bomarzo.vt.it",
     "osm_relation_id": 42052,
-    "domain_fallbacks": [
-      "comunebomarzo.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_a955",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "703245",
@@ -99838,7 +99836,7 @@
     "country": "IT",
     "region": "Veneto",
     "district": "Verona",
-    "domain": "comunesanzenodimontagna.it",
+    "domain": "comune.sanzenodimontagna.vr.it",
     "osm_relation_id": 45538,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "c_i414",
@@ -133232,6 +133230,23 @@
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "035033",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-C14-cns",
+    "name": "Consiglio Notarile di Sondrio",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "consiglionotarilesondrio.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "notariato.it"
+    ],
+    "ipa_codice_ipa": "cns",
+    "ipa_codice_categoria": "C14",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "014061",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -177182,21 +177197,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-L19-armoli",
-    "name": "Agenzia Regionale Molise Lavoro",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "moliselavoro.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [],
-    "ipa_codice_ipa": "armoli",
-    "ipa_codice_categoria": "L19",
-    "ipa_codice_istat": "21321543",
-    "ipa_codice_comune_istat": "070006",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-L19-arpal",
     "name": "Agenzia Regionale per Le Politiche Attive del Lavoro - Arpal Umbria",
     "country": "IT",
@@ -206191,7 +206191,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "liceostabilitrebbiani.it",
+    "domain": "liceostabilitrebbiani.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"

@@ -2,12 +2,12 @@
   "total": 22913,
   "aggregate": {
     "providers": {
-      "microsoft": 3444,
-      "independent": 3041,
+      "microsoft": 3445,
+      "independent": 3039,
       "local-isp": 1553,
-      "unknown": 630,
-      "google": 6460,
-      "aruba": 5138,
+      "unknown": 631,
+      "google": 6462,
+      "aruba": 5136,
       "regional-public": 917,
       "register-it": 663,
       "seeweb": 77,
@@ -21,7 +21,7 @@
       "hetzner": 30,
       "istruzione-miur-tenant": 859
     },
-    "usa_share_pct": 43.25
+    "usa_share_pct": 43.26
   },
   "clusters": {
     "territoriale": {
@@ -29,16 +29,16 @@
       "label_en": "Territorial entities",
       "visualization": "map",
       "n": 8165,
-      "usa_share_pct": 25.68,
+      "usa_share_pct": 25.71,
       "providers": {
-        "microsoft": 1420,
-        "google": 675,
+        "microsoft": 1421,
+        "google": 676,
         "regional-public": 746,
         "local-isp": 414,
-        "aruba": 2441,
-        "independent": 1842,
+        "aruba": 2440,
+        "independent": 1840,
         "register-it": 423,
-        "unknown": 149,
+        "unknown": 150,
         "zoho": 2,
         "aws": 2,
         "ovh": 16,
@@ -60,14 +60,14 @@
         "L6": {
           "n": 8010,
           "providers": {
-            "microsoft": 1356,
-            "aruba": 2429,
+            "microsoft": 1357,
+            "aruba": 2428,
             "regional-public": 733,
-            "independent": 1829,
+            "independent": 1827,
             "local-isp": 397,
             "register-it": 420,
-            "google": 648,
-            "unknown": 144,
+            "google": 649,
+            "unknown": 145,
             "zoho": 2,
             "aws": 2,
             "ovh": 15,
@@ -111,13 +111,13 @@
       "label_en": "Education",
       "visualization": "map",
       "n": 8325,
-      "usa_share_pct": 67.58,
+      "usa_share_pct": 67.59,
       "providers": {
-        "aruba": 826,
+        "aruba": 825,
         "independent": 508,
         "microsoft": 577,
         "register-it": 28,
-        "google": 5049,
+        "google": 5050,
         "unknown": 48,
         "regional-public": 3,
         "local-isp": 390,
@@ -166,8 +166,8 @@
         "L33": {
           "n": 8089,
           "providers": {
-            "google": 4962,
-            "aruba": 785,
+            "google": 4963,
+            "aruba": 784,
             "independent": 495,
             "microsoft": 512,
             "istruzione-miur-tenant": 859,
@@ -322,14 +322,14 @@
       "label_it": "Ordini professionali e Camere",
       "label_en": "Professional orders & chambers",
       "visualization": "table",
-      "n": 2017,
-      "usa_share_pct": 22.71,
+      "n": 2018,
+      "usa_share_pct": 22.7,
       "providers": {
         "microsoft": 220,
         "google": 236,
         "seeweb": 24,
         "independent": 193,
-        "aruba": 782,
+        "aruba": 783,
         "register-it": 64,
         "local-isp": 332,
         "ovh": 43,
@@ -352,9 +352,9 @@
           }
         },
         "C14": {
-          "n": 1836,
+          "n": 1837,
           "providers": {
-            "aruba": 778,
+            "aruba": 779,
             "microsoft": 214,
             "independent": 178,
             "local-isp": 328,
@@ -754,13 +754,13 @@
       "label_it": "Agenzie regionali (formazione, lavoro, turismo)",
       "label_en": "Regional agencies",
       "visualization": "table",
-      "n": 66,
-      "usa_share_pct": 48.48,
+      "n": 65,
+      "usa_share_pct": 49.23,
       "providers": {
         "google": 11,
         "independent": 8,
         "unknown": 7,
-        "aruba": 8,
+        "aruba": 7,
         "register-it": 1,
         "regional-public": 5,
         "local-isp": 5,
@@ -781,9 +781,9 @@
           }
         },
         "L19": {
-          "n": 13,
+          "n": 12,
           "providers": {
-            "aruba": 3,
+            "aruba": 2,
             "microsoft": 2,
             "independent": 1,
             "unknown": 1,
