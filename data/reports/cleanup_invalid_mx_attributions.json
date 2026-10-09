@@ -1,5 +1,5 @@
 {
-  "n_purged": 511,
+  "n_purged": 510,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1097,7 +1097,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "ms78257242.msv1.invalid",
+      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -5456,17 +5456,6 @@
       "old_mx": "comune-milano-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-milano-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
-      "id": "IT-SA-4QYODNC5",
-      "name": "MIRABILIA NETWORK",
-      "codice_ipa": "4qyodnc5",
-      "seed_domain": "mirabilianetwork.eu",
-      "claimed_domain": "comune.roma.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-roma-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-SA-D2KJJHNO",
