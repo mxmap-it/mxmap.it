@@ -1,5 +1,5 @@
 {
-  "total": 22913,
+  "total": 22915,
   "average_score": 80.8,
   "high_confidence_pct": 74.0,
   "quality_passed": false,
@@ -2875,9 +2875,9 @@
       "name": "Collegio Dei Geometri e Dei Geometri Laureati della Provincia del Verbano Cusio Ossola",
       "provider": "google",
       "domain": "geometri.verbania.it",
-      "confidence": 90,
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified",
         "provider_via_gateway_spf"
@@ -7533,14 +7533,13 @@
     },
     "IT-C14-cop_pe": {
       "name": "Ordine della professione di Ostetrica della Provincia di Pescara",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "fnco.it",
-      "confidence": 55,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
+        "no_mx",
         "no_spf",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_unknown"
       ]
     },
     "IT-C14-copag_bg": {
@@ -8794,9 +8793,10 @@
       "name": "Collegio Provinciale Geometri e Geometri Laureati di Latina",
       "provider": "independent",
       "domain": "geometrilatina.it",
-      "confidence": 90,
+      "confidence": 95,
       "flags": [
         "multiple_mx",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified",
         "provider_via_gateway_spf"
@@ -26046,9 +26046,8 @@
       "name": "Comune di Avigliana",
       "provider": "independent",
       "domain": "comune.avigliana.to.it",
-      "confidence": 95,
+      "confidence": 90,
       "flags": [
-        "multiple_mx",
         "spf_strict",
         "mx_spf_match",
         "provider_classified",
@@ -28472,14 +28471,13 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 93,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-001224": {
@@ -30131,12 +30129,12 @@
     },
     "IT-COM-002096": {
       "name": "Comune di Pila",
-      "provider": "regional-public",
-      "domain": "comune.pila.vc.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -30875,13 +30873,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -31553,15 +31551,13 @@
     },
     "IT-COM-004002": {
       "name": "Comune di Aisone",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "comune.aisone.cn.it",
-      "confidence": 93,
+      "confidence": 88,
       "flags": [
-        "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-004003": {
@@ -31591,12 +31587,12 @@
     },
     "IT-COM-004005": {
       "name": "Comune di Alto",
-      "provider": "regional-public",
-      "domain": "comune.alto.cn.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -31779,14 +31775,12 @@
     },
     "IT-COM-004021": {
       "name": "Comune di Bergolo",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "comune.bergolo.cn.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-004022": {
@@ -31847,7 +31841,6 @@
         "spf_strict",
         "mx_spf_match",
         "provider_classified",
-        "provider_via_gateway_spf",
         "autodiscover_confirms"
       ]
     },
@@ -33262,14 +33255,12 @@
     },
     "IT-COM-004150": {
       "name": "Comune di Niella Belbo",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "comune.niellabelbo.cn.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-004151": {
@@ -33366,9 +33357,8 @@
       "name": "Comune di Pamparato",
       "provider": "independent",
       "domain": "comune.pamparato.cn.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
         "provider_classified",
         "provider_via_gateway_spf"
@@ -33701,12 +33691,12 @@
     },
     "IT-COM-004188": {
       "name": "Comune di Rocca Ciglie'",
-      "provider": "regional-public",
-      "domain": "comune.roccaciglie.cn.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -35766,13 +35756,13 @@
     },
     "IT-COM-006002": {
       "name": "Comune di Albera Ligure",
-      "provider": "unknown",
-      "domain": "comune.alberaligure.al.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-006003": {
@@ -39239,14 +39229,12 @@
     },
     "IT-COM-008035": {
       "name": "Comune di Molini di Triora",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "comune.moliniditriora.im.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-008037": {
@@ -39285,14 +39273,12 @@
     },
     "IT-COM-008040": {
       "name": "Comune di Perinaldo",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "comune.perinaldo.im.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-008041": {
@@ -39670,9 +39656,8 @@
       "name": "Comune di Altare",
       "provider": "independent",
       "domain": "comune.altare.sv.it",
-      "confidence": 93,
+      "confidence": 88,
       "flags": [
-        "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
         "provider_classified",
@@ -40060,14 +40045,12 @@
     },
     "IT-COM-009039": {
       "name": "Comune di Mioglia",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "comune.mioglia.sv.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-009040": {
@@ -40666,9 +40649,8 @@
       "name": "Comune di Fascia",
       "provider": "microsoft",
       "domain": "comune.fascia.ge.it",
-      "confidence": 100,
+      "confidence": 95,
       "flags": [
-        "multiple_mx",
         "spf_strict",
         "mx_spf_match",
         "provider_classified",
@@ -64645,13 +64627,13 @@
     },
     "IT-COM-026090": {
       "name": "Comune di Vidor",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.vidor.tv.it",
-      "confidence": 15,
+      "confidence": 85,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-026091": {
@@ -74988,12 +74970,12 @@
     },
     "IT-COM-046003": {
       "name": "Comune di Barga",
-      "provider": "local-isp",
+      "provider": "aruba",
       "domain": "comune.barga.lu.it",
-      "confidence": 55,
+      "confidence": 90,
       "flags": [
-        "multiple_mx",
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -87314,13 +87296,12 @@
     },
     "IT-COM-064093": {
       "name": "Comune di Santa Paolina",
-      "provider": "unknown",
+      "provider": "register-it",
       "domain": "comunesantapaolina.gov.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-064095": {
@@ -90491,13 +90472,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -96248,7 +96228,7 @@
     },
     "IT-COM-075053": {
       "name": "Comune di Neviano",
-      "provider": "local-isp",
+      "provider": "independent",
       "domain": "comunenevianodilecce.it",
       "confidence": 50,
       "flags": [
@@ -98127,15 +98107,13 @@
     },
     "IT-COM-077020": {
       "name": "Comune di Pisticci",
-      "provider": "aruba",
-      "domain": "comunedipisticci.it",
-      "confidence": 73,
+      "provider": "regional-public",
+      "domain": "comune.pisticci.mt.it",
+      "confidence": 90,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "multi_provider_spf:aruba+google",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-077021": {
@@ -99202,9 +99180,8 @@
       "name": "Comune di Morano Calabro",
       "provider": "independent",
       "domain": "comune.moranocalabro.cs.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
         "provider_classified",
         "provider_via_gateway_spf"
@@ -102491,7 +102468,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -104589,10 +104566,10 @@
       "name": "Comune di Agrigento",
       "provider": "local-isp",
       "domain": "comune.agrigento.it",
-      "confidence": 90,
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -108551,13 +108528,11 @@
     "IT-COM-096077": {
       "name": "Comune di Vigliano Biellese",
       "provider": "aruba",
-      "domain": "comune.vigliano.bi.it",
-      "confidence": 83,
+      "domain": "pec.vigliano.info",
+      "confidence": 68,
       "flags": [
         "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "provider_classified"
       ]
     },
     "IT-COM-096078": {
@@ -108658,9 +108633,8 @@
       "name": "Comune di Quaregna Cerreto",
       "provider": "independent",
       "domain": "comune.quaregnacerreto.bi.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
         "provider_classified",
         "provider_via_gateway_spf"
@@ -112392,12 +112366,12 @@
     },
     "IT-COM-103061": {
       "name": "Comune di San Bernardino Verbano",
-      "provider": "regional-public",
-      "domain": "comune.sanbernardinoverbano.vb.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -116529,12 +116503,11 @@
     },
     "IT-COM-116003": {
       "name": "Comune di Baunei",
-      "provider": "local-isp",
+      "provider": "aruba",
       "domain": "comunedibaunei.it",
-      "confidence": 93,
+      "confidence": 90,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -116673,14 +116646,15 @@
     },
     "IT-COM-116015": {
       "name": "Comune di Talana",
-      "provider": "independent",
-      "domain": "comune.talana.nu.it",
+      "provider": "google",
+      "domain": "comune.talana.og.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
         "spf_strict",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-116016": {
@@ -117339,13 +117313,14 @@
     "IT-COM-118023": {
       "name": "Comune di Guasila",
       "provider": "independent",
-      "domain": "comune.guasila.su.it",
+      "domain": "comune.guasila.ca.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
         "spf_strict",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-118024": {
@@ -119017,7 +118992,7 @@
     "IT-CONS-cidssos": {
       "name": "Consorzio Intercomunale Dei Servizi Sociali - Ciss Ossola",
       "provider": "aruba",
-      "domain": "cissossola.it",
+      "domain": "ciss-ossola.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -119720,9 +119695,8 @@
       "name": "Consorzio Valmastallone Valsesia",
       "provider": "independent",
       "domain": "consorziovalmastallone.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
         "provider_classified",
         "provider_via_gateway_spf"
@@ -120032,6 +120006,17 @@
         "mx_spf_match",
         "provider_classified",
         "provider_via_gateway_spf"
+      ]
+    },
+    "IT-L1-0B113W3L": {
+      "name": "Istituto Regionale per il Credito Agevolato",
+      "provider": "local-isp",
+      "domain": "ircasicilia.it",
+      "confidence": 78,
+      "flags": [
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-L1-4FTGOO9Q": {
@@ -122193,11 +122178,10 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "calabriaverde.regione.calabria.it",
-      "confidence": 78,
+      "domain": "pec.calabriaverde.eu",
+      "confidence": 50,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -125917,8 +125901,7 @@
       "flags": [
         "spf_strict",
         "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "smtp_suggests:microsoft"
+        "provider_classified"
       ]
     },
     "IT-L12-cmdf": {
@@ -130518,7 +130501,7 @@
     "IT-L18-udccs": {
       "name": "Unione Dei Comuni Costa del Sinis Terra Dei Giganti",
       "provider": "aruba",
-      "domain": "unionesinisgiganti.it",
+      "domain": "pec.unionesinisgiganti.it",
       "confidence": 68,
       "flags": [
         "spf_softfail",
@@ -142079,10 +142062,11 @@
       "name": "Istituto Comprensivo-lavis",
       "provider": "google",
       "domain": "iclavis.it",
-      "confidence": 75,
+      "confidence": 95,
       "flags": [
         "multiple_mx",
         "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -142944,10 +142928,10 @@
       "name": "Istituto Comprensivo di Cavalese",
       "provider": "google",
       "domain": "iccavalese.it",
-      "confidence": 93,
+      "confidence": 95,
       "flags": [
         "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -149244,13 +149228,13 @@
     },
     "IT-L33-idissp": {
       "name": "Istituto D'Istruzione Secondaria Superiore Pilla",
-      "provider": "google",
+      "provider": "istruzione-miur-tenant",
       "domain": "pillacb.edu.it",
-      "confidence": 93,
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -150945,13 +150929,13 @@
     },
     "IT-L33-iissrefg": {
       "name": "I.I.S.S. Roncalli-fermi-rotundi-euclide",
-      "provider": "istruzione-miur-tenant",
+      "provider": "google",
       "domain": "roncalliweb.edu.it",
-      "confidence": 80,
+      "confidence": 55,
       "flags": [
+        "multiple_mx",
         "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -174450,13 +174434,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175952,7 +175936,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -189314,7 +189298,7 @@
     },
     "IT-L33-istsc_mois00800b": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO SUPERIORE STATALE'G. GALILEI'",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "galileimirandola.edu.it",
       "confidence": 88,
       "flags": [
@@ -190110,13 +190094,13 @@
     },
     "IT-L33-istsc_mtpm01000g": {
       "name": "ISTITUTO MAGISTRALE - 'T. STIGLIANI'",
-      "provider": "microsoft",
+      "provider": "google",
       "domain": "liceotommasostigliani.edu.it",
-      "confidence": 85,
+      "confidence": 88,
       "flags": [
+        "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_mtps01000e": {
@@ -194640,11 +194624,11 @@
       "name": "ISTITUTO COMPRENSIVO - NUORO 2 - 'PIETRO BORROTZU'",
       "provider": "google",
       "domain": "ic2nuoro.edu.it",
-      "confidence": 53,
+      "confidence": 93,
       "flags": [
         "multiple_mx",
         "spf_softfail",
-        "mx_spf_mismatch",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -195210,9 +195194,10 @@
       "name": "ISTITUTO COMPRENSIVO - I.C. ALTAVILLA MILICIA",
       "provider": "microsoft",
       "domain": "icaltavillamilicia.edu.it",
-      "confidence": 73,
+      "confidence": 95,
       "flags": [
-        "spf_softfail",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
       ]
@@ -197917,16 +197902,15 @@
     },
     "IT-L33-istsc_pdis02300e": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - 'G.B.FERRARI'",
-      "provider": "microsoft",
+      "provider": "google",
       "domain": "iisgbferrari.edu.it",
-      "confidence": 88,
+      "confidence": 83,
       "flags": [
         "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
         "multi_provider_spf:google+microsoft",
-        "provider_classified",
-        "autodiscover_confirms"
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_pdis02400a": {
@@ -205741,11 +205725,12 @@
     },
     "IT-L33-istsc_rips070005": {
       "name": "LICEO SCIENTIFICO - LICEO ST. CLASSICO SCIENTIFICO L. ROCCI",
-      "provider": "independent",
-      "domain": "liceorocci.it",
-      "confidence": 85,
+      "provider": "google",
+      "domain": "liceorocci.edu.it",
+      "confidence": 55,
       "flags": [
-        "mx_spf_match",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -232212,7 +232197,7 @@
     "IT-L34-icriv": {
       "name": "A.P.S.P. \"CASE DI RIPOSO DI SOLERO\"",
       "provider": "aruba",
-      "domain": "casadiripososolero.it",
+      "domain": "casediripososolero.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -233021,15 +233006,15 @@
     },
     "IT-L34-ivsvi": {
       "name": "Ipab Villa Serena",
-      "provider": "google",
+      "provider": "microsoft",
       "domain": "villaserena-solagna.it",
       "confidence": 85,
       "flags": [
-        "multiple_mx",
         "spf_strict",
         "mx_spf_match",
         "multi_provider_spf:google+microsoft",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L34-lacasa": {
@@ -235803,9 +235788,8 @@
       "name": "Consorzio per l'Igiene dell'Ambiente e del Territorio",
       "provider": "independent",
       "domain": "consorziociat.it",
-      "confidence": 55,
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
         "provider_classified",
         "provider_via_gateway_spf"
@@ -239125,7 +239109,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.com",
+      "domain": "flegrealavoro.portaletrasparenza.net",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242515,7 +242499,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.it",
+      "domain": "unilavspa.portaletrasparenza.net",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -245220,13 +245204,14 @@
     },
     "IT-L37-ceiss": {
       "name": "Consorzio Elettrico Industriale di Stenico S.C",
-      "provider": "local-isp",
+      "provider": "independent",
       "domain": "ceis-stenico.it",
-      "confidence": 90,
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_suggests:microsoft"
       ]
     },
     "IT-L37-celis_0": {
@@ -253328,7 +253313,7 @@
     "IT-L44-cbrd": {
       "name": "Consiglio di Bacino Rifiuti Dolomiti",
       "provider": "google",
-      "domain": "consigliobacinorifiuti.belluno.it",
+      "domain": "provincia.belluno.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -254124,7 +254109,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "commissariobonificadiscariche.governo.it",
+      "domain": "governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
@@ -256932,14 +256917,15 @@
     },
     "IT-PRO-123395": {
       "name": "Provincia di Verona",
-      "provider": "independent",
-      "domain": "web.provincia.vr.it",
+      "provider": "microsoft",
+      "domain": "provincia.vr.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-PRO-12537612": {
@@ -257383,10 +257369,10 @@
       "name": "Provincia di Teramo",
       "provider": "google",
       "domain": "provincia.teramo.it",
-      "confidence": 95,
+      "confidence": 93,
       "flags": [
         "multiple_mx",
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified",
         "provider_via_gateway_spf"
@@ -257595,14 +257581,13 @@
     },
     "IT-PRO-702462": {
       "name": "Provincia di Como",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "provincia.como.it",
       "confidence": 90,
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "provider_classified",
-        "autodiscover_suggests:microsoft"
+        "provider_classified"
       ]
     },
     "IT-PRO-702574": {
@@ -261141,14 +261126,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {
@@ -265423,6 +265406,18 @@
         "mx_spf_match",
         "multi_provider_spf:google+mailchimp+microsoft",
         "provider_classified"
+      ]
+    },
+    "IT-SAG-36EJDEZ4": {
+      "name": "IGEA S.R.L.",
+      "provider": "aruba",
+      "domain": "farmaciabellariacomunale.it",
+      "confidence": 83,
+      "flags": [
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-SAG-3HCVQGVQ": {

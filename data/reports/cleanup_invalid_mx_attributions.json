@@ -1,5 +1,5 @@
 {
-  "n_purged": 510,
+  "n_purged": 511,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -462,6 +462,17 @@
       "old_mx": "mx.comune.rieti.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comune.rieti.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
+      "id": "IT-C14-cop_pe",
+      "name": "Ordine della professione di Ostetrica della Provincia di Pescara",
+      "codice_ipa": "cop_pe",
+      "seed_domain": "fnco.it",
+      "claimed_domain": "comune.pescara.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mx1.hc1174-38.eu.iphmx.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is cisco-ironport gateway; MS365 tenant detected (Managed)"
     },
     {
       "id": "IT-C14-copt",

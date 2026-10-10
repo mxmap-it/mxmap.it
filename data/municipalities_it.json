@@ -80716,9 +80716,11 @@
     "country": "IT",
     "region": "Basilicata",
     "district": "Matera",
-    "domain": "comunedipisticci.it",
+    "domain": "comune.pisticci.mt.it",
     "osm_relation_id": 40436,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "comunedipisticci.it"
+    ],
     "ipa_codice_ipa": "c_g712",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "717166",
@@ -159524,6 +159526,21 @@
     "ipa_codice_categoria": "C8",
     "ipa_codice_istat": "22237196",
     "ipa_codice_comune_istat": "075035",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L1-0B113W3L",
+    "name": "Istituto Regionale per il Credito Agevolato",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "ircasicilia.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "0B113W3L",
+    "ipa_codice_categoria": "L1",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "082053",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -279584,7 +279601,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "liceorocci.it",
+    "domain": "liceorocci.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -363222,6 +363239,21 @@
     "ipa_codice_categoria": "SAG",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "054039",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SAG-36EJDEZ4",
+    "name": "IGEA S.R.L.",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "farmaciabellariacomunale.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "36EJDEZ4",
+    "ipa_codice_categoria": "SAG",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "099001",
     "domain_source": "sito_istituzionale"
   },
   {
