@@ -8791,7 +8791,7 @@
     },
     "IT-C14-cpgl": {
       "name": "Collegio Provinciale Geometri e Geometri Laureati di Latina",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "geometrilatina.it",
       "confidence": 95,
       "flags": [
@@ -23440,7 +23440,7 @@
     "IT-C3-AGENAS": {
       "name": "Agenzia Nazionale per i Servizi Sanitari Regionali - AGENAS",
       "provider": "microsoft",
-      "domain": "agenas.it",
+      "domain": "agenas.gov.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -30873,13 +30873,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "comune.cureggio.no.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-003060": {
@@ -81715,12 +81715,14 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "independent",
-      "domain": "cert.fonte-nuova.it",
-      "confidence": 50,
+      "provider": "microsoft",
+      "domain": "comune.fontenuova.rm.it",
+      "confidence": 95,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-059001": {
@@ -90473,12 +90475,13 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.scanno.aq.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-066094": {
@@ -102469,7 +102472,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "comune.baucina.pa.it",
+      "domain": "egov.comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -117924,7 +117927,7 @@
     "IT-COM-119004": {
       "name": "Comune di Carloforte",
       "provider": "aruba",
-      "domain": "comune.carloforte.ca.it",
+      "domain": "comune.carloforte.su.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -118018,7 +118021,7 @@
     "IT-COM-119012": {
       "name": "Comune di Narcao",
       "provider": "aruba",
-      "domain": "comune.narcao.ci.it",
+      "domain": "comune.narcao.su.it",
       "confidence": 78,
       "flags": [
         "spf_softfail",
@@ -125903,7 +125906,8 @@
       "flags": [
         "spf_strict",
         "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "provider_classified",
+        "smtp_suggests:microsoft"
       ]
     },
     "IT-L12-cmdf": {
@@ -136039,7 +136043,7 @@
     },
     "IT-L33-8OS22M9I": {
       "name": "ISTITUTO COMPRENSIVO GUBBIO 3",
-      "provider": "independent",
+      "provider": "google",
       "domain": "icgubbio3.edu.it",
       "confidence": 85,
       "flags": [
@@ -239110,7 +239114,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.portaletrasparenza.net",
+      "domain": "flegrealavoro.com",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242500,7 +242504,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.portaletrasparenza.net",
+      "domain": "unilavspa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -254110,7 +254114,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "governo.it",
+      "domain": "commissariobonificadiscariche.governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
