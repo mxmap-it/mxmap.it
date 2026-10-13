@@ -1,5 +1,5 @@
 {
-  "total": 22915,
+  "total": 22914,
   "average_score": 80.8,
   "high_confidence_pct": 74.0,
   "quality_passed": false,
@@ -23440,7 +23440,7 @@
     "IT-C3-AGENAS": {
       "name": "Agenzia Nazionale per i Servizi Sanitari Regionali - AGENAS",
       "provider": "microsoft",
-      "domain": "agenas.gov.it",
+      "domain": "agenas.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -29994,12 +29994,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.lenta.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -117927,7 +117927,7 @@
     "IT-COM-119004": {
       "name": "Comune di Carloforte",
       "provider": "aruba",
-      "domain": "comune.carloforte.su.it",
+      "domain": "comune.carloforte.ca.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -118021,7 +118021,7 @@
     "IT-COM-119012": {
       "name": "Comune di Narcao",
       "provider": "aruba",
-      "domain": "comune.narcao.su.it",
+      "domain": "comune.narcao.ci.it",
       "confidence": 78,
       "flags": [
         "spf_softfail",
@@ -118032,7 +118032,7 @@
     "IT-COM-119013": {
       "name": "Comune di Nuxis",
       "provider": "microsoft",
-      "domain": "comune.nuxis.ci.it",
+      "domain": "comune.nuxis.su.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -174439,13 +174439,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175941,7 +175941,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -176300,18 +176300,6 @@
         "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
-      ]
-    },
-    "IT-L33-istsc_foee03100q": {
-      "name": "DIREZIONE DIDATTICA - CD CESENATICO 2",
-      "provider": "istruzione-miur-tenant",
-      "domain": "cd-cesenatico2.edu.it",
-      "confidence": 80,
-      "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -225960,7 +225948,7 @@
       ]
     },
     "IT-L33-istsc_vrsl03000n": {
-      "name": "LICEO ARTISTICO - LICEO ARTISTICO DI VERONA",
+      "name": "\"LICEO ARTISTICO NANI-BOCCIONI\" di Verona",
       "provider": "microsoft",
       "domain": "artevr.it",
       "confidence": 95,
@@ -228725,7 +228713,7 @@
     "IT-L34-XQZEJ3XC": {
       "name": "arciconfraternita sant'angelo dei rossi",
       "provider": "aruba",
-      "domain": "arciconfraternitadeirossi.it",
+      "domain": "arciconfraternitadeiross.altervista.org",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -238745,13 +238733,16 @@
     },
     "IT-L37-D1PM59HM": {
       "name": "ASPM SORESINA SERVIZI SRL",
-      "provider": "unknown",
-      "domain": "solregina.it",
-      "confidence": 15,
+      "provider": "microsoft",
+      "domain": "aspmsoresina.it",
+      "confidence": 90,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "provider_via_gateway_spf",
+        "autodiscover_confirms"
       ]
     },
     "IT-L37-D2K0HFUC": {
@@ -258700,18 +258691,6 @@
         "provider_classified"
       ]
     },
-    "IT-S01-avspa": {
-      "name": "S.P.A. Autovie Venete",
-      "provider": "microsoft",
-      "domain": "autovie.it",
-      "confidence": 95,
-      "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
-      ]
-    },
     "IT-S01-bsi": {
       "name": "Brescia Infrastrutture S.R.L.",
       "provider": "local-isp",
@@ -260448,6 +260427,18 @@
       "flags": [
         "spf_softfail",
         "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
+    "IT-SA-4UKVAZDH": {
+      "name": "Associazione Alto Bellunese",
+      "provider": "microsoft",
+      "domain": "galaltobellunese.com",
+      "confidence": 95,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
       ]

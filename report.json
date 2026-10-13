@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T12:43:24Z",
+  "generated_at": "2026-10-13T12:24:06Z",
   "run_id": null,
   "edition": "ottobre 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -13,14 +13,14 @@
       "findings": [
         "Il 48.39% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
         "I provider italiani restano la prima scelta (51.05%), ma frammentati.",
-        "Scarto tra controllo legale (51.05%) e collocazione tecnica dell'MX (domestico 45.79%): è esso stesso un segnale.",
-        "Settori più esposti al CLOUD Act: Istruzione 78.45% · Sanità 64.47% · Ricerca 56.72%.",
-        "Divario territoriale: Molise guida la sovranità (ISD 73.44%), Veneto è la più esposta al CLOUD Act (60.82%)."
+        "Scarto tra controllo legale (51.05%) e collocazione tecnica dell'MX (domestico 45.8%): è esso stesso un segnale.",
+        "Settori più esposti al CLOUD Act: Istruzione 78.44% · Sanità 64.47% · Ricerca 56.72%.",
+        "Divario territoriale: Molise guida la sovranità (ISD 73.44%), Veneto è la più esposta al CLOUD Act (60.85%)."
       ],
       "metrics": [
         {
           "label": "Enti monitorati",
-          "value": "22.915"
+          "value": "22.914"
         },
         {
           "label": "Sovranità italiana (ISD)",
@@ -79,8 +79,8 @@
         {
           "key": "unknown",
           "label": "Sconosciuto",
-          "pct": 2.8,
-          "count": 631
+          "pct": 2.7,
+          "count": 630
         }
       ],
       "top_providers": [
@@ -92,32 +92,32 @@
         },
         {
           "name": "Google Workspace",
-          "count": 6469,
+          "count": 6468,
           "pct": 28.2,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Microsoft 365",
-          "count": 4310,
+          "count": 4311,
           "pct": 18.8,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Infrastruttura autonoma",
-          "count": 3011,
+          "count": 3010,
           "pct": 13.1,
           "sovereignty": "it"
         },
         {
           "name": "Cloud Italiano",
-          "count": 917,
+          "count": 918,
           "pct": 4.0,
           "sovereignty": "it"
         },
         {
           "name": "Sconosciuto",
-          "count": 631,
-          "pct": 2.8,
+          "count": 630,
+          "pct": 2.7,
           "sovereignty": "unknown"
         },
         {
@@ -142,12 +142,12 @@
       "jurisdiction": [
         {
           "key": "domestic",
-          "count": 10493,
-          "pct": 45.79
+          "count": 10494,
+          "pct": 45.8
         },
         {
           "key": "foreign",
-          "count": 11471,
+          "count": 11470,
           "pct": 50.06
         },
         {
@@ -157,13 +157,13 @@
         },
         {
           "key": "unknown",
-          "count": 704,
+          "count": 703,
           "pct": 3.07
         }
       ],
       "market": {
-        "top3_pct": 67.56,
-        "hhi": 1886.9
+        "top3_pct": 67.57,
+        "hhi": 1887.2
       }
     },
     {
@@ -173,8 +173,8 @@
       "clusters": [
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
-          "n_entities": 8325,
-          "usa_pct": 78.45,
+          "n_entities": 8324,
+          "usa_pct": 78.44,
           "isd": 21.22
         },
         {
@@ -197,15 +197,15 @@
         },
         {
           "cluster": "Società partecipate e fondazioni pubbliche",
-          "n_entities": 1159,
+          "n_entities": 1158,
           "usa_pct": 49.22,
           "isd": 49.95
         },
         {
           "cluster": "Stazioni appaltanti",
-          "n_entities": 619,
-          "usa_pct": 51.49,
-          "isd": 47.68
+          "n_entities": 620,
+          "usa_pct": 51.57,
+          "isd": 47.6
         },
         {
           "cluster": "Welfare, ASP/IPAB e case popolari",
@@ -265,8 +265,8 @@
       "spotlight": [
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
-          "usa_pct": 78.45,
-          "n_entities": 8325
+          "usa_pct": 78.44,
+          "n_entities": 8324
         },
         {
           "cluster": "Sanità (ASL, Aziende ospedaliere)",
@@ -285,7 +285,7 @@
       "title": "Analisi per aree — la geografia della sovranità",
       "kind": "areas",
       "status": "active",
-      "n_total": 22915,
+      "n_total": 22914,
       "regions": [
         {
           "regione": "Molise",
@@ -361,9 +361,9 @@
         },
         {
           "regione": "Friuli-Venezia Giulia",
-          "n": 579,
-          "isd": 48.69,
-          "usa_pct": 50.96
+          "n": 578,
+          "isd": 48.78,
+          "usa_pct": 50.87
         },
         {
           "regione": "Umbria",
@@ -385,9 +385,9 @@
         },
         {
           "regione": "Emilia-Romagna",
-          "n": 1313,
-          "isd": 40.51,
-          "usa_pct": 59.02
+          "n": 1312,
+          "isd": 40.54,
+          "usa_pct": 58.99
         },
         {
           "regione": "Trentino-Alto Adige",
@@ -398,14 +398,14 @@
         {
           "regione": "Lombardia",
           "n": 3355,
-          "isd": 39.65,
-          "usa_pct": 60.2
+          "isd": 39.64,
+          "usa_pct": 60.21
         },
         {
           "regione": "Veneto",
-          "n": 1667,
-          "isd": 38.63,
-          "usa_pct": 60.82
+          "n": 1668,
+          "isd": 38.6,
+          "usa_pct": 60.85
         }
       ],
       "macroaree": [
@@ -429,7 +429,7 @@
         },
         {
           "macroarea": "Nord",
-          "n": 10833,
+          "n": 10832,
           "isd": 46.9,
           "usa_pct": 52.54
         }
@@ -441,8 +441,8 @@
       },
       "most_exposed": {
         "regione": "Veneto",
-        "isd": 38.63,
-        "usa_pct": 60.82
+        "isd": 38.6,
+        "usa_pct": 60.85
       },
       "note": "Sovranità per regione e macroarea: dato territoriale ricostruito dal crosswalk ufficiale ISTAT sul comune-sede di ogni ente (copertura 100%), non dal campo territoriale sporco di IndicePA (vedi mxmap.it#2)."
     },

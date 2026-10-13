@@ -3,10 +3,10 @@
   {
    "cluster": "education",
    "label": "Istruzione (Scuole, Università, AFAM)",
-   "n": 8325,
-   "n_classified": 8277,
+   "n": 8324,
+   "n_classified": 8276,
    "isd": 21.22,
-   "cloud_act_pct": 78.45,
+   "cloud_act_pct": 78.44,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -35,8 +35,8 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 6493,
-     "pct": 78.45
+     "count": 6492,
+     "pct": 78.44
     },
     {
      "bucket": "Sconosciuto",
@@ -57,8 +57,8 @@
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 740,
-     "pct": 9.4
+     "count": 741,
+     "pct": 9.41
     },
     {
      "bucket": "Italia — Provider commerciali",
@@ -69,8 +69,8 @@
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 1795,
-     "pct": 22.81
+     "count": 1794,
+     "pct": 22.79
     },
     {
      "bucket": "Altri provider esteri",
@@ -187,7 +187,7 @@
   {
    "cluster": "soe",
    "label": "Società partecipate e fondazioni pubbliche",
-   "n": 1159,
+   "n": 1158,
    "n_classified": 1095,
    "isd": 49.95,
    "cloud_act_pct": 49.22,
@@ -225,18 +225,18 @@
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 64,
-     "pct": 5.52
+     "count": 63,
+     "pct": 5.44
     }
    ]
   },
   {
    "cluster": "procurement",
    "label": "Stazioni appaltanti",
-   "n": 619,
-   "n_classified": 604,
-   "isd": 47.68,
-   "cloud_act_pct": 51.49,
+   "n": 620,
+   "n_classified": 605,
+   "isd": 47.6,
+   "cloud_act_pct": 51.57,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -248,13 +248,13 @@
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 223,
-     "pct": 36.92
+     "pct": 36.86
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
      "count": 63,
-     "pct": 10.43
+     "pct": 10.41
     },
     {
      "bucket": "Altri provider esteri",
@@ -265,8 +265,8 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 311,
-     "pct": 51.49
+     "count": 312,
+     "pct": 51.57
     },
     {
      "bucket": "Sconosciuto",
@@ -691,5 +691,5 @@
    ]
   }
  ],
- "generated": "2026-10-12T11:55:21Z"
+ "generated": "2026-10-13T11:40:25Z"
 }
