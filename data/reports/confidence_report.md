@@ -2,15 +2,15 @@
 
 Livelli di confidenza della classificazione email, analitici e aggregati. Metodologia: regole ESORICS 2026 (7 regole MX/SPF/DKIM + modello DOMESTIC/FOREIGN via ASN). Anticipazione per la futura validazione via **bounce-probing**: gli enti a confidenza bassa sono i candidati prioritari.
 
-**22914 enti** analizzati. Confidenza media **0.851** (mediana 0.9; media esclusi unknown 0.876).
+**22917 enti** analizzati. Confidenza media **0.851** (mediana 0.9; media esclusi unknown 0.876).
 
 ## 1. Distribuzione aggregata della confidenza
 
 | fascia | enti | % |
 |---|---:|---:|
-| 0.90-1.00 (molto alta) | 17395 | 75.9% |
+| 0.90-1.00 (molto alta) | 17396 | 75.9% |
 | 0.80-0.89 (alta) | 3619 | 15.8% |
-| 0.60-0.79 (media) | 1208 | 5.3% |
+| 0.60-0.79 (media) | 1210 | 5.3% |
 | 0.01-0.59 (bassa) | 62 | 0.3% |
 | 0.00 (nulla / unknown) | 630 | 2.7% |
 
@@ -19,12 +19,12 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 | provider | enti | confidenza media | min | max |
 |---|---:|---:|---:|---:|
 | google | 6468 | 0.883 | 0.80 | 0.92 |
-| aruba | 5136 | 0.896 | 0.80 | 0.92 |
-| microsoft | 3451 | 0.929 | 0.80 | 0.96 |
-| independent | 3010 | 0.721 | 0.50 | 0.80 |
-| local-isp | 1571 | 0.891 | 0.80 | 0.92 |
+| aruba | 5137 | 0.896 | 0.80 | 0.92 |
+| microsoft | 3452 | 0.929 | 0.80 | 0.96 |
+| independent | 3012 | 0.721 | 0.50 | 0.80 |
+| local-isp | 1572 | 0.891 | 0.80 | 0.92 |
 | regional-public | 918 | 0.895 | 0.80 | 0.90 |
-| istruzione-miur-tenant | 860 | 0.960 | 0.96 | 0.96 |
+| istruzione-miur-tenant | 858 | 0.960 | 0.96 | 0.96 |
 | register-it | 663 | 0.890 | 0.80 | 0.90 |
 | unknown | 630 | 0.000 | 0.00 | 0.00 |
 | seeweb | 77 | 0.900 | 0.90 | 0.90 |
@@ -41,12 +41,12 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 
 | regola | enti | % |
 |---|---:|---:|
-| `mx_spf` | 17395 | 75.9% |
+| `mx_spf` | 17396 | 75.9% |
 | `mx_only` | 1879 | 8.2% |
 | `dom_mx_spf` | 1740 | 7.6% |
-| `frgn_mx_spf` | 987 | 4.3% |
+| `frgn_mx_spf` | 988 | 4.3% |
 | `no_mx` | 630 | 2.7% |
-| `dom_mx_only` | 221 | 1.0% |
+| `dom_mx_only` | 222 | 1.0% |
 | `frgn_mx_only` | 62 | 0.3% |
 
 ## 4. Giurisdizione dell'infrastruttura MX (sovranità)
@@ -55,9 +55,9 @@ Dove risiede fisicamente il server di posta in entrata (Team Cymru ASN country):
 
 | giurisdizione | enti | % |
 |---|---:|---:|
-| 🇮🇹 Domestica (IT) | 10494 | 45.8% |
+| 🇮🇹 Domestica (IT) | 10496 | 45.8% |
 | Mista (IT + estero) | 247 | 1.1% |
-| 🌍 Estera | 11470 | 50.1% |
+| 🌍 Estera | 11471 | 50.1% |
 | Sconosciuta | 703 | 3.1% |
 
 **Domestic MX override** applicato a **196** enti: classificati cloud (Microsoft/Google) per segnale tenant/DKIM, ma con MX in entrata self-hosted domestico → riclassificati `independent` (il tenant cloud riflette Teams/SharePoint, non la posta).

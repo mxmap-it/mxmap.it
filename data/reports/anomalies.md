@@ -1,6 +1,6 @@
 # Anomalie — Osservatorio Sovranità PA (IT)
 
-**728 enti anomali** su 22914 (3.18%). Di cui 98 classificati ma anomali.
+**728 enti anomali** su 22917 (3.18%). Di cui 98 classificati ma anomali.
 
 | tipo | enti |
 |---|---:|

@@ -63985,9 +63985,7 @@
     "district": "Cuneo",
     "domain": "comune.mombarcaro.cn.it",
     "osm_relation_id": 43163,
-    "domain_fallbacks": [
-      "tiscali.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_f309",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "11119369",
@@ -127917,7 +127915,9 @@
     "district": null,
     "domain": "geometrice.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "gmail.com"
+    ],
     "ipa_codice_ipa": "cdgg_061",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -138930,6 +138930,23 @@
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "118006",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-C14-ctsdf",
+    "name": "Consiglio Territoriale Spedizionieri Doganali di Firenze",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "cnsd.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "albofi.it"
+    ],
+    "ipa_codice_ipa": "ctsdf",
+    "ipa_codice_categoria": "C14",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "048017",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -191560,7 +191577,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icmaddaloni1villaggio.gov.it",
+    "domain": "icfrancoimposimato.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -286874,23 +286891,6 @@
     "domain_source": "sito_istituzionale"
   },
   {
-    "id": "IT-L33-istsc_rmta06000e",
-    "name": "ISTITUTO TECNICO AGRARIO - EMILIO SERENI",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "agrariosereni.edu.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "istruzione.it"
-    ],
-    "ipa_codice_ipa": "istsc_rmta06000e",
-    "ipa_codice_categoria": "L33",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "058091",
-    "domain_source": "sito_istituzionale"
-  },
-  {
     "id": "IT-L33-istsc_rmta070005",
     "name": "ISTITUTO TECNICO AGRARIO - G.GARIBALDI ANNESSO CONV.'G.GARIBALDI'",
     "country": "IT",
@@ -315220,6 +315220,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L33-S9ZFMGX9",
+    "name": "ISTITUTO COMPRENSIVO GALVANI-ANGRI TERZO",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "icgalvaniangriterzo.edu.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "S9ZFMGX9",
+    "ipa_codice_categoria": "L33",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "065007",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L33-sabz",
     "name": "Schulsprengel Algund",
     "country": "IT",
@@ -315327,7 +315342,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "ssp-latsch.eu",
+    "domain": "ssp-latsch.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "schule.suedtirol.it"
@@ -330800,6 +330815,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-AMJ62499",
+    "name": "ABC - ACQUA BENE COMUNE NAPOLI",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "abc.napoli.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "AMJ62499",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "063049",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-amrov",
     "name": "Societa' Multiservizi Rovereto Srl",
     "country": "IT",
@@ -331958,7 +331988,7 @@
   },
   {
     "id": "IT-L37-asts",
-    "name": "Azienda Servizi Territoriali Spa",
+    "name": "AZIENDA SERVIZI TERRITORIALI S.R.L.",
     "country": "IT",
     "region": null,
     "district": null,
@@ -340069,6 +340099,21 @@
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "037024",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L37-QEM90DC5",
+    "name": "Iren Ambiente s.p.a",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "irenambiente.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "QEM90DC5",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "033032",
     "domain_source": "sito_istituzionale"
   },
   {

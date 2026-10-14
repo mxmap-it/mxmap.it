@@ -1,5 +1,5 @@
 {
-  "total": 22914,
+  "total": 22917,
   "average_score": 80.8,
   "high_confidence_pct": 74.0,
   "quality_passed": false,
@@ -10890,6 +10890,18 @@
     },
     "IT-C14-ctsdca": {
       "name": "Consiglio Territoriale Degli Spedizionieri Doganali di Cagliari",
+      "provider": "aruba",
+      "domain": "cnsd.it",
+      "confidence": 83,
+      "flags": [
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
+    "IT-C14-ctsdf": {
+      "name": "Consiglio Territoriale Spedizionieri Doganali di Firenze",
       "provider": "aruba",
       "domain": "cnsd.it",
       "confidence": 83,
@@ -81715,14 +81727,12 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "microsoft",
-      "domain": "comune.fontenuova.rm.it",
-      "confidence": 95,
+      "provider": "independent",
+      "domain": "cert.fonte-nuova.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-059001": {
@@ -117643,11 +117653,13 @@
     "IT-COM-118050": {
       "name": "Comune di Senorbi'",
       "provider": "aruba",
-      "domain": "pec.comune.senorbi.ca.it",
-      "confidence": 68,
+      "domain": "comune.senorbi.su.it",
+      "confidence": 83,
       "flags": [
         "spf_softfail",
-        "provider_classified"
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-118051": {
@@ -118032,7 +118044,7 @@
     "IT-COM-119013": {
       "name": "Comune di Nuxis",
       "provider": "microsoft",
-      "domain": "comune.nuxis.su.it",
+      "domain": "comune.nuxis.ci.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -138667,6 +138679,17 @@
         "provider_classified"
       ]
     },
+    "IT-L33-S9ZFMGX9": {
+      "name": "ISTITUTO COMPRENSIVO GALVANI-ANGRI TERZO",
+      "provider": "independent",
+      "domain": "icgalvaniangriterzo.edu.it",
+      "confidence": 85,
+      "flags": [
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
+      ]
+    },
     "IT-L33-SCZ60KBA": {
       "name": "ISTITUTO COMPRENSIVO ASSEMINI 1",
       "provider": "google",
@@ -145495,13 +145518,11 @@
     },
     "IT-L33-icmvce": {
       "name": "Istituto Comprensivo Maddaloni 1- Villaggio",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icmaddaloni1villaggio.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icfrancoimposimato.edu.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -174439,13 +174460,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceocevolani.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "liceocevolani.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175941,7 +175962,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.edu.it",
+      "domain": "agrariofirenze.eu",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -210654,18 +210675,6 @@
         "provider_classified"
       ]
     },
-    "IT-L33-istsc_rmta06000e": {
-      "name": "ISTITUTO TECNICO AGRARIO - EMILIO SERENI",
-      "provider": "google",
-      "domain": "agrariosereni.edu.it",
-      "confidence": 53,
-      "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_mismatch",
-        "provider_classified"
-      ]
-    },
     "IT-L33-istsc_rmta070005": {
       "name": "ISTITUTO TECNICO AGRARIO - G.GARIBALDI ANNESSO CONV.'G.GARIBALDI'",
       "provider": "google",
@@ -228331,11 +228340,11 @@
     },
     "IT-L33-sl_": {
       "name": "Schulsprengel Latsch",
-      "provider": "google",
-      "domain": "ssp-latsch.eu",
-      "confidence": 50,
+      "provider": "local-isp",
+      "domain": "ssp-latsch.it",
+      "confidence": 85,
       "flags": [
-        "no_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -228713,7 +228722,7 @@
     "IT-L34-XQZEJ3XC": {
       "name": "arciconfraternita sant'angelo dei rossi",
       "provider": "aruba",
-      "domain": "arciconfraternitadeiross.altervista.org",
+      "domain": "arciconfraternitadeirossi.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -238311,6 +238320,18 @@
         "provider_classified"
       ]
     },
+    "IT-L37-AMJ62499": {
+      "name": "ABC - ACQUA BENE COMUNE NAPOLI",
+      "provider": "microsoft",
+      "domain": "abc.napoli.it",
+      "confidence": 93,
+      "flags": [
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
     "IT-L37-AMXWXWZK": {
       "name": "Fondazione ITS Prodigi",
       "provider": "microsoft",
@@ -240997,6 +241018,18 @@
         "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
+      ]
+    },
+    "IT-L37-QEM90DC5": {
+      "name": "Iren Ambiente s.p.a",
+      "provider": "aruba",
+      "domain": "irenambiente.it",
+      "confidence": 55,
+      "flags": [
+        "multiple_mx",
+        "spf_strict",
+        "mx_spf_mismatch",
+        "provider_classified"
       ]
     },
     "IT-L37-QFAZCUD0": {
@@ -244027,7 +244060,7 @@
       ]
     },
     "IT-L37-asts": {
-      "name": "Azienda Servizi Territoriali Spa",
+      "name": "AZIENDA SERVIZI TERRITORIALI S.R.L.",
       "provider": "microsoft",
       "domain": "aziendaserviziterritoriali.com",
       "confidence": 95,
@@ -254105,7 +254138,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "commissariobonificadiscariche.governo.it",
+      "domain": "governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
@@ -254148,11 +254181,11 @@
     },
     "IT-L47-csdpcm": {
       "name": "Commissario Straordinario D.P.C.M. del 21 Gennaio 2011",
-      "provider": "aruba",
-      "domain": "pec.regione.campania.it",
-      "confidence": 88,
+      "provider": "microsoft",
+      "domain": "mitigazione-rischioidrogeologico.regione.campania.it",
+      "confidence": 90,
       "flags": [
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
