@@ -27234,13 +27234,13 @@
     },
     "IT-COM-001113": {
       "name": "Comune di Germagnano",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.germagnano.to.it",
-      "confidence": 15,
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-001114": {
@@ -28483,13 +28483,14 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-001224": {
@@ -30885,13 +30886,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -87308,13 +87309,12 @@
     },
     "IT-COM-064093": {
       "name": "Comune di Santa Paolina",
-      "provider": "unknown",
+      "provider": "register-it",
       "domain": "comunesantapaolina.gov.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-064095": {
@@ -90485,13 +90485,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -102115,7 +102114,7 @@
     },
     "IT-COM-081001": {
       "name": "Comune di Alcamo",
-      "provider": "microsoft",
+      "provider": "google",
       "domain": "comune.alcamo.tp.it",
       "confidence": 95,
       "flags": [
@@ -102482,7 +102481,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -117653,13 +117652,11 @@
     "IT-COM-118050": {
       "name": "Comune di Senorbi'",
       "provider": "aruba",
-      "domain": "comune.senorbi.su.it",
-      "confidence": 83,
+      "domain": "pec.comune.senorbi.ca.it",
+      "confidence": 68,
       "flags": [
         "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "provider_classified"
       ]
     },
     "IT-COM-118051": {
@@ -145517,7 +145514,7 @@
       ]
     },
     "IT-L33-icmvce": {
-      "name": "Istituto Comprensivo Maddaloni 1- Villaggio",
+      "name": "ISTITUTO COMPRENSIVO FRANCO IMPOSIMATO",
       "provider": "google",
       "domain": "icfrancoimposimato.edu.it",
       "confidence": 50,
@@ -254181,11 +254178,11 @@
     },
     "IT-L47-csdpcm": {
       "name": "Commissario Straordinario D.P.C.M. del 21 Gennaio 2011",
-      "provider": "microsoft",
-      "domain": "mitigazione-rischioidrogeologico.regione.campania.it",
-      "confidence": 90,
+      "provider": "aruba",
+      "domain": "pec.regione.campania.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -262831,11 +262828,11 @@
     },
     "IT-SA-MH8PWLTO": {
       "name": "Fondazione POL.I.S.",
-      "provider": "microsoft",
-      "domain": "fondazionepolis.regione.campania.it",
-      "confidence": 90,
+      "provider": "aruba",
+      "domain": "pec.regione.campania.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified"
       ]

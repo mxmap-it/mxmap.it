@@ -170977,7 +170977,7 @@
     "ipa_codice_ipa": "uc_bsabi",
     "ipa_codice_categoria": "L18",
     "ipa_codice_istat": "18660392",
-    "ipa_codice_comune_istat": "057053",
+    "ipa_codice_comune_istat": "057029",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -191573,7 +191573,7 @@
   },
   {
     "id": "IT-L33-icmvce",
-    "name": "Istituto Comprensivo Maddaloni 1- Villaggio",
+    "name": "ISTITUTO COMPRENSIVO FRANCO IMPOSIMATO",
     "country": "IT",
     "region": null,
     "district": null,
@@ -307267,7 +307267,9 @@
     "district": null,
     "domain": "rodari-rossano.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "istsc_viic85300g",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
@@ -354552,7 +354554,10 @@
     "district": null,
     "domain": "promositalia.camcom.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "mi.camcom.it",
+      "promositalia.com"
+    ],
     "ipa_codice_ipa": "DCMW8ZJU",
     "ipa_codice_categoria": "S01",
     "ipa_codice_istat": "31908843",
