@@ -92,6 +92,32 @@ def resolve_geo(istat_code: str | None, index: dict[str, dict]) -> dict:
                 "regione": nome,
                 "macroarea": macro,
             }
+        # Fallback generico per codici NUOVI non ancora nel crosswalk (fusioni
+        # di comuni: es. 024129 "Castegnero Nanto", istituito 2026, assente
+        # perfino dal CSV ISTAT corrente — incidente nightly #27). Il codice
+        # comune ISTAT porta la provincia nelle prime 3 cifre: ereditiamo
+        # provincia/regione da un comune noto con lo stesso prefisso. Il nome
+        # comune resta None: mai attribuzioni inventate, ma l'ente non perde
+        # l'aggancio geografico provincia/regione (e la pipeline non muore).
+        code = istat_code or ""
+        if len(code) == 6 and code[:3].isdigit():
+            for k, v in index.items():
+                if (
+                    len(k) == 6
+                    and k.startswith(code[:3])
+                    and v.get("codice_regione")
+                    and v.get("sigla_auto")
+                ):
+                    cr = v["codice_regione"]
+                    nome, macro = REGIONI.get(cr, (SCONOSCIUTA, SCONOSCIUTA))
+                    if nome != SCONOSCIUTA:
+                        return {
+                            "comune": None,
+                            "provincia": v["sigla_auto"],
+                            "codice_regione": cr,
+                            "regione": nome,
+                            "macroarea": macro,
+                        }
         return {
             "comune": None,
             "provincia": None,

@@ -82,3 +82,34 @@ def test_resolve_code_without_region_mapping():
     g = resolve_geo("x", idx)
     assert g["regione"] == SCONOSCIUTA  # codice regione 99 non in tabella
     assert g["provincia"] is None
+
+
+def test_resolve_new_code_inherits_province_from_prefix():
+    """Fallback fusioni (#27): un codice ISTAT nuovo di zecca, assente dal
+    crosswalk (es. 024129 Castegnero Nanto, istituito 2026 e mancante perfino
+    dal CSV ISTAT corrente), eredita provincia/regione dal prefisso provincia
+    (prime 3 cifre) — il nome comune resta None (mai inventato)."""
+    idx = build_istat_index(
+        ISTAT
+        + [
+            {
+                "codice_istat": "024001",
+                "codici_storici": [],
+                "denominazione_it": "Agugliaro",
+                "codice_regione": "05",
+                "sigla_auto": "VI",
+            }
+        ]
+    )
+    g = resolve_geo("024129", idx)
+    assert g["provincia"] == "VI"
+    assert g["regione"] == "Veneto" and g["macroarea"] == "Nord"
+    assert g["comune"] is None
+
+
+def test_resolve_unknown_prefix_stays_sconosciuta():
+    """Niente prefisso noto → fallback onesto invariato: Sconosciuta, mai
+    attribuzioni inventate."""
+    idx = build_istat_index(ISTAT)
+    g = resolve_geo("999999", idx)
+    assert g["provincia"] is None and g["regione"] == SCONOSCIUTA

@@ -383,12 +383,26 @@ def _assert_it_geo_coverage(munis: dict) -> None:
         )
         if missing:
             sample = ", ".join(str(b) for b in missing[:5])
-            print(
-                f"  ERRORE: {len(missing)} enti IT senza `{field}` (es. {sample}). "
-                "Esegui scripts/enrich_geo.py prima di build_frontend.",
-                file=sys.stderr,
-            )
-            sys.exit(1)
+            # RESILIENZA (#27, 2026-10): un pugno di enti senza geo (tipico:
+            # comune da fusione con codice ISTAT nuovissimo, assente pure dal
+            # CSV ISTAT corrente) NON deve uccidere la nightly e congelare il
+            # sito per giorni — warning rumoroso e si pubblica (gli enti
+            # restano visibili ovunque tranne che nei filtri geografici).
+            # Oltre la soglia è una rottura SISTEMICA (crosswalk/enrich_geo
+            # saltato o corrotto): lì sì ci si ferma.
+            if len(missing) <= 5:
+                print(
+                    f"::warning::{len(missing)} enti IT senza `{field}` "
+                    f"(es. {sample}) — tollerati (soglia 5), verifica il "
+                    "crosswalk ISTAT / enrich_geo."
+                )
+            else:
+                print(
+                    f"  ERRORE: {len(missing)} enti IT senza `{field}` (es. {sample}). "
+                    "Esegui scripts/enrich_geo.py prima di build_frontend.",
+                    file=sys.stderr,
+                )
+                sys.exit(1)
 
 
 def main():

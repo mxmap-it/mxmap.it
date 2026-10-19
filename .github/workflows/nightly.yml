@@ -164,6 +164,14 @@ jobs:
       - name: Aggregate istruzione per comune (mappa scuole)
         continue-on-error: true
         run: uv run python3 scripts/aggregate_istruzione_per_comune.py
+      # Crosswalk ISTAT auto-aggiornante: le fusioni di comuni creano codici
+      # nuovi (es. 024129 "Castegnero Nanto", istituito 2026 → 3 notti rosse,
+      # #27). Refresh best-effort: se istat.it è giù resta lo snapshot
+      # committato; i codici che ISTAT non ha ancora pubblicato sono coperti
+      # dal fallback prefisso-provincia in resolve_geo (mail_sovereignty/geo.py).
+      - name: Refresh ISTAT comuni crosswalk (best-effort)
+        continue-on-error: true
+        run: uv run python3 scripts/fetch_istat_comuni.py
       # Arricchimento geografico strutturale: regione/provincia/comune da ISTAT
       # (chiave-sede ipa_codice_comune_istat). Sblocca l'asse "per aree".
       - name: Enrich geo (regione/provincia da crosswalk ISTAT)
@@ -266,7 +274,7 @@ jobs:
                    data/page_lastmod.json \
                    data/summary dist validation_report.json validation_report.csv data/dns_cache \
                    data/municipalities_it.json data/indicepa_extended_emails.json data/it_istruzione_by_comune.json \
-                   data/it_istruzione_points.json \
+                   data/it_istruzione_points.json data/istat_comuni.json \
                    data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json \
                    data/reports/mx_discovery_stats.json data/reports/confidence_report.json data/reports/confidence_report.md \
                    data/reports/anomalies.json data/reports/anomalies.md \
