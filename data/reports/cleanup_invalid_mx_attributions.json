@@ -1,5 +1,5 @@
 {
-  "n_purged": 510,
+  "n_purged": 509,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1108,7 +1108,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -1861,17 +1861,6 @@
       "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
     },
     {
-      "id": "IT-CONS-cbsap",
-      "name": "Consorzio Bassa Sabina Acqua Peschiera",
-      "codice_ipa": "cbsap",
-      "seed_domain": "consorzioacquapeschiera.it",
-      "claimed_domain": "galsabina.com",
-      "reject_reason": "unrelated",
-      "old_mx": "localhost",
-      "old_provider": "independent",
-      "old_reason": "MX (localhost) is self-hosted"
-    },
-    {
       "id": "IT-CONS-cccfgnf",
       "name": "Consorzio Cimiteriale Fra I Comuni di Frattamaggiore Grumo Nevano e Frattaminore",
       "codice_ipa": "cccfgnf",
@@ -2000,8 +1989,8 @@
       "claimed_domain": "comuneborgorose.ri.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.comuneborgorose.ri.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx.comuneborgorose.ri.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+      "old_provider": "aws",
+      "old_reason": "MX (mx.comuneborgorose.ri.it) on AS16509 (?) -> aws (ASN-based override)"
     },
     {
       "id": "IT-L1-asbuccm",

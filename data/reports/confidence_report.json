@@ -1,39 +1,39 @@
 {
   "country": "IT",
-  "n": 22917,
-  "mean": 0.852,
+  "n": 22920,
+  "mean": 0.851,
   "median": 0.9,
-  "mean_nonzero": 0.876,
+  "mean_nonzero": 0.875,
   "buckets": {
-    "0.90-1.00 (molto alta)": 17398,
-    "0.80-0.89 (alta)": 3621,
-    "0.00 (nulla / unknown)": 625,
-    "0.60-0.79 (media)": 1211,
-    "0.01-0.59 (bassa)": 62
+    "0.90-1.00 (molto alta)": 17395,
+    "0.80-0.89 (alta)": 3617,
+    "0.00 (nulla / unknown)": 629,
+    "0.60-0.79 (media)": 1213,
+    "0.01-0.59 (bassa)": 66
   },
   "rules": {
-    "mx_spf": 17398,
-    "dom_mx_spf": 1742,
-    "no_mx": 625,
-    "mx_only": 1879,
-    "frgn_mx_spf": 989,
-    "dom_mx_only": 222,
-    "frgn_mx_only": 62
+    "mx_spf": 17395,
+    "dom_mx_spf": 1746,
+    "no_mx": 629,
+    "mx_only": 1871,
+    "frgn_mx_spf": 990,
+    "dom_mx_only": 223,
+    "frgn_mx_only": 66
   },
   "jurisdiction": {
-    "foreign": 11470,
-    "domestic": 10502,
-    "mixed": 247,
-    "unknown": 698
+    "foreign": 11490,
+    "domestic": 10483,
+    "mixed": 246,
+    "unknown": 701
   },
-  "domestic_mx_override": 196,
-  "bounce_candidates": 62,
+  "domestic_mx_override": 206,
+  "bounce_candidates": 66,
   "bounce_by_provider": {
-    "independent": 62
+    "independent": 66
   },
   "bounce_by_jurisdiction": {
-    "unknown": 37,
-    "foreign": 25
+    "unknown": 36,
+    "foreign": 30
   },
   "provider_confidence": {
     "microsoft": 0.929,
