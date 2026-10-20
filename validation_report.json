@@ -1,5 +1,5 @@
 {
-  "total": 22920,
+  "total": 22919,
   "average_score": 80.8,
   "high_confidence_pct": 74.0,
   "quality_passed": false,
@@ -3280,7 +3280,7 @@
       ]
     },
     "IT-C14-cdopfg": {
-      "name": "Collegio Delle Ostetriche della Provincia di Foggia",
+      "name": "Ordine della professione di Ostetrica della Provincia di Foggia",
       "provider": "local-isp",
       "domain": "ordineostetrichefoggia.it",
       "confidence": 50,
@@ -14070,7 +14070,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "napoli.archiworld.it",
+      "domain": "na.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -28485,13 +28485,14 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-001224": {
@@ -61407,13 +61408,13 @@
     },
     "IT-COM-023082": {
       "name": "Comune di Sommacampagna",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.sommacampagna.vr.it",
-      "confidence": 15,
+      "confidence": 90,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-023083": {
@@ -87316,13 +87317,12 @@
     },
     "IT-COM-064093": {
       "name": "Comune di Santa Paolina",
-      "provider": "unknown",
+      "provider": "register-it",
       "domain": "comunesantapaolina.gov.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-064095": {
@@ -141529,18 +141529,6 @@
         "provider_unknown"
       ]
     },
-    "IT-L33-dd3angri": {
-      "name": "Direzione Didattica 3 Circolo di Angri",
-      "provider": "google",
-      "domain": "terzocircoloangri.edu.it",
-      "confidence": 93,
-      "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
-      ]
-    },
     "IT-L33-ddgiuca": {
       "name": "Direzione Didattica Giuseppe Caiati",
       "provider": "istruzione-miur-tenant",
@@ -144367,14 +144355,13 @@
     },
     "IT-L33-icgp": {
       "name": "Istituto Comprensivo G. Puecher",
-      "provider": "istruzione-miur-tenant",
+      "provider": "independent",
       "domain": "icspuechererba.edu.it",
-      "confidence": 80,
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "no_spf",
+        "provider_classified",
+        "autodiscover_suggests:aruba"
       ]
     },
     "IT-L33-icgpc": {
@@ -165714,14 +165701,14 @@
     },
     "IT-L33-istsc_bsis008004": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - 'ANTONIETTI' - ISEO",
-      "provider": "microsoft",
-      "domain": "antoniettiseo.it",
-      "confidence": 95,
+      "provider": "istruzione-miur-tenant",
+      "domain": "antoniettiseo.edu.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "multi_provider_spf:brevo+microsoft+regional-public",
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_bsis00900x": {
@@ -174478,13 +174465,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceocevolani.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "liceocevolani.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175732,11 +175719,12 @@
     "IT-L33-istsc_fiic84800t": {
       "name": "ISTITUTO COMPRENSIVO - PIERACCINI",
       "provider": "google",
-      "domain": "icpieraccini.edu.it",
-      "confidence": 55,
+      "domain": "isoppido.edu.it",
+      "confidence": 53,
       "flags": [
         "multiple_mx",
-        "no_spf",
+        "spf_softfail",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -175980,7 +175968,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.edu.it",
+      "domain": "agrariofirenze.eu",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -200174,13 +200162,13 @@
     },
     "IT-L33-istsc_pnic82800x": {
       "name": "ISTITUTO COMPRENSIVO - IC MANIAGO",
-      "provider": "google",
-      "domain": "icmaniago.it",
-      "confidence": 53,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icmaniago.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_mismatch",
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -211299,12 +211287,13 @@
     },
     "IT-L33-istsc_roic808005": {
       "name": "ISTITUTO COMPRENSIVO - POLESELLA",
-      "provider": "google",
-      "domain": "icpolesella.net.in",
-      "confidence": 90,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icpolesella.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -219708,12 +219697,13 @@
     },
     "IT-L33-istsc_tvic83700a": {
       "name": "ISTITUTO COMPRENSIVO - IC GIAVERA DEL MONTELLO",
-      "provider": "google",
-      "domain": "icgiavera.eu",
-      "confidence": 55,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icgiavera.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -228740,7 +228730,7 @@
     "IT-L34-XQZEJ3XC": {
       "name": "arciconfraternita sant'angelo dei rossi",
       "provider": "aruba",
-      "domain": "arciconfraternitadeirossi.it",
+      "domain": "arciconfraternitadeiross.altervista.org",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -242152,6 +242142,18 @@
         "independent_mx_with_cloud_spf",
         "provider_classified",
         "autodiscover_confirms"
+      ]
+    },
+    "IT-L37-WKVIWXRE": {
+      "name": "ASEC TRADE SRL",
+      "provider": "local-isp",
+      "domain": "asectrade.it",
+      "confidence": 85,
+      "flags": [
+        "multiple_mx",
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-L37-WNC36ZYV": {
@@ -264300,18 +264302,6 @@
         "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
-      ]
-    },
-    "IT-SA-WKVIWXRE": {
-      "name": "ASEC TRADE SRL",
-      "provider": "local-isp",
-      "domain": "asectrade.it",
-      "confidence": 85,
-      "flags": [
-        "multiple_mx",
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
       ]
     },
     "IT-SA-WL8P57HI": {

@@ -1,5 +1,5 @@
 {
-  "n_purged": 509,
+  "n_purged": 510,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1861,6 +1861,17 @@
       "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
     },
     {
+      "id": "IT-CONS-cbsap",
+      "name": "Consorzio Bassa Sabina Acqua Peschiera",
+      "codice_ipa": "cbsap",
+      "seed_domain": "consorzioacquapeschiera.it",
+      "claimed_domain": "galsabina.com",
+      "reject_reason": "unrelated",
+      "old_mx": "localhost",
+      "old_provider": "independent",
+      "old_reason": "MX (localhost) is self-hosted"
+    },
+    {
       "id": "IT-CONS-cccfgnf",
       "name": "Consorzio Cimiteriale Fra I Comuni di Frattamaggiore Grumo Nevano e Frattaminore",
       "codice_ipa": "cccfgnf",
@@ -1989,8 +2000,8 @@
       "claimed_domain": "comuneborgorose.ri.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.comuneborgorose.ri.it",
-      "old_provider": "aws",
-      "old_reason": "MX (mx.comuneborgorose.ri.it) on AS16509 (?) -> aws (ASN-based override)"
+      "old_provider": "aruba",
+      "old_reason": "MX (mx.comuneborgorose.ri.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-L1-asbuccm",
@@ -2472,9 +2483,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2879,9 +2890,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L18-uco",
@@ -4100,9 +4111,9 @@
       "seed_domain": "legatobarone.provincia.venezia.it",
       "claimed_domain": "comune.vigonovo.ve.it",
       "reject_reason": "unrelated",
-      "old_mx": "cloudscan12.ilger.com",
+      "old_mx": "comune-vigonovo-ve-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
-      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
+      "old_reason": "MX record (comune-vigonovo-ve-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-L34-opst",
