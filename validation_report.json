@@ -1,5 +1,5 @@
 {
-  "total": 22919,
+  "total": 22917,
   "average_score": 80.8,
   "high_confidence_pct": 74.0,
   "quality_passed": false,
@@ -119670,18 +119670,6 @@
         "provider_via_gateway_spf"
       ]
     },
-    "IT-CONS-ctclg": {
-      "name": "Consorzio Tra Comuni per La Gestione del Servizio Idrico Integrato nel Crotonese",
-      "provider": "aruba",
-      "domain": "congesi.it",
-      "confidence": 83,
-      "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
-      ]
-    },
     "IT-CONS-ctpr": {
       "name": "Consorzio Tutela e Prevenzione Randagismo San Francesco",
       "provider": "aruba",
@@ -125557,17 +125545,6 @@
         "no_mx",
         "no_spf",
         "provider_unknown"
-      ]
-    },
-    "IT-L12-cm_mbase": {
-      "name": "Comunita' Montana Medio Basento",
-      "provider": "regional-public",
-      "domain": "mediobasento.it",
-      "confidence": 90,
-      "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
       ]
     },
     "IT-L12-cm_mlepin": {
@@ -165701,14 +165678,14 @@
     },
     "IT-L33-istsc_bsis008004": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - 'ANTONIETTI' - ISEO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "antoniettiseo.edu.it",
-      "confidence": 80,
+      "provider": "microsoft",
+      "domain": "antoniettiseo.it",
+      "confidence": 95,
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-istsc_bsis00900x": {
@@ -174465,13 +174442,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175968,7 +175945,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -197047,7 +197024,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -200162,13 +200139,13 @@
     },
     "IT-L33-istsc_pnic82800x": {
       "name": "ISTITUTO COMPRENSIVO - IC MANIAGO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icmaniago.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icmaniago.it",
+      "confidence": 53,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -211287,13 +211264,12 @@
     },
     "IT-L33-istsc_roic808005": {
       "name": "ISTITUTO COMPRENSIVO - POLESELLA",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icpolesella.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icpolesella.net.in",
+      "confidence": 90,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -219697,13 +219673,12 @@
     },
     "IT-L33-istsc_tvic83700a": {
       "name": "ISTITUTO COMPRENSIVO - IC GIAVERA DEL MONTELLO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icgiavera.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icgiavera.eu",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -222889,13 +222864,13 @@
     },
     "IT-L33-istsc_veic81000a": {
       "name": "ISTITUTO COMPRENSIVO - ANTONIO GRAMSCI",
-      "provider": "istruzione-miur-tenant",
+      "provider": "google",
       "domain": "icgramscicampalto.edu.it",
-      "confidence": 80,
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -226026,7 +226001,7 @@
       ]
     },
     "IT-L33-istsc_vrtl01000t": {
-      "name": "ISTITUTO TECNICO PER GEOMETRI - CANGRANDE DELLA SCALA",
+      "name": "Liceo Tecnologico \"Cangrande della Scala\"",
       "provider": "google",
       "domain": "itscangrande.edu.it",
       "confidence": 93,
@@ -228730,7 +228705,7 @@
     "IT-L34-XQZEJ3XC": {
       "name": "arciconfraternita sant'angelo dei rossi",
       "provider": "aruba",
-      "domain": "arciconfraternitadeiross.altervista.org",
+      "domain": "arciconfraternitadeirossi.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -236950,7 +236925,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "latina.cri.it",
+      "domain": "cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -261186,14 +261161,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {
