@@ -2,6 +2,37 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Resuming from a fresh machine — read docs/STATE.md first
+
+**A `git clone` of this repo is enough to resume the project** (project rule:
+resumable by design). [`docs/STATE.md`](docs/STATE.md) is the entrypoint: what
+to read, bootstrap commands (`uv sync --group dev` → `uv run pytest`), what is
+deliberately NOT in the clone (credentials only), where the live state runs
+(everything operational is on GitHub Actions — no local daemons), and the
+durable pending items. Keep STATE.md updated when durable project state
+changes (decisions, pendings, architecture) — the CI `smoke` job is the daily
+proof that a virgin clone builds, tests and runs the pipeline.
+
+## Working rules (owner's cross-cutting directives, valid without local memory)
+
+- **Bash, never PowerShell**; on Windows always `PYTHONUTF8=1` and
+  `encoding="utf-8"` for file I/O.
+- **Commit and push every change as you go**; commits end with the Claude
+  attribution line.
+- **Ruff-format `src/` and `tests/` before every push** (CI gates on
+  `ruff format --check`, locked ruff version from `uv.lock`).
+- **Test batteries**: present the run report (positive + negative control
+  where possible) and ask the owner for confirmation before push/deploy of a
+  new battery.
+- **Restore, don't regenerate**: costly artifacts are committed; recover lost
+  inputs from git history or the project server, never rebuild from scratch
+  (see docs/STATE.md §5 and the anti-shrink guards).
+- **Resilience is a requirement**: nightly must never break for one odd
+  entity; transient-vs-config error semantics everywhere; long jobs run on
+  the server in tmux, never on a laptop.
+- **Long-running one-offs run on the server** (`mxmap.it@51.158.36.151`,
+  direct SSH as that user).
+
 ## Project Overview
 
 MX Map is a DNS-based email provider classifier for European municipalities (92 countries, ~20,000 municipalities). It runs a 3-stage async pipeline that produces `data.json`, which powers an interactive Leaflet.js map showing where municipalities host their official email. Forked from [mxmap.ch](https://mxmap.ch) (Swiss municipalities). Covers all 27 EU member states plus 20 non-EU European countries.
