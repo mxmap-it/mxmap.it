@@ -1,5 +1,5 @@
 {
-  "total": 22918,
+  "total": 22919,
   "average_score": 80.8,
   "high_confidence_pct": 74.0,
   "quality_passed": false,
@@ -1078,12 +1078,12 @@
     },
     "IT-C13-acili": {
       "name": "Automobile Club Livorno",
-      "provider": "independent",
-      "domain": "pec.aci.it",
-      "confidence": 90,
+      "provider": "google",
+      "domain": "livorno.aci.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -14070,7 +14070,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "napoli.archiworld.it",
+      "domain": "na.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -23451,7 +23451,7 @@
     "IT-C3-AGENAS": {
       "name": "Agenzia Nazionale per i Servizi Sanitari Regionali - AGENAS",
       "provider": "microsoft",
-      "domain": "agenas.gov.it",
+      "domain": "agenas.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -27774,13 +27774,14 @@
     },
     "IT-COM-001161": {
       "name": "Comune di Montanaro",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.montanaro.to.it",
-      "confidence": 15,
+      "confidence": 95,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-001162": {
@@ -28485,13 +28486,14 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-001224": {
@@ -28700,11 +28702,12 @@
     },
     "IT-COM-001242": {
       "name": "Comune di San Germano Chisone",
-      "provider": "independent",
-      "domain": "cert.comune.sangermanochisone.to.it",
-      "confidence": 50,
+      "provider": "regional-public",
+      "domain": "comune.sangermanochisone.to.it",
+      "confidence": 90,
       "flags": [
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -30007,12 +30010,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.lenta.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -39599,13 +39602,13 @@
     },
     "IT-COM-008067": {
       "name": "Comune di Villa Faraldi",
-      "provider": "unknown",
+      "provider": "local-isp",
       "domain": "comune.villa-faraldi.im.it",
-      "confidence": 15,
+      "confidence": 88,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-008068": {
@@ -73197,7 +73200,7 @@
     "IT-COM-041067": {
       "name": "Comune di Urbino",
       "provider": "regional-public",
-      "domain": "comune.urbino.pu.it",
+      "domain": "comune.urbino.ps.it",
       "confidence": 90,
       "flags": [
         "spf_strict",
@@ -77179,7 +77182,7 @@
     "IT-COM-052009": {
       "name": "Comune di Chianciano Terme",
       "provider": "microsoft",
-      "domain": "comune.chianciano-terme.siena.it",
+      "domain": "comune.chianciano-terme.si.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -77191,12 +77194,13 @@
     "IT-COM-052010": {
       "name": "Comune di Chiusdino",
       "provider": "independent",
-      "domain": "comune.chiusdino.si.it",
+      "domain": "comune.chiusdino.siena.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-052011": {
@@ -77356,13 +77360,14 @@
     },
     "IT-COM-052025": {
       "name": "Comune di Radicondoli",
-      "provider": "independent",
-      "domain": "comune.radicondoli.si.it",
+      "provider": "google",
+      "domain": "comune.radicondoli.siena.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-052026": {
@@ -81732,14 +81737,12 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "microsoft",
-      "domain": "comune.fontenuova.rm.it",
-      "confidence": 95,
+      "provider": "independent",
+      "domain": "cert.fonte-nuova.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-059001": {
@@ -133457,6 +133460,19 @@
         "provider_via_gateway_spf"
       ]
     },
+    "IT-L2-ZA71IBIR": {
+      "name": "Agenzia Regionale Ligure per i Rifiuti",
+      "provider": "microsoft",
+      "domain": "arlir.liguria.it",
+      "confidence": 85,
+      "flags": [
+        "multiple_mx",
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "provider_via_gateway_spf"
+      ]
+    },
     "IT-L2-acam": {
       "name": "Agenzia Campana per la mobilita', le infrastrutture e le reti",
       "provider": "microsoft",
@@ -146994,14 +147010,13 @@
     },
     "IT-L33-icsce": {
       "name": "ISTITUTO COMPRENSIVO STATALE CERISANO",
-      "provider": "aruba",
-      "domain": "iis-alberghiero-tecnico-agrario-cs.edu.it",
-      "confidence": 83,
+      "provider": "google",
+      "domain": "cerisanoscuole.edu.it",
+      "confidence": 55,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "multiple_mx",
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-icsch": {
@@ -164188,13 +164203,13 @@
     },
     "IT-L33-istsc_bric80800c": {
       "name": "ISTITUTO COMPRENSIVO -  DANTE ALIGHIERI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icsdantealighieri.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icsdantealighieri.edu.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175947,7 +175962,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.edu.it",
+      "domain": "agrariofirenze.eu",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -194166,11 +194181,12 @@
     "IT-L33-istsc_noic83000q": {
       "name": "Istituto Comprensivo Cronilde Musso",
       "provider": "google",
-      "domain": "iccronildemusso.edu.it",
-      "confidence": 55,
+      "domain": "liceobellini.edu.it",
+      "confidence": 53,
       "flags": [
         "multiple_mx",
-        "no_spf",
+        "spf_softfail",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -197026,7 +197042,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -227189,7 +227205,7 @@
     "IT-L33-itz": {
       "name": "I.I.S. TRON ZANELLA MARTINI",
       "provider": "google",
-      "domain": "tronzanella.edu.it",
+      "domain": "liceischio.edu.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -228707,7 +228723,7 @@
     "IT-L34-XQZEJ3XC": {
       "name": "arciconfraternita sant'angelo dei rossi",
       "provider": "aruba",
-      "domain": "arciconfraternitadeiross.altervista.org",
+      "domain": "arciconfraternitadeirossi.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -236927,7 +236943,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "cri.it",
+      "domain": "latina.cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -262706,7 +262722,7 @@
       ]
     },
     "IT-SA-LBKOVX0Q": {
-      "name": "SOCIETA INFORMATICA SRL",
+      "name": "Società Informatica Territoriale S.r.l.",
       "provider": "microsoft",
       "domain": "sitbelluno.it",
       "confidence": 85,
@@ -262823,11 +262839,11 @@
     },
     "IT-SA-MH8PWLTO": {
       "name": "Fondazione POL.I.S.",
-      "provider": "aruba",
-      "domain": "pec.regione.campania.it",
-      "confidence": 88,
+      "provider": "microsoft",
+      "domain": "fondazionepolis.regione.campania.it",
+      "confidence": 90,
       "flags": [
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
