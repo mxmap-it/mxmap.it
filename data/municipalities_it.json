@@ -95050,9 +95050,11 @@
     "country": "IT",
     "region": "Lazio",
     "district": "Viterbo",
-    "domain": "comunesanlorenzonuovo.it",
+    "domain": "comune.sanlorenzonuovo.vt.it",
     "osm_relation_id": 42098,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "comunesanlorenzonuovo.it"
+    ],
     "ipa_codice_ipa": "c_h969",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "11117831",
@@ -143824,9 +143826,7 @@
     "district": null,
     "domain": "oavc.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "archiworld.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "odapp_ma",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,

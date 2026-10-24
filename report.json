@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T09:50:12Z",
+  "generated_at": "2026-10-24T09:28:30Z",
   "run_id": null,
   "edition": "ottobre 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -11,9 +11,9 @@
       "title": "Sintesi per i decisori",
       "kind": "executive",
       "findings": [
-        "Il 48.45% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
-        "I provider italiani restano la prima scelta (51.0%), ma frammentati.",
-        "Scarto tra controllo legale (51.0%) e collocazione tecnica dell'MX (domestico 45.71%): è esso stesso un segnale.",
+        "Il 48.43% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
+        "I provider italiani restano la prima scelta (51.02%), ma frammentati.",
+        "Scarto tra controllo legale (51.02%) e collocazione tecnica dell'MX (domestico 45.73%): è esso stesso un segnale.",
         "Settori più esposti al CLOUD Act: Istruzione 78.48% · Sanità 65.35% · Ricerca 56.72%.",
         "Divario territoriale: Molise guida la sovranità (ISD 73.44%), Veneto è la più esposta al CLOUD Act (60.93%)."
       ],
@@ -24,11 +24,11 @@
         },
         {
           "label": "Sovranità italiana (ISD)",
-          "value": "51.0%"
+          "value": "51.02%"
         },
         {
           "label": "Soggette al CLOUD Act",
-          "value": "48.45%"
+          "value": "48.43%"
         },
         {
           "label": "Copertura del dato",
@@ -62,7 +62,7 @@
           "key": "it",
           "label": "Italiano",
           "pct": 49.6,
-          "count": 11368
+          "count": 11372
         },
         {
           "key": "eu_non_it",
@@ -74,7 +74,7 @@
           "key": "extra_eu",
           "label": "Extra-UE (CLOUD Act)",
           "pct": 47.1,
-          "count": 10801
+          "count": 10797
         },
         {
           "key": "unknown",
@@ -86,25 +86,25 @@
       "top_providers": [
         {
           "name": "Provider Italiano",
-          "count": 7429,
+          "count": 7431,
           "pct": 32.4,
           "sovereignty": "it"
         },
         {
           "name": "Google Workspace",
-          "count": 6473,
+          "count": 6472,
           "pct": 28.2,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Microsoft 365",
-          "count": 4321,
-          "pct": 18.9,
+          "count": 4318,
+          "pct": 18.8,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Infrastruttura autonoma",
-          "count": 3023,
+          "count": 3025,
           "pct": 13.2,
           "sovereignty": "it"
         },
@@ -142,13 +142,13 @@
       "jurisdiction": [
         {
           "key": "domestic",
-          "count": 10477,
-          "pct": 45.71
+          "count": 10481,
+          "pct": 45.73
         },
         {
           "key": "foreign",
-          "count": 11495,
-          "pct": 50.15
+          "count": 11491,
+          "pct": 50.14
         },
         {
           "key": "mixed",
@@ -162,8 +162,8 @@
         }
       ],
       "market": {
-        "top3_pct": 67.56,
-        "hhi": 1887.2
+        "top3_pct": 67.54,
+        "hhi": 1886.6
       }
     },
     {
@@ -180,14 +180,14 @@
         {
           "cluster": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
           "n_entities": 8005,
-          "usa_pct": 26.3,
-          "isd": 73.38
+          "usa_pct": 26.28,
+          "isd": 73.41
         },
         {
           "cluster": "Ordini professionali, Camere di commercio, ACI",
           "n_entities": 2019,
-          "usa_pct": 24.15,
-          "isd": 73.28
+          "usa_pct": 24.09,
+          "isd": 73.33
         },
         {
           "cluster": "Consorzi, Unioni di Comuni, Comunità montane",
@@ -204,8 +204,8 @@
         {
           "cluster": "Stazioni appaltanti",
           "n_entities": 621,
-          "usa_pct": 51.82,
-          "isd": 47.36
+          "usa_pct": 51.65,
+          "isd": 47.52
         },
         {
           "cluster": "Welfare, ASP/IPAB e case popolari",
@@ -302,14 +302,14 @@
         {
           "regione": "Piemonte",
           "n": 2271,
-          "isd": 66.11,
-          "usa_pct": 33.62
+          "isd": 66.14,
+          "usa_pct": 33.59
         },
         {
           "regione": "Abruzzo",
           "n": 709,
-          "isd": 65.32,
-          "usa_pct": 33.48
+          "isd": 65.37,
+          "usa_pct": 33.43
         },
         {
           "regione": "Calabria",
@@ -350,8 +350,8 @@
         {
           "regione": "Campania",
           "n": 1916,
-          "isd": 53.6,
-          "usa_pct": 46.14
+          "isd": 53.65,
+          "usa_pct": 46.08
         },
         {
           "regione": "Lazio",
@@ -374,8 +374,8 @@
         {
           "regione": "Toscana",
           "n": 1171,
-          "isd": 46.18,
-          "usa_pct": 53.21
+          "isd": 46.35,
+          "usa_pct": 53.04
         },
         {
           "regione": "Puglia",
@@ -418,19 +418,19 @@
         {
           "macroarea": "Sud",
           "n": 5385,
-          "isd": 56.99,
-          "usa_pct": 42.47
+          "isd": 57.02,
+          "usa_pct": 42.45
         },
         {
           "macroarea": "Centro",
           "n": 4014,
-          "isd": 49.24,
-          "usa_pct": 50.12
+          "isd": 49.3,
+          "usa_pct": 50.06
         },
         {
           "macroarea": "Nord",
           "n": 10838,
-          "isd": 46.87,
+          "isd": 46.88,
           "usa_pct": 52.57
         }
       ],
@@ -454,7 +454,7 @@
       "series": [
         {
           "date": "2026-10",
-          "isd": 51.0
+          "isd": 51.02
         }
       ],
       "note": "Monitoraggio appena avviato: la serie storica parte da questa edizione; i trend compariranno dai prossimi rilevamenti."

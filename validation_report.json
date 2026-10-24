@@ -1078,12 +1078,12 @@
     },
     "IT-C13-acili": {
       "name": "Automobile Club Livorno",
-      "provider": "google",
-      "domain": "livorno.aci.it",
-      "confidence": 55,
+      "provider": "independent",
+      "domain": "pec.aci.it",
+      "confidence": 90,
       "flags": [
-        "multiple_mx",
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -14070,7 +14070,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "na.archiworld.it",
+      "domain": "napoli.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -27774,14 +27774,13 @@
     },
     "IT-COM-001161": {
       "name": "Comune di Montanaro",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "comune.montanaro.to.it",
-      "confidence": 95,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-001162": {
@@ -28486,14 +28485,13 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 93,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-001224": {
@@ -30889,13 +30887,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -77182,7 +77180,7 @@
     "IT-COM-052009": {
       "name": "Comune di Chianciano Terme",
       "provider": "microsoft",
-      "domain": "comune.chianciano-terme.si.it",
+      "domain": "comune.chianciano-terme.siena.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -77194,13 +77192,12 @@
     "IT-COM-052010": {
       "name": "Comune di Chiusdino",
       "provider": "independent",
-      "domain": "comune.chiusdino.siena.it",
+      "domain": "comune.chiusdino.si.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-052011": {
@@ -77360,14 +77357,13 @@
     },
     "IT-COM-052025": {
       "name": "Comune di Radicondoli",
-      "provider": "google",
-      "domain": "comune.radicondoli.siena.it",
+      "provider": "independent",
+      "domain": "comune.radicondoli.si.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-052026": {
@@ -79364,13 +79360,13 @@
     "IT-COM-056047": {
       "name": "Comune di San Lorenzo Nuovo",
       "provider": "aruba",
-      "domain": "comunesanlorenzonuovo.it",
-      "confidence": 70,
+      "domain": "comune.sanlorenzonuovo.vt.it",
+      "confidence": 83,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "independent_mx_with_cloud_spf",
-        "multi_provider_spf:aruba+microsoft",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-056048": {
@@ -90497,13 +90493,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -122211,10 +122206,11 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "pec.calabriaverde.eu",
-      "confidence": 50,
+      "domain": "calabriaverde.regione.calabria.it",
+      "confidence": 78,
       "flags": [
-        "no_spf",
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -174460,13 +174456,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceocevolani.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "liceocevolani.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -236943,7 +236939,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "latina.cri.it",
+      "domain": "cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -239083,7 +239079,6 @@
         "spf_strict",
         "independent_mx_with_cloud_spf",
         "provider_classified",
-        "smtp_suggests:microsoft",
         "autodiscover_suggests:microsoft"
       ]
     },
@@ -239146,7 +239141,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.com",
+      "domain": "flegrealavoro.portaletrasparenza.net",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242562,7 +242557,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.it",
+      "domain": "unilavspa.portaletrasparenza.net",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -262839,11 +262834,11 @@
     },
     "IT-SA-MH8PWLTO": {
       "name": "Fondazione POL.I.S.",
-      "provider": "microsoft",
-      "domain": "fondazionepolis.regione.campania.it",
-      "confidence": 90,
+      "provider": "aruba",
+      "domain": "pec.regione.campania.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified"
       ]

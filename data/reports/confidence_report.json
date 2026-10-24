@@ -6,27 +6,27 @@
   "mean_nonzero": 0.875,
   "buckets": {
     "0.90-1.00 (molto alta)": 17394,
-    "0.80-0.89 (alta)": 3616,
+    "0.80-0.89 (alta)": 3617,
     "0.00 (nulla / unknown)": 628,
-    "0.60-0.79 (media)": 1214,
+    "0.60-0.79 (media)": 1213,
     "0.01-0.59 (bassa)": 67
   },
   "rules": {
     "mx_spf": 17394,
-    "dom_mx_spf": 1742,
+    "dom_mx_spf": 1745,
     "no_mx": 628,
-    "mx_only": 1874,
-    "frgn_mx_spf": 991,
+    "mx_only": 1872,
+    "frgn_mx_spf": 990,
     "dom_mx_only": 223,
     "frgn_mx_only": 67
   },
   "jurisdiction": {
-    "foreign": 11495,
-    "domestic": 10477,
+    "foreign": 11491,
+    "domestic": 10481,
     "mixed": 246,
     "unknown": 701
   },
-  "domestic_mx_override": 205,
+  "domestic_mx_override": 206,
   "bounce_candidates": 67,
   "bounce_by_provider": {
     "independent": 67
@@ -37,7 +37,7 @@
   },
   "provider_confidence": {
     "microsoft": 0.929,
-    "independent": 0.72,
+    "independent": 0.721,
     "local-isp": 0.891,
     "unknown": 0.0,
     "google": 0.883,
