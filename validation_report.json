@@ -1,5 +1,5 @@
 {
-  "total": 22919,
+  "total": 22920,
   "average_score": 80.8,
   "high_confidence_pct": 74.0,
   "quality_passed": false,
@@ -14070,7 +14070,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "napoli.archiworld.it",
+      "domain": "na.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -28485,13 +28485,14 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-001224": {
@@ -30887,13 +30888,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "comune.cureggio.no.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-003060": {
@@ -77180,7 +77181,7 @@
     "IT-COM-052009": {
       "name": "Comune di Chianciano Terme",
       "provider": "microsoft",
-      "domain": "comune.chianciano-terme.siena.it",
+      "domain": "comune.chianciano-terme.si.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -77192,12 +77193,13 @@
     "IT-COM-052010": {
       "name": "Comune di Chiusdino",
       "provider": "independent",
-      "domain": "comune.chiusdino.si.it",
+      "domain": "comune.chiusdino.siena.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-052011": {
@@ -77357,13 +77359,14 @@
     },
     "IT-COM-052025": {
       "name": "Comune di Radicondoli",
-      "provider": "independent",
-      "domain": "comune.radicondoli.si.it",
+      "provider": "google",
+      "domain": "comune.radicondoli.siena.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-052026": {
@@ -81733,12 +81736,14 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "independent",
-      "domain": "cert.fonte-nuova.it",
-      "confidence": 50,
+      "provider": "microsoft",
+      "domain": "comune.fontenuova.rm.it",
+      "confidence": 95,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-059001": {
@@ -90493,12 +90498,13 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.scanno.aq.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-066094": {
@@ -122206,11 +122212,10 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "calabriaverde.regione.calabria.it",
-      "confidence": 78,
+      "domain": "pec.calabriaverde.eu",
+      "confidence": 50,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -174456,13 +174461,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175958,7 +175963,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -176123,14 +176128,13 @@
     },
     "IT-L33-istsc_fipc030003": {
       "name": "Liceo Classico \"Galileo-Michelangiolo\"",
-      "provider": "microsoft",
-      "domain": "liceoclassicogalileo.edu.it",
-      "confidence": 95,
+      "provider": "google",
+      "domain": "galileomichelangiolo.edu.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "multiple_mx",
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_fipm02000l": {
@@ -236939,7 +236943,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "cri.it",
+      "domain": "latina.cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -239079,6 +239083,7 @@
         "spf_strict",
         "independent_mx_with_cloud_spf",
         "provider_classified",
+        "smtp_suggests:microsoft",
         "autodiscover_suggests:microsoft"
       ]
     },
@@ -239193,6 +239198,18 @@
       "flags": [
         "spf_softfail",
         "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
+    "IT-L37-F6PWZBJF": {
+      "name": "FEDERAZIONE ITALIANA MOTONAUTICA",
+      "provider": "microsoft",
+      "domain": "fimconi.it",
+      "confidence": 95,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
       ]
@@ -259244,13 +259261,15 @@
     },
     "IT-S01-ptvbssv": {
       "name": "Parco Tecnologico Val Bormida Srl",
-      "provider": "unknown",
-      "domain": "parcotecnologicovalbormida.filse.it",
-      "confidence": 15,
+      "provider": "microsoft",
+      "domain": "filse.it",
+      "confidence": 85,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-S01-pusv": {

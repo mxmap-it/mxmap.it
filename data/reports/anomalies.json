@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-24 09:28 UTC",
+ "generated_at": "2026-10-25 09:52 UTC",
  "country": "IT",
- "total_entities": 22919,
- "anomalies_total": 731,
- "anomalies_pct": 3.19,
+ "total_entities": 22920,
+ "anomalies_total": 730,
+ "anomalies_pct": 3.18,
  "by_type": {
   "no_mx": 628,
-  "geo_unknown": 73,
+  "geo_unknown": 72,
   "low_confidence": 67
  },
  "by_type_label": {
@@ -17,10 +17,10 @@
  "by_provider": {
   "unknown": 628,
   "independent": 95,
-  "microsoft": 6,
+  "microsoft": 5,
   "google": 2
  },
- "classified_but_anomalous": 103,
+ "classified_but_anomalous": 102,
  "entries": [
   {
    "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
@@ -702,7 +702,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Azienda Speciale Vola",
@@ -779,7 +779,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "B.I.M. Consorzio Comuni Provincia Cagliari",
@@ -845,7 +845,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Centro di Formazione Professionale Brunico",
@@ -1296,7 +1296,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Collegio Guide Alpine Delle Marche",
@@ -1728,6 +1728,17 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
+   "name": "Comune di Cureggio",
+   "domain": "comune.cureggio.no.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 6 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Domegge di Cadore",
    "domain": "comune.domeggedicadore.bl.it",
    "provider": "unknown",
@@ -1736,7 +1747,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Fumane",
@@ -1747,7 +1758,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Gavi",
@@ -1802,7 +1813,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Loano",
@@ -1879,7 +1890,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Massazza",
@@ -1912,7 +1923,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 5 candidates; none yielded MX"
   },
   {
    "name": "Comune di Monteleone di Spoleto",
@@ -2069,17 +2080,6 @@
    "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
-   "name": "Comune di Romano Canavese",
-   "domain": "comune.romanocanavese.to.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
    "name": "Comune di Ronchi Valsugana",
    "domain": "comune.ronchi.tn.it",
    "provider": "unknown",
@@ -2187,7 +2187,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 5 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Santa Elisabetta",
@@ -2214,6 +2214,17 @@
   {
    "name": "Comune di Sarule",
    "domain": "comune.sarule.nu.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
+  },
+  {
+   "name": "Comune di Scanno",
+   "domain": "comune.scanno.aq.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -2407,7 +2418,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Zungoli",
@@ -2726,7 +2737,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 5 candidates; none yielded MX"
   },
   {
    "name": "Comune di San Sebastiano al Vesuvio",
@@ -3760,7 +3771,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Scuola dell Infanzia Giandanese Bernini",
@@ -3815,7 +3826,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "I.C. 3 CATULLO",
@@ -4046,7 +4057,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Istituto Comprensivo di Scuola Primaria e Secondaria di Primo Grado Rovereto - Sud Via Benacense, 32",
@@ -4365,7 +4376,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Istituzione Scolastica Unite Des Communes Valdotaines Mont Emilius 1",
@@ -5193,17 +5204,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "Parco Tecnologico Val Bormida Srl",
-   "domain": "parcotecnologicovalbormida.filse.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
    "name": "Universita Agraria di Mugnano in Teverina",
    "domain": "pec.agrariamugnano.net",
    "provider": "unknown",
@@ -5740,7 +5740,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia Regionale Conservatoria Delle Coste della Sardegna",
@@ -6191,7 +6191,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Ordine dei Tecnici Sanitari di Radiologia Medica, e delle Professioni Sanitarie Tecniche, della Riabilitazione e della Prevenzione della Provincia di Enna",
@@ -6807,7 +6807,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 5 candidates; none yielded MX"
   },
   {
    "name": "Unione Comuni Vette Dei Nebrodi",
@@ -8077,17 +8077,6 @@
    ],
    "mx": "istitutoberenini-edu-it.mail.protection.outlook.com",
    "reason": "MX record (istitutoberenini-edu-it.mail.protection.outlook.com) matches Microsoft"
-  },
-  {
-   "name": "Liceo Classico \"Galileo-Michelangiolo\"",
-   "domain": "liceoclassicogalileo.edu.it",
-   "provider": "microsoft",
-   "confidence": 0.92,
-   "anomaly": [
-    "geo_unknown"
-   ],
-   "mx": "liceoclassicogalileo-edu-it.mail.protection.outlook.com",
-   "reason": "MX record (liceoclassicogalileo-edu-it.mail.protection.outlook.com) matches Microsoft"
   },
   {
    "name": "Comitato Organizzatore dei Campionati Internazionali di Canottaggio Varese",
