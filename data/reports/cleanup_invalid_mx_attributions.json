@@ -1,5 +1,5 @@
 {
-  "n_purged": 510,
+  "n_purged": 509,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -121,17 +121,6 @@
       "old_mx": "cloudscan3.ilger.com",
       "old_provider": "google",
       "old_reason": "MX is ilger gateway; TXT verification proves google tenant"
-    },
-    {
-      "id": "IT-C14-cdipas",
-      "name": "Ordine delle Professioni Infermieristiche di Crotone",
-      "codice_ipa": "cdipas",
-      "seed_domain": "opicrotone.it",
-      "claimed_domain": "comune.crotone.it",
-      "reject_reason": "unrelated",
-      "old_mx": "alt1.aspmx.l.google.com",
-      "old_provider": "google",
-      "old_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google"
     },
     {
       "id": "IT-C14-cdobn",
@@ -1581,9 +1570,9 @@
       "seed_domain": "comune.vicoequense.na.it",
       "claimed_domain": "comunevicoequense.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.comunevicoequense.it",
+      "old_mx": "mx.comunevicoequense.it",
       "old_provider": "independent",
-      "old_reason": "MX (mail.comunevicoequense.it, mx.comunevicoequense.it) is self-hosted"
+      "old_reason": "MX (mx.comunevicoequense.it, mx2.comunevicoequense.it) is self-hosted"
     },
     {
       "id": "IT-COM-064040",
@@ -2483,9 +2472,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2890,9 +2879,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L18-uco",

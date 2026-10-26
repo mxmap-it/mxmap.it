@@ -6,13 +6,13 @@ Distinct clusters:           15
 
 === Aggregate (all clusters) ===
   USA share:  43.4%
-    Google Workspace            6473  ( 28.2%)
-    Provider Italiano           5127  ( 22.4%)
+    Google Workspace            6476  ( 28.3%)
+    Provider Italiano           5126  ( 22.4%)
     Microsoft 365               3460  ( 15.1%)
-    Infrastruttura autonoma     3023  ( 13.2%)
-    Provider Italiano           1564  (  6.8%)
-    Cloud Italiano               916  (  4.0%)
-    istruzione-miur-tenant       861  (  3.8%)
+    Infrastruttura autonoma     3025  ( 13.2%)
+    Provider Italiano           1565  (  6.8%)
+    Cloud Italiano               915  (  4.0%)
+    istruzione-miur-tenant       857  (  3.7%)
     Provider Italiano            662  (  2.9%)
     Sconosciuto                  628  (  2.7%)
     ovh                           77  (  0.3%)
@@ -34,11 +34,11 @@ Distinct clusters:           15
     Provider Italiano          2438  ( 29.9%)
     Infrastruttura autonoma    1818  ( 22.3%)
     Microsoft 365              1428  ( 17.5%)
-    Cloud Italiano              748  (  9.2%)
+    Cloud Italiano              747  (  9.1%)
     Google Workspace            677  (  8.3%)
     Provider Italiano           432  (  5.3%)
     Provider Italiano           421  (  5.2%)
-    Sconosciuto                 148  (  1.8%)
+    Sconosciuto                 149  (  1.8%)
     Provider Italiano            27  (  0.3%)
     ovh                          16  (  0.2%)
     infomaniak                    5  (  0.1%)
@@ -59,11 +59,11 @@ Distinct clusters:           15
   N: 8323    USA share:  67.7%
   Scuole statali di ogni ordine e grado, università pubbliche, istituzioni AFAM (alta formazione artistica/musicale/coreutica), enti per il diritto allo studio universitario, consorzi interuniversitari di ricerca.
 
-    Google Workspace           5058  ( 60.8%)
-    istruzione-miur-tenant      861  ( 10.3%)
-    Provider Italiano           815  (  9.8%)
-    Microsoft 365               575  (  6.9%)
-    Infrastruttura autonoma     515  (  6.2%)
+    Google Workspace           5060  ( 60.8%)
+    istruzione-miur-tenant      857  ( 10.3%)
+    Provider Italiano           814  (  9.8%)
+    Microsoft 365               576  (  6.9%)
+    Infrastruttura autonoma     517  (  6.2%)
     Provider Italiano           384  (  4.6%)
     Sconosciuto                  48  (  0.6%)
     Provider Italiano            28  (  0.3%)
@@ -74,7 +74,7 @@ Distinct clusters:           15
     ionos                         1  (  0.0%)
 
   --- breakdown per Codice IPA ---
-    L33   N=8087   USA=67.8%   top: Google Workspace=4971, istruzione-miur-tenant=861, Provider Italiano=774
+    L33   N=8087   USA=67.8%   top: Google Workspace=4973, istruzione-miur-tenant=857, Provider Italiano=773
     L17   N=71     USA=88.7%   top: Google Workspace=34, Microsoft 365=29, Provider Italiano=5
     L43   N=105    USA=64.8%   top: Google Workspace=46, Provider Italiano=26, Microsoft 365=22
     L15   N=30     USA=43.3%   top: Provider Italiano=8, Microsoft 365=8, Infrastruttura autonoma=5
@@ -128,11 +128,11 @@ Distinct clusters:           15
   Federazioni nazionali, ordini, collegi e consigli professionali (Avvocati, Medici, Ingegneri, ecc.), Camere di Commercio Industria Artigianato e Agricoltura, Automobile Club federati ACI.
 
     Provider Italiano           784  ( 38.8%)
-    Provider Italiano           333  ( 16.5%)
-    Google Workspace            236  ( 11.7%)
-    Microsoft 365               221  ( 10.9%)
+    Provider Italiano           334  ( 16.5%)
+    Google Workspace            237  ( 11.7%)
+    Microsoft 365               220  ( 10.9%)
     Infrastruttura autonoma     190  (  9.4%)
-    Sconosciuto                 114  (  5.6%)
+    Sconosciuto                 113  (  5.6%)
     Provider Italiano            64  (  3.2%)
     ovh                          43  (  2.1%)
     Provider Italiano            24  (  1.2%)
@@ -142,9 +142,9 @@ Distinct clusters:           15
     gandi                         1  (  0.0%)
 
   --- breakdown per Codice IPA ---
-    C14   N=1838   USA=16.7%   top: Provider Italiano=780, Provider Italiano=329, Microsoft 365=215
+    C14   N=1838   USA=16.7%   top: Provider Italiano=780, Provider Italiano=330, Microsoft 365=215
     L35   N=80     USA=73.8%   top: Google Workspace=57, Infrastruttura autonoma=11, Provider Italiano=4
-    C13   N=101    USA=92.1%   top: Google Workspace=89, Microsoft 365=4, Infrastruttura autonoma=4
+    C13   N=101    USA=92.1%   top: Google Workspace=90, Infrastruttura autonoma=4, Microsoft 365=3
 
 ====================================================================================================
 ## Welfare e politiche sociali  (cluster: welfare_sociale, viz=table)

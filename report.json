@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T09:53:04Z",
+  "generated_at": "2026-10-26T10:40:21Z",
   "run_id": null,
   "edition": "ottobre 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -14,7 +14,7 @@
         "Il 48.44% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
         "I provider italiani restano la prima scelta (51.0%), ma frammentati.",
         "Scarto tra controllo legale (51.0%) e collocazione tecnica dell'MX (domestico 45.72%): è esso stesso un segnale.",
-        "Settori più esposti al CLOUD Act: Istruzione 78.48% · Sanità 65.35% · Ricerca 56.72%.",
+        "Settori più esposti al CLOUD Act: Istruzione 78.47% · Sanità 65.35% · Ricerca 56.72%.",
         "Divario territoriale: Molise guida la sovranità (ISD 73.44%), Veneto è la più esposta al CLOUD Act (60.93%)."
       ],
       "metrics": [
@@ -62,7 +62,7 @@
           "key": "it",
           "label": "Italiano",
           "pct": 49.6,
-          "count": 11369
+          "count": 11370
         },
         {
           "key": "eu_non_it",
@@ -74,7 +74,7 @@
           "key": "extra_eu",
           "label": "Extra-UE (CLOUD Act)",
           "pct": 47.1,
-          "count": 10801
+          "count": 10800
         },
         {
           "key": "unknown",
@@ -92,25 +92,25 @@
         },
         {
           "name": "Google Workspace",
-          "count": 6473,
-          "pct": 28.2,
+          "count": 6476,
+          "pct": 28.3,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Microsoft 365",
-          "count": 4321,
-          "pct": 18.9,
+          "count": 4317,
+          "pct": 18.8,
           "sovereignty": "extra_eu"
         },
         {
           "name": "Infrastruttura autonoma",
-          "count": 3023,
+          "count": 3025,
           "pct": 13.2,
           "sovereignty": "it"
         },
         {
           "name": "Cloud Italiano",
-          "count": 916,
+          "count": 915,
           "pct": 4.0,
           "sovereignty": "it"
         },
@@ -163,7 +163,7 @@
       ],
       "market": {
         "top3_pct": 67.56,
-        "hhi": 1887.2
+        "hhi": 1887.4
       }
     },
     {
@@ -174,20 +174,20 @@
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
           "n_entities": 8323,
-          "usa_pct": 78.48,
-          "isd": 21.18
+          "usa_pct": 78.47,
+          "isd": 21.2
         },
         {
           "cluster": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
           "n_entities": 8005,
           "usa_pct": 26.31,
-          "isd": 73.38
+          "isd": 73.37
         },
         {
           "cluster": "Ordini professionali, Camere di commercio, ACI",
           "n_entities": 2019,
-          "usa_pct": 24.09,
-          "isd": 73.33
+          "usa_pct": 24.08,
+          "isd": 73.35
         },
         {
           "cluster": "Consorzi, Unioni di Comuni, Comunità montane",
@@ -265,7 +265,7 @@
       "spotlight": [
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
-          "usa_pct": 78.48,
+          "usa_pct": 78.47,
           "n_entities": 8323
         },
         {
@@ -302,8 +302,8 @@
         {
           "regione": "Piemonte",
           "n": 2271,
-          "isd": 66.14,
-          "usa_pct": 33.59
+          "isd": 66.13,
+          "usa_pct": 33.6
         },
         {
           "regione": "Abruzzo",
@@ -314,8 +314,8 @@
         {
           "regione": "Calabria",
           "n": 926,
-          "isd": 65.22,
-          "usa_pct": 34.33
+          "isd": 65.26,
+          "usa_pct": 34.3
         },
         {
           "regione": "Valle d'Aosta",
@@ -398,8 +398,8 @@
         {
           "regione": "Lombardia",
           "n": 3359,
-          "isd": 39.53,
-          "usa_pct": 60.32
+          "isd": 39.56,
+          "usa_pct": 60.29
         },
         {
           "regione": "Veneto",
@@ -418,7 +418,7 @@
         {
           "macroarea": "Sud",
           "n": 5385,
-          "isd": 57.01,
+          "isd": 57.02,
           "usa_pct": 42.45
         },
         {

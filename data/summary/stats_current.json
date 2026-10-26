@@ -14,8 +14,8 @@
   {
    "bucket": "Italia — Cloud sovrano",
    "group": "ITA",
-   "count": 916,
-   "pct": 4.11
+   "count": 915,
+   "pct": 4.1
   },
   {
    "bucket": "Italia — Provider commerciali",
@@ -26,8 +26,8 @@
   {
    "bucket": "Italia — Infrastruttura autonoma",
    "group": "ITA",
-   "count": 3023,
-   "pct": 13.56
+   "count": 3025,
+   "pct": 13.57
   },
   {
    "bucket": "Altri provider esteri",
@@ -38,7 +38,7 @@
   {
    "bucket": "USA (CLOUD Act)",
    "group": "EST",
-   "count": 10799,
+   "count": 10798,
    "pct": 48.44
   },
   {
@@ -74,14 +74,14 @@
   {
    "provider": "google",
    "display": "Google Workspace",
-   "count": 6473,
-   "pct": 29.04
+   "count": 6476,
+   "pct": 29.05
   },
   {
    "provider": "aruba",
    "display": "Provider Italiano",
-   "count": 5127,
-   "pct": 23.0
+   "count": 5126,
+   "pct": 22.99
   },
   {
    "provider": "microsoft",
@@ -92,26 +92,26 @@
   {
    "provider": "independent",
    "display": "Infrastruttura autonoma",
-   "count": 3023,
-   "pct": 13.56
+   "count": 3025,
+   "pct": 13.57
   },
   {
    "provider": "local-isp",
    "display": "Provider Italiano",
-   "count": 1564,
+   "count": 1565,
    "pct": 7.02
   },
   {
    "provider": "regional-public",
    "display": "Cloud Italiano",
-   "count": 916,
-   "pct": 4.11
+   "count": 915,
+   "pct": 4.1
   },
   {
    "provider": "istruzione-miur-tenant",
    "display": "Microsoft 365",
-   "count": 861,
-   "pct": 3.86
+   "count": 857,
+   "pct": 3.84
   },
   {
    "provider": "register-it",
@@ -182,18 +182,18 @@
  ],
  "market": {
   "top3_pct": 67.56,
-  "hhi": 1887.2
+  "hhi": 1887.4
  },
  "confidence_bands": [
   {
    "band": "alta",
-   "count": 21012,
-   "pct": 91.68
+   "count": 21011,
+   "pct": 91.67
   },
   {
    "band": "media",
-   "count": 1280,
-   "pct": 5.58
+   "count": 1281,
+   "pct": 5.59
   },
   {
    "band": "bassa",
@@ -207,6 +207,6 @@
   "dkim_pct": 16.1,
   "gateway_pct": 15.03
  },
- "generated": "2026-10-25T09:10:31Z",
+ "generated": "2026-10-26T10:06:41Z",
  "country": "IT"
 }
