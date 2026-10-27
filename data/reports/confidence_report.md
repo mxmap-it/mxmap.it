@@ -8,26 +8,26 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 
 | fascia | enti | % |
 |---|---:|---:|
-| 0.90-1.00 (molto alta) | 17394 | 75.9% |
+| 0.90-1.00 (molto alta) | 17396 | 75.9% |
 | 0.80-0.89 (alta) | 3617 | 15.8% |
-| 0.60-0.79 (media) | 1212 | 5.3% |
-| 0.01-0.59 (bassa) | 69 | 0.3% |
-| 0.00 (nulla / unknown) | 628 | 2.7% |
+| 0.60-0.79 (media) | 1210 | 5.3% |
+| 0.01-0.59 (bassa) | 68 | 0.3% |
+| 0.00 (nulla / unknown) | 629 | 2.7% |
 
 ## 2. Confidenza media per provider
 
 | provider | enti | confidenza media | min | max |
 |---|---:|---:|---:|---:|
-| google | 6476 | 0.883 | 0.80 | 0.92 |
-| aruba | 5126 | 0.896 | 0.80 | 0.92 |
-| microsoft | 3460 | 0.929 | 0.80 | 0.96 |
-| independent | 3025 | 0.720 | 0.50 | 0.80 |
-| local-isp | 1565 | 0.891 | 0.80 | 0.92 |
-| regional-public | 915 | 0.895 | 0.80 | 0.90 |
-| istruzione-miur-tenant | 857 | 0.960 | 0.96 | 0.96 |
-| register-it | 662 | 0.890 | 0.80 | 0.90 |
-| unknown | 628 | 0.000 | 0.00 | 0.00 |
-| ovh | 77 | 0.900 | 0.90 | 0.90 |
+| google | 6479 | 0.883 | 0.80 | 0.92 |
+| aruba | 5124 | 0.896 | 0.80 | 0.92 |
+| microsoft | 3461 | 0.929 | 0.80 | 0.96 |
+| independent | 3027 | 0.721 | 0.50 | 0.80 |
+| local-isp | 1560 | 0.891 | 0.80 | 0.92 |
+| regional-public | 914 | 0.895 | 0.80 | 0.90 |
+| istruzione-miur-tenant | 858 | 0.960 | 0.96 | 0.96 |
+| register-it | 661 | 0.890 | 0.80 | 0.90 |
+| unknown | 629 | 0.000 | 0.00 | 0.00 |
+| ovh | 78 | 0.900 | 0.90 | 0.90 |
 | seeweb | 76 | 0.900 | 0.90 | 0.90 |
 | hetzner | 29 | 0.900 | 0.90 | 0.90 |
 | ionos | 8 | 0.900 | 0.90 | 0.90 |
@@ -41,13 +41,13 @@ Livelli di confidenza della classificazione email, analitici e aggregati. Metodo
 
 | regola | enti | % |
 |---|---:|---:|
-| `mx_spf` | 17394 | 75.9% |
-| `mx_only` | 1873 | 8.2% |
-| `dom_mx_spf` | 1744 | 7.6% |
+| `mx_spf` | 17396 | 75.9% |
+| `mx_only` | 1868 | 8.2% |
+| `dom_mx_spf` | 1749 | 7.6% |
 | `frgn_mx_spf` | 990 | 4.3% |
-| `no_mx` | 628 | 2.7% |
-| `dom_mx_only` | 222 | 1.0% |
-| `frgn_mx_only` | 69 | 0.3% |
+| `no_mx` | 629 | 2.7% |
+| `dom_mx_only` | 220 | 1.0% |
+| `frgn_mx_only` | 68 | 0.3% |
 
 ## 4. Giurisdizione dell'infrastruttura MX (sovranità)
 
@@ -55,21 +55,21 @@ Dove risiede fisicamente il server di posta in entrata (Team Cymru ASN country):
 
 | giurisdizione | enti | % |
 |---|---:|---:|
-| 🇮🇹 Domestica (IT) | 10479 | 45.7% |
-| Mista (IT + estero) | 246 | 1.1% |
-| 🌍 Estera | 11495 | 50.2% |
-| Sconosciuta | 700 | 3.1% |
+| 🇮🇹 Domestica (IT) | 10471 | 45.7% |
+| Mista (IT + estero) | 243 | 1.1% |
+| 🌍 Estera | 11498 | 50.2% |
+| Sconosciuta | 708 | 3.1% |
 
-**Domestic MX override** applicato a **207** enti: classificati cloud (Microsoft/Google) per segnale tenant/DKIM, ma con MX in entrata self-hosted domestico → riclassificati `independent` (il tenant cloud riflette Teams/SharePoint, non la posta).
+**Domestic MX override** applicato a **211** enti: classificati cloud (Microsoft/Google) per segnale tenant/DKIM, ma con MX in entrata self-hosted domestico → riclassificati `independent` (il tenant cloud riflette Teams/SharePoint, non la posta).
 
 ## 5. Anticipazione bounce-probing: candidati prioritari
 
-**69 enti** hanno confidenza < 0.60 pur essendo classificati: sono i casi dove la verifica via bounce (invio a indirizzo inesistente + analisi NDR) aggiunge più valore. Priorità per provider:
+**68 enti** hanno confidenza < 0.60 pur essendo classificati: sono i casi dove la verifica via bounce (invio a indirizzo inesistente + analisi NDR) aggiunge più valore. Priorità per provider:
 
 | provider | enti a bassa confidenza |
 |---|---:|
-| independent | 69 |
+| independent | 68 |
 
-Per giurisdizione: unknown=37, foreign=32
+Per giurisdizione: unknown=36, foreign=32
 
 > La validazione bounce confermerà o smentirà queste classificazioni incerte analizzando il backend MTA reale dal messaggio di ritorno, chiudendo il gap di confidenza.

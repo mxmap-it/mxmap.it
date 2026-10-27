@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-10-26 10:40 UTC",
+ "generated_at": "2026-10-27 10:56 UTC",
  "country": "IT",
  "total_entities": 22920,
- "anomalies_total": 732,
- "anomalies_pct": 3.19,
+ "anomalies_total": 740,
+ "anomalies_pct": 3.23,
  "by_type": {
-  "no_mx": 628,
-  "geo_unknown": 72,
-  "low_confidence": 69
+  "no_mx": 629,
+  "geo_unknown": 79,
+  "low_confidence": 68
  },
  "by_type_label": {
   "no_mx": "Nessun MX",
@@ -15,12 +15,12 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 628,
-  "independent": 97,
-  "microsoft": 5,
+  "unknown": 629,
+  "independent": 96,
+  "microsoft": 13,
   "google": 2
  },
- "classified_but_anomalous": 104,
+ "classified_but_anomalous": 111,
  "entries": [
   {
    "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
@@ -152,7 +152,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Agenzia Regionale per Il Lavoro",
@@ -174,7 +174,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 4 candidates; none yielded MX"
   },
   {
    "name": "ISTITUTO TECNICO SUPERIORE AGROALIMENTARE PER IL PIEMONTE",
@@ -878,7 +878,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "COMMISSARIO STRAORDINARIO DEL GOVERNO DELLA ZES CALABRIA",
@@ -1307,7 +1307,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Collegio Delle Ostetriche della Provincia di Mantova",
@@ -1527,7 +1527,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 5 candidates; none yielded MX"
   },
   {
    "name": "Comune di Cairo Montenotte",
@@ -1791,7 +1791,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Lanusei",
@@ -1857,7 +1857,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Marano Equo",
@@ -1948,6 +1948,17 @@
    "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
+   "name": "Comune di Nogarole Rocca",
+   "domain": "comune.nogarolerocca.vr.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Omignano",
    "domain": "comune.omignano.sa.it",
    "provider": "unknown",
@@ -1956,7 +1967,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Palu'",
@@ -2033,7 +2044,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Primiero San Martino di Castrozza",
@@ -3639,7 +3650,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Consorzio Acquedotto Intercomunale del Peschiera",
@@ -3771,7 +3782,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Collegio Geometri e Geometri Laureati della Provincia di Reggio Emilia",
@@ -3837,7 +3848,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "I.C. 3 CATULLO",
@@ -3859,7 +3870,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Istituto Comprensivo Bolzano 4 - Oltrisarco",
@@ -3870,7 +3881,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Istituzione Comunale Culturale",
@@ -3936,7 +3947,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Azienda Autonoma Soggiorno Cura e Turismo di Napoli",
@@ -4068,7 +4079,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Istituto Comprensivo di Scuola Primaria e Secondaria di Primo Grado Rovereto - Sud Via Benacense, 32",
@@ -6103,7 +6114,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Schulsprengel Tschoegglberg",
@@ -6631,7 +6642,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione di Comuni Lombarda di Lomello e Galliavola",
@@ -7024,18 +7035,6 @@
    "reason": "MX (as1.consorzioterrecablate.it, as2.consorzioterrecablate.it) is self-hosted"
   },
   {
-   "name": "Comune di Ciglie'",
-   "domain": "comune.ciglie.cn.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "geo_unknown",
-    "low_confidence"
-   ],
-   "mx": "mail.comune.ciglie.cn.it",
-   "reason": "MX (mail.comune.ciglie.cn.it) is self-hosted"
-  },
-  {
    "name": "Comune di Corno di Rosazzo",
    "domain": "comune.corno-di-rosazzo.ud.it",
    "provider": "independent",
@@ -7392,14 +7391,14 @@
    "reason": "MX (mail.comune.vocca.vc.it) is self-hosted"
   },
   {
-   "name": "Comune di Borgorose",
-   "domain": "comuneborgorose.ri.it",
+   "name": "Comune di Stignano",
+   "domain": "comunestignano.it",
    "provider": "independent",
    "confidence": 0.5,
    "anomaly": [
     "low_confidence"
    ],
-   "mx": "mx.comuneborgorose.ri.it",
+   "mx": "mx.comunestignano.it",
    "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
@@ -7437,6 +7436,17 @@
    "reason": "MX (mail.fvgstrade.it) is self-hosted"
   },
   {
+   "name": "ISTITUTO COMPRENSIVO - ANTONIO DE CURTIS",
+   "domain": "icdecurtis.edu.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.icdecurtis.edu.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
+  },
+  {
    "name": "ISTITUTO COMPRENSIVO - IC IGEA",
    "domain": "icigeamarina.edu.it",
    "provider": "independent",
@@ -7471,17 +7481,6 @@
    "reason": "MX (mail.iclacchiarella.edu.it) is self-hosted"
   },
   {
-   "name": "Istituto Comprensivo 'G. Modugno - R. Moro'",
-   "domain": "icmodugnomoro.edu.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.icmodugnomoro.edu.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
-  },
-  {
    "name": "ISTITUTO COMPRENSIVO - GIACOMO PACCINI-SOVICO",
    "domain": "icpaccinisovico.edu.it",
    "provider": "independent",
@@ -7490,17 +7489,6 @@
     "low_confidence"
    ],
    "mx": "mx.icpaccinisovico.edu.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
-  },
-  {
-   "name": "ISTITUTO COMPRENSIVO - GARIBALDI - CASTEL VOLTURNO -",
-   "domain": "icsgaribaldicastelvolturno.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.icsgaribaldicastelvolturno.it",
    "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
@@ -7727,6 +7715,17 @@
    "reason": "MX (mail.parktons.com) is self-hosted"
   },
   {
+   "name": "Ordine Dei Medici Veterinari della Provincia di Siena",
+   "domain": "veterinarisiena.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.veterinarisiena.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
+  },
+  {
    "name": "Assemblea Territoriale Idrica di Siracusa",
    "domain": "atisiracusa.it",
    "provider": "independent",
@@ -7736,17 +7735,6 @@
    ],
    "mx": "mail.atisiracusa.it",
    "reason": "MX (mail.atisiracusa.it) is self-hosted"
-  },
-  {
-   "name": "ITS ACADEMY CAMPANIA HITECH & COMMUNICATION",
-   "domain": "campaniaict.it",
-   "provider": "independent",
-   "confidence": 0.6,
-   "anomaly": [
-    "geo_unknown"
-   ],
-   "mx": "_dc-mx.059c8f35c67f.campaniaict.it",
-   "reason": "MX (_dc-mx.059c8f35c67f.campaniaict.it) is self-hosted"
   },
   {
    "name": "Comune di Collecorvino",
@@ -7780,6 +7768,17 @@
    ],
    "mx": "posta.ideafutura.com",
    "reason": "MX (posta.ideafutura.com) is self-hosted"
+  },
+  {
+   "name": "Consorzio di Bonifica 7 Caltagirone",
+   "domain": "consorziobonifica7caltagirone.it",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "_dc-mx.ae0341fcc9ce.consorziobonifica7caltagirone.it",
+   "reason": "MX (_dc-mx.ae0341fcc9ce.consorziobonifica7caltagirone.it) is self-hosted"
   },
   {
    "name": "Consorzio per lo Sviluppo del Polo Universitario di Gorizia",
@@ -8079,6 +8078,61 @@
    "reason": "MX record (iispiria.onmicrosoft.com.mail.protection.outlook.com, istitutopiriarosarno.edu.it.mail.protection.outlook.com) matches Microsoft"
   },
   {
+   "name": "LICEO SCIENTIFICO - LS L. DA VINCI",
+   "domain": "liceodavinci.edu.it",
+   "provider": "microsoft",
+   "confidence": 0.9,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "liceodavinci-edu-it.mail.protection.outlook.com",
+   "reason": "MX record (liceodavinci-edu-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "DIREZIONE DIDATTICA - DIREZIONE DIDATTICA 'A. FRANK'",
+   "domain": "afrankleini.edu.it",
+   "provider": "microsoft",
+   "confidence": 0.92,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "afrankleini-edu-it.mail.protection.outlook.com",
+   "reason": "MX record (afrankleini-edu-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "Comune di Pietrabruna",
+   "domain": "comunepietrabruna.it",
+   "provider": "microsoft",
+   "confidence": 0.92,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "comunepietrabruna-it.mail.protection.outlook.com",
+   "reason": "MX record (comunepietrabruna-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "ISTITUTO COMPRENSIVO - DIREZIONE DIDATTICA III CIRCOLO",
+   "domain": "icdeamicisvibo.edu.it",
+   "provider": "microsoft",
+   "confidence": 0.92,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "icdeamicisvibo-edu-it.mail.protection.outlook.com",
+   "reason": "MX record (icdeamicisvibo-edu-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "ISTITUTO COMPRENSIVO - I.C. GIOIOSA GROTTERIA",
+   "domain": "icgioiosagrotteria.edu.it",
+   "provider": "microsoft",
+   "confidence": 0.92,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "icgioiosagrotteria-edu-it.mail.protection.outlook.com",
+   "reason": "MX record (icgioiosagrotteria-edu-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
    "name": "Istituto Comprensivo Bruno Munari",
    "domain": "icmunari.edu.it",
    "provider": "microsoft",
@@ -8099,6 +8153,39 @@
    ],
    "mx": "istitutoberenini-edu-it.mail.protection.outlook.com",
    "reason": "MX record (istitutoberenini-edu-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "SAIM - SUDTIROL ALTO ADIGE INFORMATICA MEDICA SRL",
+   "domain": "saim.bz.it",
+   "provider": "microsoft",
+   "confidence": 0.92,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "saim-bz-it.mail.protection.outlook.com",
+   "reason": "MX record (saim-bz-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "ISTITUTO COMPRENSIVO - 'DANTE ALIGHIERI' NOCERA UMBRA",
+   "domain": "scuolenoceraumbra.edu.it",
+   "provider": "microsoft",
+   "confidence": 0.92,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "scuolenoceraumbra-edu-it.mail.protection.outlook.com",
+   "reason": "MX record (scuolenoceraumbra-edu-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "DIREZIONE DIDATTICA - DIREZIONE DID.2 C. SAN FELICE",
+   "domain": "secondocircolonicosia.edu.it",
+   "provider": "microsoft",
+   "confidence": 0.92,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "secondocircolonicosia-edu-it.mail.protection.outlook.com",
+   "reason": "MX record (secondocircolonicosia-edu-it.mail.protection.outlook.com) matches Microsoft"
   },
   {
    "name": "Comitato Organizzatore dei Campionati Internazionali di Canottaggio Varese",
