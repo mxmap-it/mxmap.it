@@ -1,5 +1,5 @@
 {
-  "total": 22920,
+  "total": 22921,
   "average_score": 80.8,
   "high_confidence_pct": 74.1,
   "quality_passed": false,
@@ -30008,12 +30008,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.lenta.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -30887,13 +30887,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -61081,13 +61081,14 @@
     },
     "IT-COM-023054": {
       "name": "Comune di Nogarole Rocca",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.nogarolerocca.vr.it",
-      "confidence": 15,
+      "confidence": 95,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-023055": {
@@ -77181,7 +77182,7 @@
     "IT-COM-052009": {
       "name": "Comune di Chianciano Terme",
       "provider": "microsoft",
-      "domain": "comune.chianciano-terme.si.it",
+      "domain": "comune.chianciano-terme.siena.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -77193,13 +77194,12 @@
     "IT-COM-052010": {
       "name": "Comune di Chiusdino",
       "provider": "independent",
-      "domain": "comune.chiusdino.siena.it",
+      "domain": "comune.chiusdino.si.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-052011": {
@@ -77359,14 +77359,13 @@
     },
     "IT-COM-052025": {
       "name": "Comune di Radicondoli",
-      "provider": "google",
-      "domain": "comune.radicondoli.siena.it",
+      "provider": "independent",
+      "domain": "comune.radicondoli.si.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-052026": {
@@ -90498,13 +90497,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -118049,7 +118047,7 @@
     "IT-COM-119012": {
       "name": "Comune di Narcao",
       "provider": "aruba",
-      "domain": "comune.narcao.su.it",
+      "domain": "comune.narcao.ci.it",
       "confidence": 78,
       "flags": [
         "spf_softfail",
@@ -149460,7 +149458,7 @@
       ]
     },
     "IT-L33-iirv": {
-      "name": "Ic. Intercomunale Ravenna/cervia",
+      "name": "ISTITUTO COMPRENSIVO STATALE N. 1 ANDREA CANEVARO",
       "provider": "local-isp",
       "domain": "icintercomunale1.edu.it",
       "confidence": 85,
@@ -163372,13 +163370,12 @@
     },
     "IT-L33-istsc_boic82800e": {
       "name": "ISTITUTO COMPRENSIVO - IC DI OZZANO DELL'EMILIA",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icozzano.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icozzano.istruzioneer.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -197042,7 +197039,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -213664,7 +213661,7 @@
       ]
     },
     "IT-L33-istsc_sric81100x": {
-      "name": "Istituto Comprensivo XIV K. Wojtyla Siracusa",
+      "name": "ISTITUTO COMPRENSIVO STATALE \"K. WOJTYLA - S. CHINDEMI\"",
       "provider": "istruzione-miur-tenant",
       "domain": "icwojtylachindemi.edu.it",
       "confidence": 80,
@@ -220465,13 +220462,14 @@
     },
     "IT-L33-istsc_tvtf04000t": {
       "name": "ISTITUTO TECNICO INDUSTRIALE - ITI PLANCK",
-      "provider": "google",
-      "domain": "maxplanck.edu.it",
-      "confidence": 55,
+      "provider": "aruba",
+      "domain": "icsusegana.edu.it",
+      "confidence": 83,
       "flags": [
-        "multiple_mx",
-        "no_spf",
-        "provider_classified"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-istsc_tvtn01000n": {
@@ -228720,7 +228718,7 @@
     "IT-L34-XQZEJ3XC": {
       "name": "arciconfraternita sant'angelo dei rossi",
       "provider": "aruba",
-      "domain": "arciconfraternitadeiross.altervista.org",
+      "domain": "arciconfraternitadeirossi.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -262566,6 +262564,18 @@
       "confidence": 95,
       "flags": [
         "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
+    "IT-SA-K5LKHMGI": {
+      "name": "RAISE S.c.a.r.l.",
+      "provider": "microsoft",
+      "domain": "raiseliguria.it",
+      "confidence": 93,
+      "flags": [
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"

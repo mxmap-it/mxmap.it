@@ -22770,7 +22770,8 @@
     "domain": "comune.caprivadelfriuli.go.it",
     "osm_relation_id": 179265,
     "domain_fallbacks": [
-      "com-capriva-del-friuli.regione.fvg.it"
+      "com-capriva-del-friuli.regione.fvg.it",
+      "collio.comunitafvg.it"
     ],
     "ipa_codice_ipa": "c_b712",
     "ipa_codice_categoria": "L6",
@@ -41844,7 +41845,7 @@
     "domain": "elini.nu.it",
     "osm_relation_id": 40130,
     "domain_fallbacks": [
-      "tiscali.it"
+      "comunedielini.it"
     ],
     "ipa_codice_ipa": "c_d395",
     "ipa_codice_categoria": "L6",
@@ -130696,7 +130697,7 @@
     "ipa_codice_ipa": "cidaa_",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "075052",
+    "ipa_codice_comune_istat": "075021",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -172708,9 +172709,7 @@
     "district": null,
     "domain": "unionecomuniterredelcampidano.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.unionecomuniterredelcampidano.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "udc_106",
     "ipa_codice_categoria": "L18",
     "ipa_codice_istat": "25084451",
@@ -197449,7 +197448,7 @@
   },
   {
     "id": "IT-L33-iirv",
-    "name": "Ic. Intercomunale Ravenna/cervia",
+    "name": "ISTITUTO COMPRENSIVO STATALE N. 1 ANDREA CANEVARO",
     "country": "IT",
     "region": null,
     "district": null,
@@ -204232,7 +204231,8 @@
     "domain": "istitutocellini.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "istruzione.it"
+      "istruzione.it",
+      "iiscellini.it"
     ],
     "ipa_codice_ipa": "istsc_alis004002",
     "ipa_codice_categoria": "L33",
@@ -291382,7 +291382,7 @@
   },
   {
     "id": "IT-L33-istsc_sric81100x",
-    "name": "Istituto Comprensivo XIV K. Wojtyla Siracusa",
+    "name": "ISTITUTO COMPRENSIVO STATALE \"K. WOJTYLA - S. CHINDEMI\"",
     "country": "IT",
     "region": null,
     "district": null,
@@ -301768,7 +301768,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "maxplanck.edu.it",
+    "domain": "icsusegana.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -301776,7 +301776,7 @@
     "ipa_codice_ipa": "istsc_tvtf04000t",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "026091",
+    "ipa_codice_comune_istat": "026083",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -360120,6 +360120,21 @@
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "031007",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SA-K5LKHMGI",
+    "name": "RAISE S.c.a.r.l.",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "raiseliguria.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "K5LKHMGI",
+    "ipa_codice_categoria": "SA",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "010025",
     "domain_source": "sito_istituzionale"
   },
   {
