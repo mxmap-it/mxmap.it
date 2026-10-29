@@ -1,5 +1,5 @@
 {
-  "total": 22921,
+  "total": 22923,
   "average_score": 80.8,
   "high_confidence_pct": 74.1,
   "quality_passed": false,
@@ -11912,14 +11912,14 @@
     },
     "IT-C14-oappc_pd": {
       "name": "Ordine degli Architetti Pianificatori Paesaggisti e Conservatori della Provincia di Padova",
-      "provider": "local-isp",
-      "domain": "pd.archiworld.it",
+      "provider": "microsoft",
+      "domain": "ordinearchitetti.pd.it",
       "confidence": 95,
       "flags": [
-        "multiple_mx",
         "spf_strict",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-C14-oappc_pn": {
@@ -14072,7 +14072,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "napoli.archiworld.it",
+      "domain": "na.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -28485,13 +28485,14 @@
     },
     "IT-COM-001223": {
       "name": "Comune di Romano Canavese",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comune.romanocanavese.to.it",
-      "confidence": 15,
+      "confidence": 93,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-COM-001224": {
@@ -28700,12 +28701,11 @@
     },
     "IT-COM-001242": {
       "name": "Comune di San Germano Chisone",
-      "provider": "regional-public",
-      "domain": "comune.sangermanochisone.to.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.comune.sangermanochisone.to.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -30008,12 +30008,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "regional-public",
-      "domain": "comune.lenta.vc.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -66755,7 +66755,7 @@
     },
     "IT-COM-029026": {
       "name": "Comune di Gavello",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.gavello.ro.it",
       "confidence": 88,
       "flags": [
@@ -81737,12 +81737,14 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "independent",
-      "domain": "cert.fonte-nuova.it",
-      "confidence": 50,
+      "provider": "microsoft",
+      "domain": "comune.fontenuova.rm.it",
+      "confidence": 95,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-059001": {
@@ -102491,7 +102493,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -117667,13 +117669,11 @@
     "IT-COM-118050": {
       "name": "Comune di Senorbi'",
       "provider": "aruba",
-      "domain": "comune.senorbi.su.it",
-      "confidence": 83,
+      "domain": "pec.comune.senorbi.ca.it",
+      "confidence": 68,
       "flags": [
         "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "provider_classified"
       ]
     },
     "IT-COM-118051": {
@@ -118058,7 +118058,7 @@
     "IT-COM-119013": {
       "name": "Comune di Nuxis",
       "provider": "microsoft",
-      "domain": "comune.nuxis.su.it",
+      "domain": "comune.nuxis.ci.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -119904,11 +119904,11 @@
       "name": "Consiglio Regionale Friuli Venezia Giulia",
       "provider": "independent",
       "domain": "consiglio.regione.fvg.it",
-      "confidence": 95,
+      "confidence": 85,
       "flags": [
         "multiple_mx",
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -121113,14 +121113,13 @@
     },
     "IT-L1-asbucry": {
       "name": "Amministrazione Separata Beni Usi Civici Oris",
-      "provider": "regional-public",
-      "domain": "gvcc.net",
-      "confidence": 95,
+      "provider": "unknown",
+      "domain": "data.gvcc.net",
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L1-asbucsc": {
@@ -121231,14 +121230,13 @@
     },
     "IT-L1-asbucua": {
       "name": "Amministrazione Separata Beni Usi Civici di Ultimo-Alsago",
-      "provider": "regional-public",
-      "domain": "gvcc.net",
-      "confidence": 95,
+      "provider": "unknown",
+      "domain": "data.gvcc.net",
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L1-asbucva": {
@@ -122563,11 +122561,11 @@
       "name": "Commissario Straordinario Attuazione Accordo di Programma 21-11-2014 Ferriera di Servola",
       "provider": "independent",
       "domain": "commissario.ferriera.fvg.it",
-      "confidence": 95,
+      "confidence": 85,
       "flags": [
         "multiple_mx",
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -124029,6 +124027,17 @@
         "provider_unknown"
       ]
     },
+    "IT-L1-sppmi": {
+      "name": "CENTRO DI FORMAZIONE PROFESSIONALE DIPL. ING. LUIS ZUEGG MERANO",
+      "provider": "unknown",
+      "domain": "zuegg.berufsschule.it",
+      "confidence": 15,
+      "flags": [
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
+      ]
+    },
     "IT-L1-spps": {
       "name": "Centro di formazione professionale Silandro - Berufsbildungszentrum Schlanders",
       "provider": "unknown",
@@ -124120,12 +124129,12 @@
     },
     "IT-L1-uslrps": {
       "name": "Ufficio Speciale per La Ricostruzione Post Sisma 2016 della Regione Lazio",
-      "provider": "independent",
-      "domain": "pec.regione.lazio.it",
-      "confidence": 80,
+      "provider": "microsoft",
+      "domain": "usrsisma.regione.lazio.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -163370,12 +163379,13 @@
     },
     "IT-L33-istsc_boic82800e": {
       "name": "ISTITUTO COMPRENSIVO - IC DI OZZANO DELL'EMILIA",
-      "provider": "google",
-      "domain": "icozzano.istruzioneer.it",
-      "confidence": 88,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icozzano.edu.it",
+      "confidence": 80,
       "flags": [
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -194179,12 +194189,11 @@
     "IT-L33-istsc_noic83000q": {
       "name": "Istituto Comprensivo Cronilde Musso",
       "provider": "google",
-      "domain": "liceobellini.edu.it",
-      "confidence": 53,
+      "domain": "iccronildemusso.edu.it",
+      "confidence": 55,
       "flags": [
         "multiple_mx",
-        "spf_softfail",
-        "mx_spf_mismatch",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -219686,12 +219695,13 @@
     },
     "IT-L33-istsc_tvic83700a": {
       "name": "ISTITUTO COMPRENSIVO - IC GIAVERA DEL MONTELLO",
-      "provider": "google",
-      "domain": "icgiavera.eu",
-      "confidence": 55,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icgiavera.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -240596,6 +240606,18 @@
         "independent_mx_with_cloud_spf",
         "provider_classified",
         "autodiscover_confirms"
+      ]
+    },
+    "IT-L37-NQ86VP6I": {
+      "name": "PROVINCIA DELLA CONGREGAZIONE DELLE FIGLIE DELLA CARITA",
+      "provider": "google",
+      "domain": "scuolapiacasa.it",
+      "confidence": 53,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_mismatch",
+        "provider_classified"
       ]
     },
     "IT-L37-NQXRJM76": {

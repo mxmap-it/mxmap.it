@@ -1,5 +1,5 @@
 {
-  "n_purged": 509,
+  "n_purged": 512,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -855,9 +855,9 @@
       "seed_domain": "ordinevarese.conaf.it",
       "claimed_domain": "comune.varese.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx.zimbraopen.it",
+      "old_mx": "gest.si-cloud.it",
       "old_provider": "microsoft",
-      "old_reason": "MX is zimbraopen gateway; SPF+DKIM confirm microsoft"
+      "old_reason": "MX (gest.si-cloud.it, gest2.si-cloud.it) is local gateway; DKIM reveals microsoft backend"
     },
     {
       "id": "IT-C14-odao_055",
@@ -1097,7 +1097,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "ms78257242.msv1.invalid",
+      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
     },
@@ -2015,6 +2015,17 @@
       "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
+      "id": "IT-L1-asbucry",
+      "name": "Amministrazione Separata Beni Usi Civici Oris",
+      "codice_ipa": "asbucry",
+      "seed_domain": "data.gvcc.net",
+      "claimed_domain": "comune.lasa.bz.it",
+      "reject_reason": "unrelated",
+      "old_mx": "es1.gvcc.net",
+      "old_provider": "regional-public",
+      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
+    },
+    {
       "id": "IT-L1-asbucter",
       "name": "Amministrazione Separata Beni Usi Civici di Termon",
       "codice_ipa": "asbucter",
@@ -2024,6 +2035,17 @@
       "old_mx": "mx.comunecampodenno.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comunecampodenno.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
+      "id": "IT-L1-asbucua",
+      "name": "Amministrazione Separata Beni Usi Civici di Ultimo-Alsago",
+      "codice_ipa": "asbucua",
+      "seed_domain": "data.gvcc.net",
+      "claimed_domain": "comune.malles.bz.it",
+      "reject_reason": "unrelated",
+      "old_mx": "es1.gvcc.net",
+      "old_provider": "regional-public",
+      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
       "id": "IT-L1-asbucval",
@@ -2345,6 +2367,17 @@
       "old_reason": "MX is proofpoint gateway; SPF+DKIM confirm microsoft"
     },
     {
+      "id": "IT-L1-sppmi",
+      "name": "CENTRO DI FORMAZIONE PROFESSIONALE DIPL. ING. LUIS ZUEGG MERANO",
+      "codice_ipa": "sppmi",
+      "seed_domain": "zuegg.berufsschule.it",
+      "claimed_domain": "comune.merano.bz.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mx07-0067de01.pphosted.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX is proofpoint gateway; SPF+DKIM confirm microsoft"
+    },
+    {
       "id": "IT-L1-spps",
       "name": "Centro di formazione professionale Silandro - Berufsbildungszentrum Schlanders",
       "codice_ipa": "spps",
@@ -2472,9 +2505,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2879,9 +2912,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L18-uco",

@@ -50,27 +50,27 @@
    "cluster": "territorial",
    "label": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
    "n": 8005,
-   "n_classified": 7874,
-   "isd": 73.39,
-   "cloud_act_pct": 26.29,
+   "n_classified": 7875,
+   "isd": 73.37,
+   "cloud_act_pct": 26.31,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 740,
-     "pct": 9.4
+     "count": 738,
+     "pct": 9.37
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 3237,
-     "pct": 41.11
+     "pct": 41.1
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 1802,
-     "pct": 22.89
+     "count": 1803,
+     "pct": 22.9
     },
     {
      "bucket": "Altri provider esteri",
@@ -81,14 +81,14 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 2070,
-     "pct": 26.29
+     "count": 2072,
+     "pct": 26.31
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 131,
-     "pct": 1.64
+     "count": 130,
+     "pct": 1.62
     }
    ]
   },
@@ -97,8 +97,8 @@
    "label": "Ordini professionali, Camere di commercio, ACI",
    "n": 2019,
    "n_classified": 1906,
-   "isd": 73.24,
-   "cloud_act_pct": 24.13,
+   "isd": 73.19,
+   "cloud_act_pct": 24.19,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -109,8 +109,8 @@
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 1203,
-     "pct": 63.12
+     "count": 1202,
+     "pct": 63.06
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
@@ -127,8 +127,8 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 460,
-     "pct": 24.13
+     "count": 461,
+     "pct": 24.19
     },
     {
      "bucket": "Sconosciuto",
@@ -141,28 +141,28 @@
   {
    "cluster": "consortia",
    "label": "Consorzi, Unioni di Comuni, Comunità montane",
-   "n": 1425,
-   "n_classified": 1240,
-   "isd": 71.21,
-   "cloud_act_pct": 28.55,
+   "n": 1426,
+   "n_classified": 1238,
+   "isd": 71.08,
+   "cloud_act_pct": 28.68,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 100,
-     "pct": 8.06
+     "count": 98,
+     "pct": 7.92
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 552,
-     "pct": 44.52
+     "pct": 44.59
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 231,
-     "pct": 18.63
+     "count": 230,
+     "pct": 18.58
     },
     {
      "bucket": "Altri provider esteri",
@@ -173,24 +173,24 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 354,
-     "pct": 28.55
+     "count": 355,
+     "pct": 28.68
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 185,
-     "pct": 12.98
+     "count": 188,
+     "pct": 13.18
     }
    ]
   },
   {
    "cluster": "soe",
    "label": "Società partecipate e fondazioni pubbliche",
-   "n": 1163,
-   "n_classified": 1100,
-   "isd": 50.0,
-   "cloud_act_pct": 49.18,
+   "n": 1164,
+   "n_classified": 1101,
+   "isd": 49.95,
+   "cloud_act_pct": 49.23,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -202,13 +202,13 @@
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 437,
-     "pct": 39.73
+     "pct": 39.69
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
      "count": 98,
-     "pct": 8.91
+     "pct": 8.9
     },
     {
      "bucket": "Altri provider esteri",
@@ -219,14 +219,14 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 541,
-     "pct": 49.18
+     "count": 542,
+     "pct": 49.23
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
      "count": 63,
-     "pct": 5.42
+     "pct": 5.41
     }
    ]
   },
@@ -691,5 +691,5 @@
    ]
   }
  ],
- "generated": "2026-10-28T10:32:42Z"
+ "generated": "2026-10-29T10:53:44Z"
 }

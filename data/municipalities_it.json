@@ -140657,11 +140657,9 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "pd.archiworld.it",
+    "domain": "ordinearchitetti.pd.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "ordinearchitetti.pd.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "oappc_pd",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -164697,6 +164695,23 @@
     "ipa_codice_categoria": "L1",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "021011",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L1-sppmi",
+    "name": "CENTRO DI FORMAZIONE PROFESSIONALE DIPL. ING. LUIS ZUEGG MERANO",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "zuegg.berufsschule.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [
+      "schule.suedtirol.it"
+    ],
+    "ipa_codice_ipa": "sppmi",
+    "ipa_codice_categoria": "L1",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "021051",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -204231,8 +204246,7 @@
     "domain": "istitutocellini.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "istruzione.it",
-      "iiscellini.it"
+      "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_alis004002",
     "ipa_codice_categoria": "L33",
@@ -262272,7 +262286,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "liceobellini.edu.it",
+    "domain": "iccronildemusso.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -262280,7 +262294,7 @@
     "ipa_codice_ipa": "istsc_noic83000q",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "003106",
+    "ipa_codice_comune_istat": "003149",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -339173,6 +339187,21 @@
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "009056",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L37-NQ86VP6I",
+    "name": "PROVINCIA DELLA CONGREGAZIONE DELLE FIGLIE DELLA CARITA",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "scuolapiacasa.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "NQ86VP6I",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "052032",
     "domain_source": "sito_istituzionale"
   },
   {
