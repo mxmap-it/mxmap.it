@@ -1,5 +1,5 @@
 {
-  "n_purged": 512,
+  "n_purged": 509,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -671,17 +671,6 @@
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
       "old_provider": "microsoft",
       "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
-    },
-    {
-      "id": "IT-C14-ocdlms",
-      "name": "Ordine Consulenti del Lavoro Consiglio Provinciale di Massa Carrara",
-      "codice_ipa": "ocdlms",
-      "seed_domain": "consulentidellavoroms.it",
-      "claimed_domain": "comune.carrara.ms.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx.carboniocloud.com",
-      "old_provider": "google",
-      "old_reason": "MX is carbonio gateway; TXT verification proves google tenant"
     },
     {
       "id": "IT-C14-oclpal",
@@ -2015,17 +2004,6 @@
       "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
-      "id": "IT-L1-asbucry",
-      "name": "Amministrazione Separata Beni Usi Civici Oris",
-      "codice_ipa": "asbucry",
-      "seed_domain": "data.gvcc.net",
-      "claimed_domain": "comune.lasa.bz.it",
-      "reject_reason": "unrelated",
-      "old_mx": "es1.gvcc.net",
-      "old_provider": "regional-public",
-      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
-    },
-    {
       "id": "IT-L1-asbucter",
       "name": "Amministrazione Separata Beni Usi Civici di Termon",
       "codice_ipa": "asbucter",
@@ -2035,17 +2013,6 @@
       "old_mx": "mx.comunecampodenno.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comunecampodenno.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
-    },
-    {
-      "id": "IT-L1-asbucua",
-      "name": "Amministrazione Separata Beni Usi Civici di Ultimo-Alsago",
-      "codice_ipa": "asbucua",
-      "seed_domain": "data.gvcc.net",
-      "claimed_domain": "comune.malles.bz.it",
-      "reject_reason": "unrelated",
-      "old_mx": "es1.gvcc.net",
-      "old_provider": "regional-public",
-      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
       "id": "IT-L1-asbucval",
@@ -2505,9 +2472,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2912,9 +2879,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L18-uco",

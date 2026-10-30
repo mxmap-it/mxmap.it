@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-29T11:28:03Z",
+  "generated_at": "2026-10-30T11:46:00Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
     "n_entities": 22923,
-    "n_with_mx": 22295,
-    "coverage_pct": 97.26
+    "n_with_mx": 22297,
+    "coverage_pct": 97.27
   },
   "indices": {
-    "isd": 50.96,
-    "cloud_act_pct": 48.48,
-    "n_classified": 22295
+    "isd": 50.97,
+    "cloud_act_pct": 48.47,
+    "n_classified": 22297
   },
   "sovereignty": {
     "extra_eu": {
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11362,
+      "count": 11364,
       "pct": 49.6,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 628,
+      "count": 626,
       "pct": 2.7,
       "label": "Sconosciuto"
     }
@@ -38,7 +38,7 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7423,
+      "count": 7425,
       "pct": 32.4,
       "sovereignty": "it"
     },
@@ -56,19 +56,19 @@
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3028,
+      "count": 3024,
       "pct": 13.2,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 911,
+      "count": 915,
       "pct": 4.0,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 628,
+      "count": 626,
       "pct": 2.7,
       "sovereignty": "unknown"
     },
@@ -113,7 +113,7 @@
     {
       "cluster": "Consorzi e Unioni di enti locali",
       "n_entities": 1426,
-      "usa_pct": 24.9,
+      "usa_pct": 24.8,
       "dominant_provider": "Provider Italiano"
     },
     {
@@ -143,7 +143,7 @@
     {
       "cluster": "Sanità",
       "n_entities": 234,
-      "usa_pct": 63.7,
+      "usa_pct": 64.1,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8515,
+    "mean": 0.8516,
     "high_pct": 91.7
   }
 }

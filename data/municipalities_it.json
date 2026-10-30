@@ -62902,9 +62902,11 @@
     "country": "IT",
     "region": "Sicilia",
     "district": "Catania",
-    "domain": "comunemilitello.it",
+    "domain": "comune.militello.ct.it",
     "osm_relation_id": 39208,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "comunemilitello.it"
+    ],
     "ipa_codice_ipa": "c_f209",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "45764",
@@ -140889,7 +140891,7 @@
     "domain": "wwwarchitettimacerata.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "archiworld.it"
+      "macerata.archiworld.it"
     ],
     "ipa_codice_ipa": "oappcm",
     "ipa_codice_categoria": "C14",
@@ -141386,7 +141388,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "consulentidellavoroms.it",
+    "domain": "consulentidellavoro.ms.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "gmail.com",
@@ -152151,7 +152153,7 @@
     "domain": "ordinearchitetti.ro.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "archiworld.it"
+      "rovigo.archiworld.it"
     ],
     "ipa_codice_ipa": "opapp_02",
     "ipa_codice_categoria": "C14",
@@ -258125,7 +258127,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "istitutopavesenazareth.it",
+    "domain": "istitutopavesenazareth.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -313941,7 +313943,9 @@
     "district": null,
     "domain": "artiacodeamicisdiaz.edu.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "istruzione.it"
+    ],
     "ipa_codice_ipa": "N17QML6E",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
