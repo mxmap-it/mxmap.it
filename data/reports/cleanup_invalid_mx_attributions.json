@@ -1,5 +1,5 @@
 {
-  "n_purged": 509,
+  "n_purged": 506,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1069,17 +1069,6 @@
       "old_reason": "MX is libraesva gateway; backend provider unknown"
     },
     {
-      "id": "IT-C14-opdd_081",
-      "name": "Ordine Provinciale Dei Dottori Agronomi e Dei Dottori Forestali di Trapani",
-      "codice_ipa": "opdd_081",
-      "seed_domain": "agronomiforestalitp.it",
-      "claimed_domain": "comune.trapani.it",
-      "reject_reason": "unrelated",
-      "old_mx": "in.arubabusiness.it",
-      "old_provider": "aruba",
-      "old_reason": "MX record (in.arubabusiness.it) matches Aruba"
-    },
-    {
       "id": "IT-C14-opmv_093",
       "name": "Ordine Provinciale dei Medici Veterinari di Pordenone",
       "codice_ipa": "opmv_093",
@@ -1111,17 +1100,6 @@
       "old_mx": "smtp1.invallee.it",
       "old_provider": "microsoft",
       "old_reason": "MX is invallee gateway; SPF+DKIM confirm microsoft"
-    },
-    {
-      "id": "IT-C3-aeci",
-      "name": "Aero Club d'Italia",
-      "codice_ipa": "aeci",
-      "seed_domain": "aeci.it",
-      "claimed_domain": "comune.roma.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-roma-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-C3-anlpa",
@@ -4664,17 +4642,6 @@
       "old_mx": "mx.comune.ardea.rm.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comune.ardea.rm.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
-    },
-    {
-      "id": "IT-L37-cbtar",
-      "name": "Consorzio di Bonifica Tevere e Agro Romano",
-      "codice_ipa": "cbtar",
-      "seed_domain": "cbtar.it",
-      "claimed_domain": "comune.roma.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-roma-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-L37-cbvps",

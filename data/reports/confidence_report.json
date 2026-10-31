@@ -3,30 +3,30 @@
   "n": 22923,
   "mean": 0.852,
   "median": 0.9,
-  "mean_nonzero": 0.876,
+  "mean_nonzero": 0.875,
   "buckets": {
     "0.90-1.00 (molto alta)": 17405,
     "0.80-0.89 (alta)": 3614,
-    "0.00 (nulla / unknown)": 626,
-    "0.60-0.79 (media)": 1210,
+    "0.00 (nulla / unknown)": 624,
+    "0.60-0.79 (media)": 1212,
     "0.01-0.59 (bassa)": 68
   },
   "rules": {
     "mx_spf": 17405,
     "dom_mx_spf": 1746,
-    "no_mx": 626,
+    "no_mx": 624,
     "mx_only": 1868,
     "frgn_mx_spf": 991,
-    "dom_mx_only": 219,
+    "dom_mx_only": 221,
     "frgn_mx_only": 68
   },
   "jurisdiction": {
-    "foreign": 11503,
-    "domestic": 10472,
+    "foreign": 11504,
+    "domestic": 10473,
     "mixed": 243,
-    "unknown": 705
+    "unknown": 703
   },
-  "domestic_mx_override": 212,
+  "domestic_mx_override": 211,
   "bounce_candidates": 68,
   "bounce_by_provider": {
     "independent": 68
