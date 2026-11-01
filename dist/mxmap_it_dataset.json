@@ -1,10 +1,10 @@
 {
   "_meta": {
     "name": "mxmap.it — Italian PA Email Sovereignty Dataset",
-    "generated": "2026-10-31T11:08:28Z",
+    "generated": "2026-11-01T12:05:00Z",
     "source": "https://github.com/mxmap-it/mxmap.it",
     "license": "ODbL-1.0 + CC-BY-4.0 (data); MIT (code)",
-    "rows": 22923,
+    "rows": 22924,
     "fields": [
       "codice_ipa",
       "codice_categoria",
@@ -53977,36 +53977,6 @@
       "spf_includes": "spf.esvacloud.com;_spf.google.com",
       "classification_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_h153"
-    },
-    {
-      "codice_ipa": "c_h157",
-      "codice_categoria": "L6",
-      "categoria_label": "Comune",
-      "cluster_key": "territoriale",
-      "cluster_label": "Enti territoriali",
-      "denominazione": "Comune di Radicondoli",
-      "codice_istat": "701097",
-      "codice_comune_istat": "052025",
-      "regione": "Toscana",
-      "provincia": "SI",
-      "sito_istituzionale": "comune.radicondoli.si.it",
-      "domain_used": "comune.radicondoli.siena.it",
-      "domain_source": "sito_istituzionale",
-      "has_mx": "true",
-      "provider_raw": "google",
-      "provider_display": "Google Workspace",
-      "sovereignty_bucket": "USA (CLOUD Act)",
-      "classification_confidence": 0.9,
-      "confidence_band": "molto alta",
-      "mx_jurisdiction": "domestic",
-      "jurisdiction_label": "🇮🇹 Domestica (IT)",
-      "mx_records": "consorzioterrecablate.esvacloud.com",
-      "mx_countries": "IT",
-      "gateway": "libraesva",
-      "dkim_tenant": "",
-      "spf_includes": "spf.mandrillapp.com;spf.esvacloud.com",
-      "classification_reason": "MX is libraesva gateway; TXT verification proves google tenant",
-      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_h157"
     },
     {
       "codice_ipa": "c_h163",
@@ -199730,7 +199700,7 @@
       "regione": "Toscana",
       "provincia": "FI",
       "sito_istituzionale": "agrariofirenze.edu.it",
-      "domain_used": "agrariofirenze.eu",
+      "domain_used": "agrariofirenze.edu.it",
       "domain_source": "sito_istituzionale",
       "has_mx": "true",
       "provider_raw": "google",
@@ -204997,36 +204967,6 @@
       "spf_includes": "_spf.google.com",
       "classification_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/istsc_gepc020009"
-    },
-    {
-      "codice_ipa": "istsc_fepc01000e",
-      "codice_categoria": "L33",
-      "categoria_label": "Scuola statale",
-      "cluster_key": "istruzione",
-      "cluster_label": "Istruzione",
-      "denominazione": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "codice_istat": "",
-      "codice_comune_istat": "038004",
-      "regione": "Emilia-Romagna",
-      "provincia": "FE",
-      "sito_istituzionale": "liceocevolani.edu.it",
-      "domain_used": "liceocevolani.it",
-      "domain_source": "sito_istituzionale",
-      "has_mx": "true",
-      "provider_raw": "google",
-      "provider_display": "Google Workspace",
-      "sovereignty_bucket": "USA (CLOUD Act)",
-      "classification_confidence": 0.9,
-      "confidence_band": "molto alta",
-      "mx_jurisdiction": "foreign",
-      "jurisdiction_label": "🌍 Estera",
-      "mx_records": "alt1.aspmx.l.google.com;alt2.aspmx.l.google.com;aspmx.l.google.com;aspmx2.googlemail.com;aspmx3.googlemail.com",
-      "mx_countries": "US",
-      "gateway": "",
-      "dkim_tenant": "",
-      "spf_includes": "",
-      "classification_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google",
-      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/istsc_fepc01000e"
     },
     {
       "codice_ipa": "istsc_ctpc070002",
@@ -211370,7 +211310,7 @@
       "regione": "Emilia-Romagna",
       "provincia": "PC",
       "sito_istituzionale": "liceorespighi.edu.it",
-      "domain_used": "liceorespighi.it",
+      "domain_used": "liceorespighi.edu.it",
       "domain_source": "sito_istituzionale",
       "has_mx": "true",
       "provider_raw": "google",
@@ -222031,7 +221971,7 @@
       "mx_jurisdiction": "foreign",
       "jurisdiction_label": "🌍 Estera",
       "mx_records": "mxa-0033ee01.gslb.pphosted.com;mxb-0033ee01.gslb.pphosted.com",
-      "mx_countries": "GB;US",
+      "mx_countries": "GB",
       "gateway": "",
       "dkim_tenant": "selector1-aceaato5-it._domainkey.aceaspa.onmicrosoft.com",
       "spf_includes": "spf.mail.modalsmtp.com;spf.protection.outlook.com",
@@ -242390,7 +242330,7 @@
       "regione": "Toscana",
       "provincia": "SI",
       "sito_istituzionale": "comune.chiusdino.si.it",
-      "domain_used": "comune.chiusdino.siena.it",
+      "domain_used": "comune.chiusdino.si.it",
       "domain_source": "sito_istituzionale",
       "has_mx": "true",
       "provider_raw": "independent",
@@ -242402,7 +242342,7 @@
       "jurisdiction_label": "🇮🇹 Domestica (IT)",
       "mx_records": "consorzioterrecablate.esvacloud.com",
       "mx_countries": "IT",
-      "gateway": "libraesva",
+      "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "spf.esvacloud.com",
       "classification_reason": "MX is libraesva gateway; backend provider unknown",
@@ -245377,6 +245317,36 @@
       "spf_includes": "",
       "classification_reason": "MX (ganimede.provincia.ancona.it) is self-hosted",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_d211"
+    },
+    {
+      "codice_ipa": "c_d216",
+      "codice_categoria": "L6",
+      "categoria_label": "Comune",
+      "cluster_key": "territoriale",
+      "cluster_label": "Enti territoriali",
+      "denominazione": "Comune di Cureggio",
+      "codice_istat": "88288",
+      "codice_comune_istat": "003058",
+      "regione": "Piemonte",
+      "provincia": "NO",
+      "sito_istituzionale": "comune.cureggio.no.it",
+      "domain_used": "cert.ruparpiemonte.it",
+      "domain_source": "sito_istituzionale",
+      "has_mx": "true",
+      "provider_raw": "independent",
+      "provider_display": "Infrastruttura autonoma",
+      "sovereignty_bucket": "Italia — Infrastruttura autonoma",
+      "classification_confidence": 0.8,
+      "confidence_band": "alta",
+      "mx_jurisdiction": "domestic",
+      "jurisdiction_label": "🇮🇹 Domestica (IT)",
+      "mx_records": "mx.cert.legalmail.it",
+      "mx_countries": "IT",
+      "gateway": "",
+      "dkim_tenant": "",
+      "spf_includes": "_spf-legalmail.infocert.it",
+      "classification_reason": "MX (mx.cert.legalmail.it) is self-hosted",
+      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_d216"
     },
     {
       "codice_ipa": "c_d217",
@@ -265717,6 +265687,36 @@
       "spf_includes": "_spf.epublic.it",
       "classification_reason": "MX is epublic gateway; backend provider unknown",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_h154"
+    },
+    {
+      "codice_ipa": "c_h157",
+      "codice_categoria": "L6",
+      "categoria_label": "Comune",
+      "cluster_key": "territoriale",
+      "cluster_label": "Enti territoriali",
+      "denominazione": "Comune di Radicondoli",
+      "codice_istat": "701097",
+      "codice_comune_istat": "052025",
+      "regione": "Toscana",
+      "provincia": "SI",
+      "sito_istituzionale": "comune.radicondoli.si.it",
+      "domain_used": "comune.radicondoli.si.it",
+      "domain_source": "sito_istituzionale",
+      "has_mx": "true",
+      "provider_raw": "independent",
+      "provider_display": "Infrastruttura autonoma",
+      "sovereignty_bucket": "Italia — Infrastruttura autonoma",
+      "classification_confidence": 0.8,
+      "confidence_band": "alta",
+      "mx_jurisdiction": "domestic",
+      "jurisdiction_label": "🇮🇹 Domestica (IT)",
+      "mx_records": "consorzioterrecablate.esvacloud.com",
+      "mx_countries": "IT",
+      "gateway": "",
+      "dkim_tenant": "",
+      "spf_includes": "spf.mandrillapp.com;spf.esvacloud.com",
+      "classification_reason": "riclassificato da google: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/SharePoint, non l'email)",
+      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_h157"
     },
     {
       "codice_ipa": "c_h161",
@@ -341840,7 +341840,7 @@
       "regione": "Toscana",
       "provincia": "SI",
       "sito_istituzionale": "comune.chianciano-terme.siena.it",
-      "domain_used": "comune.chianciano-terme.si.it",
+      "domain_used": "comune.chianciano-terme.siena.it",
       "domain_source": "sito_istituzionale",
       "has_mx": "true",
       "provider_raw": "microsoft",
@@ -422739,6 +422739,36 @@
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/istsc_rmpc31000g"
     },
     {
+      "codice_ipa": "istsc_fepc01000e",
+      "codice_categoria": "L33",
+      "categoria_label": "Scuola statale",
+      "cluster_key": "istruzione",
+      "cluster_label": "Istruzione",
+      "denominazione": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
+      "codice_istat": "",
+      "codice_comune_istat": "038004",
+      "regione": "Emilia-Romagna",
+      "provincia": "FE",
+      "sito_istituzionale": "liceocevolani.edu.it",
+      "domain_used": "liceocevolani.edu.it",
+      "domain_source": "sito_istituzionale",
+      "has_mx": "true",
+      "provider_raw": "istruzione-miur-tenant",
+      "provider_display": "Microsoft 365",
+      "sovereignty_bucket": "USA (CLOUD Act)",
+      "classification_confidence": 0.96,
+      "confidence_band": "molto alta",
+      "mx_jurisdiction": "foreign",
+      "jurisdiction_label": "🌍 Estera",
+      "mx_records": "istruzione-it.mail.protection.outlook.com",
+      "mx_countries": "US",
+      "gateway": "",
+      "dkim_tenant": "selector1-istruzione-it._domainkey.miuristruzione.onmicrosoft.com",
+      "spf_includes": "spfesg.sogei.it;spf.protection.outlook.com;spf.sendinblue.com;_spf.cineca.it",
+      "classification_reason": "Scuola statale (categoria IndicePA L33): posta dei dirigenti sul tenant centrale MIM (istruzione.it → miuristruzione.onmicrosoft.com, prova DKIM)",
+      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/istsc_fepc01000e"
+    },
+    {
       "codice_ipa": "istsc_pcpc010004",
       "codice_categoria": "L33",
       "categoria_label": "Scuola statale",
@@ -434617,6 +434647,36 @@
       "spf_includes": "spf.protection.outlook.com",
       "classification_reason": "MX record (rivieracqua-it.mail.protection.outlook.com) matches Microsoft",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/AYT9NTUP"
+    },
+    {
+      "codice_ipa": "28OFOBSV",
+      "codice_categoria": "L37",
+      "categoria_label": "Gestore di pubblici servizi",
+      "cluster_key": "gestori_pubblici_servizi",
+      "cluster_label": "Gestori di pubblici servizi",
+      "denominazione": "Rochdale Società cooperativa sociale",
+      "codice_istat": "",
+      "codice_comune_istat": "027042",
+      "regione": "Veneto",
+      "provincia": "VE",
+      "sito_istituzionale": "rochdale.it",
+      "domain_used": "rochdale.it",
+      "domain_source": "sito_istituzionale",
+      "has_mx": "true",
+      "provider_raw": "microsoft",
+      "provider_display": "Microsoft 365",
+      "sovereignty_bucket": "USA (CLOUD Act)",
+      "classification_confidence": 0.92,
+      "confidence_band": "molto alta",
+      "mx_jurisdiction": "foreign",
+      "jurisdiction_label": "🌍 Estera",
+      "mx_records": "rochdale-it.mail.protection.outlook.com",
+      "mx_countries": "US",
+      "gateway": "",
+      "dkim_tenant": "",
+      "spf_includes": "spf.protection.outlook.com;easypc.eu",
+      "classification_reason": "MX record (rochdale-it.mail.protection.outlook.com) matches Microsoft",
+      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/28OFOBSV"
     },
     {
       "codice_ipa": "c_h501",
@@ -472700,7 +472760,7 @@
       "regione": "Sicilia",
       "provincia": "PA",
       "sito_istituzionale": "egov.comune.baucina.pa.it",
-      "domain_used": "egov.comune.baucina.pa.it",
+      "domain_used": "comune.baucina.pa.it",
       "domain_source": "sito_istituzionale",
       "has_mx": "true",
       "provider_raw": "aruba",
@@ -546337,6 +546397,36 @@
       "spf_includes": "aruba.it",
       "classification_reason": "MX (mx.comune.scandriglia.ri.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_i499"
+    },
+    {
+      "codice_ipa": "c_i501",
+      "codice_categoria": "L6",
+      "categoria_label": "Comune",
+      "cluster_key": "territoriale",
+      "cluster_label": "Enti territoriali",
+      "denominazione": "Comune di Scanno",
+      "codice_istat": "8040",
+      "codice_comune_istat": "066093",
+      "regione": "Abruzzo",
+      "provincia": "AQ",
+      "sito_istituzionale": "comune.scanno.aq.it",
+      "domain_used": "comune.scanno.aq.it",
+      "domain_source": "sito_istituzionale",
+      "has_mx": "true",
+      "provider_raw": "aruba",
+      "provider_display": "Provider Italiano",
+      "sovereignty_bucket": "Italia — Provider commerciali",
+      "classification_confidence": 0.9,
+      "confidence_band": "molto alta",
+      "mx_jurisdiction": "domestic",
+      "jurisdiction_label": "🇮🇹 Domestica (IT)",
+      "mx_records": "mx.pec.aruba.it",
+      "mx_countries": "IT",
+      "gateway": "",
+      "dkim_tenant": "",
+      "spf_includes": "pec.it",
+      "classification_reason": "MX record (mx.pec.aruba.it) matches Aruba",
+      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_i501"
     },
     {
       "codice_ipa": "c_i504",
@@ -665495,7 +665585,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/ZN1WNPL4"
     },
     {
@@ -665525,7 +665615,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/forstdom"
     },
     {
@@ -666425,7 +666515,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/amp_021"
     },
     {
@@ -666695,7 +666785,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/asvola"
     },
     {
@@ -667205,7 +667295,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/sppictb"
     },
     {
@@ -667415,7 +667505,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/cspac"
     },
     {
@@ -667565,7 +667655,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/cdglbz"
     },
     {
@@ -667925,7 +668015,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/cgglre"
     },
     {
@@ -667955,7 +668045,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/cgadm"
     },
     {
@@ -668045,7 +668135,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 6 candidates; none yielded MX",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/cidada"
     },
     {
@@ -669125,7 +669215,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "search engine returned 6 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_a667"
     },
     {
@@ -669185,7 +669275,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 4 candidates; none yielded MX",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_a876"
     },
     {
@@ -669245,7 +669335,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 4 candidates; none yielded MX",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_b058"
     },
     {
@@ -669395,7 +669485,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "search engine returned 5 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_b526"
     },
     {
@@ -669455,7 +669545,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "search engine returned 6 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_b629"
     },
     {
@@ -669785,7 +669875,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 6 candidates; none yielded MX",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_m308"
     },
     {
@@ -669875,7 +669965,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_c880"
     },
     {
@@ -669969,36 +670059,6 @@
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_d179"
     },
     {
-      "codice_ipa": "c_d216",
-      "codice_categoria": "L6",
-      "categoria_label": "Comune",
-      "cluster_key": "territoriale",
-      "cluster_label": "Enti territoriali",
-      "denominazione": "Comune di Cureggio",
-      "codice_istat": "88288",
-      "codice_comune_istat": "003058",
-      "regione": "Piemonte",
-      "provincia": "NO",
-      "sito_istituzionale": "comune.cureggio.no.it",
-      "domain_used": "comune.cureggio.no.it",
-      "domain_source": "sito_istituzionale",
-      "has_mx": "false",
-      "provider_raw": "unknown",
-      "provider_display": "Sconosciuto",
-      "sovereignty_bucket": "Sconosciuto",
-      "classification_confidence": 0.0,
-      "confidence_band": "nulla",
-      "mx_jurisdiction": "unknown",
-      "jurisdiction_label": "Sconosciuta",
-      "mx_records": "",
-      "mx_countries": "",
-      "gateway": "",
-      "dkim_tenant": "",
-      "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
-      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_d216"
-    },
-    {
       "codice_ipa": "c_d315",
       "codice_categoria": "L6",
       "categoria_label": "Comune",
@@ -670025,7 +670085,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_d315"
     },
     {
@@ -670295,7 +670355,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "search engine returned 6 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_d944"
     },
     {
@@ -670625,7 +670685,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_e908"
     },
     {
@@ -670655,7 +670715,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 6 candidates; none yielded MX",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_e905"
     },
     {
@@ -670715,7 +670775,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "search engine returned 6 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_e988"
     },
     {
@@ -670775,7 +670835,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_f037"
     },
     {
@@ -670985,7 +671045,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_f865"
     },
     {
@@ -671075,7 +671135,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_g444"
     },
     {
@@ -671105,7 +671165,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 6 candidates; none yielded MX",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_g580"
     },
     {
@@ -671225,7 +671285,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_g724"
     },
     {
@@ -671345,7 +671405,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_i9526"
     },
     {
@@ -671405,7 +671465,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "search engine returned 6 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_h118"
     },
     {
@@ -671435,7 +671495,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_h223"
     },
     {
@@ -672035,7 +672095,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "search engine returned 4 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_i316"
     },
     {
@@ -672067,36 +672127,6 @@
       "spf_includes": "",
       "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_i448"
-    },
-    {
-      "codice_ipa": "c_i501",
-      "codice_categoria": "L6",
-      "categoria_label": "Comune",
-      "cluster_key": "territoriale",
-      "cluster_label": "Enti territoriali",
-      "denominazione": "Comune di Scanno",
-      "codice_istat": "8040",
-      "codice_comune_istat": "066093",
-      "regione": "Abruzzo",
-      "provincia": "AQ",
-      "sito_istituzionale": "comune.scanno.aq.it",
-      "domain_used": "comune.scanno.aq.it",
-      "domain_source": "sito_istituzionale",
-      "has_mx": "false",
-      "provider_raw": "unknown",
-      "provider_display": "Sconosciuto",
-      "sovereignty_bucket": "Sconosciuto",
-      "classification_confidence": 0.0,
-      "confidence_band": "nulla",
-      "mx_jurisdiction": "unknown",
-      "jurisdiction_label": "Sconosciuta",
-      "mx_records": "",
-      "mx_countries": "",
-      "gateway": "",
-      "dkim_tenant": "",
-      "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
-      "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_i501"
     },
     {
       "codice_ipa": "c_i539",
@@ -672575,7 +672605,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/c_l478"
     },
     {
@@ -673925,7 +673955,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "search engine returned 6 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/caidp"
     },
     {
@@ -674555,7 +674585,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/TWA648I9"
     },
     {
@@ -676925,7 +676955,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 6 candidates; none yielded MX",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/K5WYC3QT"
     },
     {
@@ -679265,7 +679295,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/oddc_096"
     },
     {
@@ -679295,7 +679325,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/odcec_br"
     },
     {
@@ -680315,7 +680345,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/cidoap"
     },
     {
@@ -680375,7 +680405,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/citsr"
     },
     {
@@ -682085,7 +682115,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
+      "classification_reason": "search engine returned 1 candidates; none yielded MX",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/ccdcb"
     },
     {
@@ -682235,7 +682265,7 @@
       "gateway": "",
       "dkim_tenant": "",
       "spf_includes": "",
-      "classification_reason": "search engine returned 1 candidates; none yielded MX",
+      "classification_reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)",
       "ipa_url": "https://indicepa.gov.it/ipa-portale/visualizza-scheda/udcrs"
     },
     {
