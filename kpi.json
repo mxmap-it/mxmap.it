@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-01T12:05:10Z",
+  "generated_at": "2026-11-02T13:03:12Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
     "n_entities": 22924,
-    "n_with_mx": 22302,
-    "coverage_pct": 97.29
+    "n_with_mx": 22299,
+    "coverage_pct": 97.27
   },
   "indices": {
-    "isd": 50.98,
-    "cloud_act_pct": 48.46,
-    "n_classified": 22302
+    "isd": 50.94,
+    "cloud_act_pct": 48.5,
+    "n_classified": 22299
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10809,
+      "count": 10816,
       "pct": 47.2,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11370,
+      "count": 11360,
       "pct": 49.6,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 622,
+      "count": 625,
       "pct": 2.7,
       "label": "Sconosciuto"
     }
@@ -38,13 +38,13 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7429,
+      "count": 7426,
       "pct": 32.4,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6477,
+      "count": 6484,
       "pct": 28.3,
       "sovereignty": "extra_eu"
     },
@@ -56,19 +56,19 @@
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3028,
+      "count": 3018,
       "pct": 13.2,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 913,
+      "count": 916,
       "pct": 4.0,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 622,
+      "count": 625,
       "pct": 2.7,
       "sovereignty": "unknown"
     },
@@ -131,7 +131,7 @@
     {
       "cluster": "Welfare e politiche sociali",
       "n_entities": 466,
-      "usa_pct": 29.6,
+      "usa_pct": 29.8,
       "dominant_provider": "Provider Italiano"
     },
     {

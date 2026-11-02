@@ -1579,7 +1579,7 @@
     "IT-C13-acv": {
       "name": "Automobile Club Venezia",
       "provider": "google",
-      "domain": "acivenezia.it",
+      "domain": "venezia.aci.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -28699,11 +28699,12 @@
     },
     "IT-COM-001242": {
       "name": "Comune di San Germano Chisone",
-      "provider": "independent",
-      "domain": "cert.comune.sangermanochisone.to.it",
-      "confidence": 50,
+      "provider": "regional-public",
+      "domain": "comune.sangermanochisone.to.it",
+      "confidence": 90,
       "flags": [
-        "no_spf",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -30006,12 +30007,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.lenta.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -30885,13 +30886,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "comune.cureggio.no.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-003060": {
@@ -33706,12 +33707,12 @@
     },
     "IT-COM-004188": {
       "name": "Comune di Rocca Ciglie'",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.roccaciglie.cn.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -55571,7 +55572,7 @@
     },
     "IT-COM-019049": {
       "name": "Comune di Gombito",
-      "provider": "independent",
+      "provider": "google",
       "domain": "comune.gombito.cr.it",
       "confidence": 93,
       "flags": [
@@ -77180,7 +77181,7 @@
     "IT-COM-052009": {
       "name": "Comune di Chianciano Terme",
       "provider": "microsoft",
-      "domain": "comune.chianciano-terme.siena.it",
+      "domain": "comune.chianciano-terme.si.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -77192,12 +77193,13 @@
     "IT-COM-052010": {
       "name": "Comune di Chiusdino",
       "provider": "independent",
-      "domain": "comune.chiusdino.si.it",
+      "domain": "comune.chiusdino.siena.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-052011": {
@@ -77357,13 +77359,14 @@
     },
     "IT-COM-052025": {
       "name": "Comune di Radicondoli",
-      "provider": "independent",
-      "domain": "comune.radicondoli.si.it",
+      "provider": "google",
+      "domain": "comune.radicondoli.siena.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-052026": {
@@ -81735,12 +81738,14 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "independent",
-      "domain": "cert.fonte-nuova.it",
-      "confidence": 50,
+      "provider": "microsoft",
+      "domain": "comune.fontenuova.rm.it",
+      "confidence": 95,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-059001": {
@@ -90494,12 +90499,13 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.scanno.aq.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-066094": {
@@ -102488,7 +102494,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "comune.baucina.pa.it",
+      "domain": "egov.comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -122641,11 +122647,11 @@
       "name": "Commissario Straordinario Delegato per La Realizzazione Degli Interventi di Mitigazione del Rischio Idrogeologico per La Regione Friuli Venezia Giulia",
       "provider": "microsoft",
       "domain": "regione.fvg.it",
-      "confidence": 95,
+      "confidence": 85,
       "flags": [
         "multiple_mx",
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified",
         "provider_via_gateway_spf"
       ]
@@ -135955,12 +135961,13 @@
     },
     "IT-L33-7DUP2M8Y": {
       "name": "ISTITUTO COMPRENSIVO GUBBIO 2",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "secondocircologubbio.edu.it",
-      "confidence": 50,
+      "confidence": 15,
       "flags": [
+        "no_mx",
         "no_spf",
-        "provider_classified"
+        "provider_unknown"
       ]
     },
     "IT-L33-7HSE7NE1": {
@@ -136292,10 +136299,11 @@
       "name": "ISTITUTO ISTRUZIONE SUPERIORE M. DELPOZZO",
       "provider": "google",
       "domain": "delpozzo.edu.it",
-      "confidence": 48,
+      "confidence": 78,
       "flags": [
         "spf_softfail",
-        "mx_spf_mismatch",
+        "mx_spf_match",
+        "multi_provider_spf:aruba+google",
         "provider_classified"
       ]
     },
@@ -140474,14 +140482,14 @@
     },
     "IT-L33-cpiacos": {
       "name": "Centro Provinciale Istruzione Adulti di Cosenza",
-      "provider": "aruba",
+      "provider": "google",
       "domain": "cpiacs.edu.it",
-      "confidence": 83,
+      "confidence": 53,
       "flags": [
+        "multiple_mx",
         "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "mx_spf_mismatch",
+        "provider_classified"
       ]
     },
     "IT-L33-cpiacpac": {
@@ -174465,13 +174473,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceocevolani.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "liceocevolani.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175967,7 +175975,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.edu.it",
+      "domain": "agrariofirenze.eu",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -185230,11 +185238,12 @@
     },
     "IT-L33-istsc_miic894006": {
       "name": "ISTITUTO COMPRENSIVO - GIACOMO PACCINI-SOVICO",
-      "provider": "independent",
+      "provider": "google",
       "domain": "icpaccinisovico.edu.it",
-      "confidence": 50,
+      "confidence": 73,
       "flags": [
-        "no_spf",
+        "multiple_mx",
+        "spf_softfail",
         "provider_classified"
       ]
     },
@@ -186113,11 +186122,13 @@
     },
     "IT-L33-istsc_miic8ca003": {
       "name": "ISTITUTO COMPRENSIVO - VIA LEOPARDI - INZAGO -",
-      "provider": "independent",
+      "provider": "google",
       "domain": "icinzago.edu.it",
-      "confidence": 50,
+      "confidence": 53,
       "flags": [
-        "no_spf",
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -197043,7 +197054,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -197790,13 +197801,13 @@
     },
     "IT-L33-istsc_pdis003009": {
       "name": "IIS CATTANEO-MATTEI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "cattaneo-mattei.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "cattaneomattei.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -228722,7 +228733,7 @@
     "IT-L34-XQZEJ3XC": {
       "name": "arciconfraternita sant'angelo dei rossi",
       "provider": "aruba",
-      "domain": "arciconfraternitadeirossi.it",
+      "domain": "arciconfraternitadeiross.altervista.org",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -229502,12 +229513,14 @@
     },
     "IT-L34-apspcv": {
       "name": "Azienda Pubblica di Servizi alla Persona Clementino Vannetti",
-      "provider": "register-it",
+      "provider": "microsoft",
       "domain": "apspvannetti.it",
-      "confidence": 70,
+      "confidence": 95,
       "flags": [
         "spf_strict",
-        "provider_classified"
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L34-apspd_": {
@@ -239157,7 +239170,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.portaletrasparenza.net",
+      "domain": "flegrealavoro.com",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242596,7 +242609,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.portaletrasparenza.net",
+      "domain": "unilavspa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -258141,11 +258154,11 @@
       "name": "Regione Autonoma Friuli-Venezia Giulia",
       "provider": "microsoft",
       "domain": "regione.fvg.it",
-      "confidence": 95,
+      "confidence": 85,
       "flags": [
         "multiple_mx",
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified",
         "provider_via_gateway_spf"
       ]
