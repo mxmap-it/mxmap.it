@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-04T12:51:29Z",
+  "generated_at": "2026-11-05T12:50:55Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22920,
-    "n_with_mx": 22297,
-    "coverage_pct": 97.28
+    "n_entities": 22922,
+    "n_with_mx": 22300,
+    "coverage_pct": 97.29
   },
   "indices": {
-    "isd": 50.87,
-    "cloud_act_pct": 48.57,
-    "n_classified": 22297
+    "isd": 50.88,
+    "cloud_act_pct": 48.56,
+    "n_classified": 22300
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 10832,
+      "count": 10831,
       "pct": 47.3,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11342,
+      "count": 11346,
       "pct": 49.5,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 623,
+      "count": 622,
       "pct": 2.7,
       "label": "Sconosciuto"
     }
@@ -38,7 +38,7 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 7419,
+      "count": 7420,
       "pct": 32.4,
       "sovereignty": "it"
     },
@@ -50,25 +50,25 @@
     },
     {
       "name": "Microsoft 365",
-      "count": 4324,
+      "count": 4323,
       "pct": 18.9,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 3019,
+      "count": 3021,
       "pct": 13.2,
       "sovereignty": "it"
     },
     {
       "name": "Cloud Italiano",
-      "count": 904,
+      "count": 905,
       "pct": 3.9,
       "sovereignty": "it"
     },
     {
       "name": "Sconosciuto",
-      "count": 623,
+      "count": 622,
       "pct": 2.7,
       "sovereignty": "unknown"
     },
@@ -118,7 +118,7 @@
     },
     {
       "cluster": "Gestori di pubblici servizi",
-      "n_entities": 1163,
+      "n_entities": 1165,
       "usa_pct": 46.8,
       "dominant_provider": "Microsoft 365"
     },
@@ -137,7 +137,7 @@
     {
       "cluster": "Ambiente e Territorio",
       "n_entities": 273,
-      "usa_pct": 27.8,
+      "usa_pct": 27.5,
       "dominant_provider": "Provider Italiano"
     },
     {

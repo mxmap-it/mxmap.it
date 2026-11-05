@@ -1,5 +1,5 @@
 {
-  "n_purged": 507,
+  "n_purged": 506,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1078,17 +1078,6 @@
       "old_mx": "smtp1.invallee.it",
       "old_provider": "microsoft",
       "old_reason": "MX is invallee gateway; SPF+DKIM confirm microsoft"
-    },
-    {
-      "id": "IT-C3-aeci",
-      "name": "Aero Club d'Italia",
-      "codice_ipa": "aeci",
-      "seed_domain": "aeci.it",
-      "claimed_domain": "comune.roma.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-roma-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-C3-anlpa",
@@ -2629,17 +2618,6 @@
       "old_mx": "mail.comune.sulmona.aq.it",
       "old_provider": "independent",
       "old_reason": "MX (mail.comune.sulmona.aq.it) is self-hosted"
-    },
-    {
-      "id": "IT-L12-cms_078",
-      "name": "Comunita Montana Silana",
-      "codice_ipa": "cms_078",
-      "seed_domain": "comunitamontanasilana.it",
-      "claimed_domain": "comune.casalidelmanco.cs.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mail.asmecal.it",
-      "old_provider": "regional-public",
-      "old_reason": "MX record (mail.asmecal.it) matches Italian regional public ICT"
     },
     {
       "id": "IT-L12-cmsal_rc",
@@ -5170,6 +5148,17 @@
       "old_mx": "mx.comune.erice.tp.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comune.erice.tp.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
+      "id": "IT-L44-udal_98",
+      "name": "Ufficio D'Ambito di Lodi",
+      "codice_ipa": "udal_98",
+      "seed_domain": "atolodi.it",
+      "claimed_domain": "comune.lodi.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-lodi-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-lodi-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-L47-3XXKMLQ8",

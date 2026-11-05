@@ -48575,11 +48575,9 @@
     "country": "IT",
     "region": "Marche",
     "district": "Ancona",
-    "domain": "comunedigenga.it",
+    "domain": "comune.genga.an.it",
     "osm_relation_id": 42445,
-    "domain_fallbacks": [
-      "comune.genga.an.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_d965",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "11117322",
@@ -166042,7 +166040,7 @@
     "ipa_codice_ipa": "cm_lmocn",
     "ipa_codice_categoria": "L12",
     "ipa_codice_istat": "18913438",
-    "ipa_codice_comune_istat": "005050",
+    "ipa_codice_comune_istat": "005022",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -248342,7 +248340,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icsperlasca.gov.it",
+    "domain": "icsperlasca.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -328334,6 +328332,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L37-2IHYTCIG",
+    "name": "AMI SpA - Azienda per la Mobilità Integrata e trasporti",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "amibus.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "2IHYTCIG",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "041067",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L37-2JEE5H6J",
     "name": "FONDAZIONE ISTITUTO TECNICO SUPERIORE PER LE NUOVE TECNOLOGIE PER IL MADE IN ITALY - JOBSACADEMY",
     "country": "IT",
@@ -335273,6 +335286,21 @@
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "101010",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L37-EAE3D4QM",
+    "name": "Azienda  Metropolitana Trasporti e Sosta Catania SpA",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "amts.ct.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "EAE3D4QM",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "087015",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -349823,9 +349851,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "provincia.lodi.it",
+    "domain": "atolodi.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "provincia.lodi.it"
+    ],
     "ipa_codice_ipa": "udal_98",
     "ipa_codice_categoria": "L44",
     "ipa_codice_istat": "27918440",

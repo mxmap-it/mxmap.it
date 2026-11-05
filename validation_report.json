@@ -1,5 +1,5 @@
 {
-  "total": 22920,
+  "total": 22922,
   "average_score": 80.8,
   "high_confidence_pct": 74.1,
   "quality_passed": false,
@@ -14071,7 +14071,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "na.archiworld.it",
+      "domain": "napoli.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -23525,13 +23525,12 @@
     },
     "IT-C3-aeci": {
       "name": "Aero Club d'Italia",
-      "provider": "unknown",
-      "domain": "aeci.it",
-      "confidence": 15,
+      "provider": "aruba",
+      "domain": "pec.aeci.it",
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-C3-afrstas": {
@@ -30011,12 +30010,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.lenta.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -73488,12 +73487,11 @@
     },
     "IT-COM-042020": {
       "name": "Comune di Genga",
-      "provider": "aruba",
-      "domain": "comunedigenga.it",
-      "confidence": 78,
+      "provider": "independent",
+      "domain": "comune.genga.an.it",
+      "confidence": 50,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -81761,14 +81759,12 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "microsoft",
-      "domain": "comune.fontenuova.rm.it",
-      "confidence": 95,
+      "provider": "independent",
+      "domain": "cert.fonte-nuova.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-059001": {
@@ -112074,7 +112070,7 @@
     },
     "IT-COM-103032": {
       "name": "Comune di Germagno",
-      "provider": "independent",
+      "provider": "google",
       "domain": "comune.germagno.vb.it",
       "confidence": 90,
       "flags": [
@@ -126178,13 +126174,13 @@
     },
     "IT-L12-cms_078": {
       "name": "Comunita Montana Silana",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comunitamontanasilana.it",
-      "confidence": 15,
+      "confidence": 90,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-L12-cmsal_rc": {
@@ -182180,13 +182176,12 @@
     },
     "IT-L33-istsc_ltis00300c": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - TEODOSIO ROSSI",
-      "provider": "istruzione-miur-tenant",
+      "provider": "independent",
       "domain": "isissteodosiorossi.it",
-      "confidence": 80,
+      "confidence": 90,
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -184938,13 +184933,13 @@
     },
     "IT-L33-istsc_miic86700t": {
       "name": "ISTITUTO COMPRENSIVO - IC GIORGIO PERLASCA/BAREGGIO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icsperlasca.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icsperlasca.edu.it",
+      "confidence": 53,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -197056,7 +197051,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -197803,13 +197798,13 @@
     },
     "IT-L33-istsc_pdis003009": {
       "name": "IIS CATTANEO-MATTEI",
-      "provider": "google",
-      "domain": "cattaneomattei.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "cattaneo-mattei.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -236949,7 +236944,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "latina.cri.it",
+      "domain": "cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -237040,6 +237035,18 @@
         "mx_spf_match",
         "provider_classified",
         "autodiscover_confirms"
+      ]
+    },
+    "IT-L37-2IHYTCIG": {
+      "name": "AMI SpA - Azienda per la Mobilità Integrata e trasporti",
+      "provider": "aruba",
+      "domain": "amibus.it",
+      "confidence": 85,
+      "flags": [
+        "multiple_mx",
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-L37-2JEE5H6J": {
@@ -239044,6 +239051,18 @@
         "spf_strict",
         "mx_spf_match",
         "provider_classified"
+      ]
+    },
+    "IT-L37-EAE3D4QM": {
+      "name": "Azienda  Metropolitana Trasporti e Sosta Catania SpA",
+      "provider": "microsoft",
+      "domain": "amts.ct.it",
+      "confidence": 95,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L37-EBB7K9F4": {
@@ -253690,14 +253709,13 @@
     },
     "IT-L44-udal_98": {
       "name": "Ufficio D'Ambito di Lodi",
-      "provider": "google",
-      "domain": "provincia.lodi.it",
-      "confidence": 93,
+      "provider": "unknown",
+      "domain": "atolodi.it",
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L44-udap": {
