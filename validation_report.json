@@ -9266,14 +9266,15 @@
     },
     "IT-C14-cpipasir": {
       "name": "Collegio Provinciale Infermieri Professionali Assistenti Sanitari e Vigilatrici D'Infanzia della Provincia di Ragusa",
-      "provider": "aruba",
-      "domain": "infermierirg.it",
-      "confidence": 83,
+      "provider": "independent",
+      "domain": "opiragusa.it",
+      "confidence": 93,
       "flags": [
+        "multiple_mx",
         "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified",
-        "autodiscover_confirms"
+        "provider_via_gateway_spf"
       ]
     },
     "IT-C14-cpipi_en": {
@@ -30010,12 +30011,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "regional-public",
-      "domain": "comune.lenta.vc.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -30889,13 +30890,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "comune.cureggio.no.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-003060": {
@@ -38026,7 +38027,7 @@
     },
     "IT-COM-007010": {
       "name": "Comune di Bionaz",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.bionaz.ao.it",
       "confidence": 95,
       "flags": [
@@ -38143,7 +38144,7 @@
     },
     "IT-COM-007019": {
       "name": "Comune di Charvensod",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.charvensod.ao.it",
       "confidence": 95,
       "flags": [
@@ -38247,7 +38248,7 @@
     },
     "IT-COM-007027": {
       "name": "Comune di Fenis",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.fenis.ao.it",
       "confidence": 95,
       "flags": [
@@ -38481,7 +38482,7 @@
     },
     "IT-COM-007045": {
       "name": "Comune di Nus",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.nus.ao.it",
       "confidence": 95,
       "flags": [
@@ -38650,7 +38651,7 @@
     },
     "IT-COM-007058": {
       "name": "Comune di Saint-Christophe",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.saint-christophe.ao.it",
       "confidence": 95,
       "flags": [
@@ -77205,7 +77206,7 @@
     "IT-COM-052009": {
       "name": "Comune di Chianciano Terme",
       "provider": "microsoft",
-      "domain": "comune.chianciano-terme.siena.it",
+      "domain": "comune.chianciano-terme.si.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -77217,12 +77218,13 @@
     "IT-COM-052010": {
       "name": "Comune di Chiusdino",
       "provider": "independent",
-      "domain": "comune.chiusdino.si.it",
+      "domain": "comune.chiusdino.siena.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-052011": {
@@ -77382,13 +77384,14 @@
     },
     "IT-COM-052025": {
       "name": "Comune di Radicondoli",
-      "provider": "independent",
-      "domain": "comune.radicondoli.si.it",
+      "provider": "google",
+      "domain": "comune.radicondoli.siena.it",
       "confidence": 88,
       "flags": [
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-052026": {
@@ -90518,12 +90521,13 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.scanno.aq.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-066094": {
@@ -102512,7 +102516,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "comune.baucina.pa.it",
+      "domain": "egov.comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -107981,13 +107985,14 @@
     },
     "IT-COM-096012": {
       "name": "Comune di Candelo",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.candelo.bi.it",
-      "confidence": 15,
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-096013": {
@@ -108479,13 +108484,14 @@
     },
     "IT-COM-096066": {
       "name": "Comune di Tavigliano",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.tavigliano.bi.it",
-      "confidence": 15,
+      "confidence": 95,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-096067": {
@@ -117688,11 +117694,13 @@
     "IT-COM-118050": {
       "name": "Comune di Senorbi'",
       "provider": "aruba",
-      "domain": "pec.comune.senorbi.ca.it",
-      "confidence": 68,
+      "domain": "comune.senorbi.su.it",
+      "confidence": 83,
       "flags": [
         "spf_softfail",
-        "provider_classified"
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-118051": {
@@ -118076,7 +118084,7 @@
     "IT-COM-119013": {
       "name": "Comune di Nuxis",
       "provider": "microsoft",
-      "domain": "comune.nuxis.ci.it",
+      "domain": "comune.nuxis.su.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -119631,6 +119639,18 @@
         "mx_spf_match",
         "provider_classified",
         "provider_via_gateway_spf"
+      ]
+    },
+    "IT-CONS-cssirete": {
+      "name": "Consorzio Servizi Sociali In.Re.Te",
+      "provider": "independent",
+      "domain": "inrete.to.it",
+      "confidence": 93,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-CONS-csso": {
@@ -125375,14 +125395,13 @@
     },
     "IT-L12-cga_": {
       "name": "Comitato di Gestione Atc",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "atcrc2.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L12-cgdf_tn": {
@@ -160399,14 +160418,13 @@
     },
     "IT-L33-istsc_bapc18000x": {
       "name": "LICEO CLASSICO - CARMINE SYLOS",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceosylos.gov.it",
-      "confidence": 80,
+      "provider": "independent",
+      "domain": "liceocarminesylos.edu.it",
+      "confidence": 85,
       "flags": [
-        "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-istsc_bapc21000e": {
@@ -174487,13 +174505,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175989,7 +176007,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -194590,7 +194608,7 @@
       ]
     },
     "IT-L33-istsc_nuic86800b": {
-      "name": "ISTITUTO COMPRENSIVO - OLIENA",
+      "name": "ISTITUTO COMPRENSIVO OLIENA-ORGOSOLO",
       "provider": "google",
       "domain": "icoliena.edu.it",
       "confidence": 93,
@@ -203993,7 +204011,7 @@
     "IT-L33-istsc_rcic861008": {
       "name": "ISTITUTO COMPRENSIVO - PALMI. S.FRANCESCO",
       "provider": "istruzione-miur-tenant",
-      "domain": "icsanfrancesco.it",
+      "domain": "icsanfrancesco.edu.it",
       "confidence": 80,
       "flags": [
         "spf_strict",
@@ -206122,13 +206140,12 @@
     },
     "IT-L33-istsc_rmic833007": {
       "name": "ISTITUTO COMPRENSIVO - 'GIANNI RODARI' - VIA NIOBE",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icgiannirodari.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icgiannirodari.edu.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -236220,18 +236237,6 @@
         "provider_classified"
       ]
     },
-    "IT-L36-cssirete": {
-      "name": "Consorzio Servizi Sociali In.Re.Te",
-      "provider": "independent",
-      "domain": "inrete.to.it",
-      "confidence": 93,
-      "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
-      ]
-    },
     "IT-L36-csspcsp": {
       "name": "Consorzio Servizi Sociali del Pollino Co.Ss.Po",
       "provider": "aruba",
@@ -236944,7 +236949,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "cri.it",
+      "domain": "latina.cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",

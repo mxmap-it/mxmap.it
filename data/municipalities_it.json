@@ -124165,6 +124165,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-CONS-cssirete",
+    "name": "Consorzio Servizi Sociali In.Re.Te",
+    "country": "IT",
+    "region": "Piemonte",
+    "district": "Torino",
+    "domain": "inrete.to.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "cssirete",
+    "ipa_codice_categoria": "L6",
+    "ipa_codice_istat": "19057066",
+    "ipa_codice_comune_istat": "001125",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-CONS-csso",
     "name": "Consorzio Strada Vicinale di Sornano",
     "country": "IT",
@@ -136714,9 +136729,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "infermierirg.it",
+    "domain": "opiragusa.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "infermierirg.it"
+    ],
     "ipa_codice_ipa": "cpipasir",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -210950,7 +210967,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "liceosylos.gov.it",
+    "domain": "liceocarminesylos.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -262862,7 +262879,7 @@
   },
   {
     "id": "IT-L33-istsc_nuic86800b",
-    "name": "ISTITUTO COMPRENSIVO - OLIENA",
+    "name": "ISTITUTO COMPRENSIVO OLIENA-ORGOSOLO",
     "country": "IT",
     "region": null,
     "district": null,
@@ -276977,7 +276994,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icsanfrancesco.it",
+    "domain": "icsanfrancesco.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -280125,7 +280142,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icgiannirodari.gov.it",
+    "domain": "icgiannirodari.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -327092,21 +327109,6 @@
     "ipa_codice_categoria": "L36",
     "ipa_codice_istat": "20973158",
     "ipa_codice_comune_istat": "064044",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-L36-cssirete",
-    "name": "Consorzio Servizi Sociali In.Re.Te",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "inrete.to.it",
-    "osm_relation_id": null,
-    "domain_fallbacks": [],
-    "ipa_codice_ipa": "cssirete",
-    "ipa_codice_categoria": "L36",
-    "ipa_codice_istat": "19057066",
-    "ipa_codice_comune_istat": "001125",
     "domain_source": "sito_istituzionale"
   },
   {
