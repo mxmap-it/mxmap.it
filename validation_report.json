@@ -9896,7 +9896,7 @@
     "IT-C14-cpoan": {
       "name": "Ordine Regionale della Professione Ostetrica delle Marche",
       "provider": "aruba",
-      "domain": "ordineostetricheancona.it",
+      "domain": "ordineregionaledellaprofessionediostetricadellemarche.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -14072,7 +14072,7 @@
     "IT-C14-odapcn": {
       "name": "Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",
       "provider": "local-isp",
-      "domain": "napoli.archiworld.it",
+      "domain": "na.archiworld.it",
       "confidence": 95,
       "flags": [
         "multiple_mx",
@@ -23526,12 +23526,13 @@
     },
     "IT-C3-aeci": {
       "name": "Aero Club d'Italia",
-      "provider": "aruba",
-      "domain": "pec.aeci.it",
-      "confidence": 68,
+      "provider": "unknown",
+      "domain": "aeci.it",
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C3-afrstas": {
@@ -25329,7 +25330,7 @@
     "IT-C8-csgp": {
       "name": "Centro Studi Giuridici e Politici",
       "provider": "google",
-      "domain": "alumbria.it",
+      "domain": "centrostudi.alumbria.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -25645,7 +25646,7 @@
     "IT-C8-isuc": {
       "name": "Istituto per La Storia dell'Umbria Contemporanea",
       "provider": "google",
-      "domain": "alumbria.it",
+      "domain": "isuc.alumbria.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -30011,12 +30012,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.lenta.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -30890,13 +30891,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -38209,7 +38210,7 @@
     },
     "IT-COM-007024": {
       "name": "Comune di Doues",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.doues.ao.it",
       "confidence": 95,
       "flags": [
@@ -38287,7 +38288,7 @@
     },
     "IT-COM-007030": {
       "name": "Comune di Gignod",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.gignod.ao.it",
       "confidence": 95,
       "flags": [
@@ -38417,7 +38418,7 @@
     },
     "IT-COM-007040": {
       "name": "Comune di La Salle",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.lasalle.ao.it",
       "confidence": 95,
       "flags": [
@@ -38430,7 +38431,7 @@
     },
     "IT-COM-007041": {
       "name": "Comune di La Thuile",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.la-thuile.ao.it",
       "confidence": 95,
       "flags": [
@@ -38469,7 +38470,7 @@
     },
     "IT-COM-007044": {
       "name": "Comune di Morgex",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.morgex.ao.it",
       "confidence": 95,
       "flags": [
@@ -38495,7 +38496,7 @@
     },
     "IT-COM-007046": {
       "name": "Comune di Ollomont",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.ollomont.ao.it",
       "confidence": 95,
       "flags": [
@@ -38508,7 +38509,7 @@
     },
     "IT-COM-007047": {
       "name": "Comune di Oyace",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.oyace.ao.it",
       "confidence": 95,
       "flags": [
@@ -38638,7 +38639,7 @@
     },
     "IT-COM-007057": {
       "name": "Comune di Roisan",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.roisan.ao.it",
       "confidence": 95,
       "flags": [
@@ -38794,7 +38795,7 @@
     },
     "IT-COM-007069": {
       "name": "Comune di Valpelline",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "comune.valpelline.ao.it",
       "confidence": 95,
       "flags": [
@@ -81762,12 +81763,14 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "independent",
-      "domain": "cert.fonte-nuova.it",
-      "confidence": 50,
+      "provider": "microsoft",
+      "domain": "comune.fontenuova.rm.it",
+      "confidence": 95,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-059001": {
@@ -90521,13 +90524,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -107985,14 +107987,13 @@
     },
     "IT-COM-096012": {
       "name": "Comune di Candelo",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.candelo.bi.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-096013": {
@@ -108484,14 +108485,13 @@
     },
     "IT-COM-096066": {
       "name": "Comune di Tavigliano",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "comune.tavigliano.bi.it",
-      "confidence": 95,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-096067": {
@@ -133274,7 +133274,7 @@
     "IT-L18-uvdi": {
       "name": "Unione Val D'Imera",
       "provider": "unknown",
-      "domain": "comunedicaltavuturo.gov.it",
+      "domain": "portale5.halleysud.it",
       "confidence": 15,
       "flags": [
         "no_mx",
@@ -136245,13 +136245,12 @@
     },
     "IT-L33-9IDG0APG": {
       "name": "Istituto Istruzione Superiore LEONARDO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceoleonardo.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "iisleonardo.edu.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -146132,13 +146131,12 @@
     },
     "IT-L33-icp_062": {
       "name": "Istituto Comprensivo Padre Pio",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icpadrepioairola.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icpadrepioairola.edu.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -147299,12 +147297,10 @@
     },
     "IT-L33-icsgc": {
       "name": "I.C. San Giorgio Canavese",
-      "provider": "google",
-      "domain": "istitutoeuropaunita.edu.it",
-      "confidence": 93,
+      "provider": "local-isp",
+      "domain": "icsangiorgiocanavese.edu.it",
+      "confidence": 85,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -148026,13 +148022,13 @@
     },
     "IT-L33-icsvlp": {
       "name": "Istituto Comprensivo Statale Viale Legnano di Parabiago",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icsvialelegnano.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icsvialelegnano.edu.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -182194,12 +182190,12 @@
     },
     "IT-L33-istsc_ltis00300c": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - TEODOSIO ROSSI",
-      "provider": "independent",
-      "domain": "isissteodosiorossi.it",
-      "confidence": 90,
+      "provider": "google",
+      "domain": "isissteodosiorossi.edu.it",
+      "confidence": 48,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
+        "spf_softfail",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -190918,13 +190914,12 @@
     },
     "IT-L33-istsc_naic827001": {
       "name": "ISTITUTO COMPRENSIVO - NA - I.C. SAVIO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icssavio-alfieri.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icssavio-alfieri.edu.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -239187,7 +239182,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.com",
+      "domain": "flegrealavoro.portaletrasparenza.net",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242626,7 +242621,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.it",
+      "domain": "unilavspa.portaletrasparenza.net",
       "confidence": 83,
       "flags": [
         "spf_softfail",
