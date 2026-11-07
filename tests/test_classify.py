@@ -811,3 +811,49 @@ class TestGoogleDkimTxt:
     def test_empty_dkim_unchanged(self):
         assert classify_from_dkim(None) is None
         assert classify_from_dkim({}) is None
+
+
+# ── Mailbox-host farms (Zimbra/Carbonio) — #31 ───────────────────────
+
+
+class TestMailboxHostGateways:
+    def test_tenant_not_looked_through_on_zimbra_farm(self):
+        """Managed = registrazione Azure AD (Teams/Office), non caselle:
+        dietro una farm di caselle non deve mai produrre 'microsoft'."""
+        result = classify(["mx.zimbraopen.it"], "", tenant="Managed")
+        assert provider(result) == "independent"
+        assert "mailbox host" in reason(result)
+
+    def test_txt_token_not_looked_through_on_carbonio_farm(self):
+        result = classify(
+            ["mx.carboniocloud.com"],
+            "v=spf1 include:_spf.carboniocloud.com -all",
+            txt_verifications={"google": "R9vBEx8abcdef"},
+        )
+        assert provider(result) == "independent"
+        assert "mailbox host" in reason(result)
+
+    def test_dkim_still_wins_on_zimbra_farm(self):
+        """Ibrido genuino (pattern CM Palermo): il DKIM reale del provider
+        batte la guardia mailbox-host."""
+        result = classify(
+            ["mx.zimbraopen.it"],
+            "",
+            dkim={"selector1": "selector1-x._domainkey.tenant.onmicrosoft.com"},
+            tenant="Managed",
+        )
+        assert provider(result) == "microsoft"
+
+    def test_spf_corroborated_still_wins_on_zimbra_farm(self):
+        result = classify(
+            ["mx.zimbraopen.it"],
+            "v=spf1 include:spf.protection.outlook.com -all",
+            autodiscover={"autodiscover_cname": "autodiscover.outlook.com"},
+        )
+        assert provider(result) == "microsoft"
+
+    def test_security_gateway_tenant_still_looked_through(self):
+        """La guardia è limitata ai mailbox host: per i security gateway veri
+        il last-resort tenant resta com'è (finché #29 non decide)."""
+        result = classify(["filter.seppmail.cloud"], "", tenant="Managed")
+        assert provider(result) == "microsoft"

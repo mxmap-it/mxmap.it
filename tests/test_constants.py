@@ -13,6 +13,7 @@ from mail_sovereignty.constants import (
     GATEWAY_CATEGORIES,
     GATEWAY_CATEGORY_SECURITY,
     GATEWAY_CATEGORY_VENDOR,
+    MAILBOX_HOST_GATEWAYS,
     _SECURITY_GATEWAYS,
     _VENDOR_RELAY_GATEWAYS,
 )
@@ -119,3 +120,12 @@ def test_gateway_categories_known_anchors():
         assert GATEWAY_CATEGORIES[sec] == GATEWAY_CATEGORY_SECURITY, sec
     for ven in ("halley", "gecomail", "epublic", "host-it", "vianova"):
         assert GATEWAY_CATEGORIES[ven] == GATEWAY_CATEGORY_VENDOR, ven
+
+
+def test_mailbox_host_gateways_subset_and_vendor():
+    # Host di caselle (#31): devono restare in GATEWAY_KEYWORDS (il campo
+    # gateway alimenta la vista #28) ed essere categorizzati vendor/relay.
+    assert MAILBOX_HOST_GATEWAYS == {"carbonio", "zimbraopen", "zimbraoffice-gw"}
+    assert MAILBOX_HOST_GATEWAYS <= set(GATEWAY_KEYWORDS)
+    for g in MAILBOX_HOST_GATEWAYS:
+        assert GATEWAY_CATEGORIES[g] == GATEWAY_CATEGORY_VENDOR, g

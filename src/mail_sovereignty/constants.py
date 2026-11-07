@@ -707,7 +707,6 @@ _SECURITY_GATEWAYS: frozenset[str] = frozenset(
         "astea-cloudfilter",
         "safemail-cloud",
         "safetycloud",
-        "zimbraoffice-gw",
         "welcomeitalia",
     }
 )
@@ -733,6 +732,7 @@ _VENDOR_RELAY_GATEWAYS: frozenset[str] = frozenset(
         "cliocom",
         "carbonio",
         "zimbraopen",
+        "zimbraoffice-gw",
         "widestore",
         "datalab-it",
         "iconto",
@@ -752,6 +752,21 @@ GATEWAY_CATEGORIES: dict[str, str] = {
     **dict.fromkeys(_SECURITY_GATEWAYS, GATEWAY_CATEGORY_SECURITY),
     **dict.fromkeys(_VENDOR_RELAY_GATEWAYS, GATEWAY_CATEGORY_VENDOR),
 }
+
+# ── Host di caselle travestiti da gateway (mxmap.it#31) ─────────────────────
+# Farm Zimbra/Carbonio: l'MX è la DESTINAZIONE delle caselle, non un relay.
+# Per questi host il look-through debole (token TXT, tenant getuserrealm) non
+# deve mai attribuire un backend cloud: il tenant prova solo la registrazione
+# Azure AD (licenze Teams/Office), le caselle vivono sulla farm (verificato
+# live via fingerprint HTTPS, issue #31). I segnali primari (SPF corroborato,
+# autodiscover, DKIM del provider) restano validi per gli ibridi genuini.
+MAILBOX_HOST_GATEWAYS: frozenset[str] = frozenset(
+    {
+        "carbonio",
+        "zimbraopen",
+        "zimbraoffice-gw",
+    }
+)
 
 # ASN-based provider override: when an MX hostname doesn't match any of the
 # keyword-based provider rules above, but the MX server's IP belongs to a

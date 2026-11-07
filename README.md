@@ -125,6 +125,7 @@ Licenza **CC BY-SA 4.0**.
 - **Storicizzazione gated.** Le serie storiche partono dal **run #1** (primo scan pulito dopo la chiusura delle ~700 anomalie, [issue #4](https://github.com/mxmap-it/mxmap.it/issues/4)). Fino ad allora `historicize`/`dcat` sono disattivati.
 - **Una sola realtà.** Nessuna distinzione "reality vs methodology": la metodologia si congela al run #1.
 - **Vincoli editoriali del report.** Stile consulting; si guida con gli estremi segmentati; la PA Centrale (ministeri, numeri piccoli, tema sensibile) è tenuta **fuori dall'allarme di testata** (`SPOTLIGHT_EXCLUDE`).
+- **Mailbox host ≠ security gateway.** Le farm Zimbra/Carbonio (`carbonio`, `zimbraopen`, `zimbraoffice-gw` in `MAILBOX_HOST_GATEWAYS`) ospitano le caselle: l'MX che punta lì è la *destinazione*, non un relay. Per questi host il look-through debole (token TXT, tenant `getuserrealm`) non attribuisce mai un backend cloud — avere un tenant Azure AD (licenze Teams/Office) non prova la posta su Exchange Online. Segnali primari (DKIM, SPF corroborato, autodiscover del provider) restano validi per gli ibridi genuini. Verifica attiva e meccanismo documentati in [`docs/MAILBOX_HOSTS.md`](docs/MAILBOX_HOSTS.md) → **[issue #31](https://github.com/mxmap-it/mxmap.it/issues/31)**.
 - **I numeri non devono mai sbagliare.** Ogni KPI ha unit test + `assert_integrity()` a runtime (vedi sotto).
 - **Nightly indistruttibile.** Il deploy è **disaccoppiato** dal commit git (pubblica l'artifact costruito nel run); un fallimento del commit non blocca il sito.
 
@@ -171,7 +172,7 @@ La roadmap completa è in **[`docs/ROADMAP.md`](docs/ROADMAP.md)**, derivata dal
 ## Architettura & come contribuire
 
 - **[`CLAUDE.md`](CLAUDE.md)** — contesto completo per chi contribuisce (anche assistito da Claude): ecosistema, modello di sovranità, decisioni, vincoli, convenzioni.
-- **[`docs/`](docs/)** — `STATS_KPI.md` (catalogo KPI), `ROADMAP.md`, `HISTORICIZATION_DESIGN.md`, `BOUNCE_VERIFIER_DESIGN.md`, `countries/` (guide per-paese).
+- **[`docs/`](docs/)** — `STATS_KPI.md` (catalogo KPI), `ROADMAP.md`, `HISTORICIZATION_DESIGN.md`, `BOUNCE_VERIFIER_DESIGN.md`, `MAILBOX_HOSTS.md` (farm Zimbra/Carbonio, #31), `countries/` (guide per-paese).
 - Segnalazioni di misclassificazione: apri una issue con l'ID dell'ente e il provider corretto, oppure aggiungi una correzione a `MANUAL_OVERRIDES` in `postprocess.py`.
 
 ## Attribuzione & progetto originale

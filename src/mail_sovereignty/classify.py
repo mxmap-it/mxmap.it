@@ -3,6 +3,7 @@ from mail_sovereignty.constants import (
     ELKDATA_KEYWORDS,
     FOREIGN_SENDER_KEYWORDS,
     GATEWAY_KEYWORDS,
+    MAILBOX_HOST_GATEWAYS,
     GOOGLE_KEYWORDS,
     TELIA_KEYWORDS,
     TET_KEYWORDS,
@@ -294,6 +295,14 @@ def classify(
         if dkim_provider:
             return dkim_provider, (
                 f"MX is {gateway} gateway; DKIM signs via {dkim_provider}"
+            )
+        # Mailbox-host farms (Zimbra/Carbonio, #31): the MX is the mailbox
+        # destination, not a relay — TXT tokens and the MS365 tenant check
+        # only prove Azure AD registration, never a cloud mail backend here.
+        if gateway in MAILBOX_HOST_GATEWAYS:
+            return "independent", (
+                f"MX is {gateway} mailbox host (Zimbra/Carbonio farm); "
+                "mailboxes hosted at the farm"
             )
         # TXT verification tokens as last resort for gateways
         txt_provider = classify_from_txt_verifications(txt_verifications)

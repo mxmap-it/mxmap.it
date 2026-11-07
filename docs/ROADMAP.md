@@ -47,6 +47,18 @@ Le issue vivono nel repo MxMap: <https://github.com/mxmap-it/mxmap.it/issues>.
 - **[#5] Metodo basato su Email Bounce** — il *bounce-verifier* (già **progettato**,
   `docs/BOUNCE_VERIFIER_DESIGN.md`; serve `config/bounce.toml` + **autorizzazione esplicita** all'invio).
   Valida le classificazioni a bassa confidenza via smarthost + analisi NDR.
+- **[#29] Attribuzione per-provider dei segnali** — allineamento al classificatore del paper
+  (upstream `secassure2026`): tenant/TXT mai decisivi dietro gateway, confidenze calcolate sui
+  segnali del provider vincente. **In discussione** (scenari etichette quantificati nella issue).
+- **[#30] Risultati a livelli di confidenza** — incrociare banda di evidenza × verdetto su tutte
+  le superfici (modello mxmap.ch: legenda categoria×banda, ISD a più letture). Inventario completo
+  oggi/target per superficie nella issue; **precondizione: fix #29**; serie storiche stratificate
+  da definire **prima del run #1**.
+- ✅ **Fatto — [#31] mailbox host esclusi dal look-through.** Le farm Zimbra/Carbonio
+  (`MAILBOX_HOST_GATEWAYS`: `carbonio`, `zimbraopen`, `zimbraoffice-gw`) ospitano le caselle:
+  token TXT e tenant MS365 non vi attribuiscono più un backend cloud (~100 falsi
+  Microsoft/Google corretti; ibridi genuini preservati via DKIM/SPF corroborato). Verificato
+  live con fingerprint HTTPS; candidato a segnalazione metodologica upstream.
 
 ## Fase 5 — Fiducia & diagnostica
 - ✅ **Fatto — [#15] scheda per-ente + hub geografici (SEO).** [`scripts/build_entity_pages.py`](../scripts/build_entity_pages.py)
