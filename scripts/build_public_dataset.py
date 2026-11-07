@@ -23,13 +23,20 @@ Each row joins:
   - data/it_citizen_clusters.json (cluster mapping per IPA category)
 
 Schema (per-entity flat row):
-  codice_ipa, codice_categoria, categoria_label, cluster_key,
+  codice_ipa, uid, codice_categoria, categoria_label, cluster_key,
   cluster_label, denominazione, codice_istat, codice_comune_istat,
   regione, provincia, sito_istituzionale, domain_used, domain_source,
   has_mx, provider_raw, provider_display, sovereignty_bucket,
   classification_confidence, confidence_band, mx_jurisdiction,
-  jurisdiction_label, mx_records, mx_countries, gateway, dkim_tenant,
-  spf_includes, classification_reason, ipa_url
+  jurisdiction_label, mx_records, mx_countries, gateway,
+  gateway_category, gateway_keyword, dkim_tenant, spf_includes,
+  classification_reason, ipa_url
+
+`uid` è l'id interno dell'ente (chiave di data.json / data-detail.json):
+serve alla Ricerca Ente per il join lazy con la diagnostica completa
+(mxmap.it#28). `gateway_category` distingue security gateway vs
+vendor/relay (GATEWAY_CATEGORIES); `gateway_keyword` è la firma che ha
+fatto scattare il match in GATEWAY_KEYWORDS.
 
 Run:
   uv run python3 scripts/build_public_dataset.py
@@ -52,6 +59,12 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DIST = ROOT / "dist"
 DIST.mkdir(exist_ok=True)
+
+sys.path.insert(0, str(ROOT / "src"))
+from mail_sovereignty.constants import (  # noqa: E402
+    GATEWAY_CATEGORIES,
+    GATEWAY_KEYWORDS,
+)
 
 CSV_OUT  = DIST / "mxmap_it_dataset.csv"
 JSON_OUT = DIST / "mxmap_it_dataset.json"
@@ -212,7 +225,16 @@ def main() -> int:
         ipa_url = f"https://indicepa.gov.it/ipa-portale/visualizza-scheda/{codice_ipa}" if codice_ipa else ""
 
         # Spaccato gateway / dkim / spf — solo i campi citizen-rilevanti
+        mx_hosts = m.get("mx") or []
         gateway = m.get("gateway") or ""
+        gateway_category = GATEWAY_CATEGORIES.get(gateway, "") if gateway else ""
+        gateway_keyword = ""
+        if gateway:
+            lowered = [h.lower() for h in mx_hosts]
+            for kw in GATEWAY_KEYWORDS.get(gateway, []):
+                if any(kw in h for h in lowered):
+                    gateway_keyword = kw
+                    break
         dkim_tenant = ""
         if isinstance(m.get("dkim"), dict):
             for sel, target in m["dkim"].items():
@@ -226,13 +248,13 @@ def main() -> int:
             includes = [t.split(":", 1)[1] for t in spf.split() if t.startswith("include:")]
             spf_includes = ";".join(includes[:8])
 
-        mx_hosts = m.get("mx") or []
         mx_countries = m.get("mx_countries") or []
         conf = m.get("classification_confidence")
         jur = m.get("mx_jurisdiction") or "unknown"
 
         rows.append({
             "codice_ipa":           codice_ipa,
+            "uid":                  bid,
             "codice_categoria":     cat,
             "categoria_label":      CATEGORY_LABEL.get(cat, cat),
             "cluster_key":          ckey,
@@ -258,6 +280,8 @@ def main() -> int:
             "mx_records":           ";".join(mx_hosts[:10]),
             "mx_countries":         ";".join(mx_countries),
             "gateway":              gateway,
+            "gateway_category":     gateway_category,
+            "gateway_keyword":      gateway_keyword,
             "dkim_tenant":          dkim_tenant,
             "spf_includes":         spf_includes,
             "classification_reason": m.get("reason") or "",

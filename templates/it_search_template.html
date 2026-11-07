@@ -126,6 +126,25 @@
   .report-choice a:hover { background: #eef5ff; }
   .ipa-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #888; }
   .reason { font-size: 11px; color: #666; max-width: 320px; }
+
+  /* Gateway (mxmap.it#28): badge colonna + modalità diagnostica */
+  .gw-badge { display: inline-block; padding: 2px 8px; border-radius: 11px;
+              font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .gw-badge.gw-sec { background: #FFF3E0; color: #B45309; }   /* security gateway */
+  .gw-badge.gw-ven { background: #E3F2FD; color: #1565C0; }   /* vendor/relay */
+  .diag-label { color: #444; cursor: pointer; user-select: none; white-space: nowrap; }
+  .diag-label input { vertical-align: -2px; margin-right: 4px; }
+  tr.diag-row > td { background: #fbfcfe; border-bottom: 1px solid #e2e4e8; padding: 10px 14px; }
+  .diag-grid { display: grid; grid-template-columns: 170px 1fr; gap: 3px 12px; font-size: 11.5px; }
+  .diag-grid dt { color: #777; font-weight: 600; }
+  .diag-grid dd { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+                  font-size: 11px; word-break: break-all; color: #333; }
+  .diag-note { font-size: 11.5px; color: #999; }
+  .diag-report { margin-top: 8px; font-size: 11.5px; }
+  .diag-report a { color: #0066CC; font-weight: 600; text-decoration: none;
+                   border: 1px solid #cfe0f5; border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+  .diag-report a:hover { background: #eef5ff; }
+  @media (max-width: 980px) { .diag-grid { grid-template-columns: 1fr; } }
   .pagination { margin: 14px 0; text-align: center; font-size: 12px; }
   .pagination button { padding: 5px 10px; margin: 0 2px; border: 1px solid #ccc;
                        background: #fff; border-radius: 3px; cursor: pointer; }
@@ -171,8 +190,15 @@
     DKIM, autodiscover, ASN), con il <strong>livello di attendibilità</strong> della
     classificazione e la <strong>giurisdizione del server MX</strong> (🇮🇹 domestica /
     🌍 estera). Filtra e ordina per nome, codice IPA, categoria, provider, sovranità,
-    attendibilità, giurisdizione, regione. Usa i bottoni di download per scaricare
-    l'intero dataset.
+    attendibilità, giurisdizione, regione e <strong>gateway</strong> — i casi in cui la
+    posta non arriva diretta al provider ma passa prima da un tramite: un
+    <strong>security gateway</strong> (filtro antispam come Sophos o Libraesva) oppure il
+    <strong>fornitore informatico</strong> dell'ente (software house o hosting come Halley
+    o Gecomail). Attiva la
+    <strong>🔬 modalità diagnostica</strong> per vedere sotto ogni riga l'evidenza DNS
+    completa (MX, SPF, DKIM, autodiscover, tenant, regola di classificazione) e
+    segnalare un'anomalia con la diagnostica già allegata. Usa i bottoni di download
+    per scaricare l'intero dataset.
   </p>
 
   <div class="download-bar">
@@ -208,11 +234,21 @@
       <option value="n.d.">n.d.</option>
     </select>
     <select id="filter-regione"><option value="">Tutte le regioni</option></select>
+    <select id="filter-gateway" title="La posta di molti enti non arriva diretta: prima passa da un 'gateway', cioè da server di un soggetto terzo. Può essere un security gateway (un filtro antispam come Sophos o Libraesva) oppure il fornitore informatico dell'ente (la software house o l'hosting che gli gestisce la posta, come Halley o Gecomail)">
+      <option value="">Gateway: tutti gli enti</option>
+      <option value="__any__">🛡 Con gateway (qualunque tipo)</option>
+      <option value="__security__">🛡 Security gateway / antispam (Sophos, Libraesva…)</option>
+      <option value="__vendor__">🏢 Tramite fornitore informatico (Halley, Gecomail…)</option>
+      <option value="__none__">Senza gateway (posta diretta al provider)</option>
+    </select>
   </div>
 
   <div class="meta-row">
     <span id="result-count">…</span>
     <span class="reset" id="reset-filters">Reimposta filtri</span>
+    <label class="diag-label" title="Mostra sotto ogni riga l'evidenza DNS completa della classificazione (MX, SPF, DKIM, autodiscover, tenant, regola) e il link per segnalare un'anomalia con la diagnostica allegata">
+      <input type="checkbox" id="diag-toggle"> 🔬 Modalità diagnostica
+    </label>
   </div>
 
   <table id="tbl">
@@ -224,6 +260,7 @@
         <th data-key="provincia">Provincia</th>
         <th data-key="domain_used">Dominio</th>
         <th data-key="provider_display">Provider</th>
+        <th data-key="gateway">Gateway</th>
         <th data-key="sovereignty_bucket">Sovranità</th>
         <th data-key="classification_confidence">Attendibilità</th>
         <th data-key="jurisdiction_label">Giurisdizione MX</th>
@@ -231,7 +268,7 @@
       </tr>
     </thead>
     <tbody id="tbody">
-      <tr><td colspan="10" style="text-align:center;color:#999;padding:24px">Caricamento…</td></tr>
+      <tr><td colspan="11" style="text-align:center;color:#999;padding:24px">Caricamento…</td></tr>
     </tbody>
   </table>
 
@@ -246,6 +283,10 @@
 
 <script>
 const DATASET_URL = '../dist/mxmap_it_dataset.json';
+// Diagnostica per-ente (mxmap.it#28): riusa data-detail.json (lo stesso file
+// dei popup della mappa, keyed by uid) con caricamento LAZY solo quando la
+// modalità diagnostica viene attivata — zero costo per chi non la usa.
+const DETAIL_URL = '../data-detail.json';
 const PAGE_SIZE = 100;
 
 let allRows = [];
@@ -253,6 +294,10 @@ let filteredRows = [];
 let sortKey = 'denominazione';
 let sortDir = 'asc';
 let currentPage = 1;
+let datasetGenerated = '';
+let diagById = null;      // dict uid -> diagnostica, dopo il lazy-load
+let diagPending = false;
+let diagError = '';
 
 function escapeHtml(s) {
   const div = document.createElement('span');
@@ -279,6 +324,26 @@ function jurClass(j) {
   return { domestic: 'dom', foreign: 'frgn', mixed: 'mix' }[j] || 'unknown';
 }
 
+function gwCatLabel(cat) {
+  return cat === 'security' ? 'Security gateway (filtro antispam davanti alla posta dell\'ente)'
+       : cat === 'vendor-relay' ? 'Tramite fornitore informatico (software house / hosting che gestisce la posta dell\'ente)'
+       : '';
+}
+
+function diagEnabled() {
+  return document.getElementById('diag-toggle').checked;
+}
+
+function ensureDiagLoaded() {
+  if (diagById || diagPending) return;
+  diagPending = true;
+  diagError = '';
+  fetch(DETAIL_URL)
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+    .then(doc => { diagById = doc || {}; diagPending = false; render(); })
+    .catch(e => { diagError = e.message; diagPending = false; render(); });
+}
+
 function buildSummary(rows) {
   const total = rows.length;
   const c = (pred) => rows.filter(pred).length;
@@ -287,12 +352,15 @@ function buildSummary(rows) {
   const provIt  = c(r => r.sovereignty_bucket && r.sovereignty_bucket.includes('Provider commerciali'));
   const indep   = c(r => r.sovereignty_bucket && r.sovereignty_bucket.includes('Infrastruttura autonoma'));
   const fmtPct  = (n) => total > 0 ? ` <small style="font-size:13px;color:#888">(${(n/total*100).toFixed(1)}%)</small>` : '';
+  const gwAny = c(r => r.gateway);
+  const gwSec = c(r => r.gateway_category === 'security');
   document.getElementById('summary').innerHTML =
     `<div class="summary-card"><div class="n">${total.toLocaleString('it-IT')}</div><div class="label">Enti totali</div></div>` +
     `<div class="summary-card usa"><div class="n">${usa.toLocaleString('it-IT')}${fmtPct(usa)}</div><div class="label">🇺🇸 USA (CLOUD Act)</div></div>` +
     `<div class="summary-card italia"><div class="n">${sovrano.toLocaleString('it-IT')}${fmtPct(sovrano)}</div><div class="label">🇮🇹 Cloud sovrano</div></div>` +
     `<div class="summary-card italia"><div class="n">${provIt.toLocaleString('it-IT')}${fmtPct(provIt)}</div><div class="label">🇮🇹 Provider Italiano</div></div>` +
-    `<div class="summary-card italia"><div class="n">${indep.toLocaleString('it-IT')}${fmtPct(indep)}</div><div class="label">🇮🇹 Infrastruttura autonoma</div></div>`;
+    `<div class="summary-card italia"><div class="n">${indep.toLocaleString('it-IT')}${fmtPct(indep)}</div><div class="label">🇮🇹 Infrastruttura autonoma</div></div>` +
+    `<div class="summary-card"><div class="n">${gwAny.toLocaleString('it-IT')}${fmtPct(gwAny)}</div><div class="label">🛡 Dietro gateway (di cui ${gwSec.toLocaleString('it-IT')} antispam)</div></div>`;
 }
 
 function populateFilter(selectId, key, rows) {
@@ -310,6 +378,24 @@ function populateFilter(selectId, key, rows) {
   if (cur) el.value = cur;
 }
 
+// Il filtro gateway ha 5 opzioni statiche (tutti / qualunque / security /
+// vendor / nessuno) seguite dai singoli fornitori rilevati nei dati, con il
+// conteggio enti accanto.
+function populateGatewayFilter(rows) {
+  const el = document.getElementById('filter-gateway');
+  const cur = el.value;
+  while (el.options.length > 5) el.remove(5);
+  const counts = new Map();
+  rows.forEach(r => { if (r.gateway) counts.set(r.gateway, (counts.get(r.gateway) || 0) + 1); });
+  Array.from(counts.keys()).sort((a, b) => a.localeCompare(b, 'it')).forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = `${v} (${counts.get(v).toLocaleString('it-IT')})`;
+    el.appendChild(opt);
+  });
+  if (cur) el.value = cur;
+}
+
 function applyFilters() {
   const q  = document.getElementById('q').value.trim().toLowerCase();
   const fc = document.getElementById('filter-categoria').value;
@@ -319,6 +405,7 @@ function applyFilters() {
   const fj = document.getElementById('filter-jurisdiction').value;
   const fcf = document.getElementById('filter-confidence').value;
   const fr = document.getElementById('filter-regione').value;
+  const fg = document.getElementById('filter-gateway').value;
 
   filteredRows = allRows.filter(r => {
     if (fc && r.categoria_label !== fc) return false;
@@ -328,6 +415,13 @@ function applyFilters() {
     if (fj && r.jurisdiction_label !== fj) return false;
     if (fcf && r.confidence_band !== fcf) return false;
     if (fr && r.regione !== fr) return false;
+    if (fg) {
+      if (fg === '__any__') { if (!r.gateway) return false; }
+      else if (fg === '__none__') { if (r.gateway) return false; }
+      else if (fg === '__security__') { if (r.gateway_category !== 'security') return false; }
+      else if (fg === '__vendor__') { if (r.gateway_category !== 'vendor-relay') return false; }
+      else if (r.gateway !== fg) return false;
+    }
     if (q) {
       const hay = `${r.denominazione} ${r.codice_ipa} ${r.domain_used} ${r.sito_istituzionale}`.toLowerCase();
       if (!hay.includes(q)) return false;
@@ -382,6 +476,98 @@ function reportErrorHTML(d) {
     '<a href="' + tg + '" target="_blank" rel="noopener">✈️ Telegram</a></div></details>';
 }
 
+// ── Modalità diagnostica (mxmap.it#28) ─────────────────────────────────────
+function fmtDiagValue(v) {
+  if (v == null || v === '') return '—';
+  if (Array.isArray(v)) return v.length ? v.map(escapeHtml).join('<br>') : '—';
+  if (typeof v === 'object') {
+    const entries = Object.entries(v);
+    return entries.length
+      ? entries.map(([k, val]) => escapeHtml(k) + ' → ' + escapeHtml(String(val))).join('<br>')
+      : '—';
+  }
+  return escapeHtml(String(v));
+}
+
+function buildDiagReportURL(r, d) {
+  const page = location.origin + location.pathname;
+  const title = '[Segnalazione dato] ' + (r.denominazione || '') + ' — ' + (r.domain_used || '');
+  const flat = (obj, sep, n) => obj
+    ? Object.entries(obj).slice(0, n).map(([k, v]) => k + sep + v).join(', ') : '';
+  const evid = d.mx_discovery_evidence == null ? ''
+    : (typeof d.mx_discovery_evidence === 'object'
+        ? JSON.stringify(d.mx_discovery_evidence) : String(d.mx_discovery_evidence));
+  const L = [
+    '**Ente:** ' + (r.denominazione || ''),
+    '**Dominio:** ' + (r.domain_used || ''),
+    '**Codice IPA / uid:** ' + (r.codice_ipa || '—') + ' / ' + (r.uid || '—'),
+    '**Provider classificato:** ' + (r.provider_display || '—'),
+    r.gateway ? '**Gateway:** ' + r.gateway + ' (' + (r.gateway_category || 'n.d.') +
+      (r.gateway_keyword ? ', firma MX "' + r.gateway_keyword + '"' : '') + ')' : null,
+    '',
+    '### Diagnostica DNS (run ' + (datasetGenerated || 'n.d.') + ')',
+    '- MX: ' + ((d.mx || []).slice(0, 10).join(', ') || '—'),
+    '- SPF: ' + ((d.spf || '—').slice(0, 400)),
+    d.dkim ? '- DKIM: ' + flat(d.dkim, ' → ', 5) : null,
+    d.autodiscover ? '- Autodiscover: ' + flat(d.autodiscover, ' → ', 3) : null,
+    d.tenant ? '- Tenant: ' + d.tenant : null,
+    d.txt_verifications ? '- TXT verification: ' + flat(d.txt_verifications, '=', 5) : null,
+    '- Regola: ' + (d.classification_rule || '—') + ' · attendibilità ' +
+      (typeof d.classification_confidence === 'number'
+        ? Math.round(d.classification_confidence * 100) + '%' : 'n.d.'),
+    '- Giurisdizione MX: ' + (d.mx_jurisdiction || '—') +
+      (r.mx_countries ? ' (' + r.mx_countries + ')' : ''),
+    '- Scoperta dominio/MX: ' + (d.mx_discovery_method || '—') +
+      (evid ? ' · ' + evid.slice(0, 160) : ''),
+    '- Motivazione: ' + ((d.reason || r.classification_reason || '—').slice(0, 300)),
+    '',
+    '**Cosa risulta sbagliato e qual è il dato corretto:**',
+    '',
+    '',
+    '— inviato dalla Ricerca Ente (modalità diagnostica) · ' + page
+  ];
+  const body = L.filter(x => x !== null).join('\n').slice(0, 5500);
+  return 'https://github.com/mxmap-it/mxmap.it/issues/new?title=' +
+    encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+}
+
+function diagPanelHTML(r) {
+  if (diagError) {
+    return '<div class="diag-note">⚠️ Diagnostica non disponibile (' + escapeHtml(diagError) +
+      '). Il file data-detail.json verrà rigenerato al prossimo run della pipeline.</div>';
+  }
+  if (!diagById) return '<div class="diag-note">Caricamento diagnostica…</div>';
+  const d = diagById[r.uid] || {};
+  const gwHtml = r.gateway
+    ? '<span class="gw-badge ' + (r.gateway_category === 'security' ? 'gw-sec' : 'gw-ven') + '">' +
+      escapeHtml(r.gateway) + '</span> ' + escapeHtml(gwCatLabel(r.gateway_category) || 'categoria n.d.') +
+      (r.gateway_keyword ? ' · firma MX: <code>' + escapeHtml(r.gateway_keyword) + '</code>' : '')
+    : '—';
+  const pairs = [
+    ['Record MX', fmtDiagValue(d.mx && d.mx.length ? d.mx : (r.mx_records ? r.mx_records.split(';') : null))],
+    ['Gateway', gwHtml],
+    ['SPF', fmtDiagValue(d.spf)],
+    ['DKIM', fmtDiagValue(d.dkim)],
+    ['Autodiscover', fmtDiagValue(d.autodiscover)],
+    ['Tenant', fmtDiagValue(d.tenant)],
+    ['Verifiche TXT', fmtDiagValue(d.txt_verifications)],
+    ['Regola di classificazione', fmtDiagValue(d.classification_rule) +
+      (typeof d.classification_confidence === 'number'
+        ? ' · attendibilità ' + Math.round(d.classification_confidence * 100) + '%' : '')],
+    ['Giurisdizione MX', fmtDiagValue(d.mx_jurisdiction) +
+      (r.mx_countries ? ' · paesi: ' + escapeHtml(r.mx_countries) : '')],
+    ['Scoperta dominio/MX', fmtDiagValue(d.mx_discovery_method) +
+      (d.mx_discovery_evidence ? '<br>' + fmtDiagValue(d.mx_discovery_evidence) : '') +
+      (r.domain_source ? '<br>origine dominio: ' + escapeHtml(r.domain_source) : '')],
+    ['Software SMTP', fmtDiagValue(d.smtp_software)],
+    ['Motivazione', fmtDiagValue(d.reason || r.classification_reason)],
+  ];
+  return '<dl class="diag-grid">' +
+    pairs.map(([k, v]) => '<dt>' + k + '</dt><dd>' + v + '</dd>').join('') +
+    '</dl><div class="diag-report"><a href="' + buildDiagReportURL(r, d) +
+    '" target="_blank" rel="noopener">⚠️ Segnala anomalia (diagnostica allegata)</a></div>';
+}
+
 function render() {
   const tbody = document.getElementById('tbody');
   const cnt = document.getElementById('result-count');
@@ -391,7 +577,7 @@ function render() {
     : `${filteredRows.length.toLocaleString('it-IT')} risultati su ${allRows.length.toLocaleString('it-IT')}`;
 
   if (filteredRows.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;color:#999;padding:24px">Nessun risultato.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="11" style="text-align:center;color:#999;padding:24px">Nessun risultato.</td></tr>';
     document.getElementById('pagination').innerHTML = '';
     return;
   }
@@ -401,16 +587,22 @@ function render() {
   const start = (currentPage - 1) * PAGE_SIZE;
   const slice = filteredRows.slice(start, start + PAGE_SIZE);
 
+  const diagOn = diagEnabled();
   tbody.innerHTML = slice.map(r => {
     const sovClass = sovereigntyClass(r.sovereignty_bucket);
     const ipaUrl = r.ipa_url ? `<a href="${escapeHtml(r.ipa_url)}" target="_blank" rel="noopener" class="ipa-code">${escapeHtml(r.codice_ipa)}</a>` : `<span class="ipa-code">${escapeHtml(r.codice_ipa)}</span>`;
-    return '<tr>' +
+    const gwCell = r.gateway
+      ? '<span class="gw-badge ' + (r.gateway_category === 'security' ? 'gw-sec' : 'gw-ven') +
+        '" title="' + escapeHtml(gwCatLabel(r.gateway_category)) + '">' + escapeHtml(r.gateway) + '</span>'
+      : '';
+    const rowHtml = '<tr>' +
       '<td>' + ipaUrl + '</td>' +
       '<td>' + escapeHtml(r.categoria_label || r.codice_categoria || '') + '</td>' +
       '<td>' + escapeHtml(r.denominazione || '') + '</td>' +
       '<td>' + escapeHtml(r.provincia || '') + '</td>' +
       '<td><span class="domain">' + escapeHtml(r.domain_used || '') + '</span></td>' +
       '<td>' + escapeHtml(r.provider_display || '') + '</td>' +
+      '<td>' + gwCell + '</td>' +
       '<td><span class="badge ' + sovClass + '">' + escapeHtml(r.sovereignty_bucket || '') + '</span></td>' +
       '<td>' + (typeof r.classification_confidence === 'number'
         ? '<span class="conf ' + confClass(r.classification_confidence) + '">' + Math.round(r.classification_confidence * 100) + '%</span>'
@@ -420,6 +612,9 @@ function render() {
         reportErrorHTML({ name: r.denominazione, domain: r.domain_used, id: r.codice_ipa,
           provider: r.provider_display, reason: r.classification_reason, area: r.categoria_label }) + '</td>' +
     '</tr>';
+    return rowHtml + (diagOn
+      ? '<tr class="diag-row"><td colspan="11">' + diagPanelHTML(r) + '</td></tr>'
+      : '');
   }).join('');
 
   document.querySelectorAll('thead th').forEach(th => {
@@ -462,35 +657,75 @@ document.querySelectorAll('thead th').forEach(th => {
     applyFilters();
   });
 });
+// Deep-link (mxmap.it#28): ?gateway=<nome|any|security|vendor|none>&diag=1
+function updateURL() {
+  const p = new URLSearchParams(location.search);
+  const fg = document.getElementById('filter-gateway').value;
+  if (fg) p.set('gateway', fg); else p.delete('gateway');
+  if (diagEnabled()) p.set('diag', '1'); else p.delete('diag');
+  const qs = p.toString();
+  history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+}
+
+function applyURLParams() {
+  const params = new URLSearchParams(location.search);
+  const gwParam = params.get('gateway');
+  if (gwParam) {
+    const aliases = { any: '__any__', security: '__security__',
+                      vendor: '__vendor__', none: '__none__' };
+    const v = aliases[gwParam] || gwParam;
+    const el = document.getElementById('filter-gateway');
+    if (Array.from(el.options).some(o => o.value === v)) el.value = v;
+  }
+  const qParam = params.get('q');
+  if (qParam) document.getElementById('q').value = qParam;
+  if (params.get('diag') === '1') {
+    document.getElementById('diag-toggle').checked = true;
+    ensureDiagLoaded();
+  }
+}
+
 ['q', 'filter-categoria', 'filter-cluster', 'filter-provider',
  'filter-sovereignty', 'filter-jurisdiction', 'filter-confidence',
- 'filter-regione'].forEach(id => {
-  document.getElementById(id).addEventListener('input', applyFilters);
+ 'filter-regione', 'filter-gateway'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => {
+    applyFilters();
+    if (id === 'filter-gateway') updateURL();
+  });
+});
+document.getElementById('diag-toggle').addEventListener('change', () => {
+  if (diagEnabled()) ensureDiagLoaded();
+  updateURL();
+  render();
 });
 document.getElementById('reset-filters').addEventListener('click', () => {
   ['q', 'filter-categoria', 'filter-cluster', 'filter-provider',
    'filter-sovereignty', 'filter-jurisdiction', 'filter-confidence',
-   'filter-regione'].forEach(id => {
+   'filter-regione', 'filter-gateway'].forEach(id => {
     document.getElementById(id).value = '';
   });
   applyFilters();
+  updateURL();
 });
 
 fetch(DATASET_URL)
   .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
   .then(doc => {
     allRows = doc.rows || [];
+    datasetGenerated = (doc._meta && doc._meta.generated) || '';
     populateFilter('filter-categoria',   'categoria_label',    allRows);
     populateFilter('filter-cluster',     'cluster_label',      allRows);
     populateFilter('filter-provider',    'provider_display',   allRows);
     populateFilter('filter-sovereignty', 'sovereignty_bucket', allRows);
     populateFilter('filter-regione',     'regione',            allRows);
+    populateGatewayFilter(allRows);
     buildSummary(allRows);
+    applyURLParams();
     applyFilters();
   })
   .catch(e => {
     document.getElementById('tbody').innerHTML =
-      '<tr><td colspan="10" style="color:#c00;padding:24px;text-align:center">' +
+      '<tr><td colspan="11" style="color:#c00;padding:24px;text-align:center">' +
       'Errore caricamento dataset: ' + escapeHtml(e.message) + '<br><br>' +
       'Il file <code>dist/mxmap_it_dataset.json</code> verrà generato al prossimo run della pipeline. ' +
       'Riprova fra qualche minuto.</td></tr>';

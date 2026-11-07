@@ -635,6 +635,124 @@ GATEWAY_KEYWORDS = {
     "welcomeitalia": ["defender.welcomeitalia.it", "defender2.welcomeitalia.it"],
 }
 
+# ── Categorizzazione dei gateway (mxmap.it#28) ──────────────────────────────
+# Distingue i SECURITY GATEWAY propriamente detti (antispam / email security
+# come prodotto: Sophos, Libraesva, Proofpoint, …) dai VENDOR/RELAY (software
+# house della PA, hosting, ISP il cui MX fa comunque da tramite: Halley,
+# Gecomail, Host.it, …). Alimenta il filtro "Security gateway" della Ricerca
+# Ente e la colonna `gateway_category` del dataset pubblico. Non tocca la
+# classificazione del provider (il look-through resta identico).
+#
+# OGNI chiave di GATEWAY_KEYWORDS deve stare in ESATTAMENTE uno dei due set:
+# il test di completezza in tests/test_constants.py rompe la CI se una nuova
+# firma viene aggiunta senza scegliere la categoria.
+GATEWAY_CATEGORY_SECURITY = "security"
+GATEWAY_CATEGORY_VENDOR = "vendor-relay"
+
+_SECURITY_GATEWAYS: frozenset[str] = frozenset(
+    {
+        # email security / antispam internazionali (eredità fork DACH/Baltico)
+        "seppmail",
+        "barracuda",
+        "trendmicro",
+        "hornetsecurity",
+        "proofpoint",
+        "sophos",
+        "fortimail",
+        "secmail",
+        "d-fence",
+        "edelkey",
+        "cisco-ironport",
+        "staysecure",
+        "mailanyone",
+        "comendo",
+        "heimdal",
+        "messagelabs",
+        "nospamproxy",
+        "secumail",
+        "mailspamprotection",
+        "mailguard",
+        "mimecast",
+        "smxemail",
+        "securemx",
+        "cloudflare-email",
+        "antispameurope",
+        "retarus",
+        "siminn",
+        "telefonica",
+        "vadesecure",
+        "mailinblack",
+        "mailcontrol",
+        "security-mail",
+        "topsec",
+        "mailchannels",
+        "spamexperts",
+        "mpssec",
+        "spambusters",
+        "mxthunder",
+        "mx-hub",
+        "spamtador",
+        "jellyfish",
+        "anti-spam-premium",
+        "suantispam",
+        "spamhero",
+        # email security / antispam italiani
+        "antispamsolution",
+        "libraesva",
+        "myantispam",
+        "stopspam",
+        "cloudfabric",
+        "mtaroutes",
+        "cdesigngroup",
+        "astea-cloudfilter",
+        "safemail-cloud",
+        "safetycloud",
+        "zimbraoffice-gw",
+        "welcomeitalia",
+    }
+)
+
+_VENDOR_RELAY_GATEWAYS: frozenset[str] = frozenset(
+    {
+        # hosting / ISP / managed services esteri
+        "ippnet",
+        "garmtech",
+        "psmanaged",
+        "simnet",
+        "skyggnir",
+        "cdmon",
+        "dsidata",
+        "tstechnology",
+        # software house / SaaS / hosting della PA italiana
+        "halley",
+        "ilger",
+        "demosdata",
+        "epublic",
+        "sitek",
+        "invallee",
+        "cliocom",
+        "carbonio",
+        "zimbraopen",
+        "widestore",
+        "datalab-it",
+        "iconto",
+        "gecomail",
+        "vianova",
+        "leonet",
+        "omitech",
+        "a2asmartcity",
+        "naquadria",
+        "host-it",
+        "interhost",
+        "cbsolt",
+    }
+)
+
+GATEWAY_CATEGORIES: dict[str, str] = {
+    **dict.fromkeys(_SECURITY_GATEWAYS, GATEWAY_CATEGORY_SECURITY),
+    **dict.fromkeys(_VENDOR_RELAY_GATEWAYS, GATEWAY_CATEGORY_VENDOR),
+}
+
 # ASN-based provider override: when an MX hostname doesn't match any of the
 # keyword-based provider rules above, but the MX server's IP belongs to a
 # specific known Italian provider's autonomous system, classify as that

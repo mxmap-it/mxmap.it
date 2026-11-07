@@ -9,6 +9,12 @@ from mail_sovereignty.constants import (
     FOREIGN_SENDER_KEYWORDS,
     SKIP_DOMAINS,
     LOCAL_ISP_ASNS,
+    GATEWAY_KEYWORDS,
+    GATEWAY_CATEGORIES,
+    GATEWAY_CATEGORY_SECURITY,
+    GATEWAY_CATEGORY_VENDOR,
+    _SECURITY_GATEWAYS,
+    _VENDOR_RELAY_GATEWAYS,
 )
 
 
@@ -83,3 +89,33 @@ def test_local_isp_asns_contains_key_providers():
 
 def test_local_isp_asns_minimum_count():
     assert len(LOCAL_ISP_ASNS) >= 10
+
+
+# ── Categorie gateway (mxmap.it#28) ─────────────────────────────────────────
+# La Ricerca Ente distingue security gateway (antispam) da vendor/relay
+# (fornitore informatico): ogni firma di GATEWAY_KEYWORDS deve avere una
+# categoria ESPLICITA, scelta a mano quando la firma viene aggiunta.
+
+
+def test_gateway_categories_cover_every_keyword():
+    missing = set(GATEWAY_KEYWORDS) - set(GATEWAY_CATEGORIES)
+    extra = set(GATEWAY_CATEGORIES) - set(GATEWAY_KEYWORDS)
+    assert not missing, f"firme gateway senza categoria: {sorted(missing)}"
+    assert not extra, f"categorie per firme inesistenti: {sorted(extra)}"
+
+
+def test_gateway_categories_are_disjoint_and_valid():
+    overlap = _SECURITY_GATEWAYS & _VENDOR_RELAY_GATEWAYS
+    assert not overlap, f"firme in entrambe le categorie: {sorted(overlap)}"
+    assert set(GATEWAY_CATEGORIES.values()) == {
+        GATEWAY_CATEGORY_SECURITY,
+        GATEWAY_CATEGORY_VENDOR,
+    }
+
+
+def test_gateway_categories_known_anchors():
+    # ancore note: se qualcuno riclassifica per sbaglio, il test parla chiaro
+    for sec in ("sophos", "libraesva", "proofpoint", "trendmicro", "mimecast"):
+        assert GATEWAY_CATEGORIES[sec] == GATEWAY_CATEGORY_SECURITY, sec
+    for ven in ("halley", "gecomail", "epublic", "host-it", "vianova"):
+        assert GATEWAY_CATEGORIES[ven] == GATEWAY_CATEGORY_VENDOR, ven

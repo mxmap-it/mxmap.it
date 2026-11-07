@@ -61,6 +61,36 @@ def test_data_regions_istruzione_points_floor() -> None:
     assert len(pts) >= 7000, f"istruzione_points in data-regions: {len(pts)}"
 
 
+def test_public_dataset_gateway_fields_and_floors() -> None:
+    """Il dataset pubblico (consumato dalla Ricerca Ente, #28) deve esporre i
+    campi gateway e restare popolato: al run 2026-11-07 gli enti dietro
+    gateway erano 3.454 (973 security, 2.481 vendor/relay) — pavimenti ~70%.
+    """
+    d = _load("dist/mxmap_it_dataset.json")
+    fields = d.get("_meta", {}).get("fields", [])
+    for f in ("uid", "gateway", "gateway_category", "gateway_keyword"):
+        assert f in fields, f"campo {f} assente dal dataset pubblico"
+    rows = d.get("rows", [])
+    assert len(rows) >= 20000, f"dataset pubblico collassato: {len(rows)} righe"
+    with_gw = [r for r in rows if r.get("gateway")]
+    assert len(with_gw) >= 2500, f"enti dietro gateway: {len(with_gw)}"
+    cats = {r.get("gateway_category") for r in with_gw}
+    assert cats <= {"security", "vendor-relay"}, f"categorie inattese: {cats}"
+    n_sec = sum(1 for r in with_gw if r["gateway_category"] == "security")
+    n_ven = sum(1 for r in with_gw if r["gateway_category"] == "vendor-relay")
+    assert n_sec >= 600, f"security gateway collassati: {n_sec}"
+    assert n_ven >= 1500, f"vendor/relay collassati: {n_ven}"
+
+
+def test_data_detail_floor_for_diagnostics() -> None:
+    """data-detail.json è la sorgente diagnostica lazy della Ricerca Ente
+    (#28) oltre che dei popup mappa: deve coprire ~tutti gli enti."""
+    d = _load("data-detail.json")
+    assert len(d) >= 20000, f"data-detail collassato: {len(d)} enti"
+    sample = next(iter(d.values()))
+    assert "mx" in sample or "reason" in sample, "entry diagnostica senza campi"
+
+
 def test_pa_centrale_table_floor_and_armed_forces() -> None:
     """La tabella PA Centrale deve restare popolata e contenere le Forze
     Armate (aggiunte manuali al seed, 2026-09: erano sparite perché il
