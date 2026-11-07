@@ -1,5 +1,5 @@
 {
-  "n_purged": 508,
+  "n_purged": 507,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -119,8 +119,8 @@
       "claimed_domain": "comune.gazoldo.mn.it",
       "reject_reason": "unrelated",
       "old_mx": "cloudscan3.ilger.com",
-      "old_provider": "google",
-      "old_reason": "MX is ilger gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is ilger vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-C14-cdobn",
@@ -130,8 +130,8 @@
       "claimed_domain": "comune.benevento.it",
       "reject_reason": "unrelated",
       "old_mx": "leshared1.interhost.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is host-it gateway; TXT verification proves microsoft tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is host-it vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-C14-cdom_mo",
@@ -141,8 +141,8 @@
       "claimed_domain": "comune.modena.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "google",
-      "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-cdop_061",
@@ -284,8 +284,8 @@
       "claimed_domain": "comune.pozzuoli.na.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "google",
-      "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-cida_076",
@@ -328,8 +328,8 @@
       "claimed_domain": "comune.gorizia.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-cmsl",
@@ -361,8 +361,8 @@
       "claimed_domain": "comune.belluno.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.zimbraopen.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is zimbraopen gateway; TXT verification proves microsoft tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-C14-cnddrfr",
@@ -405,8 +405,8 @@
       "claimed_domain": "comune.rovigo.it",
       "reject_reason": "unrelated",
       "old_mx": "esvacloud1.archimedia.it",
-      "old_provider": "independent",
-      "old_reason": "MX is libraesva gateway; backend provider unknown"
+      "old_provider": "unknown",
+      "old_reason": "MX is libraesva gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-cnlat",
@@ -449,8 +449,8 @@
       "claimed_domain": "comune.pescara.it",
       "reject_reason": "unrelated",
       "old_mx": "mx1.hc1174-38.eu.iphmx.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is cisco-ironport gateway; MS365 tenant detected (Managed)"
+      "old_provider": "unknown",
+      "old_reason": "MX is cisco-ironport gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-copt",
@@ -658,8 +658,8 @@
       "claimed_domain": "comune.macerata.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-oclpal",
@@ -735,8 +735,8 @@
       "claimed_domain": "comune.verona.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-odadfr",
@@ -746,8 +746,8 @@
       "claimed_domain": "comune.ra.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-odafna",
@@ -779,8 +779,8 @@
       "claimed_domain": "comune.prato.it",
       "reject_reason": "unrelated",
       "old_mx": "comuneprato.in.tmes.trendmicro.eu",
-      "old_provider": "microsoft",
-      "old_reason": "MX is trendmicro gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is trendmicro gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-odafpt",
@@ -790,8 +790,8 @@
       "claimed_domain": "comune.pistoia.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-odafrc",
@@ -801,8 +801,8 @@
       "claimed_domain": "reggiocal.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.carboniocloud.com",
-      "old_provider": "google",
-      "old_reason": "MX is carbonio gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-C14-odafsi",
@@ -812,8 +812,8 @@
       "claimed_domain": "comune.siena.it",
       "reject_reason": "unrelated",
       "old_mx": "consorzioterrecablate.esvacloud.com",
-      "old_provider": "google",
-      "old_reason": "MX is libraesva gateway; TXT verification proves google tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is libraesva gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-odaftv",
@@ -845,8 +845,8 @@
       "claimed_domain": "comune.orvieto.tr.it",
       "reject_reason": "unrelated",
       "old_mx": "cloudscan24.ilger.com",
-      "old_provider": "google",
-      "old_reason": "MX is ilger gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is ilger vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-C14-odap_055",
@@ -889,8 +889,8 @@
       "claimed_domain": "comune.mt.it",
       "reject_reason": "unrelated",
       "old_mx": "cloudscan24.ilger.com",
-      "old_provider": "google",
-      "old_reason": "MX is ilger gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is ilger vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-C14-oddadfpd",
@@ -966,8 +966,8 @@
       "claimed_domain": "comune.vicenza.it",
       "reject_reason": "unrelated",
       "old_mx": "comune-vicenza.esvacloud.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is libraesva gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is libraesva gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-odmcd",
@@ -1043,8 +1043,8 @@
       "claimed_domain": "comune.rovigo.it",
       "reject_reason": "unrelated",
       "old_mx": "esvacloud1.archimedia.it",
-      "old_provider": "independent",
-      "old_reason": "MX is libraesva gateway; backend provider unknown"
+      "old_provider": "unknown",
+      "old_reason": "MX is libraesva gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-opmv_093",
@@ -1054,8 +1054,8 @@
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-C14-opopv",
@@ -1080,17 +1080,6 @@
       "old_reason": "MX is invallee gateway; SPF+DKIM confirm microsoft"
     },
     {
-      "id": "IT-C3-aeci",
-      "name": "Aero Club d'Italia",
-      "codice_ipa": "aeci",
-      "seed_domain": "aeci.it",
-      "claimed_domain": "comune.roma.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-roma-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
       "id": "IT-C3-anlpa",
       "name": "Agenzia Nazionale per Le Politiche Attive del Lavoro",
       "codice_ipa": "anlpa",
@@ -1110,7 +1099,7 @@
       "reject_reason": "unrelated",
       "old_mx": "cloudscan12.ilger.com",
       "old_provider": "microsoft",
-      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
+      "old_reason": "MX is ilger gateway; SPF + TXT verification confirm microsoft"
     },
     {
       "id": "IT-C3-ecstfgc",
@@ -1120,8 +1109,8 @@
       "claimed_domain": "comune.lecce.it",
       "reject_reason": "unrelated",
       "old_mx": "mailbox15.omitech.it",
-      "old_provider": "google",
-      "old_reason": "MX is omitech gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is omitech vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-C5-gnddp",
@@ -1208,8 +1197,8 @@
       "claimed_domain": "comune.loranze.to.it",
       "reject_reason": "unrelated",
       "old_mx": "le.epublic.it",
-      "old_provider": "independent",
-      "old_reason": "MX is epublic gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-COM-004201",
@@ -1230,8 +1219,8 @@
       "claimed_domain": "comune.berzanoditortona.al.it",
       "reject_reason": "unrelated",
       "old_mx": "in.widestore.net",
-      "old_provider": "independent",
-      "old_reason": "MX is widestore gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is widestore vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-COM-009033",
@@ -1384,8 +1373,8 @@
       "claimed_domain": "comune.monrupino.ts.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "independent",
-      "old_reason": "MX is sophos gateway; backend provider unknown"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-COM-036047",
@@ -1747,8 +1736,8 @@
       "claimed_domain": "comune.carovilli.is.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.leonet.it",
-      "old_provider": "independent",
-      "old_reason": "MX is leonet gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is leonet vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-COM-094035",
@@ -1758,8 +1747,8 @@
       "claimed_domain": "comune.pietrabbondante.is.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.leonet.it",
-      "old_provider": "independent",
-      "old_reason": "MX is leonet gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is leonet vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-COM-102033",
@@ -1813,8 +1802,8 @@
       "claimed_domain": "comune.giulianova.te.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "google",
-      "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-CONS-cbsap",
@@ -1835,8 +1824,8 @@
       "claimed_domain": "comune.frattamaggiore.na.it",
       "reject_reason": "unrelated",
       "old_mx": "cloudscan1.ilger.com",
-      "old_provider": "independent",
-      "old_reason": "MX is ilger gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is ilger vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-CONS-cdssac",
@@ -1846,8 +1835,8 @@
       "claimed_domain": "comune.chieri.to.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-CONS-ciptp",
@@ -1879,8 +1868,8 @@
       "claimed_domain": "comune.selvazzano-dentro.pd.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.zimbraopen.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is zimbraopen gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-CONS-cpso",
@@ -2056,7 +2045,7 @@
       "reject_reason": "unrelated",
       "old_mx": "cloudscan12.ilger.com",
       "old_provider": "microsoft",
-      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
+      "old_reason": "MX is ilger gateway; SPF + TXT verification confirm microsoft"
     },
     {
       "id": "IT-L1-cdon",
@@ -2154,8 +2143,8 @@
       "claimed_domain": "comune.trieste.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L1-fcto",
@@ -2407,8 +2396,8 @@
       "claimed_domain": "comune.trieste.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L12-7UG4CTPM",
@@ -2418,8 +2407,8 @@
       "claimed_domain": "reggiocal.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.carboniocloud.com",
-      "old_provider": "google",
-      "old_reason": "MX is carbonio gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L12-CMAA",
@@ -2550,8 +2539,8 @@
       "claimed_domain": "comune.palata.cb.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.leonet.it",
-      "old_provider": "independent",
-      "old_reason": "MX is leonet gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is leonet vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L12-cm_trmb",
@@ -2583,8 +2572,8 @@
       "claimed_domain": "comune.mignanego.ge.it",
       "reject_reason": "unrelated",
       "old_mx": "mailgw01.host.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is host-it gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is host-it vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L12-cm_voltu",
@@ -2726,8 +2715,8 @@
       "claimed_domain": "comune.lomello.pv.it",
       "reject_reason": "unrelated",
       "old_mx": "le.epublic.it",
-      "old_provider": "independent",
-      "old_reason": "MX is epublic gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-pls",
@@ -2748,8 +2737,8 @@
       "claimed_domain": "comune.leverano.le.it",
       "reject_reason": "unrelated",
       "old_mx": "mx1.cliocom.it",
-      "old_provider": "independent",
-      "old_reason": "MX is cliocom gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is cliocom vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-ubmemts",
@@ -2869,8 +2858,8 @@
       "claimed_domain": "comune.santacesareaterme.le.it",
       "reject_reason": "unrelated",
       "old_mx": "mx1.cliocom.it",
-      "old_provider": "independent",
-      "old_reason": "MX is cliocom gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is cliocom vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-ucvda",
@@ -2968,8 +2957,8 @@
       "claimed_domain": "comune.govone.cn.it",
       "reject_reason": "unrelated",
       "old_mx": "le.epublic.it",
-      "old_provider": "independent",
-      "old_reason": "MX is epublic gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-udcdmc",
@@ -3155,8 +3144,8 @@
       "claimed_domain": "comune.castelsangiovanni.pc.it",
       "reject_reason": "unrelated",
       "old_mx": "mail-gw01.naquadria.it",
-      "old_provider": "independent",
-      "old_reason": "MX is naquadria gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is naquadria vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-udcvtf",
@@ -3199,8 +3188,8 @@
       "claimed_domain": "comunepiadenadrizzona.cr.it",
       "reject_reason": "unrelated",
       "old_mx": "mx01.cbsolt.net",
-      "old_provider": "independent",
-      "old_reason": "MX is cbsolt gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is cbsolt vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-ulvpo",
@@ -3210,8 +3199,8 @@
       "claimed_domain": "comune.barbianello.pv.it",
       "reject_reason": "unrelated",
       "old_mx": "le.epublic.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is epublic gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-umavm",
@@ -3254,8 +3243,8 @@
       "claimed_domain": "comune.lungavilla.pv.it",
       "reject_reason": "unrelated",
       "old_mx": "le.epublic.it",
-      "old_provider": "independent",
-      "old_reason": "MX is epublic gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-un_erida",
@@ -3265,8 +3254,8 @@
       "claimed_domain": "comune.polesella.ro.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "independent",
-      "old_reason": "MX is sophos gateway; backend provider unknown"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L18-upac",
@@ -3287,8 +3276,8 @@
       "claimed_domain": "comune.montigliomonferrato.at.it",
       "reject_reason": "unrelated",
       "old_mx": "antispam.si-tek.net",
-      "old_provider": "independent",
-      "old_reason": "MX is sitek gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is sitek vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L18-uvdi",
@@ -3331,8 +3320,8 @@
       "claimed_domain": "comune.cimolais.pn.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "independent",
-      "old_reason": "MX is sophos gateway; backend provider unknown"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L24-cvs",
@@ -3375,8 +3364,8 @@
       "claimed_domain": "comune.sesto-fiorentino.fi.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "google",
-      "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L28-cirp",
@@ -3387,7 +3376,7 @@
       "reject_reason": "unrelated",
       "old_mx": "cloudscan12.ilger.com",
       "old_provider": "microsoft",
-      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
+      "old_reason": "MX is ilger gateway; SPF + TXT verification confirm microsoft"
     },
     {
       "id": "IT-L28-inn",
@@ -3419,8 +3408,8 @@
       "claimed_domain": "comune.belluno.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.zimbraopen.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is zimbraopen gateway; TXT verification proves microsoft tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L33-EEYO9QFD",
@@ -3595,8 +3584,8 @@
       "claimed_domain": "comune.saint-vincent.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "independent",
-      "old_reason": "MX is invallee gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-isapdcao",
@@ -3606,8 +3595,8 @@
       "claimed_domain": "comune.chatillon.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is invallee gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-iscme_",
@@ -3617,8 +3606,8 @@
       "claimed_domain": "comune.verres.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "independent",
-      "old_reason": "MX is invallee gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-iscmm_",
@@ -3628,8 +3617,8 @@
       "claimed_domain": "comune.pontsaintmartin.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is invallee gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-iscmm_bv",
@@ -3639,8 +3628,8 @@
       "claimed_domain": "comune.nus.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is invallee gateway; TXT verification proves microsoft tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-iscmv_",
@@ -3650,8 +3639,8 @@
       "claimed_domain": "comune.morgex.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is invallee gateway; TXT verification proves microsoft tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-isem_",
@@ -3672,8 +3661,8 @@
       "claimed_domain": "comune.saint-pierre.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "independent",
-      "old_reason": "MX is invallee gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-islb",
@@ -3683,8 +3672,8 @@
       "claimed_domain": "comune.verres.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "independent",
-      "old_reason": "MX is invallee gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-isle",
@@ -3705,8 +3694,8 @@
       "claimed_domain": "comune.quart.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is invallee gateway; TXT verification proves microsoft tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-ismiv",
@@ -3716,8 +3705,8 @@
       "claimed_domain": "comune.villeneuve.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "independent",
-      "old_reason": "MX is invallee gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-isrma_",
@@ -3771,8 +3760,8 @@
       "claimed_domain": "comune.pontsaintmartin.ao.it",
       "reject_reason": "unrelated",
       "old_mx": "smtp1.invallee.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is invallee gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is invallee vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L33-itr",
@@ -3793,8 +3782,8 @@
       "claimed_domain": "comune.rivadelgarda.tn.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.zimbraopen.it",
-      "old_provider": "google",
-      "old_reason": "MX is zimbraopen gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L33-lseb_",
@@ -3860,7 +3849,7 @@
       "reject_reason": "unrelated",
       "old_mx": "cloudscan12.ilger.com",
       "old_provider": "microsoft",
-      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
+      "old_reason": "MX is ilger gateway; SPF + TXT verification confirm microsoft"
     },
     {
       "id": "IT-L34-aspcc",
@@ -3870,8 +3859,8 @@
       "claimed_domain": "comune.chieuti.fg.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.leonet.it",
-      "old_provider": "independent",
-      "old_reason": "MX is leonet gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is leonet vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L34-asppp_mo",
@@ -3881,8 +3870,8 @@
       "claimed_domain": "comune.modena.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "google",
-      "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L34-cotl",
@@ -3947,8 +3936,8 @@
       "claimed_domain": "comune.canicatti.ag.it",
       "reject_reason": "unrelated",
       "old_mx": "mailbox15.omitech.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is omitech gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is omitech vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L34-idb",
@@ -3969,8 +3958,8 @@
       "claimed_domain": "comune.follina.tv.it",
       "reject_reason": "unrelated",
       "old_mx": "in.widestore.net",
-      "old_provider": "independent",
-      "old_reason": "MX is widestore gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is widestore vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L34-iisf",
@@ -4035,8 +4024,8 @@
       "claimed_domain": "comune.vicenza.it",
       "reject_reason": "unrelated",
       "old_mx": "comune-vicenza.esvacloud.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is libraesva gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is libraesva gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L34-opcom",
@@ -4046,8 +4035,8 @@
       "claimed_domain": "comune.alcamo.tp.it",
       "reject_reason": "unrelated",
       "old_mx": "mailgw01.host.it",
-      "old_provider": "google",
-      "old_reason": "MX is host-it gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is host-it vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L34-opcrsa",
@@ -4101,8 +4090,8 @@
       "claimed_domain": "comune.cassine.al.it",
       "reject_reason": "unrelated",
       "old_mx": "le.epublic.it",
-      "old_provider": "independent",
-      "old_reason": "MX is epublic gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L34-silb",
@@ -4200,8 +4189,8 @@
       "claimed_domain": "comune.presicceacquarica.le.it",
       "reject_reason": "unrelated",
       "old_mx": "mx1.cliocom.it",
-      "old_provider": "independent",
-      "old_reason": "MX is cliocom gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is cliocom vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L36-cgampg",
@@ -4244,8 +4233,8 @@
       "claimed_domain": "comune.rivoli.to.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.zimbraopen.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is zimbraopen gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L36-cim",
@@ -4343,8 +4332,8 @@
       "claimed_domain": "comune.nogara.vr.it",
       "reject_reason": "unrelated",
       "old_mx": "antispam.halleylombardia.it",
-      "old_provider": "independent",
-      "old_reason": "MX is halley gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is halley vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L36-ctl",
@@ -4365,8 +4354,8 @@
       "claimed_domain": "comune.lecce.it",
       "reject_reason": "unrelated",
       "old_mx": "mailbox15.omitech.it",
-      "old_provider": "google",
-      "old_reason": "MX is omitech gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is omitech vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L36-cvdi_023",
@@ -4376,8 +4365,8 @@
       "claimed_domain": "comune.illasi.vr.it",
       "reject_reason": "unrelated",
       "old_mx": "cloudscan12.ilger.com",
-      "old_provider": "independent",
-      "old_reason": "MX is ilger gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is ilger vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L36-ssass",
@@ -4409,8 +4398,8 @@
       "claimed_domain": "comune.vicenza.it",
       "reject_reason": "unrelated",
       "old_mx": "comune-vicenza.esvacloud.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is libraesva gateway; TXT verification proves microsoft tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is libraesva gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L37-15U5YKAC",
@@ -4420,8 +4409,8 @@
       "claimed_domain": "comune.marradi.fi.it",
       "reject_reason": "unrelated",
       "old_mx": "mail.vianova.it",
-      "old_provider": "independent",
-      "old_reason": "MX is vianova gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is vianova vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L37-21M650RW",
@@ -4487,7 +4476,7 @@
       "reject_reason": "unrelated",
       "old_mx": "cloudscan12.ilger.com",
       "old_provider": "microsoft",
-      "old_reason": "MX is ilger gateway; TXT verification proves microsoft tenant"
+      "old_reason": "MX is ilger gateway; SPF + TXT verification confirm microsoft"
     },
     {
       "id": "IT-L37-OO0O6EDM",
@@ -4541,8 +4530,8 @@
       "claimed_domain": "comune.castellamonte.to.it",
       "reject_reason": "unrelated",
       "old_mx": "le.epublic.it",
-      "old_provider": "independent",
-      "old_reason": "MX is epublic gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L37-atrsr",
@@ -4618,8 +4607,8 @@
       "claimed_domain": "comune.trebisacce.cs.it",
       "reject_reason": "unrelated",
       "old_mx": "antispam.si-tek.net",
-      "old_provider": "independent",
-      "old_reason": "MX is sitek gateway; backend provider unknown"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is sitek vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L37-cbme",
@@ -4629,8 +4618,8 @@
       "claimed_domain": "tarquinia.net",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L37-cbopb_47",
@@ -4640,8 +4629,8 @@
       "claimed_domain": "comune.pistoia.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L37-cbpm_rm",
@@ -4695,8 +4684,8 @@
       "claimed_domain": "comune.mortara.pv.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.zimbraopen.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is zimbraopen gateway; MS365 tenant detected (Managed)"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L37-cocav_0",
@@ -4717,8 +4706,8 @@
       "claimed_domain": "comune.nardo.le.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.leonet.it",
-      "old_provider": "google",
-      "old_reason": "MX is leonet gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is leonet vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L37-crosc_",
@@ -4739,8 +4728,8 @@
       "claimed_domain": "comune.imola.bo.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L37-dser",
@@ -4750,8 +4739,8 @@
       "claimed_domain": "comune.sesto-fiorentino.fi.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "google",
-      "old_reason": "MX is sophos gateway; TXT verification proves google tenant"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L37-em_cbb",
@@ -4882,8 +4871,8 @@
       "claimed_domain": "comune.pistoia.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L37-riber",
@@ -5036,8 +5025,8 @@
       "claimed_domain": "comune.pisa.it",
       "reject_reason": "unrelated",
       "old_mx": "mx.carboniocloud.com",
-      "old_provider": "google",
-      "old_reason": "MX is carbonio gateway; TXT verification proves google tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L38-pzdm",
@@ -5080,8 +5069,8 @@
       "claimed_domain": "comune.manduria.ta.it",
       "reject_reason": "unrelated",
       "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX is sophos gateway; MS365 tenant detected (Managed)"
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L40-abflgv",
@@ -5355,8 +5344,8 @@
       "claimed_domain": "comune.benevento.it",
       "reject_reason": "unrelated",
       "old_mx": "leshared1.interhost.it",
-      "old_provider": "microsoft",
-      "old_reason": "MX is host-it gateway; TXT verification proves microsoft tenant"
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is host-it vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
       "id": "IT-L8-aol_087",

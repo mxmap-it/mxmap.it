@@ -1,58 +1,68 @@
 {
   "country": "IT",
   "n": 22922,
-  "mean": 0.852,
+  "mean": 0.809,
   "median": 0.9,
-  "mean_nonzero": 0.876,
+  "mean_nonzero": 0.857,
   "buckets": {
-    "0.90-1.00 (molto alta)": 17423,
-    "0.80-0.89 (alta)": 3601,
-    "0.00 (nulla / unknown)": 624,
-    "0.60-0.79 (media)": 1209,
-    "0.01-0.59 (bassa)": 65
+    "0.90-1.00 (molto alta)": 12062,
+    "0.80-0.89 (alta)": 8159,
+    "0.60-0.79 (media)": 1282,
+    "0.00 (nulla / unknown)": 1305,
+    "0.01-0.59 (bassa)": 114
   },
   "rules": {
-    "mx_spf": 17423,
-    "dom_mx_spf": 1732,
-    "no_mx": 624,
-    "mx_only": 1869,
-    "frgn_mx_spf": 993,
-    "dom_mx_only": 216,
+    "mx_spf": 12062,
+    "dom_mx_spf": 2173,
+    "spf_gw": 272,
+    "mx_only": 5986,
+    "no_mx": 628,
+    "dkim_gw": 7,
+    "gateway_no_primary": 677,
+    "fallback": 49,
+    "frgn_mx_spf": 779,
+    "dom_mx_only": 224,
     "frgn_mx_only": 65
   },
   "jurisdiction": {
     "foreign": 11529,
-    "domestic": 10451,
+    "domestic": 10450,
     "mixed": 244,
-    "unknown": 698
+    "unknown": 699
   },
-  "domestic_mx_override": 206,
-  "bounce_candidates": 65,
+  "domestic_mx_override": 198,
+  "bounce_candidates": 114,
   "bounce_by_provider": {
-    "independent": 65
+    "pa-contractor-private": 22,
+    "independent": 59,
+    "ovh": 1,
+    "aruba": 23,
+    "microsoft": 8,
+    "google": 1
   },
   "bounce_by_jurisdiction": {
-    "unknown": 37,
-    "foreign": 28
+    "domestic": 37,
+    "unknown": 38,
+    "foreign": 39
   },
   "provider_confidence": {
-    "microsoft": 0.929,
-    "independent": 0.72,
-    "local-isp": 0.891,
+    "microsoft": 0.923,
+    "independent": 0.716,
+    "local-isp": 0.801,
     "unknown": 0.0,
-    "google": 0.883,
-    "aruba": 0.896,
-    "seeweb": 0.9,
-    "register-it": 0.89,
-    "ovh": 0.9,
+    "google": 0.87,
+    "aruba": 0.884,
+    "seeweb": 0.842,
+    "pa-contractor-private": 0.745,
+    "register-it": 0.8,
+    "ovh": 0.894,
     "ionos": 0.9,
-    "regional-public": 0.894,
-    "aws": 0.9,
+    "regional-public": 0.866,
+    "aws": 0.86,
     "gandi": 0.9,
     "zoho": 0.9,
     "infomaniak": 0.9,
-    "hetzner": 0.9,
-    "istruzione-miur-tenant": 0.96,
-    "pa-contractor-private": 0.9
+    "hetzner": 0.8,
+    "istruzione-miur-tenant": 0.98
   }
 }
