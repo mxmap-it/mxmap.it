@@ -100,10 +100,15 @@ irraggiungibile, il sito e la pipeline non ne risentono.
 
 - **Sito**: live su https://mxmap.it (GitHub Pages, DNS TopDNS). ~22.9k enti,
   ~31k pagine SEO per-ente/area/categoria generate nel deploy (#15).
-- **Upstream** (`mxmap/secassure2026`, policy follow-never-merge): PR aperte
-  in attesa dei maintainer — [#34](https://github.com/mxmap/secassure2026/pull/34)
-  (DKIM TXT fallback Google) e [#37](https://github.com/mxmap/secassure2026/pull/37)
-  (basemap OSM keyless al posto di CARTO_KEY).
+- **Upstream** (`mxmap/secassure2026`, policy follow-never-merge): il
+  maintainer (davidhuser, 2026-10-04 su
+  [#37](https://github.com/mxmap/secassure2026/pull/37)) ha dichiarato il
+  **repo CONGELATO per restare allineato al paper peer-reviewed** — la #37
+  (basemap OSM keyless) è stata chiusa come "good suggestion… for a future
+  map"; la [#34](https://github.com/mxmap/secassure2026/pull/34) (DKIM TXT
+  fallback) resta aperta ma verosimilmente congelata anche lei. Nessun
+  impatto su di noi (divergiti da tempo); l'upstream-watch settimanale (#24)
+  continua a monitorare eventuali "future map".
 - **Indicizzazione Google**: leve attive (sitemap a 3 livelli con lastmod
   onesti, IndexNow quotidiano, backlink regionali dall'Osservatorio);
   monitoraggio in Search Console lato Fabio.
