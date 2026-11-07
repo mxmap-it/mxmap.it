@@ -51,8 +51,8 @@ Le issue vivono nel repo MxMap: <https://github.com/mxmap-it/mxmap.it/issues>.
   Tenant/TXT mai decisivi dietro gateway (confirmation-only); senza segnale primario i vendor
   PA italiani (`ITALIAN_PA_VENDOR_GATEWAYS`) → `pa-contractor-private` (*Provider commerciali*),
   i security gateway → `unknown` con regola `gateway_no_primary` 0,0 (come il paper); confidence
-  con **attribuzione per-provider** dei segnali (keyword/ASN). Simulazione: ISD 50,8→53,6%,
-  USA 48,6→45,8%, Sconosciuto 2,7→5,7%; dati live dal primo nightly post-merge (**da verificare**).
+  con **attribuzione per-provider** dei segnali (keyword/ASN). **Verificato live 2026-11-07**:
+  ISD 53,56, USA 45,86, Sconosciuto 1.305 (5,7%), banda alta 88,2% (kpi.json 20:07Z).
 - **[#30] Risultati a livelli di confidenza** — incrociare banda di evidenza × verdetto su tutte
   le superfici (modello mxmap.ch: legenda categoria×banda, ISD a più letture). Inventario completo
   oggi/target per superficie nella issue; precondizione fix #29 **soddisfatta** (post-fix: banda

@@ -105,12 +105,14 @@ irraggiungibile, il sito e la pipeline non ne risentono.
   senza primario i vendor PA italiani → `pa-contractor-private`
   (*Provider commerciali*), i security gateway → `unknown`
   (`gateway_no_primary`, confidenza 0,0); confidence con attribuzione
-  per-provider. KPI attesi (simulati): ISD ~53,6%, USA ~45,8%, Sconosciuto
-  ~5,7%. **VERIFICARE il primo nightly post-merge** (riallineamento ~3.100
-  enti); poi aggiornare le superfici esterne (sito Osservatorio: testi
-  hard-coded, PDF report, slide — inventario nella sessione 2026-11-07).
-  Review della coorte Sconosciuto + roadmap riduzione (spesa ICT, bounce,
-  outreach): **#32**; stratificazione per banda: #30 (serie PRIMA del run #1).
+  per-provider. **Verificato live 2026-11-07** (nightly manuale): ISD 53,56,
+  USA 45,86, Sconosciuto 1.305 (5,7%), banda alta 88,2%; #29 CHIUSA.
+  Superfici esterne aggiornate lo stesso giorno (Osservatorio: metodologia
+  bucket+Sconosciuto, report **Novembre 2026** it/en pubblicato, materiali
+  documentario riallineati; FIX: l'Action update-kpi puntava all'URL morto
+  fpietrosanti.github.io → ora https://mxmap.it/kpi.json e fail-loud).
+  Restano: **#30** (KPI per banda; serie PRIMA del run #1) e **#32** (review
+  Sconosciuto: feed spesa ICT, fingerprinting, bounce, outreach; pista FVG).
 - **Upstream** (`mxmap/secassure2026`, policy follow-never-merge): il
   maintainer (davidhuser, 2026-10-04 su
   [#37](https://github.com/mxmap/secassure2026/pull/37)) ha dichiarato il
