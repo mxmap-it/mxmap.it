@@ -47,13 +47,20 @@ Le issue vivono nel repo MxMap: <https://github.com/mxmap-it/mxmap.it/issues>.
 - **[#5] Metodo basato su Email Bounce** — il *bounce-verifier* (già **progettato**,
   `docs/BOUNCE_VERIFIER_DESIGN.md`; serve `config/bounce.toml` + **autorizzazione esplicita** all'invio).
   Valida le classificazioni a bassa confidenza via smarthost + analisi NDR.
-- **[#29] Attribuzione per-provider dei segnali** — allineamento al classificatore del paper
-  (upstream `secassure2026`): tenant/TXT mai decisivi dietro gateway, confidenze calcolate sui
-  segnali del provider vincente. **In discussione** (scenari etichette quantificati nella issue).
+- ✅ **Fatto — [#29] scenario B «paper + Italia»** (decisione proprietario 2026-11-07).
+  Tenant/TXT mai decisivi dietro gateway (confirmation-only); senza segnale primario i vendor
+  PA italiani (`ITALIAN_PA_VENDOR_GATEWAYS`) → `pa-contractor-private` (*Provider commerciali*),
+  i security gateway → `unknown` con regola `gateway_no_primary` 0,0 (come il paper); confidence
+  con **attribuzione per-provider** dei segnali (keyword/ASN). Simulazione: ISD 50,8→53,6%,
+  USA 48,6→45,8%, Sconosciuto 2,7→5,7%; dati live dal primo nightly post-merge (**da verificare**).
 - **[#30] Risultati a livelli di confidenza** — incrociare banda di evidenza × verdetto su tutte
   le superfici (modello mxmap.ch: legenda categoria×banda, ISD a più letture). Inventario completo
-  oggi/target per superficie nella issue; **precondizione: fix #29**; serie storiche stratificate
-  da definire **prima del run #1**.
+  oggi/target per superficie nella issue; precondizione fix #29 **soddisfatta** (post-fix: banda
+  Alta 88,3% pop., ISD 51,8%; forchetta 51,8–53,6); serie storiche stratificate da definire
+  **prima del run #1**.
+- **[#32] Review «Sconosciuto»** — composizione (624 no_mx + 677 `gateway_no_primary`, 34% in FVG
+  dietro Sophos → sospetto gateway regionale condiviso) e roadmap di riduzione: feed spesa ICT
+  (`analisi-spesa-ict`), fingerprinting (#22/#23), bounce (#5), outreach agli enti.
 - ✅ **Fatto — [#31] mailbox host esclusi dal look-through.** Le farm Zimbra/Carbonio
   (`MAILBOX_HOST_GATEWAYS`: `carbonio`, `zimbraopen`, `zimbraoffice-gw`) ospitano le caselle:
   token TXT e tenant MS365 non vi attribuiscono più un backend cloud (~100 falsi

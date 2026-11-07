@@ -196,6 +196,23 @@ class TestScoreEntry:
         )
         assert result["score"] <= 25
 
+    def test_unknown_gateway_no_primary_not_capped(self):
+        """#29 B: unknown CON MX (gateway_no_primary) ha dati DNS completi —
+        lo score misura la qualità del dato, non la certezza del verdetto:
+        niente clamp a 25."""
+        result = score_entry(
+            {
+                "provider": "unknown",
+                "domain": "comune.foo.it",
+                "mx": ["mx.hydra.sophos.com"],
+                "spf": "v=spf1 ip4:1.2.3.4 -all",
+                "bfs": "IT-COM-9001",
+                "gateway": "sophos",
+            }
+        )
+        assert result["score"] > 25
+        assert "provider_unknown" in result["flags"]
+
     def test_autodiscover_confirms(self):
         result = score_entry(
             {

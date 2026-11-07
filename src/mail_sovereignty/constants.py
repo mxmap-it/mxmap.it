@@ -711,9 +711,11 @@ _SECURITY_GATEWAYS: frozenset[str] = frozenset(
     }
 )
 
-_VENDOR_RELAY_GATEWAYS: frozenset[str] = frozenset(
+# hosting / ISP / managed services esteri (eredità fork Baltico/DACH).
+# Dietro questi relay, senza segnale primario, vale la semantica paper:
+# gateway_no_primary → unknown (mai un bucket italiano).
+_VENDOR_RELAY_FOREIGN_GATEWAYS: frozenset[str] = frozenset(
     {
-        # hosting / ISP / managed services esteri
         "ippnet",
         "garmtech",
         "psmanaged",
@@ -722,7 +724,15 @@ _VENDOR_RELAY_GATEWAYS: frozenset[str] = frozenset(
         "cdmon",
         "dsidata",
         "tstechnology",
-        # software house / SaaS / hosting della PA italiana
+    }
+)
+
+# Software house / SaaS / hosting della PA italiana (#28, #29 scenario B):
+# il fornitore è esso stesso il gestore della posta quando non emerge alcun
+# backend cloud primario → l'ente classifica "pa-contractor-private"
+# (Italia — Provider commerciali), non "independent" né "unknown".
+_VENDOR_RELAY_ITALIAN_PA: frozenset[str] = frozenset(
+    {
         "halley",
         "ilger",
         "demosdata",
@@ -747,6 +757,13 @@ _VENDOR_RELAY_GATEWAYS: frozenset[str] = frozenset(
         "cbsolt",
     }
 )
+
+_VENDOR_RELAY_GATEWAYS: frozenset[str] = (
+    _VENDOR_RELAY_FOREIGN_GATEWAYS | _VENDOR_RELAY_ITALIAN_PA
+)
+
+# Export usato da classify.py per il fallback scenario B (#29).
+ITALIAN_PA_VENDOR_GATEWAYS: frozenset[str] = _VENDOR_RELAY_ITALIAN_PA
 
 GATEWAY_CATEGORIES: dict[str, str] = {
     **dict.fromkeys(_SECURITY_GATEWAYS, GATEWAY_CATEGORY_SECURITY),

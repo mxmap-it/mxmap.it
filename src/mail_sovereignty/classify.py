@@ -3,6 +3,7 @@ from mail_sovereignty.constants import (
     ELKDATA_KEYWORDS,
     FOREIGN_SENDER_KEYWORDS,
     GATEWAY_KEYWORDS,
+    ITALIAN_PA_VENDOR_GATEWAYS,
     MAILBOX_HOST_GATEWAYS,
     GOOGLE_KEYWORDS,
     TELIA_KEYWORDS,
@@ -133,7 +134,11 @@ def classify(
     Classification order:
     1. MX hostname matches a known provider directly
     2. CNAME of MX host resolves to a known provider
-    3. MX is a known gateway (spam filter) → check SPF/autodiscover/DKIM for backend
+    3. MX is a known gateway (spam filter) → check SPF/autodiscover/DKIM for
+       backend. TXT tokens / MS365 tenant are confirmation-only (#29 B): they
+       decide nothing alone. No primary signal → Italian PA vendor relays
+       classify as the vendor (pa-contractor-private); mailbox-host farms
+       (#31) likewise; security/foreign gateways → unknown (gateway_no_primary)
     4. MX exists but unrecognized → check DKIM, then independent or Local ISP (by ASN)
     5. No MX → unknown
     """
@@ -299,24 +304,44 @@ def classify(
         # Mailbox-host farms (Zimbra/Carbonio, #31): the MX is the mailbox
         # destination, not a relay — TXT tokens and the MS365 tenant check
         # only prove Azure AD registration, never a cloud mail backend here.
+        # Scenario B (#29): the farm operator is an Italian commercial PA
+        # vendor → the entity is vendor-hosted, not self-hosted.
         if gateway in MAILBOX_HOST_GATEWAYS:
-            return "independent", (
+            return "pa-contractor-private", (
                 f"MX is {gateway} mailbox host (Zimbra/Carbonio farm); "
-                "mailboxes hosted at the farm"
+                "mailboxes hosted at the vendor's farm"
             )
-        # TXT verification tokens as last resort for gateways
-        txt_provider = classify_from_txt_verifications(txt_verifications)
-        if txt_provider:
-            return txt_provider, (
-                f"MX is {gateway} gateway; TXT verification proves {txt_provider} tenant"
+        # Paper semantics (#29 scenario B): TXT tokens and the MS365 tenant
+        # are CONFIRMATION-only, never decisive on their own. They count
+        # only when they corroborate a single-provider SPF (SPF = primary).
+        if len(spf_providers) == 1:
+            spf_provider = next(iter(spf_providers))
+            txt_provider = classify_from_txt_verifications(txt_verifications)
+            if txt_provider == spf_provider:
+                return spf_provider, (
+                    f"MX is {gateway} gateway; SPF + TXT verification "
+                    f"confirm {spf_provider}"
+                )
+            if tenant and spf_provider == "microsoft":
+                return spf_provider, (
+                    f"MX is {gateway} gateway; SPF + MS365 tenant "
+                    f"confirm {spf_provider}"
+                )
+        # Italian PA vendor relay with no primary cloud signal: the vendor
+        # itself manages the mail (#29 scenario B) → Italian commercial
+        # provider, mirroring how upstream models local ISPs.
+        if gateway in ITALIAN_PA_VENDOR_GATEWAYS:
+            return "pa-contractor-private", (
+                f"MX is {gateway} vendor relay; mail managed by the PA vendor "
+                "(no primary cloud signal)"
             )
-        # MS365 tenant detection via getuserrealm.srf
-        if tenant:
-            return "microsoft", (
-                f"MX is {gateway} gateway; MS365 tenant detected ({tenant})"
-            )
-        # Gateway relays to unknown backend
-        return "independent", (f"MX is {gateway} gateway; backend provider unknown")
+        # Security gateway (or foreign relay) hides the backend and nothing
+        # primary identifies it → UNKNOWN, as the ESORICS paper
+        # (gateway_no_primary, confidence 0.0). Honest non-claim.
+        return "unknown", (
+            f"MX is {gateway} gateway; no primary signal identifies the "
+            "backend (gateway_no_primary)"
+        )
 
     # 4. MX exists but no direct provider match → check DKIM for hidden
     #    backend (self-hosted gateway pattern), then Local ISP, then independent

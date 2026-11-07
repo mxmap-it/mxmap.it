@@ -492,9 +492,16 @@ async def run(data_path: Path) -> None:
                 muni[bfs]["tenant"] = tenant
             print(f"  {bfs:>5} {muni[bfs]['name']:<30} -> {provider} (DNS re-lookup)")
 
-    # Step 2: Retry DNS for unknowns that have a domain (concurrent)
+    # Step 2: Retry DNS for unknowns that have a domain (concurrent).
+    # Solo gli unknown SENZA MX: gli unknown gateway_no_primary (#29 B)
+    # hanno già MX risolto — niente da ritentare, niente churn notturno.
+    def _no_mx(m: dict) -> bool:
+        return not any((h or "").strip() for h in m.get("mx") or [])
+
     dns_retry_candidates = [
-        m for m in muni.values() if m["provider"] == "unknown" and m.get("domain")
+        m
+        for m in muni.values()
+        if m["provider"] == "unknown" and m.get("domain") and _no_mx(m)
     ]
     if dns_retry_candidates:
         print(f"\nRetrying DNS for {len(dns_retry_candidates)} unknown domains...")
@@ -671,8 +678,9 @@ async def run(data_path: Path) -> None:
 
         print(f"  SMTP reclassified: {smtp_reclassified}")
 
-    # Step 3: Scrape remaining unknowns (with time budget)
-    unknowns = [m for m in muni.values() if m["provider"] == "unknown"]
+    # Step 3: Scrape remaining unknowns (with time budget) — anche qui solo
+    # i senza-MX: per i gateway_no_primary il dominio è noto e funzionante.
+    unknowns = [m for m in muni.values() if m["provider"] == "unknown" and _no_mx(m)]
     print(f"\n{len(unknowns)} unknown municipalities to investigate\n")
 
     if unknowns:

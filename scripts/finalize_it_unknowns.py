@@ -645,6 +645,9 @@ async def main_async() -> int:
             continue
         if entry.get("provider") != "unknown":
             continue
+        if any((h or "").strip() for h in entry.get("mx") or []):
+            # gateway_no_primary (#29 B): MX già risolto, niente da finalizzare.
+            continue
         if entry.get("domain_used"):
             continue
         eid = entry.get("id") or key

@@ -89,7 +89,9 @@ async def classify_domain(domain: str) -> dict | None:
         "reason": reason,
         "mx_cnames": mx_cnames,
         "mx_asns": sorted(mx_asns) if isinstance(mx_asns, set) else list(mx_asns or []),
-        "mx_countries": sorted(mx_countries) if isinstance(mx_countries, set) else list(mx_countries or []),
+        "mx_countries": sorted(mx_countries)
+        if isinstance(mx_countries, set)
+        else list(mx_countries or []),
         "autodiscover": autodiscover,
         "dkim": dkim,
         "txt_verifications": txt_verifications,
@@ -127,7 +129,9 @@ def _result_is_miur_tenant(result: dict) -> bool:
     return False
 
 
-async def recover_one(seed_entry: dict, sem: asyncio.Semaphore) -> tuple[str, dict | None, str | None, list]:
+async def recover_one(
+    seed_entry: dict, sem: asyncio.Semaphore
+) -> tuple[str, dict | None, str | None, list]:
     """Try each domain_fallback in order, gated by is_legit_email_domain.
     Returns (entry_id, classification, domain_used, rejected_audit).
     """
@@ -146,9 +150,7 @@ async def recover_one(seed_entry: dict, sem: asyncio.Semaphore) -> tuple[str, di
             # Eccezione per scuole statali sul tenant centrale MIM:
             # categoria L33 + fallback esatto "istruzione.it". La conferma
             # finale arriva DOPO classify_domain, sulla DKIM evidence.
-            school_miur_candidate = (
-                fb.lower() == "istruzione.it" and is_school_cat
-            )
+            school_miur_candidate = fb.lower() == "istruzione.it" and is_school_cat
             if not ok and not school_miur_candidate:
                 rejected.append((fb, reason))
                 continue
@@ -161,10 +163,12 @@ async def recover_one(seed_entry: dict, sem: asyncio.Semaphore) -> tuple[str, di
                 continue
             if school_miur_candidate:
                 if not _result_is_miur_tenant(result):
-                    rejected.append((
-                        fb,
-                        f"miur_tenant_unverified:dkim_does_not_target_{MIUR_TENANT_HOST}"
-                    ))
+                    rejected.append(
+                        (
+                            fb,
+                            f"miur_tenant_unverified:dkim_does_not_target_{MIUR_TENANT_HOST}",
+                        )
+                    )
                     continue
                 result["provider"] = "istruzione-miur-tenant"
                 result["reason"] = (
@@ -204,6 +208,10 @@ async def main_async() -> int:
             continue
         if v.get("provider") != "unknown":
             continue
+        if any((h or "").strip() for h in v.get("mx") or []):
+            # gateway_no_primary (#29 B): l'MX c'è, il dominio funziona —
+            # non è un ente da "recuperare" con domini alternativi.
+            continue
         if v.get("domain_used"):
             continue
         seed_entry = seed_by_id.get(v.get("id") or k)
@@ -211,7 +219,9 @@ async def main_async() -> int:
             continue
         candidates.append((k, seed_entry))
 
-    print(f"Found {len(candidates)} IT unknowns with at least one non-PEC domain_fallback")
+    print(
+        f"Found {len(candidates)} IT unknowns with at least one non-PEC domain_fallback"
+    )
     if not candidates:
         return 0
 
@@ -232,7 +242,11 @@ async def main_async() -> int:
             rejection_audit.append({"id": eid, "fallback": fb, "reason": why})
         if result is None:
             continue
-        key = eid if eid in muns else next((k for k, v in muns.items() if v.get("id") == eid), None)
+        key = (
+            eid
+            if eid in muns
+            else next((k for k, v in muns.items() if v.get("id") == eid), None)
+        )
         if key is None:
             continue
         entry = muns[key]
@@ -242,16 +256,25 @@ async def main_async() -> int:
         n_recovered += 1
         provider_counts[result["provider"]] += 1
         if n_done % 20 == 0:
-            print(f"  [{n_done}/{len(candidates)}] recovered={n_recovered} gate_rejected={n_gate_rejected}")
+            print(
+                f"  [{n_done}/{len(candidates)}] recovered={n_recovered} gate_rejected={n_gate_rejected}"
+            )
 
     # Audit trail of every fallback dropped by is_legit
     if rejection_audit:
         out = ROOT / "data" / "reports" / "recover_it_unknowns_rejections.json"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps({
-            "n_rejected": len(rejection_audit),
-            "items": rejection_audit,
-        }, ensure_ascii=False, indent=2), encoding="utf-8")
+        out.write_text(
+            json.dumps(
+                {
+                    "n_rejected": len(rejection_audit),
+                    "items": rejection_audit,
+                },
+                ensure_ascii=False,
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
         print(f"\n  is_legit gate rejected {len(rejection_audit)} fallbacks → {out}")
 
     # Recompute counts at the data.json top level

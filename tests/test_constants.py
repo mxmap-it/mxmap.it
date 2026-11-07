@@ -13,8 +13,10 @@ from mail_sovereignty.constants import (
     GATEWAY_CATEGORIES,
     GATEWAY_CATEGORY_SECURITY,
     GATEWAY_CATEGORY_VENDOR,
+    ITALIAN_PA_VENDOR_GATEWAYS,
     MAILBOX_HOST_GATEWAYS,
     _SECURITY_GATEWAYS,
+    _VENDOR_RELAY_FOREIGN_GATEWAYS,
     _VENDOR_RELAY_GATEWAYS,
 )
 
@@ -129,3 +131,22 @@ def test_mailbox_host_gateways_subset_and_vendor():
     assert MAILBOX_HOST_GATEWAYS <= set(GATEWAY_KEYWORDS)
     for g in MAILBOX_HOST_GATEWAYS:
         assert GATEWAY_CATEGORIES[g] == GATEWAY_CATEGORY_VENDOR, g
+
+
+def test_italian_pa_vendor_gateways_partition():
+    # Scenario B (#29): il fallback "vendor-hosted" vale SOLO per i fornitori
+    # della PA italiana; i relay esteri ereditati dal fork seguono la
+    # semantica paper (gateway_no_primary → unknown).
+    assert ITALIAN_PA_VENDOR_GATEWAYS, "set vendor PA italiana vuoto"
+    assert ITALIAN_PA_VENDOR_GATEWAYS <= _VENDOR_RELAY_GATEWAYS
+    assert ITALIAN_PA_VENDOR_GATEWAYS.isdisjoint(_VENDOR_RELAY_FOREIGN_GATEWAYS)
+    assert (
+        ITALIAN_PA_VENDOR_GATEWAYS | _VENDOR_RELAY_FOREIGN_GATEWAYS
+    ) == _VENDOR_RELAY_GATEWAYS
+    # le farm di caselle (#31) sono fornitori italiani
+    assert MAILBOX_HOST_GATEWAYS <= ITALIAN_PA_VENDOR_GATEWAYS
+    # ancore: mai spostare questi per sbaglio
+    for ven in ("halley", "gecomail", "epublic", "vianova"):
+        assert ven in ITALIAN_PA_VENDOR_GATEWAYS, ven
+    for frn in ("ippnet", "garmtech", "cdmon"):
+        assert frn in _VENDOR_RELAY_FOREIGN_GATEWAYS, frn

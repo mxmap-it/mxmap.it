@@ -3,10 +3,11 @@
 docs/BOUNCE_VERIFIER_DESIGN.md §11).
 
 Anomalia = ente la cui classificazione è incerta o la cui posta è
-irraggiungibile/incoerente. Tre tag (non esclusivi tranne no_mx/geo_unknown):
-  - no_mx          : nessun record MX risolto (posta non individuabile)
-  - geo_unknown    : MX presente ma IP non geolocalizzato (ASN/paese ignoto)
-  - low_confidence : classificato ma con confidenza < 0,60
+irraggiungibile/incoerente. Tag (non esclusivi tranne no_mx/geo_unknown):
+  - no_mx              : nessun record MX risolto (posta non individuabile)
+  - geo_unknown        : MX presente ma IP non geolocalizzato (ASN/paese ignoto)
+  - gateway_no_primary : MX dietro gateway, backend non determinabile (#29 B)
+  - low_confidence     : classificato ma con confidenza < 0,60
 
 Produce:
   data/reports/anomalies.json   (consumato da anomalie.html)
@@ -29,6 +30,7 @@ REPORTS = ROOT / "data" / "reports"
 TYPE_LABEL = {
     "no_mx": "Nessun MX",
     "geo_unknown": "MX non geolocalizzato",
+    "gateway_no_primary": "Backend dietro gateway non determinabile",
     "low_confidence": "Bassa confidenza (<0,60)",
 }
 
@@ -42,6 +44,11 @@ def anomaly_tags(v: dict) -> list[str]:
         tags.append("no_mx")
     elif not v.get("mx_countries"):
         tags.append("geo_unknown")
+    # Sconosciuto CON MX dietro gateway (#29 scenario B): il backend non è
+    # determinabile dai segnali primari — è la coorte della roadmap di
+    # riduzione unknown, esposta qui con la CTA "aiutaci a risolvere".
+    if has_mx and (v.get("provider") or "") == "unknown":
+        tags.append("gateway_no_primary")
     conf = v.get("classification_confidence") or 0.0
     if 0.0 < conf < 0.60:
         tags.append("low_confidence")

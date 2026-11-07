@@ -96,10 +96,21 @@ irraggiungibile, il sito e la pipeline non ne risentono.
 - Dati e deploy sono accoppiati al COMMIT (il sito serve dati committati
   rigenerati nel run): vedi CLAUDE.md §Deployment.
 
-## 6. Stato durabile e pendenze (agg. 2026-10-21)
+## 6. Stato durabile e pendenze (agg. 2026-11-07)
 
 - **Sito**: live su https://mxmap.it (GitHub Pages, DNS TopDNS). ~22.9k enti,
   ~31k pagine SEO per-ente/area/categoria generate nel deploy (#15).
+- **Scenario B attivo (#29, decisione proprietario 2026-11-07)**: dietro
+  gateway decidono solo i segnali primari (tenant/TXT confirmation-only);
+  senza primario i vendor PA italiani → `pa-contractor-private`
+  (*Provider commerciali*), i security gateway → `unknown`
+  (`gateway_no_primary`, confidenza 0,0); confidence con attribuzione
+  per-provider. KPI attesi (simulati): ISD ~53,6%, USA ~45,8%, Sconosciuto
+  ~5,7%. **VERIFICARE il primo nightly post-merge** (riallineamento ~3.100
+  enti); poi aggiornare le superfici esterne (sito Osservatorio: testi
+  hard-coded, PDF report, slide — inventario nella sessione 2026-11-07).
+  Review della coorte Sconosciuto + roadmap riduzione (spesa ICT, bounce,
+  outreach): **#32**; stratificazione per banda: #30 (serie PRIMA del run #1).
 - **Upstream** (`mxmap/secassure2026`, policy follow-never-merge): il
   maintainer (davidhuser, 2026-10-04 su
   [#37](https://github.com/mxmap/secassure2026/pull/37)) ha dichiarato il

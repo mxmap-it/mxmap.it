@@ -202,38 +202,42 @@ class TestClassify:
         )
         assert provider(result) == "microsoft"
 
-    def test_seppmail_gateway_spf_only_stays_independent(self):
-        """SPF alone behind a gateway is not definitive."""
+    def test_seppmail_gateway_spf_only_is_unknown(self):
+        """SPF alone behind a security gateway is not definitive (#29 B):
+        no corroboration → gateway_no_primary → unknown."""
         result = classify(
             ["customer.seppmail.cloud"],
             "v=spf1 include:spf.protection.outlook.com -all",
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "unknown"
+        assert "gateway_no_primary" in reason(result)
 
-    def test_gateway_no_hyperscaler_spf_stays_independent(self):
+    def test_gateway_no_hyperscaler_spf_is_unknown(self):
         result = classify(
             ["filter.seppmail.cloud"],
             "v=spf1 ip4:1.2.3.4 -all",
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "unknown"
 
-    def test_gateway_empty_spf_stays_independent(self):
+    def test_gateway_empty_spf_is_unknown(self):
         result = classify(
             ["filter.seppmail.cloud"],
             "",
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "unknown"
+        assert "gateway_no_primary" in reason(result)
 
     def test_gateway_ignores_resolved_spf(self):
         # Resolved SPF can contain transitive includes from third-party
         # services (e.g., ekom21 → Microsoft) that don't prove the
-        # municipality uses that provider. Only direct SPF is checked.
+        # municipality uses that provider. Only direct SPF is checked —
+        # and with no primary signal the verdict is unknown (#29 B).
         result = classify(
             ["mx01.hornetsecurity.com"],
             "v=spf1 include:custom.ee -all",
             resolved_spf="v=spf1 include:custom.ee -all v=spf1 include:spf.protection.outlook.com -all",
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "unknown"
 
     def test_barracuda_gateway_spf_plus_autodiscover(self):
         result = classify(
@@ -329,21 +333,21 @@ class TestClassify:
         )
         assert provider(result) == "independent"
 
-    def test_gateway_empty_autodiscover_stays_independent(self):
+    def test_gateway_empty_autodiscover_is_unknown(self):
         result = classify(
             ["filter.seppmail.cloud"],
             "",
             autodiscover={},
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "unknown"
 
-    def test_gateway_autodiscover_none_stays_independent(self):
+    def test_gateway_autodiscover_none_is_unknown(self):
         result = classify(
             ["filter.seppmail.cloud"],
             "",
             autodiscover=None,
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "unknown"
 
     # ── No MX — SPF does not classify ──
 
@@ -633,24 +637,44 @@ class TestClassifyFromTxtVerifications:
 
 
 class TestClassifyTxtVerification:
-    def test_gateway_txt_microsoft_when_dkim_absent(self):
-        """Gateway with no DKIM/autodiscover but MS= token → microsoft."""
+    def test_gateway_txt_alone_no_longer_decisive(self):
+        """#29 scenario B: il token MS= da solo non prova il backend dietro
+        un security gateway — confirmation-only come da paper → unknown."""
         result = classify(
             ["filter.seppmail.cloud"],
             "",
             txt_verifications={"microsoft": "ms77422356"},
         )
-        assert provider(result) == "microsoft"
-        assert "TXT verification" in reason(result)
+        assert provider(result) == "unknown"
+        assert "gateway_no_primary" in reason(result)
 
-    def test_gateway_txt_google_when_dkim_absent(self):
-        """Gateway with google-site-verification → google."""
+    def test_gateway_txt_google_alone_no_longer_decisive(self):
+        """google-site-verification da solo → unknown (#29 B)."""
         result = classify(
             ["filter.seppmail.cloud"],
             "",
             txt_verifications={"google": "R9vBEx8abcdef"},
         )
+        assert provider(result) == "unknown"
+
+    def test_gateway_spf_plus_txt_confirm_provider(self):
+        """SPF (primario, singolo provider) + token TXT concorde → decide."""
+        result = classify(
+            ["filter.seppmail.cloud"],
+            "v=spf1 include:_spf.google.com -all",
+            txt_verifications={"google": "R9vBEx8abcdef"},
+        )
         assert provider(result) == "google"
+        assert "SPF + TXT verification" in reason(result)
+
+    def test_gateway_spf_plus_txt_discordant_is_unknown(self):
+        """SPF dice Google ma il token è Microsoft: nessuna conferma → unknown."""
+        result = classify(
+            ["filter.seppmail.cloud"],
+            "v=spf1 include:_spf.google.com -all",
+            txt_verifications={"microsoft": "ms77422356"},
+        )
+        assert provider(result) == "unknown"
 
     def test_gateway_dkim_takes_precedence_over_txt(self):
         """DKIM is more reliable than TXT tokens — DKIM wins."""
@@ -711,14 +735,14 @@ class TestClassifyTxtVerification:
         )
         assert provider(result) == "telia"
 
-    def test_gateway_non_mail_txt_stays_independent(self):
-        """Non-mail TXT tokens (apple, facebook) don't classify."""
+    def test_gateway_non_mail_txt_is_unknown(self):
+        """Non-mail TXT tokens (apple, facebook) don't classify → unknown."""
         result = classify(
             ["filter.seppmail.cloud"],
             "",
             txt_verifications={"apple": "abc123", "facebook": "def456"},
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "unknown"
 
 
 # ── mx.microsoft MX pattern ─────────────────────────────────────────
@@ -738,25 +762,43 @@ class TestMxMicrosoft:
 
 
 class TestTenantDetection:
-    def test_gateway_tenant_managed(self):
-        """Gateway with no other backend signals but MS365 tenant → microsoft."""
+    def test_gateway_tenant_alone_no_longer_decisive(self):
+        """#29 scenario B: il tenant MS365 da solo (Teams/licenze) non prova
+        l'hosting della posta dietro gateway → unknown, come da paper."""
         result = classify(
             ["filter.seppmail.cloud"],
             "",
             tenant="Managed",
         )
-        assert provider(result) == "microsoft"
-        assert "MS365 tenant" in reason(result)
+        assert provider(result) == "unknown"
+        assert "gateway_no_primary" in reason(result)
 
-    def test_gateway_tenant_federated(self):
-        """Gateway with Federated tenant → microsoft."""
+    def test_gateway_tenant_federated_alone_no_longer_decisive(self):
         result = classify(
             ["filter.seppmail.cloud"],
             "",
             tenant="Federated",
         )
+        assert provider(result) == "unknown"
+
+    def test_gateway_spf_plus_tenant_confirm_microsoft(self):
+        """SPF Microsoft (primario, singolo) + tenant concorde → microsoft."""
+        result = classify(
+            ["filter.seppmail.cloud"],
+            "v=spf1 include:spf.protection.outlook.com -all",
+            tenant="Managed",
+        )
         assert provider(result) == "microsoft"
-        assert "MS365 tenant" in reason(result)
+        assert "SPF + MS365 tenant" in reason(result)
+
+    def test_gateway_spf_google_plus_tenant_is_unknown(self):
+        """Il tenant conferma solo Microsoft: SPF Google + tenant → unknown."""
+        result = classify(
+            ["filter.seppmail.cloud"],
+            "v=spf1 include:_spf.google.com -all",
+            tenant="Managed",
+        )
+        assert provider(result) == "unknown"
 
     def test_gateway_dkim_takes_precedence_over_tenant(self):
         """DKIM is more reliable than tenant check — DKIM wins."""
@@ -778,14 +820,14 @@ class TestTenantDetection:
         )
         assert provider(result) == "independent"
 
-    def test_no_tenant_gateway_stays_independent(self):
-        """Gateway with no tenant and no backend signals → independent."""
+    def test_no_tenant_security_gateway_is_unknown(self):
+        """Security gateway with no tenant and no backend signals → unknown."""
         result = classify(
             ["filter.seppmail.cloud"],
             "",
             tenant=None,
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "unknown"
 
 
 class TestGoogleDkimTxt:
@@ -819,9 +861,10 @@ class TestGoogleDkimTxt:
 class TestMailboxHostGateways:
     def test_tenant_not_looked_through_on_zimbra_farm(self):
         """Managed = registrazione Azure AD (Teams/Office), non caselle:
-        dietro una farm di caselle non deve mai produrre 'microsoft'."""
+        dietro una farm di caselle non deve mai produrre 'microsoft'.
+        Scenario B (#29): la farm è un fornitore commerciale italiano."""
         result = classify(["mx.zimbraopen.it"], "", tenant="Managed")
-        assert provider(result) == "independent"
+        assert provider(result) == "pa-contractor-private"
         assert "mailbox host" in reason(result)
 
     def test_txt_token_not_looked_through_on_carbonio_farm(self):
@@ -830,7 +873,7 @@ class TestMailboxHostGateways:
             "v=spf1 include:_spf.carboniocloud.com -all",
             txt_verifications={"google": "R9vBEx8abcdef"},
         )
-        assert provider(result) == "independent"
+        assert provider(result) == "pa-contractor-private"
         assert "mailbox host" in reason(result)
 
     def test_dkim_still_wins_on_zimbra_farm(self):
@@ -852,8 +895,50 @@ class TestMailboxHostGateways:
         )
         assert provider(result) == "microsoft"
 
-    def test_security_gateway_tenant_still_looked_through(self):
-        """La guardia è limitata ai mailbox host: per i security gateway veri
-        il last-resort tenant resta com'è (finché #29 non decide)."""
-        result = classify(["filter.seppmail.cloud"], "", tenant="Managed")
+    def test_spf_plus_tenant_not_enough_on_zimbra_farm(self):
+        """Sulle farm di caselle il tenant non conferma nemmeno l'SPF:
+        serve un primario vero (DKIM/autodiscover) per l'ibrido (#31)."""
+        result = classify(
+            ["mx.zimbraopen.it"],
+            "v=spf1 include:spf.protection.outlook.com -all",
+            tenant="Managed",
+        )
+        assert provider(result) == "pa-contractor-private"
+        assert "mailbox host" in reason(result)
+
+
+# ── Scenario B (#29): fallback gateway per categoria ─────────────────
+
+
+class TestScenarioBGatewayFallback:
+    def test_italian_vendor_relay_no_signals_is_vendor_hosted(self):
+        """Vendor italiano (Halley) senza alcun segnale cloud primario:
+        la posta è gestita dal fornitore → pa-contractor-private."""
+        result = classify(["mx3.halley.it"], "")
+        assert provider(result) == "pa-contractor-private"
+        assert "vendor relay" in reason(result)
+
+    def test_italian_vendor_relay_tenant_only_is_vendor_hosted(self):
+        """Tenant da solo non prova il cloud nemmeno dietro vendor relay."""
+        result = classify(["mx.gecomail.net"], "", tenant="Managed")
+        assert provider(result) == "pa-contractor-private"
+
+    def test_italian_vendor_relay_dkim_still_wins(self):
+        """Il look-through primario resta: DKIM Microsoft dietro Halley."""
+        result = classify(
+            ["mx3.halley.it"],
+            "",
+            dkim={"selector1": "selector1-x._domainkey.tenant.onmicrosoft.com"},
+        )
         assert provider(result) == "microsoft"
+
+    def test_security_gateway_no_signals_is_unknown(self):
+        result = classify(["mx.hydra.sophos.com"], "")
+        assert provider(result) == "unknown"
+        assert "gateway_no_primary" in reason(result)
+
+    def test_foreign_vendor_relay_no_signals_is_unknown(self):
+        """I relay esteri (eredità fork) non sono fornitori della PA
+        italiana: senza primario vale la semantica paper → unknown."""
+        result = classify(["mail.ippnet.fi"], "")
+        assert provider(result) == "unknown"

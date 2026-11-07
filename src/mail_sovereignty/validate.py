@@ -202,8 +202,11 @@ def score_entry(entry: dict[str, Any]) -> dict[str, Any]:
         score += 5
         flags.append("manual_override")
 
-    # Clamp score
-    if provider == "unknown":
+    # Clamp score — solo per gli unknown SENZA MX (nulla da misurare).
+    # Gli unknown gateway_no_primary (#29 B) hanno dati DNS completi: lo
+    # score misura la qualità del DATO, non la certezza del verdetto
+    # (sistemi distinti, vedi #30) → niente clamp, solo niente bonus.
+    if provider == "unknown" and not mx:
         score = min(score, 25)
     score = max(0, min(100, score))
 

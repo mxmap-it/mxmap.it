@@ -249,6 +249,18 @@ cicli di segnalazione, anche via PEC, verso enti e AgID).
     <tr><td><code>fallback</code></td><td>— (catch-all)</td><td>—</td><td>0,40</td></tr>
   </tbody>
 </table>
+<p>Due regole speciali a confidenza <strong>0,0</strong> completano il quadro: <code>no_mx</code> (nessun record MX: niente da misurare) e <code>gateway_no_primary</code> (vedi sotto). Dal fix <a href="https://github.com/mxmap-it/mxmap.it/issues/29" target="_blank" rel="noopener">#29</a> i segnali sono <strong>attribuiti per-provider</strong>: MX/SPF/DKIM contano solo se <em>puntano</em> al provider attribuito (keyword o ASN), non se il campo semplicemente esiste — prima, dietro gateway, un ente poteva mostrare 0,90–0,96 con zero evidenza del provider dichiarato.</p>
+
+<div class="method-card" id="method-gateway_lookthrough">
+<h3><span class="tag">gateway look-through</span> — Cosa decide dietro un gateway</h3>
+<p>Quando l'MX punta a un gateway antispam o al relay di un fornitore, il backend reale va <em>provato</em>, mai presunto. Dietro un gateway decidono solo i <strong>segnali primari</strong>: SPF a provider unico <em>corroborato</em> (da autodiscover, DKIM, token TXT o tenant MS365 concorde), autodiscover del provider, DKIM del provider. Il token di verifica TXT (<code>MS=…</code>, <code>google-site-verification</code>) e il tenant MS365 (<code>getuserrealm</code>) da soli provano una registrazione Azure AD / Google Workspace (licenze Teams/Office, SSO), <strong>non</strong> l'hosting della posta: sono conferme, mai verdetti — come nel classificatore del paper.</p>
+<p>Se nessun segnale primario emerge, il verdetto dipende da chi è il gateway:</p>
+<ul>
+  <li><strong>Fornitore della PA italiana</strong> (Halley, ilger, ePublic, farm Zimbra/Carbonio, …): la posta è gestita dal fornitore → <em>Italia — Provider commerciali</em>, con confidenza per giurisdizione (0,70–0,80).</li>
+  <li><strong>Security gateway</strong> (Sophos, Libraesva, Proofpoint, …) o relay estero: il backend resta non determinabile → <strong>Sconosciuto</strong> con confidenza 0,0 (regola <code>gateway_no_primary</code>, come il paper). Questi enti compaiono nella pagina <a href="anomalie.html">anomalie</a> con un tag dedicato e sono il bersaglio della roadmap di riduzione (<a href="https://github.com/mxmap-it/mxmap.it/issues/32" target="_blank" rel="noopener">#32</a>: incrocio con i dati di spesa ICT, bounce-probing, outreach agli enti).</li>
+</ul>
+<div class="gate"><strong>Perché l'onestà costa copertura:</strong> dichiarare «Sconosciuto» un ente dietro security gateway è la scelta del paper (nessuna attribuzione senza prova). L'alternativa — attribuire un cloud sulla sola presenza di un tenant — produceva falsi positivi documentati (vedi <a href="https://github.com/mxmap-it/mxmap.it/issues/31" target="_blank" rel="noopener">#31</a>: enti sulla stessa farm Zimbra classificati Microsoft o Google a seconda del token presente).</div>
+</div>
 
 <h3 style="margin-top:28px">Sovranità: domestic / foreign / mixed</h3>
 <p>Per gli enti senza un backend cloud riconosciuto (posta self-hosted o provider minore) non basta dire "indipendente": li qualifichiamo per <strong>giurisdizione dell'IP del server MX</strong> (paese dell'ASN via Team Cymru). La confidenza usa tabelle dedicate a base piatta (nessun boost, perché i segnali cloud sono irrilevanti alla classificazione per paese):</p>
