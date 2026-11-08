@@ -735,6 +735,7 @@ IT-L37-FCXW41LP,Associazione SPORVIC2 COMMUNITY,regional-public,sporvic.it,50,no
 IT-S01-astus,Authority Societa di Trasformazione Urbana Spa in Liquidazione,independent,sttholding.com,50,no_spf; provider_classified
 IT-L11-aprlu,Autorita' Portuale Regionale,regional-public,autoritaportualeregionale.toscana.it,50,no_spf; provider_classified
 IT-L40-abb_,Autorita' di Bacino della Basilicata,regional-public,adb.basilicata.it,50,no_spf; provider_classified
+IT-L1-azcv,Azienda Calabria Verde,aruba,pec.calabriaverde.eu,50,no_spf; provider_classified
 IT-L7-a_101,Azienda Sanitaria Provinciale Crotone,aruba,asp.crotone.it,50,no_spf; provider_classified
 IT-L37-asafdat,Azienda Speciale Agenzia Formativa Don Angelo Tedoldi,register-it,agenziadontedoldi.eu,50,no_spf; provider_classified
 IT-SAG-atapp,Azienda Trasporti Automobilistici Pubblici Province Biella e Vercelli,pa-contractor-private,atapspa.it,50,no_spf; provider_classified; provider_via_gateway_spf
@@ -5124,7 +5125,6 @@ IT-L44-arasp,Ato Ragusa Ambiente S.P.A. in Liquidazione,aruba,atoragusambiente.i
 IT-L44-ait_048,Autorita Idrica Toscana,aruba,autoritaidrica.toscana.it,78,spf_softfail; independent_mx_with_cloud_spf; provider_classified
 IT-L44-aisgi,Autorita per Il Servizio di Gestione Integrata Dei Rifiuti Urbani Ambito Territoriale Ottimale Toscana Costa,aruba,atotoscanacosta.it,78,spf_softfail; independent_mx_with_cloud_spf; provider_classified
 IT-L11-aspmalo,Autorità di Sistema Portuale del Mar Ligure Occidentale,independent,portsofgenoa.com,78,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_suggests:microsoft
-IT-L1-azcv,Azienda Calabria Verde,aruba,calabriaverde.regione.calabria.it,78,spf_softfail; independent_mx_with_cloud_spf; provider_classified
 IT-L37-acavn,Azienda Consortile Acquedotti Vena Niceto,aruba,acavn.it,78,spf_softfail; independent_mx_with_cloud_spf; provider_classified
 IT-L8-aoum_fi,Azienda Ospedaliera Universitaria Meyer IRCCS,regional-public,meyer.it,78,spf_softfail; independent_mx_with_cloud_spf; provider_classified
 IT-L34-apspsg,Azienda Pubblica Servizi alla Persona San Giovanni,unknown,sangiovanni.tn.it,78,spf_softfail; mx_spf_match; provider_unknown; provider_via_gateway_spf
@@ -6140,7 +6140,6 @@ IT-COM-041021,Comune di Isola del Piano,regional-public,comune.isola-del-piano.p
 IT-COM-047005,Comune di Lamporecchio,regional-public,comune.lamporecchio.pt.it,80,spf_strict; independent_mx_with_cloud_spf; provider_classified
 IT-COM-069046,Comune di Lanciano,aruba,lanciano.eu,80,spf_strict; independent_mx_with_cloud_spf; provider_classified
 IT-COM-001130,Comune di Leini',regional-public,comune.leini.to.it,80,spf_strict; mx_spf_match; multi_provider_spf:aws+regional-public; provider_classified
-IT-COM-002068,Comune di Lenta,independent,cert.ruparpiemonte.it,80,spf_strict; independent_mx_with_cloud_spf; provider_classified
 IT-COM-025029,Comune di Limana,pa-contractor-private,comune.limana.bl.it,80,spf_strict; independent_mx_with_cloud_spf; provider_classified; provider_via_gateway_spf
 IT-COM-057035,Comune di Magliano Sabina,aruba,comune.maglianosabina.ri.it,80,spf_strict; independent_mx_with_cloud_spf; provider_classified
 IT-COM-023045,Comune di Malcesine,independent,comunemalcesine.it,80,spf_strict; independent_mx_with_cloud_spf; provider_classified; autodiscover_suggests:microsoft
@@ -6788,7 +6787,6 @@ IT-L33-istsc_pdic860009,ISTITUTO COMPRENSIVO STATALE TOMBOLO E GALLIERA VENETA,i
 IT-L33-istsc_rmsd11000b,ISTITUTO D'ARTE - POMEZIA,istruzione-miur-tenant,liceopablopicasso.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_prsd01000e,ISTITUTO D'ARTE - TOSCHI,istruzione-miur-tenant,liceoartisticotoschi.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_AQIS01300L,"ISTITUTO DI ISTRUZIONE SUPERIORE ""G. GALILEI-BELLISARIO""",istruzione-miur-tenant,iisggalilei.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
-IT-L33-istsc_mcis00900d,ISTITUTO DI ISTRUZIONE SUPERIORE GARIBALDI BRAMANTE PANNAGGI DI MACERATA,istruzione-miur-tenant,iisgaribaldimacerata.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-21W263TE,"ISTITUTO ISTRUZIONE SUPERIORE ""I. E V. FLORIO"" ERICE",istruzione-miur-tenant,alberghieroerice.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-idis_061,"ISTITUTO ISTRUZIONE SUPERIORE ""LEONARDO DA VINCI""",istruzione-miur-tenant,istitutoistruzionesuperioreaversa.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-C2RJMXXQ,ISTITUTO ISTRUZIONE SUPERIORE ROSA LUXEMBURG,istruzione-miur-tenant,luxemburgbo.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
@@ -9607,6 +9605,7 @@ IT-L33-istsc_pssd04000t,ISTITUTO D'ARTE - URBINO IST.ARTE,aruba,scuolalibrourbin
 IT-L33-8Z5P4LQM,ISTITUTO D'ISTRUZIONE SUPERIORE DON LUIGI STURZO,aruba,donluigisturzobagheria.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L34-iafc_,ISTITUTO DI ASSISTENZA 'FRANCESCO CAPEZZUTO',aruba,istitutocapezzuto.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L33-AIHJB1KH,ISTITUTO DI ISTRUZIONE SUPERIORE BIANCHINI FILOSI,aruba,bianchinifilosi.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
+IT-L33-istsc_mcis00900d,ISTITUTO DI ISTRUZIONE SUPERIORE GARIBALDI BRAMANTE PANNAGGI DI MACERATA,aruba,garibaldibramantepannaggi.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L33-2IVU9LJG,ISTITUTO DI ISTRUZIONE SUPERIORE LUZZATI-DEAMBROSIS-NATTA,aruba,nattadeambrosis.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L33-istsc_aris019006,ISTITUTO DI ISTRUZIONE SUPERIORE STATALE BENEDETTO VARCHI,google,isisvarchi.edu.it,83,multiple_mx; spf_softfail; mx_spf_match; multi_provider_spf:aruba+google; provider_classified
 IT-L33-istsc_LEIS038005,ISTITUTO ISTRUZIONE - IISS ENRICO MATTEI  MAGLIE,aruba,iissmatteimaglie.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
@@ -14456,6 +14455,7 @@ IT-COM-076042,Comune di Lauria,regional-public,comune.lauria.pz.it,90,spf_strict
 IT-COM-017087,Comune di Lavenone,microsoft,comune.lavenone.bs.it,90,multiple_mx; spf_strict; independent_mx_with_cloud_spf; provider_classified; provider_via_gateway_spf; autodiscover_confirms
 IT-COM-066050,Comune di Lecce nei Marsi,local-isp,comune.lecceneimarsi.aq.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-017088,Comune di Leno,aruba,comune.leno.bs.it,90,spf_strict; mx_spf_match; provider_classified
+IT-COM-002068,Comune di Lenta,regional-public,comune.lenta.vc.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-011016,Comune di Lerici,local-isp,comune.lerici.sp.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-003084,Comune di Lesa,aruba,comune.lesa.no.it,90,spf_strict; mx_spf_match; provider_classified
 IT-COM-063039,Comune di Lettere,aruba,comune.lettere.na.it,90,spf_strict; mx_spf_match; provider_classified
@@ -19255,7 +19255,7 @@ IT-L33-istsc_leps03000x,LICEO SCIENTIFICO - LS G.C.VANINI,google,liceovanini.edu
 IT-L33-istsc_ctps040009,LICEO SCIENTIFICO - LS GALILEO GALILEI,google,liceogalileicatania.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_tvps04000q,LICEO SCIENTIFICO - LS GIUSEPPE BERTO,google,liceoberto.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_geps080004,LICEO SCIENTIFICO - LS L. LANFRANCONI,google,lanfranconi.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
-IT-L33-istsc_pcps02000t,LICEO SCIENTIFICO - LS LORENZO RESPIGHI,google,liceorespighi.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
+IT-L33-istsc_pcps02000t,LICEO SCIENTIFICO - LS LORENZO RESPIGHI,google,liceorespighi.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_tops070007,LICEO SCIENTIFICO - M. CURIE,google,curiepinerolo.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_pops02000g,LICEO SCIENTIFICO - N. COPERNICO,google,copernicoprato.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_rmps12000g,LICEO SCIENTIFICO - PEANO (ROMA),google,liceopeanoroma.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
@@ -22313,7 +22313,7 @@ IT-C14-odap_yu4,"Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservat
 IT-C14-odap_0,"Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori della Provincia di Ancona",aruba,architettiancona.org,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
 IT-C14-oda_086,"Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori della Provincia di Enna",pa-contractor-private,architettienna.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-C14-odap_012,"Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori della Provincia di Varese",microsoft,ordinearchitettivarese.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
-IT-C14-odapcn,"Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",local-isp,na.archiworld.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
+IT-C14-odapcn,"Ordine Degli Architetti, Pianificatori, Paesaggisti e Conservatori di Napoli e Provincia",local-isp,napoli.archiworld.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
 IT-C14-odas_027,Ordine Degli Assistenti Sociali del Veneto,microsoft,assistentisociali.veneto.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-C14-odab_012,Ordine Degli Avvocati di Busto Arsizio,microsoft,avvocatibustoarsizio.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-C14-odal_01,Ordine Degli Avvocati di Lecce,pa-contractor-private,ordineavvocatilecce.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified; provider_via_gateway_spf

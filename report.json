@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T20:07:54Z",
+  "generated_at": "2026-11-08T12:08:59Z",
   "run_id": null,
   "edition": "novembre 2026",
   "title": "Stato della sovranità digitale della posta elettronica della PA italiana",
@@ -11,10 +11,10 @@
       "title": "Sintesi per i decisori",
       "kind": "executive",
       "findings": [
-        "Il 45.86% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
-        "I provider italiani restano la prima scelta (53.56%), ma frammentati.",
-        "Scarto tra controllo legale (53.56%) e collocazione tecnica dell'MX (domestico 45.59%): è esso stesso un segnale.",
-        "Settori più esposti al CLOUD Act: Istruzione 77.78% · Sanità 59.42% · Ricerca 56.06%.",
+        "Il 45.85% delle PA usa provider extra-UE soggetti al CLOUD Act statunitense.",
+        "I provider italiani restano la prima scelta (53.57%), ma frammentati.",
+        "Scarto tra controllo legale (53.57%) e collocazione tecnica dell'MX (domestico 45.59%): è esso stesso un segnale.",
+        "Settori più esposti al CLOUD Act: Istruzione 77.77% · Sanità 59.42% · Ricerca 56.06%.",
         "Divario territoriale: Valle d'Aosta guida la sovranità (ISD 80.29%), Friuli-Venezia Giulia è la più esposta al CLOUD Act (61.63%)."
       ],
       "metrics": [
@@ -24,11 +24,11 @@
         },
         {
           "label": "Sovranità italiana (ISD)",
-          "value": "53.56%"
+          "value": "53.57%"
         },
         {
           "label": "Soggette al CLOUD Act",
-          "value": "45.86%"
+          "value": "45.85%"
         },
         {
           "label": "Copertura del dato",
@@ -62,7 +62,7 @@
           "key": "it",
           "label": "Italiano",
           "pct": 50.5,
-          "count": 11579
+          "count": 11580
         },
         {
           "key": "eu_non_it",
@@ -74,7 +74,7 @@
           "key": "extra_eu",
           "label": "Extra-UE (CLOUD Act)",
           "pct": 43.3,
-          "count": 9915
+          "count": 9914
         },
         {
           "key": "unknown",
@@ -86,7 +86,7 @@
       "top_providers": [
         {
           "name": "Provider Italiano",
-          "count": 9842,
+          "count": 9843,
           "pct": 42.9,
           "sovereignty": "it"
         },
@@ -98,7 +98,7 @@
         },
         {
           "name": "Microsoft 365",
-          "count": 3753,
+          "count": 3752,
           "pct": 16.4,
           "sovereignty": "extra_eu"
         },
@@ -110,13 +110,13 @@
         },
         {
           "name": "Cloud Italiano",
-          "count": 904,
+          "count": 905,
           "pct": 3.9,
           "sovereignty": "it"
         },
         {
           "name": "Infrastruttura autonoma",
-          "count": 833,
+          "count": 832,
           "pct": 3.6,
           "sovereignty": "it"
         },
@@ -142,13 +142,13 @@
       "jurisdiction": [
         {
           "key": "domestic",
-          "count": 10450,
+          "count": 10451,
           "pct": 45.59
         },
         {
           "key": "foreign",
-          "count": 11529,
-          "pct": 50.3
+          "count": 11528,
+          "pct": 50.29
         },
         {
           "key": "mixed",
@@ -174,8 +174,8 @@
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
           "n_entities": 8321,
-          "usa_pct": 77.78,
-          "isd": 21.88
+          "usa_pct": 77.77,
+          "isd": 21.89
         },
         {
           "cluster": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
@@ -265,7 +265,7 @@
       "spotlight": [
         {
           "cluster": "Istruzione (Scuole, Università, AFAM)",
-          "usa_pct": 77.78,
+          "usa_pct": 77.77,
           "n_entities": 8321
         },
         {
@@ -344,8 +344,8 @@
         {
           "regione": "Marche",
           "n": 689,
-          "isd": 57.23,
-          "usa_pct": 41.72
+          "isd": 57.38,
+          "usa_pct": 41.57
         },
         {
           "regione": "Campania",
@@ -424,8 +424,8 @@
         {
           "macroarea": "Centro",
           "n": 4016,
-          "isd": 51.17,
-          "usa_pct": 48.14
+          "isd": 51.2,
+          "usa_pct": 48.12
         },
         {
           "macroarea": "Nord",
@@ -454,7 +454,7 @@
       "series": [
         {
           "date": "2026-11",
-          "isd": 53.56
+          "isd": 53.57
         }
       ],
       "note": "Monitoraggio appena avviato: la serie storica parte da questa edizione; i trend compariranno dai prossimi rilevamenti."
