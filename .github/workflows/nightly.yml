@@ -234,6 +234,14 @@ jobs:
       # falliva a intermittenza in "syncing_files" (2026-07-03). Reversibile.
       - name: Build per-entity & area SEO pages + sitemap index (#15)
         run: uv run python3 scripts/build_entity_pages.py --country IT --no-domain-aliases
+      # Anteprima social della home dai KPI del giorno. Pillow non è una
+      # dipendenza del progetto: --with, e step NON bloccante (se fallisce resta
+      # l'og-home.png committato, mai un sito rotto).
+      - name: Social preview image for the home (og-home.png)
+        continue-on-error: true
+        run: |
+          sudo apt-get install -y -q fonts-dejavu-core >/dev/null || true
+          uv run --with pillow python3 scripts/build_og_home.py
       # --- Storicizzazione (F1) — DISATTIVATA finché non risolviamo le anomalie.
       # Il run #1 ufficiale dello storico dev'essere il primo scan su dati "da
       # rollout" (anomalie risolte), non un run sporco. Per attivarla: togliere
@@ -278,7 +286,7 @@ jobs:
                    data/reports/cleanup_invalid_mx_attributions.json data/reports/recover_it_unknowns_rejections.json \
                    data/reports/mx_discovery_stats.json data/reports/confidence_report.json data/reports/confidence_report.md \
                    data/reports/anomalies.json data/reports/anomalies.md \
-                   data/reports/it_by_cluster.json data/reports/it_by_cluster.txt data/reports/it_pa_centrale_table.json history; do
+                   data/reports/it_by_cluster.json data/reports/it_by_cluster.txt data/reports/it_pa_centrale_table.json history og-home.png; do
             [ -e "$p" ] && git add "$p"
           done
           git commit -m "chore: nightly data update" || { echo "niente di staged: esco pulito"; exit 0; }

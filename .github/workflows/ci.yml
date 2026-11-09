@@ -100,3 +100,6 @@ jobs:
           uv run python3 scripts/build_dcat.py
           # EU Security Map (#33): KPI + pagina dai risultati committati (no rete)
           uv run python3 scripts/build_eu_security_page.py
+          # Anteprime social (Pillow fuori dalle dipendenze: --with)
+          uv run --with pillow python3 scripts/build_og_home.py
+          uv run --with pillow python3 scripts/build_eu_security_og.py
