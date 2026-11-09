@@ -1,0 +1,131 @@
+{
+  "country": "GR",
+  "country_name_en": "Greece",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "gr-hellenic-police",
+      "type": "police",
+      "name_native": "Ελληνική Αστυνομία",
+      "name_en": "Hellenic Police",
+      "acronym": "EL.AS.",
+      "website": "https://www.astynomia.gr",
+      "mail_domains": ["astynomia.gr", "hellenicpolice.gr"],
+      "evidence": [
+        {"domain": "astynomia.gr", "url": "https://www.astynomia.gr/contact/?lang=en", "kind": "contact_page", "note": "Headquarters contact e-mail kepik@astynomia.gr on official contact page"},
+        {"domain": "hellenicpolice.gr", "url": "https://www.astynomia.gr/contact/?lang=en", "kind": "contact_page", "note": "Press office press@hellenicpolice.gr; also dpo.piu@hellenicpolice.gr and sirene@hellenicpolice.gr on official pages"}
+      ],
+      "confidence": "high",
+      "notes": "Both domains in active use: astynomia.gr for the website/headquarters mailbox, hellenicpolice.gr for many operational/press mailboxes."
+    },
+    {
+      "id": "gr-hellenic-coast-guard",
+      "type": "border_guard",
+      "name_native": "Λιμενικό Σώμα – Ελληνική Ακτοφυλακή",
+      "name_en": "Hellenic Coast Guard",
+      "acronym": "HCG",
+      "website": "https://www.hcg.gr",
+      "mail_domains": ["hcg.gr", "yna.gov.gr"],
+      "evidence": [
+        {"domain": "hcg.gr", "url": "https://www.hcg.gr/en/contact", "kind": "contact_page", "note": "kep@hcg.gr (Ship Control Sector); EMSA national profile also lists jrccpgr@hcg.gr, depix@hcg.gr, kepix@hcg.gr, nmsw.support@hcg.gr"},
+        {"domain": "yna.gov.gr", "url": "https://www.hcg.gr/en/contact", "kind": "contact_page", "note": "Main contact contact@yna.gov.gr (24/7) and dpo@yna.gov.gr — shared with the Ministry of Maritime Affairs and Insular Policy (ynanp.gr)"}
+      ],
+      "confidence": "high",
+      "notes": "HCG sits under the Ministry of Maritime Affairs and Insular Policy; general mailboxes use the ministry domain yna.gov.gr, operational units use hcg.gr."
+    },
+    {
+      "id": "gr-eyp",
+      "type": "intelligence",
+      "name_native": "Εθνική Υπηρεσία Πληροφοριών",
+      "name_en": "National Intelligence Service",
+      "acronym": "EYP",
+      "website": "https://www.nis.gr",
+      "mail_domains": ["nis.gr"],
+      "evidence": [
+        {"domain": "nis.gr", "url": "https://www.nis.gr/en/contact", "kind": "assumed_from_website", "note": "Official site is a JS single-page app; no e-mail address published on contact page or found in searches. Domain assumed from official website nis.gr."}
+      ],
+      "confidence": "low",
+      "notes": "EYP publishes phone/postal contact only; no public e-mail address evidenced."
+    },
+    {
+      "id": "gr-ministry-interior",
+      "type": "interior_ministry",
+      "name_native": "Υπουργείο Εσωτερικών",
+      "name_en": "Ministry of the Interior",
+      "acronym": "YPES",
+      "website": "https://www.ypes.gr",
+      "mail_domains": ["ypes.gr", "ypes.gov.gr"],
+      "evidence": [
+        {"domain": "ypes.gr", "url": "https://www.ypes.gr/wp-content/uploads/2025/05/eggr-DPOrev20250528.pdf", "kind": "official_pdf", "note": "dpo@ypes.gr in official DPO circular; info@ypes.gr listed as general inbox (opengov.gr)"},
+        {"domain": "ypes.gov.gr", "url": "https://www.ypes.gr/wp-content/uploads/2025/05/eggr-DPOrev20250528.pdf", "kind": "official_pdf", "note": "grammateia@ypes.gov.gr, pressoffice@ypes.gov.gr, yfypourgos@ypes.gov.gr in official ministry documents"}
+      ],
+      "confidence": "high",
+      "notes": "Note: the Hellenic Police is NOT under this ministry but under the Ministry of Citizen Protection. Both ypes.gr and ypes.gov.gr mailboxes are in active use."
+    },
+    {
+      "id": "gr-ministry-citizen-protection",
+      "type": "other_natsec",
+      "name_native": "Υπουργείο Προστασίας του Πολίτη",
+      "name_en": "Ministry of Citizen Protection",
+      "acronym": "",
+      "website": "https://www.minocp.gov.gr",
+      "mail_domains": ["minocp.gov.gr"],
+      "evidence": [
+        {"domain": "minocp.gov.gr", "url": "https://www.minocp.gov.gr", "kind": "assumed_from_website", "note": "Site blocks automated fetch (403); no e-mail address evidenced in searches. Domain assumed from official website."}
+      ],
+      "confidence": "low",
+      "notes": "Parent ministry of the Hellenic Police and EYP's supervising ministry — included as it is the core internal-security ministry (distinct from the Ministry of the Interior)."
+    },
+    {
+      "id": "gr-ministry-national-defence",
+      "type": "defence_ministry",
+      "name_native": "Υπουργείο Εθνικής Άμυνας",
+      "name_en": "Ministry of National Defence",
+      "acronym": "YPETHA / MOD",
+      "website": "https://www.mod.mil.gr",
+      "mail_domains": ["mod.mil.gr"],
+      "evidence": [
+        {"domain": "mod.mil.gr", "url": "https://gslegal.gov.gr/?p=9481", "kind": "other_official", "note": "Official Greek government contacts list: minister.secretary@mod.mil.gr, gengram@mod.mil.gr, grammateia_yfetha@mod.mil.gr, deputyminister@mod.mil.gr"}
+      ],
+      "confidence": "high",
+      "notes": "Hellenic National Defence General Staff uses the separate domain hndgs.mil.gr (e.g. dpo@hndgs.mil.gr)."
+    },
+    {
+      "id": "gr-ncsa",
+      "type": "cybersecurity",
+      "name_native": "Εθνική Αρχή Κυβερνοασφάλειας",
+      "name_en": "National Cybersecurity Authority",
+      "acronym": "NCSA",
+      "website": "https://cyber.gov.gr",
+      "mail_domains": ["cyber.gov.gr", "mindigital.gr"],
+      "evidence": [
+        {"domain": "cyber.gov.gr", "url": "https://cyber.gov.gr/wp-content/uploads/2025/10/EL-CSIRT_RFC_2350_ENG-v1.0.pdf", "kind": "official_pdf", "note": "csirt@cyber.gov.gr, incident@cyber.gov.gr in EL-CSIRT RFC 2350; info@cyber.gov.gr and register.ncsa@cyber.gov.gr also in use"},
+        {"domain": "mindigital.gr", "url": "https://digital-strategy.ec.europa.eu/en/policies/nis-directive-greece", "kind": "other_official", "note": "ncsa@mindigital.gr and spoc@mindigital.gr listed by the European Commission as NIS contact points (Ministry of Digital Governance domain)"}
+      ],
+      "confidence": "high",
+      "notes": "NCSA became an independent legal entity in 2024 (law 5086/2024) under the Ministry of Digital Governance; newer mailboxes use cyber.gov.gr, older/NIS-SPOC ones mindigital.gr."
+    },
+    {
+      "id": "gr-el-csirt",
+      "type": "cybersecurity",
+      "name_native": "Εθνικό CSIRT (EL-CSIRT)",
+      "name_en": "National CSIRT of Greece",
+      "acronym": "EL-CSIRT",
+      "website": "https://cyber.gov.gr",
+      "mail_domains": ["cyber.gov.gr"],
+      "evidence": [
+        {"domain": "cyber.gov.gr", "url": "https://cyber.gov.gr/wp-content/uploads/2025/10/EL-CSIRT_RFC_2350_ENG-v1.0.pdf", "kind": "official_pdf", "note": "RFC 2350: csirt@cyber.gov.gr (general), incident@cyber.gov.gr (incident reporting)"}
+      ],
+      "confidence": "high",
+      "notes": "Operated within the National Cybersecurity Authority; listed separately as the national CERT/CSIRT function, same mail domain as NCSA."
+    }
+  ],
+  "gaps": [
+    "No gendarmerie: Greece abolished the Hellenic Gendarmerie in 1984, merging it into the Hellenic Police.",
+    "EYP (National Intelligence Service) publishes no e-mail address; nis.gr mail domain is assumed from the website (low confidence).",
+    "Ministry of Citizen Protection site (minocp.gov.gr) blocks automated access; mail domain assumed from website (low confidence).",
+    "Hellenic Fire Service excluded as not clearly national-security; AADE customs excluded (primarily fiscal).",
+    "EL-CSIRT is not organisationally distinct from the NCSA (it operates within it); listed separately for the CERT function only."
+  ]
+}
