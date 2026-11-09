@@ -1,0 +1,98 @@
+{
+  "country": "XK",
+  "country_name_en": "Kosovo",
+  "group": "candidate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "xk-policia",
+      "type": "police",
+      "name_native": "Policia e Republikës së Kosovës",
+      "name_en": "Kosovo Police",
+      "acronym": "PK",
+      "website": "https://www.kosovopolice.com",
+      "mail_domains": ["kosovopolice.com"],
+      "evidence": [
+        {"domain": "kosovopolice.com", "url": "https://www.kosovopolice.com/en/contact/", "kind": "contact_page", "note": "info@kosovopolice.com (decoded from Cloudflare-obfuscated mailto on official contact page)"}
+      ],
+      "confidence": "high",
+      "notes": "Border Police is a directorate within Kosovo Police (no separate mail domain found)."
+    },
+    {
+      "id": "xk-mpb",
+      "type": "interior_ministry",
+      "name_native": "Ministria e Punëve të Brendshme",
+      "name_en": "Ministry of Internal Affairs",
+      "acronym": "MPB",
+      "website": "https://mpb.rks-gov.net",
+      "mail_domains": ["rks-gov.net"],
+      "evidence": [
+        {"domain": "rks-gov.net", "url": "https://mpb.rks-gov.net/", "kind": "other_official", "note": "qkmk@rks-gov.net and qkmk.dpo@rks-gov.net published on the MPB homepage (National Border Management Centre hotline / DPO); Kosovo government mail is centralised on rks-gov.net (webmail at mail.rks-gov.net)"}
+      ],
+      "confidence": "high",
+      "notes": "Website is a subdomain of rks-gov.net; mail addresses use the bare rks-gov.net domain."
+    },
+    {
+      "id": "xk-mod",
+      "type": "defence_ministry",
+      "name_native": "Ministria e Mbrojtjes",
+      "name_en": "Ministry of Defence",
+      "acronym": "MM",
+      "website": "https://mod.rks-gov.net",
+      "mail_domains": ["rks-gov.net"],
+      "evidence": [
+        {"domain": "rks-gov.net", "url": "https://mod.rks-gov.net/", "kind": "other_official", "note": "zmp.mod@rks-gov.net published on the official MoD homepage"}
+      ],
+      "confidence": "high",
+      "notes": "Covers the Kosovo Security Force (FSK); no separate FSK site reachable (fsk.rks-gov.net does not resolve)."
+    },
+    {
+      "id": "xk-aki",
+      "type": "intelligence",
+      "name_native": "Agjencia e Kosovës për Inteligjencë",
+      "name_en": "Kosovo Intelligence Agency",
+      "acronym": "AKI",
+      "website": "http://www.aki-rks.org",
+      "mail_domains": ["aki-rks.org"],
+      "evidence": [
+        {"domain": "aki-rks.org", "url": "http://www.aki-rks.org/kontakt.html", "kind": "contact_page", "note": "info@aki-rks.org on official contact page"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "xk-arkep",
+      "type": "cybersecurity",
+      "name_native": "Autoriteti Rregullativ i Komunikimeve Elektronike dhe Postare",
+      "name_en": "Regulatory Authority of Electronic and Postal Communications",
+      "acronym": "ARKEP",
+      "website": "https://www.arkep-rks.org",
+      "mail_domains": ["arkep-rks.org"],
+      "evidence": [
+        {"domain": "arkep-rks.org", "url": "https://www.arkep-rks.org", "kind": "assumed_from_website", "note": "Site is a JavaScript SPA; no email address extractable from rendered HTML — mail domain assumed from website"}
+      ],
+      "confidence": "low",
+      "notes": "Telecom regulator; hosts/operates KOS-CERT. Included for its cyber/CERT role."
+    },
+    {
+      "id": "xk-kos-cert",
+      "type": "cybersecurity",
+      "name_native": "Njësia Nacionale për Siguri Kibernetike (KOS-CERT)",
+      "name_en": "National Cyber Security Unit (KOS-CERT)",
+      "acronym": "KOS-CERT",
+      "website": "https://www.kos-cert.org",
+      "mail_domains": ["kos-cert.org"],
+      "evidence": [
+        {"domain": "kos-cert.org", "url": "https://www.kos-cert.org/", "kind": "contact_page", "note": "reports@kos-cert.org (decoded from Cloudflare-obfuscated mailto; appears in header, Email section and Kontakt list)"}
+      ],
+      "confidence": "high",
+      "notes": "National CERT of Kosovo, established under ARKEP."
+    }
+  ],
+  "gaps": [
+    "gendarmerie: no gendarmerie-type force exists in Kosovo",
+    "border_guard: Border Police is a directorate inside Kosovo Police, no distinct mail domain found",
+    "cybersecurity agency (AKSK, Agjencia për Siguri Kibernetike, est. by Law 08/L-173): official website could not be located with remaining tools (aks.rks-gov.net redirects to consular services; web-search budget exhausted) — likely uses rks-gov.net mail but not evidenced",
+    "ARKEP mail domain assumed (SPA site, no addresses in static HTML)"
+  ]
+}
