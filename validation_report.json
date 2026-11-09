@@ -25329,7 +25329,7 @@
     "IT-C8-csgp": {
       "name": "Centro Studi Giuridici e Politici",
       "provider": "google",
-      "domain": "centrostudi.alumbria.it",
+      "domain": "alumbria.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -25645,7 +25645,7 @@
     "IT-C8-isuc": {
       "name": "Istituto per La Storia dell'Umbria Contemporanea",
       "provider": "google",
-      "domain": "isuc.alumbria.it",
+      "domain": "alumbria.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -30146,12 +30146,12 @@
     },
     "IT-COM-002096": {
       "name": "Comune di Pila",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.pila.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -31605,12 +31605,12 @@
     },
     "IT-COM-004005": {
       "name": "Comune di Alto",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.alto.cn.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -33712,12 +33712,12 @@
     },
     "IT-COM-004188": {
       "name": "Comune di Rocca Ciglie'",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.roccaciglie.cn.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -35777,13 +35777,13 @@
     },
     "IT-COM-006002": {
       "name": "Comune di Albera Ligure",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "comune.alberaligure.al.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-006003": {
@@ -52808,9 +52808,10 @@
       "name": "Comune di Visano",
       "provider": "register-it",
       "domain": "comune.visano.bs.it",
-      "confidence": 68,
+      "confidence": 88,
       "flags": [
         "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -81762,14 +81763,12 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "microsoft",
-      "domain": "comune.fontenuova.rm.it",
-      "confidence": 95,
+      "provider": "independent",
+      "domain": "cert.fonte-nuova.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-059001": {
@@ -107987,13 +107986,14 @@
     },
     "IT-COM-096012": {
       "name": "Comune di Candelo",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.candelo.bi.it",
-      "confidence": 15,
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-096013": {
@@ -108485,13 +108485,14 @@
     },
     "IT-COM-096066": {
       "name": "Comune di Tavigliano",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.tavigliano.bi.it",
-      "confidence": 15,
+      "confidence": 95,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-096067": {
@@ -108583,11 +108584,13 @@
     "IT-COM-096077": {
       "name": "Comune di Vigliano Biellese",
       "provider": "aruba",
-      "domain": "pec.vigliano.info",
-      "confidence": 68,
+      "domain": "comune.vigliano.bi.it",
+      "confidence": 83,
       "flags": [
         "spf_softfail",
-        "provider_classified"
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-096078": {
@@ -112422,12 +112425,12 @@
     },
     "IT-COM-103061": {
       "name": "Comune di San Bernardino Verbano",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.sanbernardinoverbano.vb.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -119059,7 +119062,7 @@
     "IT-CONS-cidssos": {
       "name": "Consorzio Intercomunale Dei Servizi Sociali - Ciss Ossola",
       "provider": "aruba",
-      "domain": "ciss-ossola.it",
+      "domain": "cissossola.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -122245,10 +122248,11 @@
     "IT-L1-azcv": {
       "name": "Azienda Calabria Verde",
       "provider": "aruba",
-      "domain": "pec.calabriaverde.eu",
-      "confidence": 50,
+      "domain": "calabriaverde.regione.calabria.it",
+      "confidence": 78,
       "flags": [
-        "no_spf",
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -125394,13 +125398,14 @@
     },
     "IT-L12-cga_": {
       "name": "Comitato di Gestione Atc",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "atcrc2.it",
-      "confidence": 15,
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L12-cgdf_tn": {
@@ -139164,9 +139169,8 @@
       "name": "ISTITUTO COMPRENSIVO BENEDETTO BRIN",
       "provider": "google",
       "domain": "icbrinlivorno.edu.it",
-      "confidence": 93,
+      "confidence": 88,
       "flags": [
-        "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
         "provider_classified"
@@ -140557,9 +140561,11 @@
       "name": "Centro Provinciale Istruzione Adulti - Cpia Treviglio",
       "provider": "google",
       "domain": "cpiatreviglio.edu.it",
-      "confidence": 70,
+      "confidence": 93,
       "flags": [
         "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -140846,11 +140852,11 @@
     },
     "IT-L33-cpiam": {
       "name": "Cpia Montagna",
-      "provider": "seeweb",
+      "provider": "google",
       "domain": "cpiamontagna.it",
-      "confidence": 90,
+      "confidence": 88,
       "flags": [
-        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -185881,9 +185887,10 @@
       "name": "ISTITUTO COMPRENSIVO - ISTITUTO COMPRENSIVO VIA TRENTO",
       "provider": "google",
       "domain": "iccassina.edu.it",
-      "confidence": 50,
+      "confidence": 88,
       "flags": [
-        "no_spf",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -200346,13 +200353,12 @@
     },
     "IT-L33-istsc_pnis00900p": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - IS IPSIA L. ZANUSSI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "isiszanussi.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "isiszanussi.pn.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -232213,7 +232219,7 @@
     "IT-L34-icriv": {
       "name": "A.P.S.P. \"CASE DI RIPOSO DI SOLERO\"",
       "provider": "aruba",
-      "domain": "casediripososolero.it",
+      "domain": "casadiripososolero.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -239181,7 +239187,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.portaletrasparenza.net",
+      "domain": "flegrealavoro.com",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242620,7 +242626,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.portaletrasparenza.net",
+      "domain": "unilavspa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",

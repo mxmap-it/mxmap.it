@@ -1,5 +1,5 @@
 {
-  "n_purged": 507,
+  "n_purged": 506,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -2488,17 +2488,6 @@
       "old_reason": "MX record (mcc.evnom.com, smtp-avas.seeweb.it) matches Seeweb"
     },
     {
-      "id": "IT-L12-cga_",
-      "name": "Comitato di Gestione Atc",
-      "codice_ipa": "cga_",
-      "seed_domain": "atcrc2.it",
-      "claimed_domain": "comune.siderno.rc.it",
-      "reject_reason": "unrelated",
-      "old_mx": "alt1.aspmx.l.google.com",
-      "old_provider": "google",
-      "old_reason": "MX record (alt1.aspmx.l.google.com, alt2.aspmx.l.google.com) matches Google"
-    },
-    {
       "id": "IT-L12-cm_alto21",
       "name": "Comunita' Montana Alto Basento",
       "codice_ipa": "cm_alto21",
@@ -3363,9 +3352,9 @@
       "seed_domain": "ciafm.it",
       "claimed_domain": "comune.sesto-fiorentino.fi.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "unknown",
-      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+      "old_mx": "mx.zimbraopen.it",
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L28-cirp",
@@ -4738,9 +4727,9 @@
       "seed_domain": "docciaservice.it",
       "claimed_domain": "comune.sesto-fiorentino.fi.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "unknown",
-      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+      "old_mx": "mx.zimbraopen.it",
+      "old_provider": "pa-contractor-private",
+      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L37-em_cbb",

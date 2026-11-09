@@ -6,18 +6,18 @@ Distinct clusters:           15
 
 === Aggregate (all clusters) ===
   USA share:  39.6%
-    Google Workspace            6155  ( 26.9%)
-    Provider Italiano           5122  ( 22.3%)
+    Google Workspace            6157  ( 26.9%)
+    Provider Italiano           5124  ( 22.4%)
     Microsoft 365               2907  ( 12.7%)
     Contractor PA privato       2425  ( 10.6%)
     Provider Italiano           1559  (  6.8%)
-    Sconosciuto                 1305  (  5.7%)
-    Cloud Italiano               905  (  3.9%)
-    istruzione-miur-tenant       845  (  3.7%)
-    Infrastruttura autonoma      832  (  3.6%)
+    Sconosciuto                 1303  (  5.7%)
+    Cloud Italiano               909  (  4.0%)
+    istruzione-miur-tenant       844  (  3.7%)
+    Infrastruttura autonoma      828  (  3.6%)
     Provider Italiano            661  (  2.9%)
     ovh                           78  (  0.3%)
-    Provider Italiano             76  (  0.3%)
+    Provider Italiano             75  (  0.3%)
     hetzner                       29  (  0.1%)
     ionos                          8  (  0.0%)
     infomaniak                     6  (  0.0%)
@@ -31,15 +31,15 @@ Distinct clusters:           15
   N: 8166    USA share:  18.3%
   Regioni, Province, Città Metropolitane e Comuni — i tre livelli amministrativi geografici della Repubblica italiana.
 
-    Provider Italiano          2437  ( 29.8%)
+    Provider Italiano          2438  ( 29.9%)
     Contractor PA privato      1630  ( 20.0%)
     Microsoft 365              1069  ( 13.1%)
-    Cloud Italiano              739  (  9.0%)
-    Sconosciuto                 623  (  7.6%)
+    Cloud Italiano              743  (  9.1%)
+    Sconosciuto                 622  (  7.6%)
     Provider Italiano           431  (  5.3%)
     Provider Italiano           421  (  5.2%)
     Google Workspace            420  (  5.1%)
-    Infrastruttura autonoma     341  (  4.2%)
+    Infrastruttura autonoma     337  (  4.1%)
     Provider Italiano            27  (  0.3%)
     ovh                          16  (  0.2%)
     infomaniak                    5  (  0.1%)
@@ -52,16 +52,16 @@ Distinct clusters:           15
     L4    N=51     USA=47.1%   top: Microsoft 365=18, Provider Italiano=8, Infrastruttura autonoma=6
     L5    N=89     USA=42.7%   top: Microsoft 365=25, Sconosciuto=14, Google Workspace=13
     L45   N=15     USA=66.7%   top: Microsoft 365=7, Contractor PA privato=4, Google Workspace=3
-    L6    N=8011   USA=17.7%   top: Provider Italiano=2425, Contractor PA privato=1622, Microsoft 365=1019
+    L6    N=8011   USA=17.7%   top: Provider Italiano=2426, Contractor PA privato=1622, Microsoft 365=1019
 
 ====================================================================================================
 ## Istruzione  (cluster: istruzione, viz=map)
 ====================================================================================================
-  N: 8321    USA share:  67.0%
+  N: 8321    USA share:  67.1%
   Scuole statali di ogni ordine e grado, università pubbliche, istituzioni AFAM (alta formazione artistica/musicale/coreutica), enti per il diritto allo studio universitario, consorzi interuniversitari di ricerca.
 
-    Google Workspace           5063  ( 60.8%)
-    istruzione-miur-tenant      845  ( 10.2%)
+    Google Workspace           5065  ( 60.9%)
+    istruzione-miur-tenant      844  ( 10.1%)
     Provider Italiano           814  (  9.8%)
     Microsoft 365               515  (  6.2%)
     Contractor PA privato       458  (  5.5%)
@@ -70,13 +70,13 @@ Distinct clusters:           15
     Sconosciuto                  62  (  0.7%)
     Provider Italiano            28  (  0.3%)
     hetzner                      26  (  0.3%)
-    Provider Italiano             8  (  0.1%)
+    Provider Italiano             7  (  0.1%)
     Cloud Italiano                2  (  0.0%)
     ovh                           1  (  0.0%)
     ionos                         1  (  0.0%)
 
   --- breakdown per Codice IPA ---
-    L33   N=8085   USA=67.1%   top: Google Workspace=4974, istruzione-miur-tenant=845, Provider Italiano=773
+    L33   N=8085   USA=67.1%   top: Google Workspace=4976, istruzione-miur-tenant=844, Provider Italiano=773
     L17   N=71     USA=88.7%   top: Google Workspace=34, Microsoft 365=29, Provider Italiano=5
     L43   N=105    USA=66.7%   top: Google Workspace=47, Provider Italiano=25, Microsoft 365=23
     L15   N=30     USA=40.0%   top: Provider Italiano=9, Microsoft 365=6, Google Workspace=6
@@ -262,8 +262,8 @@ Distinct clusters:           15
   N: 1248    USA share:  20.4%
   Unioni di Comuni, Consorzi tra Amministrazioni Locali, Comunità Montane, Consorzi di Bacino Imbrifero Montano, altri Enti Locali, Commissari Straordinari Governativi, Agenzie Regionali e Provinciali per la Rappresentanza Negoziale.
 
-    Provider Italiano           301  ( 24.1%)
-    Sconosciuto                 218  ( 17.5%)
+    Provider Italiano           302  ( 24.2%)
+    Sconosciuto                 217  ( 17.4%)
     Contractor PA privato       153  ( 12.3%)
     Microsoft 365               136  ( 10.9%)
     Google Workspace            118  (  9.5%)
@@ -277,7 +277,7 @@ Distinct clusters:           15
   --- breakdown per Codice IPA ---
     L18   N=455    USA= 9.0%   top: Provider Italiano=139, Contractor PA privato=101, Sconosciuto=82
     L36   N=176    USA=15.9%   top: Provider Italiano=54, Sconosciuto=28, Microsoft 365=19
-    L12   N=165    USA=19.4%   top: Provider Italiano=39, Sconosciuto=35, Microsoft 365=18
+    L12   N=165    USA=19.4%   top: Provider Italiano=40, Sconosciuto=34, Microsoft 365=18
     L24   N=49     USA=24.5%   top: Contractor PA privato=11, Provider Italiano=9, Microsoft 365=7
     L1    N=352    USA=35.8%   top: Google Workspace=71, Cloud Italiano=57, Microsoft 365=55
     L47   N=50     USA=30.0%   top: Sconosciuto=14, Microsoft 365=13, Provider Italiano=8

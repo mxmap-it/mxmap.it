@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-08 12:08 UTC",
+ "generated_at": "2026-11-09 13:29 UTC",
  "country": "IT",
  "total_entities": 22922,
- "anomalies_total": 1453,
- "anomalies_pct": 6.34,
+ "anomalies_total": 1451,
+ "anomalies_pct": 6.33,
  "by_type": {
-  "no_mx": 625,
+  "no_mx": 623,
   "gateway_no_primary": 680,
   "low_confidence": 114,
   "geo_unknown": 74
@@ -17,7 +17,7 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1305,
+  "unknown": 1303,
   "independent": 87,
   "aruba": 23,
   "pa-contractor-private": 22,
@@ -157,7 +157,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia Demanio provinciale",
@@ -964,17 +964,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "Comitato di Gestione Atc",
-   "domain": "atcrc2.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
    "name": "A.T.E.R. DELLA PROVINCIA DI VICENZA",
    "domain": "atervicenza.it",
    "provider": "unknown",
@@ -1159,7 +1148,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Azienda Speciale Vola",
@@ -1170,7 +1159,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Consorzio di Bonifica Integrale Dei Bacini Meridionali del Cosentino",
@@ -1368,7 +1357,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "COMMISSARIO STRAORDINARIO DEL GOVERNO DELLA ZES CALABRIA",
@@ -1522,7 +1511,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Cavriagoservizi",
@@ -1907,7 +1896,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Collegio Provinciale Geometri e Geometri Laureati di Reggio Calabria",
@@ -2094,7 +2083,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Abbadia San Salvatore",
@@ -2150,6 +2139,17 @@
    ],
    "mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "Comune di Albera Ligure",
+   "domain": "comune.alberaligure.al.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Albisola Superiore",
@@ -2369,7 +2369,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arsoli",
@@ -2820,7 +2820,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Cairo Montenotte",
@@ -2831,7 +2831,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Calvisano",
@@ -2886,7 +2886,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 5 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Campoformido",
@@ -2909,17 +2909,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Comune di Candelo",
-   "domain": "comune.candelo.bi.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Candiana",
@@ -2963,7 +2952,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Capo di Ponte",
@@ -3194,7 +3183,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Castelleone",
@@ -3733,7 +3722,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Colloredo di Monte Albano",
@@ -3909,7 +3898,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Dignano",
@@ -4668,7 +4657,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Loreo",
@@ -4855,7 +4844,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Marano Equo",
@@ -4866,7 +4855,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Marano Lagunare",
@@ -4943,7 +4932,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 5 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Massazza",
@@ -5438,7 +5427,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Ono San Pietro",
@@ -5746,7 +5735,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Pietracupa",
@@ -6395,7 +6384,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Remanzacco",
@@ -6912,7 +6901,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di San Quirico d'Orcia",
@@ -6978,7 +6967,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Santhia'",
@@ -7432,17 +7421,6 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Comune di Tavigliano",
-   "domain": "comune.tavigliano.bi.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
    "name": "Comune di Teglio Veneto",
    "domain": "comune.teglioveneto.ve.it",
    "provider": "unknown",
@@ -7770,7 +7748,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Vaiano",
@@ -8287,7 +8265,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Guardia Lombardi",
@@ -8342,7 +8320,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Picciano",
@@ -8375,7 +8353,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Ricadi",
@@ -8386,7 +8364,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ripa Teatina",
@@ -8441,7 +8419,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sesta Godano",
@@ -8870,7 +8848,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Consorzio di Bonifica Pratica di Mare",
@@ -8925,7 +8903,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Consorzio Intercomunale del Montefeltro",
@@ -9244,7 +9222,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Liceo Andrea Maffei",
@@ -9288,7 +9266,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni dall'Eleuterio a Rocca Busambra",
@@ -9475,7 +9453,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Tribuzio Mobility Srl",
@@ -10146,7 +10124,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Istituto Comprensivo di Scuola Primaria e Secondaria di Primo Grado Rovereto - Sud Via Benacense, 32",
@@ -11345,7 +11323,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Ordine Interprovinciale Professione Ostetrica Ascoli Piceno e Fermo",
@@ -12698,7 +12676,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Azienda Ospedaliera Santobono Pausilipon",

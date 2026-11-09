@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-08T12:08:58Z",
+  "generated_at": "2026-11-09T13:29:46Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
     "n_entities": 22922,
-    "n_with_mx": 22297,
-    "coverage_pct": 94.31
+    "n_with_mx": 22299,
+    "coverage_pct": 94.32
   },
   "indices": {
     "isd": 53.57,
     "cloud_act_pct": 45.85,
-    "n_classified": 21617
+    "n_classified": 21619
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 9914,
+      "count": 9915,
       "pct": 43.3,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11580,
+      "count": 11581,
       "pct": 50.5,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 1305,
+      "count": 1303,
       "pct": 5.7,
       "label": "Sconosciuto"
     }
@@ -38,37 +38,37 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 9843,
+      "count": 9844,
       "pct": 42.9,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6155,
+      "count": 6157,
       "pct": 26.9,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 3752,
+      "count": 3751,
       "pct": 16.4,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Sconosciuto",
-      "count": 1305,
+      "count": 1303,
       "pct": 5.7,
       "sovereignty": "unknown"
     },
     {
       "name": "Cloud Italiano",
-      "count": 905,
-      "pct": 3.9,
+      "count": 909,
+      "pct": 4.0,
       "sovereignty": "it"
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 832,
+      "count": 828,
       "pct": 3.6,
       "sovereignty": "it"
     },
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8086,
+    "mean": 0.8087,
     "high_pct": 88.2
   }
 }
