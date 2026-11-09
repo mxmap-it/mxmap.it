@@ -1,0 +1,171 @@
+{
+  "country": "RO",
+  "country_name_en": "Romania",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "ro-politia-romana",
+      "type": "police",
+      "name_native": "Poliția Română (Inspectoratul General al Poliției Române)",
+      "name_en": "Romanian Police (General Inspectorate of the Romanian Police)",
+      "acronym": "IGPR",
+      "website": "https://www.politiaromana.ro",
+      "mail_domains": ["politiaromana.ro"],
+      "evidence": [
+        {"domain": "politiaromana.ro", "url": "https://www.politiaromana.ro/ro/contact", "kind": "contact_page", "note": "igpr@politiaromana.ro (petitions and Secretariat General)"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "ro-jandarmeria",
+      "type": "gendarmerie",
+      "name_native": "Jandarmeria Română",
+      "name_en": "Romanian Gendarmerie",
+      "acronym": "JR",
+      "website": "https://www.jandarmeriaromana.ro",
+      "mail_domains": ["jandarmeriaromana.ro"],
+      "evidence": [
+        {"domain": "jandarmeriaromana.ro", "url": "https://ted.europa.eu/en/notice/284823-2024/pdf", "kind": "official_pdf", "note": "achizitii.teritorial@jandarmeriaromana.ro in EU TED procurement notice; tehnic@jandarmeriaromana.ro also seen in a gendarmerie directory"}
+      ],
+      "confidence": "medium",
+      "notes": "Official site contact page blocked WebFetch (HTTP 503). Older third-party directory also lists jandarmerie@mai.gov.ro / presa_jr@mai.gov.ro (unverified, not included)."
+    },
+    {
+      "id": "ro-politia-de-frontiera",
+      "type": "border_guard",
+      "name_native": "Poliția de Frontieră Română (Inspectoratul General al Poliției de Frontieră)",
+      "name_en": "Romanian Border Police (General Inspectorate of the Border Police)",
+      "acronym": "IGPF",
+      "website": "https://www.politiadefrontiera.ro",
+      "mail_domains": ["igpf.ro", "mai.gov.ro"],
+      "evidence": [
+        {"domain": "igpf.ro", "url": "https://www.politiadefrontiera.ro/en/main/pg-contact-60.html", "kind": "contact_page", "note": "pfr@igpf.ro (interinstitutional relations), official contact page"},
+        {"domain": "mai.gov.ro", "url": "https://www.politiadefrontiera.ro/files/docu/1783665422210-anuntrecrutaremasterprofesionalacademie.pdf", "kind": "official_pdf", "note": "concurs.itpfis@mai.gov.ro in official recruitment notice (territorial inspectorate)"}
+      ],
+      "confidence": "high",
+      "notes": "Email domain (igpf.ro) differs from web domain (politiadefrontiera.ro); territorial units use mai.gov.ro."
+    },
+    {
+      "id": "ro-sri",
+      "type": "intelligence",
+      "name_native": "Serviciul Român de Informații",
+      "name_en": "Romanian Intelligence Service",
+      "acronym": "SRI",
+      "website": "https://www.sri.ro",
+      "mail_domains": ["sri.ro"],
+      "evidence": [
+        {"domain": "sri.ro", "url": "https://www.sri.ro/contact", "kind": "contact_page", "note": "relatii@sri.ro, presa@sri.ro, avize_urbanism@sri.ro, animv@sri.ro, pensii@sri.ro"}
+      ],
+      "confidence": "high",
+      "notes": "Hosts Centrul Național Cyberint (national cyber intelligence)."
+    },
+    {
+      "id": "ro-sie",
+      "type": "intelligence",
+      "name_native": "Serviciul de Informații Externe",
+      "name_en": "Foreign Intelligence Service",
+      "acronym": "SIE",
+      "website": "https://www.sie.ro",
+      "mail_domains": ["sie.ro"],
+      "evidence": [
+        {"domain": "sie.ro", "url": "https://www.sie.ro/contact.html", "kind": "contact_page", "note": "relatii_presa@sie.ro, relatii_publice@sie.ro, resurse_umane@sie.ro"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "ro-sts",
+      "type": "intelligence",
+      "name_native": "Serviciul de Telecomunicații Speciale",
+      "name_en": "Special Telecommunications Service",
+      "acronym": "STS",
+      "website": "https://www.sts.ro",
+      "mail_domains": ["sts.ro", "stsnet.ro"],
+      "evidence": [
+        {"domain": "sts.ro", "url": "https://dgpi.ro/documente/2025/04/Comunicat-lansare-proiect_Extindere-112_PCIDIF.pdf", "kind": "official_pdf", "note": "office@sts.ro in official 112-project press release; achizitii.publice@sts.ro in TED notices (e.g. https://ted.europa.eu/en/notice/306418-2026/pdf); presa@sts.ro in STS reply published by Hotnews"},
+        {"domain": "stsnet.ro", "url": "https://www.trusted-introducer.org/directory/teams/coris-sts.html", "kind": "other_official", "note": "coris@stsnet.ro (CORIS-STS CSIRT, Trusted Introducer directory); achizitii.publice@stsnet.ro also in some TED notices"}
+      ],
+      "confidence": "high",
+      "notes": "Government special telecoms operator; runs the 112 emergency system. Two domains in active email use."
+    },
+    {
+      "id": "ro-spp",
+      "type": "intelligence",
+      "name_native": "Serviciul de Protecție și Pază",
+      "name_en": "Protection and Guard Service",
+      "acronym": "SPP",
+      "website": "https://www.spp.ro",
+      "mail_domains": ["spp.ro"],
+      "evidence": [
+        {"domain": "spp.ro", "url": "https://ted.europa.eu/sk/notice/431186-2026/pdf", "kind": "official_pdf", "note": "achizitii2@spp.ro in EU TED procurement notice; relatii_publice@spp.ro reported as press-office contact"}
+      ],
+      "confidence": "medium",
+      "notes": "Official site contact page not reachable via automated fetch (404 on guessed paths)."
+    },
+    {
+      "id": "ro-dgpi",
+      "type": "intelligence",
+      "name_native": "Direcția Generală de Protecție Internă",
+      "name_en": "General Directorate for Internal Protection",
+      "acronym": "DGPI",
+      "website": "https://dgpi.ro",
+      "mail_domains": ["dgpi.ro"],
+      "evidence": [
+        {"domain": "dgpi.ro", "url": "https://dgpi.ro/documente/2024/10/Comunicat-de-presa-lansare-SAT-CEI-3.pdf", "kind": "official_pdf", "note": "office@dgpi.ro in official DGPI press release; relatii_publice@dgpi.ro and achizitii@dgpi.ro also evidenced in DGPI documents and TED notices"}
+      ],
+      "confidence": "high",
+      "notes": "Intelligence structure of the Ministry of Internal Affairs (MAI)."
+    },
+    {
+      "id": "ro-mai",
+      "type": "interior_ministry",
+      "name_native": "Ministerul Afacerilor Interne",
+      "name_en": "Ministry of Internal Affairs",
+      "acronym": "MAI",
+      "website": "https://www.mai.gov.ro",
+      "mail_domains": ["mai.gov.ro"],
+      "evidence": [
+        {"domain": "mai.gov.ro", "url": "https://www.politiadefrontiera.ro/files/docu/1783665422210-anuntrecrutaremasterprofesionalacademie.pdf", "kind": "official_pdf", "note": "concurs.itpfis@mai.gov.ro in official PDF; igi@mai.gov.ro (General Inspectorate for Immigration) listed on a University of Bologna partner page; mai.gov.ro domain used across MAI structures"}
+      ],
+      "confidence": "medium",
+      "notes": "MAI contact page blocked automated fetch (404/403); domain usage evidenced via subordinate-structure addresses in official PDFs."
+    },
+    {
+      "id": "ro-mapn",
+      "type": "defence_ministry",
+      "name_native": "Ministerul Apărării Naționale",
+      "name_en": "Ministry of National Defence",
+      "acronym": "MApN",
+      "website": "https://www.mapn.ro",
+      "mail_domains": ["mapn.ro", "dpa.ro"],
+      "evidence": [
+        {"domain": "mapn.ro", "url": "https://www.mapn.ro/contact/", "kind": "contact_page", "note": "presamapn@mapn.ro, secretariat_general@mapn.ro, dmru@mapn.ro and 8 others on official contact page"},
+        {"domain": "dpa.ro", "url": "https://www.mapn.ro/contact/", "kind": "contact_page", "note": "relatii.publice@dpa.ro (General Directorate for Armaments) on MApN official contact page"}
+      ],
+      "confidence": "high",
+      "notes": "Military intelligence DGIA sits inside MApN; no separate DGIA email domain evidenced (publications hosted at mapn.ro)."
+    },
+    {
+      "id": "ro-dnsc",
+      "type": "cybersecurity",
+      "name_native": "Directoratul Național de Securitate Cibernetică",
+      "name_en": "National Cyber Security Directorate",
+      "acronym": "DNSC",
+      "website": "https://www.dnsc.ro",
+      "mail_domains": ["dnsc.ro"],
+      "evidence": [
+        {"domain": "dnsc.ro", "url": "https://www.trusted-introducer.org/directory/teams/dnsc.html", "kind": "other_official", "note": "alerts@dnsc.ro (incident reports) and office@dnsc.ro per Trusted Introducer CSIRT directory; alerts@dnsc.ro also widely cited in DNSC public advisories"}
+      ],
+      "confidence": "high",
+      "notes": "Hosts the national CERT (successor of CERT-RO). Own site blocked automated fetch (403)."
+    }
+  ],
+  "gaps": [
+    "DGIA (Direcția Generală de Informații a Apărării, military intelligence) not listed as separate entity: no distinct mail domain evidenced; its publications and presumably email sit under mapn.ro (MApN entity).",
+    "CSAT (Supreme Council of National Defence) secretariat not included: operates via the Presidential Administration (presidency.ro), no distinct natsec mail domain evidenced.",
+    "MAI general petitions email not directly verifiable (contact page blocks automated access); mai.gov.ro domain evidenced only via subordinate-unit addresses.",
+    "Jandarmeria and SPP contact pages blocked automated fetch; mail domains evidenced via EU TED procurement notices only."
+  ]
+}
