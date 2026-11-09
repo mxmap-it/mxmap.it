@@ -1,0 +1,139 @@
+{
+  "country": "SE",
+  "country_name_en": "Sweden",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "se-polisen",
+      "type": "police",
+      "name_native": "Polismyndigheten",
+      "name_en": "Swedish Police Authority",
+      "acronym": "",
+      "website": "https://polisen.se",
+      "mail_domains": ["polisen.se"],
+      "evidence": [
+        {"domain": "polisen.se", "url": "https://polisen.se/om-polisen/kontakt/rpc-kansli-nationella-avdelningar/", "kind": "contact_page", "note": "registrator.kansli@polisen.se (national HQ); regional pattern registrator.<region>@polisen.se"}
+      ],
+      "confidence": "high",
+      "notes": "Single national police authority since 2015; includes NOA and NFC (registrator.nfc@polisen.se)."
+    },
+    {
+      "id": "se-sapo",
+      "type": "intelligence",
+      "name_native": "Säkerhetspolisen",
+      "name_en": "Swedish Security Service",
+      "acronym": "Säpo",
+      "website": "https://sakerhetspolisen.se",
+      "mail_domains": ["sakerhetspolisen.se"],
+      "evidence": [
+        {"domain": "sakerhetspolisen.se", "url": "https://www.regeringen.se/contentassets/d6757afbb6d14c7d82a9516e76b97c0e/sakerhetspolisen.pdf", "kind": "official_pdf", "note": "info@sakerhetspolisen.se; also sakerhetspolisen@sakerhetspolisen.se, sakerhetsskydd@sakerhetspolisen.se in official documents"}
+      ],
+      "confidence": "high",
+      "notes": "Domestic security and counter-intelligence service."
+    },
+    {
+      "id": "se-must",
+      "type": "intelligence",
+      "name_native": "Militära underrättelse- och säkerhetstjänsten (Försvarsmakten)",
+      "name_en": "Military Intelligence and Security Service (Swedish Armed Forces)",
+      "acronym": "MUST",
+      "website": "https://www.forsvarsmakten.se",
+      "mail_domains": ["mil.se"],
+      "evidence": [
+        {"domain": "mil.se", "url": "https://www.forsvarsmakten.se/sv/kontakta-forsvarsmakten/", "kind": "contact_page", "note": "exp-hkv@mil.se (Armed Forces HQ, of which MUST is part)"}
+      ],
+      "confidence": "high",
+      "notes": "MUST is a directorate of Försvarsmakten HQ; Armed Forces email domain is mil.se."
+    },
+    {
+      "id": "se-fra",
+      "type": "intelligence",
+      "name_native": "Försvarets radioanstalt",
+      "name_en": "National Defence Radio Establishment",
+      "acronym": "FRA",
+      "website": "https://www.fra.se",
+      "mail_domains": ["fra.se"],
+      "evidence": [
+        {"domain": "fra.se", "url": "https://regeringen.se/contentassets/ff0193d9c4fc45cc93f32ffc6ea13275/forsvarets-radioanstalt.pdf", "kind": "official_pdf", "note": "fra@fra.se on FRA consultation response; upphandling@fra.se in TED notices"}
+      ],
+      "confidence": "high",
+      "notes": "SIGINT agency."
+    },
+    {
+      "id": "se-kustbevakningen",
+      "type": "border_guard",
+      "name_native": "Kustbevakningen",
+      "name_en": "Swedish Coast Guard",
+      "acronym": "KBV",
+      "website": "https://www.kustbevakningen.se",
+      "mail_domains": ["kustbevakningen.se"],
+      "evidence": [
+        {"domain": "kustbevakningen.se", "url": "https://www.kustbevakningen.se/om-oss/kontakta-oss/", "kind": "contact_page", "note": "registrator@kustbevakningen.se, lc@kustbevakningen.se, info@kustbevakningen.se"}
+      ],
+      "confidence": "high",
+      "notes": "Civilian maritime law-enforcement agency; border control at sea is performed by the Police, with Coast Guard assistance."
+    },
+    {
+      "id": "se-justitiedepartementet",
+      "type": "interior_ministry",
+      "name_native": "Justitiedepartementet",
+      "name_en": "Ministry of Justice",
+      "acronym": "Ju",
+      "website": "https://www.regeringen.se/regeringens-politik/justitiedepartementet/",
+      "mail_domains": ["regeringskansliet.se"],
+      "evidence": [
+        {"domain": "regeringskansliet.se", "url": "https://regeringen.se/kontaktuppgifter/kontaktuppgifter-till-departementens-registratorer/", "kind": "contact_page", "note": "ju.registrator@regeringskansliet.se (all ministries share the Government Offices domain regeringskansliet.se)"}
+      ],
+      "confidence": "high",
+      "notes": "Responsible for the Police and Säpo. Sweden has no separate interior ministry."
+    },
+    {
+      "id": "se-forsvarsdepartementet",
+      "type": "defence_ministry",
+      "name_native": "Försvarsdepartementet",
+      "name_en": "Ministry of Defence",
+      "acronym": "Fö",
+      "website": "https://www.regeringen.se/regeringens-politik/forsvarsdepartementet/",
+      "mail_domains": ["regeringskansliet.se"],
+      "evidence": [
+        {"domain": "regeringskansliet.se", "url": "https://www.lantmateriet.se/contentassets/f4ceba47a6ab47f387116520ed535200/remiss_lm2024_012713.pdf", "kind": "official_pdf", "note": "fo.registrator@regeringskansliet.se, fo.remissvar@regeringskansliet.se (Defence Ministry consultation)"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "se-mcf",
+      "type": "other_natsec",
+      "name_native": "Myndigheten för civilt försvar",
+      "name_en": "Swedish Agency for Civil Defence (formerly MSB, Swedish Civil Contingencies Agency)",
+      "acronym": "MCF",
+      "website": "https://www.mcf.se",
+      "mail_domains": ["mcf.se"],
+      "evidence": [
+        {"domain": "mcf.se", "url": "https://www.mcf.se/contentassets/e8d936cb2aaa4733a956524ae9833d3d/missiv-foreskrift-och-konsekvensutredning.pdf", "kind": "official_pdf", "note": "registrator@mcf.se; msb.se website now redirects to mcf.se"}
+      ],
+      "confidence": "high",
+      "notes": "Civil defence / civil contingencies agency; successor branding of MSB. Hosts CERT-SE."
+    },
+    {
+      "id": "se-cert-se",
+      "type": "cybersecurity",
+      "name_native": "CERT-SE",
+      "name_en": "National CSIRT of Sweden (CERT-SE)",
+      "acronym": "CERT-SE",
+      "website": "https://www.cert.se",
+      "mail_domains": ["cert.se", "ncsc.se"],
+      "evidence": [
+        {"domain": "cert.se", "url": "https://www.cert.se/kontakt", "kind": "contact_page", "note": "cert@cert.se"},
+        {"domain": "ncsc.se", "url": "https://www.cert.se/kontakt", "kind": "contact_page", "note": "cslsupport@ncsc.se (National Cybersecurity Centre domain used for Cybersecurity Act incident reporting)"}
+      ],
+      "confidence": "high",
+      "notes": "National CERT, operated within MCF/MSB; NCSC (Nationellt cybersäkerhetscenter) uses ncsc.se."
+    }
+  ],
+  "gaps": [
+    "No gendarmerie-type force exists in Sweden.",
+    "Border control is handled by the Police Authority (gränspolisen), not a separate border-guard agency; Coast Guard listed as closest maritime body."
+  ]
+}

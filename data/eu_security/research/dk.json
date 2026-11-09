@@ -1,0 +1,112 @@
+{
+  "country": "DK",
+  "country_name_en": "Denmark",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "dk-politiet",
+      "type": "police",
+      "name_native": "Politiet / Rigspolitiet",
+      "name_en": "Danish Police / National Police",
+      "acronym": "",
+      "website": "https://politi.dk",
+      "mail_domains": ["politi.dk"],
+      "evidence": [
+        {"domain": "politi.dk", "url": "https://www.borger.dk/Om-borger-dk/Find-en-myndighed/rigspolitiet", "kind": "other_official", "note": "politi@politi.dk (Rigspolitiet); also pol-databeskyttelse@politi.dk in Rigspolitiet privacy notice"}
+      ],
+      "confidence": "high",
+      "notes": "Single national police; 12 districts share the politi.dk domain."
+    },
+    {
+      "id": "dk-pet",
+      "type": "intelligence",
+      "name_native": "Politiets Efterretningstjeneste",
+      "name_en": "Danish Security and Intelligence Service",
+      "acronym": "PET",
+      "website": "https://pet.dk",
+      "mail_domains": ["pet.dk", "politi.dk"],
+      "evidence": [
+        {"domain": "pet.dk", "url": "https://politi.dk/en/sitecore/content/pet/site-en/front-page/about-pet/contact-us", "kind": "contact_page", "note": "presse@pet.dk, raadgivning@pet.dk"},
+        {"domain": "politi.dk", "url": "https://www.danskindustri.dk/di-business/arkiv/nyheder/2022/6/isar-ivarksattere-bor-vare-opmarksomme-pa-spioner/", "kind": "other_official", "note": "pet@politi.dk (secure-mail reporting channel); PET sits organisationally within the police"}
+      ],
+      "confidence": "high",
+      "notes": "Domestic security service, under the Ministry of Justice."
+    },
+    {
+      "id": "dk-fe",
+      "type": "intelligence",
+      "name_native": "Forsvarets Efterretningstjeneste",
+      "name_en": "Danish Defence Intelligence Service",
+      "acronym": "FE / DDIS",
+      "website": "https://fe-ddis.dk",
+      "mail_domains": ["fe-ddis.dk"],
+      "evidence": [
+        {"domain": "fe-ddis.dk", "url": "https://fe-ddis.dk/da/kontakt", "kind": "contact_page", "note": "fe-myn@fe-ddis.dk (main inbox), fekommunikation@fe-ddis.dk (press)"}
+      ],
+      "confidence": "high",
+      "notes": "Foreign and military intelligence plus SIGINT; historically also hosted CFCS."
+    },
+    {
+      "id": "dk-justitsministeriet",
+      "type": "interior_ministry",
+      "name_native": "Justitsministeriet",
+      "name_en": "Ministry of Justice",
+      "acronym": "JM",
+      "website": "https://www.justitsministeriet.dk",
+      "mail_domains": ["jm.dk"],
+      "evidence": [
+        {"domain": "jm.dk", "url": "https://www.justitsministeriet.dk/kontakt/", "kind": "contact_page", "note": "jm@jm.dk"}
+      ],
+      "confidence": "high",
+      "notes": "Responsible for the police and PET. Denmark has no classic interior ministry; civil preparedness moved to the Ministeriet for Samfundssikkerhed og Beredskab."
+    },
+    {
+      "id": "dk-forsvarsministeriet",
+      "type": "defence_ministry",
+      "name_native": "Forsvarsministeriet",
+      "name_en": "Ministry of Defence",
+      "acronym": "FMN",
+      "website": "https://www.fmn.dk",
+      "mail_domains": ["fmn.dk"],
+      "evidence": [
+        {"domain": "fmn.dk", "url": "https://www.fmn.dk/da/kontakt/", "kind": "contact_page", "note": "fmn@fmn.dk, presse@fmn.dk"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "dk-forsvaret",
+      "type": "other_natsec",
+      "name_native": "Forsvaret / Forsvarskommandoen",
+      "name_en": "Danish Defence / Defence Command",
+      "acronym": "FKO",
+      "website": "https://www.forsvaret.dk",
+      "mail_domains": ["mil.dk"],
+      "evidence": [
+        {"domain": "mil.dk", "url": "https://forsvaret.dk/en/contact", "kind": "contact_page", "note": "fko@mil.dk (Defence Command)"}
+      ],
+      "confidence": "high",
+      "notes": "Armed forces; includes naval units performing coast-guard tasks (no separate coast guard in Denmark)."
+    },
+    {
+      "id": "dk-samsik",
+      "type": "cybersecurity",
+      "name_native": "Styrelsen for Samfundssikkerhed",
+      "name_en": "Danish Agency for Societal Security",
+      "acronym": "SAMSIK",
+      "website": "https://samsik.dk",
+      "mail_domains": ["samsik.dk"],
+      "evidence": [
+        {"domain": "samsik.dk", "url": "https://samsik.dk/kontakt", "kind": "contact_page", "note": "samsik@samsik.dk, raadgivning@samsik.dk, presse@samsik.dk; cfcs.dk now redirects to samsik.dk"}
+      ],
+      "confidence": "high",
+      "notes": "National civilian cyber/societal-security agency under the Ministeriet for Samfundssikkerhed og Beredskab; cfcs.dk (Centre for Cyber Security, formerly within FE) redirects here, indicating the civilian cybersecurity remit moved to SAMSIK."
+    }
+  ],
+  "gaps": [
+    "No gendarmerie-type force in Denmark.",
+    "No separate border guard or coast guard: border control is police-run; maritime surveillance is the Navy (mil.dk).",
+    "Dedicated national CERT contact domain post-reorganisation not separately evidenced (formerly cert@cfcs.dk under FE); CFCS web presence now redirects to samsik.dk."
+  ]
+}

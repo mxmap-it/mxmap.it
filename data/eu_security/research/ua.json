@@ -1,0 +1,166 @@
+{
+  "country": "UA",
+  "country_name_en": "Ukraine",
+  "group": "candidate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "ua-sbu",
+      "type": "intelligence",
+      "name_native": "Служба безпеки України",
+      "name_en": "Security Service of Ukraine",
+      "acronym": "SBU",
+      "website": "https://ssu.gov.ua",
+      "mail_domains": ["ssu.gov.ua"],
+      "evidence": [
+        {"domain": "ssu.gov.ua", "url": "https://ssu.gov.ua/en/contacts/upravlinnia", "kind": "contact_page", "note": "callcenter@ssu.gov.ua, sbu_cu@ssu.gov.ua, sbu_public@ssu.gov.ua, pressinfo@ssu.gov.ua"}
+      ],
+      "confidence": "high",
+      "notes": "Transliteration: Sluzhba bezpeky Ukrainy. Cyber incidents also via cyber_security@dis.gov.ua (SBU Cyber Department)."
+    },
+    {
+      "id": "ua-szru",
+      "type": "intelligence",
+      "name_native": "Служба зовнішньої розвідки України",
+      "name_en": "Foreign Intelligence Service of Ukraine",
+      "acronym": "SZRU",
+      "website": "https://szru.gov.ua",
+      "mail_domains": ["szru.gov.ua"],
+      "evidence": [
+        {"domain": "szru.gov.ua", "url": "https://szru.gov.ua/en/contacts/access-to-public-information", "kind": "contact_page", "note": "publicinfo@szru.gov.ua"}
+      ],
+      "confidence": "high",
+      "notes": "Transliteration: Sluzhba zovnishnoi rozvidky Ukrainy."
+    },
+    {
+      "id": "ua-hur",
+      "type": "intelligence",
+      "name_native": "Головне управління розвідки Міністерства оборони України",
+      "name_en": "Main Directorate of Intelligence of the Ministry of Defence of Ukraine",
+      "acronym": "HUR (GUR)",
+      "website": "https://gur.gov.ua",
+      "mail_domains": ["gur.gov.ua"],
+      "evidence": [
+        {"domain": "gur.gov.ua", "url": "https://gur.gov.ua/en/contacts.html", "kind": "assumed_from_website", "note": "Official contacts page lists only social/Telegram channels, no email published; domain assumed from website."}
+      ],
+      "confidence": "low",
+      "notes": "Military intelligence; deliberately publishes no email contact."
+    },
+    {
+      "id": "ua-npu",
+      "type": "police",
+      "name_native": "Національна поліція України",
+      "name_en": "National Police of Ukraine",
+      "acronym": "NPU",
+      "website": "https://www.npu.gov.ua",
+      "mail_domains": ["police.gov.ua", "npu.gov.ua"],
+      "evidence": [
+        {"domain": "police.gov.ua", "url": "https://nib.gov.ua/load/158/docs/yaksho-ne-maete-zvyazku-z-blizkoyu-lyudinoyu-bilsh-4865d30.pdf", "kind": "official_pdf", "note": "rozshuk_znyklyh@police.gov.ua (missing-persons unit) cited in official National Information Bureau PDF"},
+        {"domain": "npu.gov.ua", "url": "https://www.npu.gov.ua", "kind": "assumed_from_website", "note": "assumed from website registrable domain"}
+      ],
+      "confidence": "medium",
+      "notes": "Cyber Police Department uses cyberpolice.gov.ua website."
+    },
+    {
+      "id": "ua-ngu",
+      "type": "gendarmerie",
+      "name_native": "Національна гвардія України",
+      "name_en": "National Guard of Ukraine",
+      "acronym": "NGU",
+      "website": "https://ngu.gov.ua",
+      "mail_domains": ["ngu.gov.ua"],
+      "evidence": [
+        {"domain": "ngu.gov.ua", "url": "https://ngu.gov.ua", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no public email found in search"}
+      ],
+      "confidence": "low",
+      "notes": "Militarized force under the Ministry of Internal Affairs."
+    },
+    {
+      "id": "ua-dpsu",
+      "type": "border_guard",
+      "name_native": "Державна прикордонна служба України",
+      "name_en": "State Border Guard Service of Ukraine",
+      "acronym": "DPSU",
+      "website": "https://dpsu.gov.ua",
+      "mail_domains": ["dpsu.gov.ua"],
+      "evidence": [
+        {"domain": "dpsu.gov.ua", "url": "https://dpsu.gov.ua/uk/map", "kind": "other_official", "note": "adpsu@dpsu.gov.ua on official site (Cloudflare-obfuscated mailto decoded)"}
+      ],
+      "confidence": "high",
+      "notes": "Transliteration: Derzhavna prykordonna sluzhba Ukrainy."
+    },
+    {
+      "id": "ua-mvs",
+      "type": "interior_ministry",
+      "name_native": "Міністерство внутрішніх справ України",
+      "name_en": "Ministry of Internal Affairs of Ukraine",
+      "acronym": "MVS",
+      "website": "https://mvs.gov.ua",
+      "mail_domains": ["mvs.gov.ua"],
+      "evidence": [
+        {"domain": "mvs.gov.ua", "url": "https://mvs.gov.ua/en/contacts/ministry-internal-affairs", "kind": "contact_page", "note": "Official contacts page; exact mailbox obscured in index, domain consistent with site (e.g. services.mvs.gov.ua portal)"}
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "id": "ua-mod",
+      "type": "defence_ministry",
+      "name_native": "Міністерство оборони України",
+      "name_en": "Ministry of Defence of Ukraine",
+      "acronym": "MOU",
+      "website": "https://mod.gov.ua",
+      "mail_domains": ["mod.gov.ua", "mil.ua"],
+      "evidence": [
+        {"domain": "mod.gov.ua", "url": "https://mod.gov.ua/en/contact-us", "kind": "contact_page", "note": "Official contact page lists MoD mailboxes; MoD news item 'MoD updates email addresses for receiving citizen submissions'"},
+        {"domain": "mil.ua", "url": "https://mil-cert-ua.mod.gov.ua/about.html", "kind": "other_official", "note": "cert@mil.ua used by MIL.CERT-UA (defence CERT) per RFC2350"}
+      ],
+      "confidence": "high",
+      "notes": "Legacy website mil.gov.ua also belongs to the MoD."
+    },
+    {
+      "id": "ua-ssscip",
+      "type": "cybersecurity",
+      "name_native": "Державна служба спеціального зв'язку та захисту інформації України",
+      "name_en": "State Service of Special Communications and Information Protection of Ukraine",
+      "acronym": "SSSCIP",
+      "website": "https://cip.gov.ua",
+      "mail_domains": ["cip.gov.ua", "scpc.gov.ua"],
+      "evidence": [
+        {"domain": "cip.gov.ua", "url": "https://csirt.csi.cip.gov.ua/en/pages/contact-us", "kind": "contact_page", "note": "ictip@cip.gov.ua listed on SSSCIP CSIRT contact page"},
+        {"domain": "scpc.gov.ua", "url": "https://csirt.csi.cip.gov.ua/en/pages/contact-us", "kind": "contact_page", "note": "cazi@scpc.gov.ua (State Cyber Protection Centre) listed on same page"}
+      ],
+      "confidence": "high",
+      "notes": "National cybersecurity authority; State Cyber Protection Centre (SCPC) is subordinate."
+    },
+    {
+      "id": "ua-cert-ua",
+      "type": "cybersecurity",
+      "name_native": "Урядова команда реагування на комп'ютерні надзвичайні події України CERT-UA",
+      "name_en": "Computer Emergency Response Team of Ukraine",
+      "acronym": "CERT-UA",
+      "website": "https://cert.gov.ua",
+      "mail_domains": ["cert.gov.ua"],
+      "evidence": [
+        {"domain": "cert.gov.ua", "url": "https://csirt.csi.cip.gov.ua/en/pages/contact-us", "kind": "contact_page", "note": "incidents@cert.gov.ua for incident reports; cert@cert.gov.ua in Trusted Introducer directory (https://www.trusted-introducer.org/directory/teams/cert-ua.html)"}
+      ],
+      "confidence": "high",
+      "notes": "National CERT, operates under SSSCIP."
+    },
+    {
+      "id": "ua-rnbo",
+      "type": "other_natsec",
+      "name_native": "Рада національної безпеки і оборони України",
+      "name_en": "National Security and Defence Council of Ukraine",
+      "acronym": "NSDC (RNBO)",
+      "website": "https://www.rnbo.gov.ua",
+      "mail_domains": ["rnbo.gov.ua"],
+      "evidence": [
+        {"domain": "rnbo.gov.ua", "url": "https://www.rnbo.gov.ua", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no email found in search"}
+      ],
+      "confidence": "low",
+      "notes": "Its apparatus runs the National Cybersecurity Coordination Center (NCSCC)."
+    }
+  ],
+  "gaps": []
+}

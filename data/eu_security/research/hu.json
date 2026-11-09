@@ -1,0 +1,170 @@
+{
+  "country": "HU",
+  "country_name_en": "Hungary",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "hu-orfk",
+      "type": "police",
+      "name_native": "Országos Rendőr-főkapitányság",
+      "name_en": "National Police Headquarters",
+      "acronym": "ORFK",
+      "website": "https://www.police.hu",
+      "mail_domains": ["orfk.police.hu", "police.hu"],
+      "evidence": [
+        {"domain": "orfk.police.hu", "url": "https://njt.jog.gov.hu/jogszabaly/2014-14-B0-8E", "kind": "other_official", "note": "ORFK decree on public-interest data lists kommunikacio@orfk.police.hu (Kommunikációs Szolgálat); police.hu data-processing notice lists hivatal.orfk@orfk.police.hu as ORFK DPO contact"},
+        {"domain": "police.hu", "url": "https://www.police.hu/sites/default/files/2019-12/altalanos_258_v1.0-f%C3%BCggel%C3%A9kkel.pdf", "kind": "official_pdf", "note": "territorial/functional police units use @police.hu subdomained and plain addresses; police.hu is the registrable domain for the whole police organisation"}
+      ],
+      "confidence": "high",
+      "notes": "Hungarian National Police also performs border policing (Határőrség merged into the Rendőrség in 2008), so border_guard is covered here. Since mid-2026 the counter-terrorism body (new TEK) is being placed under ORFK in a police reorganisation."
+    },
+    {
+      "id": "hu-ah",
+      "type": "intelligence",
+      "name_native": "Alkotmányvédelmi Hivatal",
+      "name_en": "Constitution Protection Office",
+      "acronym": "AH",
+      "website": "https://ah.gov.hu",
+      "mail_domains": ["ah.gov.hu"],
+      "evidence": [
+        {"domain": "ah.gov.hu", "url": "https://ah.gov.hu/files/pages/adatkezelesi-elvek/belepes.pdf", "kind": "privacy_page", "note": "general address ah@ah.gov.hu in data-processing notices; DPO martonovics.gabor@ah.gov.hu; awareness@ah.gov.hu in awareness-program PDFs"}
+      ],
+      "confidence": "high",
+      "notes": "Domestic civilian counter-intelligence / internal security service."
+    },
+    {
+      "id": "hu-ih",
+      "type": "intelligence",
+      "name_native": "Információs Hivatal",
+      "name_en": "Information Office (foreign intelligence service)",
+      "acronym": "IH",
+      "website": "https://www.ih.gov.hu",
+      "mail_domains": ["ih.gov.hu"],
+      "evidence": [
+        {"domain": "ih.gov.hu", "url": "https://www.ih.gov.hu/_upload/editor/adatvedelem/IH_telefon_Erintetti_tajekoztato-2023.pdf", "kind": "privacy_page", "note": "info@ih.gov.hu given as complaints/contact address in IH privacy notices (2023)"}
+      ],
+      "confidence": "high",
+      "notes": "Civilian foreign intelligence service."
+    },
+    {
+      "id": "hu-knbsz",
+      "type": "intelligence",
+      "name_native": "Katonai Nemzetbiztonsági Szolgálat",
+      "name_en": "Military National Security Service",
+      "acronym": "KNBSZ",
+      "website": "https://www.knbsz.gov.hu",
+      "mail_domains": ["knbsz.gov.hu"],
+      "evidence": [
+        {"domain": "knbsz.gov.hu", "url": "https://www.knbsz.gov.hu/kapcsolat", "kind": "contact_page", "note": "official contact page lists knbsz@knbsz.gov.hu"}
+      ],
+      "confidence": "high",
+      "notes": "Unified military intelligence and counter-intelligence service."
+    },
+    {
+      "id": "hu-nbsz",
+      "type": "intelligence",
+      "name_native": "Nemzetbiztonsági Szakszolgálat",
+      "name_en": "Special Service for National Security",
+      "acronym": "NBSZ",
+      "website": "https://nbsz.gov.hu",
+      "mail_domains": ["nbsz.gov.hu"],
+      "evidence": [
+        {"domain": "nbsz.gov.hu", "url": "https://nki.gov.hu/wp-content/uploads/2023/09/NBSZ_IT-rendezveny_online-regisztracio_DPO_V1_0728.pdf", "kind": "official_pdf", "note": "NBSZ data-processing notices list adatvedelmitisztviselo@nbsz.gov.hu"}
+      ],
+      "confidence": "high",
+      "notes": "Technical/SIGINT support service for the other national-security services; parent body of the NKI cyber-defence institute."
+    },
+    {
+      "id": "hu-nik",
+      "type": "intelligence",
+      "name_native": "Nemzeti Információs Központ",
+      "name_en": "National Information Centre",
+      "acronym": "NIK",
+      "website": "https://nik.gov.hu",
+      "mail_domains": ["nik.gov.hu"],
+      "evidence": [
+        {"domain": "nik.gov.hu", "url": "https://nik.gov.hu/", "kind": "contact_page", "note": "site footer contact block lists nik@nik.gov.hu; tibek.gov.hu redirects to nik.gov.hu"}
+      ],
+      "confidence": "high",
+      "notes": "Successor of TIBEK (Terrorelhárítási Információs és Bűnügyi Elemző Központ): national intelligence fusion and analysis centre. Old domain tibek.gov.hu now redirects to nik.gov.hu."
+    },
+    {
+      "id": "hu-bm",
+      "type": "interior_ministry",
+      "name_native": "Belügyminisztérium",
+      "name_en": "Ministry of Interior",
+      "acronym": "BM",
+      "website": "https://kormany.hu/belugyminiszterium",
+      "mail_domains": ["bm.gov.hu"],
+      "evidence": [
+        {"domain": "bm.gov.hu", "url": "https://kormany.hu/application/documents/bbbe0ea8-1efa-4da6-96cd-7b213e3f2162/download", "kind": "official_pdf", "note": "ugyfelszolgalat@bm.gov.hu (customer service) and adatvedelem@bm.gov.hu in official BM/kormany.hu documents"}
+      ],
+      "confidence": "high",
+      "notes": "Ministry websites are consolidated under kormany.hu but the ministry's own mail domain is bm.gov.hu."
+    },
+    {
+      "id": "hu-hm",
+      "type": "defence_ministry",
+      "name_native": "Honvédelmi Minisztérium",
+      "name_en": "Ministry of Defence",
+      "acronym": "HM",
+      "website": "https://kormany.hu/honvedelmi-miniszterium",
+      "mail_domains": ["hm.gov.hu"],
+      "evidence": [
+        {"domain": "hm.gov.hu", "url": "https://hm.hatosagihivatal.kormany.hu/akadalymentes/download/8/a1/f2000/Vesz%C3%A9lyes%20katonai%20objektum%20%C3%A9s%20l%C3%A9tfintoss%C3%A1g%C3%BA%20rendszerelem_13%20cikk_2022.pdf", "kind": "official_pdf", "note": "adatvedelem@hm.gov.hu (data protection) and gyakornok@hm.gov.hu (internships) in official HM documents and instructions (latest 2025)"}
+      ],
+      "confidence": "high",
+      "notes": "Website consolidated under kormany.hu; ministry mail domain is hm.gov.hu."
+    },
+    {
+      "id": "hu-nki",
+      "type": "cybersecurity",
+      "name_native": "Nemzeti Kibervédelmi Intézet (NBSZ NKI)",
+      "name_en": "National Cyber Defence Institute",
+      "acronym": "NKI",
+      "website": "https://nki.gov.hu",
+      "mail_domains": ["nki.gov.hu"],
+      "evidence": [
+        {"domain": "nki.gov.hu", "url": "https://nki.gov.hu/wp-content/uploads/2024/03/kormanyzati_adathalasz_hatarozat_signed.pdf", "kind": "official_pdf", "note": "info@nki.gov.hu on official decision letters; csirt@nki.gov.hu as incident-reporting address in NKI security alerts"}
+      ],
+      "confidence": "high",
+      "notes": "National CSIRT (GovCERT-Hungary), organisationally part of the NBSZ."
+    },
+    {
+      "id": "hu-tek",
+      "type": "other_natsec",
+      "name_native": "Terrorelhárítási Központ",
+      "name_en": "Counter Terrorism Centre",
+      "acronym": "TEK",
+      "website": "http://tek.gov.hu",
+      "mail_domains": ["tek.gov.hu"],
+      "evidence": [
+        {"domain": "tek.gov.hu", "url": "https://folyoirat.ludovika.hu/index.php/nbsz/issue/download/456/153", "kind": "other_official", "note": "staff address pattern surname.firstname@tek.gov.hu (e.g. jasenszky.nandor@tek.gov.hu) in official university-press journal; tek.gov.hu website unreachable over HTTPS at research time"}
+      ],
+      "confidence": "medium",
+      "notes": "Per June 2026 reports (Telex), the independent TEK is being dissolved and recreated under the ORFK; domain usage may change after the reorganisation."
+    },
+    {
+      "id": "hu-nvsz",
+      "type": "other_natsec",
+      "name_native": "Nemzeti Védelmi Szolgálat",
+      "name_en": "National Protective Service",
+      "acronym": "NVSZ",
+      "website": "https://nvsz.hu",
+      "mail_domains": ["nvsz.hu"],
+      "evidence": [
+        {"domain": "nvsz.hu", "url": "https://nvsz.hu/hirek/?page_id=8", "kind": "contact_page", "note": "official contact page lists nvsz@nvsz.hu (general) and sajto@nvsz.hu (press)"}
+      ],
+      "confidence": "high",
+      "notes": "Internal anti-corruption / integrity-protection law-enforcement body supervised by the Ministry of Interior."
+    }
+  ],
+  "gaps": [
+    "border_guard: no separate body — the Határőrség was merged into the Rendőrség (ORFK) in 2008; border policing covered under hu-orfk",
+    "gendarmerie: no such body in Hungary",
+    "TEK confidence only medium: tek.gov.hu website unreachable at research time and the body is being reorganised under ORFK (June 2026); mail domain evidenced only from an official journal author footnote",
+    "SZTFH (Szabályozott Tevékenységek Felügyeleti Hatósága) deliberately excluded: cybersecurity supervisory competence moved on; operational cyber defence is NBSZ NKI",
+    "ORFK/police domains from 2014/2019 official documents; current pattern on police.hu contact pages not re-verified page-by-page (search budget exhausted)"
+  ]
+}

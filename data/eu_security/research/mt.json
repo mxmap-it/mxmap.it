@@ -1,0 +1,103 @@
+{
+  "country": "MT",
+  "country_name_en": "Malta",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "mt-malta-police-force",
+      "type": "police",
+      "name_native": "Il-Korp tal-Pulizija ta' Malta",
+      "name_en": "Malta Police Force",
+      "acronym": "MPF",
+      "website": "https://pulizija.gov.mt",
+      "mail_domains": ["gov.mt"],
+      "evidence": [
+        {"domain": "gov.mt", "url": "https://qualityofservice.gov.mt/media/A_QSC/Malta%20Police%20Force/QSC%20Malta%20Police%20Force_EN.pdf", "kind": "official_pdf", "note": "general contact pulizija@gov.mt in the Force's Quality of Service Charter"},
+        {"domain": "gov.mt", "url": "https://freedomofinformation.gov.mt/en/contact-list/", "kind": "other_official", "note": "FOI contact foi.police@gov.mt; unit addresses follow xxx.police@gov.mt pattern (e.g. gbdv.police@gov.mt, hr.police@gov.mt, cmru.police@gov.mt)"}
+      ],
+      "confidence": "high",
+      "notes": "All police mail is on the shared government domain gov.mt, with unit mailboxes of the form <unit>.police@gov.mt."
+    },
+    {
+      "id": "mt-armed-forces-of-malta",
+      "type": "border_guard",
+      "name_native": "Il-Forzi Armati ta' Malta",
+      "name_en": "Armed Forces of Malta",
+      "acronym": "AFM",
+      "website": "https://afm.gov.mt",
+      "mail_domains": ["gov.mt"],
+      "evidence": [
+        {"domain": "gov.mt", "url": "https://afm.gov.mt/freedom-of-information/", "kind": "other_official", "note": "FOI contact foi.afm@gov.mt on the AFM's own FOI page; pattern xxx.afm@gov.mt"}
+      ],
+      "confidence": "high",
+      "notes": "Malta has no separate border guard: the AFM (Maritime Squadron and border-control functions) performs maritime border surveillance and SAR, so it is classified here as border_guard; it is simultaneously the country's entire military. Website uses afm.gov.mt but email is on gov.mt."
+    },
+    {
+      "id": "mt-malta-security-service",
+      "type": "intelligence",
+      "name_native": "Is-Servizz tas-Sigurtà ta' Malta",
+      "name_en": "Malta Security Service",
+      "acronym": "MSS",
+      "website": "https://homeaffairs.gov.mt",
+      "mail_domains": ["gov.mt"],
+      "evidence": [
+        {"domain": "gov.mt", "url": "https://homeaffairs.gov.mt", "kind": "assumed_from_website", "note": "MSS has no website or published email; established by the Security Service Act 1996, operates under ministerial/PM oversight; assumed to use the shared gov.mt mail domain like all Maltese government bodies"}
+      ],
+      "confidence": "low",
+      "notes": "Domestic intelligence agency with essentially no public footprint: its only public output is an annual report tabled in Parliament; complaints go through an independent Commissioner. Website given is the parent ministry's."
+    },
+    {
+      "id": "mt-ministry-home-affairs-security",
+      "type": "interior_ministry",
+      "name_native": "Il-Ministeru għall-Intern, is-Sigurtà u x-Xogħol",
+      "name_en": "Ministry for Home Affairs, Security and Employment",
+      "acronym": "MHSE",
+      "website": "https://homeaffairs.gov.mt",
+      "mail_domains": ["gov.mt"],
+      "evidence": [
+        {"domain": "gov.mt", "url": "https://datainfo.gov.mt/wp-content/uploads/2024/04/MHSE-Contact-List.pdf", "kind": "official_pdf", "note": "ministry FOI contact foi.mhse@gov.mt (Permanent Secretariat and most line entities)"},
+        {"domain": "gov.mt", "url": "https://sigurta.gov.mt/wp-content/uploads/2023/04/FOI-Office-of-the-Permanent-Secretary.pdf", "kind": "official_pdf", "note": "earlier name variant used foi.mhsr@gov.mt; same gov.mt domain across renamings"}
+      ],
+      "confidence": "high",
+      "notes": "Ministry name changes frequently: homepage (2026) titles it Ministry for Home Affairs, Security and Employment, while some mid-2026 circulars use 'Ministry for Home Affairs and Security'. It is also the de facto defence ministry: the Armed Forces of Malta fall under its portfolio (Malta has no separate Ministry of Defence). Secondary site sigurta.gov.mt."
+    },
+    {
+      "id": "mt-cipd-csirtmalta",
+      "type": "cybersecurity",
+      "name_native": "Id-Direttorat għall-Protezzjoni tal-Infrastruttura Kritika / CSIRTMalta",
+      "name_en": "Critical Infrastructure Protection Directorate (incl. CSIRTMalta, national CSIRT)",
+      "acronym": "CIPD",
+      "website": "https://maltacip.gov.mt",
+      "mail_domains": ["gov.mt"],
+      "evidence": [
+        {"domain": "gov.mt", "url": "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive-malta", "kind": "other_official", "note": "national CSIRT contact csirtmalta@gov.mt; NIS single point of contact (CIIP Unit) maltacip@gov.mt"},
+        {"domain": "gov.mt", "url": "https://www.trusted-introducer.org/directory/teams/csirtmalta-mt.html", "kind": "other_official", "note": "Trusted Introducer directory lists csirtmalta@gov.mt with matching PGP UID"}
+      ],
+      "confidence": "high",
+      "notes": "CSIRTMalta and the CIIP Unit are incorporated within the CIPD, which sits under the Ministry for Home Affairs. NIS2 transposed by Legal Notice 89 of 2026. MITA runs the government SOC but is an IT agency, not included."
+    },
+    {
+      "id": "mt-civil-protection-department",
+      "type": "other_natsec",
+      "name_native": "Id-Dipartiment tal-Protezzjoni Ċivili",
+      "name_en": "Civil Protection Department",
+      "acronym": "CPD",
+      "website": "https://homeaffairs.gov.mt/civil-protection-department/",
+      "mail_domains": ["gov.mt"],
+      "evidence": [
+        {"domain": "gov.mt", "url": "https://qualityofservice.gov.mt/media/A_QSC/Civil%20Protection%20Department/QSC%20Civil%20Protection%20Department.pdf", "kind": "official_pdf", "note": "general contact civilprotection@gov.mt in the department's Quality of Service Charter"},
+        {"domain": "gov.mt", "url": "https://civil-protection-humanitarian-aid.ec.europa.eu/what/civil-protection/national-disaster-management-system/malta_en", "kind": "other_official", "note": "EU civil protection profile confirms civilprotection@gov.mt"}
+      ],
+      "confidence": "high",
+      "notes": "National fire, rescue and disaster-management service under the Ministry for Home Affairs."
+    }
+  ],
+  "gaps": [
+    "gendarmerie: Malta has no gendarmerie-type force; the Malta Police Force is the single national police body.",
+    "border_guard: no standalone border guard agency; the Armed Forces of Malta perform maritime border surveillance (classified under border_guard here), with immigration/border checks handled by the Malta Police Force.",
+    "defence_ministry: Malta has no separate Ministry of Defence; the Armed Forces of Malta fall under the Ministry for Home Affairs, Security and Employment.",
+    "intelligence: the Malta Security Service has no website and no published email address; its gov.mt mail domain is assumed (confidence low).",
+    "All Maltese government entities use the single shared mail domain gov.mt; no entity-specific mail domains exist, which limits per-entity email-sovereignty differentiation."
+  ]
+}

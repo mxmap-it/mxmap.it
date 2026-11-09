@@ -1,0 +1,13 @@
+{
+  "country": "AD",
+  "country_name_en": "Andorra",
+  "group": "microstate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {"id": "ad-policia", "type": "police", "name_native": "Cos de Policia d'Andorra", "name_en": "Police Corps of Andorra", "acronym": "", "website": "https://www.policia.ad", "mail_domains": ["policia.ad"], "evidence": [{"domain": "policia.ad", "url": "https://rm.coe.int/andorra-transferement-des-personnes-condamnees-2025/1680b438e7", "kind": "official_pdf", "note": "coop-intl@policia.ad (Council of Europe 2025 doc); detec@policia.ad (CoE cybercrime guide)"}], "confidence": "medium", "notes": "Only police force of Andorra; also handles border and immigration control."},
+    {"id": "ad-govern-interior", "type": "interior_ministry", "name_native": "Ministeri de Justícia i Interior", "name_en": "Ministry of Justice and Interior", "acronym": "MJI", "website": "https://www.govern.ad", "mail_domains": ["govern.ad"], "evidence": [{"domain": "govern.ad", "url": "https://www.hcch.net/en/states/authorities/details3/?aid=902", "kind": "other_official", "note": "cooperacio_internacional_mji@govern.ad; dpd@govern.ad (government DPO)"}], "confidence": "medium", "notes": "All government ministries use the govern.ad mail domain."},
+    {"id": "ad-ciberseguretat", "type": "cybersecurity", "name_native": "Agència Nacional de Ciberseguretat d'Andorra", "name_en": "National Cybersecurity Agency of Andorra", "acronym": "ANC-AD", "website": "https://www.ciberseguretat.ad", "mail_domains": ["ciberseguretat.ad"], "evidence": [{"domain": "ciberseguretat.ad", "url": "https://www.ciberseguretat.ad", "kind": "assumed_from_website", "note": "assumed from website registrable domain; hosts the national CSIRT (AndorraCERT)"}], "confidence": "low", "notes": ""},
+    {"id": "ad-duana", "type": "border_guard", "name_native": "Departament de Duana", "name_en": "Customs Department", "acronym": "", "website": "https://www.duana.ad", "mail_domains": ["duana.ad", "govern.ad"], "evidence": [{"domain": "duana.ad", "url": "https://www.duana.ad", "kind": "assumed_from_website", "note": "assumed from website registrable domain"}, {"domain": "govern.ad", "url": "https://www.govern.ad", "kind": "assumed_from_website", "note": "customs is a government department; may use the central govern.ad mail domain"}], "confidence": "low", "notes": "Customs-security body at the French and Spanish borders; immigration checks done by the Police Corps."}
+  ],
+  "gaps": ["gendarmerie: none (single national police corps)", "intelligence: no standalone intelligence service (functions within the Police Corps)", "defence_ministry: Andorra has no armed forces or defence ministry (defence by France and Spain)"]
+}

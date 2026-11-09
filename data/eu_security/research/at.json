@@ -1,0 +1,152 @@
+{
+  "country": "AT",
+  "country_name_en": "Austria",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "at-bmi",
+      "type": "interior_ministry",
+      "name_native": "Bundesministerium für Inneres",
+      "name_en": "Federal Ministry of the Interior",
+      "acronym": "BMI",
+      "website": "https://www.bmi.gv.at",
+      "mail_domains": ["bmi.gv.at"],
+      "evidence": [
+        {"domain": "bmi.gv.at", "url": "https://www.bmi.gv.at/kontakt/", "kind": "contact_page", "note": "post@bmi.gv.at (Einlaufstelle), buergerservice@bmi.gv.at"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "at-bmlv",
+      "type": "defence_ministry",
+      "name_native": "Bundesministerium für Landesverteidigung",
+      "name_en": "Federal Ministry of Defence",
+      "acronym": "BMLV",
+      "website": "https://www.bundesheer.at",
+      "mail_domains": ["bmlv.gv.at"],
+      "evidence": [
+        {"domain": "bmlv.gv.at", "url": "https://www.bmlv.gv.at/download_archiv/pdfs/datenschutzerklaerung_bmlv.pdf", "kind": "official_pdf", "note": "datenschutz@bmlv.gv.at; also milizservice@bmlv.gv.at"}
+      ],
+      "confidence": "high",
+      "notes": "hbv.gv.at also seen for some Bundesheer editorial addresses (dion7.redaktion@hbv.gv.at)"
+    },
+    {
+      "id": "at-bk",
+      "type": "police",
+      "name_native": "Bundeskriminalamt",
+      "name_en": "Criminal Intelligence Service Austria",
+      "acronym": "BK",
+      "website": "https://www.bundeskriminalamt.at",
+      "mail_domains": ["bmi.gv.at"],
+      "evidence": [
+        {"domain": "bmi.gv.at", "url": "https://www.bundeskriminalamt.at/en/601/index.html", "kind": "contact_page", "note": "Bundeskriminalamt@bmi.gv.at; BMI-II-BK-SPOC@bmi.gv.at (BMI contact page); against-cybercrime@bmi.gv.at"}
+      ],
+      "confidence": "high",
+      "notes": "Part of BMI Directorate-General for Public Security; mails under the ministry domain"
+    },
+    {
+      "id": "at-bpol",
+      "type": "police",
+      "name_native": "Bundespolizei (Landespolizeidirektionen)",
+      "name_en": "Federal Police (Provincial Police Directorates)",
+      "acronym": "",
+      "website": "https://www.polizei.gv.at",
+      "mail_domains": ["polizei.gv.at"],
+      "evidence": [
+        {"domain": "polizei.gv.at", "url": "https://www.polizei.gv.at/Wien/files_wien/datenschutz/2020/BF_Anzeigeerstattung_Online_W_19102020_2.pdf", "kind": "official_pdf", "note": "LPD-W@polizei.gv.at pattern; LPD-O@, PI-O-Mondsee@polizei.gv.at"}
+      ],
+      "confidence": "high",
+      "notes": "Uniformed federal police; also performs border police duties (no separate border guard agency). Austria absorbed the Gendarmerie into the Bundespolizei in 2005."
+    },
+    {
+      "id": "at-dsn",
+      "type": "intelligence",
+      "name_native": "Direktion Staatsschutz und Nachrichtendienst",
+      "name_en": "Directorate State Protection and Intelligence Service",
+      "acronym": "DSN",
+      "website": "https://www.dsn.gv.at",
+      "mail_domains": ["dsn.gv.at"],
+      "evidence": [
+        {"domain": "dsn.gv.at", "url": "https://www.dsn.gv.at/", "kind": "assumed_from_website", "note": "No published email found on dsn.gv.at; assumed from website domain. May also use bmi.gv.at (DSN is a BMI directorate)."}
+      ],
+      "confidence": "low",
+      "notes": "Domestic intelligence/state protection, successor of BVT (2021)"
+    },
+    {
+      "id": "at-hnaa",
+      "type": "intelligence",
+      "name_native": "Heeresnachrichtenamt",
+      "name_en": "Army Intelligence Office",
+      "acronym": "HNaA",
+      "website": "https://www.bundesheer.at",
+      "mail_domains": ["bmlv.gv.at"],
+      "evidence": [
+        {"domain": "bmlv.gv.at", "url": "https://www.bundesheer.at", "kind": "assumed_from_website", "note": "Military foreign intelligence under BMLV; no own website or published address — assumed ministry domain"}
+      ],
+      "confidence": "low",
+      "notes": ""
+    },
+    {
+      "id": "at-abwa",
+      "type": "intelligence",
+      "name_native": "Abwehramt",
+      "name_en": "Counterintelligence Office",
+      "acronym": "AbwA",
+      "website": "https://www.bundesheer.at",
+      "mail_domains": ["bmlv.gv.at"],
+      "evidence": [
+        {"domain": "bmlv.gv.at", "url": "https://www.bundesheer.at", "kind": "assumed_from_website", "note": "Military counterintelligence under BMLV; no own website or published address — assumed ministry domain"}
+      ],
+      "confidence": "low",
+      "notes": ""
+    },
+    {
+      "id": "at-bak",
+      "type": "other_natsec",
+      "name_native": "Bundesamt zur Korruptionsprävention und Korruptionsbekämpfung",
+      "name_en": "Federal Bureau of Anti-Corruption",
+      "acronym": "BAK",
+      "website": "https://www.bak.gv.at",
+      "mail_domains": ["bak.gv.at"],
+      "evidence": [
+        {"domain": "bak.gv.at", "url": "https://www.bmi.gv.at/kontakt/", "kind": "contact_page", "note": "BMI-III-BAK-SPOC@bak.gv.at on BMI contact page"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "at-govcert",
+      "type": "cybersecurity",
+      "name_native": "GovCERT Austria",
+      "name_en": "GovCERT Austria",
+      "acronym": "GovCERT",
+      "website": "https://www.govcert.gv.at",
+      "mail_domains": ["govcert.gv.at"],
+      "evidence": [
+        {"domain": "govcert.gv.at", "url": "https://www.govcert.gv.at/", "kind": "contact_page", "note": "reports@govcert.gv.at, team@govcert.gv.at"}
+      ],
+      "confidence": "high",
+      "notes": "Government CERT, operated by Federal Chancellery with nic.at"
+    },
+    {
+      "id": "at-certat",
+      "type": "cybersecurity",
+      "name_native": "Computer Emergency Response Team Austria",
+      "name_en": "CERT.at — national CERT of Austria",
+      "acronym": "CERT.at",
+      "website": "https://www.cert.at",
+      "mail_domains": ["cert.at"],
+      "evidence": [
+        {"domain": "cert.at", "url": "https://www.cert.at/de/ueber-uns/kontakt/", "kind": "contact_page", "note": "reports@cert.at, team@cert.at"}
+      ],
+      "confidence": "high",
+      "notes": "National CERT, subsidiary of nic.at GmbH (private operator with public mandate)"
+    }
+  ],
+  "gaps": [
+    "gendarmerie: Bundesgendarmerie merged into Bundespolizei in 2005",
+    "border_guard: no separate agency — border police is a Bundespolizei/BMI function"
+  ]
+}

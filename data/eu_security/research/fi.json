@@ -1,0 +1,110 @@
+{
+  "country": "FI",
+  "country_name_en": "Finland",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "fi-poliisi",
+      "type": "police",
+      "name_native": "Poliisi / Poliisihallitus",
+      "name_en": "Finnish Police / National Police Board",
+      "acronym": "",
+      "website": "https://poliisi.fi",
+      "mail_domains": ["poliisi.fi"],
+      "evidence": [
+        {"domain": "poliisi.fi", "url": "https://poliisi.fi/poliisihallitus", "kind": "contact_page", "note": "kirjaamo.poliisihallitus@poliisi.fi"}
+      ],
+      "confidence": "high",
+      "notes": "Includes the National Bureau of Investigation (Keskusrikospoliisi), same domain."
+    },
+    {
+      "id": "fi-supo",
+      "type": "intelligence",
+      "name_native": "Suojelupoliisi",
+      "name_en": "Finnish Security and Intelligence Service",
+      "acronym": "Supo",
+      "website": "https://supo.fi",
+      "mail_domains": ["supo.fi"],
+      "evidence": [
+        {"domain": "supo.fi", "url": "https://supo.fi/yhteystiedot", "kind": "contact_page", "note": "kirjaamo@supo.fi"}
+      ],
+      "confidence": "high",
+      "notes": "Civilian security and intelligence service, under the Ministry of the Interior."
+    },
+    {
+      "id": "fi-rajavartiolaitos",
+      "type": "border_guard",
+      "name_native": "Rajavartiolaitos",
+      "name_en": "Finnish Border Guard",
+      "acronym": "RVL",
+      "website": "https://raja.fi",
+      "mail_domains": ["raja.fi"],
+      "evidence": [
+        {"domain": "raja.fi", "url": "https://raja.fi/en/contact-information", "kind": "contact_page", "note": "e.g. vaalimaa@raja.fi, rekrytointi.rmvk@raja.fi (crossing points and units)"}
+      ],
+      "confidence": "high",
+      "notes": "Military-structured border and coast guard under the Ministry of the Interior; also performs coast-guard functions."
+    },
+    {
+      "id": "fi-puolustusvoimat",
+      "type": "intelligence",
+      "name_native": "Puolustusvoimat (Pääesikunnan tiedustelulaitos)",
+      "name_en": "Finnish Defence Forces (Defence Forces Intelligence / Military Intelligence)",
+      "acronym": "PV",
+      "website": "https://puolustusvoimat.fi",
+      "mail_domains": ["mil.fi"],
+      "evidence": [
+        {"domain": "mil.fi", "url": "https://puolustusvoimat.fi/en/contact-information", "kind": "contact_page", "note": "staff pattern firstname.lastname@mil.fi (site footer); military intelligence is part of the Defence Forces"}
+      ],
+      "confidence": "high",
+      "notes": "Military intelligence (incl. signals intelligence, Viestikoekeskus) sits within the Defence Forces; no separate public agency or domain."
+    },
+    {
+      "id": "fi-sisaministerio",
+      "type": "interior_ministry",
+      "name_native": "Sisäministeriö",
+      "name_en": "Ministry of the Interior",
+      "acronym": "SM",
+      "website": "https://intermin.fi",
+      "mail_domains": ["gov.fi"],
+      "evidence": [
+        {"domain": "gov.fi", "url": "https://intermin.fi/yhteystiedot", "kind": "contact_page", "note": "kirjaamo.sm@gov.fi, viestinta.sm@gov.fi (Finnish ministries migrated to the shared gov.fi mail domain)"}
+      ],
+      "confidence": "high",
+      "notes": "Responsible for the Police, Supo and the Border Guard."
+    },
+    {
+      "id": "fi-puolustusministerio",
+      "type": "defence_ministry",
+      "name_native": "Puolustusministeriö",
+      "name_en": "Ministry of Defence",
+      "acronym": "PLM",
+      "website": "https://www.defmin.fi",
+      "mail_domains": ["gov.fi"],
+      "evidence": [
+        {"domain": "gov.fi", "url": "https://www.defmin.fi/yhteystiedot", "kind": "contact_page", "note": "kirjaamo.plm@gov.fi, viestinta.plm@gov.fi; staff pattern etunimi.sukunimi@gov.fi"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "fi-traficom-ncsc",
+      "type": "cybersecurity",
+      "name_native": "Liikenne- ja viestintävirasto Traficom / Kyberturvallisuuskeskus",
+      "name_en": "Finnish Transport and Communications Agency Traficom / National Cyber Security Centre Finland",
+      "acronym": "NCSC-FI",
+      "website": "https://www.kyberturvallisuuskeskus.fi",
+      "mail_domains": ["traficom.fi"],
+      "evidence": [
+        {"domain": "traficom.fi", "url": "https://www.traficom.fi/fi/yhteystiedot/traficomin-puhelinvaihde-ja-kirjaamo", "kind": "contact_page", "note": "kirjaamo@traficom.fi; NCSC-FI is a department of Traficom (incident reporting via eservices.traficom.fi forms)"}
+      ],
+      "confidence": "high",
+      "notes": "NCSC-FI / CERT-FI is part of Traficom; historical cert@ncsc.fi address not currently shown on official pages."
+    }
+  ],
+  "gaps": [
+    "No gendarmerie-type force in Finland (Border Guard is the closest militarized internal-security body, listed under border_guard).",
+    "ncsc.fi as a distinct current mail domain for NCSC-FI not evidenced on official pages (reporting is via web forms)."
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "country": "LU",
+  "country_name_en": "Luxembourg",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "lu-police",
+      "type": "police",
+      "name_native": "Police Grand-Ducale",
+      "name_en": "Grand Ducal Police",
+      "acronym": "",
+      "website": "https://police.public.lu",
+      "mail_domains": ["police.public.lu"],
+      "evidence": [
+        {"domain": "police.public.lu", "url": "https://police.public.lu/fr/support/contact.html", "kind": "contact_page", "note": "contact@police.public.lu"}
+      ],
+      "confidence": "high",
+      "notes": "Single national police force (also performs border control at Findel airport). Internal staff addresses may use police.etat.lu (not evidenced)."
+    },
+    {
+      "id": "lu-mai",
+      "type": "interior_ministry",
+      "name_native": "Ministère des Affaires intérieures",
+      "name_en": "Ministry of Home Affairs",
+      "acronym": "MAI",
+      "website": "https://maint.gouvernement.lu",
+      "mail_domains": ["mai.etat.lu"],
+      "evidence": [
+        {"domain": "mai.etat.lu", "url": "https://maint.gouvernement.lu/fr/support/contact.html", "kind": "contact_page", "note": "info@mai.etat.lu, immigration.public@mai.etat.lu, communication@mai.etat.lu"}
+      ],
+      "confidence": "high",
+      "notes": "Since 2023 also responsible for the police (former Ministry of Internal Security merged in)"
+    },
+    {
+      "id": "lu-defense",
+      "type": "defence_ministry",
+      "name_native": "Direction de la défense (Ministère des Affaires étrangères et européennes, de la Défense)",
+      "name_en": "Directorate of Defence (Ministry of Foreign and European Affairs and Defence)",
+      "acronym": "",
+      "website": "https://defense.gouvernement.lu",
+      "mail_domains": ["mae.etat.lu"],
+      "evidence": [
+        {"domain": "mae.etat.lu", "url": "https://defense.gouvernement.lu/fr/support/contact.html", "kind": "contact_page", "note": "info.defense@mae.etat.lu, press.defence@mae.etat.lu"}
+      ],
+      "confidence": "high",
+      "notes": "Defence sits within the MFA; the Luxembourg Army website is armee.lu"
+    },
+    {
+      "id": "lu-sre",
+      "type": "intelligence",
+      "name_native": "Service de renseignement de l'État",
+      "name_en": "State Intelligence Service",
+      "acronym": "SRE",
+      "website": "https://sre.gouvernement.lu",
+      "mail_domains": ["me.etat.lu"],
+      "evidence": [
+        {"domain": "me.etat.lu", "url": "https://sre.gouvernement.lu/fr/support/contact.html", "kind": "contact_page", "note": "presse@me.etat.lu (press via Ministry of State); no SRE-own address published"}
+      ],
+      "confidence": "medium",
+      "notes": "Civilian intelligence service under the Ministry of State; own mail domain (possibly sre.etat.lu) not publicly evidenced"
+    },
+    {
+      "id": "lu-hcpn",
+      "type": "other_natsec",
+      "name_native": "Haut-Commissariat à la protection nationale",
+      "name_en": "High Commission for National Protection",
+      "acronym": "HCPN",
+      "website": "https://hcpn.gouvernement.lu",
+      "mail_domains": ["hcpn.public.lu", "me.etat.lu"],
+      "evidence": [
+        {"domain": "hcpn.public.lu", "url": "https://hcpn.gouvernement.lu/fr/support/contact.html", "kind": "contact_page", "note": "info@hcpn.public.lu"},
+        {"domain": "me.etat.lu", "url": "https://hcpn.gouvernement.lu/fr/support/contact.html", "kind": "contact_page", "note": "presse@me.etat.lu (press via Ministry of State)"}
+      ],
+      "confidence": "high",
+      "notes": "National crisis-management and critical-infrastructure protection body; also national NIS/cyber coordination authority"
+    },
+    {
+      "id": "lu-govcert",
+      "type": "cybersecurity",
+      "name_native": "GOVCERT.LU",
+      "name_en": "Government CERT of Luxembourg",
+      "acronym": "GOVCERT.LU",
+      "website": "https://www.govcert.lu",
+      "mail_domains": ["govcert.etat.lu"],
+      "evidence": [
+        {"domain": "govcert.etat.lu", "url": "https://www.govcert.lu/contact/", "kind": "contact_page", "note": "soc@govcert.etat.lu, info@govcert.etat.lu"}
+      ],
+      "confidence": "high",
+      "notes": "CSIRT for government and critical infrastructure, attached to the HCPN"
+    },
+    {
+      "id": "lu-circl",
+      "type": "cybersecurity",
+      "name_native": "Computer Incident Response Center Luxembourg",
+      "name_en": "Computer Incident Response Center Luxembourg",
+      "acronym": "CIRCL",
+      "website": "https://www.circl.lu",
+      "mail_domains": ["circl.lu"],
+      "evidence": [
+        {"domain": "circl.lu", "url": "https://www.circl.lu/contact/", "kind": "contact_page", "note": "info@circl.lu"}
+      ],
+      "confidence": "high",
+      "notes": "National CERT for the private sector/municipalities, part of the Luxembourg House of Cybersecurity"
+    },
+    {
+      "id": "lu-douanes",
+      "type": "other_natsec",
+      "name_native": "Administration des douanes et accises",
+      "name_en": "Customs and Excise Administration",
+      "acronym": "ADA",
+      "website": "https://douanes.public.lu",
+      "mail_domains": ["douanes.public.lu"],
+      "evidence": [
+        {"domain": "douanes.public.lu", "url": "https://douanes.public.lu/fr/support/contact.html", "kind": "assumed_from_website", "note": "No address published (contact form only); assumed from website domain — may actually use do.etat.lu internally"}
+      ],
+      "confidence": "low",
+      "notes": "Armed administration with security/anti-smuggling role"
+    }
+  ],
+  "gaps": [
+    "gendarmerie: Gendarmerie grand-ducale merged into the Police Grand-Ducale in 2000",
+    "border_guard: no separate agency — border/immigration control by Police Grand-Ducale and Direction générale de l'immigration (MAI)",
+    "military intelligence: no distinct public body (SRE covers; army is NATO-integrated)"
+  ]
+}

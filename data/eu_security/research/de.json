@@ -1,0 +1,138 @@
+{
+  "country": "DE",
+  "country_name_en": "Germany",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "de-bmi",
+      "type": "interior_ministry",
+      "name_native": "Bundesministerium des Innern und für Heimat",
+      "name_en": "Federal Ministry of the Interior and Community",
+      "acronym": "BMI",
+      "website": "https://www.bmi.bund.de",
+      "mail_domains": ["bmi.bund.de"],
+      "evidence": [
+        {"domain": "bmi.bund.de", "url": "https://www.bmi.bund.de/EN/service/privacy-policy/privacy-policy.html", "kind": "privacy_page", "note": "poststelle@bmi.bund.de (central mailbox); bds@bmi.bund.de (DPO)"}
+      ],
+      "confidence": "high",
+      "notes": "DE-Mail: poststelle@bmi-bund.de-mail.de"
+    },
+    {
+      "id": "de-bmvg",
+      "type": "defence_ministry",
+      "name_native": "Bundesministerium der Verteidigung",
+      "name_en": "Federal Ministry of Defence",
+      "acronym": "BMVg",
+      "website": "https://www.bmvg.de",
+      "mail_domains": ["bmvg.bund.de", "bundeswehr.org"],
+      "evidence": [
+        {"domain": "bmvg.bund.de", "url": "https://www.bmvg.de/de/impressum", "kind": "other_official", "note": "poststelle@bmvg.bund.de (publisher)"},
+        {"domain": "bundeswehr.org", "url": "https://www.bmvg.de/de/impressum", "kind": "other_official", "note": "info@bundeswehr.org (citizen dialogue), redaktionbweingang@bundeswehr.org"}
+      ],
+      "confidence": "high",
+      "notes": "bundeswehr.org is used widely across BMVg/Bundeswehr organisation"
+    },
+    {
+      "id": "de-bka",
+      "type": "police",
+      "name_native": "Bundeskriminalamt",
+      "name_en": "Federal Criminal Police Office",
+      "acronym": "BKA",
+      "website": "https://www.bka.de",
+      "mail_domains": ["bka.bund.de", "bka.de"],
+      "evidence": [
+        {"domain": "bka.bund.de", "url": "https://bka.de/SharedDocs/Kontaktdaten/DE/ZentralesInformationsmanagementUndFahndungen/U_entrance.html", "kind": "contact_page", "note": "u-entrance@bka.bund.de (reporting channel on official bka.de page)"},
+        {"domain": "bka.de", "url": "https://bka.hinweisportal.de/~portal/en/impr", "kind": "other_official", "note": "impressum-bka-internetauftritt@bka.de (website imprint)"}
+      ],
+      "confidence": "medium",
+      "notes": "General contact is via web forms; DE-Mail poststelle@bka.de-mail.de. bka.bund.de evidenced only via specific channel mailbox."
+    },
+    {
+      "id": "de-bpol",
+      "type": "border_guard",
+      "name_native": "Bundespolizei",
+      "name_en": "Federal Police",
+      "acronym": "BPOL",
+      "website": "https://www.bundespolizei.de",
+      "mail_domains": ["polizei.bund.de"],
+      "evidence": [
+        {"domain": "polizei.bund.de", "url": "https://bfdi.bund.de/EN/Buerger/Inhalte/Polizei-Strafjustiz/National/Bundespolizei.html", "kind": "other_official", "note": "bpolp@polizei.bund.de (HQ Potsdam), bpolp.dsb@polizei.bund.de (DPO)"}
+      ],
+      "confidence": "medium",
+      "notes": "Also a national police force; primary federal border police role. Public site pushes web forms; domain evidenced via federal DPO (BfDI) official page."
+    },
+    {
+      "id": "de-bfv",
+      "type": "intelligence",
+      "name_native": "Bundesamt für Verfassungsschutz",
+      "name_en": "Federal Office for the Protection of the Constitution",
+      "acronym": "BfV",
+      "website": "https://www.verfassungsschutz.de",
+      "mail_domains": ["bfv.bund.de"],
+      "evidence": [
+        {"domain": "bfv.bund.de", "url": "https://www.verfassungsschutz.de/EN/service/publication-data/publication-data.html", "kind": "other_official", "note": "kontakt@bfv.bund.de; also poststelle@bfv.bund.de (PGP key), hinweise@bfv.bund.de"}
+      ],
+      "confidence": "high",
+      "notes": "Domestic intelligence. BfV privacy policy states its own addresses end in bfv.bund.de or verfassungsschutz.de."
+    },
+    {
+      "id": "de-bnd",
+      "type": "intelligence",
+      "name_native": "Bundesnachrichtendienst",
+      "name_en": "Federal Intelligence Service",
+      "acronym": "BND",
+      "website": "https://www.bnd.bund.de",
+      "mail_domains": ["bnd.bund.de", "bundesnachrichtendienst.de"],
+      "evidence": [
+        {"domain": "bnd.bund.de", "url": "https://www.bnd.bund.de/EN/Contact/contact_node.html", "kind": "contact_page", "note": "zentrale@bnd.bund.de; pressestelle@bnd.bund.de"},
+        {"domain": "bundesnachrichtendienst.de", "url": "https://www.bnd.bund.de/EN/Service/PrivacyPolicy/privacypolicy_node.html", "kind": "privacy_page", "note": "zentrale@bundesnachrichtendienst.de listed in privacy policy"}
+      ],
+      "confidence": "high",
+      "notes": "Foreign intelligence incl. SIGINT"
+    },
+    {
+      "id": "de-bamad",
+      "type": "intelligence",
+      "name_native": "Bundesamt für den Militärischen Abschirmdienst",
+      "name_en": "Federal Office for Military Counterintelligence",
+      "acronym": "BAMAD",
+      "website": "https://www.bundeswehr.de/de/organisation/mad-bundesamt-fuer-den-militaerischen-abschirmdienst",
+      "mail_domains": ["bundeswehr.org"],
+      "evidence": [
+        {"domain": "bundeswehr.org", "url": "https://www.bundeswehr.de/de/organisation/mad-bundesamt-fuer-den-militaerischen-abschirmdienst/ansprechpartner-5041676", "kind": "contact_page", "note": "bamadredaktion@bundeswehr.org (editorial contact on official Bundeswehr page)"}
+      ],
+      "confidence": "medium",
+      "notes": "Military counterintelligence. No public bamad.bund.de mailbox evidenced; general contact via phone/post."
+    },
+    {
+      "id": "de-bsi",
+      "type": "cybersecurity",
+      "name_native": "Bundesamt für Sicherheit in der Informationstechnik",
+      "name_en": "Federal Office for Information Security",
+      "acronym": "BSI",
+      "website": "https://www.bsi.bund.de",
+      "mail_domains": ["bsi.bund.de"],
+      "evidence": [
+        {"domain": "bsi.bund.de", "url": "https://www.bsi.bund.de/DE/Service-Navi/Kontakt/kontakt_node.html", "kind": "contact_page", "note": "service-center@bsi.bund.de; bsi@bsi.bund.de"}
+      ],
+      "confidence": "high",
+      "notes": "National cybersecurity authority; CERT-Bund is part of BSI and also mails at bsi.bund.de (certbund@bsi.bund.de)"
+    },
+    {
+      "id": "de-zka",
+      "type": "other_natsec",
+      "name_native": "Zollkriminalamt",
+      "name_en": "Customs Criminological Office",
+      "acronym": "ZKA",
+      "website": "https://www.zoll.de",
+      "mail_domains": ["zka.bund.de"],
+      "evidence": [
+        {"domain": "zka.bund.de", "url": "https://www.bfdi.bund.de/EN/Buerger/Inhalte/Polizei-Strafjustiz/National/Zollfahndungsdienst.html", "kind": "other_official", "note": "poststelle@zka.bund.de (listed by federal DPO)"}
+      ],
+      "confidence": "medium",
+      "notes": "Customs investigation service (under Finance Ministry). General customs administration mails at zoll.bund.de / zoll.de."
+    }
+  ],
+  "gaps": ["gendarmerie: Germany has no gendarmerie-type force"]
+}
