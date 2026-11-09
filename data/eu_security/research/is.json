@@ -1,0 +1,98 @@
+{
+  "country": "IS",
+  "country_name_en": "Iceland",
+  "group": "efta",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "is-rls",
+      "type": "police",
+      "name_native": "Ríkislögreglustjórinn / Lögreglan",
+      "name_en": "National Commissioner of the Icelandic Police",
+      "acronym": "RLS",
+      "website": "https://www.logreglan.is",
+      "mail_domains": ["logreglan.is"],
+      "evidence": [
+        {"domain": "logreglan.is", "url": "https://island.is/en/submit-data-to-the-police", "kind": "other_official", "note": "District police mailboxes on @logreglan.is listed on the official island.is government portal, e.g. nordurland.vestra@logreglan.is, vestfirdir@logreglan.is"}
+      ],
+      "confidence": "high",
+      "notes": "Single national police; web presence migrated to island.is but email stays on logreglan.is."
+    },
+    {
+      "id": "is-greiningardeild",
+      "type": "intelligence",
+      "name_native": "Greiningardeild ríkislögreglustjóra",
+      "name_en": "National Security Unit (analysis/intelligence unit of the National Police Commissioner)",
+      "acronym": "",
+      "website": "https://www.logreglan.is",
+      "mail_domains": ["logreglan.is"],
+      "evidence": [
+        {"domain": "logreglan.is", "url": "https://island.is/en/submit-data-to-the-police", "kind": "other_official", "note": "Part of the National Commissioner of Police; shares the police mail domain"}
+      ],
+      "confidence": "medium",
+      "notes": "Iceland has no standalone intelligence agency; security intelligence/analysis is a police unit."
+    },
+    {
+      "id": "is-lhg",
+      "type": "border_guard",
+      "name_native": "Landhelgisgæsla Íslands",
+      "name_en": "Icelandic Coast Guard",
+      "acronym": "LHG",
+      "website": "https://www.lhg.is",
+      "mail_domains": ["lhg.is"],
+      "evidence": [
+        {"domain": "lhg.is", "url": "https://www.lhg.is/um-landhelgisgaesluna/hafa-samband", "kind": "contact_page", "note": "lhg@lhg.is on official contact page"}
+      ],
+      "confidence": "high",
+      "notes": "Maritime border/security body; also performs defence-related functions (air surveillance, Icelandic Defence Agency tasks absorbed 2011) as Iceland has no military."
+    },
+    {
+      "id": "is-dmr",
+      "type": "interior_ministry",
+      "name_native": "Dómsmálaráðuneytið",
+      "name_en": "Ministry of Justice (interior-ministry equivalent: police, border, civil protection)",
+      "acronym": "DMR",
+      "website": "https://www.stjornarradid.is/raduneyti/domsmalaraduneytid/",
+      "mail_domains": ["dmr.is"],
+      "evidence": [
+        {"domain": "dmr.is", "url": "https://hcch.net/en/states/authorities/details3/?aid=622", "kind": "other_official", "note": "dmr@dmr.is listed as the ministry's email in the HCCH official authorities register; each Icelandic ministry has its own short mail domain"}
+      ],
+      "confidence": "medium",
+      "notes": "Website on the shared government portal stjornarradid.is; mail on dmr.is."
+    },
+    {
+      "id": "is-utn",
+      "type": "defence_ministry",
+      "name_native": "Utanríkisráðuneytið (varnarmálaskrifstofa)",
+      "name_en": "Ministry for Foreign Affairs (Directorate for Defence — defence-ministry equivalent)",
+      "acronym": "UTN",
+      "website": "https://www.stjornarradid.is/raduneyti/utanrikisraduneytid/",
+      "mail_domains": ["utn.is"],
+      "evidence": [
+        {"domain": "utn.is", "url": "https://www.stjornarradid.is/raduneyti/utanrikisraduneytid/um-raduneytid/", "kind": "contact_page", "note": "General address shown as utn[at]utn.is on the official ministry page"}
+      ],
+      "confidence": "high",
+      "notes": "Iceland has no ministry of defence; defence and NATO affairs sit in the foreign ministry's defence directorate."
+    },
+    {
+      "id": "is-cert-is",
+      "type": "cybersecurity",
+      "name_native": "Netöryggissveitin CERT-IS",
+      "name_en": "National Computer Emergency Response Team of Iceland",
+      "acronym": "CERT-IS",
+      "website": "https://www.cert.is",
+      "mail_domains": ["cert.is"],
+      "evidence": [
+        {"domain": "cert.is", "url": "https://cert.is/um-okkur/rfc-2350/", "kind": "other_official", "note": "cert@cert.is as team address (RFC 2350; also in Trusted Introducer directory PGP identity)"}
+      ],
+      "confidence": "high",
+      "notes": "National CSIRT, hosted by the Electronic Communications Office (Fjarskiptastofa)."
+    }
+  ],
+  "gaps": [
+    "No military and no ministry of defence — defence functions covered by the Ministry for Foreign Affairs (policy) and the Coast Guard (operations); NATO membership without armed forces",
+    "No standalone intelligence agency — the National Security Unit of the National Police Commissioner covers security intelligence",
+    "gendarmerie: none",
+    "Border control performed by the police (land/air) and Coast Guard (maritime); no separate border-guard agency"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "country": "GB",
+  "country_name_en": "United Kingdom",
+  "group": "uk",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "gb-home-office",
+      "type": "interior_ministry",
+      "name_native": "Home Office",
+      "name_en": "Home Office",
+      "acronym": "HO",
+      "website": "https://www.gov.uk/government/organisations/home-office",
+      "mail_domains": ["homeoffice.gov.uk"],
+      "evidence": [
+        {"domain": "homeoffice.gov.uk", "url": "https://www.gov.uk/government/organisations/home-office/about/publication-scheme", "kind": "other_official", "note": "public.enquiries@homeoffice.gov.uk; nationalityenquiries@homeoffice.gov.uk also on gov.uk"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "gb-mod",
+      "type": "defence_ministry",
+      "name_native": "Ministry of Defence",
+      "name_en": "Ministry of Defence",
+      "acronym": "MOD",
+      "website": "https://www.gov.uk/government/organisations/ministry-of-defence",
+      "mail_domains": ["mod.gov.uk"],
+      "evidence": [
+        {"domain": "mod.gov.uk", "url": "https://www.gov.uk/guidance/contact-the-ministry-of-defence", "kind": "contact_page", "note": "newsdesk@mod.gov.uk (media); MDP addresses e.g. MDP-GeneralEnquiries-GMB@mod.gov.uk on mod.police.uk"}
+      ],
+      "confidence": "high",
+      "notes": "General enquiries by web form only; media and unit mailboxes on mod.gov.uk."
+    },
+    {
+      "id": "gb-defence-intelligence",
+      "type": "intelligence",
+      "name_native": "Defence Intelligence",
+      "name_en": "Defence Intelligence",
+      "acronym": "DI",
+      "website": "https://www.gov.uk/government/groups/defence-intelligence",
+      "mail_domains": ["mod.gov.uk"],
+      "evidence": [
+        {"domain": "mod.gov.uk", "url": "https://www.gov.uk/government/groups/defence-intelligence", "kind": "other_official", "note": "Part of the Ministry of Defence; shares the MOD mail domain"}
+      ],
+      "confidence": "medium",
+      "notes": "Organisation within the MOD, not a standalone agency."
+    },
+    {
+      "id": "gb-mi5",
+      "type": "intelligence",
+      "name_native": "Security Service (MI5)",
+      "name_en": "Security Service",
+      "acronym": "MI5",
+      "website": "https://www.mi5.gov.uk",
+      "mail_domains": ["mi5.gov.uk"],
+      "evidence": [
+        {"domain": "mi5.gov.uk", "url": "https://www.mi5.gov.uk/contact-us", "kind": "assumed_from_website", "note": "Public contact is via web form only; no public email address displayed. Assumed from website registrable domain mi5.gov.uk"}
+      ],
+      "confidence": "low",
+      "notes": "Domestic security intelligence."
+    },
+    {
+      "id": "gb-sis",
+      "type": "intelligence",
+      "name_native": "Secret Intelligence Service (MI6)",
+      "name_en": "Secret Intelligence Service",
+      "acronym": "SIS",
+      "website": "https://www.sis.gov.uk",
+      "mail_domains": ["sis.gov.uk"],
+      "evidence": [
+        {"domain": "sis.gov.uk", "url": "https://www.sis.gov.uk", "kind": "assumed_from_website", "note": "No public email address displayed; assumed from website registrable domain sis.gov.uk"}
+      ],
+      "confidence": "low",
+      "notes": "Foreign intelligence."
+    },
+    {
+      "id": "gb-gchq",
+      "type": "intelligence",
+      "name_native": "Government Communications Headquarters",
+      "name_en": "Government Communications Headquarters",
+      "acronym": "GCHQ",
+      "website": "https://www.gchq.gov.uk",
+      "mail_domains": ["gchq.gov.uk"],
+      "evidence": [
+        {"domain": "gchq.gov.uk", "url": "https://www.gchq.gov.uk/section/news/media-centre", "kind": "press_page", "note": "Media team contactable by email on the gchq.gov.uk media centre page (press office address on gchq.gov.uk domain)"}
+      ],
+      "confidence": "medium",
+      "notes": "SIGNT agency; parent of NCSC."
+    },
+    {
+      "id": "gb-ncsc",
+      "type": "cybersecurity",
+      "name_native": "National Cyber Security Centre",
+      "name_en": "National Cyber Security Centre",
+      "acronym": "NCSC",
+      "website": "https://www.ncsc.gov.uk",
+      "mail_domains": ["ncsc.gov.uk"],
+      "evidence": [
+        {"domain": "ncsc.gov.uk", "url": "https://www.ncsc.gov.uk/section/about-this-website/contact-us", "kind": "contact_page", "note": "enquiries@ncsc.gov.uk (general enquiries address published by NCSC); report@phishing.gov.uk is the separate phishing-report service"}
+      ],
+      "confidence": "high",
+      "notes": "Part of GCHQ; also acts as national CERT (no distinct national CERT body)."
+    },
+    {
+      "id": "gb-nca",
+      "type": "police",
+      "name_native": "National Crime Agency",
+      "name_en": "National Crime Agency",
+      "acronym": "NCA",
+      "website": "https://www.nationalcrimeagency.gov.uk",
+      "mail_domains": ["nca.gov.uk"],
+      "evidence": [
+        {"domain": "nca.gov.uk", "url": "https://missingpersons.police.uk/en-gb/news/change-to-email-address", "kind": "other_official", "note": "ukmpu@nca.gov.uk; official notice states the NCA email domain is @nca.gov.uk (replacing @nca.x.gsi.gov.uk); JICC@NCA.gov.uk also published"}
+      ],
+      "confidence": "high",
+      "notes": "National law-enforcement agency for serious and organised crime. Website domain differs from mail domain."
+    },
+    {
+      "id": "gb-border-force",
+      "type": "border_guard",
+      "name_native": "Border Force",
+      "name_en": "Border Force",
+      "acronym": "BF",
+      "website": "https://www.gov.uk/government/organisations/border-force",
+      "mail_domains": ["homeoffice.gov.uk"],
+      "evidence": [
+        {"domain": "homeoffice.gov.uk", "url": "https://www.gov.uk/government/organisations/border-force", "kind": "other_official", "note": "Border Force is a law-enforcement command within the Home Office and uses Home Office email (homeoffice.gov.uk)"}
+      ],
+      "confidence": "medium",
+      "notes": "Part of the Home Office; no separate mail domain."
+    },
+    {
+      "id": "gb-met-police",
+      "type": "police",
+      "name_native": "Metropolitan Police Service",
+      "name_en": "Metropolitan Police Service",
+      "acronym": "MPS",
+      "website": "https://www.met.police.uk",
+      "mail_domains": ["met.police.uk"],
+      "evidence": [
+        {"domain": "met.police.uk", "url": "https://news.met.police.uk/", "kind": "press_page", "note": "Newsdesk/press addresses on @met.police.uk published on the official Met newsroom and Counter Terrorism Policing pages"}
+      ],
+      "confidence": "medium",
+      "notes": "Lead UK force with national counter-terrorism responsibilities (hosts Counter Terrorism Policing HQ). England & Wales has no single national police."
+    },
+    {
+      "id": "gb-police-scotland",
+      "type": "police",
+      "name_native": "Police Scotland / Poileas Alba",
+      "name_en": "Police Service of Scotland",
+      "acronym": "PS",
+      "website": "https://www.scotland.police.uk",
+      "mail_domains": ["scotland.police.uk"],
+      "evidence": [
+        {"domain": "scotland.police.uk", "url": "https://www.scotland.police.uk/access-to-information/data-protection/privacy-notice-contacting-police-scotland/", "kind": "privacy_page", "note": "dataprotection@scotland.police.uk in official privacy notice"}
+      ],
+      "confidence": "high",
+      "notes": "National police force of Scotland."
+    },
+    {
+      "id": "gb-psni",
+      "type": "police",
+      "name_native": "Police Service of Northern Ireland / Seirbhís Póilíneachta Thuaisceart Éireann",
+      "name_en": "Police Service of Northern Ireland",
+      "acronym": "PSNI",
+      "website": "https://www.psni.police.uk",
+      "mail_domains": ["psni.police.uk"],
+      "evidence": [
+        {"domain": "psni.police.uk", "url": "https://www.psni.police.uk/contact", "kind": "assumed_from_website", "note": "Official contact page uses forms; unit email addresses on psni.police.uk pages were redacted in accessible copies. Assumed from website registrable domain"}
+      ],
+      "confidence": "low",
+      "notes": "National police force of Northern Ireland."
+    }
+  ],
+  "gaps": [
+    "No single national police force for England & Wales — NCA and the Metropolitan Police (lead force, counter-terrorism) listed as national-level bodies; British Transport Police omitted for selectivity",
+    "gendarmerie: none",
+    "MI5/SIS publish no email addresses (web-form contact only) — mail domains are assumed"
+  ]
+}
