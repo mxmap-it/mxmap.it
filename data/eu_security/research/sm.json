@@ -1,0 +1,86 @@
+{
+  "country": "SM",
+  "country_name_en": "San Marino",
+  "group": "microstate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "sm-gendarmeria",
+      "type": "gendarmerie",
+      "name_native": "Corpo della Gendarmeria della Repubblica di San Marino",
+      "name_en": "Gendarmerie Corps of the Republic of San Marino",
+      "acronym": "",
+      "website": "https://www.gendarmeria.sm",
+      "mail_domains": ["gendarmeria.sm"],
+      "evidence": [
+        {"domain": "gendarmeria.sm", "url": "https://www.gendarmeria.sm/", "kind": "assumed_from_website", "note": "Official site publishes no email addresses (phone/form contact); registrable domain assumed. Sister corps evidenced on their own .sm domains, same pattern likely"}
+      ],
+      "confidence": "low",
+      "notes": "Military police corps. The interforce operations centre shared with the other corps uses centraleoperativainterforze@pa.sm (evidenced on poliziacivile.sm and guardiadirocca.sm)."
+    },
+    {
+      "id": "sm-polizia-civile",
+      "type": "police",
+      "name_native": "Corpo di Polizia Civile",
+      "name_en": "Civil Police Corps",
+      "acronym": "",
+      "website": "https://www.poliziacivile.sm",
+      "mail_domains": ["poliziacivile.sm", "pa.sm"],
+      "evidence": [
+        {"domain": "poliziacivile.sm", "url": "https://www.poliziacivile.sm", "kind": "contact_page", "note": "amministrazione@poliziacivile.sm, antincendio@poliziacivile.sm, atsp@poliziacivile.sm on official site"},
+        {"domain": "pa.sm", "url": "https://www.poliziacivile.sm", "kind": "contact_page", "note": "amministrazione.poliziacivile@pa.sm, centraleoperativainterforze@pa.sm — pa.sm is the San Marino public-administration shared mail domain"}
+      ],
+      "confidence": "high",
+      "notes": "Civilian police force (traffic, fire prevention, administrative police)."
+    },
+    {
+      "id": "sm-guardia-di-rocca",
+      "type": "border_guard",
+      "name_native": "Guardia di Rocca",
+      "name_en": "Fortress Guard",
+      "acronym": "",
+      "website": "https://www.guardiadirocca.sm",
+      "mail_domains": ["guardiadirocca.sm", "pa.sm"],
+      "evidence": [
+        {"domain": "guardiadirocca.sm", "url": "https://www.guardiadirocca.sm/", "kind": "contact_page", "note": "info@guardiadirocca.sm, amministrazione@guardiadirocca.sm; personal pattern nome.cognome@guardiadirocca.sm"},
+        {"domain": "pa.sm", "url": "https://www.guardiadirocca.sm/", "kind": "contact_page", "note": "centraleoperativainterforze@pa.sm (shared interforce operations centre)"}
+      ],
+      "confidence": "high",
+      "notes": "Military corps guarding borders, public buildings and institutional security (Nucleo Uniformato della Guardia di Rocca). Closest body to a border guard in San Marino."
+    },
+    {
+      "id": "sm-segreteria-interni",
+      "type": "interior_ministry",
+      "name_native": "Segreteria di Stato per gli Affari Interni",
+      "name_en": "Secretariat of State for Internal Affairs",
+      "acronym": "",
+      "website": "https://www.interni.sm",
+      "mail_domains": ["gov.sm"],
+      "evidence": [
+        {"domain": "gov.sm", "url": "https://www.interni.sm/", "kind": "contact_page", "note": "segreteria.interni@gov.sm on official site — Secretariats of State use the gov.sm mail domain (cf. segreteria.affariesteri@gov.sm on esteri.sm)"}
+      ],
+      "confidence": "high",
+      "notes": "Government department responsible for internal affairs, civil protection and oversight of police corps (ministry equivalent)."
+    },
+    {
+      "id": "sm-segreteria-esteri",
+      "type": "defence_ministry",
+      "name_native": "Segreteria di Stato per gli Affari Esteri",
+      "name_en": "Secretariat of State for Foreign Affairs",
+      "acronym": "",
+      "website": "https://www.esteri.sm",
+      "mail_domains": ["gov.sm"],
+      "evidence": [
+        {"domain": "gov.sm", "url": "https://www.esteri.sm/", "kind": "contact_page", "note": "segreteria.affariesteri@gov.sm on official site"}
+      ],
+      "confidence": "high",
+      "notes": "San Marino has no ministry of defence; the Foreign Affairs portfolio traditionally includes relations concerning the military corps (Corpi Militari), whose command structure sits under the Congresso di Stato. Included as the closest defence-ministry equivalent."
+    }
+  ],
+  "gaps": [
+    "No intelligence service: San Marino has no standalone intelligence agency (an Agenzia di Informazione Finanziaria exists for AML, financial not natsec — excluded).",
+    "No national cybersecurity agency or national CERT identified as a standalone body.",
+    "No dedicated defence ministry: military corps (Gendarmeria, Guardia di Rocca, Milizie Uniformate) depend on the Congresso di Stato; Secretariat for Foreign Affairs listed as nearest equivalent.",
+    "Gendarmeria publishes no email address on gendarmeria.sm (phone/form only) — domain assumed."
+  ]
+}

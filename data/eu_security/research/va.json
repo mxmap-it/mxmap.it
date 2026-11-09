@@ -1,0 +1,55 @@
+{
+  "country": "VA",
+  "country_name_en": "Vatican City",
+  "group": "microstate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "va-gendarmeria",
+      "type": "gendarmerie",
+      "name_native": "Corpo della Gendarmeria dello Stato della Città del Vaticano",
+      "name_en": "Gendarmerie Corps of Vatican City State",
+      "acronym": "",
+      "website": "https://www.vaticanstate.va",
+      "mail_domains": ["scv.va"],
+      "evidence": [
+        {"domain": "scv.va", "url": "https://www.vaticanstate.va", "kind": "other_official", "note": "Governatorato offices use the scv.va mail domain (Stato della Città del Vaticano); Gendarmerie is a Governatorato directorate (Direzione dei Servizi di Sicurezza e Protezione Civile). No email published on the site (forms/phone only) — domain attributed from the Governatorato namespace, not a specific published address"}
+      ],
+      "confidence": "medium",
+      "notes": "Police and security force of Vatican City State, part of the Directorate for Security Services and Civil Protection under the Governatorate. vaticanstate.va site blocks automated fetching; no public mailbox evidenced."
+    },
+    {
+      "id": "va-guardia-svizzera",
+      "type": "other_natsec",
+      "name_native": "Pontificia Cohors Helvetica / Guardia Svizzera Pontificia",
+      "name_en": "Pontifical Swiss Guard",
+      "acronym": "GSP",
+      "website": "https://www.guardiasvizzera.ch",
+      "mail_domains": ["guardiasvizzera.ch"],
+      "evidence": [
+        {"domain": "guardiasvizzera.ch", "url": "https://www.guardiasvizzera.ch/paepstliche-schweizergarde/it/contatti/", "kind": "assumed_from_website", "note": "Official site (recruitment/communications run from the Swiss foundation domain); contact page renders contacts via script, no plain-text email found — registrable domain assumed"}
+      ],
+      "confidence": "low",
+      "notes": "Armed corps protecting the Pope and the Apostolic Palace; closest to a military/guard force of the Holy See. Internal Vatican addresses likely under Vatican domains (vatican.va/scv.va) but not evidenced."
+    },
+    {
+      "id": "va-governatorato",
+      "type": "interior_ministry",
+      "name_native": "Governatorato dello Stato della Città del Vaticano",
+      "name_en": "Governorate of Vatican City State",
+      "acronym": "",
+      "website": "https://www.vaticanstate.va",
+      "mail_domains": ["scv.va"],
+      "evidence": [
+        {"domain": "scv.va", "url": "https://www.vaticanstate.va", "kind": "other_official", "note": "Governatorato services historically publish addresses @scv.va (e.g. musei/servizi SCV); site blocks automated fetching so no live example captured — treated as the state's administrative mail namespace"}
+      ],
+      "confidence": "medium",
+      "notes": "Executive body of Vatican City State; nearest interior-ministry equivalent (security directorate reports to it). Holy See curial bodies use vatican.va instead."
+    }
+  ],
+  "gaps": [
+    "No police category distinct from the Gendarmerie (gendarmerie covers policing).",
+    "No border guard, no intelligence service, no defence ministry, no cybersecurity agency/CERT as distinct public bodies (the Direzione delle Telecomunicazioni e dei Sistemi Informatici handles IT internally, no public natsec mandate evidenced).",
+    "Vatican web properties (vaticanstate.va, vatican.va, press.vatican.va) blocked or returned no email addresses to automated fetching; scv.va attribution based on the Governatorato's known mail namespace rather than a captured address — confidence capped at medium."
+  ]
+}
