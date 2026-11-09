@@ -1,0 +1,100 @@
+{
+  "country": "ME",
+  "country_name_en": "Montenegro",
+  "group": "candidate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "me-mup",
+      "type": "interior_ministry",
+      "name_native": "Ministarstvo unutrašnjih poslova Crne Gore",
+      "name_en": "Ministry of the Interior of Montenegro",
+      "acronym": "MUP",
+      "website": "https://www.gov.me/mup",
+      "mail_domains": ["mup.gov.me"],
+      "evidence": [
+        {"domain": "mup.gov.me", "url": "https://www.gov.me/en/article/contact-information-for-government-and-ministry-pr-departments", "kind": "other_official", "note": "kabinet@mup.gov.me, marija.soc@mup.gov.me (official government PR contacts page)"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "me-uprava-policije",
+      "type": "police",
+      "name_native": "Uprava policije Crne Gore",
+      "name_en": "Police Administration of Montenegro",
+      "acronym": "UP",
+      "website": "https://www.up.gov.me",
+      "mail_domains": ["up.gov.me"],
+      "evidence": [
+        {"domain": "up.gov.me", "url": "https://www.seesac.org/f/docs/Montenegro-avmp/saopstenje-rcb-sjever-okg-i-oil-24.06.2026.pdf", "kind": "assumed_from_website", "note": "Official press releases list only www.up.gov.me and phone, no email published; website registrable domain assumed. Mail may instead run under parent mup.gov.me."}
+      ],
+      "confidence": "low",
+      "notes": "Administration body under the Ministry of the Interior."
+    },
+    {
+      "id": "me-granicna-policija",
+      "type": "border_guard",
+      "name_native": "Sektor granične policije",
+      "name_en": "Border Police Sector",
+      "acronym": "",
+      "website": "https://www.up.gov.me",
+      "mail_domains": ["up.gov.me"],
+      "evidence": [
+        {"domain": "up.gov.me", "url": "https://www.up.gov.me", "kind": "assumed_from_website", "note": "Sector within the Police Administration, no separate web/mail domain; parent's assumed domain used"}
+      ],
+      "confidence": "low",
+      "notes": "Border police is a sector of the Police Administration (Uprava policije)."
+    },
+    {
+      "id": "me-anb",
+      "type": "intelligence",
+      "name_native": "Agencija za nacionalnu bezbjednost",
+      "name_en": "National Security Agency",
+      "acronym": "ANB",
+      "website": "https://www.anb.gov.me",
+      "mail_domains": ["anb.gov.me"],
+      "evidence": [
+        {"domain": "anb.gov.me", "url": "https://www.anb.gov.me", "kind": "assumed_from_website", "note": "No published email address found (site unreachable during research; no @anb.gov.me address indexed); website registrable domain assumed"}
+      ],
+      "confidence": "low",
+      "notes": "Civil intelligence/security agency; new ANB law published in Sl. list CG 040/26."
+    },
+    {
+      "id": "me-mod",
+      "type": "defence_ministry",
+      "name_native": "Ministarstvo odbrane Crne Gore",
+      "name_en": "Ministry of Defence of Montenegro",
+      "acronym": "MO",
+      "website": "https://www.gov.me/mod",
+      "mail_domains": ["mod.gov.me"],
+      "evidence": [
+        {"domain": "mod.gov.me", "url": "https://www.gov.me/en/article/contact-information-for-government-and-ministry-pr-departments", "kind": "other_official", "note": "kabinet@mod.gov.me, pr@mod.gov.me (official government PR contacts page)"}
+      ],
+      "confidence": "high",
+      "notes": "Armed forces (Vojska Crne Gore) present online via vojska.me; its mail domain not separately evidenced."
+    },
+    {
+      "id": "me-cirt",
+      "type": "cybersecurity",
+      "name_native": "Nacionalni CIRT Crne Gore (CIRT.ME)",
+      "name_en": "National Computer Incident Response Team of Montenegro",
+      "acronym": "CIRT.ME",
+      "website": "https://www.gov.me/cirt",
+      "mail_domains": ["cirt.me"],
+      "evidence": [
+        {"domain": "cirt.me", "url": "https://www.gov.me/en/article/warning-phishing-campaigns-targeting-postal-service-users", "kind": "other_official", "note": "kontakt@cirt.me given as the incident-reporting address in official gov.me CIRT warnings"},
+        {"domain": "cirt.me", "url": "https://www.trusted-introducer.org/directory/teams/cirtme.html", "kind": "other_official", "note": "CIRT.ME entry in Trusted Introducer directory (host org: National Security Authority, Government of Montenegro)"}
+      ],
+      "confidence": "high",
+      "notes": "Montenegro adopted a Cyber Security Law creating an Agencija za sajber bezbjednost to take over national CIRT functions; its own web/mail domain could not be verified within this run (see gaps)."
+    }
+  ],
+  "gaps": [
+    "cybersecurity: Agencija za sajber bezbjednost (new cyber security agency) — existence known from the 2024 Cyber Security Law, but its website/mail domain could not be verified (web-search budget exhausted); CIRT.ME recorded instead",
+    "intelligence: ANB publishes no email address and anb.gov.me did not resolve during research — mail domain assumed, low confidence",
+    "police/border_guard: Uprava policije publishes phone and website (up.gov.me) but no email in its press releases — mail domain assumed, low confidence",
+    "other_natsec: Direkcija za zaštitu tajnih podataka (national security authority for classified information) not included — no evidenced mail domain found",
+    "gov.me is unreachable from this network (connection refused/timeout), limiting direct verification of contact pages"
+  ]
+}

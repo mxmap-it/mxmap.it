@@ -1,0 +1,140 @@
+{
+  "country": "RS",
+  "country_name_en": "Serbia",
+  "group": "candidate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "rs-mup",
+      "type": "interior_ministry",
+      "name_native": "Ministarstvo unutrašnjih poslova Republike Srbije",
+      "name_en": "Ministry of Internal Affairs of the Republic of Serbia",
+      "acronym": "MUP",
+      "website": "https://www.mup.gov.rs",
+      "mail_domains": ["mup.gov.rs"],
+      "evidence": [
+        {"domain": "mup.gov.rs", "url": "https://www.novosti.rs/drustvo/vesti/1062074/dodata-mejl-adresa-oglasio-mup-sada-nasilje-blokade-saobracaja-mozete-prijaviti-porukom", "kind": "press_page", "note": "prijaviblokadu@mup.gov.rs announced by MUP (national press report of official MUP notice)"},
+        {"domain": "mup.gov.rs", "url": "https://www.trusted-introducer.org/directory/teams/mup-cert.html", "kind": "other_official", "note": "cert@mup.gov.rs (MUP-CERT entry in Trusted Introducer directory); also upravazastrance@mup.gov.rs in administrative notices"}
+      ],
+      "confidence": "high",
+      "notes": "All MUP organizational units (police, gendarmerie, border police) use the ministry domain mup.gov.rs."
+    },
+    {
+      "id": "rs-policija",
+      "type": "police",
+      "name_native": "Direkcija policije",
+      "name_en": "Police Directorate (General Police Directorate)",
+      "acronym": "",
+      "website": "https://www.mup.gov.rs",
+      "mail_domains": ["mup.gov.rs"],
+      "evidence": [
+        {"domain": "mup.gov.rs", "url": "https://www.trusted-introducer.org/directory/teams/mup-cert.html", "kind": "other_official", "note": "Police is an organ within MUP; MUP units use @mup.gov.rs (e.g. cert@mup.gov.rs)"}
+      ],
+      "confidence": "medium",
+      "notes": "The Serbian Police is a directorate of MUP without a separate web/mail domain."
+    },
+    {
+      "id": "rs-zandarmerija",
+      "type": "gendarmerie",
+      "name_native": "Žandarmerija",
+      "name_en": "Gendarmery",
+      "acronym": "",
+      "website": "https://www.mup.gov.rs",
+      "mail_domains": ["mup.gov.rs"],
+      "evidence": [
+        {"domain": "mup.gov.rs", "url": "https://www.mup.gov.rs/wps/portal/sr/kontakt", "kind": "assumed_from_website", "note": "Special unit of the Police Directorate under MUP; no dedicated mail domain found, ministry domain assumed"}
+      ],
+      "confidence": "medium",
+      "notes": "Special anti-terrorist/public-order unit under the MUP Police Directorate."
+    },
+    {
+      "id": "rs-granicna-policija",
+      "type": "border_guard",
+      "name_native": "Uprava granične policije",
+      "name_en": "Border Police Directorate",
+      "acronym": "UGP",
+      "website": "https://www.mup.gov.rs",
+      "mail_domains": ["mup.gov.rs"],
+      "evidence": [
+        {"domain": "mup.gov.rs", "url": "https://www.mup.gov.rs/wps/portal/sr/kontakt", "kind": "assumed_from_website", "note": "Directorate within MUP Police Directorate; ministry mail domain assumed (pattern as upravazastrance@mup.gov.rs for sister directorate)"}
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "id": "rs-bia",
+      "type": "intelligence",
+      "name_native": "Bezbednosno-informativna agencija",
+      "name_en": "Security Information Agency",
+      "acronym": "BIA",
+      "website": "https://www.bia.gov.rs",
+      "mail_domains": ["bia.gov.rs"],
+      "evidence": [
+        {"domain": "bia.gov.rs", "url": "https://www.bia.gov.rs/kontakt", "kind": "contact_page", "note": "kabinet@bia.gov.rs, intcoop@bia.gov.rs, ufk@bia.gov.rs, mediji@bia.gov.rs"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "rs-vba",
+      "type": "intelligence",
+      "name_native": "Vojnobezbednosna agencija",
+      "name_en": "Military Security Agency",
+      "acronym": "VBA",
+      "website": "https://www.vba.mod.gov.rs",
+      "mail_domains": ["vba.mod.gov.rs"],
+      "evidence": [
+        {"domain": "vba.mod.gov.rs", "url": "https://www.vba.mod.gov.rs/cir/210/kontakt-210", "kind": "assumed_from_website", "note": "Contact page publishes no email addresses; website registrable subdomain assumed. Parent MoD uses @mod.gov.rs."}
+      ],
+      "confidence": "low",
+      "notes": "Counter-intelligence agency of the Ministry of Defence; publishes no email contact."
+    },
+    {
+      "id": "rs-voa",
+      "type": "intelligence",
+      "name_native": "Vojnoobaveštajna agencija",
+      "name_en": "Military Intelligence Agency",
+      "acronym": "VOA",
+      "website": "https://www.voa.mod.gov.rs",
+      "mail_domains": ["voa.mod.gov.rs"],
+      "evidence": [
+        {"domain": "voa.mod.gov.rs", "url": "https://www.mod.gov.rs", "kind": "other_official", "note": "mod.gov.rs TLS certificate SAN includes mail.voa.mod.gov.rs and autodiscover.voa.mod.gov.rs, indicating a mail service on voa.mod.gov.rs; no published address found"}
+      ],
+      "confidence": "low",
+      "notes": "Foreign military intelligence agency of the Ministry of Defence."
+    },
+    {
+      "id": "rs-mod",
+      "type": "defence_ministry",
+      "name_native": "Ministarstvo odbrane Republike Srbije",
+      "name_en": "Ministry of Defence of the Republic of Serbia",
+      "acronym": "MO",
+      "website": "https://www.mod.gov.rs",
+      "mail_domains": ["mod.gov.rs"],
+      "evidence": [
+        {"domain": "mod.gov.rs", "url": "https://www.mod.gov.rs/eng/4341/uprava-za-odnosa-sa-javnoscu-4341", "kind": "contact_page", "note": "info@mod.gov.rs (Public Relations Department); also ministar.odbrane@mod.gov.rs, office@mod.gov.rs on mod.gov.rs pages"},
+        {"domain": "mod.gov.rs", "url": "https://www.mod.gov.rs/eng/17366/kontakt-osobe-u-ministarstvu-odbrane-za-saradnju-sa-organizacijama-civilnog-drustva17366", "kind": "other_official", "note": "organizacija@mod.gov.rs, uoo@mod.gov.rs (civil-society contact officers)"}
+      ],
+      "confidence": "high",
+      "notes": "Serbian Armed Forces also use vs.rs (mail.vs.rs in MoD certificate SAN)."
+    },
+    {
+      "id": "rs-nacionalni-cert",
+      "type": "cybersecurity",
+      "name_native": "Nacionalni CERT Republike Srbije",
+      "name_en": "National CERT of the Republic of Serbia",
+      "acronym": "SRB-CERT",
+      "website": "https://www.cert.rs",
+      "mail_domains": ["cert.rs"],
+      "evidence": [
+        {"domain": "cert.rs", "url": "https://www.cert.rs/files/shares/RFC2350v3-SRB-CERT.pdf", "kind": "official_pdf", "note": "office@cert.rs (general), info@cert.rs (incident reports), statistika@cert.rs, edukacija@cert.rs"}
+      ],
+      "confidence": "high",
+      "notes": "Operated by RATEL (Regulatory Authority for Electronic Communications and Postal Services), ratel.rs."
+    }
+  ],
+  "gaps": [
+    "other_natsec: Office of the National Security Council (Kancelarija Saveta za nacionalnu bezbednost i zaštitu tajnih podataka) not researched in depth — no evidenced mail domain found within budget",
+    "VBA and VOA publish no email addresses on their sites; mail domains inferred (low confidence) from website subdomain and MoD TLS certificate mail hosts"
+  ]
+}
