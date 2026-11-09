@@ -1,0 +1,141 @@
+{
+  "country": "CY",
+  "country_name_en": "Cyprus",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "cy-police",
+      "type": "police",
+      "name_native": "Αστυνομία Κύπρου",
+      "name_en": "Cyprus Police",
+      "acronym": "",
+      "website": "https://www.police.gov.cy",
+      "mail_domains": ["police.gov.cy"],
+      "evidence": [
+        {"domain": "police.gov.cy", "url": "https://publications.gov.cy/assets/user/publications/2024/2024_058/HTML/", "kind": "official_pdf", "note": "cybercrime@police.gov.cy (Cyber Crime Unit) in official government publication"},
+        {"domain": "police.gov.cy", "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/medical-police/police-certificates/how/cyprus.html", "kind": "other_official", "note": "police@police.gov.cy listed as Police HQ contact"}
+      ],
+      "confidence": "high",
+      "notes": "Main site redirects to https://www.gov.cy/police/. Includes the Port and Marine Police as an internal unit."
+    },
+    {
+      "id": "cy-port-marine-police",
+      "type": "border_guard",
+      "name_native": "Λιμενική και Ναυτική Αστυνομία",
+      "name_en": "Port and Marine Police (unit of Cyprus Police)",
+      "acronym": "",
+      "website": "https://www.police.gov.cy",
+      "mail_domains": ["police.gov.cy"],
+      "evidence": [
+        {"domain": "police.gov.cy", "url": "https://archive.coastguard.europa.eu/national-authorities/cyprus", "kind": "other_official", "note": "Port and Marine Police listed as Cyprus coast-guard function authority under Cyprus Police"}
+      ],
+      "confidence": "medium",
+      "notes": "Not a separate body: it is a unit of Cyprus Police and uses police infrastructure. Cyprus has no standalone border guard service; border control is performed by the Police (Aliens and Immigration Unit, Port and Marine Police)."
+    },
+    {
+      "id": "cy-kyp",
+      "type": "intelligence",
+      "name_native": "Κυπριακή Υπηρεσία Πληροφοριών",
+      "name_en": "Cyprus Intelligence Service",
+      "acronym": "KYP / CIS",
+      "website": "",
+      "mail_domains": [],
+      "evidence": [],
+      "confidence": "low",
+      "notes": "Civilian intelligence agency reporting to the President, given statutory basis by a 2016 law. No official website or publicly evidenced email domain found; no domain assumed."
+    },
+    {
+      "id": "cy-moi",
+      "type": "interior_ministry",
+      "name_native": "Υπουργείο Εσωτερικών",
+      "name_en": "Ministry of Interior",
+      "acronym": "MOI",
+      "website": "https://www.moi.gov.cy",
+      "mail_domains": ["moi.gov.cy"],
+      "evidence": [
+        {"domain": "moi.gov.cy", "url": "https://www.moi.gov.cy/MOI/cr/cr.nsf/All/6084B8210D1D08E4C22587AE002EE527", "kind": "contact_page", "note": "info@moi.gov.cy on ministry's own site; departmental subdomains in use (e.g. migration@crmd.moi.gov.cy, localpress@pio.moi.gov.cy)"}
+      ],
+      "confidence": "high",
+      "notes": "Departments use third-level subdomains of moi.gov.cy (crmd.moi.gov.cy, pio.moi.gov.cy, cd.moi.gov.cy)."
+    },
+    {
+      "id": "cy-mod",
+      "type": "defence_ministry",
+      "name_native": "Υπουργείο Άμυνας",
+      "name_en": "Ministry of Defence",
+      "acronym": "MOD",
+      "website": "https://www.mod.gov.cy",
+      "mail_domains": ["mod.gov.cy"],
+      "evidence": [
+        {"domain": "mod.gov.cy", "url": "https://ted.europa.eu/en/notice/243085-2026/pdf", "kind": "official_pdf", "note": "staff addresses @mod.gov.cy in EU TED procurement notices (e.g. cdemosthenous@mod.gov.cy); defence@mod.gov.cy listed in directories"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "cy-dsa",
+      "type": "cybersecurity",
+      "name_native": "Αρχή Ψηφιακής Ασφάλειας",
+      "name_en": "Digital Security Authority",
+      "acronym": "DSA",
+      "website": "https://dsa.cy",
+      "mail_domains": ["dsa.ee.cy"],
+      "evidence": [
+        {"domain": "dsa.ee.cy", "url": "https://dsa.cy/en/data/data-protection", "kind": "privacy_page", "note": "contact@dsa.ee.cy shown as general contact in header/footer of DSA's own site"}
+      ],
+      "confidence": "high",
+      "notes": "National cybersecurity authority (NIS/NIS2 competent authority), operating under the Commissioner of Communications (formerly OCECPR; legacy addresses @ocecpr.org.cy still appear in EU directories)."
+    },
+    {
+      "id": "cy-csirt",
+      "type": "cybersecurity",
+      "name_native": "Εθνική Ομάδα Αντιμετώπισης Ηλεκτρονικών Επιθέσεων",
+      "name_en": "National CSIRT of Cyprus",
+      "acronym": "CSIRT-CY",
+      "website": "https://csirt.cy",
+      "mail_domains": ["csirt.cy"],
+      "evidence": [
+        {"domain": "csirt.cy", "url": "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive-cyprus", "kind": "other_official", "note": "info@csirt.cy listed as CSIRT email on European Commission NIS2 page"},
+        {"domain": "csirt.cy", "url": "https://www.trusted-introducer.org/directory/teams/national-csirt-cy-cy.html", "kind": "other_official", "note": "info@csirt.cy and reporting@csirt.cy in TF-CSIRT Trusted Introducer directory"}
+      ],
+      "confidence": "high",
+      "notes": "Operates under the Digital Security Authority but has its own domain and team identity. Distinct from CYNET-CSIRT (academic, csirt@cynet.ac.cy)."
+    },
+    {
+      "id": "cy-national-guard",
+      "type": "other_natsec",
+      "name_native": "Εθνική Φρουρά",
+      "name_en": "Cyprus National Guard",
+      "acronym": "",
+      "website": "https://www.army.gov.cy",
+      "mail_domains": ["nationalguard.mil.cy", "army.mil.cy"],
+      "evidence": [
+        {"domain": "nationalguard.mil.cy", "url": "https://publications.gov.cy/assets/user/publications/2021/2021_051/2021_051.pdf", "kind": "official_pdf", "note": "geef_dief@nationalguard.mil.cy (General Staff) in official MoD publication; info@nationalguard.mil.cy also cited"},
+        {"domain": "army.mil.cy", "url": "https://en.politis.com.cy/social-lens/959691/cyprus-opens-voluntary-national-guard-enlistment-to-women", "kind": "other_official", "note": "eth.str.ginekon@army.mil.cy used for 2025 enlistment submissions per official announcement"}
+      ],
+      "confidence": "medium",
+      "notes": "Armed forces of the Republic of Cyprus under the Ministry of Defence. Website army.gov.cy but email uses .mil.cy domains."
+    },
+    {
+      "id": "cy-civil-defence",
+      "type": "other_natsec",
+      "name_native": "Πολιτική Άμυνα",
+      "name_en": "Cyprus Civil Defence",
+      "acronym": "",
+      "website": "https://moi.gov.cy/moi/cd",
+      "mail_domains": ["cd.moi.gov.cy"],
+      "evidence": [
+        {"domain": "cd.moi.gov.cy", "url": "https://moi.gov.cy/moi/CD/cd.nsf/All/47B68D6C5E76DB1CC225881D0027B11B/$file/%CE%95%CF%86%CE%B7%CE%BC%CE%B5%CF%81%CE%AF%CE%B4%CE%B1%20%CE%A0%CE%BF%CE%BB%CE%B9%CF%84%CE%B9%CE%BA%CE%AE%CF%82%20%CE%86%CE%BC%CF%85%CE%BD%CE%B1%CF%82%20(%CE%99%CE%B1%CE%BD%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%20-%20%CE%9C%CE%AC%CF%81%CF%84%CE%B9%CE%BF%CF%82%202022).pdf", "kind": "official_pdf", "note": "staff address nparis@cd.moi.gov.cy in official Civil Defence newsletter (2022)"}
+      ],
+      "confidence": "medium",
+      "notes": "Civil protection force under the Ministry of Interior; uses MoI subdomain for email."
+    }
+  ],
+  "gaps": [
+    "gendarmerie: Cyprus has no gendarmerie-type force; policing is unified under Cyprus Police.",
+    "border_guard: no standalone border guard agency; functions performed by Cyprus Police units (Port and Marine Police, Aliens and Immigration Unit), included here under the police domain.",
+    "intelligence (KYP): no official website or publicly evidenced email domain could be found; entity included without mail_domains rather than inventing one.",
+    "DSA sub-addresses partially obfuscated by spambot protection on dsa.cy; general contact@dsa.ee.cy confirmed."
+  ]
+}
