@@ -22,6 +22,11 @@ jobs:
         run: uv run python3 scripts/scan_eu_security.py
       - name: Build KPI + page (integrity asserted)
         run: uv run python3 scripts/build_eu_security_page.py
+      - name: Social preview image (og.png)
+        continue-on-error: true
+        run: |
+          sudo apt-get install -y -q fonts-dejavu-core >/dev/null || true
+          uv run --with pillow python3 scripts/build_eu_security_og.py
       - name: Commit results (best-effort)
         continue-on-error: true
         run: |

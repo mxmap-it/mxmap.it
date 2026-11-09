@@ -155,6 +155,23 @@ def page(data: dict) -> str:
     worst = elig[:10]
     best = sorted(elig, key=lambda c: (-c["national_pct"], c["us_exposure_pct"]))[:10]
 
+    top3 = ", ".join(f"{c['name']} {c['us_exposure_pct']:.0f}%" for c in worst[:3])
+    us_pct_all = round(100 * us / cls) if cls else 0
+    nat_pct_all = round(100 * nat / cls) if cls else 0
+    og_title = html.escape(
+        f"EU Security Mail Map — {us_pct_all}% of Europe's security bodies run email on US providers"
+    )
+    og_desc = html.escape(
+        f"We mapped {n} police, intelligence, defence, border and cybersecurity bodies in "
+        f"{kpi['n_countries'] - 1} European countries and the EU institutions from public DNS. "
+        f"{us} ({us_pct_all}%) use US providers subject to the CLOUD Act; {nat} ({nat_pct_all}%) "
+        f"stay under national jurisdiction. Most exposed: {top3}. Searchable, open data, weekly update."
+    )
+    og_alt = html.escape(
+        f"EU Security Mail Map: {us_pct_all}% of {n} European security bodies on US email "
+        f"providers, {nat_pct_all}% under national jurisdiction; most exposed {top3}."
+    )
+
     def rank_rows(items, field, color):
         out = []
         for i, c in enumerate(items, 1):
@@ -299,6 +316,20 @@ def page(data: dict) -> str:
 <title>EU Security Mail Map</title>
 <meta name="description" content="Where Europe's police, intelligence, interior, defence and cybersecurity bodies host their email — and how many depend on US providers subject to the CLOUD Act.">
 <link rel="canonical" href="https://mxmap.it/eu-security/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Osservatorio Nazionale Sovranità Digitale — mxmap.it">
+<meta property="og:url" content="https://mxmap.it/eu-security/">
+<meta property="og:title" content="{og_title}">
+<meta property="og:description" content="{og_desc}">
+<meta property="og:image" content="https://mxmap.it/eu-security/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{og_alt}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{og_title}">
+<meta name="twitter:description" content="{og_desc}">
+<meta name="twitter:image" content="https://mxmap.it/eu-security/og.png">
+<meta name="twitter:image:alt" content="{og_alt}">
 <style>
 :root{{--bg:#fff;--fg:#1a1d21;--mut:#5d6670;--line:#e3e6ea;--card:#f6f7f9;--us:#c2410c;--nat:#15803d;--eu:#1d4ed8;--of:#7c3aed;--unk:#9aa3ad}}
 @media (prefers-color-scheme:dark){{:root:not([data-theme=light]){{--bg:#111316;--fg:#e8eaed;--mut:#9aa3ad;--line:#2a2f35;--card:#191c20;--us:#fb923c;--nat:#4ade80;--eu:#60a5fa;--of:#c4b5fd;--unk:#6b7280}}}}
