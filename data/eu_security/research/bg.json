@@ -11,9 +11,16 @@
       "name_en": "Ministry of Interior",
       "acronym": "MVR",
       "website": "https://www.mvr.bg",
-      "mail_domains": ["mvr.bg"],
+      "mail_domains": [
+        "mvr.bg"
+      ],
       "evidence": [
-        {"domain": "mvr.bg", "url": "https://www.mvr.bg/en/contacts", "kind": "contact_page", "note": "priemna@mvr.bg (complaints/reception); press office addresses also @mvr.bg"}
+        {
+          "domain": "mvr.bg",
+          "url": "https://www.mvr.bg/en/contacts",
+          "kind": "contact_page",
+          "note": "priemna@mvr.bg (complaints/reception); press office addresses also @mvr.bg"
+        }
       ],
       "confidence": "high",
       "notes": "Single mvr.bg domain used across the ministry and its general directorates."
@@ -25,9 +32,16 @@
       "name_en": "General Directorate National Police",
       "acronym": "GDNP",
       "website": "https://www.mvr.bg/gdnp",
-      "mail_domains": ["mvr.bg"],
+      "mail_domains": [
+        "mvr.bg"
+      ],
       "evidence": [
-        {"domain": "mvr.bg", "url": "https://rai-see.org/?p=20424", "kind": "other_official", "note": "gdnp@mvr.bg listed in RAI anti-corruption institutional framework directory; GDNP is an MVR structure using mvr.bg"}
+        {
+          "domain": "mvr.bg",
+          "url": "https://rai-see.org/?p=20424",
+          "kind": "other_official",
+          "note": "gdnp@mvr.bg listed in RAI anti-corruption institutional framework directory; GDNP is an MVR structure using mvr.bg"
+        }
       ],
       "confidence": "medium",
       "notes": "Directorate within MVR; no separate mail domain."
@@ -39,9 +53,16 @@
       "name_en": "General Directorate Border Police",
       "acronym": "GDGP",
       "website": "https://www.mvr.bg/gdgp",
-      "mail_domains": ["mvr.bg"],
+      "mail_domains": [
+        "mvr.bg"
+      ],
       "evidence": [
-        {"domain": "mvr.bg", "url": "https://ted.europa.eu/en/notice/317893-2026/pdf", "kind": "official_pdf", "note": "Border Police procurement contacts e.g. AKrHadzhieva@mvr.bg, BEmZhivkova@mvr.bg in TED notices"}
+        {
+          "domain": "mvr.bg",
+          "url": "https://ted.europa.eu/en/notice/317893-2026/pdf",
+          "kind": "official_pdf",
+          "note": "Border Police procurement contacts e.g. AKrHadzhieva@mvr.bg, BEmZhivkova@mvr.bg in TED notices"
+        }
       ],
       "confidence": "high",
       "notes": "Directorate within MVR; staff emails evidenced on mvr.bg in EU TED procurement notices."
@@ -53,11 +74,18 @@
       "name_en": "General Directorate Combating Organized Crime",
       "acronym": "GDBOP",
       "website": "https://www.mvr.bg/gdbop",
-      "mail_domains": ["mvr.bg"],
-      "evidence": [
-        {"domain": "mvr.bg", "url": "https://www.mvr.bg/en/contacts", "kind": "assumed_from_website", "note": "GDBOP is an MVR general directorate; no GDBOP-specific email found, mvr.bg assumed as the ministry-wide mail domain"}
+      "mail_domains": [
+        "mvr.bg"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "mvr.bg",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Includes the national Cybercrime unit."
     },
     {
@@ -67,10 +95,22 @@
       "name_en": "State Agency for National Security",
       "acronym": "DANS",
       "website": "https://www.dans.bg",
-      "mail_domains": ["dans.bg"],
+      "mail_domains": [
+        "dans.bg"
+      ],
       "evidence": [
-        {"domain": "dans.bg", "url": "https://crc.bg/files/Nasoki_PMO.pdf", "kind": "official_pdf", "note": "fid@dans.bg (Financial Intelligence Directorate) in Bulgarian Communications Regulation Commission guidance PDF"},
-        {"domain": "dans.bg", "url": "https://www.gov.bg/files/common/%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%94%D0%90%D0%9D%D0%A1%20%202017.pdf", "kind": "official_pdf", "note": "dans@dans.bg referenced in official gov.bg-hosted DANS annual report documents"}
+        {
+          "domain": "dans.bg",
+          "url": "https://crc.bg/files/Nasoki_PMO.pdf",
+          "kind": "official_pdf",
+          "note": "fid@dans.bg (Financial Intelligence Directorate) in Bulgarian Communications Regulation Commission guidance PDF"
+        },
+        {
+          "domain": "dans.bg",
+          "url": "https://www.gov.bg/files/common/%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%94%D0%90%D0%9D%D0%A1%20%202017.pdf",
+          "kind": "official_pdf",
+          "note": "dans@dans.bg referenced in official gov.bg-hosted DANS annual report documents"
+        }
       ],
       "confidence": "high",
       "notes": "Counter-intelligence and security agency; dans.bg website returns 403 to automated fetches."
@@ -82,9 +122,16 @@
       "name_en": "State Intelligence Agency",
       "acronym": "DAR",
       "website": "https://www.dar.bg",
-      "mail_domains": ["dar.bg"],
+      "mail_domains": [
+        "dar.bg"
+      ],
       "evidence": [
-        {"domain": "dar.bg", "url": "https://www.dar.bg/", "kind": "contact_page", "note": "office@dar.bg shown (Cloudflare-obfuscated) on official site homepage/contacts"}
+        {
+          "domain": "dar.bg",
+          "url": "https://www.dar.bg/",
+          "kind": "contact_page",
+          "note": "office@dar.bg shown (Cloudflare-obfuscated) on official site homepage/contacts"
+        }
       ],
       "confidence": "high",
       "notes": "Foreign (civilian) intelligence agency."
@@ -96,9 +143,16 @@
       "name_en": "Military Intelligence Service",
       "acronym": "SVR",
       "website": "https://www.mod.bg",
-      "mail_domains": ["mod.bg"],
+      "mail_domains": [
+        "mod.bg"
+      ],
       "evidence": [
-        {"domain": "mod.bg", "url": "https://www.mod.bg/doc/zakoni/20211011_ZVR.pdf", "kind": "assumed_from_website", "note": "No SVR email found in public sources; service operates under the Ministry of Defence, whose domain is mod.bg (Military Intelligence Act hosted there) - assumed"}
+        {
+          "domain": "mod.bg",
+          "url": "https://www.mod.bg/doc/zakoni/20211011_ZVR.pdf",
+          "kind": "assumed_from_website",
+          "note": "No SVR email found in public sources; service operates under the Ministry of Defence, whose domain is mod.bg (Military Intelligence Act hosted there) - assumed"
+        }
       ],
       "confidence": "low",
       "notes": "Military intelligence under the Ministry of Defence; annual reports published on gov.bg list only a postal address."
@@ -110,9 +164,16 @@
       "name_en": "National Service for Protection",
       "acronym": "NSO",
       "website": "https://www.nso.bg",
-      "mail_domains": ["nso.bg"],
+      "mail_domains": [
+        "nso.bg"
+      ],
       "evidence": [
-        {"domain": "nso.bg", "url": "https://ted.europa.eu/en/notice/311345-2026/pdf", "kind": "official_pdf", "note": "buyer contact iliev@nso.bg in TED procurement notice for Национална служба за охрана"}
+        {
+          "domain": "nso.bg",
+          "url": "https://ted.europa.eu/en/notice/311345-2026/pdf",
+          "kind": "official_pdf",
+          "note": "buyer contact iliev@nso.bg in TED procurement notice for Национална служба за охрана"
+        }
       ],
       "confidence": "high",
       "notes": "Protective service for state officials, reporting to the President."
@@ -124,9 +185,16 @@
       "name_en": "Ministry of Defence",
       "acronym": "MO",
       "website": "https://www.mod.bg",
-      "mail_domains": ["mod.bg"],
+      "mail_domains": [
+        "mod.bg"
+      ],
       "evidence": [
-        {"domain": "mod.bg", "url": "https://www.mod.bg/bg/", "kind": "press_page", "note": "presscntr@mod.bg (press centre) listed on official site homepage"}
+        {
+          "domain": "mod.bg",
+          "url": "https://www.mod.bg/bg/",
+          "kind": "press_page",
+          "note": "presscntr@mod.bg (press centre) listed on official site homepage"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -138,9 +206,16 @@
       "name_en": "CERT Bulgaria (National CSIRT)",
       "acronym": "CERT-BG",
       "website": "https://www.govcert.bg",
-      "mail_domains": ["govcert.bg"],
+      "mail_domains": [
+        "govcert.bg"
+      ],
       "evidence": [
-        {"domain": "govcert.bg", "url": "https://www.govcert.bg/en/contact-us/", "kind": "contact_page", "note": "cert@govcert.bg on official contact page"}
+        {
+          "domain": "govcert.bg",
+          "url": "https://www.govcert.bg/en/contact-us/",
+          "kind": "contact_page",
+          "note": "cert@govcert.bg on official contact page"
+        }
       ],
       "confidence": "high",
       "notes": "National CSIRT, operates under the Ministry of e-Government."
@@ -152,10 +227,23 @@
       "name_en": "Ministry of e-Government",
       "acronym": "MEU",
       "website": "https://egov.government.bg",
-      "mail_domains": ["egov.government.bg", "e-gov.bg"],
+      "mail_domains": [
+        "egov.government.bg",
+        "e-gov.bg"
+      ],
       "evidence": [
-        {"domain": "egov.government.bg", "url": "https://www.strategy.bg/bg/public-consultations/12004/export", "kind": "other_official", "note": "mail@egov.government.bg listed as ministry contact on official strategy.bg public-consultation records (2025)"},
-        {"domain": "e-gov.bg", "url": "https://digital-strategy.ec.europa.eu/en/policies/nis-directive-bulgaria", "kind": "other_official", "note": "NSPOC@e-gov.bg listed as Bulgaria's NIS single point of contact on European Commission page; e-gov.bg inherited from the predecessor e-Government Agency"}
+        {
+          "domain": "egov.government.bg",
+          "url": "https://www.strategy.bg/bg/public-consultations/12004/export",
+          "kind": "other_official",
+          "note": "mail@egov.government.bg listed as ministry contact on official strategy.bg public-consultation records (2025)"
+        },
+        {
+          "domain": "e-gov.bg",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/nis-directive-bulgaria",
+          "kind": "other_official",
+          "note": "NSPOC@e-gov.bg listed as Bulgaria's NIS single point of contact on European Commission page; e-gov.bg inherited from the predecessor e-Government Agency"
+        }
       ],
       "confidence": "medium",
       "notes": "Responsible for national cybersecurity policy and hosts CERT Bulgaria; e-gov.bg usage is legacy/parallel."

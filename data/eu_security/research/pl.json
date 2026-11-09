@@ -11,9 +11,16 @@
       "name_en": "Polish Police (National Police Headquarters)",
       "acronym": "KGP",
       "website": "https://policja.pl",
-      "mail_domains": ["policja.gov.pl"],
+      "mail_domains": [
+        "policja.gov.pl"
+      ],
       "evidence": [
-        {"domain": "policja.gov.pl", "url": "https://policja.pl/pol/kontakt/118,Kontakt.html", "kind": "contact_page", "note": "portal@policja.gov.pl (editorial contact in footer); regional commands also use *.policja.gov.pl"}
+        {
+          "domain": "policja.gov.pl",
+          "url": "https://policja.pl/pol/kontakt/118,Kontakt.html",
+          "kind": "contact_page",
+          "note": "portal@policja.gov.pl (editorial contact in footer); regional commands also use *.policja.gov.pl"
+        }
       ],
       "confidence": "high",
       "notes": "Website on policja.pl, mail on policja.gov.pl."
@@ -25,9 +32,16 @@
       "name_en": "Border Guard",
       "acronym": "SG",
       "website": "https://www.strazgraniczna.pl",
-      "mail_domains": ["strazgraniczna.pl"],
+      "mail_domains": [
+        "strazgraniczna.pl"
+      ],
       "evidence": [
-        {"domain": "strazgraniczna.pl", "url": "https://www.strazgraniczna.pl/pl/kontakt", "kind": "contact_page", "note": "gkg.kg@strazgraniczna.pl, zg.kg@strazgraniczna.pl, zdsc2.kg@strazgraniczna.pl"}
+        {
+          "domain": "strazgraniczna.pl",
+          "url": "https://www.strazgraniczna.pl/pl/kontakt",
+          "kind": "contact_page",
+          "note": "gkg.kg@strazgraniczna.pl, zg.kg@strazgraniczna.pl, zdsc2.kg@strazgraniczna.pl"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -39,9 +53,16 @@
       "name_en": "Internal Security Agency",
       "acronym": "ABW",
       "website": "https://www.abw.gov.pl",
-      "mail_domains": ["abw.gov.pl"],
+      "mail_domains": [
+        "abw.gov.pl"
+      ],
       "evidence": [
-        {"domain": "abw.gov.pl", "url": "https://www.abw.gov.pl/", "kind": "contact_page", "note": "poczta@abw.gov.pl (mailto link in site footer)"}
+        {
+          "domain": "abw.gov.pl",
+          "url": "https://www.abw.gov.pl/",
+          "kind": "contact_page",
+          "note": "poczta@abw.gov.pl (mailto link in site footer)"
+        }
       ],
       "confidence": "high",
       "notes": "Domestic security/counterintelligence service."
@@ -53,9 +74,16 @@
       "name_en": "Foreign Intelligence Agency",
       "acronym": "AW",
       "website": "https://aw.gov.pl",
-      "mail_domains": ["aw.gov.pl"],
+      "mail_domains": [
+        "aw.gov.pl"
+      ],
       "evidence": [
-        {"domain": "aw.gov.pl", "url": "https://aw.gov.pl/pl/kontakt/173,Kontakt.pdf", "kind": "contact_page", "note": "poczta@aw.gov.pl, rekrutacja@aw.gov.pl"}
+        {
+          "domain": "aw.gov.pl",
+          "url": "https://aw.gov.pl/pl/kontakt/173,Kontakt.pdf",
+          "kind": "contact_page",
+          "note": "poczta@aw.gov.pl, rekrutacja@aw.gov.pl"
+        }
       ],
       "confidence": "high",
       "notes": "Foreign intelligence service."
@@ -67,11 +95,18 @@
       "name_en": "Military Counterintelligence Service",
       "acronym": "SKW",
       "website": "https://www.skw.gov.pl",
-      "mail_domains": ["skw.gov.pl"],
-      "evidence": [
-        {"domain": "skw.gov.pl", "url": "https://www.skw.gov.pl", "kind": "assumed_from_website", "note": "No published email found; domain assumed from official website"}
+      "mail_domains": [
+        "skw.gov.pl"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "skw.gov.pl",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "No public contact email found in searches."
     },
     {
@@ -81,11 +116,25 @@
       "name_en": "Military Intelligence Service",
       "acronym": "SWW",
       "website": "https://www.sww.gov.pl",
-      "mail_domains": ["sww.gov.pl"],
-      "evidence": [
-        {"domain": "sww.gov.pl", "url": "https://www.sww.gov.pl", "kind": "assumed_from_website", "note": "No published email found; domain assumed from official website"}
+      "mail_domains": [
+        "mon.gov.pl",
+        "sww.gov.pl"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "mon.gov.pl",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        },
+        {
+          "domain": "sww.gov.pl",
+          "url": "https://www.sww.gov.pl",
+          "kind": "assumed_from_website",
+          "note": "No published email found; domain assumed from official website"
+        }
+      ],
+      "confidence": "medium",
       "notes": "No public contact email found in searches."
     },
     {
@@ -95,9 +144,16 @@
       "name_en": "Ministry of the Interior and Administration",
       "acronym": "MSWiA",
       "website": "https://www.gov.pl/web/mswia",
-      "mail_domains": ["mswia.gov.pl"],
+      "mail_domains": [
+        "mswia.gov.pl"
+      ],
       "evidence": [
-        {"domain": "mswia.gov.pl", "url": "https://www.gov.pl/web/mswia/kontakt", "kind": "contact_page", "note": "kontakt@mswia.gov.pl"}
+        {
+          "domain": "mswia.gov.pl",
+          "url": "https://www.gov.pl/web/mswia/kontakt",
+          "kind": "contact_page",
+          "note": "kontakt@mswia.gov.pl"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -109,9 +165,16 @@
       "name_en": "Ministry of National Defence",
       "acronym": "MON",
       "website": "https://www.gov.pl/web/obrona-narodowa",
-      "mail_domains": ["mon.gov.pl"],
+      "mail_domains": [
+        "mon.gov.pl"
+      ],
       "evidence": [
-        {"domain": "mon.gov.pl", "url": "https://www.gov.pl/web/national-defence/contact", "kind": "contact_page", "note": "kontakt@mon.gov.pl"}
+        {
+          "domain": "mon.gov.pl",
+          "url": "https://www.gov.pl/web/national-defence/contact",
+          "kind": "contact_page",
+          "note": "kontakt@mon.gov.pl"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -123,9 +186,16 @@
       "name_en": "NASK - National Research Institute",
       "acronym": "NASK",
       "website": "https://nask.pl",
-      "mail_domains": ["nask.pl"],
+      "mail_domains": [
+        "nask.pl"
+      ],
       "evidence": [
-        {"domain": "nask.pl", "url": "https://en.nask.pl/eng/contact", "kind": "contact_page", "note": "nask@nask.pl (reception/secretariat); also iod@nask.pl"}
+        {
+          "domain": "nask.pl",
+          "url": "https://en.nask.pl/eng/contact",
+          "kind": "contact_page",
+          "note": "nask@nask.pl (reception/secretariat); also iod@nask.pl"
+        }
       ],
       "confidence": "high",
       "notes": "Hosts CSIRT NASK / CERT Polska; national-level CSIRT under the national cybersecurity system."
@@ -137,9 +207,16 @@
       "name_en": "CERT Polska (national CERT, operated by NASK)",
       "acronym": "CERT PL",
       "website": "https://cert.pl",
-      "mail_domains": ["cert.pl"],
+      "mail_domains": [
+        "cert.pl"
+      ],
       "evidence": [
-        {"domain": "cert.pl", "url": "https://cert.pl/en/contact/", "kind": "contact_page", "note": "info@cert.pl, cert@cert.pl (incident reporting)"}
+        {
+          "domain": "cert.pl",
+          "url": "https://cert.pl/en/contact/",
+          "kind": "contact_page",
+          "note": "info@cert.pl, cert@cert.pl (incident reporting)"
+        }
       ],
       "confidence": "high",
       "notes": "National CERT distinct mail domain from NASK."
@@ -151,11 +228,18 @@
       "name_en": "State Protection Service",
       "acronym": "SOP",
       "website": "https://www.gov.pl/web/sop",
-      "mail_domains": ["sop.gov.pl"],
-      "evidence": [
-        {"domain": "sop.gov.pl", "url": "https://www.gov.pl/web/sop", "kind": "assumed_from_website", "note": "Protection of highest officials; domain assumed from official gov.pl site naming (sop.gov.pl)"}
+      "mail_domains": [
+        "sop.gov.pl"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "sop.gov.pl",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Successor of BOR; protective service under MSWiA."
     }
   ],

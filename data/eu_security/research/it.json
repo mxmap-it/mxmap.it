@@ -11,10 +11,23 @@
       "name_en": "State Police",
       "acronym": "PS",
       "website": "https://www.poliziadistato.it",
-      "mail_domains": ["poliziadistato.it", "interno.it"],
+      "mail_domains": [
+        "poliziadistato.it",
+        "interno.it"
+      ],
       "evidence": [
-        {"domain": "poliziadistato.it", "url": "https://questure.poliziadistato.it/servizio/orari_pdf/5730dc9d55a8c825410684", "kind": "official_pdf", "note": "urp.co@poliziadistato.it (Questura di Como URP); PEC subdomain pecps.poliziadistato.it also in use (e.g. urp.quest.ar@pecps.poliziadistato.it)"},
-        {"domain": "interno.it", "url": "https://poliziadistato.it/statics/04/contatti-direzione-centrale-delle-specialita.pdf", "kind": "official_pdf", "note": "dipps012.0500@pecps.interno.it — central Public Security Department directorates use interno.it namespace (PEC subdomain pecps.interno.it)"}
+        {
+          "domain": "poliziadistato.it",
+          "url": "https://questure.poliziadistato.it/servizio/orari_pdf/5730dc9d55a8c825410684",
+          "kind": "official_pdf",
+          "note": "urp.co@poliziadistato.it (Questura di Como URP); PEC subdomain pecps.poliziadistato.it also in use (e.g. urp.quest.ar@pecps.poliziadistato.it)"
+        },
+        {
+          "domain": "interno.it",
+          "url": "https://poliziadistato.it/statics/04/contatti-direzione-centrale-delle-specialita.pdf",
+          "kind": "official_pdf",
+          "note": "dipps012.0500@pecps.interno.it — central Public Security Department directorates use interno.it namespace (PEC subdomain pecps.interno.it)"
+        }
       ],
       "confidence": "high",
       "notes": "Civil police under the Ministry of the Interior (Dipartimento della Pubblica Sicurezza). Ordinary addresses on poliziadistato.it; central directorates and PEC on interno.it subdomains (pecps.interno.it, pecps.poliziadistato.it)."
@@ -26,9 +39,16 @@
       "name_en": "Carabinieri Corps",
       "acronym": "CC",
       "website": "https://www.carabinieri.it",
-      "mail_domains": ["carabinieri.it"],
+      "mail_domains": [
+        "carabinieri.it"
+      ],
       "evidence": [
-        {"domain": "carabinieri.it", "url": "https://www.carabinieri.it/docs/default-source/privacy/dati-personali-acquisiti-nei-sinistri-stradali-2.pdf", "kind": "official_pdf", "note": "carabinieri@carabinieri.it institutional mailbox; unit pattern e.g. lgermnurp@carabinieri.it, cnanurp@carabinieri.it; PEC domain pec.carabinieri.it"}
+        {
+          "domain": "carabinieri.it",
+          "url": "https://www.carabinieri.it/docs/default-source/privacy/dati-personali-acquisiti-nei-sinistri-stradali-2.pdf",
+          "kind": "official_pdf",
+          "note": "carabinieri@carabinieri.it institutional mailbox; unit pattern e.g. lgermnurp@carabinieri.it, cnanurp@carabinieri.it; PEC domain pec.carabinieri.it"
+        }
       ],
       "confidence": "high",
       "notes": "Military police force with gendarmerie status, fourth armed force under the Ministry of Defence; PEC addresses on pec.carabinieri.it."
@@ -40,9 +60,16 @@
       "name_en": "Financial Guard (Finance Police)",
       "acronym": "GdF",
       "website": "https://www.gdf.gov.it",
-      "mail_domains": ["gdf.it"],
+      "mail_domains": [
+        "gdf.it"
+      ],
       "evidence": [
-        {"domain": "gdf.it", "url": "https://ted.europa.eu/en/notice/202973-2021/pdf", "kind": "other_official", "note": "EU TED procurement notices list GdF contact addresses @gdf.it; PEC domain pec.gdf.it"}
+        {
+          "domain": "gdf.it",
+          "url": "https://ted.europa.eu/en/notice/202973-2021/pdf",
+          "kind": "other_official",
+          "note": "EU TED procurement notices list GdF contact addresses @gdf.it; PEC domain pec.gdf.it"
+        }
       ],
       "confidence": "medium",
       "notes": "Militarized financial/economic police under the Ministry of Economy and Finance. Website on gdf.gov.it but email addresses use gdf.it (PEC: pec.gdf.it). Fits both police and financial-police (other_natsec) categories; classed as police per national-force role."
@@ -54,11 +81,18 @@
       "name_en": "Penitentiary Police",
       "acronym": "",
       "website": "https://www.poliziapenitenziaria.gov.it",
-      "mail_domains": ["giustizia.it"],
-      "evidence": [
-        {"domain": "giustizia.it", "url": "https://www.giustizia.it", "kind": "assumed_from_website", "note": "Corps belongs to the Ministry of Justice (DAP); addresses follow ministry pattern @giustizia.it — not directly evidenced, assumed from parent ministry domain"}
+      "mail_domains": [
+        "giustizia.it"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "giustizia.it",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Prison police under the Department of Penitentiary Administration (DAP), Ministry of Justice."
     },
     {
@@ -68,10 +102,23 @@
       "name_en": "Port Captaincies Corps - Coast Guard",
       "acronym": "CP",
       "website": "https://www.guardiacostiera.gov.it",
-      "mail_domains": ["guardiacostiera.it", "mit.gov.it"],
+      "mail_domains": [
+        "guardiacostiera.it",
+        "mit.gov.it"
+      ],
       "evidence": [
-        {"domain": "guardiacostiera.it", "url": "https://www.guardiacostiera.gov.it/", "kind": "contact_page", "note": "guardiacostiera@guardiacostiera.it on official site"},
-        {"domain": "mit.gov.it", "url": "https://www.guardiacostiera.gov.it/", "kind": "contact_page", "note": "guardiacostiera@mit.gov.it and PEC cgcp@pec.mit.gov.it (Ministry of Infrastructure and Transport namespace)"}
+        {
+          "domain": "guardiacostiera.it",
+          "url": "https://www.guardiacostiera.gov.it/",
+          "kind": "contact_page",
+          "note": "guardiacostiera@guardiacostiera.it on official site"
+        },
+        {
+          "domain": "mit.gov.it",
+          "url": "https://www.guardiacostiera.gov.it/",
+          "kind": "contact_page",
+          "note": "guardiacostiera@mit.gov.it and PEC cgcp@pec.mit.gov.it (Ministry of Infrastructure and Transport namespace)"
+        }
       ],
       "confidence": "high",
       "notes": "Navy corps operating under the Ministry of Infrastructure and Transport; maritime border/SAR functions. Maritime border policing proper is shared with Polizia di Stato (border police directorate)."
@@ -83,9 +130,16 @@
       "name_en": "Security Intelligence Department",
       "acronym": "DIS",
       "website": "https://www.sicurezzanazionale.gov.it",
-      "mail_domains": ["sicurezzanazionale.gov.it"],
+      "mail_domains": [
+        "sicurezzanazionale.gov.it"
+      ],
       "evidence": [
-        {"domain": "sicurezzanazionale.gov.it", "url": "https://www.sicurezzanazionale.gov.it", "kind": "assumed_from_website", "note": "Official site publishes only web contact forms, no email addresses; domain assumed from website"}
+        {
+          "domain": "sicurezzanazionale.gov.it",
+          "url": "https://www.sicurezzanazionale.gov.it",
+          "kind": "assumed_from_website",
+          "note": "Official site publishes only web contact forms, no email addresses; domain assumed from website"
+        }
       ],
       "confidence": "low",
       "notes": "Coordination department of the Italian intelligence system (Sistema di informazione per la sicurezza della Repubblica), under the Presidency of the Council of Ministers."
@@ -97,9 +151,16 @@
       "name_en": "External Intelligence and Security Agency",
       "acronym": "AISE",
       "website": "https://www.sicurezzanazionale.gov.it",
-      "mail_domains": ["sicurezzanazionale.gov.it"],
+      "mail_domains": [
+        "sicurezzanazionale.gov.it"
+      ],
       "evidence": [
-        {"domain": "sicurezzanazionale.gov.it", "url": "https://www.sicurezzanazionale.gov.it", "kind": "assumed_from_website", "note": "No separate agency website or published email; shares the intelligence-system portal domain, assumed"}
+        {
+          "domain": "sicurezzanazionale.gov.it",
+          "url": "https://www.sicurezzanazionale.gov.it",
+          "kind": "assumed_from_website",
+          "note": "No separate agency website or published email; shares the intelligence-system portal domain, assumed"
+        }
       ],
       "confidence": "low",
       "notes": "Foreign intelligence agency."
@@ -111,9 +172,16 @@
       "name_en": "Internal Intelligence and Security Agency",
       "acronym": "AISI",
       "website": "https://www.sicurezzanazionale.gov.it",
-      "mail_domains": ["sicurezzanazionale.gov.it"],
+      "mail_domains": [
+        "sicurezzanazionale.gov.it"
+      ],
       "evidence": [
-        {"domain": "sicurezzanazionale.gov.it", "url": "https://www.sicurezzanazionale.gov.it", "kind": "assumed_from_website", "note": "No separate agency website or published email; shares the intelligence-system portal domain, assumed"}
+        {
+          "domain": "sicurezzanazionale.gov.it",
+          "url": "https://www.sicurezzanazionale.gov.it",
+          "kind": "assumed_from_website",
+          "note": "No separate agency website or published email; shares the intelligence-system portal domain, assumed"
+        }
       ],
       "confidence": "low",
       "notes": "Domestic intelligence agency."
@@ -125,9 +193,16 @@
       "name_en": "Ministry of the Interior",
       "acronym": "",
       "website": "https://www.interno.gov.it",
-      "mail_domains": ["interno.it"],
+      "mail_domains": [
+        "interno.it"
+      ],
       "evidence": [
-        {"domain": "interno.it", "url": "https://www.interno.gov.it/it/posta-elettronica-certificata", "kind": "other_official", "note": "Official PEC directory lists gabinetto.ministro@pec.interno.it, dait.prot@pec.interno.it etc. — ministry email namespace is interno.it (PEC subdomains pec.interno.it, pecdlci.interno.it); ordinary addresses @interno.it"}
+        {
+          "domain": "interno.it",
+          "url": "https://www.interno.gov.it/it/posta-elettronica-certificata",
+          "kind": "other_official",
+          "note": "Official PEC directory lists gabinetto.ministro@pec.interno.it, dait.prot@pec.interno.it etc. — ministry email namespace is interno.it (PEC subdomains pec.interno.it, pecdlci.interno.it); ordinary addresses @interno.it"
+        }
       ],
       "confidence": "high",
       "notes": "Website on interno.gov.it but email namespace is interno.it. Fire Corps (Vigili del Fuoco) under this ministry uses vigilfuoco.it / cert.vigilfuoco.it."
@@ -139,9 +214,16 @@
       "name_en": "Ministry of Defence",
       "acronym": "",
       "website": "https://www.difesa.it",
-      "mail_domains": ["difesa.it"],
+      "mail_domains": [
+        "difesa.it"
+      ],
       "evidence": [
-        {"domain": "difesa.it", "url": "https://www.difesa.it/urp", "kind": "contact_page", "note": "supportotecnico@difesa.it on official URP page"}
+        {
+          "domain": "difesa.it",
+          "url": "https://www.difesa.it/urp",
+          "kind": "contact_page",
+          "note": "supportotecnico@difesa.it on official URP page"
+        }
       ],
       "confidence": "high",
       "notes": "Armed forces (Esercito, Marina, Aeronautica) also use @esercito.difesa.it / @marina.difesa.it / @aeronautica.difesa.it subdomains; PEC on postacert subdomains."
@@ -153,9 +235,16 @@
       "name_en": "National Cybersecurity Agency",
       "acronym": "ACN",
       "website": "https://www.acn.gov.it",
-      "mail_domains": ["acn.gov.it"],
+      "mail_domains": [
+        "acn.gov.it"
+      ],
       "evidence": [
-        {"domain": "acn.gov.it", "url": "https://www.acn.gov.it/portale/contatti", "kind": "contact_page", "note": "info@acn.gov.it, ncc@acn.gov.it, comunicazione@acn.gov.it"}
+        {
+          "domain": "acn.gov.it",
+          "url": "https://www.acn.gov.it/portale/contatti",
+          "kind": "contact_page",
+          "note": "info@acn.gov.it, ncc@acn.gov.it, comunicazione@acn.gov.it"
+        }
       ],
       "confidence": "high",
       "notes": "National cybersecurity authority and NIS competent authority, est. 2021."
@@ -167,9 +256,16 @@
       "name_en": "Italian national CSIRT",
       "acronym": "CSIRT-IT",
       "website": "https://www.csirt.gov.it",
-      "mail_domains": ["acn.gov.it"],
+      "mail_domains": [
+        "acn.gov.it"
+      ],
       "evidence": [
-        {"domain": "acn.gov.it", "url": "https://www.csirt.gov.it/", "kind": "contact_page", "note": "info@acn.gov.it and comunicazione@acn.gov.it published on csirt.gov.it — CSIRT operates inside ACN and uses ACN mail domain"}
+        {
+          "domain": "acn.gov.it",
+          "url": "https://www.csirt.gov.it/",
+          "kind": "contact_page",
+          "note": "info@acn.gov.it and comunicazione@acn.gov.it published on csirt.gov.it — CSIRT operates inside ACN and uses ACN mail domain"
+        }
       ],
       "confidence": "high",
       "notes": "National CERT/CSIRT, operated by ACN; distinct website csirt.gov.it but ACN email namespace."

@@ -11,9 +11,16 @@
       "name_en": "The Guardians of the Peace (national police)",
       "acronym": "AGS",
       "website": "https://www.garda.ie",
-      "mail_domains": ["garda.ie"],
+      "mail_domains": [
+        "garda.ie"
+      ],
       "evidence": [
-        {"domain": "garda.ie", "url": "https://www.garda.ie/en/Contact-Us/Media-enquiries/", "kind": "press_page", "note": "pressoffice@garda.ie; also foi@garda.ie and access.officer@garda.ie on official contact pages"}
+        {
+          "domain": "garda.ie",
+          "url": "https://www.garda.ie/en/Contact-Us/Media-enquiries/",
+          "kind": "press_page",
+          "note": "pressoffice@garda.ie; also foi@garda.ie and access.officer@garda.ie on official contact pages"
+        }
       ],
       "confidence": "high",
       "notes": "Single national police; also handles state security via the Crime & Security Branch and immigration via the Garda National Immigration Bureau."
@@ -25,9 +32,16 @@
       "name_en": "Department of Justice (interior-ministry equivalent)",
       "acronym": "DOJ",
       "website": "https://www.gov.ie/en/organisation/department-of-justice/",
-      "mail_domains": ["justice.ie"],
+      "mail_domains": [
+        "justice.ie"
+      ],
       "evidence": [
-        {"domain": "justice.ie", "url": "https://www.gov.ie/en/organisation/department-of-justice/", "kind": "contact_page", "note": "info@justice.ie, accessofficer@justice.ie on gov.ie listing; oireachtasqueries@justice.ie in Oireachtas records"}
+        {
+          "domain": "justice.ie",
+          "url": "https://www.gov.ie/en/organisation/department-of-justice/",
+          "kind": "contact_page",
+          "note": "info@justice.ie, accessofficer@justice.ie on gov.ie listing; oireachtasqueries@justice.ie in Oireachtas records"
+        }
       ],
       "confidence": "high",
       "notes": "Website on gov.ie portal; mail domain justice.ie. Immigration Service Delivery sits here."
@@ -39,11 +53,18 @@
       "name_en": "Department of Defence",
       "acronym": "DOD",
       "website": "https://www.gov.ie/en/organisation/department-of-defence/",
-      "mail_domains": ["defence.ie"],
-      "evidence": [
-        {"domain": "defence.ie", "url": "https://www.gov.ie/en/organisation/department-of-defence/", "kind": "assumed_from_website", "note": "No defence.ie address evidenced in research; historical department domain, assumed. Website now on gov.ie portal"}
+      "mail_domains": [
+        "defence.ie"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "defence.ie",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": ""
     },
     {
@@ -53,10 +74,23 @@
       "name_en": "Irish Defence Forces (incl. Directorate of Military Intelligence J2)",
       "acronym": "DF",
       "website": "https://www.military.ie",
-      "mail_domains": ["military.ie", "defenceforces.ie"],
+      "mail_domains": [
+        "military.ie",
+        "defenceforces.ie"
+      ],
       "evidence": [
-        {"domain": "military.ie", "url": "https://www.military.ie/en/contact-us", "kind": "contact_page", "note": "info@military.ie for general queries"},
-        {"domain": "defenceforces.ie", "url": "https://www.military.ie/en/contact-us", "kind": "contact_page", "note": "recruitment@defenceforces.ie, foi@defenceforces.ie, pss@defenceforces.ie on official contact pages"}
+        {
+          "domain": "military.ie",
+          "url": "https://www.military.ie/en/contact-us",
+          "kind": "contact_page",
+          "note": "info@military.ie for general queries"
+        },
+        {
+          "domain": "defenceforces.ie",
+          "url": "https://www.military.ie/en/contact-us",
+          "kind": "contact_page",
+          "note": "recruitment@defenceforces.ie, foi@defenceforces.ie, pss@defenceforces.ie on official contact pages"
+        }
       ],
       "confidence": "high",
       "notes": "Military intelligence (J2) is a directorate of the Defence Forces, not a standalone agency."
@@ -68,9 +102,16 @@
       "name_en": "National Cyber Security Centre",
       "acronym": "NCSC-IE",
       "website": "https://www.ncsc.gov.ie",
-      "mail_domains": ["ncsc.gov.ie"],
+      "mail_domains": [
+        "ncsc.gov.ie"
+      ],
       "evidence": [
-        {"domain": "ncsc.gov.ie", "url": "https://ncsc.gov.ie/contact/", "kind": "contact_page", "note": "info@ncsc.gov.ie (general), incident@ncsc.gov.ie / certreport@ncsc.gov.ie (incident reporting; certreport also in RFC2350 at ncsc.gov.ie/pdfs/RFC2350%20NCSC-IE.txt)"}
+        {
+          "domain": "ncsc.gov.ie",
+          "url": "https://ncsc.gov.ie/contact/",
+          "kind": "contact_page",
+          "note": "info@ncsc.gov.ie (general), incident@ncsc.gov.ie / certreport@ncsc.gov.ie (incident reporting; certreport also in RFC2350 at ncsc.gov.ie/pdfs/RFC2350%20NCSC-IE.txt)"
+        }
       ],
       "confidence": "high",
       "notes": "Part of the Department of the Environment, Climate and Communications; hosts the national CSIRT (CSIRT-IE)."

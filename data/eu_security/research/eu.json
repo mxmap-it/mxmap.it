@@ -11,9 +11,16 @@
       "name_en": "Europol",
       "acronym": "Europol",
       "website": "https://www.europol.europa.eu",
-      "mail_domains": ["europol.europa.eu"],
+      "mail_domains": [
+        "europol.europa.eu"
+      ],
       "evidence": [
-        {"domain": "europol.europa.eu", "url": "https://edps.europa.eu/system/files/2024-04/81-edps_data_protection_notice_dpo_network_list_en.pdf", "kind": "other_official", "note": "dpo@europol.europa.eu listed in EDPS network of EU-institution DPOs; staff pattern firstname.lastname@europol.europa.eu also seen in official Europol DPO article PDF"}
+        {
+          "domain": "europol.europa.eu",
+          "url": "https://edps.europa.eu/system/files/2024-04/81-edps_data_protection_notice_dpo_network_list_en.pdf",
+          "kind": "other_official",
+          "note": "dpo@europol.europa.eu listed in EDPS network of EU-institution DPOs; staff pattern firstname.lastname@europol.europa.eu also seen in official Europol DPO article PDF"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -25,9 +32,16 @@
       "name_en": "Eurojust",
       "acronym": "Eurojust",
       "website": "https://www.eurojust.europa.eu",
-      "mail_domains": ["eurojust.europa.eu"],
+      "mail_domains": [
+        "eurojust.europa.eu"
+      ],
       "evidence": [
-        {"domain": "eurojust.europa.eu", "url": "https://www.eurojust.europa.eu/contact-us/media-contact", "kind": "contact_page", "note": "media@eurojust.europa.eu; general info@eurojust.europa.eu also attested"}
+        {
+          "domain": "eurojust.europa.eu",
+          "url": "https://www.eurojust.europa.eu/contact-us/media-contact",
+          "kind": "contact_page",
+          "note": "media@eurojust.europa.eu; general info@eurojust.europa.eu also attested"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -39,9 +53,16 @@
       "name_en": "Frontex",
       "acronym": "Frontex",
       "website": "https://www.frontex.europa.eu",
-      "mail_domains": ["frontex.europa.eu"],
+      "mail_domains": [
+        "frontex.europa.eu"
+      ],
       "evidence": [
-        {"domain": "frontex.europa.eu", "url": "https://frontex.europa.eu/media-centre/contact/", "kind": "contact_page", "note": "press@frontex.europa.eu, frontex@frontex.europa.eu; also pad@ and DPO@frontex.europa.eu on transparency pages"}
+        {
+          "domain": "frontex.europa.eu",
+          "url": "https://frontex.europa.eu/media-centre/contact/",
+          "kind": "contact_page",
+          "note": "press@frontex.europa.eu, frontex@frontex.europa.eu; also pad@ and DPO@frontex.europa.eu on transparency pages"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -53,9 +74,16 @@
       "name_en": "ENISA",
       "acronym": "ENISA",
       "website": "https://www.enisa.europa.eu",
-      "mail_domains": ["enisa.europa.eu"],
+      "mail_domains": [
+        "enisa.europa.eu"
+      ],
       "evidence": [
-        {"domain": "enisa.europa.eu", "url": "https://www.enisa.europa.eu/press-office/seek-an-expert-or-request-a-speaker", "kind": "press_page", "note": "press@enisa.europa.eu"}
+        {
+          "domain": "enisa.europa.eu",
+          "url": "https://www.enisa.europa.eu/press-office/seek-an-expert-or-request-a-speaker",
+          "kind": "press_page",
+          "note": "press@enisa.europa.eu"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -67,9 +95,16 @@
       "name_en": "CERT-EU",
       "acronym": "CERT-EU",
       "website": "https://cert.europa.eu",
-      "mail_domains": ["cert.europa.eu"],
+      "mail_domains": [
+        "cert.europa.eu"
+      ],
       "evidence": [
-        {"domain": "cert.europa.eu", "url": "https://cert.europa.eu/contact-us", "kind": "contact_page", "note": "services@cert.europa.eu"}
+        {
+          "domain": "cert.europa.eu",
+          "url": "https://cert.europa.eu/contact-us",
+          "kind": "contact_page",
+          "note": "services@cert.europa.eu"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -81,9 +116,16 @@
       "name_en": "European Cybersecurity Competence Centre",
       "acronym": "ECCC",
       "website": "https://cybersecurity-centre.europa.eu",
-      "mail_domains": ["eccc.europa.eu"],
+      "mail_domains": [
+        "eccc.europa.eu"
+      ],
       "evidence": [
-        {"domain": "eccc.europa.eu", "url": "https://cybersecurity-centre.europa.eu/contact-0_en", "kind": "contact_page", "note": "info[at]eccc[dot]europa[dot]eu and communication[at]eccc[dot]europa[dot]eu (obfuscated on page)"}
+        {
+          "domain": "eccc.europa.eu",
+          "url": "https://cybersecurity-centre.europa.eu/contact-0_en",
+          "kind": "contact_page",
+          "note": "info[at]eccc[dot]europa[dot]eu and communication[at]eccc[dot]europa[dot]eu (obfuscated on page)"
+        }
       ],
       "confidence": "high",
       "notes": "Website domain (cybersecurity-centre.europa.eu) differs from mail domain (eccc.europa.eu). Some administrative mailboxes still run under ec.europa.eu (e.g. CNECT-ECCC-EVALUATIONS@ec.europa.eu)."
@@ -95,9 +137,16 @@
       "name_en": "eu-LISA",
       "acronym": "eu-LISA",
       "website": "https://www.eulisa.europa.eu",
-      "mail_domains": ["eulisa.europa.eu"],
+      "mail_domains": [
+        "eulisa.europa.eu"
+      ],
       "evidence": [
-        {"domain": "eulisa.europa.eu", "url": "https://www.eulisa.europa.eu/sites/default/files/documents/eu-lisa-csirt-rfc-2350.pdf", "kind": "official_pdf", "note": "csirt@eulisa.europa.eu in official CSIRT RFC 2350; info@eulisa.europa.eu attested in third-party directories"}
+        {
+          "domain": "eulisa.europa.eu",
+          "url": "https://www.eulisa.europa.eu/sites/default/files/documents/eu-lisa-csirt-rfc-2350.pdf",
+          "kind": "official_pdf",
+          "note": "csirt@eulisa.europa.eu in official CSIRT RFC 2350; info@eulisa.europa.eu attested in third-party directories"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -109,9 +158,16 @@
       "name_en": "European External Action Service",
       "acronym": "EEAS",
       "website": "https://www.eeas.europa.eu",
-      "mail_domains": ["eeas.europa.eu"],
+      "mail_domains": [
+        "eeas.europa.eu"
+      ],
       "evidence": [
-        {"domain": "eeas.europa.eu", "url": "https://www.eeas.europa.eu/node/410763_es", "kind": "contact_page", "note": "data-protection [at] eeas.europa.eu on official 'Contact the EEAS' page"}
+        {
+          "domain": "eeas.europa.eu",
+          "url": "https://www.eeas.europa.eu/node/410763_es",
+          "kind": "contact_page",
+          "note": "data-protection [at] eeas.europa.eu on official 'Contact the EEAS' page"
+        }
       ],
       "confidence": "high",
       "notes": "Includes EU INTCEN (EU Intelligence and Situation Centre), which has no own domain; its mail runs under eeas.europa.eu. The EEAS press/spokesperson mailbox is hosted on the Commission domain (COMM-SPP-FOREIGN-AFFAIRS@ec.europa.eu)."
@@ -123,9 +179,16 @@
       "name_en": "European Defence Agency",
       "acronym": "EDA",
       "website": "https://www.eda.europa.eu",
-      "mail_domains": ["eda.europa.eu"],
+      "mail_domains": [
+        "eda.europa.eu"
+      ],
       "evidence": [
-        {"domain": "eda.europa.eu", "url": "https://www.eda.europa.eu/contact-us", "kind": "contact_page", "note": "info@eda.europa.eu, recruitment@eda.europa.eu, dataprotection@eda.europa.eu and others"}
+        {
+          "domain": "eda.europa.eu",
+          "url": "https://www.eda.europa.eu/contact-us",
+          "kind": "contact_page",
+          "note": "info@eda.europa.eu, recruitment@eda.europa.eu, dataprotection@eda.europa.eu and others"
+        }
       ],
       "confidence": "high",
       "notes": "Not a ministry: EU agency supporting Member States' defence cooperation; defence_ministry used as closest type fit."
@@ -137,9 +200,16 @@
       "name_en": "EU Satellite Centre",
       "acronym": "SatCen",
       "website": "https://www.satcen.europa.eu",
-      "mail_domains": ["satcen.europa.eu"],
+      "mail_domains": [
+        "satcen.europa.eu"
+      ],
       "evidence": [
-        {"domain": "satcen.europa.eu", "url": "https://www.satcen.europa.eu/keydocuments/Satcen%20Annual%20Report%202024%20web6863fb6508d771430f0ee581.pdf", "kind": "official_pdf", "note": "info@satcen.europa.eu in annual reports; communication@satcen.europa.eu in official leaflet; dpo@satcen.europa.eu in Copernicus SEA privacy policy"}
+        {
+          "domain": "satcen.europa.eu",
+          "url": "https://www.satcen.europa.eu/keydocuments/Satcen%20Annual%20Report%202024%20web6863fb6508d771430f0ee581.pdf",
+          "kind": "official_pdf",
+          "note": "info@satcen.europa.eu in annual reports; communication@satcen.europa.eu in official leaflet; dpo@satcen.europa.eu in Copernicus SEA privacy policy"
+        }
       ],
       "confidence": "high",
       "notes": "Geospatial intelligence (imagery analysis) agency under the CSDP."
@@ -151,9 +221,16 @@
       "name_en": "EU Agency for the Space Programme",
       "acronym": "EUSPA",
       "website": "https://www.euspa.europa.eu",
-      "mail_domains": ["euspa.europa.eu"],
+      "mail_domains": [
+        "euspa.europa.eu"
+      ],
       "evidence": [
-        {"domain": "euspa.europa.eu", "url": "https://www.euspa.europa.eu/pressroom/press-faqs", "kind": "press_page", "note": "com@euspa.europa.eu for media; dpo@euspa.europa.eu in official privacy statement"}
+        {
+          "domain": "euspa.europa.eu",
+          "url": "https://www.euspa.europa.eu/pressroom/press-faqs",
+          "kind": "press_page",
+          "note": "com@euspa.europa.eu for media; dpo@euspa.europa.eu in official privacy statement"
+        }
       ],
       "confidence": "high",
       "notes": "Successor of GSA; legacy gsa.europa.eu addresses may still appear in older documents."
@@ -165,9 +242,16 @@
       "name_en": "European Public Prosecutor's Office",
       "acronym": "EPPO",
       "website": "https://www.eppo.europa.eu",
-      "mail_domains": ["eppo.europa.eu"],
+      "mail_domains": [
+        "eppo.europa.eu"
+      ],
       "evidence": [
-        {"domain": "eppo.europa.eu", "url": "https://www.eppo.europa.eu/en/data-protection-notice-eppos-public-mailing-list", "kind": "privacy_page", "note": "press (at) eppo.europa.eu; also info@eppo.europa.eu and EPPO-DPO (at) eppo.europa.eu"}
+        {
+          "domain": "eppo.europa.eu",
+          "url": "https://www.eppo.europa.eu/en/data-protection-notice-eppos-public-mailing-list",
+          "kind": "privacy_page",
+          "note": "press (at) eppo.europa.eu; also info@eppo.europa.eu and EPPO-DPO (at) eppo.europa.eu"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -179,9 +263,16 @@
       "name_en": "European Anti-Fraud Office",
       "acronym": "OLAF",
       "website": "https://anti-fraud.ec.europa.eu",
-      "mail_domains": ["ec.europa.eu"],
+      "mail_domains": [
+        "ec.europa.eu"
+      ],
       "evidence": [
-        {"domain": "ec.europa.eu", "url": "https://anti-fraud.ec.europa.eu/contacts/media-enquiries_en", "kind": "press_page", "note": "OLAF-MEDIA@ec.europa.eu"}
+        {
+          "domain": "ec.europa.eu",
+          "url": "https://anti-fraud.ec.europa.eu/contacts/media-enquiries_en",
+          "kind": "press_page",
+          "note": "OLAF-MEDIA@ec.europa.eu"
+        }
       ],
       "confidence": "high",
       "notes": "OLAF is a Commission office; mail runs under the Commission domain ec.europa.eu, not an own subdomain."
@@ -193,9 +284,16 @@
       "name_en": "European Commission DG HOME",
       "acronym": "DG HOME",
       "website": "https://home-affairs.ec.europa.eu",
-      "mail_domains": ["ec.europa.eu"],
+      "mail_domains": [
+        "ec.europa.eu"
+      ],
       "evidence": [
-        {"domain": "ec.europa.eu", "url": "https://anti-fraud.ec.europa.eu/contacts/media-enquiries_en", "kind": "other_official", "note": "All Commission DGs mail under ec.europa.eu (functional mailboxes pattern HOME-*@ec.europa.eu; staff firstname.lastname@ec.europa.eu)"}
+        {
+          "domain": "ec.europa.eu",
+          "url": "https://anti-fraud.ec.europa.eu/contacts/media-enquiries_en",
+          "kind": "other_official",
+          "note": "All Commission DGs mail under ec.europa.eu (functional mailboxes pattern HOME-*@ec.europa.eu; staff firstname.lastname@ec.europa.eu)"
+        }
       ],
       "confidence": "high",
       "notes": "Interior-ministry equivalent at EU level; no DG-specific mail domain exists."
@@ -207,9 +305,16 @@
       "name_en": "European Commission DG DEFIS",
       "acronym": "DG DEFIS",
       "website": "https://defence-industry-space.ec.europa.eu",
-      "mail_domains": ["ec.europa.eu"],
+      "mail_domains": [
+        "ec.europa.eu"
+      ],
       "evidence": [
-        {"domain": "ec.europa.eu", "url": "https://defence-industry-space.ec.europa.eu/newsroom/press-inquiries_en", "kind": "press_page", "note": "DG DEFIS press inquiries via Commission spokesperson mailboxes @ec.europa.eu; all Commission DGs mail under ec.europa.eu"}
+        {
+          "domain": "ec.europa.eu",
+          "url": "https://defence-industry-space.ec.europa.eu/newsroom/press-inquiries_en",
+          "kind": "press_page",
+          "note": "DG DEFIS press inquiries via Commission spokesperson mailboxes @ec.europa.eu; all Commission DGs mail under ec.europa.eu"
+        }
       ],
       "confidence": "high",
       "notes": "Defence-industry policy arm of the Commission; no DG-specific mail domain exists."
@@ -221,9 +326,16 @@
       "name_en": "Council of the EU — General Secretariat",
       "acronym": "GSC",
       "website": "https://www.consilium.europa.eu",
-      "mail_domains": ["consilium.europa.eu"],
+      "mail_domains": [
+        "consilium.europa.eu"
+      ],
       "evidence": [
-        {"domain": "consilium.europa.eu", "url": "https://www.consilium.europa.eu/en/press/press-contacts/", "kind": "press_page", "note": "press.office@consilium.europa.eu (also in official Council media guide PDF)"}
+        {
+          "domain": "consilium.europa.eu",
+          "url": "https://www.consilium.europa.eu/en/press/press-contacts/",
+          "kind": "press_page",
+          "note": "press.office@consilium.europa.eu (also in official Council media guide PDF)"
+        }
       ],
       "confidence": "high",
       "notes": "Hosts the Council's security committees (COSI, PSC) and the Horizontal Working Party on Cyber Issues; all mail under consilium.europa.eu."
@@ -235,9 +347,16 @@
       "name_en": "CEPOL",
       "acronym": "CEPOL",
       "website": "https://www.cepol.europa.eu",
-      "mail_domains": ["cepol.europa.eu"],
+      "mail_domains": [
+        "cepol.europa.eu"
+      ],
       "evidence": [
-        {"domain": "cepol.europa.eu", "url": "https://www.cepol.europa.eu/api/assets/media/downloads/2026/Privacy_Statement_Communications_subnetwork.pdf", "kind": "official_pdf", "note": "functional mailboxes @cepol.europa.eu in official privacy statements; info@cepol.europa.eu general pattern"}
+        {
+          "domain": "cepol.europa.eu",
+          "url": "https://www.cepol.europa.eu/api/assets/media/downloads/2026/Privacy_Statement_Communications_subnetwork.pdf",
+          "kind": "official_pdf",
+          "note": "functional mailboxes @cepol.europa.eu in official privacy statements; info@cepol.europa.eu general pattern"
+        }
       ],
       "confidence": "medium",
       "notes": "Added: clearly in the EU law-enforcement domain (police training agency, Budapest)."
@@ -249,11 +368,18 @@
       "name_en": "EU Drugs Agency (ex-EMCDDA)",
       "acronym": "EUDA",
       "website": "https://www.euda.europa.eu",
-      "mail_domains": ["euda.europa.eu"],
-      "evidence": [
-        {"domain": "euda.europa.eu", "url": "https://www.euda.europa.eu", "kind": "assumed_from_website", "note": "Assumed from website domain; agency renamed from EMCDDA (emcdda.europa.eu) in 2024, legacy domain may still be in use"}
+      "mail_domains": [
+        "euda.europa.eu"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "euda.europa.eu",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Added: drugs-monitoring agency supporting EU internal security policy; mail domain not directly evidenced."
     }
   ],

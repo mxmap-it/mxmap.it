@@ -212,9 +212,9 @@
   "evidence": [
    {
     "domain": "mb.gov.al",
-    "url": "https://mb.gov.al/",
-    "kind": "assumed_from_website",
-    "note": "No email address retrievable from the JS-rendered official site; assumed from website domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    },
    {
     "domain": "punetebrendshme.gov.al",
@@ -223,7 +223,7 @@
     "note": "Ardian.Bita@punetebrendshme.gov.al listed by Publeaks (third-party transparency NGO, not an official source) as ministry coordinator address; treat as weak evidence of a second/legacy mail domain"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "mb.gov.al pages block scraping and return empty content to fetchers; no official page with an @-address found. punetebrendshme.gov.al evidenced only via third party.",
   "country": "AL",
   "country_name_en": "Albania",
@@ -417,12 +417,12 @@
   "evidence": [
    {
     "domain": "dsn.gv.at",
-    "url": "https://www.dsn.gv.at/",
-    "kind": "assumed_from_website",
-    "note": "No published email found on dsn.gv.at; assumed from website domain. May also use bmi.gv.at (DSN is a BMI directorate)."
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Domestic intelligence/state protection, successor of BVT (2021)",
   "country": "AT",
   "country_name_en": "Austria",
@@ -441,12 +441,12 @@
   "evidence": [
    {
     "domain": "bmlv.gv.at",
-    "url": "https://www.bundesheer.at",
-    "kind": "assumed_from_website",
-    "note": "Military foreign intelligence under BMLV; no own website or published address — assumed ministry domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "",
   "country": "AT",
   "country_name_en": "Austria",
@@ -585,12 +585,12 @@
   "evidence": [
    {
     "domain": "granpol.gov.ba",
-    "url": "https://vijeceministara.gov.ba/en/ministry-of-security",
-    "kind": "assumed_from_website",
-    "note": "Official site confirmed by Council of Ministers page; granpol.gov.ba site unreachable from research network (TLS/timeout), no email address directly evidenced"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Website registrable domain used as mail domain; verify when site reachable.",
   "country": "BA",
   "country_name_en": "Bosnia and Herzegovina",
@@ -729,12 +729,12 @@
   "evidence": [
    {
     "domain": "mup.vladars.net",
-    "url": "https://mup.vladars.net",
-    "kind": "assumed_from_website",
-    "note": "Site unreachable from research network (connection refused/timeout); mail domain assumed from website host, not evidenced"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Entity-level (RS) interior ministry; RS government sites sit under vladars.net/vladars.rs — actual mail domain needs verification.",
   "country": "BA",
   "country_name_en": "Bosnia and Herzegovina",
@@ -801,9 +801,9 @@
   "evidence": [
    {
     "domain": "mil.be",
-    "url": "https://www.mil.be",
-    "kind": "assumed_from_website",
-    "note": "Belgian Defence standard mail domain xxx@mil.be"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -856,9 +856,9 @@
   "evidence": [
    {
     "domain": "mil.be",
-    "url": "https://www.mil.be",
-    "kind": "assumed_from_website",
-    "note": "xxx@mil.be is the standard Belgian Defence mail domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -1055,12 +1055,12 @@
   "evidence": [
    {
     "domain": "mvr.bg",
-    "url": "https://www.mvr.bg/en/contacts",
-    "kind": "assumed_from_website",
-    "note": "GDBOP is an MVR general directorate; no GDBOP-specific email found, mvr.bg assumed as the ministry-wide mail domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Includes the national Cybercrime unit.",
   "country": "BG",
   "country_name_en": "Bulgaria",
@@ -2464,9 +2464,9 @@
   "evidence": [
    {
     "domain": "politsei.ee",
-    "url": "https://www.politsei.ee/et/kontaktid",
-    "kind": "assumed_from_website",
-    "note": "ppa@politsei.ee is the widely used general address, but the PPA site renders emails client-side (not verifiable in fetched HTML); domain matches website registrable domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Qwen: seen in third-party source"
    }
   ],
   "confidence": "medium",
@@ -2488,9 +2488,9 @@
   "evidence": [
    {
     "domain": "kapo.ee",
-    "url": "https://kapo.ee",
-    "kind": "assumed_from_website",
-    "note": "kapo@kapo.ee is the published general address (site blocks automated fetch with 403); assumed from website registrable domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -2742,12 +2742,12 @@
   "evidence": [
    {
     "domain": "incibe.es",
-    "url": "https://www.incibe.es/en/contact",
-    "kind": "assumed_from_website",
-    "note": "Contact page uses web forms; incibe.es assumed from website. INCIBE-CERT also operates addresses on incibe-cert.es (PGP key page at incibe.es/en/incibe-cert/about-us/pgp-public-keys) but exact addresses not displayed"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "National CSIRT for citizens and private sector (CCN-CERT covers public sector).",
   "country": "ES",
   "country_name_en": "Spain",
@@ -3246,12 +3246,12 @@
   "evidence": [
    {
     "domain": "euda.europa.eu",
-    "url": "https://www.euda.europa.eu",
-    "kind": "assumed_from_website",
-    "note": "Assumed from website domain; agency renamed from EMCDDA (emcdda.europa.eu) in 2024, legacy domain may still be in use"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Added: drugs-monitoring agency supporting EU internal security policy; mail domain not directly evidenced.",
   "country": "EU",
   "country_name_en": "European Union institutions",
@@ -3685,12 +3685,12 @@
   "evidence": [
    {
     "domain": "sgdsn.gouv.fr",
-    "url": "https://www.sgdsn.gouv.fr",
-    "kind": "assumed_from_website",
-    "note": "assumed from website registrable domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen in official document"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "PM-level national security secretariat; ANSSI reports to it.",
   "country": "FR",
   "country_name_en": "France",
@@ -3997,12 +3997,12 @@
   "evidence": [
    {
     "domain": "psni.police.uk",
-    "url": "https://www.psni.police.uk/contact",
-    "kind": "assumed_from_website",
-    "note": "Official contact page uses forms; unit email addresses on psni.police.uk pages were redacted in accessible copies. Assumed from website registrable domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "National police force of Northern Ireland.",
   "country": "GB",
   "country_name_en": "United Kingdom",
@@ -4141,9 +4141,9 @@
   "evidence": [
    {
     "domain": "mod.gov.ge",
-    "url": "https://mod.gov.ge",
-    "kind": "assumed_from_website",
-    "note": "assumed from website registrable domain; third-party email-pattern database (prospeo.io/c/ministry-of-defence-of-georgia) reports {first}{last}@mod.gov.ge as staff pattern; official pages 403 non-Georgian IPs"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Qwen: seen in third-party source"
    }
   ],
   "confidence": "medium",
@@ -4282,12 +4282,12 @@
   "evidence": [
    {
     "domain": "nis.gr",
-    "url": "https://www.nis.gr/en/contact",
-    "kind": "assumed_from_website",
-    "note": "Official site is a JS single-page app; no e-mail address published on contact page or found in searches. Domain assumed from official website nis.gr."
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "EYP publishes phone/postal contact only; no public e-mail address evidenced.",
   "country": "GR",
   "country_name_en": "Greece",
@@ -4608,12 +4608,12 @@
   "evidence": [
    {
     "domain": "zsis.hr",
-    "url": "https://www.zsis.hr/default.aspx?id=83",
-    "kind": "assumed_from_website",
-    "note": "Contact page shows the email only as an image (mail.jpg), text not extractable; domain assumed from website zsis.hr. ZSIS also runs ZSIS CERT for state bodies."
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Central state body for technical information security (crypto, TEMPEST); runs ZSIS CERT for government bodies.",
   "country": "HR",
   "country_name_en": "Croatia",
@@ -4951,12 +4951,12 @@
   "evidence": [
    {
     "domain": "defence.ie",
-    "url": "https://www.gov.ie/en/organisation/department-of-defence/",
-    "kind": "assumed_from_website",
-    "note": "No defence.ie address evidenced in research; historical department domain, assumed. Website now on gov.ie portal"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "",
   "country": "IE",
   "country_name_en": "Ireland",
@@ -5253,12 +5253,12 @@
   "evidence": [
    {
     "domain": "giustizia.it",
-    "url": "https://www.giustizia.it",
-    "kind": "assumed_from_website",
-    "note": "Corps belongs to the Ministry of Justice (DAP); addresses follow ministry pattern @giustizia.it — not directly evidenced, assumed from parent ministry domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Prison police under the Department of Penitentiary Administration (DAP), Ministry of Justice.",
   "country": "IT",
   "country_name_en": "Italy",
@@ -5476,12 +5476,12 @@
   "evidence": [
    {
     "domain": "landespolizei.li",
-    "url": "https://www.landespolizei.li/kontakt",
-    "kind": "assumed_from_website",
-    "note": "No email published (phone + contact form only); assumed from website domain. Privacy page routes data-protection mail to Datenschutz@regierung.li."
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Only police force of the country; may also mail under the state administration domain llv.li",
   "country": "LI",
   "country_name_en": "Liechtenstein",
@@ -5934,9 +5934,16 @@
   "acronym": "ADA",
   "website": "https://douanes.public.lu",
   "mail_domains": [
+   "do.etat.lu",
    "douanes.public.lu"
   ],
   "evidence": [
+   {
+    "domain": "do.etat.lu",
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   },
    {
     "domain": "douanes.public.lu",
     "url": "https://douanes.public.lu/fr/support/contact.html",
@@ -5944,7 +5951,7 @@
     "note": "No address published (contact form only); assumed from website domain — may actually use do.etat.lu internally"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Armed administration with security/anti-smuggling role",
   "country": "LU",
   "country_name_en": "Luxembourg",
@@ -6059,12 +6066,12 @@
   "evidence": [
    {
     "domain": "midd.gov.lv",
-    "url": "https://midd.gov.lv",
-    "kind": "assumed_from_website",
-    "note": "No published email found in searches; domain assumed from official website midd.gov.lv (publishes its annual reports there)"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen in third-party source"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Military intelligence under the Ministry of Defence.",
   "country": "LV",
   "country_name_en": "Latvia",
@@ -6522,12 +6529,12 @@
   "evidence": [
    {
     "domain": "anb.gov.me",
-    "url": "https://www.anb.gov.me",
-    "kind": "assumed_from_website",
-    "note": "No published email address found (site unreachable during research; no @anb.gov.me address indexed); website registrable domain assumed"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Civil intelligence/security agency; new ANB law published in Sl. list CG 040/26.",
   "country": "ME",
   "country_name_en": "Montenegro",
@@ -7543,12 +7550,12 @@
   "evidence": [
    {
     "domain": "skw.gov.pl",
-    "url": "https://www.skw.gov.pl",
-    "kind": "assumed_from_website",
-    "note": "No published email found; domain assumed from official website"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "No public contact email found in searches.",
   "country": "PL",
   "country_name_en": "Poland",
@@ -7562,9 +7569,16 @@
   "acronym": "SWW",
   "website": "https://www.sww.gov.pl",
   "mail_domains": [
+   "mon.gov.pl",
    "sww.gov.pl"
   ],
   "evidence": [
+   {
+    "domain": "mon.gov.pl",
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   },
    {
     "domain": "sww.gov.pl",
     "url": "https://www.sww.gov.pl",
@@ -7572,7 +7586,7 @@
     "note": "No published email found; domain assumed from official website"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "No public contact email found in searches.",
   "country": "PL",
   "country_name_en": "Poland",
@@ -7687,12 +7701,12 @@
   "evidence": [
    {
     "domain": "sop.gov.pl",
-    "url": "https://www.gov.pl/web/sop",
-    "kind": "assumed_from_website",
-    "note": "Protection of highest officials; domain assumed from official gov.pl site naming (sop.gov.pl)"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Successor of BOR; protective service under MSWiA.",
   "country": "PL",
   "country_name_en": "Poland",
@@ -7941,12 +7955,12 @@
   "evidence": [
    {
     "domain": "gns.gov.pt",
-    "url": "https://www.gns.gov.pt",
-    "kind": "assumed_from_website",
-    "note": "No public email evidenced in research; assumed from website registrable domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "National security authority for classified information; parent of CNCS.",
   "country": "PT",
   "country_name_en": "Portugal",
@@ -9164,12 +9178,12 @@
   "evidence": [
    {
     "domain": "sis.gov.sk",
-    "url": "https://www.sis.gov.sk",
-    "kind": "assumed_from_website",
-    "note": "Site unreachable from research environment (TLS error); domain assumed from official website sis.gov.sk; commonly cited contact info@sis.gov.sk not independently verified"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Civilian intelligence service (domestic + foreign).",
   "country": "SK",
   "country_name_en": "Slovakia",
@@ -9293,9 +9307,16 @@
   "acronym": "SK-CERT",
   "website": "https://www.sk-cert.sk",
   "mail_domains": [
+   "nbu.gov.sk",
    "sk-cert.sk"
   ],
   "evidence": [
+   {
+    "domain": "nbu.gov.sk",
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   },
    {
     "domain": "sk-cert.sk",
     "url": "https://www.sk-cert.sk",
@@ -10189,6 +10210,3121 @@
   "notes": "National CERT of Kosovo, established under ARKEP.",
   "country": "XK",
   "country_name_en": "Kosovo",
+  "group": "candidate"
+ },
+ {
+  "id": "ad-bombers",
+  "type": "other_natsec",
+  "name_native": "Cos de Bombers",
+  "name_en": "Andorra Fire Brigade",
+  "acronym": "",
+  "website": "https://www.bombers.ad",
+  "mail_domains": [
+   "bombers.ad"
+  ],
+  "evidence": [
+   {
+    "domain": "bombers.ad",
+    "url": "https://www.bombers.ad",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "AD",
+  "country_name_en": "Andorra",
+  "group": "other"
+ },
+ {
+  "id": "al-akmc",
+  "type": "other_natsec",
+  "name_native": "Agjencia Kombëtare e Mbrojtjes Civile",
+  "name_en": "National Civil Protection Agency",
+  "acronym": "AKMC",
+  "website": "https://akmc.gov.al",
+  "mail_domains": [
+   "akmc.gov.al"
+  ],
+  "evidence": [
+   {
+    "domain": "akmc.gov.al",
+    "url": "https://idp.al/wp-content/uploads/2026/07/Final_Lista-e-Autoriteteve-Publike-2025.pdf",
+    "kind": "official_pdf",
+    "note": "ledjo.hoxha@akmc.gov.al"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "AL",
+  "country_name_en": "Albania",
+  "group": "candidate"
+ },
+ {
+  "id": "at-strahlenschutz",
+  "type": "other_natsec",
+  "name_native": "BMLUK Abteilung V/8 Strahlenschutz (Aufsichts- und Bewilligungsbehörde)",
+  "name_en": "Federal radiation protection / nuclear supervisory authority (BMLUK Dept. V/8)",
+  "acronym": "BMLUK V/8",
+  "website": "https://www.bmluk.gv.at/themen/klima-und-umwelt/strahlenschutz.html",
+  "mail_domains": [
+   "bmluk.gv.at"
+  ],
+  "evidence": [
+   {
+    "domain": "bmluk.gv.at",
+    "url": "https://www.bmluk.gv.at/ministerium/aufgaben-struktur/sektion-5-umwelt-und-kreislaufwirtschaft/abt-5-8.html",
+    "kind": "contact_page",
+    "note": "abt-58@bmluk.gv.at; also strahlenschutz@bmluk.gv.at, strahlenregister@bmluk.gv.at"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Austria has no NPP; this ministry department is the national radiation-protection/nuclear-emergency authority (research reactor supervision). Mail domain is the whole environment ministry.",
+  "country": "AT",
+  "country_name_en": "Austria",
+  "group": "eu27"
+ },
+ {
+  "id": "ba-fucz",
+  "type": "other_natsec",
+  "name_native": "Federalna uprava civilne zaštite",
+  "name_en": "Federal Civil Protection Administration (FBiH)",
+  "acronym": "FUCZ",
+  "website": "https://fucz.gov.ba",
+  "mail_domains": [
+   "fucz.gov.ba"
+  ],
+  "evidence": [
+   {
+    "domain": "fucz.gov.ba",
+    "url": "https://fbihvlada.gov.ba/en/federalna-uprava-civilne-zastite",
+    "kind": "other_official",
+    "note": "fucz@fucz.gov.ba; foc@fucz.gov.ba"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "BA",
+  "country_name_en": "Bosnia and Herzegovina",
+  "group": "candidate"
+ },
+ {
+  "id": "be-nccn",
+  "type": "other_natsec",
+  "name_native": "Nationaal Crisiscentrum / Centre de crise national",
+  "name_en": "National Crisis Centre",
+  "acronym": "NCCN",
+  "website": "https://crisiscentrum.be",
+  "mail_domains": [
+   "nccn.fgov.be"
+  ],
+  "evidence": [
+   {
+    "domain": "nccn.fgov.be",
+    "url": "https://www.vlaanderen.be/Organisation/OVO027252",
+    "kind": "other_official",
+    "note": "nccn@nccn.fgov.be"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "BE",
+  "country_name_en": "Belgium",
+  "group": "eu27"
+ },
+ {
+  "id": "be-fanc",
+  "type": "other_natsec",
+  "name_native": "Agence fédérale de Contrôle nucléaire / Federaal Agentschap voor Nucleaire Controle",
+  "name_en": "Federal Agency for Nuclear Control",
+  "acronym": "FANC/AFCN",
+  "website": "https://fanc.fgov.be",
+  "mail_domains": [
+   "fanc.fgov.be"
+  ],
+  "evidence": [
+   {
+    "domain": "fanc.fgov.be",
+    "url": "https://ted.europa.eu/en/notice/515128-2026/pdf",
+    "kind": "official_pdf",
+    "note": "info@fanc.fgov.be (TED buyer); whistleblowers@fanc.fgov.be"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "BE",
+  "country_name_en": "Belgium",
+  "group": "eu27"
+ },
+ {
+  "id": "be-nvo-ans",
+  "type": "other_natsec",
+  "name_native": "Nationale Veiligheidsoverheid / Autorité nationale de Sécurité",
+  "name_en": "National Security Authority",
+  "acronym": "NVO-ANS",
+  "website": "https://www.nvoans.be",
+  "mail_domains": [
+   "nvo-ans.be"
+  ],
+  "evidence": [
+   {
+    "domain": "nvo-ans.be",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+    "kind": "official_pdf",
+    "note": "info@nvo-ans.be, crypto@nvo-ans.be"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "BE",
+  "country_name_en": "Belgium",
+  "group": "eu27"
+ },
+ {
+  "id": "bg-ayar",
+  "type": "other_natsec",
+  "name_native": "Агенция за ядрено регулиране",
+  "name_en": "Nuclear Regulatory Agency",
+  "acronym": "BNRA",
+  "website": "https://www.bnra.bg",
+  "mail_domains": [
+   "bnra.bg"
+  ],
+  "evidence": [
+   {
+    "domain": "bnra.bg",
+    "url": "https://bnra.bg/media/deklaratsiya-za-dostapnost.pdf",
+    "kind": "official_pdf",
+    "note": "mail@bnra.bg"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "BG",
+  "country_name_en": "Bulgaria",
+  "group": "eu27"
+ },
+ {
+  "id": "bg-iama",
+  "type": "border_guard",
+  "name_native": "Изпълнителна агенция „Морска администрация“",
+  "name_en": "Bulgarian Maritime Administration",
+  "acronym": "IAMA",
+  "website": "https://marad.bg",
+  "mail_domains": [
+   "marad.bg"
+  ],
+  "evidence": [
+   {
+    "domain": "marad.bg",
+    "url": "https://bsmou.org/contacts/bs-mou-members/",
+    "kind": "other_official",
+    "note": "bma@marad.bg; Mep_vn@marad.bg"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Maritime safety / SAR authority",
+  "country": "BG",
+  "country_name_en": "Bulgaria",
+  "group": "eu27"
+ },
+ {
+  "id": "by-mchs",
+  "type": "other_natsec",
+  "name_native": "Министерство по чрезвычайным ситуациям",
+  "name_en": "Ministry of Emergency Situations",
+  "acronym": "MChS",
+  "website": "https://mchs.gov.by",
+  "mail_domains": [
+   "mchs.gov.by"
+  ],
+  "evidence": [
+   {
+    "domain": "mchs.gov.by",
+    "url": "https://president.gov.by/en/statebodies/the-ministry-of-emergencies",
+    "kind": "assumed_from_website",
+    "note": "no address seen; site mchs.gov.by (403 from here)"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ch-babs",
+  "type": "other_natsec",
+  "name_native": "Bundesamt für Bevölkerungsschutz",
+  "name_en": "Federal Office for Civil Protection",
+  "acronym": "BABS",
+  "website": "https://www.babs.admin.ch",
+  "mail_domains": [
+   "babs.admin.ch"
+  ],
+  "evidence": [
+   {
+    "domain": "babs.admin.ch",
+    "url": "https://www.babs.admin.ch/dam/de/sd-web/frmV1X2VV0Y2/Broschuere-Strategie-BABS-2025-de-web.pdf",
+    "kind": "official_pdf",
+    "note": "info@babs.admin.ch; also bok@babs.admin.ch, bureau-nbc@babs.admin.ch"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Includes National Emergency Operations Centre (NAZ) and Spiez Laboratory.",
+  "country": "CH",
+  "country_name_en": "Switzerland",
+  "group": "efta"
+ },
+ {
+  "id": "ch-ensi",
+  "type": "other_natsec",
+  "name_native": "Eidgenössisches Nuklearsicherheitsinspektorat",
+  "name_en": "Swiss Federal Nuclear Safety Inspectorate",
+  "acronym": "ENSI",
+  "website": "https://www.ensi.ch",
+  "mail_domains": [
+   "ensi.ch"
+  ],
+  "evidence": [
+   {
+    "domain": "ensi.ch",
+    "url": "https://www.admin.ch/gov/en/start/service/kontakt/medienstellen/_jcr_content/par/mediarelations.addresses.orgid.801.html",
+    "kind": "press_page",
+    "note": "info@ensi.ch"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Independent regulator; non-admin.ch domain.",
+  "country": "CH",
+  "country_name_en": "Switzerland",
+  "group": "efta"
+ },
+ {
+  "id": "ch-armasuisse",
+  "type": "other_natsec",
+  "name_native": "Bundesamt für Rüstung armasuisse",
+  "name_en": "Federal Office for Defence Procurement armasuisse",
+  "acronym": "armasuisse",
+  "website": "https://www.ar.admin.ch",
+  "mail_domains": [
+   "ar.admin.ch",
+   "armasuisse.ch"
+  ],
+  "evidence": [
+   {
+    "domain": "ar.admin.ch",
+    "url": "https://www.ar.admin.ch/de/formular-konnte-nicht-versendet-werden",
+    "kind": "contact_page",
+    "note": "info@ar.admin.ch"
+   },
+   {
+    "domain": "armasuisse.ch",
+    "url": "https://admin.ch/gov/en/start/service/kontakt/medienstellen/_jcr_content/par/mediarelations.addresses.orgid.501.html",
+    "kind": "press_page",
+    "note": "info@armasuisse.ch (DDPS media contacts); staff addresses @armasuisse.ch in TED notices"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Both domains published officially.",
+  "country": "CH",
+  "country_name_en": "Switzerland",
+  "group": "efta"
+ },
+ {
+  "id": "cy-shipping-deputy-ministry",
+  "type": "border_guard",
+  "name_native": "Υφυπουργείο Ναυτιλίας",
+  "name_en": "Shipping Deputy Ministry (maritime administration, ship/port security)",
+  "acronym": "SDM",
+  "website": "https://www.shipping.gov.cy",
+  "mail_domains": [
+   "dms.gov.cy"
+  ],
+  "evidence": [
+   {
+    "domain": "dms.gov.cy",
+    "url": "https://www.mondaq.com/cyprus/marine-shipping/687072/contact-details-for-the-new-deputy-ministry-of-shipping",
+    "kind": "other_official",
+    "note": "maritimeadmin@dms.gov.cy; ssas@dms.gov.cy (ship security alerts); psc@dms.gov.cy listed by EMSA"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Evidence via law-firm reprint of official circular and EMSA contact list; ISPS designated authority.",
+  "country": "CY",
+  "country_name_en": "Cyprus",
+  "group": "eu27"
+ },
+ {
+  "id": "cz-acr",
+  "type": "armed_forces",
+  "name_native": "Armáda České republiky",
+  "name_en": "Army of the Czech Republic",
+  "acronym": "AČR",
+  "website": "https://www.army.cz",
+  "mail_domains": [
+   "army.cz"
+  ],
+  "evidence": [
+   {
+    "domain": "army.cz",
+    "url": "https://oos.army.cz/en/contacts",
+    "kind": "contact_page",
+    "note": "addresses on army.cz (Defence Standardization)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Military Police assumed on army.cz",
+  "country": "CZ",
+  "country_name_en": "Czechia",
+  "group": "eu27"
+ },
+ {
+  "id": "cz-sujb",
+  "type": "other_natsec",
+  "name_native": "Státní úřad pro jadernou bezpečnost",
+  "name_en": "State Office for Nuclear Safety",
+  "acronym": "SÚJB",
+  "website": "https://www.sujb.cz",
+  "mail_domains": [
+   "sujb.cz"
+  ],
+  "evidence": [
+   {
+    "domain": "sujb.cz",
+    "url": "https://www.sujb.cz",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "CZ",
+  "country_name_en": "Czechia",
+  "group": "eu27"
+ },
+ {
+  "id": "cz-nbu",
+  "type": "other_natsec",
+  "name_native": "Národní bezpečnostní úřad",
+  "name_en": "National Security Authority",
+  "acronym": "NBÚ",
+  "website": "https://nbu.gov.cz",
+  "mail_domains": [
+   "nbu.gov.cz"
+  ],
+  "evidence": [
+   {
+    "domain": "nbu.gov.cz",
+    "url": "https://nbu.gov.cz",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "CZ",
+  "country_name_en": "Czechia",
+  "group": "eu27"
+ },
+ {
+  "id": "cz-hzs",
+  "type": "other_natsec",
+  "name_native": "Hasičský záchranný sbor ČR",
+  "name_en": "Fire Rescue Service",
+  "acronym": "HZS",
+  "website": "https://hzscr.gov.cz",
+  "mail_domains": [
+   "grh.izscr.cz"
+  ],
+  "evidence": [
+   {
+    "domain": "grh.izscr.cz",
+    "url": "https://hzscr.gov.cz",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "CZ",
+  "country_name_en": "Czechia",
+  "group": "eu27"
+ },
+ {
+  "id": "de-bbk",
+  "type": "other_natsec",
+  "name_native": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe",
+  "name_en": "Federal Office of Civil Protection and Disaster Assistance",
+  "acronym": "BBK",
+  "website": "https://www.bbk.bund.de",
+  "mail_domains": [
+   "bbk.bund.de"
+  ],
+  "evidence": [
+   {
+    "domain": "bbk.bund.de",
+    "url": "https://www.kfv-ab.de/images/KFV/2025/Magazin_Bev%C3%B6lkerungsschutz_des_BBK_Ausgabe_03-2025.pdf",
+    "kind": "official_pdf",
+    "note": "poststelle@bbk.bund.de"
+   }
+  ],
+  "confidence": "high",
+  "notes": "BBK magazine imprint",
+  "country": "DE",
+  "country_name_en": "Germany",
+  "group": "eu27"
+ },
+ {
+  "id": "de-base",
+  "type": "other_natsec",
+  "name_native": "Bundesamt für die Sicherheit der nuklearen Entsorgung",
+  "name_en": "Federal Office for the Safety of Nuclear Waste Management",
+  "acronym": "BASE",
+  "website": "https://www.base.bund.de",
+  "mail_domains": [
+   "base.bund.de"
+  ],
+  "evidence": [
+   {
+    "domain": "base.bund.de",
+    "url": "https://www.base.bund.de/EN/service/imprint/imprint_node.html",
+    "kind": "contact_page",
+    "note": "info@base.bund.de"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "DE",
+  "country_name_en": "Germany",
+  "group": "eu27"
+ },
+ {
+  "id": "de-bfs",
+  "type": "other_natsec",
+  "name_native": "Bundesamt für Strahlenschutz",
+  "name_en": "Federal Office for Radiation Protection",
+  "acronym": "BfS",
+  "website": "https://www.bfs.de",
+  "mail_domains": [
+   "bfs.de"
+  ],
+  "evidence": [
+   {
+    "domain": "bfs.de",
+    "url": "https://www.bfs.de/EN/service/legal-notice/legal-notice_node.html",
+    "kind": "contact_page",
+    "note": "ePost@bfs.de"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Radiological emergency centre",
+  "country": "DE",
+  "country_name_en": "Germany",
+  "group": "eu27"
+ },
+ {
+  "id": "de-havariekommando",
+  "type": "border_guard",
+  "name_native": "Havariekommando",
+  "name_en": "Central Command for Maritime Emergencies",
+  "acronym": "CCME",
+  "website": "https://www.havariekommando.de",
+  "mail_domains": [
+   "havariekommando.de"
+  ],
+  "evidence": [
+   {
+    "domain": "havariekommando.de",
+    "url": "https://www.havariekommando.de/EN/service/Imprint/imprint_node.html",
+    "kind": "contact_page",
+    "note": "info@havariekommando.de; mlz@havariekommando.de (Maritime Lagezentrum)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Joint federal/coastal-states maritime emergency command",
+  "country": "DE",
+  "country_name_en": "Germany",
+  "group": "eu27"
+ },
+ {
+  "id": "dk-brs",
+  "type": "other_natsec",
+  "name_native": "Beredskabsstyrelsen",
+  "name_en": "Danish Emergency Management Agency",
+  "acronym": "BRS",
+  "website": "https://www.brs.dk",
+  "mail_domains": [
+   "brs.dk"
+  ],
+  "evidence": [
+   {
+    "domain": "brs.dk",
+    "url": "https://www.brs.dk",
+    "kind": "assumed_from_website",
+    "note": "website domain; no address seen"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "DK",
+  "country_name_en": "Denmark",
+  "group": "eu27"
+ },
+ {
+  "id": "dk-hjv",
+  "type": "armed_forces",
+  "name_native": "Hjemmeværnet",
+  "name_en": "Danish Home Guard",
+  "acronym": "HJV",
+  "website": "https://www.hjv.dk",
+  "mail_domains": [
+   "hjv.dk"
+  ],
+  "evidence": [
+   {
+    "domain": "hjv.dk",
+    "url": "https://www.hjv.dk",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "DK",
+  "country_name_en": "Denmark",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-kaitseliit",
+  "type": "armed_forces",
+  "name_native": "Kaitseliit",
+  "name_en": "Estonian Defence League",
+  "acronym": "KL",
+  "website": "https://kaitseliit.ee",
+  "mail_domains": [
+   "kaitseliit.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "kaitseliit.ee",
+    "url": "https://kaitseliit.ee/en/privacy-policy/",
+    "kind": "privacy_page",
+    "note": "info@kaitseliit.ee"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-paasteamet",
+  "type": "other_natsec",
+  "name_native": "Päästeamet",
+  "name_en": "Estonian Rescue Board",
+  "acronym": "",
+  "website": "https://www.rescue.ee",
+  "mail_domains": [
+   "rescue.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "rescue.ee",
+    "url": "https://adr-docs.karlerss.com/4yVbv5Lm91hLeTXlVdAD8Y409Sqb54pp/Adressaatide%20nimekiri.pdf",
+    "kind": "official_pdf",
+    "note": "rescue@rescue.ee"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "address list on third-party mirror of official letters",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-haire",
+  "type": "other_natsec",
+  "name_native": "Häirekeskus",
+  "name_en": "Emergency Response Centre",
+  "acronym": "",
+  "website": "https://112.ee",
+  "mail_domains": [
+   "112.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "112.ee",
+    "url": "https://www.kriis.ee/en/threat-alert",
+    "kind": "other_official",
+    "note": "112@112.ee"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-rkik",
+  "type": "other_natsec",
+  "name_native": "Riigi Kaitseinvesteeringute Keskus",
+  "name_en": "Estonian Centre for Defence Investment",
+  "acronym": "ECDI",
+  "website": "https://www.kaitseinvesteeringud.ee",
+  "mail_domains": [
+   "rkik.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "rkik.ee",
+    "url": "https://www.kaitseinvesteeringud.ee",
+    "kind": "assumed_from_website",
+    "note": "info@rkik.ee seen in search snippet"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "es-et",
+  "type": "armed_forces",
+  "name_native": "Ejército de Tierra",
+  "name_en": "Spanish Army",
+  "acronym": "ET",
+  "website": "https://ejercito.defensa.gob.es",
+  "mail_domains": [
+   "et.mde.es"
+  ],
+  "evidence": [
+   {
+    "domain": "et.mde.es",
+    "url": "https://ejercito.defensa.gob.es/en/Galerias/Descarga_pdf/EjercitoTierra/Noticias/2025/resolucion-premios-ejercito-2026.pdf",
+    "kind": "official_pdf",
+    "note": "premiosejercito@et.mde.es"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "ES",
+  "country_name_en": "Spain",
+  "group": "eu27"
+ },
+ {
+  "id": "es-csn",
+  "type": "other_natsec",
+  "name_native": "Consejo de Seguridad Nuclear",
+  "name_en": "Nuclear Safety Council",
+  "acronym": "CSN",
+  "website": "https://www.csn.es",
+  "mail_domains": [
+   "csn.es"
+  ],
+  "evidence": [
+   {
+    "domain": "csn.es",
+    "url": "https://www.csn.es/proteccion-de-datos",
+    "kind": "privacy_page",
+    "note": "dpd@csn.es"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "ES",
+  "country_name_en": "Spain",
+  "group": "eu27"
+ },
+ {
+  "id": "es-armada",
+  "type": "armed_forces",
+  "name_native": "Armada Española",
+  "name_en": "Spanish Navy",
+  "acronym": "",
+  "website": "https://armada.defensa.gob.es",
+  "mail_domains": [
+   "fn.mde.es"
+  ],
+  "evidence": [
+   {
+    "domain": "fn.mde.es",
+    "url": "https://digital.gob.es/content/dam/portal-mtdfp/sgorh/e0/DATOS CONTACTO UNIDADES DESTINO.pdf",
+    "kind": "official_pdf",
+    "note": "bca@fn.mde.es (Cuartel General de la Armada)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "ES",
+  "country_name_en": "Spain",
+  "group": "eu27"
+ },
+ {
+  "id": "es-ea",
+  "type": "armed_forces",
+  "name_native": "Ejército del Aire y del Espacio",
+  "name_en": "Spanish Air and Space Force",
+  "acronym": "EA",
+  "website": "https://ejercitodelaireydelespacio.defensa.gob.es",
+  "mail_domains": [
+   "ea.mde.es"
+  ],
+  "evidence": [
+   {
+    "domain": "ea.mde.es",
+    "url": "https://ted.europa.eu/es/notice/765530-2025/pdf",
+    "kind": "official_pdf",
+    "note": "sea04contratacion@ea.mde.es (TED buyer)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "ES",
+  "country_name_en": "Spain",
+  "group": "eu27"
+ },
+ {
+  "id": "es-emad",
+  "type": "armed_forces",
+  "name_native": "Estado Mayor de la Defensa (incl. UME)",
+  "name_en": "Defence Staff",
+  "acronym": "EMAD",
+  "website": "https://emad.defensa.gob.es",
+  "mail_domains": [
+   "oc.mde.es"
+  ],
+  "evidence": [
+   {
+    "domain": "oc.mde.es",
+    "url": "https://www.boe.es/boe/dias/2024/04/24/pdfs/BOE-B-2024-14871.pdf",
+    "kind": "official_pdf",
+    "note": "ume_sae@oc.mde.es (Unidad Militar de Emergencias); emadjaecontratacion@oc.mde.es on TED; ndasp@oc.mde.es in EU Council NSA list"
+   }
+  ],
+  "confidence": "high",
+  "notes": "oc.mde.es = MoD central bodies (Organo Central); UME mails here, no ume.mde.es seen",
+  "country": "ES",
+  "country_name_en": "Spain",
+  "group": "eu27"
+ },
+ {
+  "id": "es-sasemar",
+  "type": "border_guard",
+  "name_native": "Sociedad de Salvamento y Seguridad Marítima",
+  "name_en": "Spanish Maritime Safety and Rescue Agency",
+  "acronym": "SASEMAR",
+  "website": "https://www.salvamentomaritimo.es",
+  "mail_domains": [
+   "sasemar.es"
+  ],
+  "evidence": [
+   {
+    "domain": "sasemar.es",
+    "url": "https://ted.europa.eu/es/notice/768225-2025/pdf",
+    "kind": "official_pdf",
+    "note": "plataforma@sasemar.es (TED buyer)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "ES",
+  "country_name_en": "Spain",
+  "group": "eu27"
+ },
+ {
+  "id": "es-ons",
+  "type": "other_natsec",
+  "name_native": "Oficina Nacional de Seguridad (CNI)",
+  "name_en": "National Security Authority (classified information)",
+  "acronym": "ONS",
+  "website": "https://www.cni.es",
+  "mail_domains": [
+   "ons.cni.es"
+  ],
+  "evidence": [
+   {
+    "domain": "ons.cni.es",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+    "kind": "official_pdf",
+    "note": "nsa-sp@ons.cni.es (EU Council NSA contact list ST-8733-2024)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "ES",
+  "country_name_en": "Spain",
+  "group": "eu27"
+ },
+ {
+  "id": "eu-euiss",
+  "type": "other_natsec",
+  "name_native": "European Union Institute for Security Studies",
+  "name_en": "EU Institute for Security Studies",
+  "acronym": "EUISS",
+  "website": "https://www.iss.europa.eu",
+  "mail_domains": [
+   "iss.europa.eu"
+  ],
+  "evidence": [
+   {
+    "domain": "iss.europa.eu",
+    "url": "https://www.iss.europa.eu/node/1730",
+    "kind": "other_official",
+    "note": "info@iss.europa.eu (EUISS page referring requests to this address)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "CFSP agency (Council Decision 2014/75/CFSP)",
+  "country": "EU",
+  "country_name_en": "European Union institutions",
+  "group": "eu_institutions"
+ },
+ {
+  "id": "eu-emsa",
+  "type": "border_guard",
+  "name_native": "European Maritime Safety Agency",
+  "name_en": "European Maritime Safety Agency",
+  "acronym": "EMSA",
+  "website": "https://www.emsa.europa.eu",
+  "mail_domains": [
+   "emsa.europa.eu"
+  ],
+  "evidence": [
+   {
+    "domain": "emsa.europa.eu",
+    "url": "https://www.emsa.europa.eu/newsroom/latest-news/item/5684-recognising-genuine-emsa-communications-2.html",
+    "kind": "other_official",
+    "note": "information@emsa.europa.eu; EMSA states genuine mail always ends @emsa.europa.eu"
+   },
+   {
+    "domain": "emsa.europa.eu",
+    "url": "https://www.emsa.europa.eu/contact/getting-there.html",
+    "kind": "contact_page",
+    "note": "MaritimeSupportServices@emsa.europa.eu"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Maritime surveillance, European coast-guard functions cooperation with Frontex/EFCA, maritime security",
+  "country": "EU",
+  "country_name_en": "European Union institutions",
+  "group": "eu_institutions"
+ },
+ {
+  "id": "eu-easa",
+  "type": "other_natsec",
+  "name_native": "European Union Aviation Safety Agency",
+  "name_en": "European Union Aviation Safety Agency",
+  "acronym": "EASA",
+  "website": "https://www.easa.europa.eu",
+  "mail_domains": [
+   "easa.europa.eu"
+  ],
+  "evidence": [
+   {
+    "domain": "easa.europa.eu",
+    "url": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/institutions-and-bodies-profiles/easa_en",
+    "kind": "other_official",
+    "note": "info@easa.europa.eu (obfuscated on EU institutions profile); dpo@easa.europa.eu in EASA privacy notices"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Aviation safety + aviation cybersecurity (Part-IS) and conflict-zone risk; security mandate partial",
+  "country": "EU",
+  "country_name_en": "European Union institutions",
+  "group": "eu_institutions"
+ },
+ {
+  "id": "fi-stuk",
+  "type": "other_natsec",
+  "name_native": "Säteilyturvakeskus",
+  "name_en": "Radiation and Nuclear Safety Authority",
+  "acronym": "STUK",
+  "website": "https://stuk.fi",
+  "mail_domains": [
+   "stuk.fi"
+  ],
+  "evidence": [
+   {
+    "domain": "stuk.fi",
+    "url": "https://eurajoki.oncloudos.com/kokous/2026694-3-25076.PDF",
+    "kind": "official_pdf",
+    "note": "diaari@stuk.fi"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "FI",
+  "country_name_en": "Finland",
+  "group": "eu27"
+ },
+ {
+  "id": "fi-hvk",
+  "type": "other_natsec",
+  "name_native": "Huoltovarmuuskeskus",
+  "name_en": "National Emergency Supply Agency",
+  "acronym": "NESA",
+  "website": "https://www.huoltovarmuuskeskus.fi",
+  "mail_domains": [
+   "nesa.fi"
+  ],
+  "evidence": [
+   {
+    "domain": "nesa.fi",
+    "url": "https://www.huoltovarmuuskeskus.fi/en/contact-us",
+    "kind": "contact_page",
+    "note": "kirjaamo@nesa.fi"
+   }
+  ],
+  "confidence": "high",
+  "notes": "mail domain differs from website",
+  "country": "FI",
+  "country_name_en": "Finland",
+  "group": "eu27"
+ },
+ {
+  "id": "fi-hatakeskus",
+  "type": "other_natsec",
+  "name_native": "Hätäkeskuslaitos",
+  "name_en": "Emergency Response Centre Agency",
+  "acronym": "ERC",
+  "website": "https://112.fi",
+  "mail_domains": [
+   "erc.fi"
+  ],
+  "evidence": [
+   {
+    "domain": "erc.fi",
+    "url": "https://112.fi",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "FI",
+  "country_name_en": "Finland",
+  "group": "eu27"
+ },
+ {
+  "id": "fr-asnr",
+  "type": "other_natsec",
+  "name_native": "Autorité de sûreté nucléaire et de radioprotection",
+  "name_en": "Nuclear Safety and Radiation Protection Authority",
+  "acronym": "ASNR",
+  "website": "https://www.asnr.fr",
+  "mail_domains": [
+   "asnr.fr"
+  ],
+  "evidence": [
+   {
+    "domain": "asnr.fr",
+    "url": "https://en.asnr.fr/node/14",
+    "kind": "privacy_page",
+    "note": "dpo@asnr.fr"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Legacy asn.fr addresses (info@asn.fr) predate the 2025 ASN+IRSN merger",
+  "country": "FR",
+  "country_name_en": "France",
+  "group": "eu27"
+ },
+ {
+  "id": "fr-shom",
+  "type": "armed_forces",
+  "name_native": "Service hydrographique et océanographique de la Marine",
+  "name_en": "Navy Hydrographic and Oceanographic Service",
+  "acronym": "SHOM",
+  "website": "https://www.shom.fr",
+  "mail_domains": [
+   "shom.fr"
+  ],
+  "evidence": [
+   {
+    "domain": "shom.fr",
+    "url": "https://services.data.shom.fr/static/help/fr/mentions_legales_datashom.pdf",
+    "kind": "official_pdf",
+    "note": "data-support@shom.fr"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Public body under the Ministry of Armed Forces supporting naval operations",
+  "country": "FR",
+  "country_name_en": "France",
+  "group": "eu27"
+ },
+ {
+  "id": "fr-dicod",
+  "type": "armed_forces",
+  "name_native": "Délégation à l'information et à la communication de la défense",
+  "name_en": "Defence Information and Communication Delegation",
+  "acronym": "DICoD",
+  "website": "https://www.defense.gouv.fr/dicod",
+  "mail_domains": [
+   "dicod.fr"
+  ],
+  "evidence": [
+   {
+    "domain": "dicod.fr",
+    "url": "https://www.defense.gouv.fr/presse/agendas-autorites/contacts-presse",
+    "kind": "press_page",
+    "note": "media@dicod.fr (ministry media centre)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Oversees SIRPA Terre/Marine/Air press offices",
+  "country": "FR",
+  "country_name_en": "France",
+  "group": "eu27"
+ },
+ {
+  "id": "gb-mca",
+  "type": "border_guard",
+  "name_native": "Maritime and Coastguard Agency",
+  "name_en": "Maritime and Coastguard Agency (HM Coastguard)",
+  "acronym": "MCA",
+  "website": "https://www.gov.uk/government/organisations/maritime-and-coastguard-agency",
+  "mail_domains": [
+   "mcga.gov.uk"
+  ],
+  "evidence": [
+   {
+    "domain": "mcga.gov.uk",
+    "url": "https://www.gov.uk/guidance/nuclear-propulsion-uk-maritime-innovation-hub",
+    "kind": "other_official",
+    "note": "innovation@mcga.gov.uk"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "GB",
+  "country_name_en": "United Kingdom",
+  "group": "uk"
+ },
+ {
+  "id": "gb-onr",
+  "type": "other_natsec",
+  "name_native": "Office for Nuclear Regulation",
+  "name_en": "Office for Nuclear Regulation",
+  "acronym": "ONR",
+  "website": "https://www.onr.org.uk",
+  "mail_domains": [
+   "onr.gov.uk"
+  ],
+  "evidence": [
+   {
+    "domain": "onr.gov.uk",
+    "url": "https://www.onr.org.uk/about-us/contact-us",
+    "kind": "contact_page",
+    "note": "contact@onr.gov.uk"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "GB",
+  "country_name_en": "United Kingdom",
+  "group": "uk"
+ },
+ {
+  "id": "gb-dstl",
+  "type": "other_natsec",
+  "name_native": "Defence Science and Technology Laboratory",
+  "name_en": "Defence Science and Technology Laboratory",
+  "acronym": "Dstl",
+  "website": "https://www.gov.uk/government/organisations/defence-science-and-technology-laboratory",
+  "mail_domains": [
+   "dstl.gov.uk"
+  ],
+  "evidence": [
+   {
+    "domain": "dstl.gov.uk",
+    "url": "https://www.gov.uk/government/organisations/defence-science-and-technology-laboratory/about/media-enquiries",
+    "kind": "press_page",
+    "note": "centralenquiries@dstl.gov.uk, dstlpress@dstl.gov.uk"
+   }
+  ],
+  "confidence": "high",
+  "notes": "MOD executive agency (incl. DASA, accelerator@dstl.gov.uk).",
+  "country": "GB",
+  "country_name_en": "United Kingdom",
+  "group": "uk"
+ },
+ {
+  "id": "gb-awe",
+  "type": "other_natsec",
+  "name_native": "AWE plc (Atomic Weapons Establishment)",
+  "name_en": "Atomic Weapons Establishment",
+  "acronym": "AWE",
+  "website": "https://www.awe.co.uk",
+  "mail_domains": [
+   "awe.co.uk"
+  ],
+  "evidence": [
+   {
+    "domain": "awe.co.uk",
+    "url": "https://www.onr.org.uk/publications/corporate-publications/foi-releases/2021/03/awe-burghfield-consequence-report-and-onr-lup-ns-001",
+    "kind": "other_official",
+    "note": "Information.Requests@awe.co.uk (ONR FOI release); AWEProcurement@awe.co.uk in Contracts Finder notices"
+   }
+  ],
+  "confidence": "high",
+  "notes": "MOD-owned NDPB (since 2021); nuclear warhead establishment.",
+  "country": "GB",
+  "country_name_en": "United Kingdom",
+  "group": "uk"
+ },
+ {
+  "id": "gb-ukho",
+  "type": "other_natsec",
+  "name_native": "UK Hydrographic Office",
+  "name_en": "UK Hydrographic Office",
+  "acronym": "UKHO",
+  "website": "https://www.gov.uk/government/organisations/uk-hydrographic-office",
+  "mail_domains": [
+   "ukho.gov.uk"
+  ],
+  "evidence": [
+   {
+    "domain": "ukho.gov.uk",
+    "url": "https://www.gov.uk/government/organisations/uk-hydrographic-office/about-our-services",
+    "kind": "contact_page",
+    "note": "customerservices@ukho.gov.uk; procurement@ukho.gov.uk"
+   }
+  ],
+  "confidence": "high",
+  "notes": "MOD trading fund (defence/maritime geospatial).",
+  "country": "GB",
+  "country_name_en": "United Kingdom",
+  "group": "uk"
+ },
+ {
+  "id": "gb-cnc",
+  "type": "other_natsec",
+  "name_native": "Civil Nuclear Constabulary",
+  "name_en": "Civil Nuclear Constabulary",
+  "acronym": "CNC",
+  "website": "https://www.gov.uk/government/organisations/civil-nuclear-constabulary",
+  "mail_domains": [
+   "cnc.police.uk"
+  ],
+  "evidence": [
+   {
+    "domain": "cnc.police.uk",
+    "url": "https://www.find-tender.service.gov.uk/Notice/028311-2025",
+    "kind": "official_pdf",
+    "note": "named staff address firstname.surname@cnc.police.uk in 2025 Find a Tender notice; older notices used @cnc.pnn.police.uk (retired PNN domain)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Armed police for civil nuclear sites; only named-person addresses seen.",
+  "country": "GB",
+  "country_name_en": "United Kingdom",
+  "group": "uk"
+ },
+ {
+  "id": "gr-hellenic-army",
+  "type": "armed_forces",
+  "name_native": "Ελληνικός Στρατός / ΓΕΣ",
+  "name_en": "Hellenic Army (General Staff)",
+  "acronym": "HAGS",
+  "website": "https://army.gr",
+  "mail_domains": [
+   "army.gr"
+  ],
+  "evidence": [
+   {
+    "domain": "army.gr",
+    "url": "https://army.gr/en/?p=35631",
+    "kind": "contact_page",
+    "note": "gesdendhs@army.gr; ektyega@army.gr (press office)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "GR",
+  "country_name_en": "Greece",
+  "group": "eu27"
+ },
+ {
+  "id": "gr-hellenic-navy",
+  "type": "armed_forces",
+  "name_native": "Πολεμικό Ναυτικό / ΓΕΝ",
+  "name_en": "Hellenic Navy (General Staff)",
+  "acronym": "HNGS",
+  "website": "https://www.hellenicnavy.gr",
+  "mail_domains": [
+   "navy.mil.gr"
+  ],
+  "evidence": [
+   {
+    "domain": "navy.mil.gr",
+    "url": "https://www.mfa.gr/usa/en/the-embassy/embassy-sections/defense-military-naval-and-air-attache-office/",
+    "kind": "contact_page",
+    "note": "navattacheus@navy.mil.gr"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Seen on attaché office; website hellenicnavy.gr not seen as mail domain.",
+  "country": "GR",
+  "country_name_en": "Greece",
+  "group": "eu27"
+ },
+ {
+  "id": "gr-hellenic-air-force",
+  "type": "armed_forces",
+  "name_native": "Πολεμική Αεροπορία / ΓΕΑ",
+  "name_en": "Hellenic Air Force (General Staff)",
+  "acronym": "HAF",
+  "website": "https://www.haf.gr",
+  "mail_domains": [
+   "haf.gr"
+  ],
+  "evidence": [
+   {
+    "domain": "haf.gr",
+    "url": "https://www.mfa.gr/usa/en/the-embassy/embassy-sections/defense-military-naval-and-air-attache-office/",
+    "kind": "contact_page",
+    "note": "aa.usa@haf.gr"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "GR",
+  "country_name_en": "Greece",
+  "group": "eu27"
+ },
+ {
+  "id": "gr-gdaee",
+  "type": "other_natsec",
+  "name_native": "Γενική Διεύθυνση Αμυντικών Εξοπλισμών και Επενδύσεων",
+  "name_en": "General Directorate for Defence Investments and Armaments",
+  "acronym": "GDDIA/ΓΔΑΕΕ",
+  "website": "https://www.gdaee.mil.gr",
+  "mail_domains": [
+   "gdaee.mil.gr"
+  ],
+  "evidence": [
+   {
+    "domain": "gdaee.mil.gr",
+    "url": "https://ted.europa.eu/en/notice/30930-2026/pdf",
+    "kind": "official_pdf",
+    "note": "navy.dppc@gdaee.mil.gr (TED buyer contact, MoD tender)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Exact TED notice among those returned for the query; re-verify notice id.",
+  "country": "GR",
+  "country_name_en": "Greece",
+  "group": "eu27"
+ },
+ {
+  "id": "gr-civil-protection",
+  "type": "other_natsec",
+  "name_native": "Γενική Γραμματεία Πολιτικής Προστασίας",
+  "name_en": "General Secretariat for Civil Protection",
+  "acronym": "GSCP",
+  "website": "https://civilprotection.gov.gr",
+  "mail_domains": [
+   "civilprotection.gr"
+  ],
+  "evidence": [
+   {
+    "domain": "civilprotection.gr",
+    "url": "https://civilprotection.gov.gr/sites/default/files/2023-11/stoixeiaepikoinoniasggpp_10_11_23new.pdf",
+    "kind": "official_pdf",
+    "note": "info@civilprotection.gr; generalsecretary@civilprotection.gr"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Mail domain civilprotection.gr differs from website civilprotection.gov.gr.",
+  "country": "GR",
+  "country_name_en": "Greece",
+  "group": "eu27"
+ },
+ {
+  "id": "gr-fire-service",
+  "type": "other_natsec",
+  "name_native": "Πυροσβεστικό Σώμα Ελλάδας",
+  "name_en": "Hellenic Fire Service",
+  "acronym": "HFS",
+  "website": "https://www.fireservice.gr",
+  "mail_domains": [
+   "psnet.gr"
+  ],
+  "evidence": [
+   {
+    "domain": "psnet.gr",
+    "url": "https://www.auth.gr/wp-content/uploads/57257_ΠΥΡΟΣΒΕΣΤΙΚΟ-ΣΩΜΑ.pdf",
+    "kind": "official_pdf",
+    "note": "epdiagit@psnet.gr; aps.diek@psnet.gr (mitos.gov.gr)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Civil-protection operational force; mails on psnet.gr, not fireservice.gr.",
+  "country": "GR",
+  "country_name_en": "Greece",
+  "group": "eu27"
+ },
+ {
+  "id": "gr-eeae",
+  "type": "other_natsec",
+  "name_native": "Ελληνική Επιτροπή Ατομικής Ενέργειας",
+  "name_en": "Greek Atomic Energy Commission",
+  "acronym": "EEAE",
+  "website": "https://eeae.gr",
+  "mail_domains": [
+   "eeae.gr"
+  ],
+  "evidence": [
+   {
+    "domain": "eeae.gr",
+    "url": "https://www.mlsi.gov.cy/mlsi/dli/dliup.nsf/194552674A14DEECC2257E2900421E79/$file/Seminario_triptyho_16_05_2008.doc",
+    "kind": "other_official",
+    "note": "adalles@eeae.gr, kirod@eeae.gr (2008 seminar flyer, Cyprus gov site)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Nuclear/radiation regulator; only staff addresses in older docs.",
+  "country": "GR",
+  "country_name_en": "Greece",
+  "group": "eu27"
+ },
+ {
+  "id": "hr-carinska-uprava",
+  "type": "border_guard",
+  "name_native": "Carinska uprava",
+  "name_en": "Customs Administration",
+  "acronym": "CU",
+  "website": "https://carina.gov.hr",
+  "mail_domains": [
+   "carina.hr"
+  ],
+  "evidence": [
+   {
+    "domain": "carina.hr",
+    "url": "https://carina.gov.hr/UserDocsImages/12267/POJEDNOSTAVNJENJA%20CARINSKIH%20POSTUPAKA.pdf",
+    "kind": "official_pdf",
+    "note": "numeric office mailboxes e.g. 30007@carina.hr; cu_sibenik@carina.hr"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Website carina.gov.hr, mail carina.hr",
+  "country": "HR",
+  "country_name_en": "Croatia",
+  "group": "eu27"
+ },
+ {
+  "id": "hu-okf",
+  "type": "other_natsec",
+  "name_native": "BM Országos Katasztrófavédelmi Főigazgatóság",
+  "name_en": "National Directorate General for Disaster Management",
+  "acronym": "BM OKF",
+  "website": "https://www.katasztrofavedelem.hu",
+  "mail_domains": [
+   "katved.gov.hu"
+  ],
+  "evidence": [
+   {
+    "domain": "katved.gov.hu",
+    "url": "https://katasztrofavedelem.hu/application/uploads/documents/2024-08/84373.docx",
+    "kind": "official_pdf",
+    "note": "okf.visszaeles@katved.gov.hu; county directorates e.g. borsod.titkarsag@katved.gov.hu"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "HU",
+  "country_name_en": "Hungary",
+  "group": "eu27"
+ },
+ {
+  "id": "hu-oah",
+  "type": "other_natsec",
+  "name_native": "Országos Atomenergia Hivatal",
+  "name_en": "Hungarian Atomic Energy Authority",
+  "acronym": "OAH",
+  "website": "https://www.haea.gov.hu",
+  "mail_domains": [
+   "haea.hu"
+  ],
+  "evidence": [
+   {
+    "domain": "haea.hu",
+    "url": "https://www.haea.gov.hu/web/v3/oahportal.nsf/776100955F652169C12588F60045CA59/$FILE/OAH hírlevél 2022-2.pdf",
+    "kind": "official_pdf",
+    "note": "haea@haea.hu (newsletter 2022); older staff addresses on haea.gov.hu"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Older docs also show @haea.gov.hu; current primary looks like haea.hu",
+  "country": "HU",
+  "country_name_en": "Hungary",
+  "group": "eu27"
+ },
+ {
+  "id": "hu-mh",
+  "type": "armed_forces",
+  "name_native": "Magyar Honvédség",
+  "name_en": "Hungarian Defence Forces",
+  "acronym": "MH",
+  "website": "https://honvedseg.hu",
+  "mail_domains": [
+   "mil.hu"
+  ],
+  "evidence": [
+   {
+    "domain": "mil.hu",
+    "url": "https://webtar.kozadat.hu/webfarm/download/mhszhtp//egyeb/MH-SZHTP-Adatvedelmi-Szabalyzat-modositasokkal-egyseges-szerkezetben-2022.12.05.pdf",
+    "kind": "official_pdf",
+    "note": "mh.szhtp@mil.hu; recruiting hajdu.toborzo@mil.hu"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Units mail on mil.hu; some HDF staff on hm.gov.hu",
+  "country": "HU",
+  "country_name_en": "Hungary",
+  "group": "eu27"
+ },
+ {
+  "id": "ie-coast-guard",
+  "type": "border_guard",
+  "name_native": "Garda Cósta na hÉireann",
+  "name_en": "Irish Coast Guard",
+  "acronym": "IRCG",
+  "website": "https://www.gov.ie/en/department-of-transport/organisation-information/irish-coast-guard-contact-information/",
+  "mail_domains": [
+   "irishcoastguard.ie"
+  ],
+  "evidence": [
+   {
+    "domain": "irishcoastguard.ie",
+    "url": "https://www.gov.ie/en/department-of-transport/organisation-information/irish-coast-guard-contact-information/",
+    "kind": "contact_page",
+    "note": "HQ admin inbox and MRCC Dublin / MRSC Malin / Valentia addresses @irishcoastguard.ie"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Exact local-part not captured from snippet; domain confirmed on official gov.ie contact page.",
+  "country": "IE",
+  "country_name_en": "Ireland",
+  "group": "eu27"
+ },
+ {
+  "id": "ie-epa-orp",
+  "type": "other_natsec",
+  "name_native": "Gníomhaireacht um Chaomhnú Comhshaoil - Office of Radiation Protection",
+  "name_en": "Environmental Protection Agency (radiological protection regulator)",
+  "acronym": "EPA",
+  "website": "https://www.epa.ie",
+  "mail_domains": [
+   "epa.ie"
+  ],
+  "evidence": [
+   {
+    "domain": "epa.ie",
+    "url": "https://www.epa.ie/our-services/licensing/radiation/contact-us/",
+    "kind": "contact_page",
+    "note": "RadRegulatory@epa.ie"
+   }
+  ],
+  "confidence": "high",
+  "notes": "National radiation-protection regulator and nuclear-emergency monitoring authority.",
+  "country": "IE",
+  "country_name_en": "Ireland",
+  "group": "eu27"
+ },
+ {
+  "id": "is-gr",
+  "type": "other_natsec",
+  "name_native": "Geislavarnir ríkisins",
+  "name_en": "Icelandic Radiation Safety Authority",
+  "acronym": "GR",
+  "website": "https://gr.is",
+  "mail_domains": [
+   "gr.is"
+  ],
+  "evidence": [
+   {
+    "domain": "gr.is",
+    "url": "https://gr.is",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "IS",
+  "country_name_en": "Iceland",
+  "group": "eea"
+ },
+ {
+  "id": "it-vvf",
+  "type": "other_natsec",
+  "name_native": "Corpo Nazionale dei Vigili del Fuoco",
+  "name_en": "National Fire and Rescue Corps",
+  "acronym": "CNVVF",
+  "website": "https://www.vigilfuoco.it",
+  "mail_domains": [
+   "vigilfuoco.it"
+  ],
+  "evidence": [
+   {
+    "domain": "vigilfuoco.it",
+    "url": "https://www.vigilfuoco.it/contatti/uffici-centrali",
+    "kind": "contact_page",
+    "note": "dc.emergenza@vigilfuoco.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Civil defence / emergency corps under the Interior Ministry",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-protciv",
+  "type": "other_natsec",
+  "name_native": "Dipartimento della Protezione Civile",
+  "name_en": "Civil Protection Department",
+  "acronym": "DPC",
+  "website": "https://www.protezionecivile.gov.it",
+  "mail_domains": [
+   "protezionecivile.it"
+  ],
+  "evidence": [
+   {
+    "domain": "protezionecivile.it",
+    "url": "https://www.protezionecivile.gov.it/en/department/structure/emergency-management-office/",
+    "kind": "contact_page",
+    "note": "ufficio.eme@protezionecivile.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "PEC on pec.governo.it",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-persomil",
+  "type": "armed_forces",
+  "name_native": "Direzione Generale per il Personale Militare",
+  "name_en": "Directorate General for Military Personnel",
+  "acronym": "PERSOMIL",
+  "website": "https://www.difesa.it",
+  "mail_domains": [
+   "persomil.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "persomil.difesa.it",
+    "url": "https://www.difesa.it/eng/sgd-dna/contacts/54083.html",
+    "kind": "contact_page",
+    "note": "urp@persomil.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-geniodife",
+  "type": "other_natsec",
+  "name_native": "Direzione dei Lavori e del Demanio",
+  "name_en": "Defence Works and Estate Directorate",
+  "acronym": "GENIODIFE",
+  "website": "https://www.difesa.it",
+  "mail_domains": [
+   "geniodife.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "geniodife.difesa.it",
+    "url": "https://www.difesa.it/eng/sgd-dna/contacts/54083.html",
+    "kind": "contact_page",
+    "note": "g-urp@geniodife.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Part of Segretariato Generale della Difesa / DNA (armaments & works)",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-esercito",
+  "type": "armed_forces",
+  "name_native": "Esercito Italiano",
+  "name_en": "Italian Army",
+  "acronym": "EI",
+  "website": "https://www.esercito.difesa.it",
+  "mail_domains": [
+   "esercito.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "esercito.difesa.it",
+    "url": "https://www.esercito.difesa.it/Amministrazione-trasparente/attivita-e-procedimenti/Documents/Attività%20e%20procedimenti.pdf",
+    "kind": "official_pdf",
+    "note": "statesercito@esercito.difesa.it (Stato Maggiore Esercito); PEC statesercito@postacert.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Also centro_selezione@esercito.difesa.it",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-marina",
+  "type": "armed_forces",
+  "name_native": "Marina Militare",
+  "name_en": "Italian Navy",
+  "acronym": "MM",
+  "website": "https://www.marina.difesa.it",
+  "mail_domains": [
+   "marina.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "marina.difesa.it",
+    "url": "https://www.marina.difesa.it/documentazione/trasparente/Documents/Tipologie%20Procedimento%2005_2025.pdf",
+    "kind": "official_pdf",
+    "note": "urp@marina.difesa.it; maristat@marina.difesa.it (Stato Maggiore Marina)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "PEC maristat@postacert.difesa.it",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-aeronautica",
+  "type": "armed_forces",
+  "name_native": "Aeronautica Militare",
+  "name_en": "Italian Air Force",
+  "acronym": "AM",
+  "website": "https://www.aeronautica.difesa.it",
+  "mail_domains": [
+   "aeronautica.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "aeronautica.difesa.it",
+    "url": "https://www.meteoam.it/it/privacy-policy",
+    "kind": "privacy_page",
+    "note": "stataereo@aeronautica.difesa.it (Stato Maggiore Aeronautica, data controller)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "PEC stataereo@postacert.difesa.it",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-smd",
+  "type": "armed_forces",
+  "name_native": "Stato Maggiore della Difesa",
+  "name_en": "Defence General Staff",
+  "acronym": "SMD",
+  "website": "https://www.difesa.it/smd",
+  "mail_domains": [
+   "smd.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "smd.difesa.it",
+    "url": "https://www.difesa.it/assets/allegati/49486/id_3_2024_open.pdf",
+    "kind": "official_pdf",
+    "note": "informazionidifesa@smd.difesa.it; stampa@smd.difesa.it"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "PEC stamadifesa@postacert.difesa.it; addresses seen in SMD magazine/press material",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-sgd",
+  "type": "other_natsec",
+  "name_native": "Segretariato Generale della Difesa / Direzione Nazionale degli Armamenti",
+  "name_en": "Defence Secretariat General / National Armaments Directorate",
+  "acronym": "SGD/DNA",
+  "website": "https://www.difesa.it/sgd-dna",
+  "mail_domains": [
+   "sgd.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "sgd.difesa.it",
+    "url": "https://www.difesa.it/eng/sgd-dna/contacts/54083.html",
+    "kind": "contact_page",
+    "note": "sgd@sgd.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Military procurement/armaments agency",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-terrarm",
+  "type": "other_natsec",
+  "name_native": "Direzione degli Armamenti Terrestri",
+  "name_en": "Land Armaments Directorate",
+  "acronym": "TERRARM",
+  "website": "https://www.difesa.it",
+  "mail_domains": [
+   "terrarm.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "terrarm.difesa.it",
+    "url": "https://www.difesa.it/eng/sgd-dna/contacts/54083.html",
+    "kind": "contact_page",
+    "note": "vdturp@terrarm.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-navarm",
+  "type": "other_natsec",
+  "name_native": "Direzione degli Armamenti Navali",
+  "name_en": "Naval Armaments Directorate",
+  "acronym": "NAVARM",
+  "website": "https://www.difesa.it",
+  "mail_domains": [
+   "navarm.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "navarm.difesa.it",
+    "url": "https://www.difesa.it/eng/sgd-dna/contacts/54083.html",
+    "kind": "contact_page",
+    "note": "urp@navarm.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-armaereo",
+  "type": "other_natsec",
+  "name_native": "Direzione degli Armamenti Aeronautici e per l'Aeronavigabilità",
+  "name_en": "Air Armaments and Airworthiness Directorate",
+  "acronym": "ARMAEREO",
+  "website": "https://www.difesa.it",
+  "mail_domains": [
+   "armaereo.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "armaereo.difesa.it",
+    "url": "https://www.difesa.it/eng/sgd-dna/contacts/54083.html",
+    "kind": "contact_page",
+    "note": "urp@armaereo.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-teledife",
+  "type": "other_natsec",
+  "name_native": "Direzione Informatica, Telematica e Tecnologie Avanzate",
+  "name_en": "Defence IT, Telematics and Advanced Technologies Directorate",
+  "acronym": "TELEDIFE",
+  "website": "https://www.difesa.it",
+  "mail_domains": [
+   "teledife.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "teledife.difesa.it",
+    "url": "https://www.difesa.it/eng/sgd-dna/contacts/54083.html",
+    "kind": "contact_page",
+    "note": "urp@teledife.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "C4/telecom procurement",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-commiservizi",
+  "type": "other_natsec",
+  "name_native": "Direzione Generale di Commissariato e Servizi Generali",
+  "name_en": "Defence Supply and General Services Directorate",
+  "acronym": "COMMISERVIZI",
+  "website": "https://www.difesa.it",
+  "mail_domains": [
+   "commiservizi.difesa.it"
+  ],
+  "evidence": [
+   {
+    "domain": "commiservizi.difesa.it",
+    "url": "https://www.difesa.it/eng/sgd-dna/contacts/54083.html",
+    "kind": "contact_page",
+    "note": "commiservizi@commiservizi.difesa.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Defence logistics procurement",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "it-isin",
+  "type": "other_natsec",
+  "name_native": "Ispettorato nazionale per la sicurezza nucleare e la radioprotezione",
+  "name_en": "National Inspectorate for Nuclear Safety and Radiation Protection",
+  "acronym": "ISIN",
+  "website": "https://www.isinucleare.it",
+  "mail_domains": [
+   "isinucleare.it"
+  ],
+  "evidence": [
+   {
+    "domain": "isinucleare.it",
+    "url": "https://www.isinucleare.it/it/contatti",
+    "kind": "contact_page",
+    "note": "urp@isinucleare.it; ufficiostampa@isinucleare.it"
+   }
+  ],
+  "confidence": "high",
+  "notes": "PEC isin-udg@legalmail.it (third-party PEC provider)",
+  "country": "IT",
+  "country_name_en": "Italy",
+  "group": "eu27"
+ },
+ {
+  "id": "lt-kariuomene",
+  "type": "armed_forces",
+  "name_native": "Lietuvos kariuomenė",
+  "name_en": "Lithuanian Armed Forces",
+  "acronym": "LK",
+  "website": "https://www.kariuomene.lt",
+  "mail_domains": [
+   "kariuomene.lt"
+  ],
+  "evidence": [
+   {
+    "domain": "kariuomene.lt",
+    "url": "https://www.lrvalstybe.lt/index.php/kontaktai/lietuvos-kariuomenes-kanceliarija-22574/lietuvos-kariuomenes-kanceliarija-114313",
+    "kind": "other_official",
+    "note": "staff addresses on kariuomene.lt"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "branches assumed on same domain",
+  "country": "LT",
+  "country_name_en": "Lithuania",
+  "group": "eu27"
+ },
+ {
+  "id": "lt-pagd",
+  "type": "other_natsec",
+  "name_native": "Priešgaisrinės apsaugos ir gelbėjimo departamentas",
+  "name_en": "Fire and Rescue Department",
+  "acronym": "PAGD",
+  "website": "https://pagd.lrv.lt",
+  "mail_domains": [
+   "vpgt.lt"
+  ],
+  "evidence": [
+   {
+    "domain": "vpgt.lt",
+    "url": "https://pagd.lrv.lt",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "LT",
+  "country_name_en": "Lithuania",
+  "group": "eu27"
+ },
+ {
+  "id": "lt-vatesi",
+  "type": "other_natsec",
+  "name_native": "Valstybinė atominės energetikos saugos inspekcija",
+  "name_en": "State Nuclear Power Safety Inspectorate",
+  "acronym": "VATESI",
+  "website": "https://www.vatesi.lt",
+  "mail_domains": [
+   "vatesi.lt"
+  ],
+  "evidence": [
+   {
+    "domain": "vatesi.lt",
+    "url": "https://www.vatesi.lt",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "LT",
+  "country_name_en": "Lithuania",
+  "group": "eu27"
+ },
+ {
+  "id": "lt-rsc",
+  "type": "other_natsec",
+  "name_native": "Radiacinės saugos centras",
+  "name_en": "Radiation Protection Centre",
+  "acronym": "RSC",
+  "website": "https://www.rsc.lt",
+  "mail_domains": [
+   "rsc.lt"
+  ],
+  "evidence": [
+   {
+    "domain": "rsc.lt",
+    "url": "https://www.rsc.lt",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "LT",
+  "country_name_en": "Lithuania",
+  "group": "eu27"
+ },
+ {
+  "id": "lu-armee",
+  "type": "armed_forces",
+  "name_native": "Armée luxembourgeoise",
+  "name_en": "Luxembourg Army",
+  "acronym": "",
+  "website": "https://www.armee.lu",
+  "mail_domains": [
+   "armee.lu"
+  ],
+  "evidence": [
+   {
+    "domain": "armee.lu",
+    "url": "https://en.paperjam.lu/guide/organisation/01323406105/armee-luxembourgeoise",
+    "kind": "other_official",
+    "note": "info@armee.lu (directory listing); armee is its own RIPE member"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "procurement uses mae.etat.lu (wave 1)",
+  "country": "LU",
+  "country_name_en": "Luxembourg",
+  "group": "eu27"
+ },
+ {
+  "id": "lu-cgdis",
+  "type": "other_natsec",
+  "name_native": "Corps grand-ducal d'incendie et de secours",
+  "name_en": "Grand-Ducal Fire and Rescue Corps (civil protection)",
+  "acronym": "CGDIS",
+  "website": "https://www.cgdis.lu",
+  "mail_domains": [
+   "cgdis.lu"
+  ],
+  "evidence": [
+   {
+    "domain": "cgdis.lu",
+    "url": "https://ted.europa.eu/fr/notice/634934-2024/pdf",
+    "kind": "official_pdf",
+    "note": "soumission@cgdis.lu (TED buyer)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "LU",
+  "country_name_en": "Luxembourg",
+  "group": "eu27"
+ },
+ {
+  "id": "lu-ans",
+  "type": "other_natsec",
+  "name_native": "Autorité nationale de Sécurité",
+  "name_en": "National Security Authority",
+  "acronym": "ANS",
+  "website": "https://ans.gouvernement.lu",
+  "mail_domains": [
+   "ans.etat.lu"
+  ],
+  "evidence": [
+   {
+    "domain": "ans.etat.lu",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+    "kind": "official_pdf",
+    "note": "ans@ans.etat.lu"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "LU",
+  "country_name_en": "Luxembourg",
+  "group": "eu27"
+ },
+ {
+  "id": "lu-anssi",
+  "type": "other_natsec",
+  "name_native": "Agence nationale de la sécurité des systèmes d'information",
+  "name_en": "National IS Security Agency",
+  "acronym": "ANSSI",
+  "website": "https://anssi.lu",
+  "mail_domains": [
+   "anssi.etat.lu"
+  ],
+  "evidence": [
+   {
+    "domain": "anssi.etat.lu",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+    "kind": "official_pdf",
+    "note": "info@anssi.etat.lu"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "LU",
+  "country_name_en": "Luxembourg",
+  "group": "eu27"
+ },
+ {
+  "id": "lu-ctie",
+  "type": "other_natsec",
+  "name_native": "Centre des technologies de l'information de l'État (NDA/SIC)",
+  "name_en": "State IT Centre - national crypto distribution authority",
+  "acronym": "CTIE",
+  "website": "https://ctie.gouvernement.lu",
+  "mail_domains": [
+   "ctie.etat.lu"
+  ],
+  "evidence": [
+   {
+    "domain": "ctie.etat.lu",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+    "kind": "official_pdf",
+    "note": "nda@ctie.etat.lu, sic@ctie.etat.lu"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "LU",
+  "country_name_en": "Luxembourg",
+  "group": "eu27"
+ },
+ {
+  "id": "lv-vugd",
+  "type": "other_natsec",
+  "name_native": "Valsts ugunsdzēsības un glābšanas dienests",
+  "name_en": "State Fire and Rescue Service",
+  "acronym": "VUGD",
+  "website": "https://www.vugd.gov.lv",
+  "mail_domains": [
+   "vugd.gov.lv"
+  ],
+  "evidence": [
+   {
+    "domain": "vugd.gov.lv",
+    "url": "https://www.vugd.gov.lv/en/department/prevention-and-public-relations-division",
+    "kind": "contact_page",
+    "note": "prese@vugd.gov.lv"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "LV",
+  "country_name_en": "Latvia",
+  "group": "eu27"
+ },
+ {
+  "id": "lv-nbs",
+  "type": "armed_forces",
+  "name_native": "Nacionālie bruņotie spēki",
+  "name_en": "National Armed Forces",
+  "acronym": "NBS",
+  "website": "https://www.mil.lv",
+  "mail_domains": [
+   "mil.lv"
+  ],
+  "evidence": [
+   {
+    "domain": "mil.lv",
+    "url": "https://ted.europa.eu/en/notice/296667-2026/pdf",
+    "kind": "official_pdf",
+    "note": "staff addresses @mil.lv"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Zemessardze website zs.mil.lv",
+  "country": "LV",
+  "country_name_en": "Latvia",
+  "group": "eu27"
+ },
+ {
+  "id": "lv-vamoic",
+  "type": "other_natsec",
+  "name_native": "Valsts aizsardzības militāro objektu un iepirkumu centrs",
+  "name_en": "State Defence Military Facilities and Procurement Centre",
+  "acronym": "VAMOIC",
+  "website": "https://www.vamoic.gov.lv",
+  "mail_domains": [
+   "vamoic.gov.lv"
+  ],
+  "evidence": [
+   {
+    "domain": "vamoic.gov.lv",
+    "url": "https://www.vamoic.gov.lv/en",
+    "kind": "contact_page",
+    "note": "pasts@vamoic.gov.lv"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "LV",
+  "country_name_en": "Latvia",
+  "group": "eu27"
+ },
+ {
+  "id": "md-igsu",
+  "type": "other_natsec",
+  "name_native": "Inspectoratul General pentru Situații de Urgență",
+  "name_en": "General Inspectorate for Emergency Situations",
+  "acronym": "IGSU",
+  "website": "https://igsu.gov.md",
+  "mail_domains": [
+   "igsu.gov.md"
+  ],
+  "evidence": [
+   {
+    "domain": "igsu.gov.md",
+    "url": "https://storage.mtender.gov.md/get/fc33bc0f-35ab-4744-a109-1b9b978d1808-1710229730244",
+    "kind": "official_pdf",
+    "note": "achizitii@igsu.gov.md; stat.se@igsu.gov.md"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Also legacy dse.md (completare@dse.md on particip.gov.md)",
+  "country": "MD",
+  "country_name_en": "Moldova",
+  "group": "candidate"
+ },
+ {
+  "id": "md-customs",
+  "type": "border_guard",
+  "name_native": "Serviciul Vamal",
+  "name_en": "Customs Service",
+  "acronym": "SV",
+  "website": "https://customs.gov.md",
+  "mail_domains": [
+   "customs.gov.md"
+  ],
+  "evidence": [
+   {
+    "domain": "customs.gov.md",
+    "url": "https://customs.gov.md/api/media/03/02/2026/Buletin_informativ_ianuarie_2026.pdf",
+    "kind": "official_pdf",
+    "note": "vama@customs.gov.md"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "MD",
+  "country_name_en": "Moldova",
+  "group": "candidate"
+ },
+ {
+  "id": "mt-transport-malta-maritime",
+  "type": "border_guard",
+  "name_native": "Transport Malta - Merchant Shipping / Ports & Yachting Directorates",
+  "name_en": "Transport Malta (maritime authority, port facility security)",
+  "acronym": "TM",
+  "website": "https://www.transport.gov.mt/Maritime/",
+  "mail_domains": [
+   "transport.gov.mt"
+  ],
+  "evidence": [
+   {
+    "domain": "transport.gov.mt",
+    "url": "https://transport.gov.mt/Contact-61",
+    "kind": "contact_page",
+    "note": "info.tm@transport.gov.mt; mershipmalta.tm@transport.gov.mt"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Maritime administration with ISPS/port-security competences; security mandate is partial - coordinator may exclude.",
+  "country": "MT",
+  "country_name_en": "Malta",
+  "group": "eu27"
+ },
+ {
+  "id": "nl-anvs",
+  "type": "other_natsec",
+  "name_native": "Autoriteit Nucleaire Veiligheid en Stralingsbescherming",
+  "name_en": "Authority for Nuclear Safety and Radiation Protection",
+  "acronym": "ANVS",
+  "website": "https://www.autoriteitnvs.nl",
+  "mail_domains": [
+   "anvs.nl"
+  ],
+  "evidence": [
+   {
+    "domain": "anvs.nl",
+    "url": "https://english.autoriteitnvs.nl/contact",
+    "kind": "contact_page",
+    "note": "info@anvs.nl; postbus.kerninstallatie@anvs.nl in Staatscourant notices"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "NL",
+  "country_name_en": "Netherlands",
+  "group": "eu27"
+ },
+ {
+  "id": "nl-nlncsa",
+  "type": "other_natsec",
+  "name_native": "Nationaal Bureau voor Verbindingsbeveiliging (AIVD)",
+  "name_en": "National Communications Security Agency",
+  "acronym": "NLNCSA",
+  "website": "https://www.aivd.nl",
+  "mail_domains": [
+   "nlncsa.nl"
+  ],
+  "evidence": [
+   {
+    "domain": "nlncsa.nl",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+    "kind": "official_pdf",
+    "note": "[redacted]@nlncsa.nl (EU Council NSA contact list, local parts redacted)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "NL",
+  "country_name_en": "Netherlands",
+  "group": "eu27"
+ },
+ {
+  "id": "nl-nsa-bzk",
+  "type": "other_natsec",
+  "name_native": "Nationale Veiligheidsautoriteit (BZK)",
+  "name_en": "National Security Authority (Ministry of the Interior)",
+  "acronym": "NSA",
+  "website": "https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties",
+  "mail_domains": [
+   "minbzk.nl"
+  ],
+  "evidence": [
+   {
+    "domain": "minbzk.nl",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+    "kind": "official_pdf",
+    "note": "[redacted]@minbzk.nl (EU Council NSA contact list)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "ministry domain; included because distinct from wave-1 domains",
+  "country": "NL",
+  "country_name_en": "Netherlands",
+  "group": "eu27"
+ },
+ {
+  "id": "no-kystverket",
+  "type": "border_guard",
+  "name_native": "Kystverket",
+  "name_en": "Norwegian Coastal Administration",
+  "acronym": "",
+  "website": "https://www.kystverket.no",
+  "mail_domains": [
+   "kystverket.no"
+  ],
+  "evidence": [
+   {
+    "domain": "kystverket.no",
+    "url": "https://inte.kystverket.no/en/contact/",
+    "kind": "contact_page",
+    "note": "post@kystverket.no"
+   }
+  ],
+  "confidence": "high",
+  "notes": "maritime safety/VTS; Coast Guard proper is Navy on mil.no",
+  "country": "NO",
+  "country_name_en": "Norway",
+  "group": "eea"
+ },
+ {
+  "id": "no-dsa",
+  "type": "other_natsec",
+  "name_native": "Direktoratet for strålevern og atomsikkerhet",
+  "name_en": "Norwegian Radiation and Nuclear Safety Authority",
+  "acronym": "DSA",
+  "website": "https://dsa.no",
+  "mail_domains": [
+   "dsa.no"
+  ],
+  "evidence": [
+   {
+    "domain": "dsa.no",
+    "url": "https://www.havtil.no/contentassets/e2a931c18b41458ebdfca3efd6f74320/adresseliste-horingsinstanser-2026.pdf",
+    "kind": "official_pdf",
+    "note": "dsa@dsa.no"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "NO",
+  "country_name_en": "Norway",
+  "group": "eea"
+ },
+ {
+  "id": "no-hrs",
+  "type": "other_natsec",
+  "name_native": "Hovedredningssentralen",
+  "name_en": "Joint Rescue Coordination Centre",
+  "acronym": "HRS",
+  "website": "https://www.hovedredningssentralen.no",
+  "mail_domains": [
+   "hovedredningssentralen.no"
+  ],
+  "evidence": [
+   {
+    "domain": "hovedredningssentralen.no",
+    "url": "https://www.havtil.no/contentassets/e2a931c18b41458ebdfca3efd6f74320/adresseliste-horingsinstanser-2026.pdf",
+    "kind": "official_pdf",
+    "note": "post@hovedredningssentralen.no"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "NO",
+  "country_name_en": "Norway",
+  "group": "eea"
+ },
+ {
+  "id": "no-fma",
+  "type": "other_natsec",
+  "name_native": "Forsvarsmateriell",
+  "name_en": "Norwegian Defence Materiel Agency",
+  "acronym": "FMA",
+  "website": "https://www.fma.no",
+  "mail_domains": [
+   "fma.no"
+  ],
+  "evidence": [
+   {
+    "domain": "fma.no",
+    "url": "https://www.regjeringen.no/no/dep/fd/kontakt/kommunikasjonseininga-i-forsvarsdepartementet/kommunikasjonseininga/oversikt-over-andre-pressekontakter-i-forsvarssektoren/id2394544/",
+    "kind": "press_page",
+    "note": "media@fma.no"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "NO",
+  "country_name_en": "Norway",
+  "group": "eea"
+ },
+ {
+  "id": "no-forsvarsbygg",
+  "type": "other_natsec",
+  "name_native": "Forsvarsbygg",
+  "name_en": "Norwegian Defence Estates Agency",
+  "acronym": "",
+  "website": "https://www.forsvarsbygg.no",
+  "mail_domains": [
+   "forsvarsbygg.no"
+  ],
+  "evidence": [
+   {
+    "domain": "forsvarsbygg.no",
+    "url": "https://www.regjeringen.no/no/dep/fd/kontakt/kommunikasjonseininga-i-forsvarsdepartementet/kommunikasjonseininga/oversikt-over-andre-pressekontakter-i-forsvarssektoren/id2394544/",
+    "kind": "press_page",
+    "note": "post@forsvarsbygg.no, pressevakt@forsvarsbygg.no"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "NO",
+  "country_name_en": "Norway",
+  "group": "eea"
+ },
+ {
+  "id": "pl-paa",
+  "type": "other_natsec",
+  "name_native": "Państwowa Agencja Atomistyki",
+  "name_en": "National Atomic Energy Agency",
+  "acronym": "PAA",
+  "website": "https://www.gov.pl/web/paa",
+  "mail_domains": [
+   "paa.gov.pl"
+  ],
+  "evidence": [
+   {
+    "domain": "paa.gov.pl",
+    "url": "https://www.gov.pl/web/paa/kontakt",
+    "kind": "contact_page",
+    "note": "kancelaria@paa.gov.pl"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "PL",
+  "country_name_en": "Poland",
+  "group": "eu27"
+ },
+ {
+  "id": "pl-rcb",
+  "type": "other_natsec",
+  "name_native": "Rządowe Centrum Bezpieczeństwa",
+  "name_en": "Government Centre for Security",
+  "acronym": "RCB",
+  "website": "https://www.gov.pl/web/rcb",
+  "mail_domains": [
+   "rcb.gov.pl"
+  ],
+  "evidence": [
+   {
+    "domain": "rcb.gov.pl",
+    "url": "https://www.gov.pl/web/rcb-en/contact",
+    "kind": "contact_page",
+    "note": "poczta@rcb.gov.pl"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "PL",
+  "country_name_en": "Poland",
+  "group": "eu27"
+ },
+ {
+  "id": "pl-psp",
+  "type": "other_natsec",
+  "name_native": "Państwowa Straż Pożarna",
+  "name_en": "State Fire Service",
+  "acronym": "PSP",
+  "website": "https://www.gov.pl/web/kgpsp",
+  "mail_domains": [
+   "kgpsp.gov.pl"
+  ],
+  "evidence": [
+   {
+    "domain": "kgpsp.gov.pl",
+    "url": "https://www.gov.pl/web/kgpsp",
+    "kind": "assumed_from_website",
+    "note": "not verified"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "PL",
+  "country_name_en": "Poland",
+  "group": "eu27"
+ },
+ {
+  "id": "pl-zw",
+  "type": "armed_forces",
+  "name_native": "Żandarmeria Wojskowa",
+  "name_en": "Military Gendarmerie",
+  "acronym": "ZW",
+  "website": "https://www.zw.wp.mil.pl",
+  "mail_domains": [
+   "ron.mil.pl"
+  ],
+  "evidence": [
+   {
+    "domain": "ron.mil.pl",
+    "url": "https://www.zw.wp.mil.pl",
+    "kind": "assumed_from_website",
+    "note": "not verified; units commonly mail on ron.mil.pl"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "PL",
+  "country_name_en": "Poland",
+  "group": "eu27"
+ },
+ {
+  "id": "pt-exercito",
+  "type": "armed_forces",
+  "name_native": "Exército Português",
+  "name_en": "Portuguese Army",
+  "acronym": "",
+  "website": "https://www.exercito.pt",
+  "mail_domains": [
+   "mail.exercito.pt"
+  ],
+  "evidence": [
+   {
+    "domain": "mail.exercito.pt",
+    "url": "https://www.cm-borba.pt/wp-content/uploads/2020/08/Dia-de-Defesa-Nacional-2017-Informações.pdf",
+    "kind": "other_official",
+    "note": "crecrlisboa@mail.exercito.pt (municipal notice reproducing recruitment contacts)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "PT",
+  "country_name_en": "Portugal",
+  "group": "eu27"
+ },
+ {
+  "id": "pt-marinha",
+  "type": "armed_forces",
+  "name_native": "Marinha Portuguesa",
+  "name_en": "Portuguese Navy",
+  "acronym": "",
+  "website": "https://www.marinha.pt",
+  "mail_domains": [
+   "marinha.pt"
+  ],
+  "evidence": [
+   {
+    "domain": "marinha.pt",
+    "url": "https://www.cm-borba.pt/wp-content/uploads/2020/08/Dia-de-Defesa-Nacional-2017-Informações.pdf",
+    "kind": "other_official",
+    "note": "cra@marinha.pt"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "PT",
+  "country_name_en": "Portugal",
+  "group": "eu27"
+ },
+ {
+  "id": "pt-fap",
+  "type": "armed_forces",
+  "name_native": "Força Aérea Portuguesa",
+  "name_en": "Portuguese Air Force",
+  "acronym": "FAP",
+  "website": "https://www.emfa.pt",
+  "mail_domains": [
+   "emfa.gov.pt"
+  ],
+  "evidence": [
+   {
+    "domain": "emfa.gov.pt",
+    "url": "https://www.uc.pt/site/assets/files/2464636/fap.pdf",
+    "kind": "other_official",
+    "note": "crfa.recrutamento@emfa.gov.pt"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "earlier assumed emfa.pt; published address is on emfa.gov.pt",
+  "country": "PT",
+  "country_name_en": "Portugal",
+  "group": "eu27"
+ },
+ {
+  "id": "pt-emgfa",
+  "type": "armed_forces",
+  "name_native": "Estado-Maior-General das Forças Armadas",
+  "name_en": "Armed Forces General Staff",
+  "acronym": "EMGFA",
+  "website": "https://www.emgfa.pt",
+  "mail_domains": [
+   "emgfa.pt"
+  ],
+  "evidence": [
+   {
+    "domain": "emgfa.pt",
+    "url": "https://ted.europa.eu/en/notice/247485-2026/pdf",
+    "kind": "official_pdf",
+    "note": "DIRFIN_Contratos@emgfa.pt (TED buyer)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "PT",
+  "country_name_en": "Portugal",
+  "group": "eu27"
+ },
+ {
+  "id": "pt-amn",
+  "type": "border_guard",
+  "name_native": "Autoridade Marítima Nacional / DGAM / Polícia Marítima",
+  "name_en": "National Maritime Authority",
+  "acronym": "AMN",
+  "website": "https://www.amn.pt",
+  "mail_domains": [
+   "amn.pt"
+  ],
+  "evidence": [
+   {
+    "domain": "amn.pt",
+    "url": "https://ambiente.cascais.pt/sites/default/files/anexos/edital_5_2021.pdf",
+    "kind": "official_pdf",
+    "note": "capitania.cascais@amn.pt"
+   },
+   {
+    "domain": "amn.pt",
+    "url": "https://diariodarepublica.pt/dr/detalhe/edital/209-2016-73766245",
+    "kind": "official_pdf",
+    "note": "policiamaritima.portimao@amn.pt"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "PT",
+  "country_name_en": "Portugal",
+  "group": "eu27"
+ },
+ {
+  "id": "pt-anepc",
+  "type": "other_natsec",
+  "name_native": "Autoridade Nacional de Emergência e Proteção Civil",
+  "name_en": "National Emergency and Civil Protection Authority",
+  "acronym": "ANEPC",
+  "website": "https://prociv.gov.pt",
+  "mail_domains": [
+   "prociv.pt"
+  ],
+  "evidence": [
+   {
+    "domain": "prociv.pt",
+    "url": "https://prociv.gov.pt/media/laodkups/relatorio_satisfação_scie_2025.pdf",
+    "kind": "official_pdf",
+    "note": "scie@prociv.pt; geral@prociv.pt on TED notices"
+   }
+  ],
+  "confidence": "high",
+  "notes": "website on prociv.gov.pt, mail on prociv.pt",
+  "country": "PT",
+  "country_name_en": "Portugal",
+  "group": "eu27"
+ },
+ {
+  "id": "ro-igsu",
+  "type": "other_natsec",
+  "name_native": "Inspectoratul General pentru Situații de Urgență",
+  "name_en": "General Inspectorate for Emergency Situations",
+  "acronym": "IGSU",
+  "website": "https://www.igsu.ro",
+  "mail_domains": [
+   "igsu.ro"
+  ],
+  "evidence": [
+   {
+    "domain": "igsu.ro",
+    "url": "https://www.igsu.ro/contact",
+    "kind": "contact_page",
+    "note": "petitii@igsu.ro (general igsu@mai.gov.ro)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "General contact on mai.gov.ro; petitions and staff on igsu.ro",
+  "country": "RO",
+  "country_name_en": "Romania",
+  "group": "eu27"
+ },
+ {
+  "id": "ro-cncan",
+  "type": "other_natsec",
+  "name_native": "Comisia Națională pentru Controlul Activităților Nucleare",
+  "name_en": "National Commission for Nuclear Activities Control",
+  "acronym": "CNCAN",
+  "website": "https://www.cncan.ro",
+  "mail_domains": [
+   "cncan.ro"
+  ],
+  "evidence": [
+   {
+    "domain": "cncan.ro",
+    "url": "https://www.cncan.ro/contact-us/",
+    "kind": "contact_page",
+    "note": "office@cncan.ro"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "RO",
+  "country_name_en": "Romania",
+  "group": "eu27"
+ },
+ {
+  "id": "ro-fortele-navale",
+  "type": "armed_forces",
+  "name_native": "Forțele Navale Române",
+  "name_en": "Romanian Naval Forces",
+  "acronym": "FNR",
+  "website": "https://www.navy.ro",
+  "mail_domains": [
+   "navy.ro"
+  ],
+  "evidence": [
+   {
+    "domain": "navy.ro",
+    "url": "https://www.navy.ro/contact.php",
+    "kind": "contact_page",
+    "note": "contact@navy.ro; media@navy.ro"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "RO",
+  "country_name_en": "Romania",
+  "group": "eu27"
+ },
+ {
+  "id": "ro-fortele-aeriene",
+  "type": "armed_forces",
+  "name_native": "Forțele Aeriene Române",
+  "name_en": "Romanian Air Force",
+  "acronym": "FAR",
+  "website": "https://www.roaf.ro",
+  "mail_domains": [
+   "roaf.ro"
+  ],
+  "evidence": [
+   {
+    "domain": "roaf.ro",
+    "url": "https://www.roaf.ro/ro/Documente/2023/04/U.M. 01969_1.pdf",
+    "kind": "official_pdf",
+    "note": "um01969@roaf.ro; cersenin@roaf.ro"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "RO",
+  "country_name_en": "Romania",
+  "group": "eu27"
+ },
+ {
+  "id": "ro-anr",
+  "type": "border_guard",
+  "name_native": "Autoritatea Navală Română",
+  "name_en": "Romanian Naval Authority",
+  "acronym": "ANR",
+  "website": "https://www.rna.ro",
+  "mail_domains": [
+   "rna.ro"
+  ],
+  "evidence": [
+   {
+    "domain": "rna.ro",
+    "url": "https://ted.europa.eu/ga/notice/211087-2026/pdf",
+    "kind": "other_official",
+    "note": "buyer contact mfratila@rna.ro (TED notice)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Maritime authority (port state control / maritime safety)",
+  "country": "RO",
+  "country_name_en": "Romania",
+  "group": "eu27"
+ },
+ {
+  "id": "rs-vojska-srbije",
+  "type": "armed_forces",
+  "name_native": "Војска Србије",
+  "name_en": "Serbian Armed Forces",
+  "acronym": "VS",
+  "website": "https://www.vs.rs",
+  "mail_domains": [
+   "vs.rs"
+  ],
+  "evidence": [
+   {
+    "domain": "vs.rs",
+    "url": "https://www.vs.rs/en/units",
+    "kind": "contact_page",
+    "note": "vojska.srbije@vs.rs; kancelarija.cib@vs.rs"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "RS",
+  "country_name_en": "Serbia",
+  "group": "candidate"
+ },
+ {
+  "id": "rs-srbatom",
+  "type": "other_natsec",
+  "name_native": "Директорат за радијациону и нуклеарну сигурност и безбедност Србије",
+  "name_en": "Serbian Radiation and Nuclear Safety and Security Directorate",
+  "acronym": "SRBATOM",
+  "website": "https://www.srbatom.gov.rs",
+  "mail_domains": [
+   "srbatom.gov.rs"
+  ],
+  "evidence": [
+   {
+    "domain": "srbatom.gov.rs",
+    "url": "https://biznis.rs/vesti/srbija/u-pripremi-pravilnik-o-kontroli-sadrzaja-radioaktivnih-cestica-u-hrani-i-picu/",
+    "kind": "other_official",
+    "note": "javna.rasprava@srbatom.gov.rs (public consultation 2024)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "RS",
+  "country_name_en": "Serbia",
+  "group": "candidate"
+ },
+ {
+  "id": "ru-mchs",
+  "type": "other_natsec",
+  "name_native": "МЧС России",
+  "name_en": "EMERCOM of Russia",
+  "acronym": "MChS",
+  "website": "https://mchs.gov.ru",
+  "mail_domains": [
+   "mchs.gov.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "mchs.gov.ru",
+    "url": "https://mchs.gov.ru/deyatelnost/uslugi/informaciya-ob-osnashchennyh-mestah-priema-zhalob-zayaviteley-gosudarstvennyh-uslug",
+    "kind": "contact_page",
+    "note": "info@mchs.gov.ru; regional mail@04.mchs.gov.ru"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-rostekhnadzor",
+  "type": "other_natsec",
+  "name_native": "Ростехнадзор",
+  "name_en": "Federal Service for Environmental, Technological and Nuclear Supervision",
+  "acronym": "RTN",
+  "website": "https://www.gosnadzor.ru",
+  "mail_domains": [
+   "gosnadzor.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "gosnadzor.ru",
+    "url": "https://www.kontur-extern.ru/info/normativ/document/1/301654-prikaz-rostekhnadzora-ot-12-05-2015-n-186",
+    "kind": "other_official",
+    "note": "rostehnadzor@gosnadzor.ru (2015 order, superseded)"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Old source; not reverified (geo-block)",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-fts",
+  "type": "border_guard",
+  "name_native": "Федеральная таможенная служба",
+  "name_en": "Federal Customs Service",
+  "acronym": "FTS",
+  "website": "https://customs.gov.ru",
+  "mail_domains": [
+   "customs.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "customs.ru",
+    "url": "https://www.wko.at/oe/aussenwirtschaft/carnet-ata-russland.pdf",
+    "kind": "other_official",
+    "note": "FTS address on customs.ru listed in ATA carnet doc"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Website moved to customs.gov.ru; mail domain not reverified",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "se-fmv",
+  "type": "other_natsec",
+  "name_native": "Försvarets materielverk",
+  "name_en": "Swedish Defence Materiel Administration",
+  "acronym": "FMV",
+  "website": "https://www.fmv.se",
+  "mail_domains": [
+   "fmv.se"
+  ],
+  "evidence": [
+   {
+    "domain": "fmv.se",
+    "url": "https://www.fmv.se/en/about-fmv/",
+    "kind": "contact_page",
+    "note": "registrator@fmv.se"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "SE",
+  "country_name_en": "Sweden",
+  "group": "eu27"
+ },
+ {
+  "id": "se-ssm",
+  "type": "other_natsec",
+  "name_native": "Strålsäkerhetsmyndigheten",
+  "name_en": "Swedish Radiation Safety Authority",
+  "acronym": "SSM",
+  "website": "https://www.stralsakerhetsmyndigheten.se",
+  "mail_domains": [
+   "ssm.se"
+  ],
+  "evidence": [
+   {
+    "domain": "ssm.se",
+    "url": "https://www.regeringen.se/contentassets/d71419f67c2d4f6e97cd06ae37f02885/eu-sprakkontakter-pa-myndigheterna_2026-08-24.pdf",
+    "kind": "official_pdf",
+    "note": "registrator@ssm.se"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "SE",
+  "country_name_en": "Sweden",
+  "group": "eu27"
+ },
+ {
+  "id": "sk-ujd",
+  "type": "other_natsec",
+  "name_native": "Úrad jadrového dozoru SR",
+  "name_en": "Nuclear Regulatory Authority",
+  "acronym": "ÚJD SR",
+  "website": "https://www.ujd.gov.sk",
+  "mail_domains": [
+   "ujd.gov.sk"
+  ],
+  "evidence": [
+   {
+    "domain": "ujd.gov.sk",
+    "url": "https://www.ujd.gov.sk/urad/contacts/?lang=en",
+    "kind": "contact_page",
+    "note": "podatelna@ujd.gov.sk"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "SK",
+  "country_name_en": "Slovakia",
+  "group": "eu27"
+ },
+ {
+  "id": "tr-afad",
+  "type": "other_natsec",
+  "name_native": "Afet ve Acil Durum Yönetimi Başkanlığı",
+  "name_en": "Disaster and Emergency Management Authority",
+  "acronym": "AFAD",
+  "website": "https://www.afad.gov.tr",
+  "mail_domains": [
+   "afad.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "afad.gov.tr",
+    "url": "https://dergipark.org.tr/en/pub/publisher/1339",
+    "kind": "other_official",
+    "note": "tdad.editor@afad.gov.tr; seis@afad.gov.tr"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "ua-dsns",
+  "type": "other_natsec",
+  "name_native": "Державна служба України з надзвичайних ситуацій",
+  "name_en": "State Emergency Service of Ukraine",
+  "acronym": "DSNS",
+  "website": "https://dsns.gov.ua",
+  "mail_domains": [
+   "dsns.gov.ua"
+  ],
+  "evidence": [
+   {
+    "domain": "dsns.gov.ua",
+    "url": "https://me.gov.ua/Documents/Print/96403611-ef04-45fe-a794-a6dc66ac8c53?lang=uk-UA",
+    "kind": "official_pdf",
+    "note": "siis@dsns.gov.ua; oper@dsns.gov.ua"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "UA",
+  "country_name_en": "Ukraine",
+  "group": "candidate"
+ },
+ {
+  "id": "ua-snriu",
+  "type": "other_natsec",
+  "name_native": "Державна інспекція ядерного регулювання України",
+  "name_en": "State Nuclear Regulatory Inspectorate of Ukraine",
+  "acronym": "SNRIU",
+  "website": "https://snriu.gov.ua",
+  "mail_domains": [
+   "snriu.gov.ua"
+  ],
+  "evidence": [
+   {
+    "domain": "snriu.gov.ua",
+    "url": "https://www.kmu.gov.ua/news/22-liutoho-2024-roku-ob-1100-vidbudetsia-publichnyi-zvit-holovy-derzhavnoi-inspektsii-iadernoho-rehuliuvannia-ukrainy",
+    "kind": "other_official",
+    "note": "iv.bahlai@snriu.gov.ua"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Older docs use hq.snrc.gov.ua",
+  "country": "UA",
+  "country_name_en": "Ukraine",
+  "group": "candidate"
+ },
+ {
+  "id": "ua-customs",
+  "type": "border_guard",
+  "name_native": "Державна митна служба України",
+  "name_en": "State Customs Service of Ukraine",
+  "acronym": "DMS",
+  "website": "https://customs.gov.ua",
+  "mail_domains": [
+   "customs.gov.ua"
+  ],
+  "evidence": [
+   {
+    "domain": "customs.gov.ua",
+    "url": "https://www.trade.gov/country-commercial-guides/ukraine-customs-regulations",
+    "kind": "other_official",
+    "note": "post@customs.gov.ua; zvernennya@customs.gov.ua"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "UA",
+  "country_name_en": "Ukraine",
   "group": "candidate"
  }
 ]

@@ -11,9 +11,16 @@
       "name_en": "Police Force (Presidium of the Police Force)",
       "acronym": "PZ",
       "website": "https://www.minv.sk/?policia",
-      "mail_domains": ["minv.sk"],
+      "mail_domains": [
+        "minv.sk"
+      ],
       "evidence": [
-        {"domain": "minv.sk", "url": "https://11b.mil.sk/data/att/50080_subor.pdf", "kind": "official_pdf", "note": "infoppz@minv.sk (Presidium non-personal mailbox); gdpr@minv.sk also evidenced in minv.sk documents"}
+        {
+          "domain": "minv.sk",
+          "url": "https://11b.mil.sk/data/att/50080_subor.pdf",
+          "kind": "official_pdf",
+          "note": "infoppz@minv.sk (Presidium non-personal mailbox); gdpr@minv.sk also evidenced in minv.sk documents"
+        }
       ],
       "confidence": "high",
       "notes": "Police has no separate mail domain; it operates under the Ministry of Interior (minv.sk). Includes the Bureau of Border and Alien Police (ÚHCP)."
@@ -25,11 +32,18 @@
       "name_en": "Slovak Information Service",
       "acronym": "SIS",
       "website": "https://www.sis.gov.sk",
-      "mail_domains": ["sis.gov.sk"],
-      "evidence": [
-        {"domain": "sis.gov.sk", "url": "https://www.sis.gov.sk", "kind": "assumed_from_website", "note": "Site unreachable from research environment (TLS error); domain assumed from official website sis.gov.sk; commonly cited contact info@sis.gov.sk not independently verified"}
+      "mail_domains": [
+        "sis.gov.sk"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "sis.gov.sk",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Civilian intelligence service (domestic + foreign)."
     },
     {
@@ -39,9 +53,16 @@
       "name_en": "Military Intelligence",
       "acronym": "VS",
       "website": "https://vs.mosr.sk",
-      "mail_domains": ["vs.mil.sk"],
+      "mail_domains": [
+        "vs.mil.sk"
+      ],
       "evidence": [
-        {"domain": "vs.mil.sk", "url": "https://vs.mosr.sk", "kind": "assumed_from_website", "note": "No published email found; military units use mil.sk addresses (verified staff addresses @mil.sk on mosr.sk pages); unverified for VS specifically"}
+        {
+          "domain": "vs.mil.sk",
+          "url": "https://vs.mosr.sk",
+          "kind": "assumed_from_website",
+          "note": "No published email found; military units use mil.sk addresses (verified staff addresses @mil.sk on mosr.sk pages); unverified for VS specifically"
+        }
       ],
       "confidence": "low",
       "notes": "Military intelligence service under the Ministry of Defence; may also use mod.gov.sk."
@@ -53,10 +74,23 @@
       "name_en": "Ministry of the Interior of the Slovak Republic",
       "acronym": "MV SR",
       "website": "https://www.minv.sk",
-      "mail_domains": ["minv.sk", "minv.slovensko.sk"],
+      "mail_domains": [
+        "minv.sk",
+        "minv.slovensko.sk"
+      ],
       "evidence": [
-        {"domain": "minv.slovensko.sk", "url": "https://www.minv.sk/?kontakty-1", "kind": "contact_page", "note": "public@minv.slovensko.sk (government cloud mailbox)"},
-        {"domain": "minv.sk", "url": "https://minv.sk/swift_data/source/policia/kr_pz_ke/spristupnovanie_informacii/podanie_ziadosti.pdf", "kind": "official_pdf", "note": "departmental and staff addresses @minv.sk across minv.sk documents (e.g. gdpr@minv.sk)"}
+        {
+          "domain": "minv.slovensko.sk",
+          "url": "https://www.minv.sk/?kontakty-1",
+          "kind": "contact_page",
+          "note": "public@minv.slovensko.sk (government cloud mailbox)"
+        },
+        {
+          "domain": "minv.sk",
+          "url": "https://minv.sk/swift_data/source/policia/kr_pz_ke/spristupnovanie_informacii/podanie_ziadosti.pdf",
+          "kind": "official_pdf",
+          "note": "departmental and staff addresses @minv.sk across minv.sk documents (e.g. gdpr@minv.sk)"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -68,10 +102,23 @@
       "name_en": "Ministry of Defence of the Slovak Republic",
       "acronym": "MO SR",
       "website": "https://www.mosr.sk",
-      "mail_domains": ["mod.gov.sk", "mil.sk"],
+      "mail_domains": [
+        "mod.gov.sk",
+        "mil.sk"
+      ],
       "evidence": [
-        {"domain": "mod.gov.sk", "url": "https://ted.europa.eu/en/notice/367172-2026/pdf", "kind": "official_pdf", "note": "staff procurement contacts firstname.lastname@mod.gov.sk in EU TED notices; tlacove@mod.gov.sk (press) cited by directories"},
-        {"domain": "mil.sk", "url": "https://www.mosr.sk/kontakty/", "kind": "other_official", "note": "armed-forces staff addresses @mil.sk published on mosr.sk pages"}
+        {
+          "domain": "mod.gov.sk",
+          "url": "https://ted.europa.eu/en/notice/367172-2026/pdf",
+          "kind": "official_pdf",
+          "note": "staff procurement contacts firstname.lastname@mod.gov.sk in EU TED notices; tlacove@mod.gov.sk (press) cited by directories"
+        },
+        {
+          "domain": "mil.sk",
+          "url": "https://www.mosr.sk/kontakty/",
+          "kind": "other_official",
+          "note": "armed-forces staff addresses @mil.sk published on mosr.sk pages"
+        }
       ],
       "confidence": "high",
       "notes": "mod.gov.sk = ministry civil staff; mil.sk = armed forces."
@@ -83,9 +130,16 @@
       "name_en": "National Security Authority",
       "acronym": "NBÚ",
       "website": "https://www.nbu.gov.sk",
-      "mail_domains": ["nbu.gov.sk"],
+      "mail_domains": [
+        "nbu.gov.sk"
+      ],
       "evidence": [
-        {"domain": "nbu.gov.sk", "url": "https://www.sk-cert.sk/", "kind": "other_official", "note": "obsah@nbu.gov.sk (feedback address on SK-CERT site, operated by NBÚ); podatelna@nbu.gov.sk widely used"}
+        {
+          "domain": "nbu.gov.sk",
+          "url": "https://www.sk-cert.sk/",
+          "kind": "other_official",
+          "note": "obsah@nbu.gov.sk (feedback address on SK-CERT site, operated by NBÚ); podatelna@nbu.gov.sk widely used"
+        }
       ],
       "confidence": "high",
       "notes": "National authority for cybersecurity and classified information."
@@ -97,9 +151,23 @@
       "name_en": "National Cyber Security Centre SK-CERT",
       "acronym": "SK-CERT",
       "website": "https://www.sk-cert.sk",
-      "mail_domains": ["sk-cert.sk"],
+      "mail_domains": [
+        "nbu.gov.sk",
+        "sk-cert.sk"
+      ],
       "evidence": [
-        {"domain": "sk-cert.sk", "url": "https://www.sk-cert.sk", "kind": "assumed_from_website", "note": "incident@sk-cert.sk is the published reporting address per FIRST/TI directories, but not verified on an official page in this run"}
+        {
+          "domain": "nbu.gov.sk",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        },
+        {
+          "domain": "sk-cert.sk",
+          "url": "https://www.sk-cert.sk",
+          "kind": "assumed_from_website",
+          "note": "incident@sk-cert.sk is the published reporting address per FIRST/TI directories, but not verified on an official page in this run"
+        }
       ],
       "confidence": "medium",
       "notes": "National CSIRT, part of NBÚ but with its own mail domain."

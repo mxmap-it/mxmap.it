@@ -11,9 +11,16 @@
       "name_en": "National Police Corps",
       "acronym": "CNP",
       "website": "https://www.policia.es",
-      "mail_domains": ["policia.es"],
+      "mail_domains": [
+        "policia.es"
+      ],
       "evidence": [
-        {"domain": "policia.es", "url": "https://sede.policia.gob.es/portalCiudadano/_en/proteccion_datos.php", "kind": "privacy_page", "note": "registro.general@policia.es, policianacional.dpd@policia.es on official e-sede data-protection page"}
+        {
+          "domain": "policia.es",
+          "url": "https://sede.policia.gob.es/portalCiudadano/_en/proteccion_datos.php",
+          "kind": "privacy_page",
+          "note": "registro.general@policia.es, policianacional.dpd@policia.es on official e-sede data-protection page"
+        }
       ],
       "confidence": "high",
       "notes": "Website also uses policia.es; e-sede on policia.gob.es but email addresses are @policia.es."
@@ -25,9 +32,16 @@
       "name_en": "Civil Guard",
       "acronym": "GC",
       "website": "https://www.guardiacivil.es",
-      "mail_domains": ["guardiacivil.org"],
+      "mail_domains": [
+        "guardiacivil.org"
+      ],
       "evidence": [
-        {"domain": "guardiacivil.org", "url": "https://web.guardiacivil.es/export/sites/guardiaCivil/documentos/pdfs/2023/CartaServicios/Triptico_CS_Electronicos_GC-_con_NIPO.pdf", "kind": "official_pdf", "note": "dg-gabinetetecnico@guardiacivil.org in official service charter; unit directory on web.guardiacivil.es lists m-zon-madrid@guardiacivil.org, dg-uco@guardiacivil.org"}
+        {
+          "domain": "guardiacivil.org",
+          "url": "https://web.guardiacivil.es/export/sites/guardiaCivil/documentos/pdfs/2023/CartaServicios/Triptico_CS_Electronicos_GC-_con_NIPO.pdf",
+          "kind": "official_pdf",
+          "note": "dg-gabinetetecnico@guardiacivil.org in official service charter; unit directory on web.guardiacivil.es lists m-zon-madrid@guardiacivil.org, dg-uco@guardiacivil.org"
+        }
       ],
       "confidence": "high",
       "notes": "Militarized police under Interior/Defence. Website on .es, mail on guardiacivil.org. Some older @guardiacivil.es addresses circulate but were not confirmed on official pages. Also performs border/coast guard functions."
@@ -39,9 +53,16 @@
       "name_en": "National Intelligence Centre",
       "acronym": "CNI",
       "website": "https://www.cni.es",
-      "mail_domains": ["cni.es"],
+      "mail_domains": [
+        "cni.es"
+      ],
       "evidence": [
-        {"domain": "cni.es", "url": "https://tf-csirt.org/trusted-introducer/directory/teams/ccn-cert-es/", "kind": "other_official", "note": "ccn@cni.es in Trusted Introducer PGP identity (2026); organismo.certificacion@cni.es in CCN presentations. cni.es contact page itself uses a web form only"}
+        {
+          "domain": "cni.es",
+          "url": "https://tf-csirt.org/trusted-introducer/directory/teams/ccn-cert-es/",
+          "kind": "other_official",
+          "note": "ccn@cni.es in Trusted Introducer PGP identity (2026); organismo.certificacion@cni.es in CCN presentations. cni.es contact page itself uses a web form only"
+        }
       ],
       "confidence": "medium",
       "notes": "Single civilian foreign+domestic intelligence service; also parent of CCN."
@@ -53,10 +74,23 @@
       "name_en": "National Cryptologic Centre / Governmental CERT",
       "acronym": "CCN",
       "website": "https://www.ccn-cert.cni.es",
-      "mail_domains": ["ccn.cni.es", "ccn-cert.cni.es"],
+      "mail_domains": [
+        "ccn.cni.es",
+        "ccn-cert.cni.es"
+      ],
       "evidence": [
-        {"domain": "ccn.cni.es", "url": "https://tf-csirt.org/trusted-introducer/directory/teams/ccn-cert-es/", "kind": "other_official", "note": "info@ccn.cni.es, ccn@ccn.cni.es in current (2026-2027) Trusted Introducer PGP identity"},
-        {"domain": "ccn-cert.cni.es", "url": "https://www.trusted-introducer.org/directory/teams/ccn-cert.html", "kind": "other_official", "note": "info@ccn-cert.cni.es, sat@ccn-cert.cni.es (older listing and CCN presentations)"}
+        {
+          "domain": "ccn.cni.es",
+          "url": "https://tf-csirt.org/trusted-introducer/directory/teams/ccn-cert-es/",
+          "kind": "other_official",
+          "note": "info@ccn.cni.es, ccn@ccn.cni.es in current (2026-2027) Trusted Introducer PGP identity"
+        },
+        {
+          "domain": "ccn-cert.cni.es",
+          "url": "https://www.trusted-introducer.org/directory/teams/ccn-cert.html",
+          "kind": "other_official",
+          "note": "info@ccn-cert.cni.es, sat@ccn-cert.cni.es (older listing and CCN presentations)"
+        }
       ],
       "confidence": "high",
       "notes": "Part of CNI; governmental/classified-systems CERT."
@@ -68,11 +102,18 @@
       "name_en": "National Cybersecurity Institute",
       "acronym": "INCIBE",
       "website": "https://www.incibe.es",
-      "mail_domains": ["incibe.es"],
-      "evidence": [
-        {"domain": "incibe.es", "url": "https://www.incibe.es/en/contact", "kind": "assumed_from_website", "note": "Contact page uses web forms; incibe.es assumed from website. INCIBE-CERT also operates addresses on incibe-cert.es (PGP key page at incibe.es/en/incibe-cert/about-us/pgp-public-keys) but exact addresses not displayed"}
+      "mail_domains": [
+        "incibe.es"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "incibe.es",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "National CSIRT for citizens and private sector (CCN-CERT covers public sector)."
     },
     {
@@ -82,9 +123,16 @@
       "name_en": "Ministry of the Interior",
       "acronym": "MIR",
       "website": "https://www.interior.gob.es",
-      "mail_domains": ["interior.gob.es"],
+      "mail_domains": [
+        "interior.gob.es"
+      ],
       "evidence": [
-        {"domain": "interior.gob.es", "url": "https://www.interior.gob.es/opencms/es/el-ministerio/directorio/servicios-centrales/", "kind": "assumed_from_website", "note": "Official directory lists phone/address only; no email addresses evidenced. Registrable domain interior.gob.es (gob.es is a public suffix). Legacy @interior.es addresses circulate unverified"}
+        {
+          "domain": "interior.gob.es",
+          "url": "https://www.interior.gob.es/opencms/es/el-ministerio/directorio/servicios-centrales/",
+          "kind": "assumed_from_website",
+          "note": "Official directory lists phone/address only; no email addresses evidenced. Registrable domain interior.gob.es (gob.es is a public suffix). Legacy @interior.es addresses circulate unverified"
+        }
       ],
       "confidence": "low",
       "notes": ""
@@ -96,9 +144,16 @@
       "name_en": "Ministry of Defence",
       "acronym": "MDE",
       "website": "https://www.defensa.gob.es",
-      "mail_domains": ["mde.es"],
+      "mail_domains": [
+        "mde.es"
+      ],
       "evidence": [
-        {"domain": "mde.es", "url": "https://www.tf-csirt.org/trusted-introducer/directory/teams/esp-def-cert/", "kind": "other_official", "note": "esp-def-cert@mde.es / espdef-cert@mde.es; ESP-DEF-CERT constituency listed as *.defensa.gob.es but mail on mde.es; also appears in official defensa.gob.es PDFs"}
+        {
+          "domain": "mde.es",
+          "url": "https://www.tf-csirt.org/trusted-introducer/directory/teams/esp-def-cert/",
+          "kind": "other_official",
+          "note": "esp-def-cert@mde.es / espdef-cert@mde.es; ESP-DEF-CERT constituency listed as *.defensa.gob.es but mail on mde.es; also appears in official defensa.gob.es PDFs"
+        }
       ],
       "confidence": "high",
       "notes": "Website defensa.gob.es, mail domain mde.es. Armed forces and EMAD under this ministry."
@@ -110,9 +165,16 @@
       "name_en": "National Security Department (Presidency of the Government)",
       "acronym": "DSN",
       "website": "https://www.dsn.gob.es",
-      "mail_domains": ["dsn.gob.es"],
+      "mail_domains": [
+        "dsn.gob.es"
+      ],
       "evidence": [
-        {"domain": "dsn.gob.es", "url": "https://www.dsn.gob.es", "kind": "assumed_from_website", "note": "No public email address evidenced; assumed from website registrable domain"}
+        {
+          "domain": "dsn.gob.es",
+          "url": "https://www.dsn.gob.es",
+          "kind": "assumed_from_website",
+          "note": "No public email address evidenced; assumed from website registrable domain"
+        }
       ],
       "confidence": "low",
       "notes": "National Security Council secretariat within the Prime Minister's office."

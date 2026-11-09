@@ -4,18 +4,265 @@
   "group": "eu27",
   "researched_at": "2026-11-09",
   "entities": [
-    {"id": "fr-police-nationale", "type": "police", "name_native": "Police nationale", "name_en": "National Police", "acronym": "PN", "website": "https://www.police-nationale.interieur.gouv.fr", "mail_domains": ["interieur.gouv.fr"], "evidence": [{"domain": "interieur.gouv.fr", "url": "https://choisirleservicepublic.gouv.fr/offre-emploi/agent-de-contact-dans-le-domaine-de-la-securite-economique-hf-reference-MINT_BA092ACA-120752/", "kind": "other_official", "note": "Ministry of Interior job postings use xxx@interieur.gouv.fr; e.g. securite-economique@interieur.gouv.fr"}], "confidence": "high", "notes": "National Police shares the interior ministry mail domain."},
-    {"id": "fr-gendarmerie", "type": "gendarmerie", "name_native": "Gendarmerie nationale", "name_en": "National Gendarmerie", "acronym": "GN", "website": "https://www.gendarmerie.interieur.gouv.fr", "mail_domains": ["gendarmerie.interieur.gouv.fr"], "evidence": [{"domain": "gendarmerie.interieur.gouv.fr", "url": "https://emslb.defense.gouv.fr/content/uploads/sites/16/2024/12/20240111-liste-des-antennes-mdicales.pdf", "kind": "official_pdf", "note": "unit addresses like amg88.montlucon@gendarmerie.interieur.gouv.fr in official MoD PDF"}], "confidence": "high", "notes": ""},
-    {"id": "fr-paf", "type": "border_guard", "name_native": "Direction nationale de la police aux frontières", "name_en": "National Directorate of the Border Police", "acronym": "DNPAF", "website": "https://www.police-nationale.interieur.gouv.fr", "mail_domains": ["interieur.gouv.fr"], "evidence": [{"domain": "interieur.gouv.fr", "url": "https://www.interieur.gouv.fr", "kind": "assumed_from_website", "note": "directorate of the Police nationale; uses interior ministry mail domain"}], "confidence": "medium", "notes": "Border police is a directorate within the Police nationale."},
-    {"id": "fr-dgsi", "type": "intelligence", "name_native": "Direction générale de la Sécurité intérieure", "name_en": "General Directorate for Internal Security", "acronym": "DGSI", "website": "https://www.dgsi.interieur.gouv.fr", "mail_domains": ["interieur.gouv.fr"], "evidence": [{"domain": "interieur.gouv.fr", "url": "https://www.ville-levallois.fr/wp-content/uploads/2025/02/DGSI-Analyste-juridique.pdf", "kind": "official_pdf", "note": "recrutement-dgsi@interieur.gouv.fr; also securite-economique@interieur.gouv.fr on DGSI flyer"}], "confidence": "high", "notes": ""},
-    {"id": "fr-dgse", "type": "intelligence", "name_native": "Direction générale de la Sécurité extérieure", "name_en": "General Directorate for External Security", "acronym": "DGSE", "website": "https://www.dgse.gouv.fr", "mail_domains": ["dgse.gouv.fr"], "evidence": [{"domain": "dgse.gouv.fr", "url": "https://www.dgse.gouv.fr", "kind": "assumed_from_website", "note": "no public email found; contact is via web form only"}], "confidence": "low", "notes": "DGSE publishes no email addresses; domain assumed from website."},
-    {"id": "fr-drm", "type": "intelligence", "name_native": "Direction du Renseignement militaire", "name_en": "Directorate of Military Intelligence", "acronym": "DRM", "website": "https://www.defense.gouv.fr/drm", "mail_domains": ["intradef.gouv.fr"], "evidence": [{"domain": "intradef.gouv.fr", "url": "https://www.defense.gouv.fr", "kind": "other_official", "note": "French armed forces personnel use xxx@intradef.gouv.fr (standard MoD mail domain pattern)"}], "confidence": "medium", "notes": "No dedicated public contact; MoD standard mail domain."},
-    {"id": "fr-drsd", "type": "intelligence", "name_native": "Direction du Renseignement et de la Sécurité de la Défense", "name_en": "Directorate of Defence Intelligence and Security", "acronym": "DRSD", "website": "https://www.defense.gouv.fr/drsd", "mail_domains": ["intradef.gouv.fr"], "evidence": [{"domain": "intradef.gouv.fr", "url": "https://www.defense.gouv.fr", "kind": "other_official", "note": "standard MoD mail domain pattern"}], "confidence": "medium", "notes": ""},
-    {"id": "fr-interieur", "type": "interior_ministry", "name_native": "Ministère de l'Intérieur", "name_en": "Ministry of the Interior", "acronym": "", "website": "https://www.interieur.gouv.fr", "mail_domains": ["interieur.gouv.fr"], "evidence": [{"domain": "interieur.gouv.fr", "url": "https://choisirleservicepublic.gouv.fr/offre-emploi/agent-de-contact-dans-le-domaine-de-la-securite-economique-hf-reference-MINT_BA092ACA-120752/", "kind": "other_official", "note": "securite-economique@interieur.gouv.fr and other xxx@interieur.gouv.fr addresses"}], "confidence": "high", "notes": ""},
-    {"id": "fr-armees", "type": "defence_ministry", "name_native": "Ministère des Armées", "name_en": "Ministry of the Armed Forces", "acronym": "MINARM", "website": "https://www.defense.gouv.fr", "mail_domains": ["intradef.gouv.fr", "dicod.fr"], "evidence": [{"domain": "dicod.fr", "url": "https://www.defense.gouv.fr/presse/agendas-autorites/contacts-presse", "kind": "press_page", "note": "media@dicod.fr (ministry media centre)"}, {"domain": "intradef.gouv.fr", "url": "https://www.defense.gouv.fr", "kind": "other_official", "note": "standard internal MoD mail domain xxx@intradef.gouv.fr"}], "confidence": "high", "notes": "Website domain defense.gouv.fr differs from mail domains."},
-    {"id": "fr-anssi", "type": "cybersecurity", "name_native": "Agence nationale de la sécurité des systèmes d'information", "name_en": "National Cybersecurity Agency of France", "acronym": "ANSSI", "website": "https://cyber.gouv.fr", "mail_domains": ["ssi.gouv.fr"], "evidence": [{"domain": "ssi.gouv.fr", "url": "https://www.cert.ssi.gouv.fr/contact/", "kind": "contact_page", "note": "cert-fr.cossi@ssi.gouv.fr; ANSSI staff use xxx@ssi.gouv.fr"}], "confidence": "high", "notes": "CERT-FR is part of ANSSI and uses the same ssi.gouv.fr mail domain."},
-    {"id": "fr-sgdsn", "type": "other_natsec", "name_native": "Secrétariat général de la Défense et de la Sécurité nationale", "name_en": "General Secretariat for Defence and National Security", "acronym": "SGDSN", "website": "https://www.sgdsn.gouv.fr", "mail_domains": ["sgdsn.gouv.fr"], "evidence": [{"domain": "sgdsn.gouv.fr", "url": "https://www.sgdsn.gouv.fr", "kind": "assumed_from_website", "note": "assumed from website registrable domain"}], "confidence": "low", "notes": "PM-level national security secretariat; ANSSI reports to it."},
-    {"id": "fr-douane", "type": "other_natsec", "name_native": "Direction générale des Douanes et Droits indirects", "name_en": "Directorate-General of Customs and Indirect Taxes", "acronym": "DGDDI", "website": "https://www.douane.gouv.fr", "mail_domains": ["douane.finances.gouv.fr"], "evidence": [{"domain": "douane.finances.gouv.fr", "url": "https://www.douane.gouv.fr/nous-connaitre/contactez-nous", "kind": "contact_page", "note": "regional/service mailboxes follow xxx@douane.finances.gouv.fr"}], "confidence": "medium", "notes": "Includes DNRED (customs intelligence)."}
+    {
+      "id": "fr-police-nationale",
+      "type": "police",
+      "name_native": "Police nationale",
+      "name_en": "National Police",
+      "acronym": "PN",
+      "website": "https://www.police-nationale.interieur.gouv.fr",
+      "mail_domains": [
+        "interieur.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "interieur.gouv.fr",
+          "url": "https://choisirleservicepublic.gouv.fr/offre-emploi/agent-de-contact-dans-le-domaine-de-la-securite-economique-hf-reference-MINT_BA092ACA-120752/",
+          "kind": "other_official",
+          "note": "Ministry of Interior job postings use xxx@interieur.gouv.fr; e.g. securite-economique@interieur.gouv.fr"
+        }
+      ],
+      "confidence": "high",
+      "notes": "National Police shares the interior ministry mail domain."
+    },
+    {
+      "id": "fr-gendarmerie",
+      "type": "gendarmerie",
+      "name_native": "Gendarmerie nationale",
+      "name_en": "National Gendarmerie",
+      "acronym": "GN",
+      "website": "https://www.gendarmerie.interieur.gouv.fr",
+      "mail_domains": [
+        "gendarmerie.interieur.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "gendarmerie.interieur.gouv.fr",
+          "url": "https://emslb.defense.gouv.fr/content/uploads/sites/16/2024/12/20240111-liste-des-antennes-mdicales.pdf",
+          "kind": "official_pdf",
+          "note": "unit addresses like amg88.montlucon@gendarmerie.interieur.gouv.fr in official MoD PDF"
+        }
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "fr-paf",
+      "type": "border_guard",
+      "name_native": "Direction nationale de la police aux frontières",
+      "name_en": "National Directorate of the Border Police",
+      "acronym": "DNPAF",
+      "website": "https://www.police-nationale.interieur.gouv.fr",
+      "mail_domains": [
+        "interieur.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "interieur.gouv.fr",
+          "url": "https://www.interieur.gouv.fr",
+          "kind": "assumed_from_website",
+          "note": "directorate of the Police nationale; uses interior ministry mail domain"
+        }
+      ],
+      "confidence": "medium",
+      "notes": "Border police is a directorate within the Police nationale."
+    },
+    {
+      "id": "fr-dgsi",
+      "type": "intelligence",
+      "name_native": "Direction générale de la Sécurité intérieure",
+      "name_en": "General Directorate for Internal Security",
+      "acronym": "DGSI",
+      "website": "https://www.dgsi.interieur.gouv.fr",
+      "mail_domains": [
+        "interieur.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "interieur.gouv.fr",
+          "url": "https://www.ville-levallois.fr/wp-content/uploads/2025/02/DGSI-Analyste-juridique.pdf",
+          "kind": "official_pdf",
+          "note": "recrutement-dgsi@interieur.gouv.fr; also securite-economique@interieur.gouv.fr on DGSI flyer"
+        }
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "fr-dgse",
+      "type": "intelligence",
+      "name_native": "Direction générale de la Sécurité extérieure",
+      "name_en": "General Directorate for External Security",
+      "acronym": "DGSE",
+      "website": "https://www.dgse.gouv.fr",
+      "mail_domains": [
+        "dgse.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "dgse.gouv.fr",
+          "url": "https://www.dgse.gouv.fr",
+          "kind": "assumed_from_website",
+          "note": "no public email found; contact is via web form only"
+        }
+      ],
+      "confidence": "low",
+      "notes": "DGSE publishes no email addresses; domain assumed from website."
+    },
+    {
+      "id": "fr-drm",
+      "type": "intelligence",
+      "name_native": "Direction du Renseignement militaire",
+      "name_en": "Directorate of Military Intelligence",
+      "acronym": "DRM",
+      "website": "https://www.defense.gouv.fr/drm",
+      "mail_domains": [
+        "intradef.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "intradef.gouv.fr",
+          "url": "https://www.defense.gouv.fr",
+          "kind": "other_official",
+          "note": "French armed forces personnel use xxx@intradef.gouv.fr (standard MoD mail domain pattern)"
+        }
+      ],
+      "confidence": "medium",
+      "notes": "No dedicated public contact; MoD standard mail domain."
+    },
+    {
+      "id": "fr-drsd",
+      "type": "intelligence",
+      "name_native": "Direction du Renseignement et de la Sécurité de la Défense",
+      "name_en": "Directorate of Defence Intelligence and Security",
+      "acronym": "DRSD",
+      "website": "https://www.defense.gouv.fr/drsd",
+      "mail_domains": [
+        "intradef.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "intradef.gouv.fr",
+          "url": "https://www.defense.gouv.fr",
+          "kind": "other_official",
+          "note": "standard MoD mail domain pattern"
+        }
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "id": "fr-interieur",
+      "type": "interior_ministry",
+      "name_native": "Ministère de l'Intérieur",
+      "name_en": "Ministry of the Interior",
+      "acronym": "",
+      "website": "https://www.interieur.gouv.fr",
+      "mail_domains": [
+        "interieur.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "interieur.gouv.fr",
+          "url": "https://choisirleservicepublic.gouv.fr/offre-emploi/agent-de-contact-dans-le-domaine-de-la-securite-economique-hf-reference-MINT_BA092ACA-120752/",
+          "kind": "other_official",
+          "note": "securite-economique@interieur.gouv.fr and other xxx@interieur.gouv.fr addresses"
+        }
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "fr-armees",
+      "type": "defence_ministry",
+      "name_native": "Ministère des Armées",
+      "name_en": "Ministry of the Armed Forces",
+      "acronym": "MINARM",
+      "website": "https://www.defense.gouv.fr",
+      "mail_domains": [
+        "intradef.gouv.fr",
+        "dicod.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "dicod.fr",
+          "url": "https://www.defense.gouv.fr/presse/agendas-autorites/contacts-presse",
+          "kind": "press_page",
+          "note": "media@dicod.fr (ministry media centre)"
+        },
+        {
+          "domain": "intradef.gouv.fr",
+          "url": "https://www.defense.gouv.fr",
+          "kind": "other_official",
+          "note": "standard internal MoD mail domain xxx@intradef.gouv.fr"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Website domain defense.gouv.fr differs from mail domains."
+    },
+    {
+      "id": "fr-anssi",
+      "type": "cybersecurity",
+      "name_native": "Agence nationale de la sécurité des systèmes d'information",
+      "name_en": "National Cybersecurity Agency of France",
+      "acronym": "ANSSI",
+      "website": "https://cyber.gouv.fr",
+      "mail_domains": [
+        "ssi.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "ssi.gouv.fr",
+          "url": "https://www.cert.ssi.gouv.fr/contact/",
+          "kind": "contact_page",
+          "note": "cert-fr.cossi@ssi.gouv.fr; ANSSI staff use xxx@ssi.gouv.fr"
+        }
+      ],
+      "confidence": "high",
+      "notes": "CERT-FR is part of ANSSI and uses the same ssi.gouv.fr mail domain."
+    },
+    {
+      "id": "fr-sgdsn",
+      "type": "other_natsec",
+      "name_native": "Secrétariat général de la Défense et de la Sécurité nationale",
+      "name_en": "General Secretariat for Defence and National Security",
+      "acronym": "SGDSN",
+      "website": "https://www.sgdsn.gouv.fr",
+      "mail_domains": [
+        "sgdsn.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "sgdsn.gouv.fr",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen in official document"
+        }
+      ],
+      "confidence": "medium",
+      "notes": "PM-level national security secretariat; ANSSI reports to it."
+    },
+    {
+      "id": "fr-douane",
+      "type": "other_natsec",
+      "name_native": "Direction générale des Douanes et Droits indirects",
+      "name_en": "Directorate-General of Customs and Indirect Taxes",
+      "acronym": "DGDDI",
+      "website": "https://www.douane.gouv.fr",
+      "mail_domains": [
+        "douane.finances.gouv.fr"
+      ],
+      "evidence": [
+        {
+          "domain": "douane.finances.gouv.fr",
+          "url": "https://www.douane.gouv.fr/nous-connaitre/contactez-nous",
+          "kind": "contact_page",
+          "note": "regional/service mailboxes follow xxx@douane.finances.gouv.fr"
+        }
+      ],
+      "confidence": "medium",
+      "notes": "Includes DNRED (customs intelligence)."
+    }
   ],
   "gaps": []
 }

@@ -11,9 +11,16 @@
       "name_en": "Ministry of the Interior of the Republic of Croatia",
       "acronym": "MUP",
       "website": "https://mup.gov.hr",
-      "mail_domains": ["mup.hr"],
+      "mail_domains": [
+        "mup.hr"
+      ],
       "evidence": [
-        {"domain": "mup.hr", "url": "https://mup.gov.hr/kontakti-129095/129095", "kind": "contact_page", "note": "pitanja@mup.hr, press@mup.hr; website is mup.gov.hr but email domain is mup.hr"}
+        {
+          "domain": "mup.hr",
+          "url": "https://mup.gov.hr/kontakti-129095/129095",
+          "kind": "contact_page",
+          "note": "pitanja@mup.hr, press@mup.hr; website is mup.gov.hr but email domain is mup.hr"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -25,9 +32,16 @@
       "name_en": "Police Directorate (Croatian Police)",
       "acronym": "",
       "website": "https://policija.gov.hr",
-      "mail_domains": ["mup.hr"],
+      "mail_domains": [
+        "mup.hr"
+      ],
       "evidence": [
-        {"domain": "mup.hr", "url": "https://policija.gov.hr/kontakti/5", "kind": "contact_page", "note": "policija@mup.hr, pitanja@mup.hr, press@mup.hr — police uses the MUP mail domain"}
+        {
+          "domain": "mup.hr",
+          "url": "https://policija.gov.hr/kontakti/5",
+          "kind": "contact_page",
+          "note": "policija@mup.hr, pitanja@mup.hr, press@mup.hr — police uses the MUP mail domain"
+        }
       ],
       "confidence": "high",
       "notes": "Police is a directorate within MUP; border policing (Uprava za granicu) is part of the police, hence no separate border_guard entity."
@@ -39,9 +53,16 @@
       "name_en": "Ministry of Defence of the Republic of Croatia",
       "acronym": "MORH",
       "website": "https://www.morh.hr",
-      "mail_domains": ["morh.hr"],
+      "mail_domains": [
+        "morh.hr"
+      ],
       "evidence": [
-        {"domain": "morh.hr", "url": "https://www.morh.hr/kontakti/", "kind": "contact_page", "note": "23 addresses listed, e.g. pisarnica@morh.hr, press@morh.hr, kabinet@morh.hr"}
+        {
+          "domain": "morh.hr",
+          "url": "https://www.morh.hr/kontakti/",
+          "kind": "contact_page",
+          "note": "23 addresses listed, e.g. pisarnica@morh.hr, press@morh.hr, kabinet@morh.hr"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -53,9 +74,16 @@
       "name_en": "Security and Intelligence Agency",
       "acronym": "SOA",
       "website": "https://www.soa.hr",
-      "mail_domains": ["soa.hr"],
+      "mail_domains": [
+        "soa.hr"
+      ],
       "evidence": [
-        {"domain": "soa.hr", "url": "https://soa.hr/hr/kontakt/", "kind": "contact_page", "note": "informiranje@soa.hr"}
+        {
+          "domain": "soa.hr",
+          "url": "https://soa.hr/hr/kontakt/",
+          "kind": "contact_page",
+          "note": "informiranje@soa.hr"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -67,9 +95,16 @@
       "name_en": "Military Security and Intelligence Agency",
       "acronym": "VSOA",
       "website": "https://www.morh.hr/vojna-sigurnosno-obavjestajna-agencija/",
-      "mail_domains": ["morh.hr"],
+      "mail_domains": [
+        "morh.hr"
+      ],
       "evidence": [
-        {"domain": "morh.hr", "url": "https://www.morh.hr/vojna-sigurnosno-obavjestajna-agencija/", "kind": "other_official", "note": "VSOA has no own website or published email; its pages on morh.hr list MORH contacts (pisarnica@morh.hr etc.). No distinct VSOA mail domain evidenced."}
+        {
+          "domain": "morh.hr",
+          "url": "https://www.morh.hr/vojna-sigurnosno-obavjestajna-agencija/",
+          "kind": "other_official",
+          "note": "VSOA has no own website or published email; its pages on morh.hr list MORH contacts (pisarnica@morh.hr etc.). No distinct VSOA mail domain evidenced."
+        }
       ],
       "confidence": "medium",
       "notes": "VSOA operates within MORH; contact routed through MORH addresses."
@@ -81,9 +116,16 @@
       "name_en": "Office of the National Security Council",
       "acronym": "UVNS",
       "website": "https://www.uvns.hr",
-      "mail_domains": ["uvns.hr"],
+      "mail_domains": [
+        "uvns.hr"
+      ],
       "evidence": [
-        {"domain": "uvns.hr", "url": "https://www.uvns.hr/hr/kontakt", "kind": "assumed_from_website", "note": "Contact page lists only postal address, phone and fax — no email published; domain assumed from website uvns.hr"}
+        {
+          "domain": "uvns.hr",
+          "url": "https://www.uvns.hr/hr/kontakt",
+          "kind": "assumed_from_website",
+          "note": "Contact page lists only postal address, phone and fax — no email published; domain assumed from website uvns.hr"
+        }
       ],
       "confidence": "low",
       "notes": "Central state authority for information security and coordination of the security-intelligence system; also NSA/CSA function."
@@ -95,9 +137,16 @@
       "name_en": "Croatian National CERT (within CARNET)",
       "acronym": "NCERT",
       "website": "https://www.cert.hr",
-      "mail_domains": ["cert.hr"],
+      "mail_domains": [
+        "cert.hr"
+      ],
       "evidence": [
-        {"domain": "cert.hr", "url": "https://www.cert.hr/o-nama/", "kind": "other_official", "note": "ncert@cert.hr, incident@cert.hr"}
+        {
+          "domain": "cert.hr",
+          "url": "https://www.cert.hr/o-nama/",
+          "kind": "other_official",
+          "note": "ncert@cert.hr, incident@cert.hr"
+        }
       ],
       "confidence": "high",
       "notes": "Operates within CARNET (Croatian Academic and Research Network), not under SOA. SK@CERT could not be verified as a current distinct national CERT."
@@ -109,11 +158,18 @@
       "name_en": "Information Systems Security Bureau",
       "acronym": "ZSIS",
       "website": "https://www.zsis.hr",
-      "mail_domains": ["zsis.hr"],
-      "evidence": [
-        {"domain": "zsis.hr", "url": "https://www.zsis.hr/default.aspx?id=83", "kind": "assumed_from_website", "note": "Contact page shows the email only as an image (mail.jpg), text not extractable; domain assumed from website zsis.hr. ZSIS also runs ZSIS CERT for state bodies."}
+      "mail_domains": [
+        "zsis.hr"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "zsis.hr",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Central state body for technical information security (crypto, TEMPEST); runs ZSIS CERT for government bodies."
     }
   ],

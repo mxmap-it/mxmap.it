@@ -11,9 +11,16 @@
       "name_en": "Ministry of Internal Affairs of Georgia",
       "acronym": "MIA",
       "website": "https://mia.gov.ge",
-      "mail_domains": ["mia.gov.ge"],
+      "mail_domains": [
+        "mia.gov.ge"
+      ],
       "evidence": [
-        {"domain": "mia.gov.ge", "url": "https://mia.police.ge/en/ministry/structure-and-offices/human-rights-protection-and-monitoring-main-division-of-administration?sub=6011", "kind": "other_official", "note": "TDD@mia.gov.ge on official MIA/police site; police@mia.gov.ge and patrolinfo@mia.gov.ge on police.ge (archived copy, site geo-blocks non-Georgian IPs)"}
+        {
+          "domain": "mia.gov.ge",
+          "url": "https://mia.police.ge/en/ministry/structure-and-offices/human-rights-protection-and-monitoring-main-division-of-administration?sub=6011",
+          "kind": "other_official",
+          "note": "TDD@mia.gov.ge on official MIA/police site; police@mia.gov.ge and patrolinfo@mia.gov.ge on police.ge (archived copy, site geo-blocks non-Georgian IPs)"
+        }
       ],
       "confidence": "high",
       "notes": "Sakartvelos shinagan sakmeta saministro."
@@ -25,9 +32,16 @@
       "name_en": "Georgian Police (police departments of the MIA, incl. Patrol Police Department)",
       "acronym": "",
       "website": "https://police.ge",
-      "mail_domains": ["mia.gov.ge"],
+      "mail_domains": [
+        "mia.gov.ge"
+      ],
       "evidence": [
-        {"domain": "mia.gov.ge", "url": "https://police.ge/", "kind": "contact_page", "note": "police@mia.gov.ge and patrolinfo@mia.gov.ge on police.ge footer (verified via Wayback snapshot 2026-10-19; live site geo-blocked)"}
+        {
+          "domain": "mia.gov.ge",
+          "url": "https://police.ge/",
+          "kind": "contact_page",
+          "note": "police@mia.gov.ge and patrolinfo@mia.gov.ge on police.ge footer (verified via Wayback snapshot 2026-10-19; live site geo-blocked)"
+        }
       ],
       "confidence": "high",
       "notes": "No standalone national police agency: police forces (Patrol Police, Criminal Police) are MIA departments and use MIA mail."
@@ -39,9 +53,16 @@
       "name_en": "Border Police of Georgia",
       "acronym": "BPG",
       "website": "https://bpg.gov.ge",
-      "mail_domains": ["mia.gov.ge"],
+      "mail_domains": [
+        "mia.gov.ge"
+      ],
       "evidence": [
-        {"domain": "mia.gov.ge", "url": "https://bpg.gov.ge/", "kind": "contact_page", "note": "bpol@mia.gov.ge on bpg.gov.ge footer (verified via Wayback snapshot 2026-10-17; live site geo-blocked)"}
+        {
+          "domain": "mia.gov.ge",
+          "url": "https://bpg.gov.ge/",
+          "kind": "contact_page",
+          "note": "bpol@mia.gov.ge on bpg.gov.ge footer (verified via Wayback snapshot 2026-10-17; live site geo-blocked)"
+        }
       ],
       "confidence": "high",
       "notes": "Subordinate to the MIA; own website domain bpg.gov.ge but mail on mia.gov.ge."
@@ -53,9 +74,16 @@
       "name_en": "State Security Service of Georgia",
       "acronym": "SSSG",
       "website": "https://ssg.gov.ge",
-      "mail_domains": ["ssg.gov.ge"],
+      "mail_domains": [
+        "ssg.gov.ge"
+      ],
       "evidence": [
-        {"domain": "ssg.gov.ge", "url": "https://ssg.gov.ge/", "kind": "other_official", "note": "info@ssg.gov.ge on official homepage (verified via Wayback snapshot 2024-04-15; live site geo-blocked)"}
+        {
+          "domain": "ssg.gov.ge",
+          "url": "https://ssg.gov.ge/",
+          "kind": "other_official",
+          "note": "info@ssg.gov.ge on official homepage (verified via Wayback snapshot 2024-04-15; live site geo-blocked)"
+        }
       ],
       "confidence": "high",
       "notes": "Domestic security/counterintelligence service, split from MIA in 2015."
@@ -67,9 +95,16 @@
       "name_en": "Georgian Intelligence Service (Foreign Intelligence Service)",
       "acronym": "GIS",
       "website": "https://gis.gov.ge",
-      "mail_domains": ["gis.gov.ge"],
+      "mail_domains": [
+        "gis.gov.ge"
+      ],
       "evidence": [
-        {"domain": "gis.gov.ge", "url": "https://gis.gov.ge/", "kind": "other_official", "note": "docs@gis.gov.ge on official site (verified via Wayback snapshot; live site geo-blocked)"}
+        {
+          "domain": "gis.gov.ge",
+          "url": "https://gis.gov.ge/",
+          "kind": "other_official",
+          "note": "docs@gis.gov.ge on official site (verified via Wayback snapshot; live site geo-blocked)"
+        }
       ],
       "confidence": "high",
       "notes": "Foreign intelligence service."
@@ -81,9 +116,16 @@
       "name_en": "Ministry of Defence of Georgia",
       "acronym": "MOD",
       "website": "https://mod.gov.ge",
-      "mail_domains": ["mod.gov.ge"],
+      "mail_domains": [
+        "mod.gov.ge"
+      ],
       "evidence": [
-        {"domain": "mod.gov.ge", "url": "https://mod.gov.ge", "kind": "assumed_from_website", "note": "assumed from website registrable domain; third-party email-pattern database (prospeo.io/c/ministry-of-defence-of-georgia) reports {first}{last}@mod.gov.ge as staff pattern; official pages 403 non-Georgian IPs"}
+        {
+          "domain": "mod.gov.ge",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen in official document; Qwen: seen in third-party source"
+        }
       ],
       "confidence": "medium",
       "notes": "Runs the LEPL Cyber Security Bureau for the defence sector."
@@ -95,9 +137,16 @@
       "name_en": "Digital Governance Agency (LEPL, Ministry of Justice)",
       "acronym": "DGA",
       "website": "https://dga.gov.ge",
-      "mail_domains": ["dga.gov.ge"],
+      "mail_domains": [
+        "dga.gov.ge"
+      ],
       "evidence": [
-        {"domain": "dga.gov.ge", "url": "https://cert.gov.ge/", "kind": "other_official", "note": "cert.gov.ge serves a TLS certificate for *.dga.gov.ge including mail.dga.gov.ge and cert.dga.gov.ge, showing DGA runs the infrastructure and operates mail on dga.gov.ge; test@dga.gov.ge also appears in police.ge page source"}
+        {
+          "domain": "dga.gov.ge",
+          "url": "https://cert.gov.ge/",
+          "kind": "other_official",
+          "note": "cert.gov.ge serves a TLS certificate for *.dga.gov.ge including mail.dga.gov.ge and cert.dga.gov.ge, showing DGA runs the infrastructure and operates mail on dga.gov.ge; test@dga.gov.ge also appears in police.ge page source"
+        }
       ],
       "confidence": "medium",
       "notes": "National CERT (CERT.GOV.GE) operator for the civil public sector; successor of the Data Exchange Agency (DEA)."
@@ -109,10 +158,23 @@
       "name_en": "Georgian Governmental CERT (CERT.GOV.GE)",
       "acronym": "CERT.GOV.GE",
       "website": "https://cert.gov.ge",
-      "mail_domains": ["dga.gov.ge", "cert.gov.ge"],
+      "mail_domains": [
+        "dga.gov.ge",
+        "cert.gov.ge"
+      ],
       "evidence": [
-        {"domain": "dga.gov.ge", "url": "https://cert.gov.ge/", "kind": "other_official", "note": "cert.dga.gov.ge in the site's TLS certificate SAN list; team hosted by Digital Governance Agency"},
-        {"domain": "cert.gov.ge", "url": "https://cert.gov.ge", "kind": "assumed_from_website", "note": "assumed from website registrable domain (historical cert@cert.gov.ge contact could not be re-verified; site geo-blocked)"}
+        {
+          "domain": "dga.gov.ge",
+          "url": "https://cert.gov.ge/",
+          "kind": "other_official",
+          "note": "cert.dga.gov.ge in the site's TLS certificate SAN list; team hosted by Digital Governance Agency"
+        },
+        {
+          "domain": "cert.gov.ge",
+          "url": "https://cert.gov.ge",
+          "kind": "assumed_from_website",
+          "note": "assumed from website registrable domain (historical cert@cert.gov.ge contact could not be re-verified; site geo-blocked)"
+        }
       ],
       "confidence": "low",
       "notes": "National CERT operated by the DGA."

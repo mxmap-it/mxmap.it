@@ -31,7 +31,7 @@ CODE = {
     "P": "inferred from parent ministry",
     "W": "inferred from website",
 }
-MODEL_NAME = {"chatgpt": "ChatGPT", "qwen": "Qwen", "deepseek": "DeepSeek"}
+MODEL_NAME = {"chatgpt": "ChatGPT", "qwen": "Qwen", "deepseek": "DeepSeek", "claude": "Claude"}
 EVIDENCE_CODES = {"S", "D", "T"}
 STRONG_KINDS = {"contact_page", "privacy_page", "press_page", "other_official", "official_pdf"}
 

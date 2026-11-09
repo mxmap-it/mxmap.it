@@ -11,11 +11,18 @@
       "name_en": "National Police of the Principality of Liechtenstein",
       "acronym": "LP",
       "website": "https://www.landespolizei.li",
-      "mail_domains": ["landespolizei.li"],
-      "evidence": [
-        {"domain": "landespolizei.li", "url": "https://www.landespolizei.li/kontakt", "kind": "assumed_from_website", "note": "No email published (phone + contact form only); assumed from website domain. Privacy page routes data-protection mail to Datenschutz@regierung.li."}
+      "mail_domains": [
+        "landespolizei.li"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "landespolizei.li",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Only police force of the country; may also mail under the state administration domain llv.li"
     },
     {
@@ -25,9 +32,16 @@
       "name_en": "Ministry of Home Affairs, Economy and Sport",
       "acronym": "",
       "website": "https://www.regierung.li",
-      "mail_domains": ["regierung.li"],
+      "mail_domains": [
+        "regierung.li"
+      ],
       "evidence": [
-        {"domain": "regierung.li", "url": "https://www.regierung.li/ministerien", "kind": "contact_page", "note": "office@regierung.li (government); Datenschutz@regierung.li on Landespolizei privacy page"}
+        {
+          "domain": "regierung.li",
+          "url": "https://www.regierung.li/ministerien",
+          "kind": "contact_page",
+          "note": "office@regierung.li (government); Datenschutz@regierung.li on Landespolizei privacy page"
+        }
       ],
       "confidence": "high",
       "notes": "Government ministries share the regierung.li domain"
@@ -39,9 +53,16 @@
       "name_en": "National Cyber Security Unit",
       "acronym": "SCS",
       "website": "https://scs.llv.li",
-      "mail_domains": ["llv.li"],
+      "mail_domains": [
+        "llv.li"
+      ],
       "evidence": [
-        {"domain": "llv.li", "url": "https://www.llv.li/serviceportal2/amtsstellen/stabstelle-cyber-sicherheit/nis-strategie/20260610_massnahmen-zur-umsetzung-der-nationalen-cybersicherheitsstrategie-2025.pdf", "kind": "official_pdf", "note": "info.scs@llv.li"}
+        {
+          "domain": "llv.li",
+          "url": "https://www.llv.li/serviceportal2/amtsstellen/stabstelle-cyber-sicherheit/nis-strategie/20260610_massnahmen-zur-umsetzung-der-nationalen-cybersicherheitsstrategie-2025.pdf",
+          "kind": "official_pdf",
+          "note": "info.scs@llv.li"
+        }
       ],
       "confidence": "high",
       "notes": "llv.li is the Liechtenstein national administration (Landesverwaltung) domain"
@@ -53,9 +74,16 @@
       "name_en": "National CSIRT of Liechtenstein",
       "acronym": "CSIRT.li",
       "website": "https://llv.li/de/landesverwaltung/stabsstelle-cybersicherheit/csirt",
-      "mail_domains": ["csirt.li"],
+      "mail_domains": [
+        "csirt.li"
+      ],
       "evidence": [
-        {"domain": "csirt.li", "url": "https://llv.li/de/landesverwaltung/stabsstelle-cybersicherheit/csirt/rfc2350", "kind": "other_official", "note": "team@csirt.li (RFC 2350 on llv.li)"}
+        {
+          "domain": "csirt.li",
+          "url": "https://llv.li/de/landesverwaltung/stabsstelle-cybersicherheit/csirt/rfc2350",
+          "kind": "other_official",
+          "note": "team@csirt.li (RFC 2350 on llv.li)"
+        }
       ],
       "confidence": "high",
       "notes": "Department of the SCS with its own mail domain"

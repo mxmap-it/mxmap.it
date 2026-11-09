@@ -55,7 +55,7 @@ METHOD_LABEL = {
     "other_official": "Address published on an official government page",
     "official_pdf": "Address found in an official document (PDF, notice, register)",
     "third_party": "Address reported by a reliable third-party source",
-    "llm_consensus": "Inferred: at least two independent AI assistants (ChatGPT, DeepSeek, Qwen) "
+    "llm_consensus": "Inferred: at least two independent AI assistants (ChatGPT, Claude, DeepSeek, Qwen) "
     "agreed on this domain citing public sources; domain has live MX records",
     "assumed_from_website": "Inferred from the website domain — no published address found",
 }
@@ -282,7 +282,7 @@ English names are official where published, otherwise faithful translations.</p>
 <span class="m-ok">official site</span> = an address on that domain is published on the body's own contact, press or privacy page;
 <span class="m-ok">official document</span> = an address appears in an official PDF, procurement notice or register;
 <span class="m-ok">third-party source</span> = reported by a reliable external directory (e.g. FIRST, Trusted Introducer);
-<span class="m-inf">AI cross-check</span> = no address found by us; at least two independent AI assistants (ChatGPT, DeepSeek, Qwen) agreed on the domain citing public sources, and the domain has live MX records;
+<span class="m-inf">AI cross-check</span> = no address found by us; at least two independent AI assistants (ChatGPT, Claude, DeepSeek, Qwen) agreed on the domain citing public sources, and the domain has live MX records;
 <span class="m-inf">inferred from website</span> = no published address anywhere; the website domain is assumed (many intelligence services publish only web forms).
 Inferred domains are lower-confidence and are flagged so readers can weigh them.</p>
 <p>Data: <a href="kpi.json">kpi.json</a> · CC BY-SA 4.0 · generated {kpi["generated_at"]} · flags: flag-icons (MIT).</p></footer>

@@ -11,9 +11,16 @@
       "name_en": "State Investigation and Protection Agency",
       "acronym": "SIPA",
       "website": "http://www.sipa.gov.ba",
-      "mail_domains": ["sipa.gov.ba"],
+      "mail_domains": [
+        "sipa.gov.ba"
+      ],
       "evidence": [
-        {"domain": "sipa.gov.ba", "url": "http://www.sipa.gov.ba/en/contact", "kind": "contact_page", "note": "sipa@sipa.gov.ba plus regional offices rksarajevo@/rkbanjaluka@/rkmostar@/rktuzla@sipa.gov.ba"}
+        {
+          "domain": "sipa.gov.ba",
+          "url": "http://www.sipa.gov.ba/en/contact",
+          "kind": "contact_page",
+          "note": "sipa@sipa.gov.ba plus regional offices rksarajevo@/rkbanjaluka@/rkmostar@/rktuzla@sipa.gov.ba"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -25,11 +32,18 @@
       "name_en": "Border Police of Bosnia and Herzegovina",
       "acronym": "GP BiH",
       "website": "http://www.granpol.gov.ba",
-      "mail_domains": ["granpol.gov.ba"],
-      "evidence": [
-        {"domain": "granpol.gov.ba", "url": "https://vijeceministara.gov.ba/en/ministry-of-security", "kind": "assumed_from_website", "note": "Official site confirmed by Council of Ministers page; granpol.gov.ba site unreachable from research network (TLS/timeout), no email address directly evidenced"}
+      "mail_domains": [
+        "granpol.gov.ba"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "granpol.gov.ba",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Website registrable domain used as mail domain; verify when site reachable."
     },
     {
@@ -39,9 +53,16 @@
       "name_en": "Directorate for Coordination of Police Bodies of Bosnia and Herzegovina",
       "acronym": "DKPT",
       "website": "https://dkpt.gov.ba",
-      "mail_domains": ["dkpt.gov.ba"],
+      "mail_domains": [
+        "dkpt.gov.ba"
+      ],
       "evidence": [
-        {"domain": "dkpt.gov.ba", "url": "https://dkpt.gov.ba/bs/kontakt", "kind": "contact_page", "note": "direkcija@dkpt.gov.ba on official contact page"}
+        {
+          "domain": "dkpt.gov.ba",
+          "url": "https://dkpt.gov.ba/bs/kontakt",
+          "kind": "contact_page",
+          "note": "direkcija@dkpt.gov.ba on official contact page"
+        }
       ],
       "confidence": "high",
       "notes": "Council of Ministers page lists older site www.dkpt.ba; current site dkpt.gov.ba."
@@ -53,9 +74,16 @@
       "name_en": "Intelligence-Security Agency of Bosnia and Herzegovina",
       "acronym": "OSA-OBA",
       "website": "http://www.osa-oba.gov.ba",
-      "mail_domains": ["osa-oba.gov.ba"],
+      "mail_domains": [
+        "osa-oba.gov.ba"
+      ],
       "evidence": [
-        {"domain": "osa-oba.gov.ba", "url": "http://www.osa-oba.gov.ba/kontaktb.html", "kind": "contact_page", "note": "info@osa-oba.gov.ba (general contact and media relations)"}
+        {
+          "domain": "osa-oba.gov.ba",
+          "url": "http://www.osa-oba.gov.ba/kontaktb.html",
+          "kind": "contact_page",
+          "note": "info@osa-oba.gov.ba (general contact and media relations)"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -67,9 +95,16 @@
       "name_en": "Ministry of Security of Bosnia and Herzegovina",
       "acronym": "MSB",
       "website": "http://www.msb.gov.ba",
-      "mail_domains": ["msb.gov.ba"],
+      "mail_domains": [
+        "msb.gov.ba"
+      ],
       "evidence": [
-        {"domain": "msb.gov.ba", "url": "https://vijeceministara.gov.ba/en/ministry-of-security", "kind": "other_official", "note": "glasnogovornik@msb.gov.ba (spokesperson) on official Council of Ministers page; staff pattern firstname.lastname@msb.gov.ba also seen on dppi.info"}
+        {
+          "domain": "msb.gov.ba",
+          "url": "https://vijeceministara.gov.ba/en/ministry-of-security",
+          "kind": "other_official",
+          "note": "glasnogovornik@msb.gov.ba (spokesperson) on official Council of Ministers page; staff pattern firstname.lastname@msb.gov.ba also seen on dppi.info"
+        }
       ],
       "confidence": "high",
       "notes": "State-level security/interior-type ministry; msb.gov.ba site itself serves a *.vijeceministara.gov.ba certificate."
@@ -81,9 +116,16 @@
       "name_en": "Ministry of Defence of Bosnia and Herzegovina",
       "acronym": "MO BiH",
       "website": "http://www.mod.gov.ba",
-      "mail_domains": ["mod.gov.ba"],
+      "mail_domains": [
+        "mod.gov.ba"
+      ],
       "evidence": [
-        {"domain": "mod.gov.ba", "url": "http://www.mod.gov.ba/Kontakti/default.aspx?id=9&langTag=bs-BA", "kind": "contact_page", "note": "pisarnica@mod.gov.ba (registry), info@mod.gov.ba (media)"}
+        {
+          "domain": "mod.gov.ba",
+          "url": "http://www.mod.gov.ba/Kontakti/default.aspx?id=9&langTag=bs-BA",
+          "kind": "contact_page",
+          "note": "pisarnica@mod.gov.ba (registry), info@mod.gov.ba (media)"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -95,9 +137,16 @@
       "name_en": "Federal Ministry of Interior (Federation of Bosnia and Herzegovina)",
       "acronym": "FMUP",
       "website": "https://fmup.gov.ba",
-      "mail_domains": ["fmup.gov.ba"],
+      "mail_domains": [
+        "fmup.gov.ba"
+      ],
       "evidence": [
-        {"domain": "fmup.gov.ba", "url": "https://fmup.gov.ba/v2/", "kind": "other_official", "note": "press@fmup.gov.ba and szzp@fmup.gov.ba on official homepage"}
+        {
+          "domain": "fmup.gov.ba",
+          "url": "https://fmup.gov.ba/v2/",
+          "kind": "other_official",
+          "note": "press@fmup.gov.ba and szzp@fmup.gov.ba on official homepage"
+        }
       ],
       "confidence": "high",
       "notes": "Entity-level (FBiH) interior ministry; includes Federal Police Administration."
@@ -109,11 +158,18 @@
       "name_en": "Ministry of Interior of Republika Srpska",
       "acronym": "MUP RS",
       "website": "https://mup.vladars.net",
-      "mail_domains": ["mup.vladars.net"],
-      "evidence": [
-        {"domain": "mup.vladars.net", "url": "https://mup.vladars.net", "kind": "assumed_from_website", "note": "Site unreachable from research network (connection refused/timeout); mail domain assumed from website host, not evidenced"}
+      "mail_domains": [
+        "mup.vladars.net"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "mup.vladars.net",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Entity-level (RS) interior ministry; RS government sites sit under vladars.net/vladars.rs — actual mail domain needs verification."
     }
   ],

@@ -11,9 +11,16 @@
       "name_en": "Public Security Police",
       "acronym": "PSP",
       "website": "https://www.psp.pt",
-      "mail_domains": ["psp.pt"],
+      "mail_domains": [
+        "psp.pt"
+      ],
       "evidence": [
-        {"domain": "psp.pt", "url": "https://www.safecommunitiesportugal.com/psp/", "kind": "other_official", "note": "contacto@psp.pt (general), depaex@psp.pt (arms & explosives dept) widely published; official psp.pt contact page unreachable from research host (ECONNREFUSED)"}
+        {
+          "domain": "psp.pt",
+          "url": "https://www.safecommunitiesportugal.com/psp/",
+          "kind": "other_official",
+          "note": "contacto@psp.pt (general), depaex@psp.pt (arms & explosives dept) widely published; official psp.pt contact page unreachable from research host (ECONNREFUSED)"
+        }
       ],
       "confidence": "medium",
       "notes": "National civilian police for urban areas, under MAI."
@@ -25,9 +32,16 @@
       "name_en": "National Republican Guard",
       "acronym": "GNR",
       "website": "https://www.gnr.pt",
-      "mail_domains": ["gnr.pt"],
+      "mail_domains": [
+        "gnr.pt"
+      ],
       "evidence": [
-        {"domain": "gnr.pt", "url": "https://ted.europa.eu/en/notice/052035-2021/pdf", "kind": "official_pdf", "note": "cari.drl.da.rcc@gnr.pt in EU TED procurement notice filed by GNR; info.interna@gnr.pt also published"}
+        {
+          "domain": "gnr.pt",
+          "url": "https://ted.europa.eu/en/notice/052035-2021/pdf",
+          "kind": "official_pdf",
+          "note": "cari.drl.da.rcc@gnr.pt in EU TED procurement notice filed by GNR; info.interna@gnr.pt also published"
+        }
       ],
       "confidence": "high",
       "notes": "Gendarmerie under MAI (operationally) / MDN (military status); coastal control unit (UCC) gives it coast-guard policing functions."
@@ -39,9 +53,16 @@
       "name_en": "Judicial Police (criminal investigation)",
       "acronym": "PJ",
       "website": "https://www.policiajudiciaria.pt",
-      "mail_domains": ["policiajudiciaria.pt"],
+      "mail_domains": [
+        "policiajudiciaria.pt"
+      ],
       "evidence": [
-        {"domain": "policiajudiciaria.pt", "url": "https://www.policiajudiciaria.pt", "kind": "assumed_from_website", "note": "No email address evidenced in research; assumed from website registrable domain"}
+        {
+          "domain": "policiajudiciaria.pt",
+          "url": "https://www.policiajudiciaria.pt",
+          "kind": "assumed_from_website",
+          "note": "No email address evidenced in research; assumed from website registrable domain"
+        }
       ],
       "confidence": "low",
       "notes": "National criminal-investigation police under Ministry of Justice; took over serious immigration crime after SEF abolition."
@@ -53,9 +74,16 @@
       "name_en": "Intelligence System of the Portuguese Republic (Secretary-General's Office)",
       "acronym": "SIRP",
       "website": "https://www.sirp.pt",
-      "mail_domains": ["sirp.gov.pt"],
+      "mail_domains": [
+        "sirp.gov.pt"
+      ],
       "evidence": [
-        {"domain": "sirp.gov.pt", "url": "https://www.sirp.pt/en", "kind": "contact_page", "note": "gabinete@sirp.gov.pt on official SIRP website"}
+        {
+          "domain": "sirp.gov.pt",
+          "url": "https://www.sirp.pt/en",
+          "kind": "contact_page",
+          "note": "gabinete@sirp.gov.pt on official SIRP website"
+        }
       ],
       "confidence": "high",
       "notes": "Umbrella body over SIS and SIED, under the Prime Minister."
@@ -67,9 +95,16 @@
       "name_en": "Security Intelligence Service (domestic)",
       "acronym": "SIS",
       "website": "https://www.sis.pt",
-      "mail_domains": ["sis.pt"],
+      "mail_domains": [
+        "sis.pt"
+      ],
       "evidence": [
-        {"domain": "sis.pt", "url": "https://www.sis.pt", "kind": "assumed_from_website", "note": "No public email evidenced; assumed from website registrable domain"}
+        {
+          "domain": "sis.pt",
+          "url": "https://www.sis.pt",
+          "kind": "assumed_from_website",
+          "note": "No public email evidenced; assumed from website registrable domain"
+        }
       ],
       "confidence": "low",
       "notes": "Domestic intelligence, part of SIRP."
@@ -81,9 +116,16 @@
       "name_en": "Defence Strategic Intelligence Service (foreign)",
       "acronym": "SIED",
       "website": "https://www.sied.pt",
-      "mail_domains": ["sied.pt"],
+      "mail_domains": [
+        "sied.pt"
+      ],
       "evidence": [
-        {"domain": "sied.pt", "url": "https://www.sied.pt", "kind": "assumed_from_website", "note": "No public email evidenced; assumed from website registrable domain"}
+        {
+          "domain": "sied.pt",
+          "url": "https://www.sied.pt",
+          "kind": "assumed_from_website",
+          "note": "No public email evidenced; assumed from website registrable domain"
+        }
       ],
       "confidence": "low",
       "notes": "Foreign intelligence, part of SIRP."
@@ -95,10 +137,23 @@
       "name_en": "Ministry of Internal Administration",
       "acronym": "MAI",
       "website": "https://www.portugal.gov.pt",
-      "mail_domains": ["mai.gov.pt", "sg.mai.gov.pt"],
+      "mail_domains": [
+        "mai.gov.pt",
+        "sg.mai.gov.pt"
+      ],
       "evidence": [
-        {"domain": "mai.gov.pt", "url": "https://portaldaqueixa.com/brands/ministerio-da-administracao-interna/about", "kind": "other_official", "note": "gabinete.mai@mai.gov.pt (minister's cabinet), widely published"},
-        {"domain": "sg.mai.gov.pt", "url": "https://ted.europa.eu/en/notice/246033-2026/pdf", "kind": "official_pdf", "note": "gab.sec.geral@sg.mai.gov.pt in 2026 EU TED notice filed by SGMAI; sec.geral.mai@sg.mai.gov.pt also published"}
+        {
+          "domain": "mai.gov.pt",
+          "url": "https://portaldaqueixa.com/brands/ministerio-da-administracao-interna/about",
+          "kind": "other_official",
+          "note": "gabinete.mai@mai.gov.pt (minister's cabinet), widely published"
+        },
+        {
+          "domain": "sg.mai.gov.pt",
+          "url": "https://ted.europa.eu/en/notice/246033-2026/pdf",
+          "kind": "official_pdf",
+          "note": "gab.sec.geral@sg.mai.gov.pt in 2026 EU TED notice filed by SGMAI; sec.geral.mai@sg.mai.gov.pt also published"
+        }
       ],
       "confidence": "medium",
       "notes": "Secretariat-General (SGMAI) uses its own subdomain sg.mai.gov.pt."
@@ -110,9 +165,16 @@
       "name_en": "Ministry of National Defence",
       "acronym": "MDN",
       "website": "https://www.defesa.gov.pt",
-      "mail_domains": ["defesa.pt"],
+      "mail_domains": [
+        "defesa.pt"
+      ],
       "evidence": [
-        {"domain": "defesa.pt", "url": "https://dgrdn.gov.pt/fls/gestao/dgrdn_planoatividades_2023.pdf", "kind": "official_pdf", "note": "dgrdn@defesa.pt in official DGRDN activity plan; staff addresses also @defesa.pt"}
+        {
+          "domain": "defesa.pt",
+          "url": "https://dgrdn.gov.pt/fls/gestao/dgrdn_planoatividades_2023.pdf",
+          "kind": "official_pdf",
+          "note": "dgrdn@defesa.pt in official DGRDN activity plan; staff addresses also @defesa.pt"
+        }
       ],
       "confidence": "medium",
       "notes": "Website defesa.gov.pt; evidenced mail addresses use defesa.pt."
@@ -124,10 +186,23 @@
       "name_en": "National Cybersecurity Centre / national CSIRT",
       "acronym": "CNCS",
       "website": "https://www.cncs.gov.pt",
-      "mail_domains": ["cncs.gov.pt", "cert.pt"],
+      "mail_domains": [
+        "cncs.gov.pt",
+        "cert.pt"
+      ],
       "evidence": [
-        {"domain": "cncs.gov.pt", "url": "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive-portugal", "kind": "other_official", "note": "cncs@cncs.gov.pt (EC NIS2 page); sri@cncs.gov.pt in national law portal"},
-        {"domain": "cert.pt", "url": "https://trusted-introducer.org/trusted-introducer/directory/teams/certpt/", "kind": "other_official", "note": "cert@cert.pt — CERT.PT national CSIRT (Trusted Introducer certified, also on EC NIS2 page)"}
+        {
+          "domain": "cncs.gov.pt",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive-portugal",
+          "kind": "other_official",
+          "note": "cncs@cncs.gov.pt (EC NIS2 page); sri@cncs.gov.pt in national law portal"
+        },
+        {
+          "domain": "cert.pt",
+          "url": "https://trusted-introducer.org/trusted-introducer/directory/teams/certpt/",
+          "kind": "other_official",
+          "note": "cert@cert.pt — CERT.PT national CSIRT (Trusted Introducer certified, also on EC NIS2 page)"
+        }
       ],
       "confidence": "high",
       "notes": "CERT.PT is the incident-response arm of CNCS; CNCS sits within GNS."
@@ -139,11 +214,18 @@
       "name_en": "National Security Office (classified information authority)",
       "acronym": "GNS",
       "website": "https://www.gns.gov.pt",
-      "mail_domains": ["gns.gov.pt"],
-      "evidence": [
-        {"domain": "gns.gov.pt", "url": "https://www.gns.gov.pt", "kind": "assumed_from_website", "note": "No public email evidenced in research; assumed from website registrable domain"}
+      "mail_domains": [
+        "gns.gov.pt"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "gns.gov.pt",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "National security authority for classified information; parent of CNCS."
     }
   ],
