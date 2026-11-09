@@ -1,0 +1,77 @@
+{
+ "country": "HU",
+ "country_name_en": "Hungary",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "hu-okf",
+   "type": "other_natsec",
+   "name_native": "BM Országos Katasztrófavédelmi Főigazgatóság",
+   "name_en": "National Directorate General for Disaster Management",
+   "acronym": "BM OKF",
+   "website": "https://www.katasztrofavedelem.hu",
+   "mail_domains": [
+    "katved.gov.hu"
+   ],
+   "evidence": [
+    {
+     "domain": "katved.gov.hu",
+     "url": "https://katasztrofavedelem.hu/application/uploads/documents/2024-08/84373.docx",
+     "kind": "official_pdf",
+     "note": "okf.visszaeles@katved.gov.hu; county directorates e.g. borsod.titkarsag@katved.gov.hu"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "hu-oah",
+   "type": "other_natsec",
+   "name_native": "Országos Atomenergia Hivatal",
+   "name_en": "Hungarian Atomic Energy Authority",
+   "acronym": "OAH",
+   "website": "https://www.haea.gov.hu",
+   "mail_domains": [
+    "haea.hu"
+   ],
+   "evidence": [
+    {
+     "domain": "haea.hu",
+     "url": "https://www.haea.gov.hu/web/v3/oahportal.nsf/776100955F652169C12588F60045CA59/$FILE/OAH hírlevél 2022-2.pdf",
+     "kind": "official_pdf",
+     "note": "haea@haea.hu (newsletter 2022); older staff addresses on haea.gov.hu"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "Older docs also show @haea.gov.hu; current primary looks like haea.hu"
+  },
+  {
+   "id": "hu-mh",
+   "type": "armed_forces",
+   "name_native": "Magyar Honvédség",
+   "name_en": "Hungarian Defence Forces",
+   "acronym": "MH",
+   "website": "https://honvedseg.hu",
+   "mail_domains": [
+    "mil.hu"
+   ],
+   "evidence": [
+    {
+     "domain": "mil.hu",
+     "url": "https://webtar.kozadat.hu/webfarm/download/mhszhtp//egyeb/MH-SZHTP-Adatvedelmi-Szabalyzat-modositasokkal-egyseges-szerkezetben-2022.12.05.pdf",
+     "kind": "official_pdf",
+     "note": "mh.szhtp@mil.hu; recruiting hajdu.toborzo@mil.hu"
+    }
+   ],
+   "confidence": "high",
+   "notes": "Units mail on mil.hu; some HDF staff on hm.gov.hu"
+  }
+ ],
+ "gaps": [
+  "No central HDF general inbox found; branch commands not separately identified",
+  "Customs (NAV) not researched",
+  "National Security Authority (NBF) not researched"
+ ]
+}

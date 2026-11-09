@@ -1,0 +1,36 @@
+{
+ "country": "BA",
+ "country_name_en": "Bosnia and Herzegovina",
+ "group": "candidate",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "ba-fucz",
+   "type": "other_natsec",
+   "name_native": "Federalna uprava civilne zaštite",
+   "name_en": "Federal Civil Protection Administration (FBiH)",
+   "acronym": "FUCZ",
+   "website": "https://fucz.gov.ba",
+   "mail_domains": [
+    "fucz.gov.ba"
+   ],
+   "evidence": [
+    {
+     "domain": "fucz.gov.ba",
+     "url": "https://fbihvlada.gov.ba/en/federalna-uprava-civilne-zastite",
+     "kind": "other_official",
+     "note": "fucz@fucz.gov.ba; foc@fucz.gov.ba"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Armed Forces of BiH assumed on mod.gov.ba (not verified)",
+  "UIO (indirect taxation/customs) email not found",
+  "RS civil protection not researched",
+  "Nuclear regulator (DRARNS) not found"
+ ]
+}

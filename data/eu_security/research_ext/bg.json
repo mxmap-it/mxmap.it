@@ -1,0 +1,57 @@
+{
+ "country": "BG",
+ "country_name_en": "Bulgaria",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "bg-ayar",
+   "type": "other_natsec",
+   "name_native": "Агенция за ядрено регулиране",
+   "name_en": "Nuclear Regulatory Agency",
+   "acronym": "BNRA",
+   "website": "https://www.bnra.bg",
+   "mail_domains": [
+    "bnra.bg"
+   ],
+   "evidence": [
+    {
+     "domain": "bnra.bg",
+     "url": "https://bnra.bg/media/deklaratsiya-za-dostapnost.pdf",
+     "kind": "official_pdf",
+     "note": "mail@bnra.bg"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "bg-iama",
+   "type": "border_guard",
+   "name_native": "Изпълнителна агенция „Морска администрация“",
+   "name_en": "Bulgarian Maritime Administration",
+   "acronym": "IAMA",
+   "website": "https://marad.bg",
+   "mail_domains": [
+    "marad.bg"
+   ],
+   "evidence": [
+    {
+     "domain": "marad.bg",
+     "url": "https://bsmou.org/contacts/bs-mou-members/",
+     "kind": "other_official",
+     "note": "bma@marad.bg; Mep_vn@marad.bg"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "Maritime safety / SAR authority"
+  }
+ ],
+ "gaps": [
+  "Navy, Air Force, Land Forces: no mail domain found (likely mod.bg)",
+  "DKSI (classified info commission) email not found",
+  "Fire Safety & Civil Protection is within MVR (mvr.bg)",
+  "Customs Agency not verified"
+ ]
+}

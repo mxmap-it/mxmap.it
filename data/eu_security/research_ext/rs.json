@@ -1,0 +1,56 @@
+{
+ "country": "RS",
+ "country_name_en": "Serbia",
+ "group": "candidate",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "rs-vojska-srbije",
+   "type": "armed_forces",
+   "name_native": "Војска Србије",
+   "name_en": "Serbian Armed Forces",
+   "acronym": "VS",
+   "website": "https://www.vs.rs",
+   "mail_domains": [
+    "vs.rs"
+   ],
+   "evidence": [
+    {
+     "domain": "vs.rs",
+     "url": "https://www.vs.rs/en/units",
+     "kind": "contact_page",
+     "note": "vojska.srbije@vs.rs; kancelarija.cib@vs.rs"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "rs-srbatom",
+   "type": "other_natsec",
+   "name_native": "Директорат за радијациону и нуклеарну сигурност и безбедност Србије",
+   "name_en": "Serbian Radiation and Nuclear Safety and Security Directorate",
+   "acronym": "SRBATOM",
+   "website": "https://www.srbatom.gov.rs",
+   "mail_domains": [
+    "srbatom.gov.rs"
+   ],
+   "evidence": [
+    {
+     "domain": "srbatom.gov.rs",
+     "url": "https://biznis.rs/vesti/srbija/u-pripremi-pravilnik-o-kontroli-sadrzaja-radioaktivnih-cestica-u-hrani-i-picu/",
+     "kind": "other_official",
+     "note": "javna.rasprava@srbatom.gov.rs (public consultation 2024)"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Emergency management sector is in MUP (mup.gov.rs)",
+  "Office of National Security Council / classified info: email not found",
+  "Customs not verified"
+ ]
+}

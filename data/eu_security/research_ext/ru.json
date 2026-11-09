@@ -1,0 +1,77 @@
+{
+ "country": "RU",
+ "country_name_en": "Russia",
+ "group": "annex_non_aligned",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "ru-mchs",
+   "type": "other_natsec",
+   "name_native": "МЧС России",
+   "name_en": "EMERCOM of Russia",
+   "acronym": "MChS",
+   "website": "https://mchs.gov.ru",
+   "mail_domains": [
+    "mchs.gov.ru"
+   ],
+   "evidence": [
+    {
+     "domain": "mchs.gov.ru",
+     "url": "https://mchs.gov.ru/deyatelnost/uslugi/informaciya-ob-osnashchennyh-mestah-priema-zhalob-zayaviteley-gosudarstvennyh-uslug",
+     "kind": "contact_page",
+     "note": "info@mchs.gov.ru; regional mail@04.mchs.gov.ru"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "ru-rostekhnadzor",
+   "type": "other_natsec",
+   "name_native": "Ростехнадзор",
+   "name_en": "Federal Service for Environmental, Technological and Nuclear Supervision",
+   "acronym": "RTN",
+   "website": "https://www.gosnadzor.ru",
+   "mail_domains": [
+    "gosnadzor.ru"
+   ],
+   "evidence": [
+    {
+     "domain": "gosnadzor.ru",
+     "url": "https://www.kontur-extern.ru/info/normativ/document/1/301654-prikaz-rostekhnadzora-ot-12-05-2015-n-186",
+     "kind": "other_official",
+     "note": "rostehnadzor@gosnadzor.ru (2015 order, superseded)"
+    }
+   ],
+   "confidence": "low",
+   "notes": "Old source; not reverified (geo-block)"
+  },
+  {
+   "id": "ru-fts",
+   "type": "border_guard",
+   "name_native": "Федеральная таможенная служба",
+   "name_en": "Federal Customs Service",
+   "acronym": "FTS",
+   "website": "https://customs.gov.ru",
+   "mail_domains": [
+    "customs.ru"
+   ],
+   "evidence": [
+    {
+     "domain": "customs.ru",
+     "url": "https://www.wko.at/oe/aussenwirtschaft/carnet-ata-russland.pdf",
+     "kind": "other_official",
+     "note": "FTS address on customs.ru listed in ATA carnet doc"
+    }
+   ],
+   "confidence": "low",
+   "notes": "Website moved to customs.gov.ru; mail domain not reverified"
+  }
+ ],
+ "gaps": [
+  "FSO email not found",
+  "Rosatom (state corp.) not included",
+  "Military branches mail on mil.ru (wave 1)"
+ ]
+}

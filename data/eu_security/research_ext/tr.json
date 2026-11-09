@@ -1,0 +1,35 @@
+{
+ "country": "TR",
+ "country_name_en": "Turkey",
+ "group": "candidate",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "tr-afad",
+   "type": "other_natsec",
+   "name_native": "Afet ve Acil Durum Yönetimi Başkanlığı",
+   "name_en": "Disaster and Emergency Management Authority",
+   "acronym": "AFAD",
+   "website": "https://www.afad.gov.tr",
+   "mail_domains": [
+    "afad.gov.tr"
+   ],
+   "evidence": [
+    {
+     "domain": "afad.gov.tr",
+     "url": "https://dergipark.org.tr/en/pub/publisher/1339",
+     "kind": "other_official",
+     "note": "tdad.editor@afad.gov.tr; seis@afad.gov.tr"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "SSB (defence industry agency) publishes only KEP address on hs01.kep.tr (already in wave 1)",
+  "TSK branches (kkk/dzkk/hvkk.tsk.tr): no email found",
+  "NDK/TENMAK nuclear regulator email not found"
+ ]
+}

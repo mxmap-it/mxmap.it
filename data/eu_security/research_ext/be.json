@@ -1,0 +1,76 @@
+{
+ "country": "BE",
+ "country_name_en": "Belgium",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "be-nccn",
+   "type": "other_natsec",
+   "name_native": "Nationaal Crisiscentrum / Centre de crise national",
+   "name_en": "National Crisis Centre",
+   "acronym": "NCCN",
+   "website": "https://crisiscentrum.be",
+   "mail_domains": [
+    "nccn.fgov.be"
+   ],
+   "evidence": [
+    {
+     "domain": "nccn.fgov.be",
+     "url": "https://www.vlaanderen.be/Organisation/OVO027252",
+     "kind": "other_official",
+     "note": "nccn@nccn.fgov.be"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  },
+  {
+   "id": "be-fanc",
+   "type": "other_natsec",
+   "name_native": "Agence fédérale de Contrôle nucléaire / Federaal Agentschap voor Nucleaire Controle",
+   "name_en": "Federal Agency for Nuclear Control",
+   "acronym": "FANC/AFCN",
+   "website": "https://fanc.fgov.be",
+   "mail_domains": [
+    "fanc.fgov.be"
+   ],
+   "evidence": [
+    {
+     "domain": "fanc.fgov.be",
+     "url": "https://ted.europa.eu/en/notice/515128-2026/pdf",
+     "kind": "official_pdf",
+     "note": "info@fanc.fgov.be (TED buyer); whistleblowers@fanc.fgov.be"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "be-nvo-ans",
+   "type": "other_natsec",
+   "name_native": "Nationale Veiligheidsoverheid / Autorité nationale de Sécurité",
+   "name_en": "National Security Authority",
+   "acronym": "NVO-ANS",
+   "website": "https://www.nvoans.be",
+   "mail_domains": [
+    "nvo-ans.be"
+   ],
+   "evidence": [
+    {
+     "domain": "nvo-ans.be",
+     "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+     "kind": "official_pdf",
+     "note": "info@nvo-ans.be, crypto@nvo-ans.be"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Defence component commands (Land/Air/Marine/Medical/Cyber) mail on mil.be (wave 1) - not added",
+  "No Belgian coast-guard body with own mail domain identified"
+ ]
+}

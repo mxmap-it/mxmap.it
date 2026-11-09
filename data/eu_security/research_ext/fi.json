@@ -1,0 +1,76 @@
+{
+ "country": "FI",
+ "country_name_en": "Finland",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "fi-stuk",
+   "type": "other_natsec",
+   "name_native": "Säteilyturvakeskus",
+   "name_en": "Radiation and Nuclear Safety Authority",
+   "acronym": "STUK",
+   "website": "https://stuk.fi",
+   "mail_domains": [
+    "stuk.fi"
+   ],
+   "evidence": [
+    {
+     "domain": "stuk.fi",
+     "url": "https://eurajoki.oncloudos.com/kokous/2026694-3-25076.PDF",
+     "kind": "official_pdf",
+     "note": "diaari@stuk.fi"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "fi-hvk",
+   "type": "other_natsec",
+   "name_native": "Huoltovarmuuskeskus",
+   "name_en": "National Emergency Supply Agency",
+   "acronym": "NESA",
+   "website": "https://www.huoltovarmuuskeskus.fi",
+   "mail_domains": [
+    "nesa.fi"
+   ],
+   "evidence": [
+    {
+     "domain": "nesa.fi",
+     "url": "https://www.huoltovarmuuskeskus.fi/en/contact-us",
+     "kind": "contact_page",
+     "note": "kirjaamo@nesa.fi"
+    }
+   ],
+   "confidence": "high",
+   "notes": "mail domain differs from website"
+  },
+  {
+   "id": "fi-hatakeskus",
+   "type": "other_natsec",
+   "name_native": "Hätäkeskuslaitos",
+   "name_en": "Emergency Response Centre Agency",
+   "acronym": "ERC",
+   "website": "https://112.fi",
+   "mail_domains": [
+    "erc.fi"
+   ],
+   "evidence": [
+    {
+     "domain": "erc.fi",
+     "url": "https://112.fi",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Army/Navy/Air Force on mil.fi (wave 1)",
+  "Defence Properties is a Senate Properties unit (senaatti.fi), not added"
+ ]
+}

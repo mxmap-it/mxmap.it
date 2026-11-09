@@ -1,0 +1,35 @@
+{
+ "country": "IS",
+ "country_name_en": "Iceland",
+ "group": "eea",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "is-gr",
+   "type": "other_natsec",
+   "name_native": "Geislavarnir ríkisins",
+   "name_en": "Icelandic Radiation Safety Authority",
+   "acronym": "GR",
+   "website": "https://gr.is",
+   "mail_domains": [
+    "gr.is"
+   ],
+   "evidence": [
+    {
+     "domain": "gr.is",
+     "url": "https://gr.is",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "No armed forces",
+  "Civil protection (Almannavarnir) on logreglan.is",
+  "Coast guard in wave 1"
+ ]
+}

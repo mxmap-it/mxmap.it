@@ -1,0 +1,35 @@
+{
+ "country": "SK",
+ "country_name_en": "Slovakia",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "sk-ujd",
+   "type": "other_natsec",
+   "name_native": "Úrad jadrového dozoru SR",
+   "name_en": "Nuclear Regulatory Authority",
+   "acronym": "ÚJD SR",
+   "website": "https://www.ujd.gov.sk",
+   "mail_domains": [
+    "ujd.gov.sk"
+   ],
+   "evidence": [
+    {
+     "domain": "ujd.gov.sk",
+     "url": "https://www.ujd.gov.sk/urad/contacts/?lang=en",
+     "kind": "contact_page",
+     "note": "podatelna@ujd.gov.sk"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Armed forces on mil.sk (wave 1)",
+  "Fire & Rescue on minv.sk",
+  "Military police assumed on mil.sk"
+ ]
+}

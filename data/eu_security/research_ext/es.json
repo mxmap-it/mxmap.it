@@ -1,0 +1,160 @@
+{
+ "country": "ES",
+ "country_name_en": "Spain",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "es-et",
+   "type": "armed_forces",
+   "name_native": "Ejército de Tierra",
+   "name_en": "Spanish Army",
+   "acronym": "ET",
+   "website": "https://ejercito.defensa.gob.es",
+   "mail_domains": [
+    "et.mde.es"
+   ],
+   "evidence": [
+    {
+     "domain": "et.mde.es",
+     "url": "https://ejercito.defensa.gob.es/en/Galerias/Descarga_pdf/EjercitoTierra/Noticias/2025/resolucion-premios-ejercito-2026.pdf",
+     "kind": "official_pdf",
+     "note": "premiosejercito@et.mde.es"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "es-csn",
+   "type": "other_natsec",
+   "name_native": "Consejo de Seguridad Nuclear",
+   "name_en": "Nuclear Safety Council",
+   "acronym": "CSN",
+   "website": "https://www.csn.es",
+   "mail_domains": [
+    "csn.es"
+   ],
+   "evidence": [
+    {
+     "domain": "csn.es",
+     "url": "https://www.csn.es/proteccion-de-datos",
+     "kind": "privacy_page",
+     "note": "dpd@csn.es"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "es-armada",
+   "type": "armed_forces",
+   "name_native": "Armada Española",
+   "name_en": "Spanish Navy",
+   "acronym": "",
+   "website": "https://armada.defensa.gob.es",
+   "mail_domains": [
+    "fn.mde.es"
+   ],
+   "evidence": [
+    {
+     "domain": "fn.mde.es",
+     "url": "https://digital.gob.es/content/dam/portal-mtdfp/sgorh/e0/DATOS CONTACTO UNIDADES DESTINO.pdf",
+     "kind": "official_pdf",
+     "note": "bca@fn.mde.es (Cuartel General de la Armada)"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "es-ea",
+   "type": "armed_forces",
+   "name_native": "Ejército del Aire y del Espacio",
+   "name_en": "Spanish Air and Space Force",
+   "acronym": "EA",
+   "website": "https://ejercitodelaireydelespacio.defensa.gob.es",
+   "mail_domains": [
+    "ea.mde.es"
+   ],
+   "evidence": [
+    {
+     "domain": "ea.mde.es",
+     "url": "https://ted.europa.eu/es/notice/765530-2025/pdf",
+     "kind": "official_pdf",
+     "note": "sea04contratacion@ea.mde.es (TED buyer)"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "es-emad",
+   "type": "armed_forces",
+   "name_native": "Estado Mayor de la Defensa (incl. UME)",
+   "name_en": "Defence Staff",
+   "acronym": "EMAD",
+   "website": "https://emad.defensa.gob.es",
+   "mail_domains": [
+    "oc.mde.es"
+   ],
+   "evidence": [
+    {
+     "domain": "oc.mde.es",
+     "url": "https://www.boe.es/boe/dias/2024/04/24/pdfs/BOE-B-2024-14871.pdf",
+     "kind": "official_pdf",
+     "note": "ume_sae@oc.mde.es (Unidad Militar de Emergencias); emadjaecontratacion@oc.mde.es on TED; ndasp@oc.mde.es in EU Council NSA list"
+    }
+   ],
+   "confidence": "high",
+   "notes": "oc.mde.es = MoD central bodies (Organo Central); UME mails here, no ume.mde.es seen"
+  },
+  {
+   "id": "es-sasemar",
+   "type": "border_guard",
+   "name_native": "Sociedad de Salvamento y Seguridad Marítima",
+   "name_en": "Spanish Maritime Safety and Rescue Agency",
+   "acronym": "SASEMAR",
+   "website": "https://www.salvamentomaritimo.es",
+   "mail_domains": [
+    "sasemar.es"
+   ],
+   "evidence": [
+    {
+     "domain": "sasemar.es",
+     "url": "https://ted.europa.eu/es/notice/768225-2025/pdf",
+     "kind": "official_pdf",
+     "note": "plataforma@sasemar.es (TED buyer)"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "es-ons",
+   "type": "other_natsec",
+   "name_native": "Oficina Nacional de Seguridad (CNI)",
+   "name_en": "National Security Authority (classified information)",
+   "acronym": "ONS",
+   "website": "https://www.cni.es",
+   "mail_domains": [
+    "ons.cni.es"
+   ],
+   "evidence": [
+    {
+     "domain": "ons.cni.es",
+     "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+     "kind": "official_pdf",
+     "note": "nsa-sp@ons.cni.es (EU Council NSA contact list ST-8733-2024)"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "DG Protección Civil y Emergencias: no address seen; likely interior.gob.es (wave 1) - not added",
+  "UME mails on oc.mde.es (included under es-emad)"
+ ]
+}

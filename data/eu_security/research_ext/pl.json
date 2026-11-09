@@ -1,0 +1,97 @@
+{
+ "country": "PL",
+ "country_name_en": "Poland",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "pl-paa",
+   "type": "other_natsec",
+   "name_native": "Państwowa Agencja Atomistyki",
+   "name_en": "National Atomic Energy Agency",
+   "acronym": "PAA",
+   "website": "https://www.gov.pl/web/paa",
+   "mail_domains": [
+    "paa.gov.pl"
+   ],
+   "evidence": [
+    {
+     "domain": "paa.gov.pl",
+     "url": "https://www.gov.pl/web/paa/kontakt",
+     "kind": "contact_page",
+     "note": "kancelaria@paa.gov.pl"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "pl-rcb",
+   "type": "other_natsec",
+   "name_native": "Rządowe Centrum Bezpieczeństwa",
+   "name_en": "Government Centre for Security",
+   "acronym": "RCB",
+   "website": "https://www.gov.pl/web/rcb",
+   "mail_domains": [
+    "rcb.gov.pl"
+   ],
+   "evidence": [
+    {
+     "domain": "rcb.gov.pl",
+     "url": "https://www.gov.pl/web/rcb-en/contact",
+     "kind": "contact_page",
+     "note": "poczta@rcb.gov.pl"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "pl-psp",
+   "type": "other_natsec",
+   "name_native": "Państwowa Straż Pożarna",
+   "name_en": "State Fire Service",
+   "acronym": "PSP",
+   "website": "https://www.gov.pl/web/kgpsp",
+   "mail_domains": [
+    "kgpsp.gov.pl"
+   ],
+   "evidence": [
+    {
+     "domain": "kgpsp.gov.pl",
+     "url": "https://www.gov.pl/web/kgpsp",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  },
+  {
+   "id": "pl-zw",
+   "type": "armed_forces",
+   "name_native": "Żandarmeria Wojskowa",
+   "name_en": "Military Gendarmerie",
+   "acronym": "ZW",
+   "website": "https://www.zw.wp.mil.pl",
+   "mail_domains": [
+    "ron.mil.pl"
+   ],
+   "evidence": [
+    {
+     "domain": "ron.mil.pl",
+     "url": "https://www.zw.wp.mil.pl",
+     "kind": "assumed_from_website",
+     "note": "not verified; units commonly mail on ron.mil.pl"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Branch commands (DG RSZ, DO RSZ, WOT) not verified; likely ron.mil.pl",
+  "Agencja Uzbrojenia not verified"
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "country": "BY",
+ "country_name_en": "Belarus",
+ "group": "annex_non_aligned",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "by-mchs",
+   "type": "other_natsec",
+   "name_native": "Министерство по чрезвычайным ситуациям",
+   "name_en": "Ministry of Emergency Situations",
+   "acronym": "MChS",
+   "website": "https://mchs.gov.by",
+   "mail_domains": [
+    "mchs.gov.by"
+   ],
+   "evidence": [
+    {
+     "domain": "mchs.gov.by",
+     "url": "https://president.gov.by/en/statebodies/the-ministry-of-emergencies",
+     "kind": "assumed_from_website",
+     "note": "no address seen; site mchs.gov.by (403 from here)"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Gosatomnadzor (part of MChS) not verified",
+  "State Customs Committee and Goskomvoenprom emails not found",
+  "Military branches on mod.mil.by (wave 1)"
+ ]
+}

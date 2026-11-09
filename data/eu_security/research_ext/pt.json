@@ -1,0 +1,145 @@
+{
+ "country": "PT",
+ "country_name_en": "Portugal",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "pt-exercito",
+   "type": "armed_forces",
+   "name_native": "Exército Português",
+   "name_en": "Portuguese Army",
+   "acronym": "",
+   "website": "https://www.exercito.pt",
+   "mail_domains": [
+    "mail.exercito.pt"
+   ],
+   "evidence": [
+    {
+     "domain": "mail.exercito.pt",
+     "url": "https://www.cm-borba.pt/wp-content/uploads/2020/08/Dia-de-Defesa-Nacional-2017-Informações.pdf",
+     "kind": "other_official",
+     "note": "crecrlisboa@mail.exercito.pt (municipal notice reproducing recruitment contacts)"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  },
+  {
+   "id": "pt-marinha",
+   "type": "armed_forces",
+   "name_native": "Marinha Portuguesa",
+   "name_en": "Portuguese Navy",
+   "acronym": "",
+   "website": "https://www.marinha.pt",
+   "mail_domains": [
+    "marinha.pt"
+   ],
+   "evidence": [
+    {
+     "domain": "marinha.pt",
+     "url": "https://www.cm-borba.pt/wp-content/uploads/2020/08/Dia-de-Defesa-Nacional-2017-Informações.pdf",
+     "kind": "other_official",
+     "note": "cra@marinha.pt"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  },
+  {
+   "id": "pt-fap",
+   "type": "armed_forces",
+   "name_native": "Força Aérea Portuguesa",
+   "name_en": "Portuguese Air Force",
+   "acronym": "FAP",
+   "website": "https://www.emfa.pt",
+   "mail_domains": [
+    "emfa.gov.pt"
+   ],
+   "evidence": [
+    {
+     "domain": "emfa.gov.pt",
+     "url": "https://www.uc.pt/site/assets/files/2464636/fap.pdf",
+     "kind": "other_official",
+     "note": "crfa.recrutamento@emfa.gov.pt"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "earlier assumed emfa.pt; published address is on emfa.gov.pt"
+  },
+  {
+   "id": "pt-emgfa",
+   "type": "armed_forces",
+   "name_native": "Estado-Maior-General das Forças Armadas",
+   "name_en": "Armed Forces General Staff",
+   "acronym": "EMGFA",
+   "website": "https://www.emgfa.pt",
+   "mail_domains": [
+    "emgfa.pt"
+   ],
+   "evidence": [
+    {
+     "domain": "emgfa.pt",
+     "url": "https://ted.europa.eu/en/notice/247485-2026/pdf",
+     "kind": "official_pdf",
+     "note": "DIRFIN_Contratos@emgfa.pt (TED buyer)"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "pt-amn",
+   "type": "border_guard",
+   "name_native": "Autoridade Marítima Nacional / DGAM / Polícia Marítima",
+   "name_en": "National Maritime Authority",
+   "acronym": "AMN",
+   "website": "https://www.amn.pt",
+   "mail_domains": [
+    "amn.pt"
+   ],
+   "evidence": [
+    {
+     "domain": "amn.pt",
+     "url": "https://ambiente.cascais.pt/sites/default/files/anexos/edital_5_2021.pdf",
+     "kind": "official_pdf",
+     "note": "capitania.cascais@amn.pt"
+    },
+    {
+     "domain": "amn.pt",
+     "url": "https://diariodarepublica.pt/dr/detalhe/edital/209-2016-73766245",
+     "kind": "official_pdf",
+     "note": "policiamaritima.portimao@amn.pt"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "pt-anepc",
+   "type": "other_natsec",
+   "name_native": "Autoridade Nacional de Emergência e Proteção Civil",
+   "name_en": "National Emergency and Civil Protection Authority",
+   "acronym": "ANEPC",
+   "website": "https://prociv.gov.pt",
+   "mail_domains": [
+    "prociv.pt"
+   ],
+   "evidence": [
+    {
+     "domain": "prociv.pt",
+     "url": "https://prociv.gov.pt/media/laodkups/relatorio_satisfação_scie_2025.pdf",
+     "kind": "official_pdf",
+     "note": "scie@prociv.pt; geral@prociv.pt on TED notices"
+    }
+   ],
+   "confidence": "high",
+   "notes": "website on prociv.gov.pt, mail on prociv.pt"
+  }
+ ],
+ "gaps": [
+  "GNS (classified info) already wave 1 (gns.gov.pt)",
+  "No national nuclear regulator with own mail domain identified"
+ ]
+}

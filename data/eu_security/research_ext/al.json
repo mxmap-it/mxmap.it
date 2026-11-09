@@ -1,0 +1,35 @@
+{
+ "country": "AL",
+ "country_name_en": "Albania",
+ "group": "candidate",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "al-akmc",
+   "type": "other_natsec",
+   "name_native": "Agjencia Kombëtare e Mbrojtjes Civile",
+   "name_en": "National Civil Protection Agency",
+   "acronym": "AKMC",
+   "website": "https://akmc.gov.al",
+   "mail_domains": [
+    "akmc.gov.al"
+   ],
+   "evidence": [
+    {
+     "domain": "akmc.gov.al",
+     "url": "https://idp.al/wp-content/uploads/2026/07/Final_Lista-e-Autoriteteve-Publike-2025.pdf",
+     "kind": "official_pdf",
+     "note": "ledjo.hoxha@akmc.gov.al"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Armed Forces (aaf.mil.al) email not found",
+  "Customs (dogana.gov.al) not verified",
+  "Classified-info authority not found"
+ ]
+}

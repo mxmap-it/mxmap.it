@@ -1,0 +1,77 @@
+{
+ "country": "UA",
+ "country_name_en": "Ukraine",
+ "group": "candidate",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "ua-dsns",
+   "type": "other_natsec",
+   "name_native": "Державна служба України з надзвичайних ситуацій",
+   "name_en": "State Emergency Service of Ukraine",
+   "acronym": "DSNS",
+   "website": "https://dsns.gov.ua",
+   "mail_domains": [
+    "dsns.gov.ua"
+   ],
+   "evidence": [
+    {
+     "domain": "dsns.gov.ua",
+     "url": "https://me.gov.ua/Documents/Print/96403611-ef04-45fe-a794-a6dc66ac8c53?lang=uk-UA",
+     "kind": "official_pdf",
+     "note": "siis@dsns.gov.ua; oper@dsns.gov.ua"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  },
+  {
+   "id": "ua-snriu",
+   "type": "other_natsec",
+   "name_native": "Державна інспекція ядерного регулювання України",
+   "name_en": "State Nuclear Regulatory Inspectorate of Ukraine",
+   "acronym": "SNRIU",
+   "website": "https://snriu.gov.ua",
+   "mail_domains": [
+    "snriu.gov.ua"
+   ],
+   "evidence": [
+    {
+     "domain": "snriu.gov.ua",
+     "url": "https://www.kmu.gov.ua/news/22-liutoho-2024-roku-ob-1100-vidbudetsia-publichnyi-zvit-holovy-derzhavnoi-inspektsii-iadernoho-rehuliuvannia-ukrainy",
+     "kind": "other_official",
+     "note": "iv.bahlai@snriu.gov.ua"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "Older docs use hq.snrc.gov.ua"
+  },
+  {
+   "id": "ua-customs",
+   "type": "border_guard",
+   "name_native": "Державна митна служба України",
+   "name_en": "State Customs Service of Ukraine",
+   "acronym": "DMS",
+   "website": "https://customs.gov.ua",
+   "mail_domains": [
+    "customs.gov.ua"
+   ],
+   "evidence": [
+    {
+     "domain": "customs.gov.ua",
+     "url": "https://www.trade.gov/country-commercial-guides/ukraine-customs-regulations",
+     "kind": "other_official",
+     "note": "post@customs.gov.ua; zvernennya@customs.gov.ua"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Armed Forces (zsu.gov.ua) blocked 403, email not verified",
+  "Navy/Air Force not found separately (mil.gov.ua?)",
+  "Ministry of Strategic Industries not researched"
+ ]
+}

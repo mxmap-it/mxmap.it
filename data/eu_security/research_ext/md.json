@@ -1,0 +1,54 @@
+{
+ "country": "MD",
+ "country_name_en": "Moldova",
+ "group": "candidate",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "md-igsu",
+   "type": "other_natsec",
+   "name_native": "Inspectoratul General pentru Situații de Urgență",
+   "name_en": "General Inspectorate for Emergency Situations",
+   "acronym": "IGSU",
+   "website": "https://igsu.gov.md",
+   "mail_domains": [
+    "igsu.gov.md"
+   ],
+   "evidence": [
+    {
+     "domain": "igsu.gov.md",
+     "url": "https://storage.mtender.gov.md/get/fc33bc0f-35ab-4744-a109-1b9b978d1808-1710229730244",
+     "kind": "official_pdf",
+     "note": "achizitii@igsu.gov.md; stat.se@igsu.gov.md"
+    }
+   ],
+   "confidence": "high",
+   "notes": "Also legacy dse.md (completare@dse.md on particip.gov.md)"
+  },
+  {
+   "id": "md-customs",
+   "type": "border_guard",
+   "name_native": "Serviciul Vamal",
+   "name_en": "Customs Service",
+   "acronym": "SV",
+   "website": "https://customs.gov.md",
+   "mail_domains": [
+    "customs.gov.md"
+   ],
+   "evidence": [
+    {
+     "domain": "customs.gov.md",
+     "url": "https://customs.gov.md/api/media/03/02/2026/Buletin_informativ_ianuarie_2026.pdf",
+     "kind": "official_pdf",
+     "note": "vama@customs.gov.md"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "ANRANR (nuclear/radiological regulator) email not found"
+ ]
+}

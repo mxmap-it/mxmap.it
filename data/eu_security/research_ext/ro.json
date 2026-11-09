@@ -1,0 +1,119 @@
+{
+ "country": "RO",
+ "country_name_en": "Romania",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "ro-igsu",
+   "type": "other_natsec",
+   "name_native": "Inspectoratul General pentru Situații de Urgență",
+   "name_en": "General Inspectorate for Emergency Situations",
+   "acronym": "IGSU",
+   "website": "https://www.igsu.ro",
+   "mail_domains": [
+    "igsu.ro"
+   ],
+   "evidence": [
+    {
+     "domain": "igsu.ro",
+     "url": "https://www.igsu.ro/contact",
+     "kind": "contact_page",
+     "note": "petitii@igsu.ro (general igsu@mai.gov.ro)"
+    }
+   ],
+   "confidence": "high",
+   "notes": "General contact on mai.gov.ro; petitions and staff on igsu.ro"
+  },
+  {
+   "id": "ro-cncan",
+   "type": "other_natsec",
+   "name_native": "Comisia Națională pentru Controlul Activităților Nucleare",
+   "name_en": "National Commission for Nuclear Activities Control",
+   "acronym": "CNCAN",
+   "website": "https://www.cncan.ro",
+   "mail_domains": [
+    "cncan.ro"
+   ],
+   "evidence": [
+    {
+     "domain": "cncan.ro",
+     "url": "https://www.cncan.ro/contact-us/",
+     "kind": "contact_page",
+     "note": "office@cncan.ro"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "ro-fortele-navale",
+   "type": "armed_forces",
+   "name_native": "Forțele Navale Române",
+   "name_en": "Romanian Naval Forces",
+   "acronym": "FNR",
+   "website": "https://www.navy.ro",
+   "mail_domains": [
+    "navy.ro"
+   ],
+   "evidence": [
+    {
+     "domain": "navy.ro",
+     "url": "https://www.navy.ro/contact.php",
+     "kind": "contact_page",
+     "note": "contact@navy.ro; media@navy.ro"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "ro-fortele-aeriene",
+   "type": "armed_forces",
+   "name_native": "Forțele Aeriene Române",
+   "name_en": "Romanian Air Force",
+   "acronym": "FAR",
+   "website": "https://www.roaf.ro",
+   "mail_domains": [
+    "roaf.ro"
+   ],
+   "evidence": [
+    {
+     "domain": "roaf.ro",
+     "url": "https://www.roaf.ro/ro/Documente/2023/04/U.M. 01969_1.pdf",
+     "kind": "official_pdf",
+     "note": "um01969@roaf.ro; cersenin@roaf.ro"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "ro-anr",
+   "type": "border_guard",
+   "name_native": "Autoritatea Navală Română",
+   "name_en": "Romanian Naval Authority",
+   "acronym": "ANR",
+   "website": "https://www.rna.ro",
+   "mail_domains": [
+    "rna.ro"
+   ],
+   "evidence": [
+    {
+     "domain": "rna.ro",
+     "url": "https://ted.europa.eu/ga/notice/211087-2026/pdf",
+     "kind": "other_official",
+     "note": "buyer contact mfratila@rna.ro (TED notice)"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "Maritime authority (port state control / maritime safety)"
+  }
+ ],
+ "gaps": [
+  "ORNISS (classified info) email not found",
+  "Land Forces (forter.ro) email not verified",
+  "Coast guard is part of IGPF (wave 1)"
+ ]
+}

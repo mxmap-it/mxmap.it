@@ -29,6 +29,7 @@ TYPE_LABEL = {
     "intelligence": "Intelligence",
     "interior_ministry": "Interior ministry",
     "defence_ministry": "Defence ministry",
+    "armed_forces": "Armed forces / general staff",
     "cybersecurity": "Cybersecurity",
     "other_natsec": "Other national security",
 }
@@ -47,6 +48,46 @@ PROVIDER_LABEL = {
     "local-isp": "National ISP",
     "unknown": "Not determinable",
 }
+METHOD_LABEL = {
+    "contact_page": "Address published on the body's official contact page",
+    "privacy_page": "Address published in the body's official privacy notice",
+    "press_page": "Address published on the body's official press page",
+    "other_official": "Address published on an official government page",
+    "official_pdf": "Address found in an official document (PDF, notice, register)",
+    "third_party": "Address reported by a reliable third-party source",
+    "llm_consensus": "Inferred: at least two independent AI assistants (ChatGPT, DeepSeek, Qwen) "
+    "agreed on this domain citing public sources; domain has live MX records",
+    "assumed_from_website": "Inferred from the website domain — no published address found",
+}
+METHOD_SHORT = {
+    "contact_page": "official site",
+    "privacy_page": "official site",
+    "press_page": "official site",
+    "other_official": "official site",
+    "official_pdf": "official document",
+    "third_party": "third-party source",
+    "llm_consensus": "AI cross-check",
+    "assumed_from_website": "inferred from website",
+}
+
+
+def method_cell(r: dict) -> str:
+    ev = r.get("domain_evidence") or {}
+    kind = ev.get("kind") or "assumed_from_website"
+    if kind not in METHOD_LABEL:
+        kind = "third_party"
+    title = METHOD_LABEL[kind]
+    if ev.get("note"):
+        title += f" — e.g. {ev['note']}"
+    short = METHOD_SHORT[kind]
+    cls = "m-inf" if kind in ("assumed_from_website", "llm_consensus") else "m-ok"
+    url = ev.get("url") or ""
+    label = f'<span class="{cls}" title="{html.escape(title)}">{short}</span>'
+    if url and kind != "assumed_from_website":
+        label = f'<a href="{html.escape(url)}" rel="noopener nofollow">{label}</a>'
+    return label
+
+
 GROUP_LABEL = {
     "eu27": "EU member state",
     "efta": "EFTA",
@@ -142,7 +183,8 @@ def page(data: dict) -> str:
                     f'<br><small>{html.escape(r["name_native"] or "")}</small></td>'
                     f'<td>{TYPE_LABEL.get(r["type"], r["type"])}</td>'
                     f'<td><a href="{html.escape(web)}" rel="noopener">{html.escape(web.split("//")[-1].rstrip("/"))}</a></td>'
-                    f'<td><code>{html.escape(r["primary_domain"] or "—")}</code></td>'
+                    f'<td><code>{html.escape(r["primary_domain"] or "—")}</code>'
+                    f"<br><small>{method_cell(r)}</small></td>"
                     f"<td>{html.escape(prov)}</td>"
                     f'<td><span class="pill {r["bucket"]}">{BUCKET_LABEL[r["bucket"]]}</span></td></tr>'
                 )
@@ -155,7 +197,7 @@ def page(data: dict) -> str:
                 f'{html.escape(c["name"])} <small>{GROUP_LABEL.get(c["group"], "")}</small>'
                 f'<span class="cstat">{stat}</span></h3>'
                 f'<div class="tw"><table><thead><tr><th>Body</th><th>Type</th><th>Website</th>'
-                f"<th>Mail domain</th><th>Mail provider</th><th>Jurisdiction</th></tr></thead>"
+                f"<th>Mail domain · how established</th><th>Mail provider</th><th>Jurisdiction</th></tr></thead>"
                 f'<tbody>{"".join(trs)}</tbody></table></div></section>'
             )
         return "\n".join(out)
@@ -190,7 +232,7 @@ h1{{font-size:clamp(24px,4vw,36px);margin:.2em 0}}h2{{margin-top:2.2em;border-bo
 .ranks li small{{grid-column:3/6;color:var(--mut);font-size:12px;margin-top:-4px}}.rk{{color:var(--mut)}}
 .bar{{height:8px;background:var(--line);border-radius:4px;overflow:hidden}}.bar i{{display:block;height:100%}}
 table{{border-collapse:collapse;width:100%;font-size:14px}}th,td{{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}}th{{color:var(--mut);font-weight:600}}
-.tw{{overflow-x:auto}}code{{font-size:13px}}small{{color:var(--mut)}}
+.tw{{overflow-x:auto}}code{{font-size:13px}}.m-ok{{color:var(--nat)}}.m-inf{{color:var(--us)}}small{{color:var(--mut)}}
 .pill{{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;color:#fff;white-space:nowrap}}
 .pill.us{{background:var(--us)}}.pill.national{{background:var(--nat)}}.pill.eu_other{{background:var(--eu)}}.pill.other_foreign{{background:var(--of)}}.pill.unknown{{background:var(--unk)}}
 .filters{{position:sticky;top:0;background:var(--bg);padding:10px 0;display:flex;gap:8px;flex-wrap:wrap;z-index:2;border-bottom:1px solid var(--line)}}
@@ -236,6 +278,13 @@ signals. Jurisdiction is relative to the body's own country: <i>National</i> = p
 self-hosted/ISP mail servers located there; <i>US provider</i> = Microsoft, Google, Amazon (CLOUD Act);
 <i>Other European</i> = a provider seated in another European state. For EU institutions any European provider counts as national.
 English names are official where published, otherwise faithful translations.</p>
+<p><b>How each mail domain was established</b> (shown under every domain; hover for detail, click for the source):
+<span class="m-ok">official site</span> = an address on that domain is published on the body's own contact, press or privacy page;
+<span class="m-ok">official document</span> = an address appears in an official PDF, procurement notice or register;
+<span class="m-ok">third-party source</span> = reported by a reliable external directory (e.g. FIRST, Trusted Introducer);
+<span class="m-inf">AI cross-check</span> = no address found by us; at least two independent AI assistants (ChatGPT, DeepSeek, Qwen) agreed on the domain citing public sources, and the domain has live MX records;
+<span class="m-inf">inferred from website</span> = no published address anywhere; the website domain is assumed (many intelligence services publish only web forms).
+Inferred domains are lower-confidence and are flagged so readers can weigh them.</p>
 <p>Data: <a href="kpi.json">kpi.json</a> · CC BY-SA 4.0 · generated {kpi["generated_at"]} · flags: flag-icons (MIT).</p></footer>
 </main>
 <script>

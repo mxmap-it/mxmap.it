@@ -1,0 +1,96 @@
+{
+ "country": "LT",
+ "country_name_en": "Lithuania",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "lt-kariuomene",
+   "type": "armed_forces",
+   "name_native": "Lietuvos kariuomenė",
+   "name_en": "Lithuanian Armed Forces",
+   "acronym": "LK",
+   "website": "https://www.kariuomene.lt",
+   "mail_domains": [
+    "kariuomene.lt"
+   ],
+   "evidence": [
+    {
+     "domain": "kariuomene.lt",
+     "url": "https://www.lrvalstybe.lt/index.php/kontaktai/lietuvos-kariuomenes-kanceliarija-22574/lietuvos-kariuomenes-kanceliarija-114313",
+     "kind": "other_official",
+     "note": "staff addresses on kariuomene.lt"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "branches assumed on same domain"
+  },
+  {
+   "id": "lt-pagd",
+   "type": "other_natsec",
+   "name_native": "Priešgaisrinės apsaugos ir gelbėjimo departamentas",
+   "name_en": "Fire and Rescue Department",
+   "acronym": "PAGD",
+   "website": "https://pagd.lrv.lt",
+   "mail_domains": [
+    "vpgt.lt"
+   ],
+   "evidence": [
+    {
+     "domain": "vpgt.lt",
+     "url": "https://pagd.lrv.lt",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  },
+  {
+   "id": "lt-vatesi",
+   "type": "other_natsec",
+   "name_native": "Valstybinė atominės energetikos saugos inspekcija",
+   "name_en": "State Nuclear Power Safety Inspectorate",
+   "acronym": "VATESI",
+   "website": "https://www.vatesi.lt",
+   "mail_domains": [
+    "vatesi.lt"
+   ],
+   "evidence": [
+    {
+     "domain": "vatesi.lt",
+     "url": "https://www.vatesi.lt",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  },
+  {
+   "id": "lt-rsc",
+   "type": "other_natsec",
+   "name_native": "Radiacinės saugos centras",
+   "name_en": "Radiation Protection Centre",
+   "acronym": "RSC",
+   "website": "https://www.rsc.lt",
+   "mail_domains": [
+    "rsc.lt"
+   ],
+   "evidence": [
+    {
+     "domain": "rsc.lt",
+     "url": "https://www.rsc.lt",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Military police/branches likely on kariuomene.lt"
+ ]
+}

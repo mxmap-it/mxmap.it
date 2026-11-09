@@ -1,0 +1,35 @@
+{
+ "country": "HR",
+ "country_name_en": "Croatia",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "hr-carinska-uprava",
+   "type": "border_guard",
+   "name_native": "Carinska uprava",
+   "name_en": "Customs Administration",
+   "acronym": "CU",
+   "website": "https://carina.gov.hr",
+   "mail_domains": [
+    "carina.hr"
+   ],
+   "evidence": [
+    {
+     "domain": "carina.hr",
+     "url": "https://carina.gov.hr/UserDocsImages/12267/POJEDNOSTAVNJENJA%20CARINSKIH%20POSTUPAKA.pdf",
+     "kind": "official_pdf",
+     "note": "numeric office mailboxes e.g. 30007@carina.hr; cu_sibenik@carina.hr"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "Website carina.gov.hr, mail carina.hr"
+  }
+ ],
+ "gaps": [
+  "Civil protection is a directorate of MUP (mup.hr)",
+  "OSRH branches: no osrh.hr mail found (assumed morh.hr)",
+  "Nuclear safety moved into MUP"
+ ]
+}

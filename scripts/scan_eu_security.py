@@ -22,6 +22,7 @@ from mail_sovereignty.preprocess import scan_municipality
 
 ROOT = Path(__file__).resolve().parent.parent
 RESEARCH = ROOT / "data" / "eu_security" / "research"
+RESEARCH_EXT = ROOT / "data" / "eu_security" / "research_ext"  # wave 2
 OUT_DIR = ROOT / "data" / "eu_security"
 VALID_TYPES = {
     "police",
@@ -32,13 +33,14 @@ VALID_TYPES = {
     "defence_ministry",
     "cybersecurity",
     "other_natsec",
+    "armed_forces",
 }
 DOMAIN_RE = re.compile(r"^(?=.{3,253}$)([a-z0-9-]+\.)+[a-z]{2,}$")
 
 
 def load_directory() -> tuple[list[dict], list[str]]:
     entities, problems, seen = [], [], set()
-    for f in sorted(RESEARCH.glob("*.json")):
+    for f in [*sorted(RESEARCH.glob("*.json")), *sorted(RESEARCH_EXT.glob("*.json"))]:
         doc = json.loads(f.read_text(encoding="utf-8"))
         cc = doc["country"].upper()
         for e in doc.get("entities", []):
@@ -111,6 +113,14 @@ async def scan(entities: list[dict]) -> list[dict]:
                 "mx_countries": primary.get("mx_countries") or [],
                 "gateway": primary.get("gateway"),
                 "scans": scans,
+                "domain_evidence": next(
+                    (
+                        ev
+                        for ev in e.get("evidence") or []
+                        if (ev.get("domain") or "").lower() == primary.get("domain")
+                    ),
+                    None,
+                ),
             }
         )
     return out

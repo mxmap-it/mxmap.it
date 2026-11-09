@@ -1,0 +1,56 @@
+{
+ "country": "SE",
+ "country_name_en": "Sweden",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "se-fmv",
+   "type": "other_natsec",
+   "name_native": "Försvarets materielverk",
+   "name_en": "Swedish Defence Materiel Administration",
+   "acronym": "FMV",
+   "website": "https://www.fmv.se",
+   "mail_domains": [
+    "fmv.se"
+   ],
+   "evidence": [
+    {
+     "domain": "fmv.se",
+     "url": "https://www.fmv.se/en/about-fmv/",
+     "kind": "contact_page",
+     "note": "registrator@fmv.se"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "se-ssm",
+   "type": "other_natsec",
+   "name_native": "Strålsäkerhetsmyndigheten",
+   "name_en": "Swedish Radiation Safety Authority",
+   "acronym": "SSM",
+   "website": "https://www.stralsakerhetsmyndigheten.se",
+   "mail_domains": [
+    "ssm.se"
+   ],
+   "evidence": [
+    {
+     "domain": "ssm.se",
+     "url": "https://www.regeringen.se/contentassets/d71419f67c2d4f6e97cd06ae37f02885/eu-sprakkontakter-pa-myndigheterna_2026-08-24.pdf",
+     "kind": "official_pdf",
+     "note": "registrator@ssm.se"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Army/Navy/Air Force/Home Guard mail on mil.se (wave 1)",
+  "Fortifikationsverket (fortv.se) not verified",
+  "Coast guard already in wave 1"
+ ]
+}

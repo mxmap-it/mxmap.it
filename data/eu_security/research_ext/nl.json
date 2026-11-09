@@ -1,0 +1,77 @@
+{
+ "country": "NL",
+ "country_name_en": "Netherlands",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "nl-anvs",
+   "type": "other_natsec",
+   "name_native": "Autoriteit Nucleaire Veiligheid en Stralingsbescherming",
+   "name_en": "Authority for Nuclear Safety and Radiation Protection",
+   "acronym": "ANVS",
+   "website": "https://www.autoriteitnvs.nl",
+   "mail_domains": [
+    "anvs.nl"
+   ],
+   "evidence": [
+    {
+     "domain": "anvs.nl",
+     "url": "https://english.autoriteitnvs.nl/contact",
+     "kind": "contact_page",
+     "note": "info@anvs.nl; postbus.kerninstallatie@anvs.nl in Staatscourant notices"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "nl-nlncsa",
+   "type": "other_natsec",
+   "name_native": "Nationaal Bureau voor Verbindingsbeveiliging (AIVD)",
+   "name_en": "National Communications Security Agency",
+   "acronym": "NLNCSA",
+   "website": "https://www.aivd.nl",
+   "mail_domains": [
+    "nlncsa.nl"
+   ],
+   "evidence": [
+    {
+     "domain": "nlncsa.nl",
+     "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+     "kind": "official_pdf",
+     "note": "[redacted]@nlncsa.nl (EU Council NSA contact list, local parts redacted)"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  },
+  {
+   "id": "nl-nsa-bzk",
+   "type": "other_natsec",
+   "name_native": "Nationale Veiligheidsautoriteit (BZK)",
+   "name_en": "National Security Authority (Ministry of the Interior)",
+   "acronym": "NSA",
+   "website": "https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties",
+   "mail_domains": [
+    "minbzk.nl"
+   ],
+   "evidence": [
+    {
+     "domain": "minbzk.nl",
+     "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+     "kind": "official_pdf",
+     "note": "[redacted]@minbzk.nl (EU Council NSA contact list)"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "ministry domain; included because distinct from wave-1 domains"
+  }
+ ],
+ "gaps": [
+  "Armed forces branches (KL, KLu, KM, KMar) mail on mindef.nl (wave 1)",
+  "Kustwacht already wave 1 (kustwacht.nl)",
+  "National Crisis Centre on nctv.minjenv.nl (wave 1)"
+ ]
+}

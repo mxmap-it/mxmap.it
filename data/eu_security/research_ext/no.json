@@ -1,0 +1,118 @@
+{
+ "country": "NO",
+ "country_name_en": "Norway",
+ "group": "eea",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "no-kystverket",
+   "type": "border_guard",
+   "name_native": "Kystverket",
+   "name_en": "Norwegian Coastal Administration",
+   "acronym": "",
+   "website": "https://www.kystverket.no",
+   "mail_domains": [
+    "kystverket.no"
+   ],
+   "evidence": [
+    {
+     "domain": "kystverket.no",
+     "url": "https://inte.kystverket.no/en/contact/",
+     "kind": "contact_page",
+     "note": "post@kystverket.no"
+    }
+   ],
+   "confidence": "high",
+   "notes": "maritime safety/VTS; Coast Guard proper is Navy on mil.no"
+  },
+  {
+   "id": "no-dsa",
+   "type": "other_natsec",
+   "name_native": "Direktoratet for strålevern og atomsikkerhet",
+   "name_en": "Norwegian Radiation and Nuclear Safety Authority",
+   "acronym": "DSA",
+   "website": "https://dsa.no",
+   "mail_domains": [
+    "dsa.no"
+   ],
+   "evidence": [
+    {
+     "domain": "dsa.no",
+     "url": "https://www.havtil.no/contentassets/e2a931c18b41458ebdfca3efd6f74320/adresseliste-horingsinstanser-2026.pdf",
+     "kind": "official_pdf",
+     "note": "dsa@dsa.no"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "no-hrs",
+   "type": "other_natsec",
+   "name_native": "Hovedredningssentralen",
+   "name_en": "Joint Rescue Coordination Centre",
+   "acronym": "HRS",
+   "website": "https://www.hovedredningssentralen.no",
+   "mail_domains": [
+    "hovedredningssentralen.no"
+   ],
+   "evidence": [
+    {
+     "domain": "hovedredningssentralen.no",
+     "url": "https://www.havtil.no/contentassets/e2a931c18b41458ebdfca3efd6f74320/adresseliste-horingsinstanser-2026.pdf",
+     "kind": "official_pdf",
+     "note": "post@hovedredningssentralen.no"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "no-fma",
+   "type": "other_natsec",
+   "name_native": "Forsvarsmateriell",
+   "name_en": "Norwegian Defence Materiel Agency",
+   "acronym": "FMA",
+   "website": "https://www.fma.no",
+   "mail_domains": [
+    "fma.no"
+   ],
+   "evidence": [
+    {
+     "domain": "fma.no",
+     "url": "https://www.regjeringen.no/no/dep/fd/kontakt/kommunikasjonseininga-i-forsvarsdepartementet/kommunikasjonseininga/oversikt-over-andre-pressekontakter-i-forsvarssektoren/id2394544/",
+     "kind": "press_page",
+     "note": "media@fma.no"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "no-forsvarsbygg",
+   "type": "other_natsec",
+   "name_native": "Forsvarsbygg",
+   "name_en": "Norwegian Defence Estates Agency",
+   "acronym": "",
+   "website": "https://www.forsvarsbygg.no",
+   "mail_domains": [
+    "forsvarsbygg.no"
+   ],
+   "evidence": [
+    {
+     "domain": "forsvarsbygg.no",
+     "url": "https://www.regjeringen.no/no/dep/fd/kontakt/kommunikasjonseininga-i-forsvarsdepartementet/kommunikasjonseininga/oversikt-over-andre-pressekontakter-i-forsvarssektoren/id2394544/",
+     "kind": "press_page",
+     "note": "post@forsvarsbygg.no, pressevakt@forsvarsbygg.no"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Army/Navy/Air Force/Home Guard/Coast Guard mail on mil.no (wave 1)",
+  "DSB already in wave 1"
+ ]
+}

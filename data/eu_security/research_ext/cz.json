@@ -1,0 +1,97 @@
+{
+ "country": "CZ",
+ "country_name_en": "Czechia",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "cz-acr",
+   "type": "armed_forces",
+   "name_native": "Armáda České republiky",
+   "name_en": "Army of the Czech Republic",
+   "acronym": "AČR",
+   "website": "https://www.army.cz",
+   "mail_domains": [
+    "army.cz"
+   ],
+   "evidence": [
+    {
+     "domain": "army.cz",
+     "url": "https://oos.army.cz/en/contacts",
+     "kind": "contact_page",
+     "note": "addresses on army.cz (Defence Standardization)"
+    }
+   ],
+   "confidence": "high",
+   "notes": "Military Police assumed on army.cz"
+  },
+  {
+   "id": "cz-sujb",
+   "type": "other_natsec",
+   "name_native": "Státní úřad pro jadernou bezpečnost",
+   "name_en": "State Office for Nuclear Safety",
+   "acronym": "SÚJB",
+   "website": "https://www.sujb.cz",
+   "mail_domains": [
+    "sujb.cz"
+   ],
+   "evidence": [
+    {
+     "domain": "sujb.cz",
+     "url": "https://www.sujb.cz",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  },
+  {
+   "id": "cz-nbu",
+   "type": "other_natsec",
+   "name_native": "Národní bezpečnostní úřad",
+   "name_en": "National Security Authority",
+   "acronym": "NBÚ",
+   "website": "https://nbu.gov.cz",
+   "mail_domains": [
+    "nbu.gov.cz"
+   ],
+   "evidence": [
+    {
+     "domain": "nbu.gov.cz",
+     "url": "https://nbu.gov.cz",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  },
+  {
+   "id": "cz-hzs",
+   "type": "other_natsec",
+   "name_native": "Hasičský záchranný sbor ČR",
+   "name_en": "Fire Rescue Service",
+   "acronym": "HZS",
+   "website": "https://hzscr.gov.cz",
+   "mail_domains": [
+    "grh.izscr.cz"
+   ],
+   "evidence": [
+    {
+     "domain": "grh.izscr.cz",
+     "url": "https://hzscr.gov.cz",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "MO registry epodatelna@mo.gov.cz (wave 1 domain)",
+  "SSHR not researched"
+ ]
+}

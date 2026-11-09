@@ -1,0 +1,56 @@
+{
+ "country": "DK",
+ "country_name_en": "Denmark",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "dk-brs",
+   "type": "other_natsec",
+   "name_native": "Beredskabsstyrelsen",
+   "name_en": "Danish Emergency Management Agency",
+   "acronym": "BRS",
+   "website": "https://www.brs.dk",
+   "mail_domains": [
+    "brs.dk"
+   ],
+   "evidence": [
+    {
+     "domain": "brs.dk",
+     "url": "https://www.brs.dk",
+     "kind": "assumed_from_website",
+     "note": "website domain; no address seen"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  },
+  {
+   "id": "dk-hjv",
+   "type": "armed_forces",
+   "name_native": "Hjemmeværnet",
+   "name_en": "Danish Home Guard",
+   "acronym": "HJV",
+   "website": "https://www.hjv.dk",
+   "mail_domains": [
+    "hjv.dk"
+   ],
+   "evidence": [
+    {
+     "domain": "hjv.dk",
+     "url": "https://www.hjv.dk",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Army/Navy/Air Force assumed on mil.dk (wave 1)",
+  "FMI procurement (fmi.dk) not verified",
+  "Radiation protection (sis.dk) not verified"
+ ]
+}

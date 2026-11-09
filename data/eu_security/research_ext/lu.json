@@ -1,0 +1,118 @@
+{
+ "country": "LU",
+ "country_name_en": "Luxembourg",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "lu-armee",
+   "type": "armed_forces",
+   "name_native": "Armée luxembourgeoise",
+   "name_en": "Luxembourg Army",
+   "acronym": "",
+   "website": "https://www.armee.lu",
+   "mail_domains": [
+    "armee.lu"
+   ],
+   "evidence": [
+    {
+     "domain": "armee.lu",
+     "url": "https://en.paperjam.lu/guide/organisation/01323406105/armee-luxembourgeoise",
+     "kind": "other_official",
+     "note": "info@armee.lu (directory listing); armee is its own RIPE member"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "procurement uses mae.etat.lu (wave 1)"
+  },
+  {
+   "id": "lu-cgdis",
+   "type": "other_natsec",
+   "name_native": "Corps grand-ducal d'incendie et de secours",
+   "name_en": "Grand-Ducal Fire and Rescue Corps (civil protection)",
+   "acronym": "CGDIS",
+   "website": "https://www.cgdis.lu",
+   "mail_domains": [
+    "cgdis.lu"
+   ],
+   "evidence": [
+    {
+     "domain": "cgdis.lu",
+     "url": "https://ted.europa.eu/fr/notice/634934-2024/pdf",
+     "kind": "official_pdf",
+     "note": "soumission@cgdis.lu (TED buyer)"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "lu-ans",
+   "type": "other_natsec",
+   "name_native": "Autorité nationale de Sécurité",
+   "name_en": "National Security Authority",
+   "acronym": "ANS",
+   "website": "https://ans.gouvernement.lu",
+   "mail_domains": [
+    "ans.etat.lu"
+   ],
+   "evidence": [
+    {
+     "domain": "ans.etat.lu",
+     "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+     "kind": "official_pdf",
+     "note": "ans@ans.etat.lu"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "lu-anssi",
+   "type": "other_natsec",
+   "name_native": "Agence nationale de la sécurité des systèmes d'information",
+   "name_en": "National IS Security Agency",
+   "acronym": "ANSSI",
+   "website": "https://anssi.lu",
+   "mail_domains": [
+    "anssi.etat.lu"
+   ],
+   "evidence": [
+    {
+     "domain": "anssi.etat.lu",
+     "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+     "kind": "official_pdf",
+     "note": "info@anssi.etat.lu"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "lu-ctie",
+   "type": "other_natsec",
+   "name_native": "Centre des technologies de l'information de l'État (NDA/SIC)",
+   "name_en": "State IT Centre - national crypto distribution authority",
+   "acronym": "CTIE",
+   "website": "https://ctie.gouvernement.lu",
+   "mail_domains": [
+    "ctie.etat.lu"
+   ],
+   "evidence": [
+    {
+     "domain": "ctie.etat.lu",
+     "url": "https://data.consilium.europa.eu/doc/document/ST-8733-2024-REV-2/en/pdf",
+     "kind": "official_pdf",
+     "note": "nda@ctie.etat.lu, sic@ctie.etat.lu"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "HCPN already wave 1",
+  "No nuclear regulator with own domain (radiation protection in Ministry of Health)"
+ ]
+}

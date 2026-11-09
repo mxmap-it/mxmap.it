@@ -1,0 +1,76 @@
+{
+ "country": "LV",
+ "country_name_en": "Latvia",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "lv-vugd",
+   "type": "other_natsec",
+   "name_native": "Valsts ugunsdzēsības un glābšanas dienests",
+   "name_en": "State Fire and Rescue Service",
+   "acronym": "VUGD",
+   "website": "https://www.vugd.gov.lv",
+   "mail_domains": [
+    "vugd.gov.lv"
+   ],
+   "evidence": [
+    {
+     "domain": "vugd.gov.lv",
+     "url": "https://www.vugd.gov.lv/en/department/prevention-and-public-relations-division",
+     "kind": "contact_page",
+     "note": "prese@vugd.gov.lv"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "lv-nbs",
+   "type": "armed_forces",
+   "name_native": "Nacionālie bruņotie spēki",
+   "name_en": "National Armed Forces",
+   "acronym": "NBS",
+   "website": "https://www.mil.lv",
+   "mail_domains": [
+    "mil.lv"
+   ],
+   "evidence": [
+    {
+     "domain": "mil.lv",
+     "url": "https://ted.europa.eu/en/notice/296667-2026/pdf",
+     "kind": "official_pdf",
+     "note": "staff addresses @mil.lv"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "Zemessardze website zs.mil.lv"
+  },
+  {
+   "id": "lv-vamoic",
+   "type": "other_natsec",
+   "name_native": "Valsts aizsardzības militāro objektu un iepirkumu centrs",
+   "name_en": "State Defence Military Facilities and Procurement Centre",
+   "acronym": "VAMOIC",
+   "website": "https://www.vamoic.gov.lv",
+   "mail_domains": [
+    "vamoic.gov.lv"
+   ],
+   "evidence": [
+    {
+     "domain": "vamoic.gov.lv",
+     "url": "https://www.vamoic.gov.lv/en",
+     "kind": "contact_page",
+     "note": "pasts@vamoic.gov.lv"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Navy/Coast guard on mil.lv",
+  "Radiation Safety Centre not verified"
+ ]
+}

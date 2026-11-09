@@ -1,0 +1,33 @@
+{
+ "country": "AD",
+ "country_name_en": "Andorra",
+ "group": "other",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "ad-bombers",
+   "type": "other_natsec",
+   "name_native": "Cos de Bombers",
+   "name_en": "Andorra Fire Brigade",
+   "acronym": "",
+   "website": "https://www.bombers.ad",
+   "mail_domains": [
+    "bombers.ad"
+   ],
+   "evidence": [
+    {
+     "domain": "bombers.ad",
+     "url": "https://www.bombers.ad",
+     "kind": "assumed_from_website",
+     "note": "not verified"
+    }
+   ],
+   "confidence": "low",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "No armed forces; civil protection on govern.ad"
+ ]
+}

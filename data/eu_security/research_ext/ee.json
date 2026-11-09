@@ -1,0 +1,96 @@
+{
+ "country": "EE",
+ "country_name_en": "Estonia",
+ "group": "eu27",
+ "researched_at": "2026-11-09",
+ "wave": 2,
+ "entities": [
+  {
+   "id": "ee-kaitseliit",
+   "type": "armed_forces",
+   "name_native": "Kaitseliit",
+   "name_en": "Estonian Defence League",
+   "acronym": "KL",
+   "website": "https://kaitseliit.ee",
+   "mail_domains": [
+    "kaitseliit.ee"
+   ],
+   "evidence": [
+    {
+     "domain": "kaitseliit.ee",
+     "url": "https://kaitseliit.ee/en/privacy-policy/",
+     "kind": "privacy_page",
+     "note": "info@kaitseliit.ee"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "ee-paasteamet",
+   "type": "other_natsec",
+   "name_native": "Päästeamet",
+   "name_en": "Estonian Rescue Board",
+   "acronym": "",
+   "website": "https://www.rescue.ee",
+   "mail_domains": [
+    "rescue.ee"
+   ],
+   "evidence": [
+    {
+     "domain": "rescue.ee",
+     "url": "https://adr-docs.karlerss.com/4yVbv5Lm91hLeTXlVdAD8Y409Sqb54pp/Adressaatide%20nimekiri.pdf",
+     "kind": "official_pdf",
+     "note": "rescue@rescue.ee"
+    }
+   ],
+   "confidence": "medium",
+   "notes": "address list on third-party mirror of official letters"
+  },
+  {
+   "id": "ee-haire",
+   "type": "other_natsec",
+   "name_native": "Häirekeskus",
+   "name_en": "Emergency Response Centre",
+   "acronym": "",
+   "website": "https://112.ee",
+   "mail_domains": [
+    "112.ee"
+   ],
+   "evidence": [
+    {
+     "domain": "112.ee",
+     "url": "https://www.kriis.ee/en/threat-alert",
+     "kind": "other_official",
+     "note": "112@112.ee"
+    }
+   ],
+   "confidence": "high",
+   "notes": ""
+  },
+  {
+   "id": "ee-rkik",
+   "type": "other_natsec",
+   "name_native": "Riigi Kaitseinvesteeringute Keskus",
+   "name_en": "Estonian Centre for Defence Investment",
+   "acronym": "ECDI",
+   "website": "https://www.kaitseinvesteeringud.ee",
+   "mail_domains": [
+    "rkik.ee"
+   ],
+   "evidence": [
+    {
+     "domain": "rkik.ee",
+     "url": "https://www.kaitseinvesteeringud.ee",
+     "kind": "assumed_from_website",
+     "note": "info@rkik.ee seen in search snippet"
+    }
+   ],
+   "confidence": "medium",
+   "notes": ""
+  }
+ ],
+ "gaps": [
+  "Army/Navy/Air Force on mil.ee (wave 1)"
+ ]
+}
