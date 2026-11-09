@@ -1,0 +1,154 @@
+{
+  "country": "MK",
+  "country_name_en": "North Macedonia",
+  "group": "candidate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "mk-mvr",
+      "type": "interior_ministry",
+      "name_native": "Ministerstvo za vnatreshni raboti na Republika Severna Makedonija",
+      "name_en": "Ministry of Internal Affairs of the Republic of North Macedonia",
+      "acronym": "MVR",
+      "website": "https://mvr.gov.mk/",
+      "mail_domains": ["moi.gov.mk"],
+      "evidence": [
+        {"domain": "moi.gov.mk", "url": "https://mvr.gov.mk/", "kind": "contact_page", "note": "kontakt@moi.gov.mk in official site footer; website domain mvr.gov.mk differs from mail domain moi.gov.mk"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "mk-bjb",
+      "type": "police",
+      "name_native": "Biro za javna bezbednost (Policija na Republika Severna Makedonija)",
+      "name_en": "Public Security Bureau (National Police)",
+      "acronym": "BJB",
+      "website": "https://mvr.gov.mk/",
+      "mail_domains": ["moi.gov.mk"],
+      "evidence": [
+        {"domain": "moi.gov.mk", "url": "https://mvr.gov.mk/", "kind": "contact_page", "note": "National police is a body within MVR; uses the ministry channel kontakt@moi.gov.mk"}
+      ],
+      "confidence": "medium",
+      "notes": "No separate website or mail domain: policing is exercised through the MVR's Public Security Bureau."
+    },
+    {
+      "id": "mk-granichna-policija",
+      "type": "border_guard",
+      "name_native": "Oddel za granichni raboti i migracii (Granichna policija), MVR",
+      "name_en": "Border Affairs and Migration Department (Border Police), MVR",
+      "acronym": "",
+      "website": "https://mvr.gov.mk/",
+      "mail_domains": ["moi.gov.mk"],
+      "evidence": [
+        {"domain": "moi.gov.mk", "url": "https://mvr.gov.mk/", "kind": "contact_page", "note": "Border police is a department of MVR; ministry mail domain moi.gov.mk (footer kontakt@moi.gov.mk)"}
+      ],
+      "confidence": "medium",
+      "notes": "Not a separate agency; no distinct mail domain evidenced."
+    },
+    {
+      "id": "mk-mod",
+      "type": "defence_ministry",
+      "name_native": "Ministerstvo za odbrana na Republika Severna Makedonija",
+      "name_en": "Ministry of Defence of the Republic of North Macedonia",
+      "acronym": "MO",
+      "website": "https://mod.gov.mk/",
+      "mail_domains": ["mod.gov.mk"],
+      "evidence": [
+        {"domain": "mod.gov.mk", "url": "https://mod.gov.mk/", "kind": "contact_page", "note": "kabinetMO@mod.gov.mk on official site (contact block, contact page at /mk-MK/kontakt)"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "mk-armija",
+      "type": "other_natsec",
+      "name_native": "Armija na Republika Severna Makedonija (Generalshtab)",
+      "name_en": "Army of the Republic of North Macedonia (General Staff)",
+      "acronym": "ARSM",
+      "website": "https://mil.mk/",
+      "mail_domains": ["mil.mk"],
+      "evidence": [
+        {"domain": "mil.mk", "url": "https://mil.mk/kontakt/", "kind": "contact_page", "note": "kabinet.ngs@mil.mk and zlatko.pavloski@mil.mk (Cloudflare-obfuscated addresses decoded from the contact page); webmail portal e-posta.mil.mk"}
+      ],
+      "confidence": "high",
+      "notes": "Military Service for Security and Intelligence (VSBR) sits inside the MoD/Army structure, no distinct public domain found."
+    },
+    {
+      "id": "mk-anb",
+      "type": "intelligence",
+      "name_native": "Agencija za nacionalna bezbednost",
+      "name_en": "National Security Agency",
+      "acronym": "ANB",
+      "website": "https://anb.gov.mk/",
+      "mail_domains": ["anb.gov.mk"],
+      "evidence": [
+        {"domain": "anb.gov.mk", "url": "https://anb.gov.mk/kontakt/", "kind": "contact_page", "note": "contact@anb.gov.mk on official contact page"}
+      ],
+      "confidence": "high",
+      "notes": "Civilian counter-intelligence/security agency (successor of UBK, est. 2019)."
+    },
+    {
+      "id": "mk-ar",
+      "type": "intelligence",
+      "name_native": "Agencija za razuznavanje",
+      "name_en": "Intelligence Agency",
+      "acronym": "AR",
+      "website": "https://ia.gov.mk/",
+      "mail_domains": ["ia.gov.mk"],
+      "evidence": [
+        {"domain": "ia.gov.mk", "url": "https://ia.gov.mk/", "kind": "assumed_from_website", "note": "Site returns 403 to automated fetchers; mail domain assumed from website registrable domain"}
+      ],
+      "confidence": "low",
+      "notes": "Foreign-intelligence agency reporting to the President; website unreachable for evidence collection."
+    },
+    {
+      "id": "mk-mkd-cirt",
+      "type": "cybersecurity",
+      "name_native": "Nacionalen centar za odgovor na kompjuterski incidenti (MKD-CIRT)",
+      "name_en": "National Centre for Computer Incident Response (MKD-CIRT)",
+      "acronym": "MKD-CIRT",
+      "website": "https://mkd-cirt.mk/",
+      "mail_domains": ["mkd-cirt.mk"],
+      "evidence": [
+        {"domain": "mkd-cirt.mk", "url": "https://mkd-cirt.mk/", "kind": "contact_page", "note": "info@mkd-cirt.mk on official site; contact page at /kontakt/"}
+      ],
+      "confidence": "high",
+      "notes": "National CIRT, operates within the Agency for Electronic Communications (AEK); North Macedonia has no standalone national cybersecurity agency."
+    },
+    {
+      "id": "mk-dbki",
+      "type": "other_natsec",
+      "name_native": "Direkcija za bezbednost na klasificirani informacii",
+      "name_en": "Directorate for Security of Classified Information",
+      "acronym": "DBKI",
+      "website": "https://dbki.gov.mk/",
+      "mail_domains": ["dbki.gov.mk"],
+      "evidence": [
+        {"domain": "dbki.gov.mk", "url": "https://dbki.gov.mk/", "kind": "contact_page", "note": "direkcija@dbki.gov.mk on official site; contact page at /kontakt/"}
+      ],
+      "confidence": "high",
+      "notes": "NATO/EU National Security Authority for classified information."
+    },
+    {
+      "id": "mk-cuk",
+      "type": "other_natsec",
+      "name_native": "Centar za upravuvanje so krizi",
+      "name_en": "Crisis Management Center",
+      "acronym": "CUK",
+      "website": "https://cuk.gov.mk/",
+      "mail_domains": ["cuk.gov.mk"],
+      "evidence": [
+        {"domain": "cuk.gov.mk", "url": "https://cuk.gov.mk/", "kind": "contact_page", "note": "cuk.mail@cuk.gov.mk on official site"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "gaps": [
+    "gendarmerie: North Macedonia has no gendarmerie",
+    "military intelligence: Voena sluzhba za bezbednost i razuznavanje exists within the MoD/Army but has no distinct website or mail domain",
+    "intelligence (AR): ia.gov.mk returns 403 to fetchers, mail domain assumed",
+    "cybersecurity: no standalone national cybersecurity agency; MKD-CIRT under AEK is the operational national capability"
+  ]
+}

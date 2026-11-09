@@ -1,0 +1,128 @@
+{
+  "country": "AL",
+  "country_name_en": "Albania",
+  "group": "candidate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "al-policia-e-shtetit",
+      "type": "police",
+      "name_native": "Policia e Shtetit",
+      "name_en": "Albanian State Police",
+      "acronym": "ASP",
+      "website": "https://www.asp.gov.al/",
+      "mail_domains": ["asp.gov.al"],
+      "evidence": [
+        {"domain": "asp.gov.al", "url": "https://www.asp.gov.al/kontakt/", "kind": "contact_page", "note": "policiaeshtetit@asp.gov.al on official contact page"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "al-policia-kufitare",
+      "type": "border_guard",
+      "name_native": "Departamenti per Kufirin dhe Migracionin (Policia Kufitare dhe e Migracionit)",
+      "name_en": "Border and Migration Police Department",
+      "acronym": "",
+      "website": "https://www.asp.gov.al/",
+      "mail_domains": ["asp.gov.al"],
+      "evidence": [
+        {"domain": "asp.gov.al", "url": "https://www.asp.gov.al/kontakt/", "kind": "contact_page", "note": "Department within the State Police; uses ASP contact channel policiaeshtetit@asp.gov.al"}
+      ],
+      "confidence": "medium",
+      "notes": "Not a separate agency: border policing is a department of Policia e Shtetit, no distinct mail domain evidenced."
+    },
+    {
+      "id": "al-garda",
+      "type": "other_natsec",
+      "name_native": "Garda e Republikes",
+      "name_en": "Republican Guard of Albania",
+      "acronym": "",
+      "website": "https://www.garda.gov.al/",
+      "mail_domains": ["garda.gov.al"],
+      "evidence": [
+        {"domain": "garda.gov.al", "url": "https://www.garda.gov.al/wp-content/uploads/2023/12/Raporti-Vjetor-2022-GARDA-E-REPUBLIKES.pdf", "kind": "official_pdf", "note": "institucioni@garda.gov.al in 2022 annual report; same address in 2024 procurement notice on garda.gov.al"}
+      ],
+      "confidence": "high",
+      "notes": "Protective security force under the Ministry of Interior (closest Albanian analogue to a gendarmerie-type protection corps)."
+    },
+    {
+      "id": "al-shish",
+      "type": "intelligence",
+      "name_native": "Sherbimi Informativ i Shtetit",
+      "name_en": "State Intelligence Service",
+      "acronym": "SHISH",
+      "website": "https://shish.gov.al/",
+      "mail_domains": ["shish.gov.al"],
+      "evidence": [
+        {"domain": "shish.gov.al", "url": "https://shish.gov.al/kontakt/", "kind": "contact_page", "note": "info@shish.gov.al on official contact page"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "al-mb",
+      "type": "interior_ministry",
+      "name_native": "Ministria e Puneve te Brendshme",
+      "name_en": "Ministry of Internal Affairs",
+      "acronym": "MB",
+      "website": "https://mb.gov.al/",
+      "mail_domains": ["mb.gov.al", "punetebrendshme.gov.al"],
+      "evidence": [
+        {"domain": "mb.gov.al", "url": "https://mb.gov.al/", "kind": "assumed_from_website", "note": "No email address retrievable from the JS-rendered official site; assumed from website domain"},
+        {"domain": "punetebrendshme.gov.al", "url": "https://www.publeaks.al/ministria-e-puneve-te-brendshme/", "kind": "other_official", "note": "Ardian.Bita@punetebrendshme.gov.al listed by Publeaks (third-party transparency NGO, not an official source) as ministry coordinator address; treat as weak evidence of a second/legacy mail domain"}
+      ],
+      "confidence": "low",
+      "notes": "mb.gov.al pages block scraping and return empty content to fetchers; no official page with an @-address found. punetebrendshme.gov.al evidenced only via third party."
+    },
+    {
+      "id": "al-mod",
+      "type": "defence_ministry",
+      "name_native": "Ministria e Mbrojtjes",
+      "name_en": "Ministry of Defence",
+      "acronym": "MM",
+      "website": "https://www.mod.gov.al/",
+      "mail_domains": ["mod.gov.al"],
+      "evidence": [
+        {"domain": "mod.gov.al", "url": "https://www.konsultimipublik.gov.al/documents/RENJK_830_Njoftimi-per-konsultimin-publik-MM.docx", "kind": "official_pdf", "note": "konsultim.publik@mod.gov.al and amarilda.reci@mod.gov.al in public-consultation notice on the official konsultimipublik.gov.al portal"}
+      ],
+      "confidence": "high",
+      "notes": "Older documents also show the legacy domain mbrojtja.gov.al (e.g. artur.mecollari@mbrojtja.gov.al via Publeaks), not counted as current."
+    },
+    {
+      "id": "al-aksk",
+      "type": "cybersecurity",
+      "name_native": "Autoriteti Kombetar per Sigurine Kibernetike",
+      "name_en": "National Cyber Security Authority",
+      "acronym": "AKSK",
+      "website": "https://aksk.gov.al/",
+      "mail_domains": ["aksk.gov.al", "cesk.gov.al"],
+      "evidence": [
+        {"domain": "aksk.gov.al", "url": "https://aksk.gov.al/en/", "kind": "contact_page", "note": "info@aksk.gov.al shown on official site (contact block)"},
+        {"domain": "cesk.gov.al", "url": "https://www.trusted-introducer.org/directory/teams/akcesk-naeccs-al.html", "kind": "other_official", "note": "info@cesk.gov.al listed in TF-CSIRT Trusted Introducer directory for the national CSIRT (legacy AKCESK domain)"}
+      ],
+      "confidence": "high",
+      "notes": "Formerly AKCESK (National Authority for Electronic Certification and Cyber Security); the national CSIRT (CSIRT.AL / AL-CSIRT) operates within AKSK, no separate current mail domain evidenced beyond legacy cesk.gov.al."
+    },
+    {
+      "id": "al-aksik",
+      "type": "other_natsec",
+      "name_native": "Autoriteti Kombetar per Sigurine e Informacionit te Klasifikuar (ish-DSIK)",
+      "name_en": "National Authority for Classified Information Security (National Security Authority)",
+      "acronym": "AKSIK",
+      "website": "https://nsa.gov.al/",
+      "mail_domains": ["nsa.gov.al"],
+      "evidence": [
+        {"domain": "nsa.gov.al", "url": "https://www.nsa.gov.al/en/", "kind": "contact_page", "note": "sekretaria@nsa.gov.al in official site footer/contact block"}
+      ],
+      "confidence": "high",
+      "notes": "Former Drejtoria e Sigurimit te Informacionit te Klasifikuar (DSIK); NATO/EU classified-information NSA."
+    }
+  ],
+  "gaps": [
+    "gendarmerie: Albania has no gendarmerie; Garda e Republikes (protection corps) listed under other_natsec instead",
+    "military intelligence: Agjencia e Inteligjences dhe Sigurise se Mbrojtjes (AISM) exists (Law 65/2014) but no official website or mail domain could be found",
+    "armed forces: aaf.mil.al / mil.al unreachable at research time, Albanian Armed Forces omitted",
+    "interior_ministry email evidence weak: mb.gov.al serves empty pages to fetchers; domain assumed"
+  ]
+}
