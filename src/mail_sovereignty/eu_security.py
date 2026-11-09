@@ -258,7 +258,83 @@ def assert_integrity(kpi: dict[str, Any], entities: list[dict[str, Any]]) -> Non
         raise AssertionError("countries non ordinati per us_exposure_pct")
 
 
+# --- Drill-down verticale per settore (famiglie di enti) ----------------------
+# Ogni ente cade in UNA famiglia (partizione: le somme per famiglia tornano al
+# totale). "Interior & justice" raccoglie i ministeri dell'Interno e gli organi
+# giudiziari/requirenti che nella directory stanno in other_natsec.
+FAMILIES: tuple[str, ...] = (
+    "police",
+    "defence",
+    "intelligence",
+    "border",
+    "interior_justice",
+    "cyber",
+    "civil_other",
+)
+_TYPE_FAMILY = {
+    "police": "police",
+    "gendarmerie": "police",
+    "defence_ministry": "defence",
+    "armed_forces": "defence",
+    "intelligence": "intelligence",
+    "border_guard": "border",
+    "interior_ministry": "interior_justice",
+    "cybersecurity": "cyber",
+}
+_JUSTICE_HINTS = (
+    "justice",
+    "prosecut",
+    "judicial",
+    "penitentiar",
+    "eurojust",
+    "court",
+)
+
+
+def family_of(row: dict[str, Any]) -> str:
+    """Famiglia di settore di un ente (sempre una di FAMILIES)."""
+    fam = _TYPE_FAMILY.get(row.get("type", ""))
+    if fam:
+        return fam
+    name = f"{row.get('name_en') or ''} {row.get('acronym') or ''}".lower()
+    if any(h in name for h in _JUSTICE_HINTS):
+        return "interior_justice"
+    return "civil_other"
+
+
+def compute_by_family(
+    entities: list[dict[str, Any]], min_classified: int = 2
+) -> dict[str, dict[str, Any]]:
+    """KPI per famiglia: stessa struttura di compute_kpi, sul sottoinsieme.
+
+    Soglia di ranking più bassa (default 2): per famiglia un paese ha pochi enti.
+    """
+    out = {}
+    for fam in FAMILIES:
+        subset = [r for r in entities if family_of(r) == fam]
+        out[fam] = compute_kpi(subset, min_classified=min_classified)
+    return out
+
+
+def assert_family_integrity(
+    by_family: dict[str, dict[str, Any]], entities: list[dict[str, Any]]
+) -> None:
+    """Le famiglie partizionano la popolazione e ognuna è internamente coerente."""
+    if set(by_family) != set(FAMILIES):
+        raise AssertionError("famiglie mancanti o spurie")
+    tot = sum(k["n_entities"] for k in by_family.values())
+    if tot != len(entities):
+        raise AssertionError(f"somma famiglie {tot} != {len(entities)}")
+    for fam, k in by_family.items():
+        subset = [r for r in entities if family_of(r) == fam]
+        assert_integrity(k, subset)
+
+
 __all__ = [
+    "FAMILIES",
+    "family_of",
+    "compute_by_family",
+    "assert_family_integrity",
     "PROVIDER_COUNTRY",
     "EU27",
     "EUROPEAN_PROVIDER_COUNTRIES",

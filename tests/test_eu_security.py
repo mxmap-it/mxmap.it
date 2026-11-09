@@ -165,3 +165,58 @@ class TestAssertIntegrity:
         kpi["countries"][0]["n"] += 5
         with pytest.raises(AssertionError):
             es.assert_integrity(kpi, pop)
+
+
+class TestFamilies:
+    def test_type_mapping(self):
+        assert es.family_of({"type": "gendarmerie"}) == "police"
+        assert es.family_of({"type": "armed_forces"}) == "defence"
+        assert es.family_of({"type": "defence_ministry"}) == "defence"
+        assert es.family_of({"type": "border_guard"}) == "border"
+        assert es.family_of({"type": "interior_ministry"}) == "interior_justice"
+        assert es.family_of({"type": "cybersecurity"}) == "cyber"
+
+    def test_other_natsec_justice_hint(self):
+        assert (
+            es.family_of(
+                {
+                    "type": "other_natsec",
+                    "name_en": "European Public Prosecutor's Office",
+                }
+            )
+            == "interior_justice"
+        )
+        assert (
+            es.family_of({"type": "other_natsec", "acronym": "Eurojust"})
+            == "interior_justice"
+        )
+
+    def test_other_natsec_default_civil_other(self):
+        assert (
+            es.family_of({"type": "other_natsec", "name_en": "Nuclear regulator"})
+            == "civil_other"
+        )
+        assert es.family_of({}) == "civil_other"
+
+    def test_partition_and_counts(self):
+        # _pop(): police de-a(us), fr-a(us), mc-a(unknown); intelligence de-b(us),
+        # fr-b(national); cyber de-c(national); defence de-d(eu_other)
+        pop = _pop()
+        fams = es.compute_by_family(pop, min_classified=1)
+        assert fams["police"]["n_entities"] == 3
+        assert fams["police"]["overall"]["us"] == 2
+        assert fams["police"]["overall"]["unknown"] == 1
+        assert fams["intelligence"]["n_entities"] == 2
+        by_cc = {c["country"]: c for c in fams["intelligence"]["countries"]}
+        assert by_cc["DE"]["us_exposure_pct"] == 100.0
+        assert by_cc["FR"]["national_pct"] == 100.0
+        assert fams["defence"]["overall"]["eu_other"] == 1
+        assert fams["border"]["n_entities"] == 0
+        es.assert_family_integrity(fams, pop)
+
+    def test_family_integrity_fires(self):
+        pop = _pop()
+        fams = es.compute_by_family(pop)
+        fams["police"]["n_entities"] += 1
+        with pytest.raises(AssertionError):
+            es.assert_family_integrity(fams, pop)

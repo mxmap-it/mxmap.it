@@ -113,7 +113,32 @@ def build() -> dict:
     for c in kpi["countries"]:
         c["name"], c["group"] = meta[c["country"]]
     kpi["generated_at"] = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    families = es.compute_by_family(rows, min_classified=1)
+    es.assert_family_integrity(families, rows)
+    for fk in families.values():
+        for c in fk["countries"]:
+            c["name"], c["group"] = meta[c["country"]]
+            if c["country"] in ANNEX or c["country"] == "EU":
+                c["ranking_eligible"] = False
+    kpi["by_family"] = families
     return {"kpi": kpi, "rows": rows}
+
+
+FAMILY_LABEL = {
+    "police": ("Police", "National police forces and gendarmeries"),
+    "defence": ("Defence", "Defence ministries, armed-forces branches and general staffs"),
+    "intelligence": ("Intelligence", "Domestic, foreign, military and signals intelligence"),
+    "border": ("Border & maritime", "Border guards, coast guards and maritime authorities"),
+    "interior_justice": (
+        "Interior & justice",
+        "Interior ministries, prosecutors and judicial security bodies",
+    ),
+    "cyber": ("Cybersecurity", "National cyber agencies and CERTs/CSIRTs"),
+    "civil_other": (
+        "Civil protection & other",
+        "Crisis management, nuclear regulators, classified-information authorities, customs",
+    ),
+}
 
 
 def flag(cc: str, cls: str = "flag") -> str:
@@ -141,6 +166,63 @@ def page(data: dict) -> str:
                 f'<b>{v:.0f}%</b><small>{c["classified"]} classified</small></li>'
             )
         return "\n".join(out)
+
+    def family_sections():
+        tabs, panels = [], []
+        for i, (fam, fk) in enumerate(kpi["by_family"].items()):
+            title, sub = FAMILY_LABEL[fam]
+            n_f = fk["n_entities"]
+            cls_f = n_f - fk["overall"]["unknown"]
+            us_f = fk["overall"]["us"]
+            nat_f = fk["overall"]["national"]
+            us_pct = round(100 * us_f / cls_f) if cls_f else 0
+            nat_pct = round(100 * nat_f / cls_f) if cls_f else 0
+            el = [c for c in fk["countries"] if c["ranking_eligible"]]
+            w = [c for c in el if c["us"] > 0][:10]
+            b = sorted(el, key=lambda c: (-c["national_pct"], c["us_exposure_pct"]))[:10]
+            us_bodies = sorted(
+                (r for r in rows if es.family_of(r) == fam and r["bucket"] == "us"),
+                key=lambda r: (r["country_name_en"], r["name_en"] or ""),
+            )
+            items = "".join(
+                f"<li>{flag(r['country'])}<b>{html.escape(r['name_en'] or '')}</b> "
+                f"<small>{html.escape(r['country_name_en'])} · "
+                f"{html.escape(PROVIDER_LABEL.get(r['provider'], r['provider']))} · "
+                f"<code>{html.escape(r['primary_domain'] or '')}</code></small></li>"
+                for r in us_bodies
+            )
+            sel = "true" if i == 0 else "false"
+            tabs.append(
+                f'<button role="tab" aria-selected="{sel}" data-fam="{fam}">'
+                f"{title} <small>{n_f}</small></button>"
+            )
+            worst_html = (
+                rank_rows(w, "us_exposure_pct", "--us")
+                if w
+                else "<li><small>No country with US-hosted bodies in this sector.</small></li>"
+            )
+            panels.append(
+                f'<div class="fpanel" data-fam="{fam}"{"" if i == 0 else " hidden"}>'
+                f'<p class="lead">{sub}. Countries ranked with at least '
+                f'{fk["min_classified_for_ranking"]} classified bodies in this sector.</p>'
+                f'<div class="kpis"><div class="kpi"><b>{n_f}</b><span>bodies in '
+                f'{fk["n_countries"]} countries</span></div>'
+                f'<div class="kpi"><b style="color:var(--us)">{us_pct}%</b><span>on a US '
+                f"provider ({us_f})</span></div>"
+                f'<div class="kpi"><b style="color:var(--nat)">{nat_pct}%</b><span>national '
+                f"jurisdiction ({nat_f})</span></div>"
+                f'<div class="kpi"><b>{fk["overall"]["unknown"]}</b><span>not '
+                f"determinable</span></div></div>"
+                f'<div class="ranks"><div><h3>Highest US exposure — {title}</h3><ol>'
+                f"{worst_html}</ol></div>"
+                f"<div><h3>Best positioned — {title}</h3><ol>"
+                f'{rank_rows(b, "national_pct", "--nat")}</ol></div></div>'
+                f"<details><summary>{len(us_bodies)} {title.lower()} bodies on a US "
+                f'provider</summary><ul class="usl">{items}</ul></details></div>'
+            )
+        return (
+            f'<div class="ftabs" role="tablist">{"".join(tabs)}</div>{"".join(panels)}'
+        )
 
     def type_table():
         out = []
@@ -238,6 +320,9 @@ table{{border-collapse:collapse;width:100%;font-size:14px}}th,td{{text-align:lef
 .filters{{position:sticky;top:0;background:var(--bg);padding:10px 0;display:flex;gap:8px;flex-wrap:wrap;z-index:2;border-bottom:1px solid var(--line)}}
 .filters input,.filters select{{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)}}.filters input{{flex:1;min-width:200px}}
 .country h3{{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:28px 0 8px}}.cstat{{margin-left:auto;font-weight:400;font-size:14px;color:var(--mut)}}
+.ftabs{{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}}.ftabs button{{font:inherit;padding:7px 12px;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--fg);cursor:pointer}}
+.ftabs button[aria-selected=true]{{background:var(--fg);color:var(--bg)}}.ftabs button small{{color:inherit;opacity:.7}}
+.usl{{list-style:none;padding:0;columns:2 320px}}.usl li{{padding:4px 0;break-inside:avoid}}details{{margin:14px 0}}summary{{cursor:pointer;font-weight:600}}
 footer{{margin-top:48px;color:var(--mut);font-size:13px}}
 </style></head><body><main>
 <p><a href="/">mxmap.it</a> · Osservatorio Nazionale Sovranità Digitale</p>
@@ -261,6 +346,10 @@ jurisdictional exposure as a <b>resilience and policy</b> question, not as a jud
 {kpi["min_classified_for_ranking"]} classified bodies; Russia and Belarus are listed in the annex, outside the ranking.</p>
 <div class="ranks"><div><h3>Highest US exposure</h3><ol>{rank_rows(worst, "us_exposure_pct", "--us")}</ol></div>
 <div><h3>Best positioned (national jurisdiction)</h3><ol>{rank_rows(best, "national_pct", "--nat")}</ol></div></div>
+<h2>Drill-down by sector</h2>
+<p class="lead">The same measurement, split by family of security body: each sector has its own
+country rankings and the list of its bodies whose mail runs on a US provider.</p>
+{family_sections()}
 <h2>By type of body</h2><div class="tw"><table><thead><tr><th>Type</th><th>Bodies</th><th>National</th><th>US</th><th>Other European</th><th>Unknown</th><th>US share of classified</th></tr></thead>
 <tbody>{type_table()}</tbody></table></div>
 <h2>Directory by country</h2>
@@ -288,6 +377,9 @@ Inferred domains are lower-confidence and are flagged so readers can weigh them.
 <p>Data: <a href="kpi.json">kpi.json</a> · CC BY-SA 4.0 · generated {kpi["generated_at"]} · flags: flag-icons (MIT).</p></footer>
 </main>
 <script>
+document.querySelectorAll('.ftabs button').forEach(b=>b.addEventListener('click',()=>{{
+document.querySelectorAll('.ftabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
+document.querySelectorAll('.fpanel').forEach(p=>p.hidden=p.dataset.fam!==b.dataset.fam);}}));
 const q=document.getElementById('q'),ft=document.getElementById('ft'),fb=document.getElementById('fb');
 function f(){{const s=q.value.trim().toLowerCase(),t=ft.value,b=fb.value;
 document.querySelectorAll('.country').forEach(sec=>{{let any=0;sec.querySelectorAll('tbody tr').forEach(tr=>{{
