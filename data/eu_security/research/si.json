@@ -1,0 +1,164 @@
+{
+  "country": "SI",
+  "country_name_en": "Slovenia",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "si-policija",
+      "type": "police",
+      "name_native": "Policija",
+      "name_en": "Slovenian National Police",
+      "acronym": "",
+      "website": "https://www.policija.si",
+      "mail_domains": ["policija.si"],
+      "evidence": [
+        {
+          "domain": "policija.si",
+          "url": "https://www.policija.si/eng/736-contacts",
+          "kind": "contact_page",
+          "note": "General mailbox gp.policija@policija.si listed on official contacts page; also on General Police Directorate page"
+        }
+      ],
+      "confidence": "high",
+      "notes": "National police under the Ministry of the Interior; also responsible for border control (no separate border guard in Slovenia)."
+    },
+    {
+      "id": "si-sova",
+      "type": "intelligence",
+      "name_native": "Slovenska obveščevalno-varnostna agencija",
+      "name_en": "Slovenian Intelligence and Security Agency",
+      "acronym": "SOVA",
+      "website": "https://www.gov.si/drzavni-organi/vladne-sluzbe/slovenska-obvescevalno-varnostna-agencija/",
+      "mail_domains": ["gov.si"],
+      "evidence": [
+        {
+          "domain": "gov.si",
+          "url": "https://www.gov.si/drzavni-organi/vladne-sluzbe/slovenska-obvescevalno-varnostna-agencija/o-sovi/obvestilo-slovenske-obvescevalno-varnostni-agencije-o-izvajanju-videonadzora/",
+          "kind": "other_official",
+          "note": "gp.sova@gov.si given in SOVA's official video-surveillance/data-rights notice; same address in public-information catalogue (gov.si/zbirke/katalogi-informacij-javnega-znacaja/?org=38, JS-obfuscated as is.vog@avos.pg) and official job notices"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Civilian intelligence and security agency, government service reporting to the Prime Minister. Seat: Stegne 23c, Ljubljana."
+    },
+    {
+      "id": "si-ovs",
+      "type": "intelligence",
+      "name_native": "Obveščevalno varnostna služba Ministrstva za obrambo",
+      "name_en": "Intelligence and Security Service of the Ministry of Defence",
+      "acronym": "OVS",
+      "website": "https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-obrambo/o-ministrstvu/obvescevalno-varnostna-sluzba/",
+      "mail_domains": ["mors.si"],
+      "evidence": [
+        {
+          "domain": "mors.si",
+          "url": "https://www.gov.si/assets/ministrstva/MO/Gradiva/25d783c8f1/Vloga-za-izkaz-interesa-za-delo-v-OVS.pdf",
+          "kind": "official_pdf",
+          "note": "gp.ovs@mors.si given as submission address in OVS's official application form hosted on gov.si"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Military intelligence and security service; directorate within the Ministry of Defence, uses the ministry's mors.si mail domain with its own gp.ovs mailbox."
+    },
+    {
+      "id": "si-mnz",
+      "type": "interior_ministry",
+      "name_native": "Ministrstvo za notranje zadeve",
+      "name_en": "Ministry of the Interior",
+      "acronym": "MNZ",
+      "website": "https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-notranje-zadeve/",
+      "mail_domains": ["gov.si"],
+      "evidence": [
+        {
+          "domain": "gov.si",
+          "url": "https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-notranje-zadeve/",
+          "kind": "contact_page",
+          "note": "Official gov.si ministry page lists general mailbox gp.mnzju@gov.si (JS-obfuscated on page as is.vog@ujznm.pg); ministry currently styled 'Ministrstvo za notranje zadeve in javno upravo' (interior + public administration). Historical pattern gp.mnz@gov.si"
+        }
+      ],
+      "confidence": "high",
+      "notes": "As of 2026 the gov.si page shows the ministry covering interior and public administration; general mailbox gp.mnzju@gov.si."
+    },
+    {
+      "id": "si-mo",
+      "type": "defence_ministry",
+      "name_native": "Ministrstvo za obrambo",
+      "name_en": "Ministry of Defence",
+      "acronym": "MO / MORS",
+      "website": "https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-obrambo/",
+      "mail_domains": ["mors.si"],
+      "evidence": [
+        {
+          "domain": "mors.si",
+          "url": "https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-obrambo/",
+          "kind": "contact_page",
+          "note": "Official gov.si ministry page lists general mailbox glavna.pisarna@mors.si (JS-obfuscated on page as is.srom@anrasip.anvalg)"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Uses its own mors.si domain rather than gov.si, unlike most Slovenian ministries. Slovenian Armed Forces fall under the ministry and also use mors.si."
+    },
+    {
+      "id": "si-ursiv",
+      "type": "cybersecurity",
+      "name_native": "Urad Vlade Republike Slovenije za informacijsko varnost",
+      "name_en": "Government Information Security Office of the Republic of Slovenia",
+      "acronym": "URSIV",
+      "website": "https://www.gov.si/drzavni-organi/vladne-sluzbe/urad-vlade-za-informacijsko-varnost/",
+      "mail_domains": ["gov.si"],
+      "evidence": [
+        {
+          "domain": "gov.si",
+          "url": "https://www.gov.si/assets/vladne-sluzbe/URSIV/POVEZANI-SUBJEKTI/Priporocila-povezani-subjekti.docx",
+          "kind": "official_pdf",
+          "note": "Office letterhead in official URSIV documents gives E: gp.uiv@gov.si; same address in official guidance naming URSIV as national notification authority"
+        }
+      ],
+      "confidence": "high",
+      "notes": "National competent authority for information/cyber security (NIS/NIS2). Seat: Ulica gledališča BTC 2, Ljubljana. Mailbox prefix is gp.uiv (not gp.ursiv)."
+    },
+    {
+      "id": "si-sicert",
+      "type": "cybersecurity",
+      "name_native": "SI-CERT (Slovenski center za posredovanje pri omrežnih incidentih)",
+      "name_en": "SI-CERT, Slovenian Computer Emergency Response Team",
+      "acronym": "SI-CERT",
+      "website": "https://www.cert.si",
+      "mail_domains": ["cert.si"],
+      "evidence": [
+        {
+          "domain": "cert.si",
+          "url": "https://www.cert.si/o-nas/",
+          "kind": "contact_page",
+          "note": "cert@cert.si (incident reports), info@cert.si (general), press@cert.si (press) on official about/contact page"
+        }
+      ],
+      "confidence": "high",
+      "notes": "National CSIRT, operated by Arnes (Academic and Research Network of Slovenia); distinct entity from URSIV. Uses its own cert.si domain, not arnes.si, for published contacts."
+    },
+    {
+      "id": "si-uvtp",
+      "type": "other_natsec",
+      "name_native": "Urad Vlade Republike Slovenije za varovanje tajnih podatkov",
+      "name_en": "Government Office for the Protection of Classified Information (National Security Authority)",
+      "acronym": "UVTP",
+      "website": "https://www.gov.si/drzavni-organi/vladne-sluzbe/urad-vlade-za-varovanje-tajnih-podatkov/",
+      "mail_domains": ["gov.si"],
+      "evidence": [
+        {
+          "domain": "gov.si",
+          "url": "https://www.eppo.europa.eu/sites/default/files/2021-12/Consolidated_EUCI_Rules_as_amended_by_College_Decision_2021.101.pdf",
+          "kind": "other_official",
+          "note": "gp.uvtp@gov.si listed as Slovenian NSA contact in EPPO consolidated EUCI rules (official EU document); not re-confirmed on current gov.si contact page"
+        }
+      ],
+      "confidence": "medium",
+      "notes": "Slovenia's National Security Authority for classified information (national, EU and NATO). gov.si domain consistent with all other Slovenian government services; exact mailbox confirmed only via EU official document."
+    }
+  ],
+  "gaps": [
+    "border_guard: no separate border guard agency in Slovenia; border control is a task of the Policija (see si-policija)",
+    "gendarmerie: no gendarmerie-type force exists in Slovenia"
+  ]
+}
