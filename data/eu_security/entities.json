@@ -1248,6 +1248,222 @@
   "group": "eu27"
  },
  {
+  "id": "by-mvd",
+  "type": "interior_ministry",
+  "name_native": "Министерство внутренних дел Республики Беларусь",
+  "name_en": "Ministry of Internal Affairs of the Republic of Belarus",
+  "acronym": "MVD",
+  "website": "https://www.mvd.gov.by",
+  "mail_domains": [
+   "mvd.gov.by"
+  ],
+  "evidence": [
+   {
+    "domain": "mvd.gov.by",
+    "url": "https://www.mvd.gov.by/ru/page/kontakty",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; site (and archive copies) publish no plaintext email — electronic appeals go via the obrashcheniya.gov.by portal"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Also acts as the national police: the militia (police) is the MVD's own force (see by-militia).",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "by-militia",
+  "type": "police",
+  "name_native": "Милиция Республики Беларусь (в составе МВД)",
+  "name_en": "Militia of the Republic of Belarus (police, part of the MVD)",
+  "acronym": "",
+  "website": "https://www.mvd.gov.by",
+  "mail_domains": [
+   "mvd.gov.by"
+  ],
+  "evidence": [
+   {
+    "domain": "mvd.gov.by",
+    "url": "https://www.mvd.gov.by",
+    "kind": "assumed_from_website",
+    "note": "the militia has no separate agency or domain; uses MVD infrastructure (assumed)"
+   }
+  ],
+  "confidence": "low",
+  "notes": "No standalone national police agency outside the MVD.",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "by-vv-mvd",
+  "type": "gendarmerie",
+  "name_native": "Внутренние войска МВД Республики Беларусь",
+  "name_en": "Internal Troops of the MVD of the Republic of Belarus",
+  "acronym": "VV MVD",
+  "website": "https://www.mvd.gov.by",
+  "mail_domains": [
+   "mvd.gov.by"
+  ],
+  "evidence": [
+   {
+    "domain": "mvd.gov.by",
+    "url": "https://www.mvd.gov.by",
+    "kind": "assumed_from_website",
+    "note": "internal troops are an MVD structure without a separate registrable domain (assumed)"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Gendarmerie-type force subordinated to the MVD.",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "by-gpk",
+  "type": "border_guard",
+  "name_native": "Государственный пограничный комитет Республики Беларусь",
+  "name_en": "State Border Committee of the Republic of Belarus",
+  "acronym": "GPK",
+  "website": "https://gpk.gov.by",
+  "mail_domains": [
+   "gpk.gov.by"
+  ],
+  "evidence": [
+   {
+    "domain": "gpk.gov.by",
+    "url": "https://gpk.gov.by/contacts/",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; contacts page not retrievable in plaintext from outside Belarus (archive copy is JS-rendered)"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "by-kgb",
+  "type": "intelligence",
+  "name_native": "Комитет государственной безопасности Республики Беларусь",
+  "name_en": "State Security Committee of the Republic of Belarus",
+  "acronym": "KGB",
+  "website": "http://www.kgb.by",
+  "mail_domains": [
+   "kgb.by"
+  ],
+  "evidence": [
+   {
+    "domain": "kgb.by",
+    "url": "http://www.kgb.by",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; site geo-blocked, archive copy publishes no plaintext email"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Komitet gosudarstvennoi bezopasnosti — combined domestic security and intelligence.",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "by-mod",
+  "type": "defence_ministry",
+  "name_native": "Министерство обороны Республики Беларусь",
+  "name_en": "Ministry of Defence of the Republic of Belarus",
+  "acronym": "MO RB",
+  "website": "https://www.mil.by",
+  "mail_domains": [
+   "mod.mil.by"
+  ],
+  "evidence": [
+   {
+    "domain": "mod.mil.by",
+    "url": "https://www.mil.by/ru/contacts/",
+    "kind": "contact_page",
+    "note": "modmail@mod.mil.by (ministry mailbox), upzojv@mod.mil.by, voenarhiv@mod.mil.by on official contacts page"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Mail is on the mod.mil.by subdomain of mil.by.",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "by-oac",
+  "type": "cybersecurity",
+  "name_native": "Оперативно-аналитический центр при Президенте Республики Беларусь",
+  "name_en": "Operations and Analysis Center under the President of the Republic of Belarus",
+  "acronym": "OAC",
+  "website": "https://oac.gov.by",
+  "mail_domains": [
+   "oac.gov.by"
+  ],
+  "evidence": [
+   {
+    "domain": "oac.gov.by",
+    "url": "https://oac.gov.by/contacts",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; contacts page not retrievable in plaintext from outside Belarus"
+   }
+  ],
+  "confidence": "low",
+  "notes": "National information-security/cryptography authority; also a SIGINT/surveillance body. Oversees the national CERT (cert.by).",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "by-cert",
+  "type": "cybersecurity",
+  "name_native": "CERT.BY — Национальный центр реагирования на компьютерные инциденты",
+  "name_en": "National Computer Emergency Response Team of Belarus (CERT.BY)",
+  "acronym": "CERT.BY",
+  "website": "https://cert.by",
+  "mail_domains": [
+   "cert.by"
+  ],
+  "evidence": [
+   {
+    "domain": "cert.by",
+    "url": "https://cert.by",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; site serves only a JS verification page to foreign IPs, historical contact support@cert.by not re-verifiable"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Operated under the OAC.",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "by-sovbez",
+  "type": "other_natsec",
+  "name_native": "Государственный секретариат Совета Безопасности Республики Беларусь",
+  "name_en": "State Secretariat of the Security Council of the Republic of Belarus",
+  "acronym": "",
+  "website": "https://www.sovbez.gov.by",
+  "mail_domains": [
+   "sovbez.gov.by"
+  ],
+  "evidence": [
+   {
+    "domain": "sovbez.gov.by",
+    "url": "https://www.sovbez.gov.by",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; no plaintext email retrievable"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned"
+ },
+ {
   "id": "ch-fedpol",
   "type": "police",
   "name_native": "Bundesamt für Polizei",
@@ -2233,6 +2449,181 @@
   "notes": "National civilian cyber/societal-security agency under the Ministeriet for Samfundssikkerhed og Beredskab; cfcs.dk (Centre for Cyber Security, formerly within FE) redirects here, indicating the civilian cybersecurity remit moved to SAMSIK.",
   "country": "DK",
   "country_name_en": "Denmark",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-ppa",
+  "type": "police",
+  "name_native": "Politsei- ja Piirivalveamet",
+  "name_en": "Police and Border Guard Board",
+  "acronym": "PPA",
+  "website": "https://www.politsei.ee",
+  "mail_domains": [
+   "politsei.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "politsei.ee",
+    "url": "https://www.politsei.ee/et/kontaktid",
+    "kind": "assumed_from_website",
+    "note": "ppa@politsei.ee is the widely used general address, but the PPA site renders emails client-side (not verifiable in fetched HTML); domain matches website registrable domain"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Single agency covering both police and border guard (also citizenship/migration); covers the border_guard category too.",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-kapo",
+  "type": "intelligence",
+  "name_native": "Kaitsepolitseiamet",
+  "name_en": "Estonian Internal Security Service",
+  "acronym": "KAPO / ISS",
+  "website": "https://kapo.ee",
+  "mail_domains": [
+   "kapo.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "kapo.ee",
+    "url": "https://kapo.ee",
+    "kind": "assumed_from_website",
+    "note": "kapo@kapo.ee is the published general address (site blocks automated fetch with 403); assumed from website registrable domain"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Domestic security/counter-intelligence service under the Ministry of the Interior.",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-valisluureamet",
+  "type": "intelligence",
+  "name_native": "Välisluureamet",
+  "name_en": "Estonian Foreign Intelligence Service",
+  "acronym": "VLA / EFIS",
+  "website": "https://www.valisluureamet.ee",
+  "mail_domains": [
+   "valisluureamet.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "valisluureamet.ee",
+    "url": "https://www.valisluureamet.ee/",
+    "kind": "contact_page",
+    "note": "info@valisluureamet.ee, press@valisluureamet.ee (site footer)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Foreign intelligence and SIGINT, under the Ministry of Defence.",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-siseministeerium",
+  "type": "interior_ministry",
+  "name_native": "Siseministeerium",
+  "name_en": "Ministry of the Interior",
+  "acronym": "SiM",
+  "website": "https://www.siseministeerium.ee",
+  "mail_domains": [
+   "siseministeerium.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "siseministeerium.ee",
+    "url": "https://www.siseministeerium.ee/kontakt",
+    "kind": "contact_page",
+    "note": "Cloudflare-protected addresses on the contact page decode to firstname.lastname@siseministeerium.ee and info@siseministeerium.ee"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Responsible for PPA and KAPO.",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-kaitseministeerium",
+  "type": "defence_ministry",
+  "name_native": "Kaitseministeerium",
+  "name_en": "Ministry of Defence",
+  "acronym": "KaM",
+  "website": "https://kaitseministeerium.ee",
+  "mail_domains": [
+   "kaitseministeerium.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "kaitseministeerium.ee",
+    "url": "https://kaitseministeerium.ee/",
+    "kind": "contact_page",
+    "note": "info@kaitseministeerium.ee (official letters), press@kaitseministeerium.ee"
+   }
+  ],
+  "confidence": "high",
+  "notes": "",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-kaitsevagi",
+  "type": "other_natsec",
+  "name_native": "Kaitsevägi",
+  "name_en": "Estonian Defence Forces",
+  "acronym": "EDF",
+  "website": "https://mil.ee",
+  "mail_domains": [
+   "mil.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "mil.ee",
+    "url": "https://mil.ee/kontaktid/",
+    "kind": "contact_page",
+    "note": "mil@mil.ee (General Staff)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Includes the military intelligence centre (Luurekeskus) within the Defence Forces.",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27"
+ },
+ {
+  "id": "ee-ria",
+  "type": "cybersecurity",
+  "name_native": "Riigi Infosüsteemi Amet",
+  "name_en": "Estonian Information System Authority",
+  "acronym": "RIA",
+  "website": "https://www.ria.ee",
+  "mail_domains": [
+   "ria.ee",
+   "cert.ee"
+  ],
+  "evidence": [
+   {
+    "domain": "ria.ee",
+    "url": "https://www.ria.ee/",
+    "kind": "contact_page",
+    "note": "ria@ria.ee (site footer)"
+   },
+   {
+    "domain": "cert.ee",
+    "url": "https://www.ria.ee/kuberturvalisus/kuberintsidentide-kasitlemine-cert-ee/kuberruumi-seire-ja-intsidentide-tokestamine",
+    "kind": "contact_page",
+    "note": "cert@cert.ee (CERT-EE contacts; cert.ee redirects to ria.ee)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "National cybersecurity authority; CERT-EE is a department of RIA with its own cert.ee mail domain.",
+  "country": "EE",
+  "country_name_en": "Estonia",
   "group": "eu27"
  },
  {
@@ -8075,6 +8466,253 @@
   "group": "candidate"
  },
  {
+  "id": "ru-mvd",
+  "type": "interior_ministry",
+  "name_native": "Министерство внутренних дел Российской Федерации",
+  "name_en": "Ministry of Internal Affairs of the Russian Federation",
+  "acronym": "MVD",
+  "website": "https://mvd.ru",
+  "mail_domains": [
+   "mvd.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "mvd.ru",
+    "url": "https://mvd.ru/contacts",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain (also мвд.рф); live site and archive copies publish no plaintext email, contact is via web reception form"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Ministerstvo vnutrennikh del. Geo-blocking/anti-bot prevents direct verification.",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-police",
+  "type": "police",
+  "name_native": "Полиция России (в составе МВД России)",
+  "name_en": "Police of Russia (service of the MVD)",
+  "acronym": "",
+  "website": "https://мвд.рф",
+  "mail_domains": [
+   "mvd.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "mvd.ru",
+    "url": "https://mvd.ru/contacts",
+    "kind": "assumed_from_website",
+    "note": "the national police is an MVD service and uses MVD infrastructure; domain assumed as for ru-mvd"
+   }
+  ],
+  "confidence": "low",
+  "notes": "No separate national police agency outside the MVD.",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-rosgvardiya",
+  "type": "gendarmerie",
+  "name_native": "Федеральная служба войск национальной гвардии Российской Федерации (Росгвардия)",
+  "name_en": "Federal Service of the National Guard Troops of the Russian Federation (Rosgvardiya)",
+  "acronym": "FSVNG",
+  "website": "https://rosguard.gov.ru",
+  "mail_domains": [
+   "rosgvard.gov.ru",
+   "rosguard.gov.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "rosgvard.gov.ru",
+    "url": "https://rosguard.gov.ru/ru/page/index/kontakty",
+    "kind": "contact_page",
+    "note": "dvsmi@rosgvard.gov.ru (press/media department) on official contacts page"
+   },
+   {
+    "domain": "rosguard.gov.ru",
+    "url": "https://rosguard.gov.ru/ru/page/index/kontakty",
+    "kind": "contact_page",
+    "note": "nvi@rosguard.gov.ru, pvi@rosguard.gov.ru, svki@rosguard.gov.ru (service institutes) on the same page"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Gendarmerie-type internal troops, split from MVD in 2016.",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-fsb",
+  "type": "intelligence",
+  "name_native": "Федеральная служба безопасности Российской Федерации",
+  "name_en": "Federal Security Service of the Russian Federation",
+  "acronym": "FSB",
+  "website": "http://www.fsb.ru",
+  "mail_domains": [
+   "fsb.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "fsb.ru",
+    "url": "http://www.fsb.ru/fsb/webreception.htm",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; historically published fsb@fsb.ru, current page (archive copy) offers only a web reception form"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Domestic security service. The Border Guard Service of Russia is a structural branch of the FSB (see ru-border-fsb).",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-border-fsb",
+  "type": "border_guard",
+  "name_native": "Пограничная служба ФСБ России",
+  "name_en": "Border Guard Service of the FSB of Russia",
+  "acronym": "PS FSB",
+  "website": "http://ps.fsb.ru",
+  "mail_domains": [
+   "fsb.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "fsb.ru",
+    "url": "http://ps.fsb.ru",
+    "kind": "assumed_from_website",
+    "note": "border service is an FSB directorate using fsb.ru infrastructure (ps.fsb.ru subdomain); assumed"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Not a standalone agency since 2003 — integrated into the FSB.",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-svr",
+  "type": "intelligence",
+  "name_native": "Служба внешней разведки Российской Федерации",
+  "name_en": "Foreign Intelligence Service of the Russian Federation",
+  "acronym": "SVR",
+  "website": "http://svr.gov.ru",
+  "mail_domains": [
+   "svr.gov.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "svr.gov.ru",
+    "url": "http://svr.gov.ru/kontakt.htm",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; contact page (archive copy) publishes phone/postal contacts, email not retrievable"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Foreign intelligence. GRU (military intelligence) has no public website/domain and is excluded per task scope.",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-mod",
+  "type": "defence_ministry",
+  "name_native": "Министерство обороны Российской Федерации",
+  "name_en": "Ministry of Defence of the Russian Federation",
+  "acronym": "MO RF",
+  "website": "https://mil.ru",
+  "mail_domains": [
+   "mil.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "mil.ru",
+    "url": "https://mil.ru/contacts.htm",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; site geo-blocked, archive copy publishes no plaintext email (department addresses historically on @mil.ru)"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-nktski",
+  "type": "cybersecurity",
+  "name_native": "Национальный координационный центр по компьютерным инцидентам",
+  "name_en": "National Coordination Center for Computer Incidents",
+  "acronym": "NKTsKI",
+  "website": "https://cert.gov.ru",
+  "mail_domains": [
+   "cert.gov.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "cert.gov.ru",
+    "url": "https://www.cert.gov.ru/",
+    "kind": "contact_page",
+    "note": "incident@cert.gov.ru, info@cert.gov.ru, threats@cert.gov.ru on official homepage (verified via Wayback snapshot 2026-10-20; live site geo-blocked)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "National CERT function (GosSOPKA coordination), created by and subordinate to the FSB.",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-fstec",
+  "type": "cybersecurity",
+  "name_native": "Федеральная служба по техническому и экспортному контролю",
+  "name_en": "Federal Service for Technical and Export Control",
+  "acronym": "FSTEC",
+  "website": "https://fstec.ru",
+  "mail_domains": [
+   "fstec.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "fstec.ru",
+    "url": "https://fstec.ru/kontakty",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; contact page not retrievable from outside Russia"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Information-security regulator (critical infrastructure protection requirements) under the MoD.",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
+  "id": "ru-scrf",
+  "type": "other_natsec",
+  "name_native": "Аппарат Совета Безопасности Российской Федерации",
+  "name_en": "Office of the Security Council of the Russian Federation",
+  "acronym": "SB RF",
+  "website": "http://www.scrf.gov.ru",
+  "mail_domains": [
+   "scrf.gov.ru"
+  ],
+  "evidence": [
+   {
+    "domain": "scrf.gov.ru",
+    "url": "http://www.scrf.gov.ru/about/contacts/",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; no plaintext email retrievable (site geo-blocked, archive copy form-only)"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned"
+ },
+ {
   "id": "se-polisen",
   "type": "police",
   "name_native": "Polismyndigheten",
@@ -8804,6 +9442,253 @@
   "country": "SM",
   "country_name_en": "San Marino",
   "group": "microstate"
+ },
+ {
+  "id": "tr-egm",
+  "type": "police",
+  "name_native": "Emniyet Genel Müdürlüğü",
+  "name_en": "General Directorate of Security (Turkish National Police)",
+  "acronym": "EGM",
+  "website": "https://www.egm.gov.tr",
+  "mail_domains": [
+   "egm.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "egm.gov.tr",
+    "url": "https://www.egm.gov.tr",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; contact page returns HTTP 500 / publishes no plaintext email"
+   }
+  ],
+  "confidence": "low",
+  "notes": "National civilian police under the Ministry of Interior.",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-jandarma",
+  "type": "gendarmerie",
+  "name_native": "Jandarma Genel Komutanlığı",
+  "name_en": "Gendarmerie General Command",
+  "acronym": "JGK",
+  "website": "https://www.jandarma.gov.tr",
+  "mail_domains": [
+   "jandarma.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "jandarma.gov.tr",
+    "url": "https://www.jandarma.gov.tr",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; no plaintext email published"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Gendarmerie under the Ministry of Interior.",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-sahil-guvenlik",
+  "type": "border_guard",
+  "name_native": "Sahil Güvenlik Komutanlığı",
+  "name_en": "Coast Guard Command",
+  "acronym": "SGK",
+  "website": "https://www.sg.gov.tr",
+  "mail_domains": [
+   "sg.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "sg.gov.tr",
+    "url": "https://www.sg.gov.tr",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; no plaintext email published"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Maritime border security under the Ministry of Interior; land border security is handled by Jandarma and army units.",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-mit",
+  "type": "intelligence",
+  "name_native": "Millî İstihbarat Teşkilâtı",
+  "name_en": "National Intelligence Organization",
+  "acronym": "MİT",
+  "website": "https://www.mit.gov.tr",
+  "mail_domains": [
+   "mit.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "mit.gov.tr",
+    "url": "https://www.mit.gov.tr",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; no email published on site"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Combined domestic and foreign intelligence, reports to the Presidency.",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-icisleri",
+  "type": "interior_ministry",
+  "name_native": "Türkiye Cumhuriyeti İçişleri Bakanlığı",
+  "name_en": "Ministry of Interior of the Republic of Turkey",
+  "acronym": "",
+  "website": "https://www.icisleri.gov.tr",
+  "mail_domains": [
+   "icisleri.gov.tr",
+   "hs01.kep.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "hs01.kep.tr",
+    "url": "https://www.icisleri.gov.tr/iletisim",
+    "kind": "contact_page",
+    "note": "icisleribakanligi@hs01.kep.tr (official KEP registered-email address) on the ministry's contact page"
+   },
+   {
+    "domain": "icisleri.gov.tr",
+    "url": "https://www.icisleri.gov.tr/iletisim",
+    "kind": "assumed_from_website",
+    "note": "ordinary staff mail assumed on the website domain; only the KEP address is published in plaintext"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Turkish ministries publish KEP (Kayıtlı Elektronik Posta) addresses on *.kep.tr for legal correspondence.",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-msb",
+  "type": "defence_ministry",
+  "name_native": "Türkiye Cumhuriyeti Millî Savunma Bakanlığı",
+  "name_en": "Ministry of National Defence of the Republic of Turkey",
+  "acronym": "MSB",
+  "website": "https://www.msb.gov.tr",
+  "mail_domains": [
+   "msb.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "msb.gov.tr",
+    "url": "https://www.msb.gov.tr",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; no plaintext email published"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-usom",
+  "type": "cybersecurity",
+  "name_native": "Ulusal Siber Olaylara Müdahale Merkezi",
+  "name_en": "National Cyber Incident Response Center (TR-CERT)",
+  "acronym": "USOM / TR-CERT",
+  "website": "https://www.usom.gov.tr",
+  "mail_domains": [
+   "usom.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "usom.gov.tr",
+    "url": "https://www.first.org/members/teams/tr-cert",
+    "kind": "other_official",
+    "note": "trcert@usom.gov.tr in the FIRST.org member directory (team hosted by BTK)"
+   }
+  ],
+  "confidence": "high",
+  "notes": "National CERT, operated by BTK.",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-btk",
+  "type": "cybersecurity",
+  "name_native": "Bilgi Teknolojileri ve İletişim Kurumu",
+  "name_en": "Information and Communication Technologies Authority",
+  "acronym": "BTK",
+  "website": "https://www.btk.gov.tr",
+  "mail_domains": [
+   "btk.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "btk.gov.tr",
+    "url": "https://www.btk.gov.tr/iletisim",
+    "kind": "contact_page",
+    "note": "guvenlikdestek@btk.gov.tr on official contact page"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Telecom regulator; parent authority of USOM/TR-CERT and national cybersecurity operations.",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-mgk",
+  "type": "other_natsec",
+  "name_native": "Millî Güvenlik Kurulu Genel Sekreterliği",
+  "name_en": "Secretariat-General of the National Security Council",
+  "acronym": "MGK",
+  "website": "https://www.mgk.gov.tr",
+  "mail_domains": [
+   "mgk.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "mgk.gov.tr",
+    "url": "https://www.mgk.gov.tr",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain; no plaintext email published"
+   }
+  ],
+  "confidence": "low",
+  "notes": "",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
+ },
+ {
+  "id": "tr-cbddo",
+  "type": "cybersecurity",
+  "name_native": "Cumhurbaşkanlığı Dijital Dönüşüm Ofisi",
+  "name_en": "Digital Transformation Office of the Presidency",
+  "acronym": "CBDDO",
+  "website": "https://cbddo.gov.tr",
+  "mail_domains": [
+   "cbddo.gov.tr"
+  ],
+  "evidence": [
+   {
+    "domain": "cbddo.gov.tr",
+    "url": "https://cbddo.gov.tr",
+    "kind": "assumed_from_website",
+    "note": "assumed from website registrable domain"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Sets national cybersecurity strategy and information-security guidance alongside BTK/USOM. In 2025 a new Cybersecurity Directorate (Siber Güvenlik Başkanlığı) was established under the Presidency — not yet separately evidenced.",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate"
  },
  {
   "id": "ua-sbu",

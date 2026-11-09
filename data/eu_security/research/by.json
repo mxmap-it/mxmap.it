@@ -1,0 +1,138 @@
+{
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "by-mvd",
+      "type": "interior_ministry",
+      "name_native": "Министерство внутренних дел Республики Беларусь",
+      "name_en": "Ministry of Internal Affairs of the Republic of Belarus",
+      "acronym": "MVD",
+      "website": "https://www.mvd.gov.by",
+      "mail_domains": ["mvd.gov.by"],
+      "evidence": [
+        {"domain": "mvd.gov.by", "url": "https://www.mvd.gov.by/ru/page/kontakty", "kind": "assumed_from_website", "note": "assumed from website registrable domain; site (and archive copies) publish no plaintext email — electronic appeals go via the obrashcheniya.gov.by portal"}
+      ],
+      "confidence": "low",
+      "notes": "Also acts as the national police: the militia (police) is the MVD's own force (see by-militia)."
+    },
+    {
+      "id": "by-militia",
+      "type": "police",
+      "name_native": "Милиция Республики Беларусь (в составе МВД)",
+      "name_en": "Militia of the Republic of Belarus (police, part of the MVD)",
+      "acronym": "",
+      "website": "https://www.mvd.gov.by",
+      "mail_domains": ["mvd.gov.by"],
+      "evidence": [
+        {"domain": "mvd.gov.by", "url": "https://www.mvd.gov.by", "kind": "assumed_from_website", "note": "the militia has no separate agency or domain; uses MVD infrastructure (assumed)"}
+      ],
+      "confidence": "low",
+      "notes": "No standalone national police agency outside the MVD."
+    },
+    {
+      "id": "by-vv-mvd",
+      "type": "gendarmerie",
+      "name_native": "Внутренние войска МВД Республики Беларусь",
+      "name_en": "Internal Troops of the MVD of the Republic of Belarus",
+      "acronym": "VV MVD",
+      "website": "https://www.mvd.gov.by",
+      "mail_domains": ["mvd.gov.by"],
+      "evidence": [
+        {"domain": "mvd.gov.by", "url": "https://www.mvd.gov.by", "kind": "assumed_from_website", "note": "internal troops are an MVD structure without a separate registrable domain (assumed)"}
+      ],
+      "confidence": "low",
+      "notes": "Gendarmerie-type force subordinated to the MVD."
+    },
+    {
+      "id": "by-gpk",
+      "type": "border_guard",
+      "name_native": "Государственный пограничный комитет Республики Беларусь",
+      "name_en": "State Border Committee of the Republic of Belarus",
+      "acronym": "GPK",
+      "website": "https://gpk.gov.by",
+      "mail_domains": ["gpk.gov.by"],
+      "evidence": [
+        {"domain": "gpk.gov.by", "url": "https://gpk.gov.by/contacts/", "kind": "assumed_from_website", "note": "assumed from website registrable domain; contacts page not retrievable in plaintext from outside Belarus (archive copy is JS-rendered)"}
+      ],
+      "confidence": "low",
+      "notes": ""
+    },
+    {
+      "id": "by-kgb",
+      "type": "intelligence",
+      "name_native": "Комитет государственной безопасности Республики Беларусь",
+      "name_en": "State Security Committee of the Republic of Belarus",
+      "acronym": "KGB",
+      "website": "http://www.kgb.by",
+      "mail_domains": ["kgb.by"],
+      "evidence": [
+        {"domain": "kgb.by", "url": "http://www.kgb.by", "kind": "assumed_from_website", "note": "assumed from website registrable domain; site geo-blocked, archive copy publishes no plaintext email"}
+      ],
+      "confidence": "low",
+      "notes": "Komitet gosudarstvennoi bezopasnosti — combined domestic security and intelligence."
+    },
+    {
+      "id": "by-mod",
+      "type": "defence_ministry",
+      "name_native": "Министерство обороны Республики Беларусь",
+      "name_en": "Ministry of Defence of the Republic of Belarus",
+      "acronym": "MO RB",
+      "website": "https://www.mil.by",
+      "mail_domains": ["mod.mil.by"],
+      "evidence": [
+        {"domain": "mod.mil.by", "url": "https://www.mil.by/ru/contacts/", "kind": "contact_page", "note": "modmail@mod.mil.by (ministry mailbox), upzojv@mod.mil.by, voenarhiv@mod.mil.by on official contacts page"}
+      ],
+      "confidence": "high",
+      "notes": "Mail is on the mod.mil.by subdomain of mil.by."
+    },
+    {
+      "id": "by-oac",
+      "type": "cybersecurity",
+      "name_native": "Оперативно-аналитический центр при Президенте Республики Беларусь",
+      "name_en": "Operations and Analysis Center under the President of the Republic of Belarus",
+      "acronym": "OAC",
+      "website": "https://oac.gov.by",
+      "mail_domains": ["oac.gov.by"],
+      "evidence": [
+        {"domain": "oac.gov.by", "url": "https://oac.gov.by/contacts", "kind": "assumed_from_website", "note": "assumed from website registrable domain; contacts page not retrievable in plaintext from outside Belarus"}
+      ],
+      "confidence": "low",
+      "notes": "National information-security/cryptography authority; also a SIGINT/surveillance body. Oversees the national CERT (cert.by)."
+    },
+    {
+      "id": "by-cert",
+      "type": "cybersecurity",
+      "name_native": "CERT.BY — Национальный центр реагирования на компьютерные инциденты",
+      "name_en": "National Computer Emergency Response Team of Belarus (CERT.BY)",
+      "acronym": "CERT.BY",
+      "website": "https://cert.by",
+      "mail_domains": ["cert.by"],
+      "evidence": [
+        {"domain": "cert.by", "url": "https://cert.by", "kind": "assumed_from_website", "note": "assumed from website registrable domain; site serves only a JS verification page to foreign IPs, historical contact support@cert.by not re-verifiable"}
+      ],
+      "confidence": "low",
+      "notes": "Operated under the OAC."
+    },
+    {
+      "id": "by-sovbez",
+      "type": "other_natsec",
+      "name_native": "Государственный секретариат Совета Безопасности Республики Беларусь",
+      "name_en": "State Secretariat of the Security Council of the Republic of Belarus",
+      "acronym": "",
+      "website": "https://www.sovbez.gov.by",
+      "mail_domains": ["sovbez.gov.by"],
+      "evidence": [
+        {"domain": "sovbez.gov.by", "url": "https://www.sovbez.gov.by", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no plaintext email retrievable"}
+      ],
+      "confidence": "low",
+      "notes": ""
+    }
+  ],
+  "gaps": [
+    "Belarusian official sites systematically geo-block or render contacts via JS: only the Ministry of Defence mail domain (mod.mil.by) could be directly evidenced; all other domains are assumed from official websites with low confidence, as instructed for geo-blocked countries.",
+    "No separate foreign-intelligence service: foreign intelligence sits within the KGB (and GRU-type military intelligence within the MoD, no public domain)."
+  ]
+}

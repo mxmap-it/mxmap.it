@@ -1,72 +1,72 @@
 {
- "n_entities": 374,
- "n_countries": 45,
+ "n_entities": 410,
+ "n_countries": 49,
  "overall": {
-  "national": 249,
-  "us": 98,
+  "national": 281,
+  "us": 99,
   "eu_other": 3,
   "other_foreign": 0,
-  "unknown": 24
+  "unknown": 27
  },
  "overall_pct": {
-  "national": 66.6,
-  "us": 26.2,
-  "eu_other": 0.8,
+  "national": 68.5,
+  "us": 24.1,
+  "eu_other": 0.7,
   "other_foreign": 0.0,
-  "unknown": 6.4
+  "unknown": 6.6
  },
  "by_type": {
   "border_guard": {
-   "national": 20,
+   "national": 23,
    "us": 8,
    "eu_other": 1,
    "other_foreign": 0,
    "unknown": 1
   },
   "cybersecurity": {
-   "national": 35,
-   "us": 25,
+   "national": 42,
+   "us": 26,
    "eu_other": 0,
    "other_foreign": 0,
    "unknown": 1
   },
   "defence_ministry": {
-   "national": 33,
+   "national": 37,
    "us": 6,
    "eu_other": 0,
    "other_foreign": 0,
    "unknown": 2
   },
   "gendarmerie": {
-   "national": 10,
+   "national": 13,
    "us": 1,
    "eu_other": 0,
    "other_foreign": 0,
    "unknown": 2
   },
   "intelligence": {
-   "national": 67,
+   "national": 72,
    "us": 17,
    "eu_other": 0,
    "other_foreign": 0,
-   "unknown": 6
+   "unknown": 7
   },
   "interior_ministry": {
-   "national": 27,
+   "national": 31,
    "us": 15,
    "eu_other": 1,
    "other_foreign": 0,
    "unknown": 4
   },
   "other_natsec": {
-   "national": 24,
+   "national": 26,
    "us": 10,
    "eu_other": 1,
    "other_foreign": 0,
-   "unknown": 4
+   "unknown": 6
   },
   "police": {
-   "national": 33,
+   "national": 37,
    "us": 16,
    "eu_other": 0,
    "other_foreign": 0,
@@ -420,6 +420,21 @@
    "group": "candidate"
   },
   {
+   "country": "EE",
+   "n": 7,
+   "classified": 7,
+   "national": 6,
+   "us": 1,
+   "eu_other": 0,
+   "other_foreign": 0,
+   "unknown": 0,
+   "us_exposure_pct": 14.3,
+   "national_pct": 85.7,
+   "ranking_eligible": true,
+   "name": "Estonia",
+   "group": "eu27"
+  },
+  {
    "country": "PL",
    "n": 11,
    "classified": 11,
@@ -508,6 +523,51 @@
    "ranking_eligible": true,
    "name": "Netherlands",
    "group": "eu27"
+  },
+  {
+   "country": "RU",
+   "n": 10,
+   "classified": 8,
+   "national": 8,
+   "us": 0,
+   "eu_other": 0,
+   "other_foreign": 0,
+   "unknown": 2,
+   "us_exposure_pct": 0.0,
+   "national_pct": 100.0,
+   "ranking_eligible": false,
+   "name": "Russia",
+   "group": "annex_non_aligned"
+  },
+  {
+   "country": "TR",
+   "n": 10,
+   "classified": 10,
+   "national": 10,
+   "us": 0,
+   "eu_other": 0,
+   "other_foreign": 0,
+   "unknown": 0,
+   "us_exposure_pct": 0.0,
+   "national_pct": 100.0,
+   "ranking_eligible": true,
+   "name": "Turkey",
+   "group": "candidate"
+  },
+  {
+   "country": "BY",
+   "n": 9,
+   "classified": 8,
+   "national": 8,
+   "us": 0,
+   "eu_other": 0,
+   "other_foreign": 0,
+   "unknown": 1,
+   "us_exposure_pct": 0.0,
+   "national_pct": 100.0,
+   "ranking_eligible": false,
+   "name": "Belarus",
+   "group": "annex_non_aligned"
   },
   {
    "country": "DE",
@@ -751,5 +811,5 @@
   }
  ],
  "min_classified_for_ranking": 5,
- "generated_at": "2026-11-09T12:43:12Z"
+ "generated_at": "2026-11-09T12:48:03Z"
 }

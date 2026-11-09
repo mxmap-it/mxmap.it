@@ -2127,6 +2127,354 @@
   ]
  },
  {
+  "id": "by-mvd",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "interior_ministry",
+  "name_native": "Министерство внутренних дел Республики Беларусь",
+  "name_en": "Ministry of Internal Affairs of the Republic of Belarus",
+  "acronym": "MVD",
+  "website": "https://www.mvd.gov.by",
+  "confidence": "low",
+  "mail_domains": [
+   "mvd.gov.by"
+  ],
+  "primary_domain": "mvd.gov.by",
+  "provider": "local-isp",
+  "reason": "MX (mgl.g-cloud.by, ms1.g-cloud.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+  "mx": [
+   "mgl.g-cloud.by",
+   "ms1.g-cloud.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mvd.gov.by",
+    "mx": [
+     "mgl.g-cloud.by",
+     "ms1.g-cloud.by"
+    ],
+    "spf": "v=spf1 include:_spf.g-cloud.by +a +mx -all",
+    "provider": "local-isp",
+    "reason": "MX (mgl.g-cloud.by, ms1.g-cloud.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+    "mx_countries": [
+     "BY"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "by-militia",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "police",
+  "name_native": "Милиция Республики Беларусь (в составе МВД)",
+  "name_en": "Militia of the Republic of Belarus (police, part of the MVD)",
+  "acronym": "",
+  "website": "https://www.mvd.gov.by",
+  "confidence": "low",
+  "mail_domains": [
+   "mvd.gov.by"
+  ],
+  "primary_domain": "mvd.gov.by",
+  "provider": "local-isp",
+  "reason": "MX (mgl.g-cloud.by, ms1.g-cloud.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+  "mx": [
+   "mgl.g-cloud.by",
+   "ms1.g-cloud.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mvd.gov.by",
+    "mx": [
+     "mgl.g-cloud.by",
+     "ms1.g-cloud.by"
+    ],
+    "spf": "v=spf1 include:_spf.g-cloud.by +a +mx -all",
+    "provider": "local-isp",
+    "reason": "MX (mgl.g-cloud.by, ms1.g-cloud.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+    "mx_countries": [
+     "BY"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "by-vv-mvd",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "gendarmerie",
+  "name_native": "Внутренние войска МВД Республики Беларусь",
+  "name_en": "Internal Troops of the MVD of the Republic of Belarus",
+  "acronym": "VV MVD",
+  "website": "https://www.mvd.gov.by",
+  "confidence": "low",
+  "mail_domains": [
+   "mvd.gov.by"
+  ],
+  "primary_domain": "mvd.gov.by",
+  "provider": "local-isp",
+  "reason": "MX (mgl.g-cloud.by, ms1.g-cloud.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+  "mx": [
+   "mgl.g-cloud.by",
+   "ms1.g-cloud.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mvd.gov.by",
+    "mx": [
+     "mgl.g-cloud.by",
+     "ms1.g-cloud.by"
+    ],
+    "spf": "v=spf1 include:_spf.g-cloud.by +a +mx -all",
+    "provider": "local-isp",
+    "reason": "MX (mgl.g-cloud.by, ms1.g-cloud.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+    "mx_countries": [
+     "BY"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "by-gpk",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "border_guard",
+  "name_native": "Государственный пограничный комитет Республики Беларусь",
+  "name_en": "State Border Committee of the Republic of Belarus",
+  "acronym": "GPK",
+  "website": "https://gpk.gov.by",
+  "confidence": "low",
+  "mail_domains": [
+   "gpk.gov.by"
+  ],
+  "primary_domain": "gpk.gov.by",
+  "provider": "local-isp",
+  "reason": "MX (smx1.hoster.by) hosted on Local ISP (Belpak (BY))",
+  "mx": [
+   "smx1.hoster.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "gpk.gov.by",
+    "mx": [
+     "smx1.hoster.by"
+    ],
+    "spf": "v=spf1 +a +mx +a:smail1.hoster.by +ip4:91.149.157.242 ~all",
+    "provider": "local-isp",
+    "reason": "MX (smx1.hoster.by) hosted on Local ISP (Belpak (BY))",
+    "mx_countries": [
+     "BY"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "by-kgb",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "intelligence",
+  "name_native": "Комитет государственной безопасности Республики Беларусь",
+  "name_en": "State Security Committee of the Republic of Belarus",
+  "acronym": "KGB",
+  "website": "http://www.kgb.by",
+  "confidence": "low",
+  "mail_domains": [
+   "kgb.by"
+  ],
+  "primary_domain": "kgb.by",
+  "provider": "local-isp",
+  "reason": "MX (mail.kgb.by) hosted on Local ISP (Belpak (BY))",
+  "mx": [
+   "mail.kgb.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "kgb.by",
+    "mx": [
+     "mail.kgb.by"
+    ],
+    "spf": "v=spf1 mx ip4:86.57.224.228 ~all",
+    "provider": "local-isp",
+    "reason": "MX (mail.kgb.by) hosted on Local ISP (Belpak (BY))",
+    "mx_countries": [
+     "BY"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "by-mod",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "defence_ministry",
+  "name_native": "Министерство обороны Республики Беларусь",
+  "name_en": "Ministry of Defence of the Republic of Belarus",
+  "acronym": "MO RB",
+  "website": "https://www.mil.by",
+  "confidence": "high",
+  "mail_domains": [
+   "mod.mil.by"
+  ],
+  "primary_domain": "mod.mil.by",
+  "provider": "local-isp",
+  "reason": "MX (mail.mod.mil.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+  "mx": [
+   "mail.mod.mil.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mod.mil.by",
+    "mx": [
+     "mail.mod.mil.by"
+    ],
+    "spf": "v=spf1 ip4:195.50.20.38  -all",
+    "provider": "local-isp",
+    "reason": "MX (mail.mod.mil.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+    "mx_countries": [
+     "BY"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "by-oac",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "cybersecurity",
+  "name_native": "Оперативно-аналитический центр при Президенте Республики Беларусь",
+  "name_en": "Operations and Analysis Center under the President of the Republic of Belarus",
+  "acronym": "OAC",
+  "website": "https://oac.gov.by",
+  "confidence": "low",
+  "mail_domains": [
+   "oac.gov.by"
+  ],
+  "primary_domain": "oac.gov.by",
+  "provider": "local-isp",
+  "reason": "MX (mail.oac.gov.by) hosted on Local ISP (Belpak (BY))",
+  "mx": [
+   "mail.oac.gov.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "oac.gov.by",
+    "mx": [
+     "mail.oac.gov.by"
+    ],
+    "spf": "v=spf1  +mx  -all",
+    "provider": "local-isp",
+    "reason": "MX (mail.oac.gov.by) hosted on Local ISP (Belpak (BY))",
+    "mx_countries": [
+     "BY"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "by-cert",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "cybersecurity",
+  "name_native": "CERT.BY — Национальный центр реагирования на компьютерные инциденты",
+  "name_en": "National Computer Emergency Response Team of Belarus (CERT.BY)",
+  "acronym": "CERT.BY",
+  "website": "https://cert.by",
+  "confidence": "low",
+  "mail_domains": [
+   "cert.by"
+  ],
+  "primary_domain": "cert.by",
+  "provider": "local-isp",
+  "reason": "MX (mail.cert.by) hosted on Local ISP (Belpak (BY))",
+  "mx": [
+   "mail.cert.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "cert.by",
+    "mx": [
+     "mail.cert.by"
+    ],
+    "spf": "v=spf1  +a  +mx  -all",
+    "provider": "local-isp",
+    "reason": "MX (mail.cert.by) hosted on Local ISP (Belpak (BY))",
+    "mx_countries": [
+     "BY"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "by-sovbez",
+  "country": "BY",
+  "country_name_en": "Belarus",
+  "group": "annex_non_aligned",
+  "type": "other_natsec",
+  "name_native": "Государственный секретариат Совета Безопасности Республики Беларусь",
+  "name_en": "State Secretariat of the Security Council of the Republic of Belarus",
+  "acronym": "",
+  "website": "https://www.sovbez.gov.by",
+  "confidence": "low",
+  "mail_domains": [
+   "sovbez.gov.by"
+  ],
+  "primary_domain": "sovbez.gov.by",
+  "provider": "unknown",
+  "reason": "No MX records found",
+  "mx": [],
+  "mx_countries": [],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "sovbez.gov.by",
+    "mx": [],
+    "spf": "",
+    "provider": "unknown",
+    "reason": "No MX records found"
+   }
+  ]
+ },
+ {
   "id": "ch-fedpol",
   "country": "CH",
   "country_name_en": "Switzerland",
@@ -3881,6 +4229,308 @@
     "dkim": {
      "google": "google-workspace-dkim-txt"
     }
+   }
+  ]
+ },
+ {
+  "id": "ee-ppa",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27",
+  "type": "police",
+  "name_native": "Politsei- ja Piirivalveamet",
+  "name_en": "Police and Border Guard Board",
+  "acronym": "PPA",
+  "website": "https://www.politsei.ee",
+  "confidence": "medium",
+  "mail_domains": [
+   "politsei.ee"
+  ],
+  "primary_domain": "politsei.ee",
+  "provider": "independent",
+  "reason": "MX (mx1.smit.ee, mx2.smit.ee) is self-hosted",
+  "mx": [
+   "mx1.smit.ee",
+   "mx2.smit.ee",
+   "mx3.smit.ee"
+  ],
+  "mx_countries": [
+   "EE"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "politsei.ee",
+    "mx": [
+     "mx1.smit.ee",
+     "mx2.smit.ee",
+     "mx3.smit.ee"
+    ],
+    "spf": "v=spf1 include:spf.smit.ee -all",
+    "provider": "independent",
+    "reason": "MX (mx1.smit.ee, mx2.smit.ee) is self-hosted",
+    "mx_countries": [
+     "EE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ee-kapo",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27",
+  "type": "intelligence",
+  "name_native": "Kaitsepolitseiamet",
+  "name_en": "Estonian Internal Security Service",
+  "acronym": "KAPO / ISS",
+  "website": "https://kapo.ee",
+  "confidence": "medium",
+  "mail_domains": [
+   "kapo.ee"
+  ],
+  "primary_domain": "kapo.ee",
+  "provider": "independent",
+  "reason": "MX (mx1.kapo.ee) is self-hosted",
+  "mx": [
+   "mx1.kapo.ee"
+  ],
+  "mx_countries": [
+   "EE"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "kapo.ee",
+    "mx": [
+     "mx1.kapo.ee"
+    ],
+    "spf": "v=spf1 ip4:213.184.57.102/32 -all",
+    "provider": "independent",
+    "reason": "MX (mx1.kapo.ee) is self-hosted",
+    "mx_countries": [
+     "EE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ee-valisluureamet",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27",
+  "type": "intelligence",
+  "name_native": "Välisluureamet",
+  "name_en": "Estonian Foreign Intelligence Service",
+  "acronym": "VLA / EFIS",
+  "website": "https://www.valisluureamet.ee",
+  "confidence": "high",
+  "mail_domains": [
+   "valisluureamet.ee"
+  ],
+  "primary_domain": "valisluureamet.ee",
+  "provider": "independent",
+  "reason": "MX (m87.valisluureamet.ee) is self-hosted",
+  "mx": [
+   "m87.valisluureamet.ee"
+  ],
+  "mx_countries": [
+   "EE"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "valisluureamet.ee",
+    "mx": [
+     "m87.valisluureamet.ee"
+    ],
+    "spf": "v=spf1 mx mx:m87.valisluureamet.ee ip4:195.80.118.87 ip4:195.80.118.78 ip4:195.80.118.79 ip4:171.22.246.188 ip4:171.22.246.131 -all",
+    "provider": "independent",
+    "reason": "MX (m87.valisluureamet.ee) is self-hosted",
+    "mx_countries": [
+     "EE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ee-siseministeerium",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27",
+  "type": "interior_ministry",
+  "name_native": "Siseministeerium",
+  "name_en": "Ministry of the Interior",
+  "acronym": "SiM",
+  "website": "https://www.siseministeerium.ee",
+  "confidence": "high",
+  "mail_domains": [
+   "siseministeerium.ee"
+  ],
+  "primary_domain": "siseministeerium.ee",
+  "provider": "independent",
+  "reason": "MX (mx1.smit.ee, mx2.smit.ee) is self-hosted",
+  "mx": [
+   "mx1.smit.ee",
+   "mx2.smit.ee",
+   "mx3.smit.ee"
+  ],
+  "mx_countries": [
+   "EE"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "siseministeerium.ee",
+    "mx": [
+     "mx1.smit.ee",
+     "mx2.smit.ee",
+     "mx3.smit.ee"
+    ],
+    "spf": "v=spf1 include:spf.smit.ee ip4:213.180.8.75 -all",
+    "provider": "independent",
+    "reason": "MX (mx1.smit.ee, mx2.smit.ee) is self-hosted",
+    "mx_countries": [
+     "EE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ee-kaitseministeerium",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27",
+  "type": "defence_ministry",
+  "name_native": "Kaitseministeerium",
+  "name_en": "Ministry of Defence",
+  "acronym": "KaM",
+  "website": "https://kaitseministeerium.ee",
+  "confidence": "high",
+  "mail_domains": [
+   "kaitseministeerium.ee"
+  ],
+  "primary_domain": "kaitseministeerium.ee",
+  "provider": "independent",
+  "reason": "MX (fmail.mil.ee) is self-hosted",
+  "mx": [
+   "fmail.mil.ee"
+  ],
+  "mx_countries": [
+   "EE"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "kaitseministeerium.ee",
+    "mx": [
+     "fmail.mil.ee"
+    ],
+    "spf": "v=spf1 a mx ip4:188.0.48.32/32 ip4:188.0.48.99/32 -all",
+    "provider": "independent",
+    "reason": "MX (fmail.mil.ee) is self-hosted",
+    "mx_countries": [
+     "EE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ee-kaitsevagi",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27",
+  "type": "other_natsec",
+  "name_native": "Kaitsevägi",
+  "name_en": "Estonian Defence Forces",
+  "acronym": "EDF",
+  "website": "https://mil.ee",
+  "confidence": "high",
+  "mail_domains": [
+   "mil.ee"
+  ],
+  "primary_domain": "mil.ee",
+  "provider": "independent",
+  "reason": "MX (kiri.mil.ee) is self-hosted",
+  "mx": [
+   "kiri.mil.ee"
+  ],
+  "mx_countries": [
+   "EE"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mil.ee",
+    "mx": [
+     "kiri.mil.ee"
+    ],
+    "spf": "v=spf1 ip4:188.0.48.32/32 ip4:188.0.48.99/32 ip4:188.0.48.100/32 ip4:217.146.68.104/32 a mx -all",
+    "provider": "independent",
+    "reason": "MX (kiri.mil.ee) is self-hosted",
+    "mx_countries": [
+     "EE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ee-ria",
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27",
+  "type": "cybersecurity",
+  "name_native": "Riigi Infosüsteemi Amet",
+  "name_en": "Estonian Information System Authority",
+  "acronym": "RIA",
+  "website": "https://www.ria.ee",
+  "confidence": "high",
+  "mail_domains": [
+   "ria.ee",
+   "cert.ee"
+  ],
+  "primary_domain": "ria.ee",
+  "provider": "microsoft",
+  "reason": "MX (mx1.ria.ee, mx2.ria.ee) is local gateway; DKIM reveals microsoft backend",
+  "mx": [
+   "mx1.ria.ee",
+   "mx2.ria.ee"
+  ],
+  "mx_countries": [
+   "EE"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "ria.ee",
+    "mx": [
+     "mx1.ria.ee",
+     "mx2.ria.ee"
+    ],
+    "spf": "v=spf1 include:spf.ria.ee ip4:195.80.102.34 ip4:195.80.127.5 ip4:195.80.123.171 ip4:46.226.143.35 ip4:46.226.136.25 ip4:46.226.142.100 include:spf.protection.outlook.com -all",
+    "provider": "microsoft",
+    "reason": "MX (mx1.ria.ee, mx2.ria.ee) is local gateway; DKIM reveals microsoft backend",
+    "mx_countries": [
+     "EE"
+    ],
+    "dkim": {
+     "selector1": "selector1-ria-ee._domainkey.govria.w-v1.dkim.mail.microsoft",
+     "selector2": "selector2-ria-ee._domainkey.govria.w-v1.dkim.mail.microsoft"
+    }
+   },
+   {
+    "domain": "cert.ee",
+    "mx": [
+     "mx1.cert.ee",
+     "mx2.cert.ee",
+     "mx3.cert.ee"
+    ],
+    "spf": "v=spf1 ip4:46.226.143.37 ip6:2a00:6a00:ad1:703::37 ip4:46.226.143.98 ip6:2a00:6a00:ad1:706::98 ip4:195.80.123.167 ip4:195.80.123.171 ip4:195.80.127.4 ip4:195.80.127.5 a:mx1.cert.ee a:mx2.cert.ee a:mx3.cert.ee include:_spf_lists.cert.ee -all",
+    "provider": "independent",
+    "reason": "MX (mx1.cert.ee, mx2.cert.ee) is self-hosted",
+    "mx_countries": [
+     "EE"
+    ]
    }
   ]
  },
@@ -13913,6 +14563,406 @@
   ]
  },
  {
+  "id": "ru-mvd",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "interior_ministry",
+  "name_native": "Министерство внутренних дел Российской Федерации",
+  "name_en": "Ministry of Internal Affairs of the Russian Federation",
+  "acronym": "MVD",
+  "website": "https://mvd.ru",
+  "confidence": "low",
+  "mail_domains": [
+   "mvd.ru"
+  ],
+  "primary_domain": "mvd.ru",
+  "provider": "independent",
+  "reason": "MX (imx1.mvd.ru, imx2.mvd.ru) is self-hosted",
+  "mx": [
+   "imx1.mvd.ru",
+   "imx2.mvd.ru"
+  ],
+  "mx_countries": [
+   "RU"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mvd.ru",
+    "mx": [
+     "imx1.mvd.ru",
+     "imx2.mvd.ru"
+    ],
+    "spf": "v=spf1 redirect=_spf.mvd.ru",
+    "provider": "independent",
+    "reason": "MX (imx1.mvd.ru, imx2.mvd.ru) is self-hosted",
+    "mx_countries": [
+     "RU"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ru-police",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "police",
+  "name_native": "Полиция России (в составе МВД России)",
+  "name_en": "Police of Russia (service of the MVD)",
+  "acronym": "",
+  "website": "https://мвд.рф",
+  "confidence": "low",
+  "mail_domains": [
+   "mvd.ru"
+  ],
+  "primary_domain": "mvd.ru",
+  "provider": "independent",
+  "reason": "MX (imx1.mvd.ru, imx2.mvd.ru) is self-hosted",
+  "mx": [
+   "imx1.mvd.ru",
+   "imx2.mvd.ru"
+  ],
+  "mx_countries": [
+   "RU"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mvd.ru",
+    "mx": [
+     "imx1.mvd.ru",
+     "imx2.mvd.ru"
+    ],
+    "spf": "v=spf1 redirect=_spf.mvd.ru",
+    "provider": "independent",
+    "reason": "MX (imx1.mvd.ru, imx2.mvd.ru) is self-hosted",
+    "mx_countries": [
+     "RU"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ru-rosgvardiya",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "gendarmerie",
+  "name_native": "Федеральная служба войск национальной гвардии Российской Федерации (Росгвардия)",
+  "name_en": "Federal Service of the National Guard Troops of the Russian Federation (Rosgvardiya)",
+  "acronym": "FSVNG",
+  "website": "https://rosguard.gov.ru",
+  "confidence": "high",
+  "mail_domains": [
+   "rosgvard.gov.ru",
+   "rosguard.gov.ru"
+  ],
+  "primary_domain": "rosguard.gov.ru",
+  "provider": "independent",
+  "reason": "MX (mx.rosguard.gov.ru) is self-hosted",
+  "mx": [
+   "mx.rosguard.gov.ru"
+  ],
+  "mx_countries": [
+   "RU"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "rosgvard.gov.ru",
+    "mx": [],
+    "spf": "",
+    "provider": "unknown",
+    "reason": "No MX records found"
+   },
+   {
+    "domain": "rosguard.gov.ru",
+    "mx": [
+     "mx.rosguard.gov.ru"
+    ],
+    "spf": "v=spf1 +a +mx ~all",
+    "provider": "independent",
+    "reason": "MX (mx.rosguard.gov.ru) is self-hosted",
+    "mx_countries": [
+     "RU"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ru-fsb",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "intelligence",
+  "name_native": "Федеральная служба безопасности Российской Федерации",
+  "name_en": "Federal Security Service of the Russian Federation",
+  "acronym": "FSB",
+  "website": "http://www.fsb.ru",
+  "confidence": "medium",
+  "mail_domains": [
+   "fsb.ru"
+  ],
+  "primary_domain": "fsb.ru",
+  "provider": "independent",
+  "reason": "MX (mail10.fsb.ru, mail20.fsb.ru) is self-hosted",
+  "mx": [
+   "mail10.fsb.ru",
+   "mail20.fsb.ru"
+  ],
+  "mx_countries": [
+   "RU"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "fsb.ru",
+    "mx": [
+     "mail10.fsb.ru",
+     "mail20.fsb.ru"
+    ],
+    "spf": "v=spf1 ip4:213.24.76.26 ~all",
+    "provider": "independent",
+    "reason": "MX (mail10.fsb.ru, mail20.fsb.ru) is self-hosted",
+    "mx_countries": [
+     "RU"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ru-border-fsb",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "border_guard",
+  "name_native": "Пограничная служба ФСБ России",
+  "name_en": "Border Guard Service of the FSB of Russia",
+  "acronym": "PS FSB",
+  "website": "http://ps.fsb.ru",
+  "confidence": "low",
+  "mail_domains": [
+   "fsb.ru"
+  ],
+  "primary_domain": "fsb.ru",
+  "provider": "independent",
+  "reason": "MX (mail10.fsb.ru, mail20.fsb.ru) is self-hosted",
+  "mx": [
+   "mail10.fsb.ru",
+   "mail20.fsb.ru"
+  ],
+  "mx_countries": [
+   "RU"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "fsb.ru",
+    "mx": [
+     "mail10.fsb.ru",
+     "mail20.fsb.ru"
+    ],
+    "spf": "v=spf1 ip4:213.24.76.26 ~all",
+    "provider": "independent",
+    "reason": "MX (mail10.fsb.ru, mail20.fsb.ru) is self-hosted",
+    "mx_countries": [
+     "RU"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ru-svr",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "intelligence",
+  "name_native": "Служба внешней разведки Российской Федерации",
+  "name_en": "Foreign Intelligence Service of the Russian Federation",
+  "acronym": "SVR",
+  "website": "http://svr.gov.ru",
+  "confidence": "low",
+  "mail_domains": [
+   "svr.gov.ru"
+  ],
+  "primary_domain": "svr.gov.ru",
+  "provider": "unknown",
+  "reason": "No MX records found",
+  "mx": [],
+  "mx_countries": [],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "svr.gov.ru",
+    "mx": [],
+    "spf": "",
+    "provider": "unknown",
+    "reason": "No MX records found"
+   }
+  ]
+ },
+ {
+  "id": "ru-mod",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "defence_ministry",
+  "name_native": "Министерство обороны Российской Федерации",
+  "name_en": "Ministry of Defence of the Russian Federation",
+  "acronym": "MO RF",
+  "website": "https://mil.ru",
+  "confidence": "medium",
+  "mail_domains": [
+   "mil.ru"
+  ],
+  "primary_domain": "mil.ru",
+  "provider": "independent",
+  "reason": "MX (mail1.mil.ru, mail2.mil.ru) is self-hosted",
+  "mx": [
+   "mail1.mil.ru",
+   "mail2.mil.ru",
+   "mail3.mil.ru",
+   "mail4.mil.ru"
+  ],
+  "mx_countries": [
+   "RU"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mil.ru",
+    "mx": [
+     "mail1.mil.ru",
+     "mail2.mil.ru",
+     "mail3.mil.ru",
+     "mail4.mil.ru"
+    ],
+    "spf": "v=spf1 a ip4:87.242.66.130 ip4:87.242.66.230 ip4:188.128.20.154 ip4:95.167.189.170 ip4:95.167.189.165 ip4:195.189.110.203 mx ~all",
+    "provider": "independent",
+    "reason": "MX (mail1.mil.ru, mail2.mil.ru) is self-hosted",
+    "mx_countries": [
+     "RU"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ru-nktski",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "cybersecurity",
+  "name_native": "Национальный координационный центр по компьютерным инцидентам",
+  "name_en": "National Coordination Center for Computer Incidents",
+  "acronym": "NKTsKI",
+  "website": "https://cert.gov.ru",
+  "confidence": "high",
+  "mail_domains": [
+   "cert.gov.ru"
+  ],
+  "primary_domain": "cert.gov.ru",
+  "provider": "independent",
+  "reason": "MX (mx1.cert.gov.ru, mx2.cert.gov.ru) is self-hosted",
+  "mx": [
+   "mx1.cert.gov.ru",
+   "mx2.cert.gov.ru"
+  ],
+  "mx_countries": [
+   "RU"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "cert.gov.ru",
+    "mx": [
+     "mx1.cert.gov.ru",
+     "mx2.cert.gov.ru"
+    ],
+    "spf": "v=spf1 ip4:144.206.92.0/24 ip4:144.206.93.22 ip4:144.206.95.22 -all",
+    "provider": "independent",
+    "reason": "MX (mx1.cert.gov.ru, mx2.cert.gov.ru) is self-hosted",
+    "mx_countries": [
+     "RU"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ru-fstec",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "cybersecurity",
+  "name_native": "Федеральная служба по техническому и экспортному контролю",
+  "name_en": "Federal Service for Technical and Export Control",
+  "acronym": "FSTEC",
+  "website": "https://fstec.ru",
+  "confidence": "low",
+  "mail_domains": [
+   "fstec.ru"
+  ],
+  "primary_domain": "fstec.ru",
+  "provider": "independent",
+  "reason": "MX (mx01.nicmail.ru, mx02.nicmail.ru) is self-hosted",
+  "mx": [
+   "mx01.nicmail.ru",
+   "mx02.nicmail.ru",
+   "mx03.nicmail.ru"
+  ],
+  "mx_countries": [
+   "RU"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "fstec.ru",
+    "mx": [
+     "mx01.nicmail.ru",
+     "mx02.nicmail.ru",
+     "mx03.nicmail.ru"
+    ],
+    "spf": "v=spf1 include:dc1.nicmail.ru include:dc2.nicmail.ru -all",
+    "provider": "independent",
+    "reason": "MX (mx01.nicmail.ru, mx02.nicmail.ru) is self-hosted",
+    "mx_countries": [
+     "RU"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ru-scrf",
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "type": "other_natsec",
+  "name_native": "Аппарат Совета Безопасности Российской Федерации",
+  "name_en": "Office of the Security Council of the Russian Federation",
+  "acronym": "SB RF",
+  "website": "http://www.scrf.gov.ru",
+  "confidence": "low",
+  "mail_domains": [
+   "scrf.gov.ru"
+  ],
+  "primary_domain": "scrf.gov.ru",
+  "provider": "unknown",
+  "reason": "No MX records found",
+  "mx": [],
+  "mx_countries": [],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "scrf.gov.ru",
+    "mx": [],
+    "spf": "",
+    "provider": "unknown",
+    "reason": "No MX records found"
+   }
+  ]
+ },
+ {
   "id": "se-polisen",
   "country": "SE",
   "country_name_en": "Sweden",
@@ -15187,6 +16237,416 @@
     "gateway": "trendmicro",
     "mx_countries": [
      "US"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-egm",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "police",
+  "name_native": "Emniyet Genel Müdürlüğü",
+  "name_en": "General Directorate of Security (Turkish National Police)",
+  "acronym": "EGM",
+  "website": "https://www.egm.gov.tr",
+  "confidence": "low",
+  "mail_domains": [
+   "egm.gov.tr"
+  ],
+  "primary_domain": "egm.gov.tr",
+  "provider": "independent",
+  "reason": "MX (mx1.egm.gov.tr) is self-hosted",
+  "mx": [
+   "mx1.egm.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "egm.gov.tr",
+    "mx": [
+     "mx1.egm.gov.tr"
+    ],
+    "spf": "v=spf1 mx:egm.gov.tr ip4:212.174.197.17 ip4:212.174.197.15 ip4:212.174.123.198 -all",
+    "provider": "independent",
+    "reason": "MX (mx1.egm.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-jandarma",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "gendarmerie",
+  "name_native": "Jandarma Genel Komutanlığı",
+  "name_en": "Gendarmerie General Command",
+  "acronym": "JGK",
+  "website": "https://www.jandarma.gov.tr",
+  "confidence": "low",
+  "mail_domains": [
+   "jandarma.gov.tr"
+  ],
+  "primary_domain": "jandarma.gov.tr",
+  "provider": "independent",
+  "reason": "MX (posta.jandarma.gov.tr) is self-hosted",
+  "mx": [
+   "posta.jandarma.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "jandarma.gov.tr",
+    "mx": [
+     "posta.jandarma.gov.tr"
+    ],
+    "spf": "v=spf1  mx ip4:193.110.209.139/32 -all",
+    "provider": "independent",
+    "reason": "MX (posta.jandarma.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-sahil-guvenlik",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "border_guard",
+  "name_native": "Sahil Güvenlik Komutanlığı",
+  "name_en": "Coast Guard Command",
+  "acronym": "SGK",
+  "website": "https://www.sg.gov.tr",
+  "confidence": "low",
+  "mail_domains": [
+   "sg.gov.tr"
+  ],
+  "primary_domain": "sg.gov.tr",
+  "provider": "independent",
+  "reason": "MX (mail.sg.gov.tr, mail2.sg.gov.tr) is self-hosted",
+  "mx": [
+   "mail.sg.gov.tr",
+   "mail2.sg.gov.tr",
+   "mail3.sg.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "sg.gov.tr",
+    "mx": [
+     "mail.sg.gov.tr",
+     "mail2.sg.gov.tr",
+     "mail3.sg.gov.tr"
+    ],
+    "spf": "v=spf1 ip4:95.0.141.70 ip4:95.0.141.71 ip4:95.0.141.72 mx:mail.sg.gov.tr mx:mail2.sg.gov.tr mx:mail3.sg.gov.tr -all",
+    "provider": "independent",
+    "reason": "MX (mail.sg.gov.tr, mail2.sg.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-mit",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "intelligence",
+  "name_native": "Millî İstihbarat Teşkilâtı",
+  "name_en": "National Intelligence Organization",
+  "acronym": "MİT",
+  "website": "https://www.mit.gov.tr",
+  "confidence": "low",
+  "mail_domains": [
+   "mit.gov.tr"
+  ],
+  "primary_domain": "mit.gov.tr",
+  "provider": "independent",
+  "reason": "MX (mail.mit.gov.tr) is self-hosted",
+  "mx": [
+   "mail.mit.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mit.gov.tr",
+    "mx": [
+     "mail.mit.gov.tr"
+    ],
+    "spf": "v=spf1 mx -all",
+    "provider": "independent",
+    "reason": "MX (mail.mit.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-icisleri",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "interior_ministry",
+  "name_native": "Türkiye Cumhuriyeti İçişleri Bakanlığı",
+  "name_en": "Ministry of Interior of the Republic of Turkey",
+  "acronym": "",
+  "website": "https://www.icisleri.gov.tr",
+  "confidence": "medium",
+  "mail_domains": [
+   "icisleri.gov.tr",
+   "hs01.kep.tr"
+  ],
+  "primary_domain": "icisleri.gov.tr",
+  "provider": "local-isp",
+  "reason": "MX (posta.icisleri.gov.tr, posta2.icisleri.gov.tr) hosted on Local ISP (ICISLERI/muhtar.gov.tr (TR))",
+  "mx": [
+   "posta.icisleri.gov.tr",
+   "posta2.icisleri.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "icisleri.gov.tr",
+    "mx": [
+     "posta.icisleri.gov.tr",
+     "posta2.icisleri.gov.tr"
+    ],
+    "spf": "v=spf1 mx a:posta.icisleri.gov.tr a:posta2.icisleri.gov.tr ip4:2.58.141.100 ip4:95.0.242.135 -all",
+    "provider": "local-isp",
+    "reason": "MX (posta.icisleri.gov.tr, posta2.icisleri.gov.tr) hosted on Local ISP (ICISLERI/muhtar.gov.tr (TR))",
+    "mx_countries": [
+     "TR"
+    ]
+   },
+   {
+    "domain": "hs01.kep.tr",
+    "mx": [],
+    "spf": "",
+    "provider": "unknown",
+    "reason": "No MX records found"
+   }
+  ]
+ },
+ {
+  "id": "tr-msb",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "defence_ministry",
+  "name_native": "Türkiye Cumhuriyeti Millî Savunma Bakanlığı",
+  "name_en": "Ministry of National Defence of the Republic of Turkey",
+  "acronym": "MSB",
+  "website": "https://www.msb.gov.tr",
+  "confidence": "low",
+  "mail_domains": [
+   "msb.gov.tr"
+  ],
+  "primary_domain": "msb.gov.tr",
+  "provider": "independent",
+  "reason": "MX (mx1.msb.gov.tr, mx3.msb.gov.tr) is self-hosted",
+  "mx": [
+   "mx1.msb.gov.tr",
+   "mx3.msb.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "msb.gov.tr",
+    "mx": [
+     "mx1.msb.gov.tr",
+     "mx3.msb.gov.tr"
+    ],
+    "spf": "v=spf1 a mx ip4:212.174.80.105 ip4:212.174.80.106 -all",
+    "provider": "independent",
+    "reason": "MX (mx1.msb.gov.tr, mx3.msb.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-usom",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "cybersecurity",
+  "name_native": "Ulusal Siber Olaylara Müdahale Merkezi",
+  "name_en": "National Cyber Incident Response Center (TR-CERT)",
+  "acronym": "USOM / TR-CERT",
+  "website": "https://www.usom.gov.tr",
+  "confidence": "high",
+  "mail_domains": [
+   "usom.gov.tr"
+  ],
+  "primary_domain": "usom.gov.tr",
+  "provider": "independent",
+  "reason": "MX (mail.btk.gov.tr) is self-hosted",
+  "mx": [
+   "mail.btk.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "usom.gov.tr",
+    "mx": [
+     "mail.btk.gov.tr"
+    ],
+    "spf": "v=spf1 a mx -all",
+    "provider": "independent",
+    "reason": "MX (mail.btk.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-btk",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "cybersecurity",
+  "name_native": "Bilgi Teknolojileri ve İletişim Kurumu",
+  "name_en": "Information and Communication Technologies Authority",
+  "acronym": "BTK",
+  "website": "https://www.btk.gov.tr",
+  "confidence": "high",
+  "mail_domains": [
+   "btk.gov.tr"
+  ],
+  "primary_domain": "btk.gov.tr",
+  "provider": "independent",
+  "reason": "MX (mail.btk.gov.tr, mx2.btk.gov.tr) is self-hosted",
+  "mx": [
+   "mail.btk.gov.tr",
+   "mx2.btk.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "btk.gov.tr",
+    "mx": [
+     "mail.btk.gov.tr",
+     "mx2.btk.gov.tr"
+    ],
+    "spf": "v=spf1 a mx -all",
+    "provider": "independent",
+    "reason": "MX (mail.btk.gov.tr, mx2.btk.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-mgk",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "other_natsec",
+  "name_native": "Millî Güvenlik Kurulu Genel Sekreterliği",
+  "name_en": "Secretariat-General of the National Security Council",
+  "acronym": "MGK",
+  "website": "https://www.mgk.gov.tr",
+  "confidence": "low",
+  "mail_domains": [
+   "mgk.gov.tr"
+  ],
+  "primary_domain": "mgk.gov.tr",
+  "provider": "independent",
+  "reason": "MX (mail.mgk.gov.tr) is self-hosted",
+  "mx": [
+   "mail.mgk.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "mgk.gov.tr",
+    "mx": [
+     "mail.mgk.gov.tr"
+    ],
+    "spf": "v=spf1 a mx mx:mail.mgk.gov.tr ip4:88.255.157.197 -all",
+    "provider": "independent",
+    "reason": "MX (mail.mgk.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tr-cbddo",
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "type": "cybersecurity",
+  "name_native": "Cumhurbaşkanlığı Dijital Dönüşüm Ofisi",
+  "name_en": "Digital Transformation Office of the Presidency",
+  "acronym": "CBDDO",
+  "website": "https://cbddo.gov.tr",
+  "confidence": "low",
+  "mail_domains": [
+   "cbddo.gov.tr"
+  ],
+  "primary_domain": "cbddo.gov.tr",
+  "provider": "independent",
+  "reason": "MX (mail.tccb.gov.tr, mail2.tccb.gov.tr) is self-hosted",
+  "mx": [
+   "mail.tccb.gov.tr",
+   "mail2.tccb.gov.tr"
+  ],
+  "mx_countries": [
+   "TR"
+  ],
+  "gateway": null,
+  "scans": [
+   {
+    "domain": "cbddo.gov.tr",
+    "mx": [
+     "mail.tccb.gov.tr",
+     "mail2.tccb.gov.tr"
+    ],
+    "spf": "v=spf1 mx -all",
+    "provider": "independent",
+    "reason": "MX (mail.tccb.gov.tr, mail2.tccb.gov.tr) is self-hosted",
+    "mx_countries": [
+     "TR"
     ]
    }
   ]
