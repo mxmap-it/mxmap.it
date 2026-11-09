@@ -1,0 +1,127 @@
+{
+  "country": "HR",
+  "country_name_en": "Croatia",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "hr-mup",
+      "type": "interior_ministry",
+      "name_native": "Ministarstvo unutarnjih poslova Republike Hrvatske",
+      "name_en": "Ministry of the Interior of the Republic of Croatia",
+      "acronym": "MUP",
+      "website": "https://mup.gov.hr",
+      "mail_domains": ["mup.hr"],
+      "evidence": [
+        {"domain": "mup.hr", "url": "https://mup.gov.hr/kontakti-129095/129095", "kind": "contact_page", "note": "pitanja@mup.hr, press@mup.hr; website is mup.gov.hr but email domain is mup.hr"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "hr-policija",
+      "type": "police",
+      "name_native": "Ravnateljstvo policije (Hrvatska policija)",
+      "name_en": "Police Directorate (Croatian Police)",
+      "acronym": "",
+      "website": "https://policija.gov.hr",
+      "mail_domains": ["mup.hr"],
+      "evidence": [
+        {"domain": "mup.hr", "url": "https://policija.gov.hr/kontakti/5", "kind": "contact_page", "note": "policija@mup.hr, pitanja@mup.hr, press@mup.hr — police uses the MUP mail domain"}
+      ],
+      "confidence": "high",
+      "notes": "Police is a directorate within MUP; border policing (Uprava za granicu) is part of the police, hence no separate border_guard entity."
+    },
+    {
+      "id": "hr-morh",
+      "type": "defence_ministry",
+      "name_native": "Ministarstvo obrane Republike Hrvatske",
+      "name_en": "Ministry of Defence of the Republic of Croatia",
+      "acronym": "MORH",
+      "website": "https://www.morh.hr",
+      "mail_domains": ["morh.hr"],
+      "evidence": [
+        {"domain": "morh.hr", "url": "https://www.morh.hr/kontakti/", "kind": "contact_page", "note": "23 addresses listed, e.g. pisarnica@morh.hr, press@morh.hr, kabinet@morh.hr"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "hr-soa",
+      "type": "intelligence",
+      "name_native": "Sigurnosno-obavještajna agencija",
+      "name_en": "Security and Intelligence Agency",
+      "acronym": "SOA",
+      "website": "https://www.soa.hr",
+      "mail_domains": ["soa.hr"],
+      "evidence": [
+        {"domain": "soa.hr", "url": "https://soa.hr/hr/kontakt/", "kind": "contact_page", "note": "informiranje@soa.hr"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "hr-vsoa",
+      "type": "intelligence",
+      "name_native": "Vojna sigurnosno-obavještajna agencija",
+      "name_en": "Military Security and Intelligence Agency",
+      "acronym": "VSOA",
+      "website": "https://www.morh.hr/vojna-sigurnosno-obavjestajna-agencija/",
+      "mail_domains": ["morh.hr"],
+      "evidence": [
+        {"domain": "morh.hr", "url": "https://www.morh.hr/vojna-sigurnosno-obavjestajna-agencija/", "kind": "other_official", "note": "VSOA has no own website or published email; its pages on morh.hr list MORH contacts (pisarnica@morh.hr etc.). No distinct VSOA mail domain evidenced."}
+      ],
+      "confidence": "medium",
+      "notes": "VSOA operates within MORH; contact routed through MORH addresses."
+    },
+    {
+      "id": "hr-uvns",
+      "type": "intelligence",
+      "name_native": "Ured Vijeća za nacionalnu sigurnost",
+      "name_en": "Office of the National Security Council",
+      "acronym": "UVNS",
+      "website": "https://www.uvns.hr",
+      "mail_domains": ["uvns.hr"],
+      "evidence": [
+        {"domain": "uvns.hr", "url": "https://www.uvns.hr/hr/kontakt", "kind": "assumed_from_website", "note": "Contact page lists only postal address, phone and fax — no email published; domain assumed from website uvns.hr"}
+      ],
+      "confidence": "low",
+      "notes": "Central state authority for information security and coordination of the security-intelligence system; also NSA/CSA function."
+    },
+    {
+      "id": "hr-ncert",
+      "type": "cybersecurity",
+      "name_native": "Nacionalni CERT (CARNET)",
+      "name_en": "Croatian National CERT (within CARNET)",
+      "acronym": "NCERT",
+      "website": "https://www.cert.hr",
+      "mail_domains": ["cert.hr"],
+      "evidence": [
+        {"domain": "cert.hr", "url": "https://www.cert.hr/o-nama/", "kind": "other_official", "note": "ncert@cert.hr, incident@cert.hr"}
+      ],
+      "confidence": "high",
+      "notes": "Operates within CARNET (Croatian Academic and Research Network), not under SOA. SK@CERT could not be verified as a current distinct national CERT."
+    },
+    {
+      "id": "hr-zsis",
+      "type": "cybersecurity",
+      "name_native": "Zavod za sigurnost informacijskih sustava",
+      "name_en": "Information Systems Security Bureau",
+      "acronym": "ZSIS",
+      "website": "https://www.zsis.hr",
+      "mail_domains": ["zsis.hr"],
+      "evidence": [
+        {"domain": "zsis.hr", "url": "https://www.zsis.hr/default.aspx?id=83", "kind": "assumed_from_website", "note": "Contact page shows the email only as an image (mail.jpg), text not extractable; domain assumed from website zsis.hr. ZSIS also runs ZSIS CERT for state bodies."}
+      ],
+      "confidence": "low",
+      "notes": "Central state body for technical information security (crypto, TEMPEST); runs ZSIS CERT for government bodies."
+    }
+  ],
+  "gaps": [
+    "border_guard: no separate border guard body — border policing (Uprava za granicu) is a directorate within the Croatian Police under MUP (covered by hr-policija).",
+    "gendarmerie: no gendarmerie-type force exists in Croatia.",
+    "other_natsec: Operativno-tehnički centar za nadzor telekomunikacija (OTC) exists in law (ZSOS 2006) but has no public website or evidenced mail domain — not included to avoid inventing domains.",
+    "UVNS and ZSIS publish no email addresses on their contact pages; mail domains assumed from their websites.",
+    "VSOA has no distinct website or mail domain; uses MORH infrastructure (morh.hr)."
+  ]
+}

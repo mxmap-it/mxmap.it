@@ -1,0 +1,153 @@
+{
+  "country": "TR",
+  "country_name_en": "Turkey",
+  "group": "candidate",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "tr-egm",
+      "type": "police",
+      "name_native": "Emniyet Genel Müdürlüğü",
+      "name_en": "General Directorate of Security (Turkish National Police)",
+      "acronym": "EGM",
+      "website": "https://www.egm.gov.tr",
+      "mail_domains": ["egm.gov.tr"],
+      "evidence": [
+        {"domain": "egm.gov.tr", "url": "https://www.egm.gov.tr", "kind": "assumed_from_website", "note": "assumed from website registrable domain; contact page returns HTTP 500 / publishes no plaintext email"}
+      ],
+      "confidence": "low",
+      "notes": "National civilian police under the Ministry of Interior."
+    },
+    {
+      "id": "tr-jandarma",
+      "type": "gendarmerie",
+      "name_native": "Jandarma Genel Komutanlığı",
+      "name_en": "Gendarmerie General Command",
+      "acronym": "JGK",
+      "website": "https://www.jandarma.gov.tr",
+      "mail_domains": ["jandarma.gov.tr"],
+      "evidence": [
+        {"domain": "jandarma.gov.tr", "url": "https://www.jandarma.gov.tr", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no plaintext email published"}
+      ],
+      "confidence": "low",
+      "notes": "Gendarmerie under the Ministry of Interior."
+    },
+    {
+      "id": "tr-sahil-guvenlik",
+      "type": "border_guard",
+      "name_native": "Sahil Güvenlik Komutanlığı",
+      "name_en": "Coast Guard Command",
+      "acronym": "SGK",
+      "website": "https://www.sg.gov.tr",
+      "mail_domains": ["sg.gov.tr"],
+      "evidence": [
+        {"domain": "sg.gov.tr", "url": "https://www.sg.gov.tr", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no plaintext email published"}
+      ],
+      "confidence": "low",
+      "notes": "Maritime border security under the Ministry of Interior; land border security is handled by Jandarma and army units."
+    },
+    {
+      "id": "tr-mit",
+      "type": "intelligence",
+      "name_native": "Millî İstihbarat Teşkilâtı",
+      "name_en": "National Intelligence Organization",
+      "acronym": "MİT",
+      "website": "https://www.mit.gov.tr",
+      "mail_domains": ["mit.gov.tr"],
+      "evidence": [
+        {"domain": "mit.gov.tr", "url": "https://www.mit.gov.tr", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no email published on site"}
+      ],
+      "confidence": "low",
+      "notes": "Combined domestic and foreign intelligence, reports to the Presidency."
+    },
+    {
+      "id": "tr-icisleri",
+      "type": "interior_ministry",
+      "name_native": "Türkiye Cumhuriyeti İçişleri Bakanlığı",
+      "name_en": "Ministry of Interior of the Republic of Turkey",
+      "acronym": "",
+      "website": "https://www.icisleri.gov.tr",
+      "mail_domains": ["icisleri.gov.tr", "hs01.kep.tr"],
+      "evidence": [
+        {"domain": "hs01.kep.tr", "url": "https://www.icisleri.gov.tr/iletisim", "kind": "contact_page", "note": "icisleribakanligi@hs01.kep.tr (official KEP registered-email address) on the ministry's contact page"},
+        {"domain": "icisleri.gov.tr", "url": "https://www.icisleri.gov.tr/iletisim", "kind": "assumed_from_website", "note": "ordinary staff mail assumed on the website domain; only the KEP address is published in plaintext"}
+      ],
+      "confidence": "medium",
+      "notes": "Turkish ministries publish KEP (Kayıtlı Elektronik Posta) addresses on *.kep.tr for legal correspondence."
+    },
+    {
+      "id": "tr-msb",
+      "type": "defence_ministry",
+      "name_native": "Türkiye Cumhuriyeti Millî Savunma Bakanlığı",
+      "name_en": "Ministry of National Defence of the Republic of Turkey",
+      "acronym": "MSB",
+      "website": "https://www.msb.gov.tr",
+      "mail_domains": ["msb.gov.tr"],
+      "evidence": [
+        {"domain": "msb.gov.tr", "url": "https://www.msb.gov.tr", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no plaintext email published"}
+      ],
+      "confidence": "low",
+      "notes": ""
+    },
+    {
+      "id": "tr-usom",
+      "type": "cybersecurity",
+      "name_native": "Ulusal Siber Olaylara Müdahale Merkezi",
+      "name_en": "National Cyber Incident Response Center (TR-CERT)",
+      "acronym": "USOM / TR-CERT",
+      "website": "https://www.usom.gov.tr",
+      "mail_domains": ["usom.gov.tr"],
+      "evidence": [
+        {"domain": "usom.gov.tr", "url": "https://www.first.org/members/teams/tr-cert", "kind": "other_official", "note": "trcert@usom.gov.tr in the FIRST.org member directory (team hosted by BTK)"}
+      ],
+      "confidence": "high",
+      "notes": "National CERT, operated by BTK."
+    },
+    {
+      "id": "tr-btk",
+      "type": "cybersecurity",
+      "name_native": "Bilgi Teknolojileri ve İletişim Kurumu",
+      "name_en": "Information and Communication Technologies Authority",
+      "acronym": "BTK",
+      "website": "https://www.btk.gov.tr",
+      "mail_domains": ["btk.gov.tr"],
+      "evidence": [
+        {"domain": "btk.gov.tr", "url": "https://www.btk.gov.tr/iletisim", "kind": "contact_page", "note": "guvenlikdestek@btk.gov.tr on official contact page"}
+      ],
+      "confidence": "high",
+      "notes": "Telecom regulator; parent authority of USOM/TR-CERT and national cybersecurity operations."
+    },
+    {
+      "id": "tr-mgk",
+      "type": "other_natsec",
+      "name_native": "Millî Güvenlik Kurulu Genel Sekreterliği",
+      "name_en": "Secretariat-General of the National Security Council",
+      "acronym": "MGK",
+      "website": "https://www.mgk.gov.tr",
+      "mail_domains": ["mgk.gov.tr"],
+      "evidence": [
+        {"domain": "mgk.gov.tr", "url": "https://www.mgk.gov.tr", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no plaintext email published"}
+      ],
+      "confidence": "low",
+      "notes": ""
+    },
+    {
+      "id": "tr-cbddo",
+      "type": "cybersecurity",
+      "name_native": "Cumhurbaşkanlığı Dijital Dönüşüm Ofisi",
+      "name_en": "Digital Transformation Office of the Presidency",
+      "acronym": "CBDDO",
+      "website": "https://cbddo.gov.tr",
+      "mail_domains": ["cbddo.gov.tr"],
+      "evidence": [
+        {"domain": "cbddo.gov.tr", "url": "https://cbddo.gov.tr", "kind": "assumed_from_website", "note": "assumed from website registrable domain"}
+      ],
+      "confidence": "low",
+      "notes": "Sets national cybersecurity strategy and information-security guidance alongside BTK/USOM. In 2025 a new Cybersecurity Directorate (Siber Güvenlik Başkanlığı) was established under the Presidency — not yet separately evidenced."
+    }
+  ],
+  "gaps": [
+    "Most Turkish security institutions publish no plaintext email (web contact forms and KEP only); several domains are assumed from websites.",
+    "New Siber Güvenlik Başkanlığı (Cybersecurity Presidency, est. 2025) not listed as separate entity for lack of evidenced domain."
+  ]
+}

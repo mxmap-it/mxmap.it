@@ -113,6 +113,11 @@ irraggiungibile, il sito e la pipeline non ne risentono.
   fpietrosanti.github.io → ora https://mxmap.it/kpi.json e fail-loud).
   Restano: **#30** (KPI per banda; serie PRIMA del run #1) e **#32** (review
   Sconosciuto: feed spesa ICT, fingerprinting, bounce, outreach; pista FVG).
+- **EU Security Map (#33/#34, avviata 2026-11-09)**: dataset separato
+  (`data/eu_security/`, cache `EUSEC`, modulo `eu_security.py`), workflow
+  settimanale `eu-security.yml`, pagina `eu-security/` (inglese). NON tocca
+  data.json/nightly/KPI IT. **Verifica attiva unificata (#35)**: solo spec,
+  attende decisioni del proprietario.
 - **Upstream** (`mxmap/secassure2026`, policy follow-never-merge): il
   maintainer (davidhuser, 2026-10-04 su
   [#37](https://github.com/mxmap/secassure2026/pull/37)) ha dichiarato il

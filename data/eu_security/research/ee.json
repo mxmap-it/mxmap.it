@@ -1,0 +1,112 @@
+{
+  "country": "EE",
+  "country_name_en": "Estonia",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "ee-ppa",
+      "type": "police",
+      "name_native": "Politsei- ja Piirivalveamet",
+      "name_en": "Police and Border Guard Board",
+      "acronym": "PPA",
+      "website": "https://www.politsei.ee",
+      "mail_domains": ["politsei.ee"],
+      "evidence": [
+        {"domain": "politsei.ee", "url": "https://www.politsei.ee/et/kontaktid", "kind": "assumed_from_website", "note": "ppa@politsei.ee is the widely used general address, but the PPA site renders emails client-side (not verifiable in fetched HTML); domain matches website registrable domain"}
+      ],
+      "confidence": "medium",
+      "notes": "Single agency covering both police and border guard (also citizenship/migration); covers the border_guard category too."
+    },
+    {
+      "id": "ee-kapo",
+      "type": "intelligence",
+      "name_native": "Kaitsepolitseiamet",
+      "name_en": "Estonian Internal Security Service",
+      "acronym": "KAPO / ISS",
+      "website": "https://kapo.ee",
+      "mail_domains": ["kapo.ee"],
+      "evidence": [
+        {"domain": "kapo.ee", "url": "https://kapo.ee", "kind": "assumed_from_website", "note": "kapo@kapo.ee is the published general address (site blocks automated fetch with 403); assumed from website registrable domain"}
+      ],
+      "confidence": "medium",
+      "notes": "Domestic security/counter-intelligence service under the Ministry of the Interior."
+    },
+    {
+      "id": "ee-valisluureamet",
+      "type": "intelligence",
+      "name_native": "Välisluureamet",
+      "name_en": "Estonian Foreign Intelligence Service",
+      "acronym": "VLA / EFIS",
+      "website": "https://www.valisluureamet.ee",
+      "mail_domains": ["valisluureamet.ee"],
+      "evidence": [
+        {"domain": "valisluureamet.ee", "url": "https://www.valisluureamet.ee/", "kind": "contact_page", "note": "info@valisluureamet.ee, press@valisluureamet.ee (site footer)"}
+      ],
+      "confidence": "high",
+      "notes": "Foreign intelligence and SIGINT, under the Ministry of Defence."
+    },
+    {
+      "id": "ee-siseministeerium",
+      "type": "interior_ministry",
+      "name_native": "Siseministeerium",
+      "name_en": "Ministry of the Interior",
+      "acronym": "SiM",
+      "website": "https://www.siseministeerium.ee",
+      "mail_domains": ["siseministeerium.ee"],
+      "evidence": [
+        {"domain": "siseministeerium.ee", "url": "https://www.siseministeerium.ee/kontakt", "kind": "contact_page", "note": "Cloudflare-protected addresses on the contact page decode to firstname.lastname@siseministeerium.ee and info@siseministeerium.ee"}
+      ],
+      "confidence": "high",
+      "notes": "Responsible for PPA and KAPO."
+    },
+    {
+      "id": "ee-kaitseministeerium",
+      "type": "defence_ministry",
+      "name_native": "Kaitseministeerium",
+      "name_en": "Ministry of Defence",
+      "acronym": "KaM",
+      "website": "https://kaitseministeerium.ee",
+      "mail_domains": ["kaitseministeerium.ee"],
+      "evidence": [
+        {"domain": "kaitseministeerium.ee", "url": "https://kaitseministeerium.ee/", "kind": "contact_page", "note": "info@kaitseministeerium.ee (official letters), press@kaitseministeerium.ee"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "ee-kaitsevagi",
+      "type": "other_natsec",
+      "name_native": "Kaitsevägi",
+      "name_en": "Estonian Defence Forces",
+      "acronym": "EDF",
+      "website": "https://mil.ee",
+      "mail_domains": ["mil.ee"],
+      "evidence": [
+        {"domain": "mil.ee", "url": "https://mil.ee/kontaktid/", "kind": "contact_page", "note": "mil@mil.ee (General Staff)"}
+      ],
+      "confidence": "high",
+      "notes": "Includes the military intelligence centre (Luurekeskus) within the Defence Forces."
+    },
+    {
+      "id": "ee-ria",
+      "type": "cybersecurity",
+      "name_native": "Riigi Infosüsteemi Amet",
+      "name_en": "Estonian Information System Authority",
+      "acronym": "RIA",
+      "website": "https://www.ria.ee",
+      "mail_domains": ["ria.ee", "cert.ee"],
+      "evidence": [
+        {"domain": "ria.ee", "url": "https://www.ria.ee/", "kind": "contact_page", "note": "ria@ria.ee (site footer)"},
+        {"domain": "cert.ee", "url": "https://www.ria.ee/kuberturvalisus/kuberintsidentide-kasitlemine-cert-ee/kuberruumi-seire-ja-intsidentide-tokestamine", "kind": "contact_page", "note": "cert@cert.ee (CERT-EE contacts; cert.ee redirects to ria.ee)"}
+      ],
+      "confidence": "high",
+      "notes": "National cybersecurity authority; CERT-EE is a department of RIA with its own cert.ee mail domain."
+    }
+  ],
+  "gaps": [
+    "No gendarmerie-type force in Estonia (Kaitseliit/Defence League is a voluntary military organisation, not police).",
+    "border_guard is covered by PPA (merged police + border guard agency), no separate entity.",
+    "PPA and KAPO mail domains could not be evidenced from fetched official pages (client-side rendering / 403), marked assumed from website domain."
+  ]
+}

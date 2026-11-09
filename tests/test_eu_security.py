@@ -26,6 +26,10 @@ class TestProviderCountry:
         assert es.provider_country("independent", []) is None
         assert es.provider_country("independent", None) is None
 
+    def test_local_isp_uses_mx_country(self):
+        assert es.provider_country("local-isp", ["PL"]) == "PL"
+        assert es.bucket_for("PL", "local-isp", ["PL"]) == "national"
+
     def test_unknown_provider_not_in_table(self):
         assert es.provider_country("something-else", None) is None
 

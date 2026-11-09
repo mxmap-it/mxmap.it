@@ -67,6 +67,17 @@ Le issue vivono nel repo MxMap: <https://github.com/mxmap-it/mxmap.it/issues>.
   Microsoft/Google corretti; ibridi genuini preservati via DKIM/SPF corroborato). Verificato
   live con fingerprint HTTPS; candidato a segnalazione metodologica upstream.
 
+- **[#35] Verifica attiva unificata** — bounce/NDR + DSN + MDN + report aggregati DMARC + auto-reply
+  in un'unica analisi header → regola `active_verified` (0,90–0,95). Spec:
+  [`ACTIVE_VERIFICATION_DESIGN.md`](ACTIVE_VERIFICATION_DESIGN.md). Bloccata su decisioni del
+  proprietario (smarthost/dominio mittente, go pilota T1–T5).
+
+## Fase 4b — EU Security Map ([#33](https://github.com/mxmap-it/mxmap.it/issues/33), tracker [#34](https://github.com/mxmap-it/mxmap.it/issues/34))
+- Directory (~380 enti: polizie, intelligence, Interni, Difesa, cyber, altri organi di sicurezza
+  nazionale) di 48 paesi europei + istituzioni UE con evidenza dei domini email; scansione DNS
+  passiva settimanale (`eu-security.yml`); rendiconto inglese ricercabile con bandierine e ranking
+  di esposizione USA su <https://mxmap.it/eu-security/>. Design: [`EU_SECURITY_DESIGN.md`](EU_SECURITY_DESIGN.md).
+
 ## Fase 5 — Fiducia & diagnostica
 - ✅ **Fatto — [#15] scheda per-ente + hub geografici (SEO).** [`scripts/build_entity_pages.py`](../scripts/build_entity_pages.py)
   genera ~53k pagine statiche: una per ente (`/ente/{sigla-prov}/{nome-ente}/`) con tutti i dati di

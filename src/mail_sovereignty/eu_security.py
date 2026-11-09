@@ -46,7 +46,6 @@ PROVIDER_COUNTRY: dict[str, str] = {
     "namirial": "IT",
     "regional-public": "IT",
     "pa-contractor-private": "IT",
-    "local-isp": "IT",
 }
 
 # Paesi UE-27 (per il bucket eu_other). CH/NO/IS/LI/UK e i candidati NON sono
@@ -95,7 +94,11 @@ BUCKETS = ("national", "us", "eu_other", "other_foreign", "unknown")
 
 # Provider considerati "autonomi/self-hosted": la giurisdizione viene dagli
 # mx_countries (dove sta l'MTA), non da una sede legale di provider.
-SELF_HOSTED_PROVIDERS: frozenset[str] = frozenset({"independent", "unknown"})
+# local-isp: riconosciuto via ASN di ISP nazionali (di qualunque paese) →
+# giurisdizione dal paese dell'MTA, non da una sede fissa.
+SELF_HOSTED_PROVIDERS: frozenset[str] = frozenset(
+    {"independent", "local-isp", "unknown"}
+)
 
 
 def provider_country(provider: str, mx_countries: list[str] | None) -> str | None:

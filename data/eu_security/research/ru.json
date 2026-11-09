@@ -1,0 +1,154 @@
+{
+  "country": "RU",
+  "country_name_en": "Russia",
+  "group": "annex_non_aligned",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "ru-mvd",
+      "type": "interior_ministry",
+      "name_native": "Министерство внутренних дел Российской Федерации",
+      "name_en": "Ministry of Internal Affairs of the Russian Federation",
+      "acronym": "MVD",
+      "website": "https://mvd.ru",
+      "mail_domains": ["mvd.ru"],
+      "evidence": [
+        {"domain": "mvd.ru", "url": "https://mvd.ru/contacts", "kind": "assumed_from_website", "note": "assumed from website registrable domain (also мвд.рф); live site and archive copies publish no plaintext email, contact is via web reception form"}
+      ],
+      "confidence": "low",
+      "notes": "Ministerstvo vnutrennikh del. Geo-blocking/anti-bot prevents direct verification."
+    },
+    {
+      "id": "ru-police",
+      "type": "police",
+      "name_native": "Полиция России (в составе МВД России)",
+      "name_en": "Police of Russia (service of the MVD)",
+      "acronym": "",
+      "website": "https://мвд.рф",
+      "mail_domains": ["mvd.ru"],
+      "evidence": [
+        {"domain": "mvd.ru", "url": "https://mvd.ru/contacts", "kind": "assumed_from_website", "note": "the national police is an MVD service and uses MVD infrastructure; domain assumed as for ru-mvd"}
+      ],
+      "confidence": "low",
+      "notes": "No separate national police agency outside the MVD."
+    },
+    {
+      "id": "ru-rosgvardiya",
+      "type": "gendarmerie",
+      "name_native": "Федеральная служба войск национальной гвардии Российской Федерации (Росгвардия)",
+      "name_en": "Federal Service of the National Guard Troops of the Russian Federation (Rosgvardiya)",
+      "acronym": "FSVNG",
+      "website": "https://rosguard.gov.ru",
+      "mail_domains": ["rosgvard.gov.ru", "rosguard.gov.ru"],
+      "evidence": [
+        {"domain": "rosgvard.gov.ru", "url": "https://rosguard.gov.ru/ru/page/index/kontakty", "kind": "contact_page", "note": "dvsmi@rosgvard.gov.ru (press/media department) on official contacts page"},
+        {"domain": "rosguard.gov.ru", "url": "https://rosguard.gov.ru/ru/page/index/kontakty", "kind": "contact_page", "note": "nvi@rosguard.gov.ru, pvi@rosguard.gov.ru, svki@rosguard.gov.ru (service institutes) on the same page"}
+      ],
+      "confidence": "high",
+      "notes": "Gendarmerie-type internal troops, split from MVD in 2016."
+    },
+    {
+      "id": "ru-fsb",
+      "type": "intelligence",
+      "name_native": "Федеральная служба безопасности Российской Федерации",
+      "name_en": "Federal Security Service of the Russian Federation",
+      "acronym": "FSB",
+      "website": "http://www.fsb.ru",
+      "mail_domains": ["fsb.ru"],
+      "evidence": [
+        {"domain": "fsb.ru", "url": "http://www.fsb.ru/fsb/webreception.htm", "kind": "assumed_from_website", "note": "assumed from website registrable domain; historically published fsb@fsb.ru, current page (archive copy) offers only a web reception form"}
+      ],
+      "confidence": "medium",
+      "notes": "Domestic security service. The Border Guard Service of Russia is a structural branch of the FSB (see ru-border-fsb)."
+    },
+    {
+      "id": "ru-border-fsb",
+      "type": "border_guard",
+      "name_native": "Пограничная служба ФСБ России",
+      "name_en": "Border Guard Service of the FSB of Russia",
+      "acronym": "PS FSB",
+      "website": "http://ps.fsb.ru",
+      "mail_domains": ["fsb.ru"],
+      "evidence": [
+        {"domain": "fsb.ru", "url": "http://ps.fsb.ru", "kind": "assumed_from_website", "note": "border service is an FSB directorate using fsb.ru infrastructure (ps.fsb.ru subdomain); assumed"}
+      ],
+      "confidence": "low",
+      "notes": "Not a standalone agency since 2003 — integrated into the FSB."
+    },
+    {
+      "id": "ru-svr",
+      "type": "intelligence",
+      "name_native": "Служба внешней разведки Российской Федерации",
+      "name_en": "Foreign Intelligence Service of the Russian Federation",
+      "acronym": "SVR",
+      "website": "http://svr.gov.ru",
+      "mail_domains": ["svr.gov.ru"],
+      "evidence": [
+        {"domain": "svr.gov.ru", "url": "http://svr.gov.ru/kontakt.htm", "kind": "assumed_from_website", "note": "assumed from website registrable domain; contact page (archive copy) publishes phone/postal contacts, email not retrievable"}
+      ],
+      "confidence": "low",
+      "notes": "Foreign intelligence. GRU (military intelligence) has no public website/domain and is excluded per task scope."
+    },
+    {
+      "id": "ru-mod",
+      "type": "defence_ministry",
+      "name_native": "Министерство обороны Российской Федерации",
+      "name_en": "Ministry of Defence of the Russian Federation",
+      "acronym": "MO RF",
+      "website": "https://mil.ru",
+      "mail_domains": ["mil.ru"],
+      "evidence": [
+        {"domain": "mil.ru", "url": "https://mil.ru/contacts.htm", "kind": "assumed_from_website", "note": "assumed from website registrable domain; site geo-blocked, archive copy publishes no plaintext email (department addresses historically on @mil.ru)"}
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "id": "ru-nktski",
+      "type": "cybersecurity",
+      "name_native": "Национальный координационный центр по компьютерным инцидентам",
+      "name_en": "National Coordination Center for Computer Incidents",
+      "acronym": "NKTsKI",
+      "website": "https://cert.gov.ru",
+      "mail_domains": ["cert.gov.ru"],
+      "evidence": [
+        {"domain": "cert.gov.ru", "url": "https://www.cert.gov.ru/", "kind": "contact_page", "note": "incident@cert.gov.ru, info@cert.gov.ru, threats@cert.gov.ru on official homepage (verified via Wayback snapshot 2026-10-20; live site geo-blocked)"}
+      ],
+      "confidence": "high",
+      "notes": "National CERT function (GosSOPKA coordination), created by and subordinate to the FSB."
+    },
+    {
+      "id": "ru-fstec",
+      "type": "cybersecurity",
+      "name_native": "Федеральная служба по техническому и экспортному контролю",
+      "name_en": "Federal Service for Technical and Export Control",
+      "acronym": "FSTEC",
+      "website": "https://fstec.ru",
+      "mail_domains": ["fstec.ru"],
+      "evidence": [
+        {"domain": "fstec.ru", "url": "https://fstec.ru/kontakty", "kind": "assumed_from_website", "note": "assumed from website registrable domain; contact page not retrievable from outside Russia"}
+      ],
+      "confidence": "low",
+      "notes": "Information-security regulator (critical infrastructure protection requirements) under the MoD."
+    },
+    {
+      "id": "ru-scrf",
+      "type": "other_natsec",
+      "name_native": "Аппарат Совета Безопасности Российской Федерации",
+      "name_en": "Office of the Security Council of the Russian Federation",
+      "acronym": "SB RF",
+      "website": "http://www.scrf.gov.ru",
+      "mail_domains": ["scrf.gov.ru"],
+      "evidence": [
+        {"domain": "scrf.gov.ru", "url": "http://www.scrf.gov.ru/about/contacts/", "kind": "assumed_from_website", "note": "assumed from website registrable domain; no plaintext email retrievable (site geo-blocked, archive copy form-only)"}
+      ],
+      "confidence": "low",
+      "notes": ""
+    }
+  ],
+  "gaps": [
+    "GRU/GU (military intelligence): no public website or evidenced mail domain — excluded per task instruction (FSB/SVR listed).",
+    "Most Russian official sites geo-block or serve no plaintext email; only Rosgvardiya and NKTsKI mail domains are directly evidenced. Confidence reduced accordingly as instructed.",
+    "FSO (Federal Protective Service, fso.gov.ru) omitted to stay selective; add if protective services are in scope."
+  ]
+}
