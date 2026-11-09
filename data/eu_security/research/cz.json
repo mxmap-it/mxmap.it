@@ -1,0 +1,112 @@
+{
+  "country": "CZ",
+  "country_name_en": "Czechia",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "cz-policie",
+      "type": "police",
+      "name_native": "Policie České republiky",
+      "name_en": "Police of the Czech Republic",
+      "acronym": "PČR",
+      "website": "https://policie.gov.cz",
+      "mail_domains": ["pcr.cz"],
+      "evidence": [
+        {"domain": "pcr.cz", "url": "https://policie.gov.cz/clanek/dorucovani-pisemnosti.aspx", "kind": "other_official", "note": "epodatelna.policie@pcr.cz (central e-filing); regional directorates krpa.podatelna@pcr.cz etc."}
+      ],
+      "confidence": "high",
+      "notes": "Website moved from policie.cz to policie.gov.cz; mail remains on pcr.cz."
+    },
+    {
+      "id": "cz-bis",
+      "type": "intelligence",
+      "name_native": "Bezpečnostní informační služba",
+      "name_en": "Security Information Service",
+      "acronym": "BIS",
+      "website": "https://www.bis.cz",
+      "mail_domains": ["bis.cz"],
+      "evidence": [
+        {"domain": "bis.cz", "url": "https://www.bis.cz/kontakty/", "kind": "contact_page", "note": "info@bis.cz, press@bis.cz"}
+      ],
+      "confidence": "high",
+      "notes": "Domestic intelligence service."
+    },
+    {
+      "id": "cz-uzsi",
+      "type": "intelligence",
+      "name_native": "Úřad pro zahraniční styky a informace",
+      "name_en": "Office for Foreign Relations and Information",
+      "acronym": "ÚZSI",
+      "website": "https://www.uzsi.cz",
+      "mail_domains": ["uzsi.cz"],
+      "evidence": [
+        {"domain": "uzsi.cz", "url": "https://www.uzsi.cz/kontakt/", "kind": "contact_page", "note": "uzsi@uzsi.cz, media@uzsi.cz, podatelna@uzsi.cz"}
+      ],
+      "confidence": "high",
+      "notes": "Foreign intelligence service."
+    },
+    {
+      "id": "cz-vz",
+      "type": "intelligence",
+      "name_native": "Vojenské zpravodajství",
+      "name_en": "Military Intelligence",
+      "acronym": "VZ",
+      "website": "https://vzcr.gov.cz",
+      "mail_domains": ["vz.gov.cz"],
+      "evidence": [
+        {"domain": "vz.gov.cz", "url": "https://vzcr.gov.cz/", "kind": "contact_page", "note": "podatelnavz5847@vz.gov.cz (homepage contact block)"}
+      ],
+      "confidence": "high",
+      "notes": "Combined military intelligence and SIGINT service; also runs cyber-defence."
+    },
+    {
+      "id": "cz-mv",
+      "type": "interior_ministry",
+      "name_native": "Ministerstvo vnitra České republiky",
+      "name_en": "Ministry of the Interior of the Czech Republic",
+      "acronym": "MV ČR",
+      "website": "https://mv.gov.cz",
+      "mail_domains": ["mv.gov.cz", "mvcr.cz"],
+      "evidence": [
+        {"domain": "mv.gov.cz", "url": "https://mv.gov.cz/jak-zadat-o-informace", "kind": "other_official", "note": "posta@mv.gov.cz (electronic filing desk)"},
+        {"domain": "mvcr.cz", "url": "https://mv.gov.cz/migrace/zakladni-informace-o-zpracovani-osobnich-udaju-odborem-azylove-a-migracni-politiky-mv", "kind": "privacy_page", "note": "posta@mvcr.cz still cited; legacy domain in transition to mv.gov.cz"}
+      ],
+      "confidence": "high",
+      "notes": "Domain migration mvcr.cz -> mv.gov.cz; both evidenced."
+    },
+    {
+      "id": "cz-mo",
+      "type": "defence_ministry",
+      "name_native": "Ministerstvo obrany České republiky",
+      "name_en": "Ministry of Defence of the Czech Republic",
+      "acronym": "MO ČR",
+      "website": "https://mo.gov.cz",
+      "mail_domains": ["mo.gov.cz"],
+      "evidence": [
+        {"domain": "mo.gov.cz", "url": "https://mo.gov.cz/", "kind": "contact_page", "note": "epodatelna@mo.gov.cz (homepage); legacy army.cz domain being replaced"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "cz-nukib",
+      "type": "cybersecurity",
+      "name_native": "Národní úřad pro kybernetickou a informační bezpečnost",
+      "name_en": "National Cyber and Information Security Agency",
+      "acronym": "NÚKIB",
+      "website": "https://nukib.gov.cz",
+      "mail_domains": ["nukib.gov.cz"],
+      "evidence": [
+        {"domain": "nukib.gov.cz", "url": "https://nukib.gov.cz/en/contacts/", "kind": "contact_page", "note": "posta@nukib.gov.cz, cert@nukib.gov.cz (GovCERT.CZ)"}
+      ],
+      "confidence": "high",
+      "notes": "Also operates GovCERT.CZ on same domain; national CSIRT.CZ (csirt.cz) is run by CZ.NIC, not a state body."
+    }
+  ],
+  "gaps": [
+    "gendarmerie: none in Czechia",
+    "border_guard: no standalone border guard; Cizinecká policie (Foreigners Police) is part of Policie ČR (pcr.cz)",
+    "national CERT for the public sphere (CSIRT.CZ) is operated by CZ.NIC association, not a state institution; excluded"
+  ]
+}

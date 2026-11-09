@@ -1,0 +1,125 @@
+{
+  "country": "LT",
+  "country_name_en": "Lithuania",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "lt-policija",
+      "type": "police",
+      "name_native": "Lietuvos policija (Policijos departamentas prie VRM)",
+      "name_en": "Lithuanian Police (Police Department under the Ministry of the Interior)",
+      "acronym": "PD",
+      "website": "https://policija.lrv.lt",
+      "mail_domains": ["policija.lt"],
+      "evidence": [
+        {"domain": "policija.lt", "url": "https://norwaygrants.policija.lt/en/lt06-4/p/policijos-departamentas-prie-lietuvos-respublikos-vidaus-reikalu-ministerijos", "kind": "other_official", "note": "policija.lt is the police's own operational domain (official subsites run on it); info@policija.lt cited by the 1551.lt directory; official contact pages obfuscate addresses"}
+      ],
+      "confidence": "medium",
+      "notes": "Website hosted on the government portal policija.lrv.lt, mail on policija.lt."
+    },
+    {
+      "id": "lt-vsat",
+      "type": "border_guard",
+      "name_native": "Valstybės sienos apsaugos tarnyba prie VRM",
+      "name_en": "State Border Guard Service under the Ministry of the Interior",
+      "acronym": "VSAT",
+      "website": "https://vsat.lrv.lt",
+      "mail_domains": ["vsat.vrm.lt"],
+      "evidence": [
+        {"domain": "vsat.vrm.lt", "url": "https://ted.europa.eu/en/notice/419548-2015/pdf", "kind": "official_pdf", "note": "VSAT procurement contacts @vsat.vrm.lt in EU TED notices (2012-2016); current contact pages obfuscate addresses - domain may have changed since"}
+      ],
+      "confidence": "medium",
+      "notes": "Public site also at pasienis.lt; TED evidence is dated (2015-2016)."
+    },
+    {
+      "id": "lt-vsd",
+      "type": "intelligence",
+      "name_native": "Valstybės saugumo departamentas",
+      "name_en": "State Security Department",
+      "acronym": "VSD",
+      "website": "https://www.vsd.lt",
+      "mail_domains": ["vsd.lt"],
+      "evidence": [
+        {"domain": "vsd.lt", "url": "https://www.vsd.lt", "kind": "assumed_from_website", "note": "No readable email found (directory listings obfuscated); domain assumed from official website vsd.lt"}
+      ],
+      "confidence": "low",
+      "notes": "Civilian intelligence and counterintelligence service."
+    },
+    {
+      "id": "lt-aotd",
+      "type": "intelligence",
+      "name_native": "Antrasis operatyvinių tarnybų departamentas prie KAM",
+      "name_en": "Second Investigation Department under the Ministry of National Defence",
+      "acronym": "AOTD",
+      "website": "https://aotd.lt",
+      "mail_domains": ["aotd.lt"],
+      "evidence": [
+        {"domain": "aotd.lt", "url": "https://lrvalstybe.lt/kontaktai/antrasis-operatyviniu-tarnybu-departamentas-prie-kam", "kind": "assumed_from_website", "note": "Government directory lists website aotd.lt (Jankiskiu g. 50, Vilnius) but obfuscates the email; domain assumed"}
+      ],
+      "confidence": "low",
+      "notes": "Military intelligence service."
+    },
+    {
+      "id": "lt-vrm",
+      "type": "interior_ministry",
+      "name_native": "Lietuvos Respublikos vidaus reikalų ministerija",
+      "name_en": "Ministry of the Interior of the Republic of Lithuania",
+      "acronym": "VRM",
+      "website": "https://vrm.lrv.lt",
+      "mail_domains": ["vrm.lt"],
+      "evidence": [
+        {"domain": "vrm.lt", "url": "https://vrm.lrv.lt/public/canonical/1784007132/11014/Priimamasis_%202026-07-14.pdf", "kind": "official_pdf", "note": "bendrasisd@vrm.lt (general inbox) in the ministry's own reception document"}
+      ],
+      "confidence": "high",
+      "notes": "Website on lrv.lt government portal, mail on vrm.lt."
+    },
+    {
+      "id": "lt-kam",
+      "type": "defence_ministry",
+      "name_native": "Lietuvos Respublikos krašto apsaugos ministerija",
+      "name_en": "Ministry of National Defence of the Republic of Lithuania",
+      "acronym": "KAM",
+      "website": "https://kam.lt",
+      "mail_domains": ["kam.lt"],
+      "evidence": [
+        {"domain": "kam.lt", "url": "https://lrv.lt/media/viesa/saugykla/2026/7/BSoEJVkJz5Q.pdf", "kind": "official_pdf", "note": "kam@kam.lt (general) in government resolutions and the ministry's data-protection notices; staff firstname.lastname@kam.lt"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "lt-nksc",
+      "type": "cybersecurity",
+      "name_native": "Nacionalinis kibernetinio saugumo centras prie KAM",
+      "name_en": "National Cyber Security Centre under the Ministry of National Defence",
+      "acronym": "NKSC",
+      "website": "https://www.nksc.lt",
+      "mail_domains": ["nksc.lt"],
+      "evidence": [
+        {"domain": "nksc.lt", "url": "https://www.nksc.lt/doc/biuleteniai/Rekomendacija-5-leidinys.pdf", "kind": "official_pdf", "note": "cert@nksc.lt (incident/vulnerability reporting) in NKSC's own publications; staff firstname.lastname@nksc.lt in TED notices"}
+      ],
+      "confidence": "high",
+      "notes": "National cybersecurity agency and national CERT (absorbed CERT-LT)."
+    },
+    {
+      "id": "lt-vst",
+      "type": "gendarmerie",
+      "name_native": "Viešojo saugumo tarnyba prie VRM",
+      "name_en": "Public Security Service under the Ministry of the Interior",
+      "acronym": "VST",
+      "website": "https://vstarnyba.lrv.lt",
+      "mail_domains": ["vstarnyba.lt"],
+      "evidence": [
+        {"domain": "vstarnyba.lt", "url": "https://vstarnyba.lrv.lt", "kind": "assumed_from_website", "note": "Gendarmerie-type riot/escort force; no readable email found; domain assumed from the service's historical own domain vstarnyba.lt - unverified"}
+      ],
+      "confidence": "low",
+      "notes": "Militarized public-order service (riot control, prisoner escort, critical-object protection)."
+    }
+  ],
+  "gaps": [
+    "VSD, AOTD, VST mail domains assumed - official pages obfuscate email addresses and no official PDF evidence found",
+    "VSAT evidence dated (2015-2016 TED notices); current domain should be re-verified",
+    "police mail domain evidenced only indirectly (official subsite on policija.lt + third-party directory)"
+  ]
+}

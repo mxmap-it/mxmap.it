@@ -1,0 +1,124 @@
+{
+  "country": "LV",
+  "country_name_en": "Latvia",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "lv-vp",
+      "type": "police",
+      "name_native": "Valsts policija",
+      "name_en": "State Police",
+      "acronym": "VP",
+      "website": "https://www.vp.gov.lv",
+      "mail_domains": ["vp.gov.lv"],
+      "evidence": [
+        {"domain": "vp.gov.lv", "url": "https://www.vp.gov.lv/lv/kontakti", "kind": "contact_page", "note": "pasts@vp.gov.lv (general) + staff addresses firstname.lastname@vp.gov.lv"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "lv-vrs",
+      "type": "border_guard",
+      "name_native": "Valsts robežsardze",
+      "name_en": "State Border Guard",
+      "acronym": "VRS",
+      "website": "https://www.rs.gov.lv",
+      "mail_domains": ["rs.gov.lv"],
+      "evidence": [
+        {"domain": "rs.gov.lv", "url": "https://www.rs.gov.lv/lv/media/17293/download", "kind": "official_pdf", "note": "pasts@rs.gov.lv (general), das@rs.gov.lv (DPO), regional lup.kanceleja@rs.gov.lv etc."}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "lv-vdd",
+      "type": "intelligence",
+      "name_native": "Valsts drošības dienests",
+      "name_en": "State Security Service",
+      "acronym": "VDD",
+      "website": "https://vdd.gov.lv",
+      "mail_domains": ["vdd.gov.lv"],
+      "evidence": [
+        {"domain": "vdd.gov.lv", "url": "https://vdd.gov.lv/lv/kontakti", "kind": "contact_page", "note": "info@vdd.gov.lv, prese@vdd.gov.lv, pasts@vdd.gov.lv"}
+      ],
+      "confidence": "high",
+      "notes": "Domestic security/counterintelligence service (former Drošības policija)."
+    },
+    {
+      "id": "lv-sab",
+      "type": "intelligence",
+      "name_native": "Satversmes aizsardzības birojs",
+      "name_en": "Constitution Protection Bureau",
+      "acronym": "SAB",
+      "website": "https://www.sab.gov.lv",
+      "mail_domains": ["sab.gov.lv"],
+      "evidence": [
+        {"domain": "sab.gov.lv", "url": "https://www.sab.gov.lv/en/about-us", "kind": "other_official", "note": "pasts@sab.gov.lv (general), prese@sab.gov.lv (press)"}
+      ],
+      "confidence": "high",
+      "notes": "Foreign intelligence and SIGINT coordination service."
+    },
+    {
+      "id": "lv-midd",
+      "type": "intelligence",
+      "name_native": "Militārās izlūkošanas un drošības dienests",
+      "name_en": "Military Intelligence and Security Service",
+      "acronym": "MIDD",
+      "website": "https://midd.gov.lv",
+      "mail_domains": ["midd.gov.lv"],
+      "evidence": [
+        {"domain": "midd.gov.lv", "url": "https://midd.gov.lv", "kind": "assumed_from_website", "note": "No published email found in searches; domain assumed from official website midd.gov.lv (publishes its annual reports there)"}
+      ],
+      "confidence": "low",
+      "notes": "Military intelligence under the Ministry of Defence."
+    },
+    {
+      "id": "lv-iem",
+      "type": "interior_ministry",
+      "name_native": "Iekšlietu ministrija",
+      "name_en": "Ministry of the Interior",
+      "acronym": "IeM",
+      "website": "https://www.iem.gov.lv",
+      "mail_domains": ["iem.gov.lv"],
+      "evidence": [
+        {"domain": "iem.gov.lv", "url": "https://www.iem.gov.lv/en/contacts-ministry", "kind": "contact_page", "note": "pasts@iem.gov.lv (general), prese@iem.gov.lv (media)"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "lv-aizm",
+      "type": "defence_ministry",
+      "name_native": "Aizsardzības ministrija",
+      "name_en": "Ministry of Defence",
+      "acronym": "AizM",
+      "website": "https://www.mod.gov.lv",
+      "mail_domains": ["mod.gov.lv"],
+      "evidence": [
+        {"domain": "mod.gov.lv", "url": "https://www.mod.gov.lv/lv/kontakti", "kind": "contact_page", "note": "pasts@mod.gov.lv, prese@mod.gov.lv + ~45 staff addresses firstname.lastname@mod.gov.lv"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "lv-certlv",
+      "type": "cybersecurity",
+      "name_native": "CERT.LV (Informācijas tehnoloģiju drošības incidentu novēršanas institūcija)",
+      "name_en": "CERT.LV - IT Security Incident Response Institution of Latvia",
+      "acronym": "CERT.LV",
+      "website": "https://cert.lv",
+      "mail_domains": ["cert.lv"],
+      "evidence": [
+        {"domain": "cert.lv", "url": "https://cert.lv/lv/kontakti", "kind": "contact_page", "note": "contact page lists mailbox local parts (cert, abuse, cvd, prese, pakalpojumi) with domain cert.lv implied by site; cert@cert.lv is the canonical reporting address"}
+      ],
+      "confidence": "high",
+      "notes": "Operated under IMCS University of Latvia, mandated by the Ministry of Defence; national CSIRT. The new National Cybersecurity Centre (NKDC) is organised around MoD (mod.gov.lv) and CERT.LV."
+    }
+  ],
+  "gaps": [
+    "gendarmerie: none in Latvia (Zemessardze is a national guard / volunteer military force, not police)",
+    "MIDD mail domain assumed - no published contact email found"
+  ]
+}

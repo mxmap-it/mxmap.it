@@ -1,0 +1,167 @@
+{
+  "country": "PL",
+  "country_name_en": "Poland",
+  "group": "eu27",
+  "researched_at": "2026-11-09",
+  "entities": [
+    {
+      "id": "pl-policja",
+      "type": "police",
+      "name_native": "Policja (Komenda Główna Policji)",
+      "name_en": "Polish Police (National Police Headquarters)",
+      "acronym": "KGP",
+      "website": "https://policja.pl",
+      "mail_domains": ["policja.gov.pl"],
+      "evidence": [
+        {"domain": "policja.gov.pl", "url": "https://policja.pl/pol/kontakt/118,Kontakt.html", "kind": "contact_page", "note": "portal@policja.gov.pl (editorial contact in footer); regional commands also use *.policja.gov.pl"}
+      ],
+      "confidence": "high",
+      "notes": "Website on policja.pl, mail on policja.gov.pl."
+    },
+    {
+      "id": "pl-sg",
+      "type": "border_guard",
+      "name_native": "Straż Graniczna",
+      "name_en": "Border Guard",
+      "acronym": "SG",
+      "website": "https://www.strazgraniczna.pl",
+      "mail_domains": ["strazgraniczna.pl"],
+      "evidence": [
+        {"domain": "strazgraniczna.pl", "url": "https://www.strazgraniczna.pl/pl/kontakt", "kind": "contact_page", "note": "gkg.kg@strazgraniczna.pl, zg.kg@strazgraniczna.pl, zdsc2.kg@strazgraniczna.pl"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "pl-abw",
+      "type": "intelligence",
+      "name_native": "Agencja Bezpieczeństwa Wewnętrznego",
+      "name_en": "Internal Security Agency",
+      "acronym": "ABW",
+      "website": "https://www.abw.gov.pl",
+      "mail_domains": ["abw.gov.pl"],
+      "evidence": [
+        {"domain": "abw.gov.pl", "url": "https://www.abw.gov.pl/", "kind": "contact_page", "note": "poczta@abw.gov.pl (mailto link in site footer)"}
+      ],
+      "confidence": "high",
+      "notes": "Domestic security/counterintelligence service."
+    },
+    {
+      "id": "pl-aw",
+      "type": "intelligence",
+      "name_native": "Agencja Wywiadu",
+      "name_en": "Foreign Intelligence Agency",
+      "acronym": "AW",
+      "website": "https://aw.gov.pl",
+      "mail_domains": ["aw.gov.pl"],
+      "evidence": [
+        {"domain": "aw.gov.pl", "url": "https://aw.gov.pl/pl/kontakt/173,Kontakt.pdf", "kind": "contact_page", "note": "poczta@aw.gov.pl, rekrutacja@aw.gov.pl"}
+      ],
+      "confidence": "high",
+      "notes": "Foreign intelligence service."
+    },
+    {
+      "id": "pl-skw",
+      "type": "intelligence",
+      "name_native": "Służba Kontrwywiadu Wojskowego",
+      "name_en": "Military Counterintelligence Service",
+      "acronym": "SKW",
+      "website": "https://www.skw.gov.pl",
+      "mail_domains": ["skw.gov.pl"],
+      "evidence": [
+        {"domain": "skw.gov.pl", "url": "https://www.skw.gov.pl", "kind": "assumed_from_website", "note": "No published email found; domain assumed from official website"}
+      ],
+      "confidence": "low",
+      "notes": "No public contact email found in searches."
+    },
+    {
+      "id": "pl-sww",
+      "type": "intelligence",
+      "name_native": "Służba Wywiadu Wojskowego",
+      "name_en": "Military Intelligence Service",
+      "acronym": "SWW",
+      "website": "https://www.sww.gov.pl",
+      "mail_domains": ["sww.gov.pl"],
+      "evidence": [
+        {"domain": "sww.gov.pl", "url": "https://www.sww.gov.pl", "kind": "assumed_from_website", "note": "No published email found; domain assumed from official website"}
+      ],
+      "confidence": "low",
+      "notes": "No public contact email found in searches."
+    },
+    {
+      "id": "pl-mswia",
+      "type": "interior_ministry",
+      "name_native": "Ministerstwo Spraw Wewnętrznych i Administracji",
+      "name_en": "Ministry of the Interior and Administration",
+      "acronym": "MSWiA",
+      "website": "https://www.gov.pl/web/mswia",
+      "mail_domains": ["mswia.gov.pl"],
+      "evidence": [
+        {"domain": "mswia.gov.pl", "url": "https://www.gov.pl/web/mswia/kontakt", "kind": "contact_page", "note": "kontakt@mswia.gov.pl"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "pl-mon",
+      "type": "defence_ministry",
+      "name_native": "Ministerstwo Obrony Narodowej",
+      "name_en": "Ministry of National Defence",
+      "acronym": "MON",
+      "website": "https://www.gov.pl/web/obrona-narodowa",
+      "mail_domains": ["mon.gov.pl"],
+      "evidence": [
+        {"domain": "mon.gov.pl", "url": "https://www.gov.pl/web/national-defence/contact", "kind": "contact_page", "note": "kontakt@mon.gov.pl"}
+      ],
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "id": "pl-nask",
+      "type": "cybersecurity",
+      "name_native": "Naukowa i Akademicka Sieć Komputerowa - Państwowy Instytut Badawczy",
+      "name_en": "NASK - National Research Institute",
+      "acronym": "NASK",
+      "website": "https://nask.pl",
+      "mail_domains": ["nask.pl"],
+      "evidence": [
+        {"domain": "nask.pl", "url": "https://en.nask.pl/eng/contact", "kind": "contact_page", "note": "nask@nask.pl (reception/secretariat); also iod@nask.pl"}
+      ],
+      "confidence": "high",
+      "notes": "Hosts CSIRT NASK / CERT Polska; national-level CSIRT under the national cybersecurity system."
+    },
+    {
+      "id": "pl-cert-polska",
+      "type": "cybersecurity",
+      "name_native": "CERT Polska",
+      "name_en": "CERT Polska (national CERT, operated by NASK)",
+      "acronym": "CERT PL",
+      "website": "https://cert.pl",
+      "mail_domains": ["cert.pl"],
+      "evidence": [
+        {"domain": "cert.pl", "url": "https://cert.pl/en/contact/", "kind": "contact_page", "note": "info@cert.pl, cert@cert.pl (incident reporting)"}
+      ],
+      "confidence": "high",
+      "notes": "National CERT distinct mail domain from NASK."
+    },
+    {
+      "id": "pl-sop",
+      "type": "other_natsec",
+      "name_native": "Służba Ochrony Państwa",
+      "name_en": "State Protection Service",
+      "acronym": "SOP",
+      "website": "https://www.gov.pl/web/sop",
+      "mail_domains": ["sop.gov.pl"],
+      "evidence": [
+        {"domain": "sop.gov.pl", "url": "https://www.gov.pl/web/sop", "kind": "assumed_from_website", "note": "Protection of highest officials; domain assumed from official gov.pl site naming (sop.gov.pl)"}
+      ],
+      "confidence": "low",
+      "notes": "Successor of BOR; protective service under MSWiA."
+    }
+  ],
+  "gaps": [
+    "gendarmerie: Poland has no civilian gendarmerie; Żandarmeria Wojskowa is military police within the armed forces (mail under mil.pl), not included",
+    "CBA (Central Anticorruption Bureau) excluded as primarily anticorruption, not core national security",
+    "SKW/SWW/SOP mail domains assumed - no published contact email found"
+  ]
+}
