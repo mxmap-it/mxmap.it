@@ -439,7 +439,7 @@
    "domain": "mb.gov.al",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
   }
  },
  {
@@ -828,7 +828,7 @@
    "domain": "dsn.gv.at",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
   }
  },
  {
@@ -1683,7 +1683,7 @@
    "domain": "mil.be",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+   "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
   }
  },
  {
@@ -2757,7 +2757,7 @@
   "name_en": "National Computer Emergency Response Team of Belarus (CERT.BY)",
   "acronym": "CERT.BY",
   "website": "https://cert.by",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
    "cert.by"
   ],
@@ -2787,9 +2787,9 @@
   ],
   "domain_evidence": {
    "domain": "cert.by",
-   "url": "https://cert.by",
-   "kind": "assumed_from_website",
-   "note": "assumed from website registrable domain; site serves only a JS verification page to foreign IPs, historical contact support@cert.by not re-verifiable"
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "Claude: seen in third-party source; Qwen: seen on official site"
   }
  },
  {
@@ -2889,7 +2889,7 @@
   "name_en": "Federal Department of Justice and Police",
   "acronym": "EJPD / FDJP",
   "website": "https://www.ejpd.admin.ch",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
    "gs-ejpd.admin.ch"
   ],
@@ -2925,9 +2925,9 @@
   ],
   "domain_evidence": {
    "domain": "gs-ejpd.admin.ch",
-   "url": "https://www.ejpd.admin.ch",
-   "kind": "assumed_from_website",
-   "note": "Swiss departments mail via their General Secretariat (gs-<dept>.admin.ch pattern, cf. gs-vbs.admin.ch verified); no address captured on page"
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "ChatGPT: seen on official site; Claude: seen on official site"
   }
  },
  {
@@ -4861,7 +4861,7 @@
    "domain": "politsei.ee",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen in official document; Qwen: seen in third-party source"
+   "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen in third-party source"
   }
  },
  {
@@ -5408,7 +5408,7 @@
    "domain": "incibe.es",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+   "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
   }
  },
  {
@@ -5504,17 +5504,40 @@
   "name_en": "National Security Department (Presidency of the Government)",
   "acronym": "DSN",
   "website": "https://www.dsn.gob.es",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
+   "dsn.presidencia.gob.es",
    "dsn.gob.es"
   ],
-  "primary_domain": "dsn.gob.es",
-  "provider": "unknown",
-  "reason": "No MX records found",
-  "mx": [],
-  "mx_countries": [],
+  "primary_domain": "dsn.presidencia.gob.es",
+  "provider": "local-isp",
+  "reason": "MX (mx0.presidencia.gob.es, mx1.presidencia.gob.es) hosted on Local ISP (SEAP-AGE/Gobierno (ES))",
+  "mx": [
+   "mx0.presidencia.gob.es",
+   "mx1.presidencia.gob.es",
+   "mx2.presidencia.gob.es",
+   "mx3.presidencia.gob.es"
+  ],
+  "mx_countries": [
+   "ES"
+  ],
   "gateway": null,
   "scans": [
+   {
+    "domain": "dsn.presidencia.gob.es",
+    "mx": [
+     "mx0.presidencia.gob.es",
+     "mx1.presidencia.gob.es",
+     "mx2.presidencia.gob.es",
+     "mx3.presidencia.gob.es"
+    ],
+    "spf": "v=spf1 mx -all",
+    "provider": "local-isp",
+    "reason": "MX (mx0.presidencia.gob.es, mx1.presidencia.gob.es) hosted on Local ISP (SEAP-AGE/Gobierno (ES))",
+    "mx_countries": [
+     "ES"
+    ]
+   },
    {
     "domain": "dsn.gob.es",
     "mx": [],
@@ -5524,10 +5547,10 @@
    }
   ],
   "domain_evidence": {
-   "domain": "dsn.gob.es",
-   "url": "https://www.dsn.gob.es",
-   "kind": "assumed_from_website",
-   "note": "No public email address evidenced; assumed from website registrable domain"
+   "domain": "dsn.presidencia.gob.es",
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "Claude: seen on official site; Qwen: seen on official site"
   }
  },
  {
@@ -6417,7 +6440,7 @@
    "domain": "euda.europa.eu",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
   }
  },
  {
@@ -7269,7 +7292,7 @@
    "domain": "sgdsn.gouv.fr",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen in official document"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen in official document"
   }
  },
  {
@@ -8440,7 +8463,7 @@
    "domain": "nis.gr",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen in official document; Qwen: seen on official site"
   }
  },
  {
@@ -9086,7 +9109,7 @@
    "domain": "zsis.hr",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen in third-party source; Qwen: seen on official site"
   }
  },
  {
@@ -9759,7 +9782,7 @@
    "domain": "defence.ie",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
   }
  },
  {
@@ -10377,7 +10400,7 @@
    "domain": "giustizia.it",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
   }
  },
  {
@@ -10819,7 +10842,7 @@
    "domain": "landespolizei.li",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen in official document; Qwen: seen on official site"
   }
  },
  {
@@ -11057,7 +11080,7 @@
   "name_en": "State Security Department",
   "acronym": "VSD",
   "website": "https://www.vsd.lt",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
    "vsd.lt"
   ],
@@ -11091,9 +11114,9 @@
   ],
   "domain_evidence": {
    "domain": "vsd.lt",
-   "url": "https://www.vsd.lt",
-   "kind": "assumed_from_website",
-   "note": "No readable email found (directory listings obfuscated); domain assumed from official website vsd.lt"
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "Claude: seen in official document; Qwen: seen on official site"
   }
  },
  {
@@ -11296,7 +11319,7 @@
   "name_en": "Public Security Service under the Ministry of the Interior",
   "acronym": "VST",
   "website": "https://vstarnyba.lrv.lt",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
    "vstarnyba.lt"
   ],
@@ -11326,9 +11349,9 @@
   ],
   "domain_evidence": {
    "domain": "vstarnyba.lt",
-   "url": "https://vstarnyba.lrv.lt",
-   "kind": "assumed_from_website",
-   "note": "Gendarmerie-type riot/escort force; no readable email found; domain assumed from the service's historical own domain vstarnyba.lt - unverified"
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "Claude: seen in official document; Qwen: seen on official site"
   }
  },
  {
@@ -11762,7 +11785,7 @@
    "domain": "do.etat.lu",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
   }
  },
  {
@@ -11995,7 +12018,7 @@
    "domain": "midd.gov.lv",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen in third-party source"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen in third-party source"
   }
  },
  {
@@ -12390,17 +12413,36 @@
   "name_en": "General Inspectorate of Carabinieri",
   "acronym": "IGC",
   "website": "https://www.carabinier.gov.md",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
+   "igc.gov.md",
    "carabinier.gov.md"
   ],
-  "primary_domain": "carabinier.gov.md",
-  "provider": "unknown",
-  "reason": "No MX records found",
-  "mx": [],
-  "mx_countries": [],
+  "primary_domain": "igc.gov.md",
+  "provider": "independent",
+  "reason": "MX (mx1.gov.md, mx2.gov.md) is self-hosted",
+  "mx": [
+   "mx1.gov.md",
+   "mx2.gov.md"
+  ],
+  "mx_countries": [
+   "MD"
+  ],
   "gateway": null,
   "scans": [
+   {
+    "domain": "igc.gov.md",
+    "mx": [
+     "mx1.gov.md",
+     "mx2.gov.md"
+    ],
+    "spf": "v=spf1 redirect=_spf.stisc.md",
+    "provider": "independent",
+    "reason": "MX (mx1.gov.md, mx2.gov.md) is self-hosted",
+    "mx_countries": [
+     "MD"
+    ]
+   },
    {
     "domain": "carabinier.gov.md",
     "mx": [],
@@ -12410,10 +12452,10 @@
    }
   ],
   "domain_evidence": {
-   "domain": "carabinier.gov.md",
-   "url": "https://www.carabinier.gov.md",
-   "kind": "assumed_from_website",
-   "note": "assumed from website registrable domain; third-party directory (force-publique.net) lists an outdated carabinier@gov.mai.md; some staff use @mai.gov.md"
+   "domain": "igc.gov.md",
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "ChatGPT: seen in official document; Claude: seen in official document"
   }
  },
  {
@@ -14608,7 +14650,7 @@
   "name_en": "Norwegian Directorate for Civil Protection",
   "acronym": "DSB",
   "website": "https://www.dsb.no",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
    "dsb.no"
   ],
@@ -14642,9 +14684,9 @@
   ],
   "domain_evidence": {
    "domain": "dsb.no",
-   "url": "https://www.dsb.no",
-   "kind": "assumed_from_website",
-   "note": "postmottak@dsb.no widely cited; assumed from website registrable domain"
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "ChatGPT: seen in official document; Claude: seen in official document"
   }
  },
  {
@@ -14873,7 +14915,7 @@
    "domain": "skw.gov.pl",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+   "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
   }
  },
  {
@@ -15187,7 +15229,7 @@
    "domain": "sop.gov.pl",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
   }
  },
  {
@@ -15310,17 +15352,34 @@
   "name_en": "Judicial Police (criminal investigation)",
   "acronym": "PJ",
   "website": "https://www.policiajudiciaria.pt",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
+   "pj.pt",
    "policiajudiciaria.pt"
   ],
-  "primary_domain": "policiajudiciaria.pt",
-  "provider": "unknown",
-  "reason": "No MX records found",
-  "mx": [],
-  "mx_countries": [],
+  "primary_domain": "pj.pt",
+  "provider": "independent",
+  "reason": "MX (mailgw.mj.pt) is self-hosted",
+  "mx": [
+   "mailgw.mj.pt"
+  ],
+  "mx_countries": [
+   "PT"
+  ],
   "gateway": null,
   "scans": [
+   {
+    "domain": "pj.pt",
+    "mx": [
+     "mailgw.mj.pt"
+    ],
+    "spf": "v=spf1 ip4:91.198.182.0/27 -all",
+    "provider": "independent",
+    "reason": "MX (mailgw.mj.pt) is self-hosted",
+    "mx_countries": [
+     "PT"
+    ]
+   },
    {
     "domain": "policiajudiciaria.pt",
     "mx": [],
@@ -15330,10 +15389,10 @@
    }
   ],
   "domain_evidence": {
-   "domain": "policiajudiciaria.pt",
-   "url": "https://www.policiajudiciaria.pt",
-   "kind": "assumed_from_website",
-   "note": "No email address evidenced in research; assumed from website registrable domain"
+   "domain": "pj.pt",
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "ChatGPT: seen on official site; Claude: seen in official document"
   }
  },
  {
@@ -15391,7 +15450,7 @@
   "name_en": "Security Intelligence Service (domestic)",
   "acronym": "SIS",
   "website": "https://www.sis.pt",
-  "confidence": "low",
+  "confidence": "medium",
   "mail_domains": [
    "sis.pt"
   ],
@@ -15423,9 +15482,9 @@
   ],
   "domain_evidence": {
    "domain": "sis.pt",
-   "url": "https://www.sis.pt",
-   "kind": "assumed_from_website",
-   "note": "No public email evidenced; assumed from website registrable domain"
+   "url": "",
+   "kind": "llm_consensus",
+   "note": "ChatGPT: seen on official site; Claude: seen on official site"
   }
  },
  {
@@ -15692,7 +15751,7 @@
    "domain": "gns.gov.pt",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+   "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
   }
  },
  {
@@ -18302,7 +18361,7 @@
    "domain": "nbu.gov.sk",
    "url": "",
    "kind": "llm_consensus",
-   "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+   "note": "ChatGPT: seen on official site; Claude: seen in third-party source; Qwen: seen on official site"
   }
  },
  {
@@ -20479,18 +20538,27 @@
    "mchs.gov.by"
   ],
   "primary_domain": "mchs.gov.by",
-  "provider": "unknown",
-  "reason": "No MX records found",
-  "mx": [],
-  "mx_countries": [],
+  "provider": "local-isp",
+  "reason": "MX (mail.g-cloud.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+  "mx": [
+   "mail.g-cloud.by"
+  ],
+  "mx_countries": [
+   "BY"
+  ],
   "gateway": null,
   "scans": [
    {
     "domain": "mchs.gov.by",
-    "mx": [],
-    "spf": "",
-    "provider": "unknown",
-    "reason": "No MX records found"
+    "mx": [
+     "mail.g-cloud.by"
+    ],
+    "spf": "v=spf1 +mx +a:smx1.hoster.by -all",
+    "provider": "local-isp",
+    "reason": "MX (mail.g-cloud.by) hosted on Local ISP (BCT/g-cloud.by (BY))",
+    "mx_countries": [
+     "BY"
+    ]
    }
   ],
   "domain_evidence": {

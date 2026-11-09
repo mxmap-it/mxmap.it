@@ -54,9 +54,16 @@
       "acronym": "PJ",
       "website": "https://www.policiajudiciaria.pt",
       "mail_domains": [
+        "pj.pt",
         "policiajudiciaria.pt"
       ],
       "evidence": [
+        {
+          "domain": "pj.pt",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Claude: seen in official document"
+        },
         {
           "domain": "policiajudiciaria.pt",
           "url": "https://www.policiajudiciaria.pt",
@@ -64,7 +71,7 @@
           "note": "No email address evidenced in research; assumed from website registrable domain"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "notes": "National criminal-investigation police under Ministry of Justice; took over serious immigration crime after SEF abolition."
     },
     {
@@ -101,12 +108,12 @@
       "evidence": [
         {
           "domain": "sis.pt",
-          "url": "https://www.sis.pt",
-          "kind": "assumed_from_website",
-          "note": "No public email evidenced; assumed from website registrable domain"
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Claude: seen on official site"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "notes": "Domestic intelligence, part of SIRP."
     },
     {
@@ -222,7 +229,7 @@
           "domain": "gns.gov.pt",
           "url": "",
           "kind": "llm_consensus",
-          "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+          "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
         }
       ],
       "confidence": "medium",

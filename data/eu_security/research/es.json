@@ -110,7 +110,7 @@
           "domain": "incibe.es",
           "url": "",
           "kind": "llm_consensus",
-          "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+          "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
         }
       ],
       "confidence": "medium",
@@ -166,9 +166,16 @@
       "acronym": "DSN",
       "website": "https://www.dsn.gob.es",
       "mail_domains": [
+        "dsn.presidencia.gob.es",
         "dsn.gob.es"
       ],
       "evidence": [
+        {
+          "domain": "dsn.presidencia.gob.es",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "Claude: seen on official site; Qwen: seen on official site"
+        },
         {
           "domain": "dsn.gob.es",
           "url": "https://www.dsn.gob.es",
@@ -176,7 +183,7 @@
           "note": "No public email address evidenced; assumed from website registrable domain"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "notes": "National Security Council secretariat within the Prime Minister's office."
     }
   ],

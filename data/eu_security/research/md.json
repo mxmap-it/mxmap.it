@@ -11,9 +11,16 @@
       "name_en": "General Police Inspectorate",
       "acronym": "IGP",
       "website": "https://politia.md",
-      "mail_domains": ["igp.gov.md"],
+      "mail_domains": [
+        "igp.gov.md"
+      ],
       "evidence": [
-        {"domain": "igp.gov.md", "url": "https://gov.md/index.php/ro/acces-la-servicii-publice-pentru-locuitorii-din-regiunea-transnistreana", "kind": "other_official", "note": "ip_dubasari@igp.gov.md, ip_floresti@igp.gov.md (territorial inspectorates) on gov.md; also daniela.carbuni@igp.gov.md on particip.gov.md (https://particip.gov.md/ro/authorities/296)"}
+        {
+          "domain": "igp.gov.md",
+          "url": "https://gov.md/index.php/ro/acces-la-servicii-publice-pentru-locuitorii-din-regiunea-transnistreana",
+          "kind": "other_official",
+          "note": "ip_dubasari@igp.gov.md, ip_floresti@igp.gov.md (territorial inspectorates) on gov.md; also daniela.carbuni@igp.gov.md on particip.gov.md (https://particip.gov.md/ro/authorities/296)"
+        }
       ],
       "confidence": "high",
       "notes": "Website also at igp.gov.md; politia.md is the public portal."
@@ -25,11 +32,25 @@
       "name_en": "General Inspectorate of Carabinieri",
       "acronym": "IGC",
       "website": "https://www.carabinier.gov.md",
-      "mail_domains": ["carabinier.gov.md"],
-      "evidence": [
-        {"domain": "carabinier.gov.md", "url": "https://www.carabinier.gov.md", "kind": "assumed_from_website", "note": "assumed from website registrable domain; third-party directory (force-publique.net) lists an outdated carabinier@gov.mai.md; some staff use @mai.gov.md"}
+      "mail_domains": [
+        "igc.gov.md",
+        "carabinier.gov.md"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "igc.gov.md",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen in official document; Claude: seen in official document"
+        },
+        {
+          "domain": "carabinier.gov.md",
+          "url": "https://www.carabinier.gov.md",
+          "kind": "assumed_from_website",
+          "note": "assumed from website registrable domain; third-party directory (force-publique.net) lists an outdated carabinier@gov.mai.md; some staff use @mai.gov.md"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Militarized force under the Ministry of Internal Affairs."
     },
     {
@@ -39,9 +60,16 @@
       "name_en": "General Inspectorate of Border Police",
       "acronym": "IGPF",
       "website": "https://border.gov.md",
-      "mail_domains": ["border.gov.md"],
+      "mail_domains": [
+        "border.gov.md"
+      ],
       "evidence": [
-        {"domain": "border.gov.md", "url": "https://border.gov.md/en/en/public-relations-section", "kind": "contact_page", "note": "politia.frontiera@border.gov.md (general office), informare@border.gov.md (public relations), dsfs@border.gov.md (risk analysis)"}
+        {
+          "domain": "border.gov.md",
+          "url": "https://border.gov.md/en/en/public-relations-section",
+          "kind": "contact_page",
+          "note": "politia.frontiera@border.gov.md (general office), informare@border.gov.md (public relations), dsfs@border.gov.md (risk analysis)"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -53,9 +81,16 @@
       "name_en": "Security and Intelligence Service of the Republic of Moldova",
       "acronym": "SIS",
       "website": "https://sis.md",
-      "mail_domains": ["sis.md"],
+      "mail_domains": [
+        "sis.md"
+      ],
       "evidence": [
-        {"domain": "sis.md", "url": "https://new.sis.md/ro/node/6238", "kind": "other_official", "note": "info@sis.md listed on SIS site (recruitment/contact)"}
+        {
+          "domain": "sis.md",
+          "url": "https://new.sis.md/ro/node/6238",
+          "kind": "other_official",
+          "note": "info@sis.md listed on SIS site (recruitment/contact)"
+        }
       ],
       "confidence": "high",
       "notes": "Combined domestic and foreign intelligence service."
@@ -67,9 +102,16 @@
       "name_en": "Ministry of Internal Affairs of the Republic of Moldova",
       "acronym": "MAI",
       "website": "https://mai.gov.md",
-      "mail_domains": ["mai.gov.md"],
+      "mail_domains": [
+        "mai.gov.md"
+      ],
       "evidence": [
-        {"domain": "mai.gov.md", "url": "https://particip.gov.md/ro/authorities/1252", "kind": "other_official", "note": "pavel.serjant@mai.gov.md listed on official government participation portal"}
+        {
+          "domain": "mai.gov.md",
+          "url": "https://particip.gov.md/ro/authorities/1252",
+          "kind": "other_official",
+          "note": "pavel.serjant@mai.gov.md listed on official government participation portal"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -81,10 +123,23 @@
       "name_en": "Ministry of Defence of the Republic of Moldova",
       "acronym": "MA",
       "website": "https://www.army.md",
-      "mail_domains": ["army.gov.md", "army.md"],
+      "mail_domains": [
+        "army.gov.md",
+        "army.md"
+      ],
       "evidence": [
-        {"domain": "army.gov.md", "url": "https://particip.gov.md/ro/authorities/178", "kind": "other_official", "note": "cancelariama@army.gov.md (ministry chancellery) on official government participation portal"},
-        {"domain": "army.md", "url": "https://www.trusted-introducer.org/directory/teams/cric-an-md.html", "kind": "other_official", "note": "incidents@army.md (CRIC-AN military CERT); alexandru.roman@army.md (General Staff) on particip.gov.md"}
+        {
+          "domain": "army.gov.md",
+          "url": "https://particip.gov.md/ro/authorities/178",
+          "kind": "other_official",
+          "note": "cancelariama@army.gov.md (ministry chancellery) on official government participation portal"
+        },
+        {
+          "domain": "army.md",
+          "url": "https://www.trusted-introducer.org/directory/teams/cric-an-md.html",
+          "kind": "other_official",
+          "note": "incidents@army.md (CRIC-AN military CERT); alexandru.roman@army.md (General Staff) on particip.gov.md"
+        }
       ],
       "confidence": "high",
       "notes": "Both domains in active official use."
@@ -96,9 +151,16 @@
       "name_en": "Agency for Cyber Security (National Cybersecurity Agency of Moldova)",
       "acronym": "ASC",
       "website": "https://asc.gov.md",
-      "mail_domains": ["asc.gov.md"],
+      "mail_domains": [
+        "asc.gov.md"
+      ],
       "evidence": [
-        {"domain": "asc.gov.md", "url": "https://www.trusted-introducer.org/directory/teams/ncsc-md.html", "kind": "other_official", "note": "csirt@asc.gov.md listed for NCSC-MD (national CSIRT) in Trusted Introducer directory"}
+        {
+          "domain": "asc.gov.md",
+          "url": "https://www.trusted-introducer.org/directory/teams/ncsc-md.html",
+          "kind": "other_official",
+          "note": "csirt@asc.gov.md listed for NCSC-MD (national CSIRT) in Trusted Introducer directory"
+        }
       ],
       "confidence": "medium",
       "notes": "National cybersecurity authority established under the 2023 cybersecurity law; hosts the national CSIRT (NCSC-MD)."
@@ -110,9 +172,16 @@
       "name_en": "Information Technology and Cyber Security Service",
       "acronym": "STISC",
       "website": "https://stisc.gov.md",
-      "mail_domains": ["stisc.gov.md"],
+      "mail_domains": [
+        "stisc.gov.md"
+      ],
       "evidence": [
-        {"domain": "stisc.gov.md", "url": "https://www.trusted-introducer.org/directory/teams/cert-gov-md.html", "kind": "other_official", "note": "stisc@stisc.gov.md listed for CERT-GOV-MD (governmental CERT)"}
+        {
+          "domain": "stisc.gov.md",
+          "url": "https://www.trusted-introducer.org/directory/teams/cert-gov-md.html",
+          "kind": "other_official",
+          "note": "stisc@stisc.gov.md listed for CERT-GOV-MD (governmental CERT)"
+        }
       ],
       "confidence": "medium",
       "notes": "Runs CERT-GOV-MD for government networks; older address info@cert.gov.md now superseded."

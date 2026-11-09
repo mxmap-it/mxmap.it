@@ -11,9 +11,16 @@
       "name_en": "Norwegian Police Service / National Police Directorate",
       "acronym": "POD",
       "website": "https://www.politiet.no",
-      "mail_domains": ["politiet.no"],
+      "mail_domains": [
+        "politiet.no"
+      ],
       "evidence": [
-        {"domain": "politiet.no", "url": "https://politiet.no/en/kontakt-politiet/utlisting-sarorgan", "kind": "contact_page", "note": "politidirektoratet@politiet.no (National Police Directorate)"}
+        {
+          "domain": "politiet.no",
+          "url": "https://politiet.no/en/kontakt-politiet/utlisting-sarorgan",
+          "kind": "contact_page",
+          "note": "politidirektoratet@politiet.no (National Police Directorate)"
+        }
       ],
       "confidence": "high",
       "notes": "Single national police with 12 districts; special agencies (Kripos, Økokrim) also use politiet.no."
@@ -25,9 +32,16 @@
       "name_en": "Norwegian Police Security Service",
       "acronym": "PST",
       "website": "https://www.pst.no",
-      "mail_domains": ["pst.politiet.no"],
+      "mail_domains": [
+        "pst.politiet.no"
+      ],
       "evidence": [
-        {"domain": "pst.politiet.no", "url": "https://www.pst.no/globalassets/eldre/pst_brosjyre_statlige_aktorer.pdf", "kind": "official_pdf", "note": "post@pst.politiet.no (PST brochure and consultation-response letterheads)"}
+        {
+          "domain": "pst.politiet.no",
+          "url": "https://www.pst.no/globalassets/eldre/pst_brosjyre_statlige_aktorer.pdf",
+          "kind": "official_pdf",
+          "note": "post@pst.politiet.no (PST brochure and consultation-response letterheads)"
+        }
       ],
       "confidence": "high",
       "notes": "Domestic security service; email uses the pst.politiet.no subdomain, website is pst.no."
@@ -39,9 +53,16 @@
       "name_en": "Norwegian Intelligence Service",
       "acronym": "E-tjenesten",
       "website": "https://www.etterretningstjenesten.no",
-      "mail_domains": ["mil.no"],
+      "mail_domains": [
+        "mil.no"
+      ],
       "evidence": [
-        {"domain": "mil.no", "url": "https://www.forsvaret.no/en/privacy-policy", "kind": "privacy_page", "note": "Armed Forces addresses use @mil.no (e.g. forsvarets.personvernombud@mil.no); E-tjenesten is part of Forsvaret and publishes no own email domain"}
+        {
+          "domain": "mil.no",
+          "url": "https://www.forsvaret.no/en/privacy-policy",
+          "kind": "privacy_page",
+          "note": "Armed Forces addresses use @mil.no (e.g. forsvarets.personvernombud@mil.no); E-tjenesten is part of Forsvaret and publishes no own email domain"
+        }
       ],
       "confidence": "medium",
       "notes": "Foreign intelligence and SIGINT service, organised under the Norwegian Armed Forces (Forsvaret)."
@@ -53,10 +74,23 @@
       "name_en": "Norwegian National Security Authority",
       "acronym": "NSM",
       "website": "https://nsm.no",
-      "mail_domains": ["nsm.no", "ncsc.no"],
+      "mail_domains": [
+        "nsm.no",
+        "ncsc.no"
+      ],
       "evidence": [
-        {"domain": "nsm.no", "url": "https://nsm.no/getfile.php/1314828-1766059583/NSM/Filer/Dokumenter/H%C3%B8ringsbrev%20-%20Forslag%20til%20forskrift%20om%20cybersikkerhetssertifisering.PDF", "kind": "official_pdf", "note": "postmottak@nsm.no (NSM hearing letter)"},
-        {"domain": "ncsc.no", "url": "https://nsm.no/regelverk-og-hjelp/rad-og-anbefalinger/grunnprinsipper-for-sikkerhetsstyring", "kind": "other_official", "note": "cert@ncsc.no — National Cyber Security Centre / NorCERT incident reporting, operated by NSM"}
+        {
+          "domain": "nsm.no",
+          "url": "https://nsm.no/getfile.php/1314828-1766059583/NSM/Filer/Dokumenter/H%C3%B8ringsbrev%20-%20Forslag%20til%20forskrift%20om%20cybersikkerhetssertifisering.PDF",
+          "kind": "official_pdf",
+          "note": "postmottak@nsm.no (NSM hearing letter)"
+        },
+        {
+          "domain": "ncsc.no",
+          "url": "https://nsm.no/regelverk-og-hjelp/rad-og-anbefalinger/grunnprinsipper-for-sikkerhetsstyring",
+          "kind": "other_official",
+          "note": "cert@ncsc.no — National Cyber Security Centre / NorCERT incident reporting, operated by NSM"
+        }
       ],
       "confidence": "high",
       "notes": "Also the protective-security (counter-intelligence support) authority; NCSC/NorCERT is a division of NSM."
@@ -68,9 +102,16 @@
       "name_en": "Ministry of Justice and Public Security",
       "acronym": "JD",
       "website": "https://www.regjeringen.no/no/dep/jd/",
-      "mail_domains": ["jd.dep.no"],
+      "mail_domains": [
+        "jd.dep.no"
+      ],
       "evidence": [
-        {"domain": "jd.dep.no", "url": "https://www.regjeringen.no/en/dep/jd/contact/id471", "kind": "contact_page", "note": "postmottak@jd.dep.no"}
+        {
+          "domain": "jd.dep.no",
+          "url": "https://www.regjeringen.no/en/dep/jd/contact/id471",
+          "kind": "contact_page",
+          "note": "postmottak@jd.dep.no"
+        }
       ],
       "confidence": "high",
       "notes": "Responsible for the police and PST; Norwegian ministries use <ministry>.dep.no subdomains."
@@ -82,9 +123,16 @@
       "name_en": "Ministry of Defence",
       "acronym": "FD",
       "website": "https://www.regjeringen.no/no/dep/fd/",
-      "mail_domains": ["fd.dep.no"],
+      "mail_domains": [
+        "fd.dep.no"
+      ],
       "evidence": [
-        {"domain": "fd.dep.no", "url": "https://www.regjeringen.no/no/dep/fd/kontakt/id388/", "kind": "contact_page", "note": "postmottak@fd.dep.no; press milinfo@fd.dep.no"}
+        {
+          "domain": "fd.dep.no",
+          "url": "https://www.regjeringen.no/no/dep/fd/kontakt/id388/",
+          "kind": "contact_page",
+          "note": "postmottak@fd.dep.no; press milinfo@fd.dep.no"
+        }
       ],
       "confidence": "high",
       "notes": ""
@@ -96,9 +144,16 @@
       "name_en": "Norwegian Armed Forces",
       "acronym": "",
       "website": "https://www.forsvaret.no",
-      "mail_domains": ["mil.no"],
+      "mail_domains": [
+        "mil.no"
+      ],
       "evidence": [
-        {"domain": "mil.no", "url": "https://www.forsvaret.no/en/privacy-policy", "kind": "privacy_page", "note": "forsvarets.personvernombud@mil.no; foh.info@mil.no (Joint HQ)"}
+        {
+          "domain": "mil.no",
+          "url": "https://www.forsvaret.no/en/privacy-policy",
+          "kind": "privacy_page",
+          "note": "forsvarets.personvernombud@mil.no; foh.info@mil.no (Joint HQ)"
+        }
       ],
       "confidence": "high",
       "notes": "Includes the Coast Guard (Kystvakten), which is a military branch in Norway."
@@ -110,11 +165,18 @@
       "name_en": "Norwegian Directorate for Civil Protection",
       "acronym": "DSB",
       "website": "https://www.dsb.no",
-      "mail_domains": ["dsb.no"],
-      "evidence": [
-        {"domain": "dsb.no", "url": "https://www.dsb.no", "kind": "assumed_from_website", "note": "postmottak@dsb.no widely cited; assumed from website registrable domain"}
+      "mail_domains": [
+        "dsb.no"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "dsb.no",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen in official document; Claude: seen in official document"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Civil protection and emergency preparedness directorate under JD."
     }
   ],

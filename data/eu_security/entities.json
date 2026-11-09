@@ -214,7 +214,7 @@
     "domain": "mb.gov.al",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
    },
    {
     "domain": "punetebrendshme.gov.al",
@@ -419,7 +419,7 @@
     "domain": "dsn.gv.at",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -858,7 +858,7 @@
     "domain": "mil.be",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+    "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -1428,12 +1428,12 @@
   "evidence": [
    {
     "domain": "cert.by",
-    "url": "https://cert.by",
-    "kind": "assumed_from_website",
-    "note": "assumed from website registrable domain; site serves only a JS verification page to foreign IPs, historical contact support@cert.by not re-verifiable"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "Claude: seen in third-party source; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Operated under the OAC.",
   "country": "BY",
   "country_name_en": "Belarus",
@@ -1500,12 +1500,12 @@
   "evidence": [
    {
     "domain": "gs-ejpd.admin.ch",
-    "url": "https://www.ejpd.admin.ch",
-    "kind": "assumed_from_website",
-    "note": "Swiss departments mail via their General Secretariat (gs-<dept>.admin.ch pattern, cf. gs-vbs.admin.ch verified); no address captured on page"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Claude: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Closest equivalent of an interior ministry (police/security remit). The Federal Department of Home Affairs (EDI) has no security role.",
   "country": "CH",
   "country_name_en": "Switzerland",
@@ -2466,7 +2466,7 @@
     "domain": "politsei.ee",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen in official document; Qwen: seen in third-party source"
+    "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen in third-party source"
    }
   ],
   "confidence": "medium",
@@ -2744,7 +2744,7 @@
     "domain": "incibe.es",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+    "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -2809,9 +2809,16 @@
   "acronym": "DSN",
   "website": "https://www.dsn.gob.es",
   "mail_domains": [
+   "dsn.presidencia.gob.es",
    "dsn.gob.es"
   ],
   "evidence": [
+   {
+    "domain": "dsn.presidencia.gob.es",
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "Claude: seen on official site; Qwen: seen on official site"
+   },
    {
     "domain": "dsn.gob.es",
     "url": "https://www.dsn.gob.es",
@@ -2819,7 +2826,7 @@
     "note": "No public email address evidenced; assumed from website registrable domain"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "National Security Council secretariat within the Prime Minister's office.",
   "country": "ES",
   "country_name_en": "Spain",
@@ -3248,7 +3255,7 @@
     "domain": "euda.europa.eu",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -3687,7 +3694,7 @@
     "domain": "sgdsn.gouv.fr",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen in official document"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen in official document"
    }
   ],
   "confidence": "medium",
@@ -4284,7 +4291,7 @@
     "domain": "nis.gr",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen in official document; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -4610,7 +4617,7 @@
     "domain": "zsis.hr",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen in third-party source; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -4953,7 +4960,7 @@
     "domain": "defence.ie",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -5255,7 +5262,7 @@
     "domain": "giustizia.it",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -5478,7 +5485,7 @@
     "domain": "landespolizei.li",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen in official document; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -5620,12 +5627,12 @@
   "evidence": [
    {
     "domain": "vsd.lt",
-    "url": "https://www.vsd.lt",
-    "kind": "assumed_from_website",
-    "note": "No readable email found (directory listings obfuscated); domain assumed from official website vsd.lt"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "Claude: seen in official document; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Civilian intelligence and counterintelligence service.",
   "country": "LT",
   "country_name_en": "Lithuania",
@@ -5740,12 +5747,12 @@
   "evidence": [
    {
     "domain": "vstarnyba.lt",
-    "url": "https://vstarnyba.lrv.lt",
-    "kind": "assumed_from_website",
-    "note": "Gendarmerie-type riot/escort force; no readable email found; domain assumed from the service's historical own domain vstarnyba.lt - unverified"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "Claude: seen in official document; Qwen: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Militarized public-order service (riot control, prisoner escort, critical-object protection).",
   "country": "LT",
   "country_name_en": "Lithuania",
@@ -5942,7 +5949,7 @@
     "domain": "do.etat.lu",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
    },
    {
     "domain": "douanes.public.lu",
@@ -6068,7 +6075,7 @@
     "domain": "midd.gov.lv",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen in third-party source"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen in third-party source"
    }
   ],
   "confidence": "medium",
@@ -6277,9 +6284,16 @@
   "acronym": "IGC",
   "website": "https://www.carabinier.gov.md",
   "mail_domains": [
+   "igc.gov.md",
    "carabinier.gov.md"
   ],
   "evidence": [
+   {
+    "domain": "igc.gov.md",
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Claude: seen in official document"
+   },
    {
     "domain": "carabinier.gov.md",
     "url": "https://www.carabinier.gov.md",
@@ -6287,7 +6301,7 @@
     "note": "assumed from website registrable domain; third-party directory (force-publique.net) lists an outdated carabinier@gov.mai.md; some staff use @mai.gov.md"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Militarized force under the Ministry of Internal Affairs.",
   "country": "MD",
   "country_name_en": "Moldova",
@@ -7430,12 +7444,12 @@
   "evidence": [
    {
     "domain": "dsb.no",
-    "url": "https://www.dsb.no",
-    "kind": "assumed_from_website",
-    "note": "postmottak@dsb.no widely cited; assumed from website registrable domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen in official document; Claude: seen in official document"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Civil protection and emergency preparedness directorate under JD.",
   "country": "NO",
   "country_name_en": "Norway",
@@ -7552,7 +7566,7 @@
     "domain": "skw.gov.pl",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+    "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -7703,7 +7717,7 @@
     "domain": "sop.gov.pl",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen on official site; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -7768,9 +7782,16 @@
   "acronym": "PJ",
   "website": "https://www.policiajudiciaria.pt",
   "mail_domains": [
+   "pj.pt",
    "policiajudiciaria.pt"
   ],
   "evidence": [
+   {
+    "domain": "pj.pt",
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Claude: seen in official document"
+   },
    {
     "domain": "policiajudiciaria.pt",
     "url": "https://www.policiajudiciaria.pt",
@@ -7778,7 +7799,7 @@
     "note": "No email address evidenced in research; assumed from website registrable domain"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "National criminal-investigation police under Ministry of Justice; took over serious immigration crime after SEF abolition.",
   "country": "PT",
   "country_name_en": "Portugal",
@@ -7821,12 +7842,12 @@
   "evidence": [
    {
     "domain": "sis.pt",
-    "url": "https://www.sis.pt",
-    "kind": "assumed_from_website",
-    "note": "No public email evidenced; assumed from website registrable domain"
+    "url": "",
+    "kind": "llm_consensus",
+    "note": "ChatGPT: seen on official site; Claude: seen on official site"
    }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "notes": "Domestic intelligence, part of SIRP.",
   "country": "PT",
   "country_name_en": "Portugal",
@@ -7957,7 +7978,7 @@
     "domain": "gns.gov.pt",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen in official document; Qwen: seen on official site"
+    "note": "ChatGPT: seen in official document; Claude: seen in official document; Qwen: seen on official site"
    }
   ],
   "confidence": "medium",
@@ -9315,7 +9336,7 @@
     "domain": "nbu.gov.sk",
     "url": "",
     "kind": "llm_consensus",
-    "note": "ChatGPT: seen on official site; Qwen: seen on official site"
+    "note": "ChatGPT: seen on official site; Claude: seen in third-party source; Qwen: seen on official site"
    },
    {
     "domain": "sk-cert.sk",

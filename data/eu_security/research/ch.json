@@ -11,9 +11,16 @@
       "name_en": "Federal Office of Police",
       "acronym": "fedpol",
       "website": "https://www.fedpol.admin.ch",
-      "mail_domains": ["fedpol.admin.ch"],
+      "mail_domains": [
+        "fedpol.admin.ch"
+      ],
       "evidence": [
-        {"domain": "fedpol.admin.ch", "url": "https://www.ejpd.admin.ch/fedpol/de/home/kontakte/kontakt-zse.html", "kind": "contact_page", "note": "zse@fedpol.admin.ch; mros.info@fedpol.admin.ch (MROS contact page)"}
+        {
+          "domain": "fedpol.admin.ch",
+          "url": "https://www.ejpd.admin.ch/fedpol/de/home/kontakte/kontakt-zse.html",
+          "kind": "contact_page",
+          "note": "zse@fedpol.admin.ch; mros.info@fedpol.admin.ch (MROS contact page)"
+        }
       ],
       "confidence": "high",
       "notes": "Includes MROS (financial intelligence unit). Operational policing is cantonal in Switzerland."
@@ -25,11 +32,18 @@
       "name_en": "Federal Department of Justice and Police",
       "acronym": "EJPD / FDJP",
       "website": "https://www.ejpd.admin.ch",
-      "mail_domains": ["gs-ejpd.admin.ch"],
-      "evidence": [
-        {"domain": "gs-ejpd.admin.ch", "url": "https://www.ejpd.admin.ch", "kind": "assumed_from_website", "note": "Swiss departments mail via their General Secretariat (gs-<dept>.admin.ch pattern, cf. gs-vbs.admin.ch verified); no address captured on page"}
+      "mail_domains": [
+        "gs-ejpd.admin.ch"
       ],
-      "confidence": "low",
+      "evidence": [
+        {
+          "domain": "gs-ejpd.admin.ch",
+          "url": "",
+          "kind": "llm_consensus",
+          "note": "ChatGPT: seen on official site; Claude: seen on official site"
+        }
+      ],
+      "confidence": "medium",
       "notes": "Closest equivalent of an interior ministry (police/security remit). The Federal Department of Home Affairs (EDI) has no security role."
     },
     {
@@ -39,9 +53,16 @@
       "name_en": "Federal Department of Defence, Civil Protection and Sport",
       "acronym": "VBS / DDPS",
       "website": "https://www.vbs.admin.ch",
-      "mail_domains": ["gs-vbs.admin.ch"],
+      "mail_domains": [
+        "gs-vbs.admin.ch"
+      ],
       "evidence": [
-        {"domain": "gs-vbs.admin.ch", "url": "https://www.vbs.admin.ch/de/kontakt", "kind": "contact_page", "note": "general information address @gs-vbs.admin.ch (General Secretariat)"}
+        {
+          "domain": "gs-vbs.admin.ch",
+          "url": "https://www.vbs.admin.ch/de/kontakt",
+          "kind": "contact_page",
+          "note": "general information address @gs-vbs.admin.ch (General Secretariat)"
+        }
       ],
       "confidence": "high",
       "notes": "Armed forces units use further admin.ch subdomains (e.g. vtg.admin.ch)"
@@ -53,9 +74,16 @@
       "name_en": "Federal Intelligence Service",
       "acronym": "NDB / FIS",
       "website": "https://www.vbs.admin.ch/de/sicherheit/nachrichtendienst-bund",
-      "mail_domains": ["ndb.admin.ch"],
+      "mail_domains": [
+        "ndb.admin.ch"
+      ],
       "evidence": [
-        {"domain": "ndb.admin.ch", "url": "https://www.vbs.admin.ch/dam/de/sd-web/kAMklz8EakUu/NDB-Flyer-de.pdf", "kind": "official_pdf", "note": "info@ndb.admin.ch; prophylax@ndb.admin.ch; datenschutzberatung@ndb.admin.ch"}
+        {
+          "domain": "ndb.admin.ch",
+          "url": "https://www.vbs.admin.ch/dam/de/sd-web/kAMklz8EakUu/NDB-Flyer-de.pdf",
+          "kind": "official_pdf",
+          "note": "info@ndb.admin.ch; prophylax@ndb.admin.ch; datenschutzberatung@ndb.admin.ch"
+        }
       ],
       "confidence": "high",
       "notes": "Combined domestic + foreign civilian intelligence service, under VBS"
@@ -67,9 +95,16 @@
       "name_en": "Military Intelligence Service",
       "acronym": "MND",
       "website": "https://www.vtg.admin.ch",
-      "mail_domains": ["vtg.admin.ch"],
+      "mail_domains": [
+        "vtg.admin.ch"
+      ],
       "evidence": [
-        {"domain": "vtg.admin.ch", "url": "https://www.vtg.admin.ch", "kind": "assumed_from_website", "note": "Part of the Swiss Armed Forces staff; no published own mailbox found — assumed armed-forces domain"}
+        {
+          "domain": "vtg.admin.ch",
+          "url": "https://www.vtg.admin.ch",
+          "kind": "assumed_from_website",
+          "note": "Part of the Swiss Armed Forces staff; no published own mailbox found — assumed armed-forces domain"
+        }
       ],
       "confidence": "low",
       "notes": "Military intelligence within the Armed Forces (Kommando Operationen)"
@@ -81,9 +116,16 @@
       "name_en": "Federal Office for Customs and Border Security",
       "acronym": "BAZG / FOCBS",
       "website": "https://www.bazg.admin.ch",
-      "mail_domains": ["bazg.admin.ch"],
+      "mail_domains": [
+        "bazg.admin.ch"
+      ],
       "evidence": [
-        {"domain": "bazg.admin.ch", "url": "https://www.bazg.admin.ch/de/auskuenfte-fuer-medienschaffende", "kind": "press_page", "note": "medien@bazg.admin.ch; kommunikation@bazg.admin.ch; zoll.schaffhausen@bazg.admin.ch (office pattern)"}
+        {
+          "domain": "bazg.admin.ch",
+          "url": "https://www.bazg.admin.ch/de/auskuenfte-fuer-medienschaffende",
+          "kind": "press_page",
+          "note": "medien@bazg.admin.ch; kommunikation@bazg.admin.ch; zoll.schaffhausen@bazg.admin.ch (office pattern)"
+        }
       ],
       "confidence": "high",
       "notes": "Merged customs + border guard (former EZV/Grenzwachtkorps); old ezv.admin.ch domain retired"
@@ -95,10 +137,23 @@
       "name_en": "Federal Office for Cybersecurity",
       "acronym": "BACS / NCSC",
       "website": "https://www.bacs.admin.ch",
-      "mail_domains": ["ncsc.admin.ch", "ncsc.ch"],
+      "mail_domains": [
+        "ncsc.admin.ch",
+        "ncsc.ch"
+      ],
       "evidence": [
-        {"domain": "ncsc.admin.ch", "url": "https://www.bacs.admin.ch/de/kontakt-bacs", "kind": "contact_page", "note": "info/media addresses @ncsc.admin.ch"},
-        {"domain": "ncsc.ch", "url": "https://www.bacs.admin.ch/de/kontakt-bacs", "kind": "contact_page", "note": "incident/vulnerability/bugbounty reporting addresses @ncsc.ch"}
+        {
+          "domain": "ncsc.admin.ch",
+          "url": "https://www.bacs.admin.ch/de/kontakt-bacs",
+          "kind": "contact_page",
+          "note": "info/media addresses @ncsc.admin.ch"
+        },
+        {
+          "domain": "ncsc.ch",
+          "url": "https://www.bacs.admin.ch/de/kontakt-bacs",
+          "kind": "contact_page",
+          "note": "incident/vulnerability/bugbounty reporting addresses @ncsc.ch"
+        }
       ],
       "confidence": "high",
       "notes": "Includes GovCERT.ch (the national CERT, govcert.ch website). Office renamed NCSC→BACS in 2024, mail still on ncsc.* domains per contact page."
