@@ -2892,7 +2892,7 @@
     "country": "IT",
     "region": "Abruzzo",
     "district": "Teramo",
-    "domain": "comunecellinoattanasio.te.it",
+    "domain": "comune.cellinoattanasio.te.it",
     "osm_relation_id": 42080,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "c_3rhm",
@@ -53563,7 +53563,7 @@
     "country": "IT",
     "region": "Lazio",
     "district": "Roma Capitale",
-    "domain": "comune.labico.rm.gov.it",
+    "domain": "comune.labico.rm.it",
     "osm_relation_id": 41558,
     "domain_fallbacks": [
       "labico.com"
@@ -73665,7 +73665,9 @@
     "district": "Alessandria",
     "domain": "comune.orsarabormida.al.it",
     "osm_relation_id": 43466,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "comune.orsara.al.it"
+    ],
     "ipa_codice_ipa": "c_g124",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "11119577",
@@ -164718,6 +164720,21 @@
     "domain_source": "sito_istituzionale"
   },
   {
+    "id": "IT-L1-spplpsh",
+    "name": "Scuola Professionale Provinciale per Le Professioni Sociali Hannah",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "sozialberufe.berufsschule.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "spplpsh",
+    "ipa_codice_categoria": "L1",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "021008",
+    "domain_source": "sito_istituzionale"
+  },
+  {
     "id": "IT-L1-sppmi",
     "name": "CENTRO DI FORMAZIONE PROFESSIONALE DIPL. ING. LUIS ZUEGG MERANO",
     "country": "IT",
@@ -176853,7 +176870,9 @@
     "district": null,
     "domain": "unioneterredeipeligni.aq.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "pec.unioneterredeipeligni.aq.it"
+    ],
     "ipa_codice_ipa": "utdp_066",
     "ipa_codice_categoria": "L18",
     "ipa_codice_istat": "30453590",
@@ -213971,7 +213990,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icpievedicadore.edu.it",
+    "domain": "agrariofeltre.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -252887,7 +252906,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "liceobramante.gov.it",
+    "domain": "liceobramante.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -290536,7 +290555,6 @@
     "domain": "comprensivolivigno.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "itsdesimoni.com",
       "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_soic80300t",
@@ -357476,6 +357494,21 @@
     "ipa_codice_categoria": "SA",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "058091",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-SA-82CC72TT",
+    "name": "ART-ER S. CONS. P.A.",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "art-er.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "82CC72TT",
+    "ipa_codice_categoria": "SA",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "037006",
     "domain_source": "sito_istituzionale"
   },
   {
