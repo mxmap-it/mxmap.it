@@ -283,7 +283,6 @@ IT-C14-cnddrpt,Consiglio Notarile Dei Distretti Riuniti di Palermo e Termini Ime
 IT-C14-cndr,Consiglio Notarile Distrettuale di Rovigo,unknown,consiglionotarilerovigo.weebly.com,15,no_mx; no_spf; provider_unknown
 IT-C14-cnbl,Consiglio Notarile di Belluno,unknown,consiglionotarilebelluno.it,15,no_mx; no_spf; provider_unknown
 IT-C14-cnlat,Consiglio Notarile di Latina,unknown,consiglionotarilelatina.it,15,no_mx; no_spf; provider_unknown
-IT-C14-cpclt,Consiglio Provinciale Consulenti del Lavoro di Teramo,unknown,consulentidellavoroteramo.com,15,no_mx; no_spf; provider_unknown
 IT-CONS-cr_abbru,Consiglio Regionale dell'Abruzzo,unknown,consiglio.regione.abruzzo.it,15,no_mx; no_spf; provider_unknown
 IT-C14-odao_055,Consiglio dell'Ordine Degli Avvocati di Orvieto,unknown,ordineavvocatiorvieto.it,15,no_mx; no_spf; provider_unknown
 IT-L24-cvs,Consiglio di Valle Sabbia,unknown,consorziobim.etrasparenza2.it,15,no_mx; no_spf; provider_unknown
@@ -903,6 +902,7 @@ IT-COM-048018,Comune di Firenzuola,pa-contractor-private,comune.firenzuola.fi.it
 IT-COM-002057,Comune di Fobello,independent,comune.fobello.vc.it,50,no_spf; provider_classified
 IT-COM-083023,Comune di Fondachelli Fantina,aruba,comune.fondachellifantina.me.it,50,no_spf; provider_classified
 IT-COM-010024,Comune di Fontanigorda,independent,comune.fontanigorda.ge.it,50,no_spf; provider_classified
+IT-COM-058122,Comune di Fonte Nuova,independent,cert.fonte-nuova.it,50,no_spf; provider_classified
 IT-COM-002059,Comune di Formigliana,local-isp,comune.formigliana.vc.it,50,no_spf; provider_classified
 IT-COM-083024,Comune di Forza D'Agro',aruba,comune.forzadagro.me.it,50,no_spf; provider_classified
 IT-COM-004090,Comune di Frabosa Soprana,independent,comune.frabosasoprana.cn.it,50,no_spf; provider_classified
@@ -1946,7 +1946,6 @@ IT-L33-istsc_baic824008,ISTITUTO COMPRENSIVO SAN DOMENICO SAVIO - RITA LEVI MONT
 IT-L33-istsc_saic880008,ISTITUTO COMPRENSIVO SANTA MARINA-POLICASTRO-SAPRI,google,icdantealighierisapri.edu.it,53,multiple_mx; spf_softfail; mx_spf_mismatch; provider_classified
 IT-L33-TGR3GY04,"ISTITUTO COMPRENSIVO STATALE ""MARIA PIA - G. PASCOLI""",google,mariapiasg.edu.it,53,multiple_mx; spf_softfail; mx_spf_mismatch; provider_classified
 IT-L33-YAV6N9V8,ISTITUTO COMPRENSIVO TAGGIA - VALLE ARGENTINA,google,comprensivotaggia.edu.it,53,multiple_mx; spf_softfail; mx_spf_mismatch; provider_classified
-IT-L33-L02GXCSL,ISTITUTO COMPRENSIVO TEMPESTA GALATEO,google,5tempesta.edu.it,53,multiple_mx; spf_softfail; mx_spf_mismatch; provider_classified
 IT-L33-RDLAYW1V,ISTITUTO COMPRENSIVO TODI - MASSA MARTANA,google,ictodimassamartana.edu.it,53,multiple_mx; spf_softfail; mx_spf_mismatch; provider_classified
 IT-L33-istsc_foic80300d,ISTITUTO COMPRENSIVO VALLE SAVIO,google,icvallesavio.edu.it,53,multiple_mx; spf_softfail; mx_spf_mismatch; provider_classified
 IT-L33-istsc_vaic86900b,ISTITUTO COMPRENSIVO VARESE 1 DON RIMOLDI,google,icvarese1donrimoldi.edu.it,53,multiple_mx; spf_softfail; mx_spf_mismatch; provider_classified
@@ -3202,6 +3201,7 @@ IT-L33-iismte,ISTITUTO E.MORANTE TECNICO E PROFESSIONALE,google,elsamorantesassu
 IT-L33-istsc_nuis006008,ISTITUTO GLOBALE JERZU,google,istitutoglobalejerzu.edu.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-istsc_cnpm04000x,ISTITUTO MAGISTRALE - ALBA - 'LEONARDO DA VINCI',google,davincialba.edu.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-istsc_rmpm12000l,ISTITUTO MAGISTRALE - GIORDANO BRUNO,google,liceogiordanobrunoroma.edu.it,55,multiple_mx; no_spf; provider_classified
+IT-L33-istsc_napm10000c,ISTITUTO MAGISTRALE - I.STAT.SUPERIORE DON L. MILANI - NAPOLI,google,donmilaninapoli.edu.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-istsc_cspm070003,ISTITUTO MAGISTRALE - IM BELVEDERE M.,google,liceibelvedere.edu.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-istsc_tvpm010001,ISTITUTO MAGISTRALE - IM DUCA DEGLI ABRUZZI,google,liceoduca.edu.it,55,multiple_mx; no_spf; provider_classified
 IT-L33-istsc_ctpm01000e,ISTITUTO MAGISTRALE - IM FRANCESCO DE SANCTIS,google,liceodesanctispaterno.edu.it,55,multiple_mx; spf_strict; mx_spf_mismatch; provider_classified
@@ -4903,7 +4903,7 @@ IT-L33-istsc_vbis00100x,ISTRUZIONE SECONDARIA SUPERIORE - IS 'GOBETTI',google,li
 IT-L33-istsc_pcis001003,ISTRUZIONE SECONDARIA SUPERIORE - IS ALESSANDRO VOLTA,google,polovolta.edu.it,73,multiple_mx; spf_softfail; provider_classified
 IT-L33-istsc_nais013007,ISTRUZIONE SECONDARIA SUPERIORE - IS POLISP. DON L. MILANI -GRAGNANO,google,donmilanigragnano.edu.it,73,multiple_mx; spf_softfail; provider_classified
 IT-L33-istsc_blis00600e,ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO ISTRUZIONE SUPERIORE FOLLADOR,google,follador.edu.it,73,multiple_mx; spf_softfail; provider_classified
-IT-L33-istsc_tris00100e,ISTRUZIONE SECONDARIA SUPERIORE - NARNI I.I.S. SC. MAG. GEOM. GANDHI,google,gandhinarni.edu.it,73,multiple_mx; spf_softfail; provider_classified
+IT-L33-istsc_tris00100e,ISTRUZIONE SECONDARIA SUPERIORE - NARNI I.I.S. SC. MAG. GEOM. GANDHI,google,gandhinarni.it,73,multiple_mx; spf_softfail; provider_classified
 IT-L33-istsc_rmis06100g,ISTRUZIONE SECONDARIA SUPERIORE - VIA DOMIZIA LUCILLA,google,domizialucilla.edu.it,73,multiple_mx; spf_softfail; provider_classified
 IT-L33-istsc_rmis00400b,ISTRUZIONE SECONDARIA SUPERIORE - VIA PEDEMONTANA,google,professionalepalestrina.edu.it,73,multiple_mx; spf_softfail; provider_classified
 IT-L33-iesa,Isis Emilio Sereni Afragola Cardito,google,isissereni-afragola-cardito.edu.it,73,multiple_mx; spf_softfail; provider_classified
@@ -6560,6 +6560,7 @@ IT-L33-istsc_czic86100d,ISTITUTO COMPRENSIVO - IC CATANZARO 'M. PRETI' S.MARIA,i
 IT-L33-istsc_geic867004,ISTITUTO COMPRENSIVO - IC CHIAVARI II DA COSTITUIRE,istruzione-miur-tenant,istitutocomprensivochiavari.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_pcic805006,ISTITUTO COMPRENSIVO - IC CORTEMAGGIORE,istruzione-miur-tenant,iccortemaggiore.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_csic898008,ISTITUTO COMPRENSIVO - IC COSENZA III 'V. NEGRONI',istruzione-miur-tenant,iccosenzaterzonegroni.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
+IT-L33-istsc_boic82800e,ISTITUTO COMPRENSIVO - IC DI OZZANO DELL'EMILIA,istruzione-miur-tenant,icozzano.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_viic86000p,ISTITUTO COMPRENSIVO - IC DUEVILLE 'RONCALLI',istruzione-miur-tenant,icdueville.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_bsic81900a,ISTITUTO COMPRENSIVO - IC F.TONOLINI BRENO,google,icbreno.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:google+microsoft; provider_classified
 IT-L33-istsc_aric818006,ISTITUTO COMPRENSIVO - IC G. MARCELLI,istruzione-miur-tenant,scuolafoiano.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
@@ -6779,7 +6780,6 @@ IT-L33-istsc_vrpm01000l,ISTITUTO MAGISTRALE - CARLO MONTANARI,istruzione-miur-te
 IT-L33-istsc_papm010003,ISTITUTO MAGISTRALE - FINOCCHIARO APRILE,istruzione-miur-tenant,istitutofinocchiaroaprile.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_rcpm05000c,ISTITUTO MAGISTRALE - G.RECHICHI POLISTENA,microsoft,liceorechichipolistena.edu.it,80,multiple_mx; spf_strict; provider_classified; provider_via_gateway_spf; autodiscover_confirms
 IT-L33-istsc_krpm010006,ISTITUTO MAGISTRALE - GIAN VINCENZO GRAVINA,istruzione-miur-tenant,liceogravinakr.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
-IT-L33-istsc_napm10000c,ISTITUTO MAGISTRALE - I.STAT.SUPERIORE DON L. MILANI - NAPOLI,istruzione-miur-tenant,donmilaninapoli.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_copm02000b,ISTITUTO MAGISTRALE - LICEO TERESA CICERI,istruzione-miur-tenant,liceoteresaciceri.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_pgis00300e,ISTITUTO OMNICOMPRENSIVO SALVATORELLI-MONETA,istruzione-miur-tenant,salvatorellimoneta.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-ipcc,ISTITUTO PROFESSIONALE CROTTO CAURGA,istruzione-miur-tenant,ipcrottocaurga.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
@@ -6826,7 +6826,6 @@ IT-L33-istsc_fiis018006,ISTITUTO SUPERIORE - A. M. ENRIQUES AGNOLETTI,istruzione
 IT-L33-istsc_cnis02400g,ISTITUTO SUPERIORE - CUNEO -BIANCHI - VIRGINIO,istruzione-miur-tenant,artisticoegobianchi.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_CEIS027007,ISTITUTO SUPERIORE - E.MATTEI  AVERSA,istruzione-miur-tenant,matteiaversa.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_SSIS01800A,ISTITUTO SUPERIORE - I.I.S  PIAZZA SULIS - ALGHERO,istruzione-miur-tenant,iisalghero.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
-IT-L33-istsc_bois01900x,ISTITUTO SUPERIORE - I.I.S. ALDINI VALERIANI - SIRANI,istruzione-miur-tenant,avbo.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_NAIS08900C,ISTITUTO SUPERIORE - I.I.S.' G.MARCONI'-T.ANN.TA-,istruzione-miur-tenant,itimarconi.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_bnis027006,ISTITUTO SUPERIORE - I.S. 'PALMIERI-RAMPONE-POLO' BENEVENTO,istruzione-miur-tenant,palmieriramponepolo.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_BOIS02300G,ISTITUTO SUPERIORE - IIS BELLUZZI-FIORAVANTI,istruzione-miur-tenant,belluzzifioravanti.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
@@ -7031,6 +7030,7 @@ IT-L33-istsc_tosl01000c,LICEO ARTISTICO - LA PRIMO,istruzione-miur-tenant,primoa
 IT-L33-istsc_lcpc01000a,LICEO CLASSICO - ALESSANDRO MANZONI,istruzione-miur-tenant,liceomanzonilecco.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_copc020007,LICEO CLASSICO - ALESSANDRO VOLTA,istruzione-miur-tenant,liceovoltacomo.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_cspc010007,LICEO CLASSICO - LC 'TELESIO',istruzione-miur-tenant,liceoclassicotelesiocosenza.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
+IT-L33-istsc_fepc01000e,LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI',istruzione-miur-tenant,liceocevolani.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_appc02000b,LICEO CLASSICO - LIC. CL. 'F.STABILI ' ASCOLI PICENO,istruzione-miur-tenant,liceostabilitrebbiani.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_capc09000e,LICEO CLASSICO - LICEO CLASS. E SCIENZE UMANE'B.R. MOTZO',istruzione-miur-tenant,liceomotzo.edu.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
 IT-L33-istsc_arpc010002,LICEO CLASSICO - LICEO GINNASIO STATALE 'F. PETRARCA',istruzione-miur-tenant,liceopetrarca.gov.it,80,spf_strict; mx_spf_match; multi_provider_spf:brevo+microsoft+regional-public; provider_classified
@@ -9583,6 +9583,7 @@ IT-L33-istsc_rmic8ew00x,ISTITUTO COMPRENSIVO SIMONETTA SALACONE,google,simonetta
 IT-L33-icsmn,ISTITUTO COMPRENSIVO SOCRATE  MALLARDO di Marano di Napoli,aruba,icsocratemallardo.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L33-WRQOGFHP,"ISTITUTO COMPRENSIVO STATALE ""A.S. AOSTA - G. MARCONI""",aruba,aosta-marconi.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L33-istsc_lcic815003,ISTITUTO COMPRENSIVO STATALE DI COSTA MASNAGA (LC),aruba,icscostamasnaga.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
+IT-L33-L02GXCSL,ISTITUTO COMPRENSIVO TEMPESTA GALATEO,aruba,ictempestagalateo.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
 IT-L33-istsc_tssd01000l,ISTITUTO D'ARTE - ENRICO E UMBERTO NORDIO,google,liceonordio.edu.it,83,multiple_mx; spf_softfail; mx_spf_match; multi_provider_spf:google+microsoft; provider_classified
 IT-L33-istsc_rmsd10000r,ISTITUTO D'ARTE - IA ROMA 3,google,liceoargan.edu.it,83,multiple_mx; spf_softfail; mx_spf_match; multi_provider_spf:aruba+google; provider_classified
 IT-L33-istsc_pssd04000t,ISTITUTO D'ARTE - URBINO IST.ARTE,aruba,scuolalibrourbino.edu.it,83,spf_softfail; independent_mx_with_cloud_spf; provider_classified; autodiscover_confirms
@@ -12748,6 +12749,7 @@ IT-C14-cnre_035,Consiglio Notarile di Reggio Emilia,local-isp,consiglionotariler
 IT-C14-cnta,Consiglio Notarile di Taranto,local-isp,consiglionotariletaranto.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-C14-coac,Consiglio Ordine Avvocati Castrovillari,local-isp,ordineavvocaticastrovillari.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-C14-cpclsi,Consiglio Provinciale Consulenti del Lavoro di Siena,aruba,consulentidellavoro.si.it,88,spf_softfail; mx_spf_match; provider_classified
+IT-C14-cpclt,Consiglio Provinciale Consulenti del Lavoro di Teramo,local-isp,cdlteramo.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-C14-cpdctr,Consiglio Provinciale Dei Consulenti del Lavoro di Terni,aruba,consulentidellavoro.terni.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-C14-cpoclrg,Consiglio Provinciale Ordine Consulenti del Lavoro di Ragusa,local-isp,cdlragusa.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-C14-cpodcla,Consiglio Provinciale Ordine Dei Consulenti del Lavoro di Avellino,local-isp,cdlavellino.it,88,spf_softfail; mx_spf_match; provider_classified
@@ -13014,7 +13016,6 @@ IT-L33-istsc_bsic849006,ISTITUTO COMPRENSIVO - IC CARPENEDOLO,local-isp,iccarpen
 IT-L33-istsc_gric81700p,ISTITUTO COMPRENSIVO - IC CIVITELLA PAGANICO,google,icpaganico.edu.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_viic847008,ISTITUTO COMPRENSIVO - IC COGOLLO ' DON CARLO FRIGO ',google,ic-frigo.edu.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_bsic885009,ISTITUTO COMPRENSIVO - IC COLOMBO OVEST 1,google,icovest1brescia.edu.it,88,spf_softfail; mx_spf_match; provider_classified
-IT-L33-istsc_boic82800e,ISTITUTO COMPRENSIVO - IC DI OZZANO DELL'EMILIA,google,icozzano.istruzioneer.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_ctic84200b,ISTITUTO COMPRENSIVO - IC G. MARCONI - PATERNO',google,icmarconiscuola.edu.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_biic807008,ISTITUTO COMPRENSIVO - IC GAGLIANICO,google,icgaglianico.edu.it,88,spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_ctic856009,ISTITUTO COMPRENSIVO - IC GIOVANNI VERGA - VIAGRANDE,google,vergaviagrande.edu.it,88,spf_softfail; mx_spf_match; provider_classified
@@ -18494,6 +18495,7 @@ IT-L33-istsc_nais10200n,ISTITUTO SUPERIORE - I. S .' NITTI' PORTICI,google,nitti
 IT-L33-istsc_VIIS01700L,ISTITUTO SUPERIORE - I.I.S.  'REMONDINI',google,remondini.net,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_BOIS00800D,ISTITUTO SUPERIORE - I.I.S.  J.M. KEYNES,google,istitutokeynes.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_mtis01200r,ISTITUTO SUPERIORE - I.I.S. ' G.B. PENTASUGLIA ',microsoft,iispentasuglia.edu.it,93,spf_softfail; mx_spf_match; provider_classified; autodiscover_confirms
+IT-L33-istsc_bois01900x,ISTITUTO SUPERIORE - I.I.S. ALDINI VALERIANI - SIRANI,google,avbo.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_agis021005,ISTITUTO SUPERIORE - I.I.S. FRANCESCO CRISPI,google,istitutosuperiorecrispiribera.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_nais092008,ISTITUTO SUPERIORE - I.I.S.-DON GEREMIA PISCOPO-ARZANO,google,iispiscopo.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_cais02100t,ISTITUTO SUPERIORE - I.T.COMM.GEOMETRI - SANLURI,google,iissanluri.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
@@ -18706,7 +18708,7 @@ IT-L33-istsc_geis018003,ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO E. MAJORANA /
 IT-L33-istsc_gris01100x,ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO ISTR.SUP. - A.MANETTI,google,polomanettiporciatti.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_pais021003,ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO SUPERIORE DANILO DOLCI,google,isdanilodolci.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_nais00400c,ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO SUPERIORE STATALE PITAGORA,google,istitutostatalepitagora.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
-IT-L33-istsc_fiis00700q,ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE,google,agrariofirenze.eu,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
+IT-L33-istsc_fiis00700q,ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE,google,agrariofirenze.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_miis01900l,ISTRUZIONE SECONDARIA SUPERIORE - ITALO CALVINO,google,istitutocalvino.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_mnis00900e,ISTRUZIONE SECONDARIA SUPERIORE - ITG E MAG.LE,google,arcoeste.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_tois04100t,ISTRUZIONE SECONDARIA SUPERIORE - J.C. MAXWELL,google,jcmaxwell.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
@@ -19164,7 +19166,6 @@ IT-L33-istsc_napc14000p,LICEO CLASSICO - L.CLAS.UMBERTO I-NAPOLI-,google,liceoum
 IT-L33-istsc_vipc010004,LICEO CLASSICO - LC ' ANTONIO PIGAFETTA',google,liceopigafetta.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_cspc190001,LICEO CLASSICO - LC 'DA FIORE' RENDE,google,liceoclassicorendecs.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_gepc020009,LICEO CLASSICO - LC C.COLOMBO,google,liceocolombogenova.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
-IT-L33-istsc_fepc01000e,LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI',google,liceocevolani.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_topc10000p,LICEO CLASSICO - LC V. ALFIERI,google,liceoalfieri.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_svpc030001,LICEO CLASSICO - LICEO 'S.GIUSEPPE CALASANZIO' - CARCARE,google,liceocarcare.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
 IT-L33-istsc_tvpc120008,LICEO CLASSICO - LICEO CLASSICO ' FLAMINIO',google,liceoflaminio.edu.it,93,multiple_mx; spf_softfail; mx_spf_match; provider_classified
@@ -20512,7 +20513,6 @@ IT-COM-016101,Comune di Fontanella,microsoft,comune.fontanella.bg.it,95,spf_stri
 IT-COM-034015,Comune di Fontanellato,local-isp,comune.fontanellato.pr.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
 IT-COM-028038,Comune di Fontaniva,microsoft,comune.fontaniva.pd.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-COM-026029,Comune di Fonte,microsoft,comune.fonte.tv.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
-IT-COM-058122,Comune di Fonte Nuova,microsoft,comune.fontenuova.rm.it,95,spf_strict; mx_spf_match; provider_classified; autodiscover_confirms
 IT-COM-034016,Comune di Fontevivo,local-isp,comune.fontevivo.pr.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified
 IT-COM-115023,Comune di Fordongianus,pa-contractor-private,comune.fordongianus.or.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified; provider_via_gateway_spf
 IT-COM-094020,Comune di Forli' del Sannio,pa-contractor-private,comune.forlidelsannio.is.it,95,multiple_mx; spf_strict; mx_spf_match; provider_classified; provider_via_gateway_spf

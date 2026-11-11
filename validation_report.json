@@ -8088,13 +8088,13 @@
     },
     "IT-C14-cpclt": {
       "name": "Consiglio Provinciale Consulenti del Lavoro di Teramo",
-      "provider": "unknown",
-      "domain": "consulentidellavoroteramo.com",
-      "confidence": 15,
+      "provider": "local-isp",
+      "domain": "cdlteramo.it",
+      "confidence": 88,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-C14-cpda_004": {
@@ -81768,14 +81768,12 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "microsoft",
-      "domain": "comune.fontenuova.rm.it",
-      "confidence": 95,
+      "provider": "independent",
+      "domain": "cert.fonte-nuova.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-059001": {
@@ -137818,14 +137816,14 @@
     },
     "IT-L33-L02GXCSL": {
       "name": "ISTITUTO COMPRENSIVO TEMPESTA GALATEO",
-      "provider": "google",
-      "domain": "5tempesta.edu.it",
-      "confidence": 53,
+      "provider": "aruba",
+      "domain": "ictempestagalateo.edu.it",
+      "confidence": 83,
       "flags": [
-        "multiple_mx",
         "spf_softfail",
-        "mx_spf_mismatch",
-        "provider_classified"
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-L14UWJCD": {
@@ -163431,12 +163429,13 @@
     },
     "IT-L33-istsc_boic82800e": {
       "name": "ISTITUTO COMPRENSIVO - IC DI OZZANO DELL'EMILIA",
-      "provider": "google",
-      "domain": "icozzano.istruzioneer.it",
-      "confidence": 88,
+      "provider": "istruzione-miur-tenant",
+      "domain": "icozzano.edu.it",
+      "confidence": 80,
       "flags": [
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -164018,13 +164017,13 @@
     },
     "IT-L33-istsc_bois01900x": {
       "name": "ISTITUTO SUPERIORE - I.I.S. ALDINI VALERIANI - SIRANI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "avbo.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "avbo.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -174519,13 +174518,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -176021,7 +176020,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -193387,13 +193386,12 @@
     },
     "IT-L33-istsc_napm10000c": {
       "name": "ISTITUTO MAGISTRALE - I.STAT.SUPERIORE DON L. MILANI - NAPOLI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "donmilaninapoli.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "donmilaninapoli.edu.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -219037,7 +219035,7 @@
     "IT-L33-istsc_tris00100e": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - NARNI I.I.S. SC. MAG. GEOM. GANDHI",
       "provider": "google",
-      "domain": "gandhinarni.edu.it",
+      "domain": "gandhinarni.it",
       "confidence": 73,
       "flags": [
         "multiple_mx",

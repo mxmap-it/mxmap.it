@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-10 14:23 UTC",
+ "generated_at": "2026-11-11 12:34 UTC",
  "country": "IT",
  "total_entities": 22924,
- "anomalies_total": 1452,
+ "anomalies_total": 1451,
  "anomalies_pct": 6.33,
  "by_type": {
-  "no_mx": 625,
+  "no_mx": 624,
   "gateway_no_primary": 679,
   "low_confidence": 114,
   "geo_unknown": 74
@@ -17,7 +17,7 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1304,
+  "unknown": 1303,
   "independent": 87,
   "aruba": 23,
   "pa-contractor-private": 22,
@@ -1511,7 +1511,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Cavriagoservizi",
@@ -1896,7 +1896,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Collegio Provinciale Geometri e Geometri Laureati di Reggio Calabria",
@@ -2820,7 +2820,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Calvisano",
@@ -2864,7 +2864,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Campo di Giove",
@@ -4932,7 +4932,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Massazza",
@@ -6967,7 +6967,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 5 candidates; none yielded MX"
+   "reason": "search engine returned 4 candidates; none yielded MX"
   },
   {
    "name": "Comune di Santhia'",
@@ -8375,7 +8375,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Saliceto",
@@ -8408,7 +8408,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sesta Godano",
@@ -8996,17 +8996,6 @@
   {
    "name": "Collegio Provinciale Ordine dei Consulenti del Lavoro di Pesaro - Urbino",
    "domain": "consulentidellavoropesaro.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
-   "name": "Consiglio Provinciale Consulenti del Lavoro di Teramo",
-   "domain": "consulentidellavoroteramo.com",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
