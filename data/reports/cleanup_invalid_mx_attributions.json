@@ -1,5 +1,5 @@
 {
-  "n_purged": 504,
+  "n_purged": 501,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -3170,28 +3170,6 @@
       "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
-      "id": "IT-L18-umavm",
-      "name": "Unione Montana Alta Valle del Metauro",
-      "codice_ipa": "umavm",
-      "seed_domain": "unionemontana.altavalledelmetauro.pu.it",
-      "claimed_domain": "comune.urbania.ps.it",
-      "reject_reason": "unrelated",
-      "old_mx": "orione.provincia.ps.it",
-      "old_provider": "regional-public",
-      "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
-    },
-    {
-      "id": "IT-L18-umcn",
-      "name": "Unione Montana del Catria e Nerone",
-      "codice_ipa": "umcn",
-      "seed_domain": "unione.catrianerone.pu.it",
-      "claimed_domain": "comune.cagli.ps.it",
-      "reject_reason": "unrelated",
-      "old_mx": "orione.provincia.ps.it",
-      "old_provider": "regional-public",
-      "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
-    },
-    {
       "id": "IT-L18-umtv",
       "name": "Unione Montana del Tronto e Valfluvione",
       "codice_ipa": "umtv",
@@ -3330,9 +3308,9 @@
       "seed_domain": "ciafm.it",
       "claimed_domain": "comune.sesto-fiorentino.fi.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx.zimbraopen.it",
+      "old_mx": "mx.carboniocloud.com",
       "old_provider": "pa-contractor-private",
-      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
+      "old_reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L28-cirp",
@@ -3388,17 +3366,6 @@
       "old_mx": "smtp1.invallee.it",
       "old_provider": "microsoft",
       "old_reason": "MX is invallee gateway; SPF+DKIM confirm microsoft"
-    },
-    {
-      "id": "IT-L33-HJ5M9AHL",
-      "name": "I.C. 3 CATULLO",
-      "codice_ipa": "hj5m9ahl",
-      "seed_domain": "ic3catullo.edu.it",
-      "claimed_domain": "comune.pomiglianodarco.na.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mail-av.comune.pomiglianodarco.na.it",
-      "old_provider": "seeweb",
-      "old_reason": "MX record (mail-av.comune.pomiglianodarco.na.it, mail.comune.pomiglianodarco.na.it) matches Seeweb"
     },
     {
       "id": "IT-L33-LAR",
@@ -4705,9 +4672,9 @@
       "seed_domain": "docciaservice.it",
       "claimed_domain": "comune.sesto-fiorentino.fi.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx.zimbraopen.it",
+      "old_mx": "mx.carboniocloud.com",
       "old_provider": "pa-contractor-private",
-      "old_reason": "MX is zimbraopen mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
+      "old_reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
     },
     {
       "id": "IT-L37-em_cbb",

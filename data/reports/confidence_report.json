@@ -5,18 +5,18 @@
   "median": 0.9,
   "mean_nonzero": 0.858,
   "buckets": {
-    "0.90-1.00 (molto alta)": 12088,
+    "0.90-1.00 (molto alta)": 12089,
     "0.80-0.89 (alta)": 8138,
     "0.60-0.79 (media)": 1281,
-    "0.00 (nulla / unknown)": 1303,
+    "0.00 (nulla / unknown)": 1302,
     "0.01-0.59 (bassa)": 114
   },
   "rules": {
-    "mx_spf": 12088,
-    "dom_mx_spf": 2169,
+    "mx_spf": 12089,
+    "dom_mx_spf": 2171,
     "spf_gw": 272,
-    "mx_only": 5969,
-    "no_mx": 627,
+    "mx_only": 5967,
+    "no_mx": 626,
     "dkim_gw": 7,
     "gateway_no_primary": 676,
     "fallback": 49,
@@ -26,9 +26,9 @@
   },
   "jurisdiction": {
     "foreign": 11532,
-    "domestic": 10451,
+    "domestic": 10452,
     "mixed": 243,
-    "unknown": 698
+    "unknown": 697
   },
   "domestic_mx_override": 196,
   "bounce_candidates": 114,
@@ -51,7 +51,7 @@
     "local-isp": 0.801,
     "unknown": 0.0,
     "google": 0.87,
-    "aruba": 0.884,
+    "aruba": 0.885,
     "seeweb": 0.841,
     "pa-contractor-private": 0.745,
     "register-it": 0.8,

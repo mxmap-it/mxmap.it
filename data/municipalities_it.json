@@ -86888,7 +86888,7 @@
     "country": "IT",
     "region": "Calabria",
     "district": "Vibo Valentia",
-    "domain": "comunericadi.gov.it",
+    "domain": "comunericadi.vv.it",
     "osm_relation_id": 39674,
     "domain_fallbacks": [
       "comune.ricadi.vv.it"
@@ -98613,7 +98613,7 @@
     "country": "IT",
     "region": "Campania",
     "district": "Avellino",
-    "domain": "comunesantapaolina.gov.it",
+    "domain": "comunesantapaolina.av.it",
     "osm_relation_id": 41005,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "c_i301",
@@ -144316,23 +144316,6 @@
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "022205",
-    "domain_source": "sito_istituzionale"
-  },
-  {
-    "id": "IT-C14-odasvo",
-    "name": "Ordine Degli Assistenti Sociali Valle D'Aosta",
-    "country": "IT",
-    "region": null,
-    "district": null,
-    "domain": "oasvda.org",
-    "osm_relation_id": null,
-    "domain_fallbacks": [
-      "gmail.com"
-    ],
-    "ipa_codice_ipa": "odasvo",
-    "ipa_codice_categoria": "C14",
-    "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "007003",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -197116,7 +197099,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "ll-itc-laila.it",
+    "domain": "scoresaltes.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "schule.suedtirol.it"
@@ -204971,7 +204954,7 @@
     "ipa_codice_ipa": "istsc_anic83600x",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "042018",
+    "ipa_codice_comune_istat": "042029",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -208621,7 +208604,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "desanctislacedonia.gov.it",
+    "domain": "icscomoalbate.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -208629,7 +208612,7 @@
     "ipa_codice_ipa": "istsc_avis002002",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "064041",
+    "ipa_codice_comune_istat": "013075",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -332857,9 +332840,7 @@
     "district": null,
     "domain": "cbmv.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [
-      "pec.cbmv.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "cb3mv",
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
@@ -333746,6 +333727,21 @@
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "096020",
     "domain_source": "email_non_pec_fallback"
+  },
+  {
+    "id": "IT-L37-CCBINGJF",
+    "name": "Trenitalia S.p.A.",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "trenitalia.com",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "CCBINGJF",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "058091",
+    "domain_source": "sito_istituzionale"
   },
   {
     "id": "IT-L37-cciip",
@@ -342094,7 +342090,9 @@
     "district": null,
     "domain": "vigezzina.com",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "vigezzinacentovalli.com"
+    ],
     "ipa_codice_ipa": "UAIHDIKL",
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,

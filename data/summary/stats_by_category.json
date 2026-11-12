@@ -4,9 +4,9 @@
    "cluster": "education",
    "label": "Istruzione (Scuole, Università, AFAM)",
    "n": 8321,
-   "n_classified": 8259,
-   "isd": 21.89,
-   "cloud_act_pct": 77.77,
+   "n_classified": 8260,
+   "isd": 21.9,
+   "cloud_act_pct": 77.76,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -18,13 +18,13 @@
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
      "count": 1692,
-     "pct": 20.49
+     "pct": 20.48
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 114,
-     "pct": 1.38
+     "count": 115,
+     "pct": 1.39
     },
     {
      "bucket": "Altri provider esteri",
@@ -36,13 +36,13 @@
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 6423,
-     "pct": 77.77
+     "pct": 77.76
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 62,
-     "pct": 0.75
+     "count": 61,
+     "pct": 0.73
     }
    ]
   },
@@ -57,8 +57,8 @@
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 732,
-     "pct": 9.88
+     "count": 731,
+     "pct": 9.86
     },
     {
      "bucket": "Italia — Provider commerciali",
@@ -69,8 +69,8 @@
     {
      "bucket": "Italia — Infrastruttura autonoma",
      "group": "ITA",
-     "count": 326,
-     "pct": 4.4
+     "count": 327,
+     "pct": 4.41
     },
     {
      "bucket": "Altri provider esteri",
@@ -95,7 +95,7 @@
   {
    "cluster": "orders",
    "label": "Ordini professionali, Camere di commercio, ACI",
-   "n": 2019,
+   "n": 2018,
    "n_classified": 1872,
    "isd": 73.61,
    "cloud_act_pct": 23.72,
@@ -133,8 +133,8 @@
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 147,
-     "pct": 7.28
+     "count": 146,
+     "pct": 7.23
     }
    ]
   },
@@ -187,7 +187,7 @@
   {
    "cluster": "soe",
    "label": "Società partecipate e fondazioni pubbliche",
-   "n": 1165,
+   "n": 1166,
    "n_classified": 1066,
    "isd": 52.25,
    "cloud_act_pct": 46.9,
@@ -225,8 +225,8 @@
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 99,
-     "pct": 8.5
+     "count": 100,
+     "pct": 8.58
     }
    ]
   },
@@ -691,5 +691,5 @@
    ]
   }
  ],
- "generated": "2026-11-11T11:52:29Z"
+ "generated": "2026-11-12T12:27:35Z"
 }
