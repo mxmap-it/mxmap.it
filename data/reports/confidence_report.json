@@ -5,35 +5,35 @@
   "median": 0.9,
   "mean_nonzero": 0.858,
   "buckets": {
-    "0.90-1.00 (molto alta)": 12089,
-    "0.80-0.89 (alta)": 8138,
+    "0.90-1.00 (molto alta)": 12096,
+    "0.80-0.89 (alta)": 8140,
     "0.60-0.79 (media)": 1281,
-    "0.00 (nulla / unknown)": 1302,
-    "0.01-0.59 (bassa)": 114
+    "0.00 (nulla / unknown)": 1294,
+    "0.01-0.59 (bassa)": 113
   },
   "rules": {
-    "mx_spf": 12089,
-    "dom_mx_spf": 2171,
+    "mx_spf": 12096,
+    "dom_mx_spf": 2172,
     "spf_gw": 272,
-    "mx_only": 5967,
-    "no_mx": 626,
+    "mx_only": 5968,
+    "no_mx": 618,
     "dkim_gw": 7,
     "gateway_no_primary": 676,
-    "fallback": 49,
+    "fallback": 48,
     "frgn_mx_spf": 777,
     "dom_mx_only": 225,
     "frgn_mx_only": 65
   },
   "jurisdiction": {
-    "foreign": 11532,
-    "domestic": 10452,
+    "foreign": 11533,
+    "domestic": 10459,
     "mixed": 243,
-    "unknown": 697
+    "unknown": 689
   },
   "domestic_mx_override": 196,
-  "bounce_candidates": 114,
+  "bounce_candidates": 113,
   "bounce_by_provider": {
-    "pa-contractor-private": 22,
+    "pa-contractor-private": 21,
     "independent": 59,
     "ovh": 1,
     "aruba": 23,
@@ -41,7 +41,7 @@
     "google": 1
   },
   "bounce_by_jurisdiction": {
-    "domestic": 37,
+    "domestic": 36,
     "unknown": 38,
     "foreign": 39
   },
@@ -51,7 +51,7 @@
     "local-isp": 0.801,
     "unknown": 0.0,
     "google": 0.87,
-    "aruba": 0.885,
+    "aruba": 0.884,
     "seeweb": 0.841,
     "pa-contractor-private": 0.745,
     "register-it": 0.8,

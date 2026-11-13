@@ -1,7 +1,7 @@
 {
   "total": 22924,
   "average_score": 80.6,
-  "high_confidence_pct": 73.8,
+  "high_confidence_pct": 73.9,
   "quality_passed": false,
   "entries": {
     "IT-C1-KH5RHFCV": {
@@ -24131,13 +24131,14 @@
       ]
     },
     "IT-C3-ivat": {
-      "name": "Istituto Valdostano dell'Artigianato di Tradizione",
+      "name": "L'Artisanà",
       "provider": "pa-contractor-private",
-      "domain": "wwww.lartisana.vda.it",
+      "domain": "lartisana.vda.it",
       "confidence": 50,
       "flags": [
         "no_spf",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-C3-ssm": {
@@ -30001,12 +30002,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.lenta.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -30880,13 +30881,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -63136,13 +63137,13 @@
     },
     "IT-COM-025018": {
       "name": "Comune di Domegge di Cadore",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.domeggedicadore.bl.it",
-      "confidence": 15,
+      "confidence": 55,
       "flags": [
-        "no_mx",
         "no_spf",
-        "provider_unknown"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-025019": {
@@ -81755,12 +81756,14 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "independent",
-      "domain": "cert.fonte-nuova.it",
-      "confidence": 50,
+      "provider": "microsoft",
+      "domain": "comune.fontenuova.rm.it",
+      "confidence": 95,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-059001": {
@@ -90513,13 +90516,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -102058,13 +102060,14 @@
     },
     "IT-COM-080091": {
       "name": "Comune di Stignano",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comunestignano.it",
-      "confidence": 15,
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-080092": {
@@ -102508,7 +102511,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -107977,13 +107980,14 @@
     },
     "IT-COM-096012": {
       "name": "Comune di Candelo",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.candelo.bi.it",
-      "confidence": 15,
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-096013": {
@@ -108376,13 +108380,12 @@
     },
     "IT-COM-096054": {
       "name": "Comune di Roppolo",
-      "provider": "unknown",
+      "provider": "register-it",
       "domain": "comune.roppolo.bi.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-096055": {
@@ -108475,13 +108478,14 @@
     },
     "IT-COM-096066": {
       "name": "Comune di Tavigliano",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.tavigliano.bi.it",
-      "confidence": 15,
+      "confidence": 95,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-096067": {
@@ -174509,13 +174513,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceocevolani.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "liceocevolani.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -176011,7 +176015,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.edu.it",
+      "domain": "agrariofirenze.eu",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -197073,7 +197077,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.it",
+      "domain": "liceorespighi.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -208450,14 +208454,14 @@
     },
     "IT-L33-istsc_rmic8es00l": {
       "name": "Istituto Comprensivo Mahatma Gandhi",
-      "provider": "google",
-      "domain": "icmahatmagandhi.it",
-      "confidence": 53,
+      "provider": "aruba",
+      "domain": "icmahatmagandhi.edu.it",
+      "confidence": 83,
       "flags": [
-        "multiple_mx",
         "spf_softfail",
-        "mx_spf_mismatch",
-        "provider_classified"
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-istsc_rmic8et00c": {
@@ -233235,13 +233239,14 @@
     },
     "IT-L34-oplbag": {
       "name": "Opera Pia Legato Barone Alpi Gaetano",
-      "provider": "unknown",
-      "domain": "legatobarone.provincia.venezia.it",
-      "confidence": 15,
+      "provider": "pa-contractor-private",
+      "domain": "legatoalpivigonovo.it",
+      "confidence": 90,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L34-opmb_": {
@@ -254235,7 +254240,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "commissariobonificadiscariche.governo.it",
+      "domain": "governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"

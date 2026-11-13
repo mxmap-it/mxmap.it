@@ -1,5 +1,5 @@
 {
-  "n_purged": 501,
+  "n_purged": 502,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -2417,9 +2417,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2813,9 +2813,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "alltheemails.com",
-      "old_provider": "independent",
-      "old_reason": "MX (alltheemails.com) is self-hosted"
+      "old_mx": "mail.h-email.net",
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
     },
     {
       "id": "IT-L18-uco",
@@ -3170,6 +3170,28 @@
       "old_reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
+      "id": "IT-L18-umavm",
+      "name": "Unione Montana Alta Valle del Metauro",
+      "codice_ipa": "umavm",
+      "seed_domain": "unionemontana.altavalledelmetauro.pu.it",
+      "claimed_domain": "comune.urbania.ps.it",
+      "reject_reason": "unrelated",
+      "old_mx": "orione.provincia.ps.it",
+      "old_provider": "regional-public",
+      "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
+    },
+    {
+      "id": "IT-L18-umcn",
+      "name": "Unione Montana del Catria e Nerone",
+      "codice_ipa": "umcn",
+      "seed_domain": "unione.catrianerone.pu.it",
+      "claimed_domain": "comune.cagli.ps.it",
+      "reject_reason": "unrelated",
+      "old_mx": "orione.provincia.ps.it",
+      "old_provider": "regional-public",
+      "old_reason": "MX (orione.provincia.ps.it) on AS198045 (?) -> regional-public (ASN-based override)"
+    },
+    {
       "id": "IT-L18-umtv",
       "name": "Unione Montana del Tronto e Valfluvione",
       "codice_ipa": "umtv",
@@ -3308,9 +3330,9 @@
       "seed_domain": "ciafm.it",
       "claimed_domain": "comune.sesto-fiorentino.fi.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx.carboniocloud.com",
-      "old_provider": "pa-contractor-private",
-      "old_reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
+      "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L28-cirp",
@@ -4006,17 +4028,6 @@
       "old_reason": "MX (mx.comune.milazzo.me.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
-      "id": "IT-L34-oplbag",
-      "name": "Opera Pia Legato Barone Alpi Gaetano",
-      "codice_ipa": "oplbag",
-      "seed_domain": "legatobarone.provincia.venezia.it",
-      "claimed_domain": "comune.vigonovo.ve.it",
-      "reject_reason": "unrelated",
-      "old_mx": "comune-vigonovo-ve-it.mail.protection.outlook.com",
-      "old_provider": "microsoft",
-      "old_reason": "MX record (comune-vigonovo-ve-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
       "id": "IT-L34-opst",
       "name": "Opera Pia Sticca",
       "codice_ipa": "opst",
@@ -4672,9 +4683,9 @@
       "seed_domain": "docciaservice.it",
       "claimed_domain": "comune.sesto-fiorentino.fi.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx.carboniocloud.com",
-      "old_provider": "pa-contractor-private",
-      "old_reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
+      "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
+      "old_provider": "unknown",
+      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L37-em_cbb",
