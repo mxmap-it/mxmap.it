@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-13 12:49 UTC",
+ "generated_at": "2026-11-14 11:55 UTC",
  "country": "IT",
  "total_entities": 22924,
- "anomalies_total": 1441,
+ "anomalies_total": 1442,
  "anomalies_pct": 6.29,
  "by_type": {
-  "no_mx": 615,
+  "no_mx": 616,
   "gateway_no_primary": 679,
   "low_confidence": 113,
   "geo_unknown": 74
@@ -17,7 +17,7 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1294,
+  "unknown": 1295,
   "independent": 87,
   "aruba": 23,
   "pa-contractor-private": 21,
@@ -168,7 +168,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia Regionale per Il Lavoro",
@@ -1159,7 +1159,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Consorzio di Bonifica Integrale Dei Bacini Meridionali del Cosentino",
@@ -1896,7 +1896,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Collegio Provinciale Geometri e Geometri Laureati di Reggio Calabria",
@@ -2292,7 +2292,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arbus",
@@ -3879,6 +3879,17 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
+   "name": "Comune di Cureggio",
+   "domain": "comune.cureggio.no.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Dignano",
    "domain": "comune.dignano.ud.it",
    "provider": "unknown",
@@ -4822,7 +4833,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Marano Lagunare",
@@ -5317,7 +5328,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Niardo",
@@ -6450,7 +6461,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Roghudi",
@@ -6857,7 +6868,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di San Quirico d'Orcia",
@@ -6989,7 +7000,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sauris",
@@ -7045,6 +7056,17 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "Comune di Scanno",
+   "domain": "comune.scanno.aq.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Schilpario",
@@ -7265,17 +7287,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Comune di Subiaco",
-   "domain": "comune.subiaco.rm.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sulzano",
@@ -7748,7 +7759,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Varapodio",
@@ -8243,7 +8254,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Picciano",
@@ -8826,7 +8837,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Consorzio Intercomunale del Montefeltro",
@@ -9178,7 +9189,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione Dei Comuni dall'Eleuterio a Rocca Busambra",

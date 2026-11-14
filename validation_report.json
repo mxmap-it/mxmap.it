@@ -30002,12 +30002,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "regional-public",
-      "domain": "comune.lenta.vc.it",
-      "confidence": 90,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
         "spf_strict",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -30881,13 +30881,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "comune.cureggio.no.it",
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-003060": {
@@ -81542,13 +81542,15 @@
     },
     "IT-COM-058103": {
       "name": "Comune di Subiaco",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.subiaco.rm.it",
-      "confidence": 15,
+      "confidence": 85,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:aws+hubspot+microsoft",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-058104": {
@@ -81756,14 +81758,12 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "microsoft",
-      "domain": "comune.fontenuova.rm.it",
-      "confidence": 95,
+      "provider": "independent",
+      "domain": "cert.fonte-nuova.it",
+      "confidence": 50,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-059001": {
@@ -90516,12 +90516,13 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.scanno.aq.it",
-      "confidence": 68,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-066094": {
@@ -96606,14 +96607,15 @@
     },
     "IT-COM-075081": {
       "name": "Comune di Supersano",
-      "provider": "aruba",
-      "domain": "comunedisupersano.le.it",
-      "confidence": 83,
+      "provider": "pa-contractor-private",
+      "domain": "comune.supersano.le.it",
+      "confidence": 95,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
+        "multiple_mx",
+        "spf_strict",
+        "mx_spf_match",
         "provider_classified",
-        "autodiscover_confirms"
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-075082": {
@@ -102511,7 +102513,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "comune.baucina.pa.it",
+      "domain": "egov.comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -112904,8 +112906,7 @@
       "flags": [
         "spf_softfail",
         "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "smtp_suggests:microsoft"
+        "provider_classified"
       ]
     },
     "IT-COM-108025": {
@@ -125577,18 +125578,6 @@
         "provider_via_gateway_spf"
       ]
     },
-    "IT-L12-cm_lmocn": {
-      "name": "Comunita' delle colline tra Langa e Monferrato",
-      "provider": "aruba",
-      "domain": "langamonferrato.it",
-      "confidence": 83,
-      "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
-      ]
-    },
     "IT-L12-cm_maiel67": {
       "name": "Comunita' Montana Maielletta Zona P",
       "provider": "unknown",
@@ -125970,8 +125959,7 @@
       "flags": [
         "spf_strict",
         "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "smtp_suggests:microsoft"
+        "provider_classified"
       ]
     },
     "IT-L12-cmdf": {
@@ -128604,6 +128592,18 @@
         "spf_strict",
         "mx_spf_match",
         "provider_classified"
+      ]
+    },
+    "IT-L18-cm_lmocn": {
+      "name": "Comunita' delle colline tra Langa e Monferrato",
+      "provider": "aruba",
+      "domain": "langamonferrato.it",
+      "confidence": 83,
+      "flags": [
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L18-cm_monem": {
@@ -158060,14 +158060,14 @@
     },
     "IT-L33-istsc_aric83000r": {
       "name": "ISTITUTO COMPRENSIVO - POPPI",
-      "provider": "google",
-      "domain": "poppiscuola.edu.it",
-      "confidence": 93,
+      "provider": "microsoft",
+      "domain": "cpiaarezzo.edu.it",
+      "confidence": 95,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-istsc_aric83100l": {
@@ -174513,13 +174513,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -176015,7 +176015,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -197824,13 +197824,13 @@
     },
     "IT-L33-istsc_pdis003009": {
       "name": "IIS CATTANEO-MATTEI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "cattaneo-mattei.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "cattaneomattei.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -239215,7 +239215,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.com",
+      "domain": "flegrealavoro.portaletrasparenza.net",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242655,7 +242655,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.it",
+      "domain": "unilavspa.portaletrasparenza.net",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -254240,7 +254240,7 @@
     "IT-L47-csdad": {
       "name": "Commissario Straordinario Discariche Abusive Dpcm 24.03.2017",
       "provider": "microsoft",
-      "domain": "governo.it",
+      "domain": "commissariobonificadiscariche.governo.it",
       "confidence": 65,
       "flags": [
         "provider_classified"
@@ -259893,8 +259893,7 @@
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "provider_classified",
-        "smtp_suggests:microsoft"
+        "provider_classified"
       ]
     },
     "IT-SA-0D7QKFH5": {
