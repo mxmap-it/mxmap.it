@@ -7,8 +7,8 @@
   "buckets": {
     "0.90-1.00 (molto alta)": 12093,
     "0.80-0.89 (alta)": 8140,
-    "0.60-0.79 (media)": 1283,
-    "0.00 (nulla / unknown)": 1295,
+    "0.60-0.79 (media)": 1282,
+    "0.00 (nulla / unknown)": 1296,
     "0.01-0.59 (bassa)": 113
   },
   "rules": {
@@ -16,19 +16,19 @@
     "dom_mx_spf": 2172,
     "spf_gw": 272,
     "mx_only": 5968,
-    "no_mx": 619,
+    "no_mx": 620,
     "dkim_gw": 7,
     "gateway_no_primary": 676,
     "fallback": 48,
     "frgn_mx_spf": 778,
-    "dom_mx_only": 226,
+    "dom_mx_only": 225,
     "frgn_mx_only": 65
   },
   "jurisdiction": {
     "foreign": 11534,
-    "domestic": 10457,
+    "domestic": 10456,
     "mixed": 243,
-    "unknown": 690
+    "unknown": 691
   },
   "domestic_mx_override": 196,
   "bounce_candidates": 113,
