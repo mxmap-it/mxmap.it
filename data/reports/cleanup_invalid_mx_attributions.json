@@ -1,5 +1,5 @@
 {
-  "n_purged": 502,
+  "n_purged": 505,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -297,6 +297,17 @@
       "old_mx": "mx.comune.pietragalla.pz.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comune.pietragalla.pz.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
+      "id": "IT-C14-cidad",
+      "name": "Collegio Interprovinciale Degli Agrotecnici e Degli Agrotecnici Laureati di Messina e  Enna",
+      "codice_ipa": "cidad",
+      "seed_domain": "agrotecnicisicilia.it",
+      "claimed_domain": "comune.capodorlando.me.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mail.comune.capodorlando.me.it",
+      "old_provider": "independent",
+      "old_reason": "MX (mail.comune.capodorlando.me.it) is self-hosted"
     },
     {
       "id": "IT-C14-cidockv",
@@ -3918,6 +3929,17 @@
       "old_reason": "MX is widestore vendor relay; mail managed by the PA vendor (no primary cloud signal)"
     },
     {
+      "id": "IT-L34-iibpg",
+      "name": "Ipab Istituto Boccone del Povero Gurrera Moncada Calafato",
+      "codice_ipa": "iibpg",
+      "seed_domain": "bocconedelpovero.it",
+      "claimed_domain": "comune.caltanissetta.it",
+      "reject_reason": "unrelated",
+      "old_mx": "in.arubabusiness.it",
+      "old_provider": "aruba",
+      "old_reason": "MX record (in.arubabusiness.it) matches Aruba"
+    },
+    {
       "id": "IT-L34-iisf",
       "name": "Ipab Istituto Sacra Famiglia",
       "codice_ipa": "iisf",
@@ -4895,6 +4917,17 @@
       "old_mx": "comune-carimate-co-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-carimate-co-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
+      "id": "IT-L37-stspa",
+      "name": "Sistemi Territoriali S.P.A.",
+      "codice_ipa": "stspa",
+      "seed_domain": "sistemiterritorialispa.it",
+      "claimed_domain": "comune.padova.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-padova-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-padova-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-L37-valspa",

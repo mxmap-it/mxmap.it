@@ -1,40 +1,40 @@
 {
   "country": "IT",
-  "n": 22924,
+  "n": 22923,
   "mean": 0.809,
   "median": 0.9,
   "mean_nonzero": 0.858,
   "buckets": {
-    "0.90-1.00 (molto alta)": 12091,
-    "0.80-0.89 (alta)": 8138,
-    "0.60-0.79 (media)": 1284,
-    "0.00 (nulla / unknown)": 1298,
-    "0.01-0.59 (bassa)": 113
+    "0.90-1.00 (molto alta)": 12086,
+    "0.80-0.89 (alta)": 8129,
+    "0.60-0.79 (media)": 1286,
+    "0.00 (nulla / unknown)": 1302,
+    "0.01-0.59 (bassa)": 120
   },
   "rules": {
-    "mx_spf": 12091,
-    "dom_mx_spf": 2172,
-    "spf_gw": 273,
-    "mx_only": 5966,
-    "no_mx": 622,
+    "mx_spf": 12086,
+    "dom_mx_spf": 2168,
+    "spf_gw": 276,
+    "mx_only": 5961,
+    "no_mx": 626,
     "dkim_gw": 7,
     "gateway_no_primary": 676,
     "fallback": 48,
-    "frgn_mx_spf": 778,
+    "frgn_mx_spf": 777,
     "dom_mx_only": 226,
-    "frgn_mx_only": 65
+    "frgn_mx_only": 72
   },
   "jurisdiction": {
-    "foreign": 11533,
-    "domestic": 10455,
-    "mixed": 243,
-    "unknown": 693
+    "foreign": 11545,
+    "domestic": 10437,
+    "mixed": 242,
+    "unknown": 699
   },
-  "domestic_mx_override": 196,
-  "bounce_candidates": 113,
+  "domestic_mx_override": 205,
+  "bounce_candidates": 120,
   "bounce_by_provider": {
     "pa-contractor-private": 21,
-    "independent": 59,
+    "independent": 66,
     "ovh": 1,
     "aruba": 23,
     "microsoft": 8,
@@ -42,16 +42,16 @@
   },
   "bounce_by_jurisdiction": {
     "domestic": 36,
-    "unknown": 38,
-    "foreign": 39
+    "foreign": 44,
+    "unknown": 40
   },
   "provider_confidence": {
     "microsoft": 0.923,
-    "independent": 0.716,
+    "independent": 0.714,
     "local-isp": 0.801,
     "unknown": 0.0,
     "google": 0.87,
-    "aruba": 0.885,
+    "aruba": 0.884,
     "seeweb": 0.841,
     "pa-contractor-private": 0.745,
     "register-it": 0.8,
