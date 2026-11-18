@@ -1,5 +1,5 @@
 {
-  "total": 22923,
+  "total": 22922,
   "average_score": 80.5,
   "high_confidence_pct": 73.8,
   "quality_passed": false,
@@ -16548,10 +16548,10 @@
       "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Forli'",
       "provider": "google",
       "domain": "forli.commercialisti.it",
-      "confidence": 93,
+      "confidence": 95,
       "flags": [
         "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -23436,7 +23436,7 @@
     "IT-C3-AGENAS": {
       "name": "Agenzia Nazionale per i Servizi Sanitari Regionali - AGENAS",
       "provider": "microsoft",
-      "domain": "agenas.it",
+      "domain": "agenas.gov.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -47662,13 +47662,14 @@
     },
     "IT-COM-016016": {
       "name": "Comune di Azzano San Paolo",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.azzanosanpaolo.bg.it",
-      "confidence": 15,
+      "confidence": 95,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-016017": {
@@ -62640,11 +62641,11 @@
       "name": "Comune di Schio",
       "provider": "pa-contractor-private",
       "domain": "comune.schio.vi.it",
-      "confidence": 93,
+      "confidence": 83,
       "flags": [
         "multiple_mx",
         "spf_softfail",
-        "mx_spf_match",
+        "independent_mx_with_cloud_spf",
         "provider_classified",
         "provider_via_gateway_spf"
       ]
@@ -63432,13 +63433,11 @@
     },
     "IT-COM-025055": {
       "name": "Comune di Seren del Grappa",
-      "provider": "pa-contractor-private",
+      "provider": "google",
       "domain": "comune.serendelgrappa.bl.it",
-      "confidence": 85,
+      "confidence": 65,
       "flags": [
-        "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-025056": {
@@ -63818,13 +63817,11 @@
     },
     "IT-COM-026018": {
       "name": "Comune di Cison di Valmarino",
-      "provider": "pa-contractor-private",
+      "provider": "google",
       "domain": "comune.cisondivalmarino.tv.it",
-      "confidence": 85,
+      "confidence": 65,
       "flags": [
-        "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "provider_classified"
       ]
     },
     "IT-COM-026019": {
@@ -64517,7 +64514,7 @@
     },
     "IT-COM-026080": {
       "name": "Comune di Sernaglia della Battaglia",
-      "provider": "pa-contractor-private",
+      "provider": "google",
       "domain": "comune.sernaglia.tv.it",
       "confidence": 90,
       "flags": [
@@ -64775,15 +64772,16 @@
     },
     "IT-COM-027006": {
       "name": "Comune di Cavarzere",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.cavarzere.ve.it",
-      "confidence": 85,
+      "confidence": 100,
       "flags": [
         "multiple_mx",
         "spf_strict",
         "mx_spf_match",
-        "provider_unknown",
-        "provider_via_gateway_spf"
+        "provider_classified",
+        "provider_via_gateway_spf",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-027007": {
@@ -75949,13 +75947,14 @@
     },
     "IT-COM-048043": {
       "name": "Comune di Sesto Fiorentino",
-      "provider": "pa-contractor-private",
+      "provider": "unknown",
       "domain": "comune.sesto-fiorentino.fi.it",
-      "confidence": 88,
+      "confidence": 83,
       "flags": [
+        "multiple_mx",
         "spf_softfail",
         "mx_spf_match",
-        "provider_classified",
+        "provider_unknown",
         "provider_via_gateway_spf"
       ]
     },
@@ -81530,15 +81529,13 @@
     },
     "IT-COM-058103": {
       "name": "Comune di Subiaco",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "comune.subiaco.rm.it",
-      "confidence": 85,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:aws+hubspot+microsoft",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-058104": {
@@ -110275,9 +110272,8 @@
       "name": "Comune di Sant'Angelo Lodigiano",
       "provider": "microsoft",
       "domain": "comune.santangelolodigiano.lo.it",
-      "confidence": 100,
+      "confidence": 95,
       "flags": [
-        "multiple_mx",
         "spf_strict",
         "mx_spf_match",
         "provider_classified",
@@ -112892,7 +112888,8 @@
       "flags": [
         "spf_softfail",
         "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "provider_classified",
+        "smtp_suggests:microsoft"
       ]
     },
     "IT-COM-108025": {
@@ -118052,7 +118049,7 @@
     "IT-COM-119012": {
       "name": "Comune di Narcao",
       "provider": "aruba",
-      "domain": "comune.narcao.su.it",
+      "domain": "comune.narcao.ci.it",
       "confidence": 78,
       "flags": [
         "spf_softfail",
@@ -123828,7 +123825,7 @@
     "IT-L1-sap": {
       "name": "Scuola Alberghiera Provinciale",
       "provider": "unknown",
-      "domain": "bruneck.berufsschule.it",
+      "domain": "lhfs-bruneck.berufsschule.it",
       "confidence": 15,
       "flags": [
         "no_mx",
@@ -125948,7 +125945,8 @@
       "flags": [
         "spf_strict",
         "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "provider_classified",
+        "smtp_suggests:microsoft"
       ]
     },
     "IT-L12-cmdf": {
@@ -171830,10 +171828,10 @@
       "name": "ISTITUTO SUPERIORE - IIS CARIATI 'LS-IPSC'",
       "provider": "google",
       "domain": "iiscariati.edu.it",
-      "confidence": 50,
+      "confidence": 88,
       "flags": [
-        "spf_strict",
-        "mx_spf_mismatch",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -184770,18 +184768,6 @@
         "autodiscover_confirms"
       ]
     },
-    "IT-L33-istsc_miic851008": {
-      "name": "ISTITUTO COMPRENSIVO - D. ALIGHIERI - RESCALDINA",
-      "provider": "google",
-      "domain": "alighierirescaldina.edu.it",
-      "confidence": 93,
-      "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
-      ]
-    },
     "IT-L33-istsc_miic852004": {
       "name": "ISTITUTO COMPRENSIVO - A.MANZONI-LEGNANO",
       "provider": "google",
@@ -190034,7 +190020,7 @@
       ]
     },
     "IT-L33-istsc_mtic82600e": {
-      "name": "Istituto Comprensivo Padre Giovanni Semeria",
+      "name": "Istituto Comprensivo Semeria-Minozzi-Festa",
       "provider": "google",
       "domain": "icsemeria.edu.it",
       "confidence": 55,
@@ -197062,7 +197048,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.it",
+      "domain": "liceorespighi.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -201179,14 +201165,14 @@
     },
     "IT-L33-istsc_prsd01000e": {
       "name": "ISTITUTO D'ARTE - TOSCHI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceoartisticotoschi.gov.it",
-      "confidence": 80,
+      "provider": "microsoft",
+      "domain": "liceotoschi.edu.it",
+      "confidence": 95,
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-L33-istsc_prtd02000e": {
@@ -218889,11 +218875,13 @@
     },
     "IT-L33-istsc_tric811001": {
       "name": "ISTITUTO COMPRENSIVO - I.C. TERNI 'A.DE FILIS'",
-      "provider": "independent",
+      "provider": "google",
       "domain": "defilisterni.edu.it",
-      "confidence": 50,
+      "confidence": 53,
       "flags": [
-        "no_spf",
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_mismatch",
         "provider_classified"
       ]
     },
@@ -219676,15 +219664,13 @@
     },
     "IT-L33-istsc_tvic83600e": {
       "name": "ISTITUTO COMPRENSIVO - IC VAZZOLA",
-      "provider": "independent",
-      "domain": "icmareno-vazzola.it",
-      "confidence": 53,
+      "provider": "pa-contractor-private",
+      "domain": "icmareno-vazzola.edu.it",
+      "confidence": 85,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_mismatch",
+        "mx_spf_match",
         "provider_classified",
-        "autodiscover_suggests:aruba"
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-istsc_tvic83700a": {
@@ -259861,7 +259847,8 @@
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "smtp_suggests:microsoft"
       ]
     },
     "IT-SA-0D7QKFH5": {
@@ -262196,12 +262183,11 @@
     },
     "IT-SA-HGG87R59": {
       "name": "ITS FONDAZIONE MONACO COSENZA",
-      "provider": "google",
+      "provider": "independent",
       "domain": "itscosenza.it",
-      "confidence": 48,
+      "confidence": 50,
       "flags": [
-        "spf_softfail",
-        "mx_spf_mismatch",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -262908,11 +262894,11 @@
     },
     "IT-SA-MH8PWLTO": {
       "name": "Fondazione POL.I.S.",
-      "provider": "aruba",
-      "domain": "pec.regione.campania.it",
-      "confidence": 88,
+      "provider": "microsoft",
+      "domain": "fondazionepolis.regione.campania.it",
+      "confidence": 90,
       "flags": [
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
         "provider_classified"
       ]
@@ -264260,12 +264246,13 @@
     },
     "IT-SA-VVGM4NFJ": {
       "name": "LA JOHNSON SRL",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "lajohnson.it",
-      "confidence": 50,
+      "confidence": 15,
       "flags": [
+        "no_mx",
         "no_spf",
-        "provider_classified"
+        "provider_unknown"
       ]
     },
     "IT-SA-VZXHMF59": {
@@ -267019,11 +267006,12 @@
       "name": "Istituto Poligrafico e Zecca dello Stato S.P.A.",
       "provider": "microsoft",
       "domain": "ipzs.it",
-      "confidence": 90,
+      "confidence": 95,
       "flags": [
         "spf_strict",
         "mx_spf_match",
-        "provider_classified"
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-SAG-ivs": {

@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-17 14:10 UTC",
+ "generated_at": "2026-11-18 13:52 UTC",
  "country": "IT",
- "total_entities": 22923,
- "anomalies_total": 1456,
- "anomalies_pct": 6.35,
+ "total_entities": 22922,
+ "anomalies_total": 1457,
+ "anomalies_pct": 6.36,
  "by_type": {
-  "no_mx": 623,
+  "no_mx": 624,
   "gateway_no_primary": 679,
   "low_confidence": 120,
   "geo_unknown": 76
@@ -17,9 +17,9 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1302,
-  "independent": 94,
-  "aruba": 23,
+  "unknown": 1303,
+  "independent": 93,
+  "aruba": 24,
   "pa-contractor-private": 21,
   "microsoft": 13,
   "google": 2,
@@ -168,7 +168,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Agenzia Regionale per Il Lavoro",
@@ -1360,17 +1360,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "Scuola Alberghiera Provinciale",
-   "domain": "bruneck.berufsschule.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
    "name": "IRCCS Burlo Garofolo di Trieste",
    "domain": "burlo.trieste.it",
    "provider": "unknown",
@@ -1929,7 +1918,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Collegio Provinciale Geometri e Geometri Laureati di Reggio Calabria",
@@ -2325,7 +2314,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arbus",
@@ -2491,17 +2480,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Comune di Azzano San Paolo",
-   "domain": "comune.azzanosanpaolo.bg.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Azzone",
@@ -2853,7 +2831,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Cairo Montenotte",
@@ -3404,17 +3382,6 @@
    ],
    "mx": null,
    "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
-   "name": "Comune di Cavarzere",
-   "domain": "comune.cavarzere.ve.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "gateway_no_primary"
-   ],
-   "mx": "mx01.hornetsecurity.com",
-   "reason": "MX is hornetsecurity gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
    "name": "Comune di Cavasso Nuovo",
@@ -4437,7 +4404,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Gessate",
@@ -5383,7 +5350,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Niardo",
@@ -7132,7 +7099,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Schilpario",
@@ -7225,6 +7192,17 @@
   {
    "name": "Sanitas Seriate s.r.l.",
    "domain": "comune.seriate.bg.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "gateway_no_primary"
+   ],
+   "mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
+   "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "Comune di Sesto Fiorentino",
+   "domain": "comune.sesto-fiorentino.fi.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -7353,6 +7331,17 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "Comune di Subiaco",
+   "domain": "comune.subiaco.rm.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sulzano",
@@ -8210,7 +8199,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ruda",
@@ -10314,6 +10303,17 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
+   "name": "LA JOHNSON SRL",
+   "domain": "lajohnson.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
    "name": "Consorzio Lamma",
    "domain": "lamma.toscana.it",
    "provider": "unknown",
@@ -10433,6 +10433,17 @@
    ],
    "mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "Scuola Alberghiera Provinciale",
+   "domain": "lhfs-bruneck.berufsschule.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Liceo Artistico Regionale L. e M. Cascio",
@@ -14451,6 +14462,17 @@
    "reason": "MX is epublic vendor relay; mail managed by the PA vendor (no primary cloud signal)"
   },
   {
+   "name": "Comune di Cavarzere",
+   "domain": "comune.cavarzere.ve.it",
+   "provider": "aruba",
+   "confidence": 0.4,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx01.hornetsecurity.com",
+   "reason": "MX is hornetsecurity gateway; autodiscover points to aruba"
+  },
+  {
    "name": "Comune di Guidonia Montecelio",
    "domain": "comune.guidoniamontecelio.rm.it",
    "provider": "aruba",
@@ -15377,17 +15399,6 @@
    "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
-   "name": "ISTITUTO COMPRENSIVO - I.C. TERNI 'A.DE FILIS'",
-   "domain": "defilisterni.edu.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.defilisterni.edu.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
-  },
-  {
    "name": "Ente Parco Minerario Floristella Grottacalda",
    "domain": "enteparcofloristella.it",
    "provider": "independent",
@@ -15522,6 +15533,17 @@
    "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
+   "name": "ITS FONDAZIONE MONACO COSENZA",
+   "domain": "itscosenza.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.itscosenza.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
+  },
+  {
    "name": "ITS PER LE NUOVE TECNOLOGIE PER IL MADE IN ITALY EMPORIUM DEL GOLFO",
    "domain": "itsemporiumdelgolfo.it",
    "provider": "independent",
@@ -15532,17 +15554,6 @@
    ],
    "mx": "_dc-mx.6c2c0d9303d6.itsemporiumdelgolfo.it",
    "reason": "MX (_dc-mx.6c2c0d9303d6.itsemporiumdelgolfo.it) is self-hosted"
-  },
-  {
-   "name": "LA JOHNSON SRL",
-   "domain": "lajohnson.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.lajohnson.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "LICEO CLASSICO - LC G.M.DETTORI",

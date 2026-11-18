@@ -1,5 +1,5 @@
 {
-  "n_purged": 505,
+  "n_purged": 506,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1053,7 +1053,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "unknown",
       "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
@@ -2205,7 +2205,7 @@
       "id": "IT-L1-sap",
       "name": "Scuola Alberghiera Provinciale",
       "codice_ipa": "sap",
-      "seed_domain": "bruneck.berufsschule.it",
+      "seed_domain": "lhfs-bruneck.berufsschule.it",
       "claimed_domain": "comune.brunico.bz.it",
       "reject_reason": "unrelated",
       "old_mx": "comune-brunico-bz-it.mail.protection.outlook.com",
@@ -2428,9 +2428,9 @@
       "seed_domain": "montanacigno.com",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L12-CMMC",
@@ -2824,9 +2824,9 @@
       "seed_domain": "unionecastellodigerionecb.it",
       "claimed_domain": "casacalendacomune.it",
       "reject_reason": "unrelated",
-      "old_mx": "mail.h-email.net",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.h-email.net) hosted on Local ISP (Hetzner (DE))"
+      "old_mx": "alltheemails.com",
+      "old_provider": "independent",
+      "old_reason": "MX (alltheemails.com) is self-hosted"
     },
     {
       "id": "IT-L18-uco",
@@ -5467,6 +5467,17 @@
       "old_mx": "mx.comunesanbiagioplatani.it",
       "old_provider": "aruba",
       "old_reason": "MX (mx.comunesanbiagioplatani.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+    },
+    {
+      "id": "IT-SA-VVGM4NFJ",
+      "name": "LA JOHNSON SRL",
+      "codice_ipa": "vvgm4nfj",
+      "seed_domain": "lajohnson.it",
+      "claimed_domain": "comune.collesalvetti.li.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-collesalvetti-li-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-collesalvetti-li-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-SA-WUS4QGRD",

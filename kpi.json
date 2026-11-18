@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-17T14:10:13Z",
+  "generated_at": "2026-11-18T13:53:11Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22923,
-    "n_with_mx": 22300,
+    "n_entities": 22922,
+    "n_with_mx": 22298,
     "coverage_pct": 94.32
   },
   "indices": {
-    "isd": 53.51,
-    "cloud_act_pct": 45.91,
-    "n_classified": 21621
+    "isd": 53.49,
+    "cloud_act_pct": 45.93,
+    "n_classified": 21619
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 9929,
+      "count": 9932,
       "pct": 43.3,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11569,
-      "pct": 50.5,
+      "count": 11564,
+      "pct": 50.4,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 1302,
+      "count": 1303,
       "pct": 5.7,
       "label": "Sconosciuto"
     }
@@ -38,25 +38,25 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 9827,
+      "count": 9824,
       "pct": 42.9,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6169,
+      "count": 6171,
       "pct": 26.9,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 3753,
+      "count": 3754,
       "pct": 16.4,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Sconosciuto",
-      "count": 1302,
+      "count": 1303,
       "pct": 5.7,
       "sovereignty": "unknown"
     },
@@ -68,8 +68,8 @@
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 838,
-      "pct": 3.7,
+      "count": 836,
+      "pct": 3.6,
       "sovereignty": "it"
     },
     {
@@ -94,14 +94,14 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8320,
+      "n_entities": 8319,
       "usa_pct": 77.2,
       "dominant_provider": "Google Workspace"
     },
     {
       "cluster": "Enti territoriali",
       "n_entities": 8005,
-      "usa_pct": 18.5,
+      "usa_pct": 18.6,
       "dominant_provider": "Provider Italiano"
     },
     {
