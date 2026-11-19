@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-18T13:53:11Z",
+  "generated_at": "2026-11-19T13:23:56Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22922,
-    "n_with_mx": 22298,
+    "n_entities": 22925,
+    "n_with_mx": 22302,
     "coverage_pct": 94.32
   },
   "indices": {
     "isd": 53.49,
     "cloud_act_pct": 45.93,
-    "n_classified": 21619
+    "n_classified": 21622
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 9932,
+      "count": 9933,
       "pct": 43.3,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,8 +25,8 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11564,
-      "pct": 50.4,
+      "count": 11566,
+      "pct": 50.5,
       "label": "Italiano"
     },
     "unknown": {
@@ -38,19 +38,19 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 9824,
+      "count": 9827,
       "pct": 42.9,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6171,
+      "count": 6175,
       "pct": 26.9,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 3754,
+      "count": 3751,
       "pct": 16.4,
       "sovereignty": "extra_eu"
     },
@@ -68,7 +68,7 @@
     },
     {
       "name": "Infrastruttura autonoma",
-      "count": 836,
+      "count": 835,
       "pct": 3.6,
       "sovereignty": "it"
     },
@@ -94,7 +94,7 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8319,
+      "n_entities": 8320,
       "usa_pct": 77.2,
       "dominant_provider": "Google Workspace"
     },
@@ -118,14 +118,14 @@
     },
     {
       "cluster": "Gestori di pubblici servizi",
-      "n_entities": 1166,
-      "usa_pct": 42.9,
+      "n_entities": 1168,
+      "usa_pct": 42.8,
       "dominant_provider": "Microsoft 365"
     },
     {
       "cluster": "Stazioni Appaltanti",
       "n_entities": 623,
-      "usa_pct": 48.6,
+      "usa_pct": 48.3,
       "dominant_provider": "Microsoft 365"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "total": 22922,
+  "total": 22925,
   "average_score": 80.5,
   "high_confidence_pct": 73.8,
   "quality_passed": false,
@@ -23436,7 +23436,7 @@
     "IT-C3-AGENAS": {
       "name": "Agenzia Nazionale per i Servizi Sanitari Regionali - AGENAS",
       "provider": "microsoft",
-      "domain": "agenas.gov.it",
+      "domain": "agenas.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -48005,7 +48005,7 @@
     "IT-COM-016047": {
       "name": "Comune di Calvenzano",
       "provider": "independent",
-      "domain": "pec.regione.lombardia.it",
+      "domain": "comune.calvenzano.bg.it",
       "confidence": 90,
       "flags": [
         "spf_strict",
@@ -81529,13 +81529,15 @@
     },
     "IT-COM-058103": {
       "name": "Comune di Subiaco",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.subiaco.rm.it",
-      "confidence": 15,
+      "confidence": 85,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:aws+hubspot+microsoft",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-058104": {
@@ -112888,8 +112890,7 @@
       "flags": [
         "spf_softfail",
         "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "smtp_suggests:microsoft"
+        "provider_classified"
       ]
     },
     "IT-COM-108025": {
@@ -116597,7 +116598,7 @@
     "IT-COM-116008": {
       "name": "Comune di Ilbono",
       "provider": "local-isp",
-      "domain": "comune.ilbono.og.it",
+      "domain": "comune.ilbono.nu.it",
       "confidence": 83,
       "flags": [
         "multiple_mx",
@@ -117672,11 +117673,13 @@
     "IT-COM-118050": {
       "name": "Comune di Senorbi'",
       "provider": "aruba",
-      "domain": "pec.comune.senorbi.ca.it",
-      "confidence": 68,
+      "domain": "comune.senorbi.su.it",
+      "confidence": 83,
       "flags": [
         "spf_softfail",
-        "provider_classified"
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-118051": {
@@ -118060,7 +118063,7 @@
     "IT-COM-119013": {
       "name": "Comune di Nuxis",
       "provider": "microsoft",
-      "domain": "comune.nuxis.ci.it",
+      "domain": "comune.nuxis.su.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -126896,12 +126899,13 @@
     },
     "IT-L15-erdsu_to": {
       "name": "Ente Regionale per il Diritto allo Studio Universitario del Piemonte",
-      "provider": "independent",
-      "domain": "cert.edisu.piemonte.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "edisu.piemonte.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -135585,6 +135589,17 @@
       "confidence": 93,
       "flags": [
         "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
+      ]
+    },
+    "IT-L33-3OXGRO99": {
+      "name": "ISTITUTO COMPRENSIVO DON LORENZO MILANI - PADRE PIO",
+      "provider": "google",
+      "domain": "icdonmilanipadrepio.edu.it",
+      "confidence": 88,
+      "flags": [
         "spf_softfail",
         "mx_spf_match",
         "provider_classified"
@@ -174496,13 +174511,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceocevolani.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "liceocevolani.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -175998,7 +176013,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.edu.it",
+      "domain": "agrariofirenze.eu",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -197048,7 +197063,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -200331,13 +200346,12 @@
     },
     "IT-L33-istsc_pnis00900p": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - IS IPSIA L. ZANUSSI",
-      "provider": "istruzione-miur-tenant",
-      "domain": "isiszanussi.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "isiszanussi.pn.it",
+      "confidence": 55,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
+        "multiple_mx",
+        "no_spf",
         "provider_classified"
       ]
     },
@@ -237624,6 +237638,18 @@
         "provider_classified"
       ]
     },
+    "IT-L37-5ONSSEZD": {
+      "name": "CONSORZIO PERMANENTE DELLE VIE VICINALI DI SUVERETO",
+      "provider": "aruba",
+      "domain": "vievicinalisuvereto.it",
+      "confidence": 83,
+      "flags": [
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
     "IT-L37-5QOB2CIY": {
       "name": "GAL PONTE LAMA SCARL",
       "provider": "aruba",
@@ -249901,12 +249927,14 @@
     "IT-L38-palili": {
       "name": "Parco Archeologico di Lilibeo-Marsala",
       "provider": "unknown",
-      "domain": "parcolilibeo.it",
-      "confidence": 15,
+      "domain": "parcoarcheologicomarsala.it",
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_unknown",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L38-pamvr": {
@@ -258272,6 +258300,17 @@
         "autodiscover_confirms"
       ]
     },
+    "IT-S01-6036SZ1P": {
+      "name": "Innovhub SSI Srl",
+      "provider": "unknown",
+      "domain": "innovhub-ssi.it",
+      "confidence": 15,
+      "flags": [
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
+      ]
+    },
     "IT-S01-6CSCG00Q": {
       "name": "CST SISTEMISUD",
       "provider": "microsoft",
@@ -261219,14 +261258,12 @@
     },
     "IT-SA-ADZ4T32G": {
       "name": "PORT MOBILITY S.p.A. con Socio Unico",
-      "provider": "microsoft",
-      "domain": "civitavecchia.portmobility.it",
-      "confidence": 95,
+      "provider": "aruba",
+      "domain": "pec.portmobility.it",
+      "confidence": 68,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-SA-AKP3SCHD": {
@@ -262894,11 +262931,11 @@
     },
     "IT-SA-MH8PWLTO": {
       "name": "Fondazione POL.I.S.",
-      "provider": "microsoft",
-      "domain": "fondazionepolis.regione.campania.it",
-      "confidence": 90,
+      "provider": "aruba",
+      "domain": "pec.regione.campania.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
         "provider_classified"
       ]

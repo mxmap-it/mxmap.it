@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-18 13:52 UTC",
+ "generated_at": "2026-11-19 13:23 UTC",
  "country": "IT",
- "total_entities": 22922,
+ "total_entities": 22925,
  "anomalies_total": 1457,
  "anomalies_pct": 6.36,
  "by_type": {
-  "no_mx": 624,
-  "gateway_no_primary": 679,
+  "no_mx": 623,
+  "gateway_no_primary": 680,
   "low_confidence": 120,
   "geo_unknown": 76
  },
@@ -1918,7 +1918,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Collegio Provinciale Geometri e Geometri Laureati di Reggio Calabria",
@@ -7099,7 +7099,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Schilpario",
@@ -7331,17 +7331,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Comune di Subiaco",
-   "domain": "comune.subiaco.rm.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sulzano",
@@ -7825,7 +7814,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 4 candidates; none yielded MX"
   },
   {
    "name": "Comune di Varapodio",
@@ -8320,7 +8309,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Picciano",
@@ -9953,6 +9942,17 @@
   {
    "name": "Amministrazione Separata B. U. C. Valas",
    "domain": "indicecepa.gov.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
+   "name": "Innovhub SSI Srl",
+   "domain": "innovhub-ssi.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -11733,6 +11733,17 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
+   "name": "Parco Archeologico di Lilibeo-Marsala",
+   "domain": "parcoarcheologicomarsala.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "gateway_no_primary"
+   ],
+   "mx": "mx10.antispam.mailspamprotection.com",
+   "reason": "MX is mailspamprotection gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
    "name": "Ente Parco Dei Monti Sicani",
    "domain": "parcodeimontisicani.it",
    "provider": "unknown",
@@ -11786,17 +11797,6 @@
    ],
    "mx": "mx10.antispam.mailspamprotection.com",
    "reason": "MX is mailspamprotection gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Parco Archeologico di Lilibeo-Marsala",
-   "domain": "parcolilibeo.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente Parco Regionale Migliarino San Rossore Massaciuccoli",

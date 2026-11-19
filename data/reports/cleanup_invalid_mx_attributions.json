@@ -1053,7 +1053,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "ms78257242.msv1.invalid",
+      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
       "old_provider": "unknown",
       "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
@@ -4985,17 +4985,6 @@
       "old_reason": "MX record (in.arubabusiness.it) matches Aruba"
     },
     {
-      "id": "IT-L38-palili",
-      "name": "Parco Archeologico di Lilibeo-Marsala",
-      "codice_ipa": "palili",
-      "seed_domain": "parcolilibeo.it",
-      "claimed_domain": "comune.marsala.tp.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx.comune.marsala.tp.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx.comune.marsala.tp.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
-    },
-    {
       "id": "IT-L38-pr_migli",
       "name": "Ente Parco Regionale Migliarino San Rossore Massaciuccoli",
       "codice_ipa": "pr_migli",
@@ -5368,6 +5357,17 @@
       "old_mx": "comune-carbonia-su-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-carbonia-su-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
+      "id": "IT-S01-6036SZ1P",
+      "name": "Innovhub SSI Srl",
+      "codice_ipa": "6036sz1p",
+      "seed_domain": "innovhub-ssi.it",
+      "claimed_domain": "comune.milano.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-milano-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-milano-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
       "id": "IT-S01-arcsp",
