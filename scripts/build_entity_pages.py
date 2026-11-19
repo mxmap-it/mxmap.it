@@ -181,6 +181,7 @@ def shell(
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg">
 <link rel="stylesheet" href="/assets/ente.css">
+<script src="/assets/statistiche.js" defer></script>
 {jl}
 </head>
 <body>
