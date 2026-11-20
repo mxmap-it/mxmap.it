@@ -1,5 +1,5 @@
 {
-  "n_purged": 506,
+  "n_purged": 502,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -299,17 +299,6 @@
       "old_reason": "MX (mx.comune.pietragalla.pz.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
-      "id": "IT-C14-cidad",
-      "name": "Collegio Interprovinciale Degli Agrotecnici e Degli Agrotecnici Laureati di Messina e  Enna",
-      "codice_ipa": "cidad",
-      "seed_domain": "agrotecnicisicilia.it",
-      "claimed_domain": "comune.capodorlando.me.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mail.comune.capodorlando.me.it",
-      "old_provider": "independent",
-      "old_reason": "MX (mail.comune.capodorlando.me.it) is self-hosted"
-    },
-    {
       "id": "IT-C14-cidockv",
       "name": "Ordine della Professione di Ostetrica delle Province di Catanzaro, Cosenza, Crotone e Vibo Valentia",
       "codice_ipa": "cidockv",
@@ -462,17 +451,6 @@
       "old_mx": "mx1.hc1174-38.eu.iphmx.com",
       "old_provider": "unknown",
       "old_reason": "MX is cisco-ironport gateway; no primary signal identifies the backend (gateway_no_primary)"
-    },
-    {
-      "id": "IT-C14-copt",
-      "name": "Collegio Delle Ostetriche della Provincia di Terni",
-      "codice_ipa": "copt",
-      "seed_domain": "collegiostetricheterni.it",
-      "claimed_domain": "comune.terni.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mail.comune.terni.it",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.comune.terni.it, mail0.comune.terni.it) hosted on Local ISP (Telecom Italia/TIM (IT))"
     },
     {
       "id": "IT-C14-cpa_006",
@@ -910,9 +888,9 @@
       "seed_domain": "ordinetrento.conaf.it",
       "claimed_domain": "comune.trento.it",
       "reject_reason": "unrelated",
-      "old_mx": "alt1.aspmx.l.google.com",
+      "old_mx": "smtp.google.com",
       "old_provider": "google",
-      "old_reason": "MX record (alt1.aspmx.l.google.com, aspmx.l.google.com) matches Google"
+      "old_reason": "MX record (smtp.google.com) matches Google"
     },
     {
       "id": "IT-C14-oddadfv",
@@ -3407,9 +3385,9 @@
       "seed_domain": "liceorosmini.edu.it",
       "claimed_domain": "comune.trento.it",
       "reject_reason": "unrelated",
-      "old_mx": "alt1.aspmx.l.google.com",
+      "old_mx": "smtp.google.com",
       "old_provider": "google",
-      "old_reason": "MX record (alt1.aspmx.l.google.com, aspmx.l.google.com) matches Google"
+      "old_reason": "MX record (smtp.google.com) matches Google"
     },
     {
       "id": "IT-L33-VIHU3K26",
@@ -5029,17 +5007,6 @@
       "old_reason": "MX record (mail-av.comune.frosinone.it, smtp-avas.seeweb.it) matches Seeweb"
     },
     {
-      "id": "IT-L38-rnrol",
-      "name": "Riserve Naturali Regionali Orientate del Litorale Tarantino Orientale",
-      "codice_ipa": "rnrol",
-      "seed_domain": "parchisalentoinrete.it",
-      "claimed_domain": "comune.manduria.ta.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "unknown",
-      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-    },
-    {
       "id": "IT-L40-abflgv",
       "name": "Autorita' di Bacino dei Fiumi Liri Garigliano e Volturno",
       "codice_ipa": "abflgv",
@@ -5376,20 +5343,9 @@
       "seed_domain": "autostradaregionalecispadana.it",
       "claimed_domain": "comune.trento.it",
       "reject_reason": "unrelated",
-      "old_mx": "alt1.aspmx.l.google.com",
+      "old_mx": "smtp.google.com",
       "old_provider": "google",
-      "old_reason": "MX record (alt1.aspmx.l.google.com, aspmx.l.google.com) matches Google"
-    },
-    {
-      "id": "IT-S01-scshpsrl",
-      "name": "Societa' Caltanissetta Service in House Providing Srl",
-      "codice_ipa": "scshpsrl",
-      "seed_domain": "caltanissettaservice.it",
-      "claimed_domain": "comune.caltanissetta.it",
-      "reject_reason": "unrelated",
-      "old_mx": "in.arubabusiness.it",
-      "old_provider": "aruba",
-      "old_reason": "MX record (in.arubabusiness.it) matches Aruba"
+      "old_reason": "MX record (smtp.google.com) matches Google"
     },
     {
       "id": "IT-SA-0D7QKFH5",
