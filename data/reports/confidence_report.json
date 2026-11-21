@@ -5,18 +5,18 @@
   "median": 0.9,
   "mean_nonzero": 0.858,
   "buckets": {
-    "0.90-1.00 (molto alta)": 12096,
-    "0.80-0.89 (alta)": 8119,
+    "0.90-1.00 (molto alta)": 12094,
+    "0.80-0.89 (alta)": 8125,
     "0.60-0.79 (media)": 1288,
-    "0.00 (nulla / unknown)": 1304,
+    "0.00 (nulla / unknown)": 1300,
     "0.01-0.59 (bassa)": 120
   },
   "rules": {
-    "mx_spf": 12096,
-    "dom_mx_spf": 2158,
+    "mx_spf": 12094,
+    "dom_mx_spf": 2164,
     "spf_gw": 277,
     "mx_only": 5961,
-    "no_mx": 626,
+    "no_mx": 622,
     "dkim_gw": 7,
     "gateway_no_primary": 678,
     "fallback": 49,
@@ -25,10 +25,10 @@
     "frgn_mx_only": 71
   },
   "jurisdiction": {
-    "foreign": 11553,
-    "domestic": 10433,
+    "foreign": 11554,
+    "domestic": 10436,
     "mixed": 242,
-    "unknown": 699
+    "unknown": 695
   },
   "domestic_mx_override": 203,
   "bounce_candidates": 120,

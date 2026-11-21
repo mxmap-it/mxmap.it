@@ -1031,7 +1031,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "unknown",
       "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
@@ -2638,8 +2638,8 @@
       "claimed_domain": "comune.gela.cl.it",
       "reject_reason": "unrelated",
       "old_mx": "mail.comune.gela.cl.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mail.comune.gela.cl.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
+      "old_provider": "independent",
+      "old_reason": "MX (mail.comune.gela.cl.it) is self-hosted"
     },
     {
       "id": "IT-L18-c_d629U",
