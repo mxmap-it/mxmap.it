@@ -1,5 +1,5 @@
 {
-  "n_purged": 502,
+  "n_purged": 501,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -2638,8 +2638,8 @@
       "claimed_domain": "comune.gela.cl.it",
       "reject_reason": "unrelated",
       "old_mx": "mail.comune.gela.cl.it",
-      "old_provider": "independent",
-      "old_reason": "MX (mail.comune.gela.cl.it) is self-hosted"
+      "old_provider": "aruba",
+      "old_reason": "MX (mail.comune.gela.cl.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-L18-c_d629U",
@@ -3311,17 +3311,6 @@
       "old_mx": "smtp.google.com",
       "old_provider": "google",
       "old_reason": "MX record (smtp.google.com) matches Google"
-    },
-    {
-      "id": "IT-L28-ciafm",
-      "name": "Consorzio Interuniversitario per L'Alta Formazione in Matematica",
-      "codice_ipa": "ciafm",
-      "seed_domain": "ciafm.it",
-      "claimed_domain": "comune.sesto-fiorentino.fi.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-      "old_provider": "unknown",
-      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-L28-cirp",

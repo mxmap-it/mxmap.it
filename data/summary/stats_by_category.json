@@ -4,9 +4,9 @@
    "cluster": "education",
    "label": "Istruzione (Scuole, Università, AFAM)",
    "n": 8319,
-   "n_classified": 8258,
-   "isd": 21.83,
-   "cloud_act_pct": 77.83,
+   "n_classified": 8259,
+   "isd": 21.84,
+   "cloud_act_pct": 77.82,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
@@ -17,8 +17,8 @@
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 1684,
-     "pct": 20.39
+     "count": 1685,
+     "pct": 20.4
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
@@ -36,13 +36,13 @@
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
      "count": 6427,
-     "pct": 77.83
+     "pct": 77.82
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 61,
-     "pct": 0.73
+     "count": 60,
+     "pct": 0.72
     }
    ]
   },
@@ -50,21 +50,21 @@
    "cluster": "territorial",
    "label": "Enti territoriali (Comuni, Province, Città metrop., Regioni)",
    "n": 8005,
-   "n_classified": 7416,
+   "n_classified": 7413,
    "isd": 79.63,
-   "cloud_act_pct": 20.04,
+   "cloud_act_pct": 20.03,
    "sovereignty": [
     {
      "bucket": "Italia — Cloud sovrano",
      "group": "ITA",
-     "count": 731,
-     "pct": 9.86
+     "count": 730,
+     "pct": 9.85
     },
     {
      "bucket": "Italia — Provider commerciali",
      "group": "ITA",
-     "count": 4848,
-     "pct": 65.37
+     "count": 4847,
+     "pct": 65.39
     },
     {
      "bucket": "Italia — Infrastruttura autonoma",
@@ -81,14 +81,14 @@
     {
      "bucket": "USA (CLOUD Act)",
      "group": "EST",
-     "count": 1486,
-     "pct": 20.04
+     "count": 1485,
+     "pct": 20.03
     },
     {
      "bucket": "Sconosciuto",
      "group": "ND",
-     "count": 589,
-     "pct": 7.36
+     "count": 592,
+     "pct": 7.4
     }
    ]
   },
@@ -691,5 +691,5 @@
    ]
   }
  ],
- "generated": "2026-11-21T12:24:49Z"
+ "generated": "2026-11-22T12:28:25Z"
 }

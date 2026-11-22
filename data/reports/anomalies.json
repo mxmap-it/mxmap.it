@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-21 13:02 UTC",
+ "generated_at": "2026-11-22 13:06 UTC",
  "country": "IT",
  "total_entities": 22927,
- "anomalies_total": 1454,
- "anomalies_pct": 6.34,
+ "anomalies_total": 1456,
+ "anomalies_pct": 6.35,
  "by_type": {
-  "no_mx": 619,
+  "no_mx": 621,
   "gateway_no_primary": 681,
   "low_confidence": 120,
   "geo_unknown": 76
@@ -17,7 +17,7 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1300,
+  "unknown": 1302,
   "independent": 93,
   "aruba": 24,
   "pa-contractor-private": 21,
@@ -1646,17 +1646,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "Consorzio Interuniversitario per L'Alta Formazione in Matematica",
-   "domain": "ciafm.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
    "name": "Consorzio Interuniversitario Regionale Pugliese",
    "domain": "cirp.it",
    "provider": "unknown",
@@ -2281,7 +2270,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arbus",
@@ -2314,7 +2303,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 5 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Argelato",
@@ -3866,6 +3855,17 @@
    ],
    "mx": null,
    "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
+   "name": "Comune di Cureggio",
+   "domain": "comune.cureggio.no.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Dignano",
@@ -7058,6 +7058,17 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
+   "name": "Comune di Scanno",
+   "domain": "comune.scanno.aq.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Schilpario",
    "domain": "comune.schilpario.bg.it",
    "provider": "unknown",
@@ -7287,6 +7298,17 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "Comune di Subiaco",
+   "domain": "comune.subiaco.rm.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sulzano",
@@ -8144,7 +8166,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ruda",
@@ -11543,7 +11565,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "OSPEDALE RIABILITATIVO DI ALTA SPECIALIZZAZIONE S.P.A.",
@@ -13997,7 +14019,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni Terra di Leuca",
