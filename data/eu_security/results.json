@@ -15,32 +15,30 @@
   ],
   "primary_domain": "policia.ad",
   "provider": "unknown",
-  "reason": "MX is hornetsecurity gateway; no primary signal identifies the backend (gateway_no_primary)",
+  "reason": "MX is spamexperts gateway; no primary signal identifies the backend (gateway_no_primary)",
   "mx": [
-   "mx01.hornetsecurity.com",
-   "mx02.hornetsecurity.com",
-   "mx03.hornetsecurity.com",
-   "mx04.hornetsecurity.com"
+   "fallbackmx.spamexperts.eu",
+   "lastmx.spamexperts.net",
+   "mx.spamexperts.com"
   ],
   "mx_countries": [
-   "DE"
+   "US"
   ],
-  "gateway": "hornetsecurity",
+  "gateway": "spamexperts",
   "scans": [
    {
     "domain": "policia.ad",
     "mx": [
-     "mx01.hornetsecurity.com",
-     "mx02.hornetsecurity.com",
-     "mx03.hornetsecurity.com",
-     "mx04.hornetsecurity.com"
+     "fallbackmx.spamexperts.eu",
+     "lastmx.spamexperts.net",
+     "mx.spamexperts.com"
     ],
-    "spf": "v=spf1 ip4:109.111.117.171 include:spf.hornetsecurity.com -all",
+    "spf": "v=spf1 ip4:109.111.117.171 include:spf.antispamcloud.com -all",
     "provider": "unknown",
-    "reason": "MX is hornetsecurity gateway; no primary signal identifies the backend (gateway_no_primary)",
-    "gateway": "hornetsecurity",
+    "reason": "MX is spamexperts gateway; no primary signal identifies the backend (gateway_no_primary)",
+    "gateway": "spamexperts",
     "mx_countries": [
-     "DE"
+     "US"
     ]
    }
   ],
@@ -1718,7 +1716,7 @@
      "relay-shs.fed.be",
      "relay2-shs.fed.be"
     ],
-    "spf": "v=spf1 include:spf.flexmail.eu include:c9y4ep6vo9.powerspf.com ~all",
+    "spf": "v=spf1 include:spf.flexmail.eu include:c9y4ep6vo9.powerspf.com -all",
     "provider": "independent",
     "reason": "MX (relay-shs.fed.be, relay2-shs.fed.be) is self-hosted",
     "mx_countries": [
@@ -1779,7 +1777,7 @@
      "relay-shs.fed.be",
      "relay2-shs.fed.be"
     ],
-    "spf": "v=spf1 include:spf.flexmail.eu include:c9y4ep6vo9.powerspf.com ~all",
+    "spf": "v=spf1 include:spf.flexmail.eu include:c9y4ep6vo9.powerspf.com -all",
     "provider": "independent",
     "reason": "MX (relay-shs.fed.be, relay2-shs.fed.be) is self-hosted",
     "mx_countries": [
@@ -1911,7 +1909,7 @@
      "mex1.mvr.bg",
      "mex2.mvr.bg"
     ],
-    "spf": "",
+    "spf": "v=spf1 ip4:212.122.166.127 ip4:212.122.166.129 ip4:212.122.166.164 -all",
     "provider": "independent",
     "reason": "MX (mex1.mvr.bg, mex2.mvr.bg) is self-hosted",
     "mx_countries": [
@@ -1958,7 +1956,7 @@
      "mex1.mvr.bg",
      "mex2.mvr.bg"
     ],
-    "spf": "",
+    "spf": "v=spf1 ip4:212.122.166.127 ip4:212.122.166.129 ip4:212.122.166.164 -all",
     "provider": "independent",
     "reason": "MX (mex1.mvr.bg, mex2.mvr.bg) is self-hosted",
     "mx_countries": [
@@ -2005,7 +2003,7 @@
      "mex1.mvr.bg",
      "mex2.mvr.bg"
     ],
-    "spf": "",
+    "spf": "v=spf1 ip4:212.122.166.127 ip4:212.122.166.129 ip4:212.122.166.164 -all",
     "provider": "independent",
     "reason": "MX (mex1.mvr.bg, mex2.mvr.bg) is self-hosted",
     "mx_countries": [
@@ -2052,7 +2050,7 @@
      "mex1.mvr.bg",
      "mex2.mvr.bg"
     ],
-    "spf": "",
+    "spf": "v=spf1 ip4:212.122.166.127 ip4:212.122.166.129 ip4:212.122.166.164 -all",
     "provider": "independent",
     "reason": "MX (mex1.mvr.bg, mex2.mvr.bg) is self-hosted",
     "mx_countries": [
@@ -3213,8 +3211,8 @@
    "police.gov.cy"
   ],
   "primary_domain": "police.gov.cy",
-  "provider": "local-isp",
-  "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+  "provider": "independent",
+  "reason": "MX (mail03.gov.cy) is self-hosted",
   "mx": [
    "mail03.gov.cy"
   ],
@@ -3229,8 +3227,8 @@
      "mail03.gov.cy"
     ],
     "spf": "v=spf1 ip4:212.31.118.0/24 include:spf.protection.outlook.com -all",
-    "provider": "local-isp",
-    "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+    "provider": "independent",
+    "reason": "MX (mail03.gov.cy) is self-hosted",
     "mx_countries": [
      "CY"
     ]
@@ -3258,8 +3256,8 @@
    "police.gov.cy"
   ],
   "primary_domain": "police.gov.cy",
-  "provider": "local-isp",
-  "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+  "provider": "independent",
+  "reason": "MX (mail03.gov.cy) is self-hosted",
   "mx": [
    "mail03.gov.cy"
   ],
@@ -3274,8 +3272,8 @@
      "mail03.gov.cy"
     ],
     "spf": "v=spf1 ip4:212.31.118.0/24 include:spf.protection.outlook.com -all",
-    "provider": "local-isp",
-    "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+    "provider": "independent",
+    "reason": "MX (mail03.gov.cy) is self-hosted",
     "mx_countries": [
      "CY"
     ]
@@ -3324,8 +3322,8 @@
    "moi.gov.cy"
   ],
   "primary_domain": "moi.gov.cy",
-  "provider": "local-isp",
-  "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+  "provider": "independent",
+  "reason": "MX (mail03.gov.cy) is self-hosted",
   "mx": [
    "mail03.gov.cy"
   ],
@@ -3340,8 +3338,8 @@
      "mail03.gov.cy"
     ],
     "spf": "v=spf1 ip4:212.31.118.0/24 include:spf.protection.outlook.com -all",
-    "provider": "local-isp",
-    "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+    "provider": "independent",
+    "reason": "MX (mail03.gov.cy) is self-hosted",
     "mx_countries": [
      "CY"
     ]
@@ -3369,8 +3367,8 @@
    "mod.gov.cy"
   ],
   "primary_domain": "mod.gov.cy",
-  "provider": "local-isp",
-  "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+  "provider": "independent",
+  "reason": "MX (mail03.gov.cy) is self-hosted",
   "mx": [
    "mail03.gov.cy"
   ],
@@ -3385,8 +3383,8 @@
      "mail03.gov.cy"
     ],
     "spf": "v=spf1 ip4:212.31.118.0/24 include:spf.protection.outlook.com -all",
-    "provider": "local-isp",
-    "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+    "provider": "independent",
+    "reason": "MX (mail03.gov.cy) is self-hosted",
     "mx_countries": [
      "CY"
     ]
@@ -3582,8 +3580,8 @@
    "cd.moi.gov.cy"
   ],
   "primary_domain": "cd.moi.gov.cy",
-  "provider": "local-isp",
-  "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+  "provider": "independent",
+  "reason": "MX (mail03.gov.cy) is self-hosted",
   "mx": [
    "mail03.gov.cy"
   ],
@@ -3598,8 +3596,8 @@
      "mail03.gov.cy"
     ],
     "spf": "v=spf1 ip4:212.31.118.0/24 include:spf.protection.outlook.com -all",
-    "provider": "local-isp",
-    "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+    "provider": "independent",
+    "reason": "MX (mail03.gov.cy) is self-hosted",
     "mx_countries": [
      "CY"
     ]
@@ -3642,7 +3640,7 @@
     "mx": [
      "pcr-cz.mail.protection.outlook.com"
     ],
-    "spf": "v=spf1 a:relay1-pcr.gov.cz a:relay2-pcr.gov.cz ip4:185.17.213.6 ip4:185.17.213.134 include:spf.protection.outlook.com -all",
+    "spf": "v=spf1 a:relay1-pcr.gov.cz a:relay2-pcr.gov.cz ip4:185.17.213.6 ip4:185.17.213.134 ip4:62.209.205.64/26 ip4:193.179.216.192/27 include:spf.protection.outlook.com -all",
     "provider": "microsoft",
     "reason": "MX record (pcr-cz.mail.protection.outlook.com) matches Microsoft",
     "mx_countries": [
@@ -8506,7 +8504,7 @@
      "mx4.otenet.gr",
      "ypes-gr.mail.protection.outlook.com"
     ],
-    "spf": "v=spf1 include:spf.otenet.gr include:b.spf.service-now.com include:c.spf.service-now.com include:d.spf.service-now.com include:spf.protection.outlook.com -all",
+    "spf": "v=spf1 include:spf.otenet.gr include:b.spf.service-now.com include:c.spf.service-now.com include:d.spf.service-now.com include:spf.protection.outlook.com ip4:84.205.195.189 -all",
     "provider": "microsoft",
     "reason": "MX record (mx.otenet.gr, mx2.otenet.gr) matches Microsoft",
     "mx_countries": [
@@ -8519,13 +8517,15 @@
     "mx": [
      "ypes-gov-gr.mail.protection.outlook.com"
     ],
-    "spf": "v=spf1 include:spf.otenet.gr include:_spf.google.com include:spf.protection.outlook.com -all",
+    "spf": "v=spf1 include:spf.otenet.gr include:_spf.google.com include:spf.protection.outlook.com ip4:84.205.195.189 -all",
     "provider": "microsoft",
     "reason": "MX record (ypes-gov-gr.mail.protection.outlook.com) matches Microsoft",
     "mx_countries": [
      "US"
     ],
     "dkim": {
+     "selector1": "selector1-ypes-gov-gr._domainkey.mindiggsis.w-v1.dkim.mail.microsoft",
+     "selector2": "selector2-ypes-gov-gr._domainkey.mindiggsis.w-v1.dkim.mail.microsoft",
      "google": "google-workspace-dkim-txt"
     }
    }
@@ -10129,7 +10129,7 @@
      "funi.stjr.is",
      "neisti.stjr.is"
     ],
-    "spf": "v=spf1 mx include:spf.protection.outlook.com include:spf-00aabc01.pphosted.com -all",
+    "spf": "v=spf1 mx a:relay.utn.is include:spf.protection.outlook.com include:spf-00aabc01.pphosted.com -all",
     "provider": "independent",
     "reason": "MX (funi.stjr.is, neisti.stjr.is) is self-hosted",
     "mx_countries": [
@@ -12687,7 +12687,7 @@
     "mx": [
      "smtp.google.com"
     ],
-    "spf": "v=spf1 ip4:77.89.247.122 ip4:20.105.232.10 include:spf.protection.outlook.com include:_spf.google.com ~all",
+    "spf": "v=spf1 include:spf.protection.outlook.com include:_spf.google.com ~all",
     "provider": "google",
     "reason": "MX record (smtp.google.com) matches Google",
     "mx_countries": [
@@ -14749,31 +14749,18 @@
    "strazgraniczna.pl"
   ],
   "primary_domain": "strazgraniczna.pl",
-  "provider": "independent",
-  "reason": "MX (mx.strazgraniczna.pl, mx2.strazgraniczna.pl) is self-hosted",
-  "mx": [
-   "mx.strazgraniczna.pl",
-   "mx2.strazgraniczna.pl",
-   "mx3.strazgraniczna.pl"
-  ],
-  "mx_countries": [
-   "PL"
-  ],
+  "provider": "unknown",
+  "reason": "No MX records found",
+  "mx": [],
+  "mx_countries": [],
   "gateway": null,
   "scans": [
    {
     "domain": "strazgraniczna.pl",
-    "mx": [
-     "mx.strazgraniczna.pl",
-     "mx2.strazgraniczna.pl",
-     "mx3.strazgraniczna.pl"
-    ],
-    "spf": "v=spf1 mx -all",
-    "provider": "independent",
-    "reason": "MX (mx.strazgraniczna.pl, mx2.strazgraniczna.pl) is self-hosted",
-    "mx_countries": [
-     "PL"
-    ]
+    "mx": [],
+    "spf": "",
+    "provider": "unknown",
+    "reason": "No MX records found"
    }
   ],
   "domain_evidence": {
@@ -15616,8 +15603,8 @@
    "defesa.pt"
   ],
   "primary_domain": "defesa.pt",
-  "provider": "local-isp",
-  "reason": "MX (mail.defesa.pt) hosted on Local ISP (NOS (PT))",
+  "provider": "independent",
+  "reason": "MX (mail.defesa.pt) is self-hosted",
   "mx": [
    "mail.defesa.pt"
   ],
@@ -15632,8 +15619,8 @@
      "mail.defesa.pt"
     ],
     "spf": "v=spf1 ip4:194.140.232.51 ip4:194.140.232.22 a:mail.defesa.pt mx -all",
-    "provider": "local-isp",
-    "reason": "MX (mail.defesa.pt) hosted on Local ISP (NOS (PT))",
+    "provider": "independent",
+    "reason": "MX (mail.defesa.pt) is self-hosted",
     "mx_countries": [
      "PT"
     ]
@@ -20748,8 +20735,8 @@
    "dms.gov.cy"
   ],
   "primary_domain": "dms.gov.cy",
-  "provider": "local-isp",
-  "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+  "provider": "independent",
+  "reason": "MX (mail03.gov.cy) is self-hosted",
   "mx": [
    "mail03.gov.cy"
   ],
@@ -20764,8 +20751,8 @@
      "mail03.gov.cy"
     ],
     "spf": "v=spf1 ip4:212.31.118.0/24 include:spf.protection.outlook.com ip4:65.52.136.102 ip4:65.52.137.91 ip4:65.52.137.92 ip4:65.52.136.29 ip4:54.240.54.152 ip4:93.109.208.71 ip4:213.7.240.56 -all",
-    "provider": "local-isp",
-    "reason": "MX (mail03.gov.cy) hosted on Local ISP (CYTA (CY))",
+    "provider": "independent",
+    "reason": "MX (mail03.gov.cy) is self-hosted",
     "mx_countries": [
      "CY"
     ]
@@ -22514,7 +22501,7 @@
     "mx": [
      "mailer2.army.gr"
     ],
-    "spf": "v=spf1 include:spf.mailjet.com mx ip4:212.205.2.226 -all",
+    "spf": "v=spf1 ip4:212.205.2.226 -all",
     "provider": "local-isp",
     "reason": "MX (mailer2.army.gr) hosted on Local ISP (OTE (GR))",
     "mx_countries": [
@@ -22680,7 +22667,7 @@
   ],
   "primary_domain": "civilprotection.gr",
   "provider": "local-isp",
-  "reason": "MX (praxitelis.civilprotection.gr, praxitelis2.civilprotection.gr) hosted on Local ISP (OTE (GR), GRNET/gov.gr (GR))",
+  "reason": "MX (praxitelis.civilprotection.gr, praxitelis2.civilprotection.gr) hosted on Local ISP (OTE (GR))",
   "mx": [
    "praxitelis.civilprotection.gr",
    "praxitelis2.civilprotection.gr"
@@ -22698,7 +22685,7 @@
     ],
     "spf": "v=spf1 mx ip4:84.205.193.139/32  ip4:10.16.39.5/32 a:praxitelis.civilprotection.gr -all",
     "provider": "local-isp",
-    "reason": "MX (praxitelis.civilprotection.gr, praxitelis2.civilprotection.gr) hosted on Local ISP (OTE (GR), GRNET/gov.gr (GR))",
+    "reason": "MX (praxitelis.civilprotection.gr, praxitelis2.civilprotection.gr) hosted on Local ISP (OTE (GR))",
     "mx_countries": [
      "GR"
     ]

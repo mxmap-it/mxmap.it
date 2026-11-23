@@ -2,18 +2,18 @@
  "n_entities": 539,
  "n_countries": 49,
  "overall": {
-  "national": 371,
+  "national": 370,
   "us": 133,
   "eu_other": 3,
   "other_foreign": 0,
-  "unknown": 32
+  "unknown": 33
  },
  "overall_pct": {
-  "national": 68.8,
+  "national": 68.6,
   "us": 24.7,
   "eu_other": 0.6,
   "other_foreign": 0.0,
-  "unknown": 5.9
+  "unknown": 6.1
  },
  "by_type": {
   "armed_forces": {
@@ -24,11 +24,11 @@
    "unknown": 2
   },
   "border_guard": {
-   "national": 30,
+   "national": 29,
    "us": 16,
    "eu_other": 1,
    "other_foreign": 0,
-   "unknown": 1
+   "unknown": 2
   },
   "cybersecurity": {
    "national": 42,
@@ -414,14 +414,14 @@
   {
    "country": "PL",
    "n": 15,
-   "classified": 15,
-   "national": 13,
+   "classified": 14,
+   "national": 12,
    "us": 2,
    "eu_other": 0,
    "other_foreign": 0,
-   "unknown": 0,
-   "us_exposure_pct": 13.3,
-   "national_pct": 86.7,
+   "unknown": 1,
+   "us_exposure_pct": 14.3,
+   "national_pct": 85.7,
    "ranking_eligible": true,
    "name": "Poland",
    "group": "eu27"
@@ -818,7 +818,7 @@
   }
  ],
  "min_classified_for_ranking": 5,
- "generated_at": "2026-11-09T15:06:14Z",
+ "generated_at": "2026-11-23T16:28:07Z",
  "by_family": {
   "police": {
    "n_entities": 73,
@@ -2968,26 +2968,26 @@
    "n_entities": 48,
    "n_countries": 37,
    "overall": {
-    "national": 30,
+    "national": 29,
     "us": 16,
     "eu_other": 1,
     "other_foreign": 0,
-    "unknown": 1
+    "unknown": 2
    },
    "overall_pct": {
-    "national": 62.5,
+    "national": 60.4,
     "us": 33.3,
     "eu_other": 2.1,
     "other_foreign": 0.0,
-    "unknown": 2.1
+    "unknown": 4.2
    },
    "by_type": {
     "border_guard": {
-     "national": 30,
+     "national": 29,
      "us": 16,
      "eu_other": 1,
      "other_foreign": 0,
-     "unknown": 1
+     "unknown": 2
     }
    },
    "countries": [
@@ -3474,15 +3474,15 @@
     {
      "country": "PL",
      "n": 1,
-     "classified": 1,
-     "national": 1,
+     "classified": 0,
+     "national": 0,
      "us": 0,
      "eu_other": 0,
      "other_foreign": 0,
-     "unknown": 0,
+     "unknown": 1,
      "us_exposure_pct": 0.0,
-     "national_pct": 100.0,
-     "ranking_eligible": true,
+     "national_pct": 0.0,
+     "ranking_eligible": false,
      "name": "Poland",
      "group": "eu27"
     },
