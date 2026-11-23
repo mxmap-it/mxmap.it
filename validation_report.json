@@ -1,7 +1,7 @@
 {
   "total": 22927,
-  "average_score": 80.6,
-  "high_confidence_pct": 73.8,
+  "average_score": 80.5,
+  "high_confidence_pct": 73.7,
   "quality_passed": false,
   "entries": {
     "IT-C1-KH5RHFCV": {
@@ -2028,7 +2028,7 @@
     },
     "IT-C14-GB6QL6FQ": {
       "name": "Ordine dei Dottori Agronomi e dei Dottori Forestali della Provincia di Pescara",
-      "provider": "local-isp",
+      "provider": "independent",
       "domain": "conaf.it",
       "confidence": 80,
       "flags": [
@@ -14972,13 +14972,13 @@
     },
     "IT-C14-odcec_at": {
       "name": "Ordine dei Dottori Commercialisti e degli Esperti Contabili di Asti",
-      "provider": "regional-public",
+      "provider": "unknown",
       "domain": "asti.odec.com",
-      "confidence": 88,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-odcec_ba": {
@@ -15940,13 +15940,13 @@
     },
     "IT-C14-oddc_002": {
       "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Vercelli",
-      "provider": "regional-public",
+      "provider": "unknown",
       "domain": "vercelli.commercialisti.it",
-      "confidence": 90,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-oddc_014": {
@@ -16078,13 +16078,13 @@
     },
     "IT-C14-oddc_060": {
       "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Frosinone",
-      "provider": "seeweb",
+      "provider": "unknown",
       "domain": "frosinone.commercialisti.it",
-      "confidence": 73,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-oddc_062": {
@@ -16359,26 +16359,24 @@
     },
     "IT-C14-oddcd_09": {
       "name": "Ordine dei Dottori Commercialisti e degli Esperti Contabili di  Siracusa",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "siracusa.commercialisti.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "mx_spf_match",
-        "multi_provider_spf:aws+microsoft",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-oddcd_1": {
       "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Mantova",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "mantova.commercialisti.it",
-      "confidence": 90,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-oddcd_2": {
@@ -16488,13 +16486,13 @@
     },
     "IT-C14-oddcd_vb": {
       "name": "Ordine dei Dottori Commercialisti e degli Esperti Contabili di Verbania",
-      "provider": "pa-contractor-private",
+      "provider": "unknown",
       "domain": "verbania.commercialisti.it",
-      "confidence": 90,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-oddcd_vz": {
@@ -16547,14 +16545,13 @@
     },
     "IT-C14-oddcdf": {
       "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Forli'",
-      "provider": "google",
+      "provider": "unknown",
       "domain": "forli.commercialisti.it",
-      "confidence": 95,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-oddcdk": {
@@ -16628,14 +16625,13 @@
     },
     "IT-C14-oddcds": {
       "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Sanremo",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "sanremo.odcec.com",
-      "confidence": 93,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-C14-oddcdtp": {
@@ -23508,11 +23504,12 @@
     },
     "IT-C3-aeci": {
       "name": "Aero Club d'Italia",
-      "provider": "aruba",
+      "provider": "register-it",
       "domain": "pec.aeci.it",
-      "confidence": 50,
+      "confidence": 88,
       "flags": [
-        "no_spf",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -29994,12 +29991,12 @@
     },
     "IT-COM-002068": {
       "name": "Comune di Lenta",
-      "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
-      "confidence": 80,
+      "provider": "regional-public",
+      "domain": "comune.lenta.vc.it",
+      "confidence": 90,
       "flags": [
         "spf_strict",
-        "independent_mx_with_cloud_spf",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -35760,7 +35757,7 @@
     "IT-COM-006002": {
       "name": "Comune di Albera Ligure",
       "provider": "independent",
-      "domain": "cert.ruparpiemonte.it",
+      "domain": "comune.alberaligure.al.it",
       "confidence": 80,
       "flags": [
         "spf_strict",
@@ -79816,14 +79813,13 @@
     },
     "IT-COM-057026": {
       "name": "Comune di Cottanello",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.cottanello.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-057027": {
@@ -81744,12 +81740,14 @@
     },
     "IT-COM-058122": {
       "name": "Comune di Fonte Nuova",
-      "provider": "independent",
-      "domain": "cert.fonte-nuova.it",
-      "confidence": 50,
+      "provider": "microsoft",
+      "domain": "comune.fontenuova.rm.it",
+      "confidence": 95,
       "flags": [
-        "no_spf",
-        "provider_classified"
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-059001": {
@@ -97976,14 +97974,13 @@
     },
     "IT-COM-077006": {
       "name": "Comune di Colobraro",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "colobraro.gov.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-077007": {
@@ -102499,7 +102496,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -131903,15 +131900,13 @@
     },
     "IT-L18-udcvt": {
       "name": "Unione Dei Comuni Valle del Tevere Soratte",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "santoreste.rm.gov.it",
-      "confidence": 100,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L18-udcvt_0": {
@@ -133041,14 +133036,13 @@
     },
     "IT-L18-upm_082": {
       "name": "Unione dei comuni Pizzo Marabito",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "marabito.comune.mezzojuso.pa.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L18-upn": {
@@ -231108,13 +231102,13 @@
     },
     "IT-L34-crca": {
       "name": "Casa di Riposo Citta' di Asti",
-      "provider": "regional-public",
+      "provider": "unknown",
       "domain": "casadiriposo.asti.it",
-      "confidence": 88,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L34-crcgs": {
@@ -232986,13 +232980,13 @@
     },
     "IT-L34-ivillabe": {
       "name": "Ipab Villa Betania",
-      "provider": "local-isp",
+      "provider": "unknown",
       "domain": "villabetania.agrigento.it",
-      "confidence": 80,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L34-ivsvi": {
@@ -236022,14 +236016,13 @@
     },
     "IT-L36-cpgd": {
       "name": "Consorzio del Parco Grazia Deledda",
-      "provider": "google",
+      "provider": "unknown",
       "domain": "old.comune.nuoro.it",
-      "confidence": 93,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L36-cpl_024": {
@@ -239184,7 +239177,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.portaletrasparenza.net",
+      "domain": "flegrealavoro.com",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -240416,14 +240409,13 @@
     },
     "IT-L37-ML34846M": {
       "name": "Azienda Speciale Milazzo Servizi",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "milazzo.servizi.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L37-MOO2BXHE": {
@@ -241817,11 +241809,10 @@
       "name": "Azienda Territoriale per l'Edilizia Residenziale di Gorizia",
       "provider": "unknown",
       "domain": "gorizia.aterfvg.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
+        "no_mx",
+        "no_spf",
         "provider_unknown"
       ]
     },
@@ -242635,7 +242626,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.portaletrasparenza.net",
+      "domain": "unilavspa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -244347,14 +244338,13 @@
     },
     "IT-L37-azspclca": {
       "name": "Azienda di Servizi alla Persona Casa Leandra di Canneto Sull' Oglio",
-      "provider": "pa-contractor-private",
+      "provider": "unknown",
       "domain": "asp.canneto.mn.it",
-      "confidence": 95,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L37-barsas": {
@@ -253903,15 +253893,13 @@
     },
     "IT-L47-8FL5MZFG": {
       "name": "STRUTTURA DEL COMMISSARIO STRAORDINARIO ART. 42 BIS D.L. 23/2020",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "nos.ospedale.siracusa.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "mx_spf_match",
-        "multi_provider_spf:aws+microsoft",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-L47-8UIFPO9K": {
@@ -262116,14 +262104,13 @@
     },
     "IT-SA-GIQCXIL5": {
       "name": "Fondazione per la Promozione dell'Università nel Ponente Ligure (P.U.PO.LI.)",
-      "provider": "pa-contractor-private",
+      "provider": "unknown",
       "domain": "imperia.unige.it",
-      "confidence": 95,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-SA-GMBRXP8Q": {
