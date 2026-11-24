@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-23 14:59 UTC",
+ "generated_at": "2026-11-24 16:55 UTC",
  "country": "IT",
- "total_entities": 22927,
- "anomalies_total": 1471,
- "anomalies_pct": 6.42,
+ "total_entities": 22926,
+ "anomalies_total": 1459,
+ "anomalies_pct": 6.36,
  "by_type": {
-  "no_mx": 641,
-  "gateway_no_primary": 680,
+  "no_mx": 620,
+  "gateway_no_primary": 684,
   "low_confidence": 116,
-  "geo_unknown": 76
+  "geo_unknown": 80
  },
  "by_type_label": {
   "no_mx": "Nessun MX",
@@ -17,15 +17,15 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1321,
-  "independent": 93,
-  "aruba": 23,
-  "pa-contractor-private": 18,
-  "microsoft": 13,
-  "google": 2,
-  "ovh": 1
+  "unknown": 1304,
+  "independent": 94,
+  "aruba": 24,
+  "pa-contractor-private": 21,
+  "microsoft": 14,
+  "ovh": 1,
+  "google": 1
  },
- "classified_but_anomalous": 150,
+ "classified_but_anomalous": 155,
  "entries": [
   {
    "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
@@ -36,7 +36,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Terre di Collina",
@@ -47,7 +47,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Acque di Scarico Pusteria",
@@ -58,7 +58,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Centro per Lo Studio della Patologia Spontanea Degli Organismi Marini",
@@ -69,7 +69,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Idraulico Sabino",
@@ -80,7 +80,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ACQUE DEL CHIAMPO S.P.A. SOCIETA' BENEFIT",
@@ -113,7 +113,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Autorita' di Sistema Portuale del Mar Adriatico Orientale",
@@ -124,7 +124,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "So.Ge.A.Al. S.P.A.",
@@ -135,7 +135,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "AZIENDA FARMACEUTICA MUNICIPALIZZATA DI CREMA",
@@ -146,7 +146,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "AGAC INFRASTRUTTURE S.P.A.",
@@ -179,7 +179,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Agenzia Sarda Delle Entrate",
@@ -190,7 +190,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia per lo Sviluppo",
@@ -212,7 +212,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dottori Forestali della Provincia di Caltanissetta",
@@ -234,7 +234,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Interprovinciale Degli Agrotecnici e Degli Agrotecnici Laureati di Napoli e Caserta",
@@ -245,7 +245,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Degli Agrotecnici e Degli Agrotecnici Laureati della Provincia di Mantova",
@@ -256,7 +256,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Albo Professionale Agrotecnici Collegio di Pescara",
@@ -267,7 +267,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Interprovinciale degli Agrotecnici e degli Agrotecnici Laureati della Provincia di Potenza e Matera",
@@ -278,7 +278,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Provinciale Agrotecnici Ravenna",
@@ -289,7 +289,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Provinciale Degli Agrotecnici e Degli Agrotecnici Laureati di Siracusa",
@@ -300,7 +300,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "A.G.T. Multiservizi S.R.L.",
@@ -311,7 +311,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Scolastica Abbe J.M. Treves",
@@ -322,7 +322,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ales Arte Lavoro e Servizi Spa",
@@ -344,7 +344,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Alte Madonie Ambiente Spa in Liquidazione",
@@ -355,7 +355,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Alto Basento",
@@ -366,7 +366,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Amag Reti Gas S.p.A.",
@@ -388,7 +388,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Speciale Consortile Ambito Sociale Tordino",
@@ -399,7 +399,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Gestione dell'Area Marina Protetta Capo Gallo - Isola Delle Femmine",
@@ -410,7 +410,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Gestione dell'Area Marina Protetta Capo Milazzo",
@@ -432,7 +432,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Autorita' Nazionale Anticorruzione - A.N.AC.",
@@ -454,7 +454,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Ospedaliera Papardo",
@@ -476,7 +476,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Acquedotto Pugliese S.P.A.",
@@ -506,10 +506,10 @@
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
-    "no_mx"
+    "gateway_no_primary"
    ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "mx": "mx10.mailspamprotection.com",
+   "reason": "MX is mailspamprotection gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
    "name": "Comune di Arconate",
@@ -568,6 +568,17 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
+   "name": "Agenzia Regionale per la Protezione dell'Ambiente del Lazio",
+   "domain": "arpalazio.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "gateway_no_primary"
+   ],
+   "mx": "arpalazio.in.tmes.trendmicro.eu",
+   "reason": "MX is trendmicro gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
    "name": "Riserva Naturale Incisioni Rupestri di Ceto, Cimbergo e Paspardo",
    "domain": "arterupestre.it",
    "provider": "unknown",
@@ -609,7 +620,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Amministrazione Beni di Uso Civico Delle Frazioni di Corvaro e Santo Stefano",
@@ -620,7 +631,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Servizi Farmaceutici srl",
@@ -631,7 +642,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Asi  di Trapani in liquidazione",
@@ -642,7 +653,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Sanitaria Locale CN1",
@@ -697,7 +708,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Asm Rovigo Spa",
@@ -709,17 +720,6 @@
    ],
    "mx": "esvacloud1.archimedia.it",
    "reason": "MX is libraesva gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Azienda di Servizi alla Persona Casa Leandra di Canneto Sull' Oglio",
-   "domain": "asp.canneto.mn.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Azienda Sanitaria Provinciale di Messina",
@@ -741,18 +741,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Asp Ambito 9",
-   "domain": "aspambitonove.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "gateway_no_primary"
-   ],
-   "mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
-   "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "A.S.P. Castriota e Corroppoli",
@@ -763,7 +752,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Asp Circondario Imolese",
@@ -796,7 +785,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Pubblica di Servizi alla Persona Asp-masaccio",
@@ -818,7 +807,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Pubblica di Servizi alla Persona Opera Pia di Venere",
@@ -829,7 +818,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda di Servizi alla Persona Pedemontana",
@@ -862,7 +851,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Asso Mab Alto Molise",
@@ -873,7 +862,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Socio Sanitaria Territoriale di Crema",
@@ -953,17 +942,6 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Ordine dei Dottori Commercialisti e degli Esperti Contabili di Asti",
-   "domain": "asti.odec.com",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
    "name": "Amministrazione Separata Usi Civici di Campodenno",
    "domain": "asuccampodenno.it",
    "provider": "unknown",
@@ -972,7 +950,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Amministrazione Separata Beni Usi Civici di Termon",
@@ -983,7 +961,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "AMBITO TERRITORIALE DI CACCIA 6 MANTOVA",
@@ -994,7 +972,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "A.T.E.R. DELLA PROVINCIA DI VICENZA",
@@ -1005,7 +983,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ato 2 Napoli Volturno",
@@ -1016,7 +994,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Autorita A.T.O. N. 5 - Enna",
@@ -1027,7 +1005,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ge.S.A. Ag2 S.P.A.",
@@ -1038,7 +1016,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Ambito di Agrigento S.I.I.",
@@ -1049,7 +1027,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Ato Sud Salento Bacino Le3",
@@ -1060,7 +1038,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ufficio D'Ambito di Lodi",
@@ -1071,7 +1049,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ato Me 3 in Liquidazione",
@@ -1082,7 +1060,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "AZIENDA TERRITORIALE PER I SERVIZI ALLA PERSONA",
@@ -1104,7 +1082,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ATVO S.P.A.",
@@ -1148,7 +1126,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Autostrada Regionale Cispadana S.P.A.",
@@ -1159,7 +1137,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Aventino Medio Sangro Zona Q",
@@ -1170,7 +1148,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Musei Provinciali di Bolzano",
@@ -1181,7 +1159,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Azienda Speciale Vola",
@@ -1203,7 +1181,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica Integrale Dei Bacini Settentrionali del Cosentino",
@@ -1214,7 +1192,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Obbligatorio per Lo Smaltimento Dei Rifiuti Solidi Urbani- Bacino Padova Tre",
@@ -1225,7 +1203,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Culturale Mocheno",
@@ -1236,7 +1214,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Comunale Biblioteca Romolo Bellatreccia",
@@ -1247,7 +1225,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Biella",
@@ -1280,7 +1258,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Comuni Bacino Imbrifero Montano di Valle Camonica",
@@ -1313,7 +1291,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica della Maremma Etrusca",
@@ -1324,7 +1302,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica Stornara e Tara",
@@ -1335,7 +1313,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica della Val di Paglia Superiore",
@@ -1346,7 +1324,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Dottori Commercialisti e degli Esperti Contabili di Brindisi",
@@ -1368,7 +1346,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "IRCCS Burlo Garofolo di Trieste",
@@ -1401,7 +1379,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Campania Ambiente e Servizi Spa",
@@ -1412,7 +1390,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' di Montagna della Carnia",
@@ -1434,7 +1412,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Territoriale Intercomunale Carso Isonzo Adriatico",
@@ -1456,18 +1434,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Casa di Riposo Citta' di Asti",
-   "domain": "casadiriposo.asti.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Assistenziale Burgio Corsello",
@@ -1478,7 +1445,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "CASA DI RIPOSO ELENA E CELESTINO DE MARCO",
@@ -1489,7 +1456,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Centro Socio Assistenziale Anziani Sciacca Baratta",
@@ -1500,7 +1467,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Casa di Riposo Ss. Annunziata",
@@ -1511,7 +1478,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Casa di Riposo Ospedale Santa Croce",
@@ -1522,7 +1489,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Casirate Gas 2 Srl",
@@ -1533,7 +1500,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Castelvecchio Subequo",
@@ -1544,7 +1511,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Cavriagoservizi",
@@ -1555,7 +1522,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica Integrale Dei Bacini dello Jonio Cosentino",
@@ -1566,7 +1533,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica Ombrone Pistoiese Bisenzio",
@@ -1577,7 +1544,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' di montagna Canal del Ferro e Val Canale",
@@ -1610,7 +1577,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Nuovo Centro Estero Delle Camere di Commercio del Veneto",
@@ -1621,7 +1588,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "CENTRO MARCHE ACQUE SRL",
@@ -1665,7 +1632,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Chimici e dei Fisici della Provincia di Potenza",
@@ -1676,7 +1643,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Interuniversitario Regionale Pugliese",
@@ -1687,7 +1654,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Cisis Centro Interregionale per I Sistemi Informatici Geografici e Statistici",
@@ -1698,7 +1665,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Civitavecchia Servizi Pubblici S.r.l.",
@@ -1709,7 +1676,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "C.L.I.R. S.P.A.",
@@ -1720,7 +1687,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Amministrazione Separata Beni Usi Civici di Grotte Santo Stefano",
@@ -1731,7 +1698,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunità Montana Versante dello Stretto",
@@ -1742,7 +1709,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunità Montana dell'Area Grecanica",
@@ -1753,7 +1720,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunità Montana Versante Tirrenico Settentrionale",
@@ -1764,7 +1731,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Intemelia",
@@ -1775,7 +1742,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana della Laga",
@@ -1786,7 +1753,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana dei Laghi Bergamaschi",
@@ -1808,7 +1775,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana del Pinerolese",
@@ -1830,7 +1797,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana di Scalve",
@@ -1874,7 +1841,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Gestori Servizi Idrici scrl",
@@ -1896,7 +1863,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio dei Geometri e dei Geometri Laureati della Regione Valle D'Aosta",
@@ -1918,7 +1885,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Collegio Provinciale Geometri e Geometri Laureati di Reggio Calabria",
@@ -1951,7 +1918,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Provinciale Delle Ostetriche della Provincia di Teramo",
@@ -1962,7 +1929,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Tecnici Sanitari di Radiologia Medica e delle Professioni Sanitarie Tecniche, della Riabilitazione e della Prevenzione di Campobasso-Isernia",
@@ -1973,7 +1940,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Territoriale Intercomunale Collinare",
@@ -1995,7 +1962,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunità del Collio",
@@ -2009,17 +1976,6 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Comune di Colobraro",
-   "domain": "colobraro.gov.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
    "name": "Commissario Straordinario per la Sicurezza antisismica e il ripristino della funzionalità della A24 e A25",
    "domain": "commissario.a24-a25.gov.it",
    "provider": "unknown",
@@ -2028,7 +1984,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Straordinario per La Sicurezza del Sistema Idrico del Gran Sasso",
@@ -2039,7 +1995,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Straordinario per La Progettazione Affidamento e La Realizzazione Dei Lavori Relativi al Nuovo Depuratore Nell Agglomerato di Mondragone",
@@ -2050,7 +2006,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Straordinario per La Progettazione L Affidamento e La Realizzazione Dei Lavori di Adeguamento del Depuratori di Napoli Est",
@@ -2061,7 +2017,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Straordinario Sin Crotone",
@@ -2072,7 +2028,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO COMPRENSIVO - CARPI ZONA CENTRO",
@@ -2105,7 +2061,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Abbadia San Salvatore",
@@ -2270,7 +2226,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Ascoli Piceno",
@@ -2314,7 +2270,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arbus",
@@ -2325,7 +2281,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Arcugnano",
@@ -2347,7 +2303,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Argelato",
@@ -2380,7 +2336,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arsoli",
@@ -2391,7 +2347,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Arta Terme",
@@ -2633,7 +2589,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Bolzano Vicentino",
@@ -2699,7 +2655,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Bovegno",
@@ -2831,7 +2787,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Cairo Montenotte",
@@ -2842,7 +2798,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Calvisano",
@@ -2886,7 +2842,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Campo di Giove",
@@ -2897,7 +2853,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Campoformido",
@@ -2930,7 +2886,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Candiana",
@@ -2974,7 +2930,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Capo di Ponte",
@@ -2996,7 +2952,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Capriate San Gervasio",
@@ -3128,7 +3084,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Casarsa della Delizia",
@@ -3205,7 +3161,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Castelleone",
@@ -3260,7 +3216,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Castelnovo del Friuli",
@@ -3315,7 +3271,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Castelvetro di Modena",
@@ -3359,7 +3315,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Cavalese",
@@ -3370,7 +3326,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Cavallino-Treporti",
@@ -3381,7 +3337,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Cavasso Nuovo",
@@ -3612,7 +3568,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Cividate Camuno",
@@ -3843,7 +3799,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Corteno Golgi",
@@ -3879,17 +3835,6 @@
    "reason": "MX is antispamsolution gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Comune di Cottanello",
-   "domain": "comune.cottanello.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
    "name": "Comune di Crevacuore",
    "domain": "comune.crevacuore.bi.it",
    "provider": "unknown",
@@ -3898,7 +3843,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Crognaleto",
@@ -3909,7 +3854,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Cureggio",
@@ -3920,7 +3865,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Dignano",
@@ -4349,7 +4294,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Gaiole in Chianti",
@@ -4393,7 +4338,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Gerano",
@@ -4415,7 +4360,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Gessate",
@@ -4602,7 +4547,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Lapedona",
@@ -4668,7 +4613,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Loreo",
@@ -4701,7 +4646,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Lozio",
@@ -4756,7 +4701,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Majano",
@@ -4866,7 +4811,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Marano Equo",
@@ -4932,7 +4877,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Martignacco",
@@ -4954,7 +4899,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Massazza",
@@ -5009,7 +4954,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Meolo",
@@ -5152,7 +5097,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Montebelluna",
@@ -5185,7 +5130,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Montenars",
@@ -5592,7 +5537,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Paluzza",
@@ -5702,7 +5647,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Pian Camuno",
@@ -5757,7 +5702,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Pietracupa",
@@ -6021,7 +5966,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Porcia",
@@ -6065,7 +6010,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Portici",
@@ -6274,7 +6219,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Pulfero",
@@ -6296,7 +6241,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ravenna",
@@ -6475,6 +6420,17 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
+   "name": "Comune di Riva del Garda",
+   "domain": "comune.rivadelgarda.tn.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "gateway_no_primary"
+   ],
+   "mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
+   "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
    "name": "Comune di Rive D'Arcano",
    "domain": "comune.rivedarcano.ud.it",
    "provider": "unknown",
@@ -6505,7 +6461,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Roghudi",
@@ -6527,7 +6483,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Romans d'Isonzo",
@@ -6549,7 +6505,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ronchi dei Legionari",
@@ -6582,7 +6538,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Rosa'",
@@ -6648,7 +6604,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sagrado",
@@ -6681,7 +6637,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Salzano",
@@ -6747,7 +6703,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di San Daniele del Friuli",
@@ -6791,7 +6747,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di San Giorgio della Richinvelda",
@@ -6835,7 +6791,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di San Giuseppe Vesuviano",
@@ -6868,7 +6824,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di San Martino al Tagliamento",
@@ -6890,7 +6846,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di San Pier d'Isonzo",
@@ -6923,7 +6879,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di San Quirico d'Orcia",
@@ -6967,7 +6923,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Santa Maria La Longa",
@@ -7055,7 +7011,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sauris",
@@ -7121,7 +7077,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Schilpario",
@@ -7143,7 +7099,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Scorze'",
@@ -7264,7 +7220,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Sondrio",
@@ -7363,7 +7319,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sulzano",
@@ -7443,17 +7399,6 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Comune di Tavigliano",
-   "domain": "comune.tavigliano.bi.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
    "name": "Comune di Teglio Veneto",
    "domain": "comune.teglioveneto.ve.it",
    "provider": "unknown",
@@ -7495,7 +7440,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Terlizzi",
@@ -7517,7 +7462,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Terzo di Aquileia",
@@ -7539,7 +7484,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Tolmezzo",
@@ -7583,7 +7528,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Torre Boldone",
@@ -7726,7 +7671,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Trezzano Sul Naviglio",
@@ -7759,7 +7704,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Trieste",
@@ -7836,7 +7781,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Vallinfreda",
@@ -7847,7 +7792,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Varapodio",
@@ -7858,7 +7803,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Varmo",
@@ -7979,7 +7924,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Vignola",
@@ -8078,7 +8023,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Zone",
@@ -8122,7 +8067,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Barisciano",
@@ -8133,7 +8078,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Berzano di Tortona",
@@ -8144,7 +8089,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Burgos",
@@ -8155,7 +8100,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Carovilli",
@@ -8166,7 +8111,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Fossa",
@@ -8177,7 +8122,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Prometeo Srl",
@@ -8210,7 +8155,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Monte San Biagio",
@@ -8243,7 +8188,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Amministrazione Separata Beni Uso Civico Dobbiaco",
@@ -8254,7 +8199,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Filacciano",
@@ -8265,7 +8210,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Fosdinovo",
@@ -8276,7 +8221,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Fresagrandinaria",
@@ -8287,7 +8232,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 3 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Guardia Lombardi",
@@ -8298,7 +8243,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Laigueglia",
@@ -8309,7 +8254,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Loranze'",
@@ -8320,7 +8265,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Marzio",
@@ -8331,7 +8276,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Percile",
@@ -8342,7 +8287,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Picciano",
@@ -8353,7 +8298,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Pietrabbondante",
@@ -8364,7 +8309,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Pizzoferrato",
@@ -8375,7 +8320,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Ricadi",
@@ -8397,7 +8342,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Rosello",
@@ -8419,7 +8364,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di San Costantino Albanese",
@@ -8430,7 +8375,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di San Sebastiano al Vesuvio",
@@ -8441,7 +8386,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sesta Godano",
@@ -8452,7 +8397,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Supino",
@@ -8463,7 +8408,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Termini Imerese",
@@ -8474,7 +8419,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Zocca",
@@ -8485,7 +8430,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunica Soc Cons a R L",
@@ -8496,7 +8441,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione della Costa Orientale",
@@ -8507,7 +8452,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Valli Aveto Graveglia Sturla",
@@ -8518,7 +8463,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Alto Sangro e Altopiano Delle Cinquemiglia",
@@ -8529,7 +8474,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Molise Centrale",
@@ -8540,7 +8485,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Trigno Monte Mauro",
@@ -8551,7 +8496,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita Montana Peligna",
@@ -8562,7 +8507,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Volturno",
@@ -8573,7 +8518,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Intercomunale Depurazione Acque Nere Montesilvano-silvi-citta Sant Angelo in Liquidazione",
@@ -8584,7 +8529,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio Regionale dell'Abruzzo",
@@ -8595,7 +8540,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Assemblea Legislativa - Regione Umbria",
@@ -8606,7 +8551,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio Regionale della Valle D'Aosta",
@@ -8628,7 +8573,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio Notarile Avellino",
@@ -8639,7 +8584,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio Notarile di Latina",
@@ -8650,7 +8595,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio Notarile Dei Distretti Riuniti di Palermo e Termini Imerese",
@@ -8661,7 +8606,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio Notarile Distrettuale di Rovigo",
@@ -8672,7 +8617,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Gestione e Ripopolamento Ittico della Fascia Costiera Eoliana",
@@ -8683,7 +8628,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Polizia Municipale Padova Ovest",
@@ -8694,7 +8639,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Bassa Sabina Acqua Peschiera",
@@ -8705,7 +8650,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Gestione Giardino Alpinia",
@@ -8716,7 +8661,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Asi in Liquidazione Gestione Separata Irsap Siracusa",
@@ -8727,7 +8672,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio per Il Bacino di Carenaggio della Spezia",
@@ -8738,7 +8683,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica del Basso Sulics",
@@ -8749,7 +8694,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio dei Comuni del Bacino Imbrifero Montano della Drava",
@@ -8782,7 +8727,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Speciale Bonifica Arneo",
@@ -8793,7 +8738,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica Integrale Larinese",
@@ -8804,7 +8749,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Bonifica Litorale Nord",
@@ -8815,7 +8760,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Boschi Carnici",
@@ -8848,7 +8793,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Interuniversitario Macchine Impianti e Sistemi per L Energia L Industria e L Ambiente",
@@ -8859,7 +8804,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Cimiteriale Fra I Comuni di Frattamaggiore Grumo Nevano e Frattaminore",
@@ -8870,7 +8815,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "CONSORZIO DI BONIFICA OGLIO MELLA",
@@ -8892,7 +8837,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Eco 3",
@@ -8903,7 +8848,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Sviluppo Industriale Sud Pontino",
@@ -8925,7 +8870,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Locride Ambiente",
@@ -8947,7 +8892,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Progetto Solidarieta'",
@@ -8958,7 +8903,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio per I Servizi Territoriali del Noce",
@@ -8969,7 +8914,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "CONSORZIO RIUNITO STRADE VICINALI COMUNE ARCIDOSSO",
@@ -8980,7 +8925,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Ovest Solidale",
@@ -8991,7 +8936,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Provinciale Consulenti del Lavoro Messina",
@@ -9024,7 +8969,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Provinciale Ordine dei Consulenti del Lavoro di Pesaro - Urbino",
@@ -9035,7 +8980,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Fondazione Contrada Torino Onlus",
@@ -9046,7 +8991,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Convitto Statale per Sordomuti",
@@ -9057,7 +9002,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Co.Re.Di. Commissione Amministrativa Regionale di Disciplina",
@@ -9068,7 +9013,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio di Sviluppo Economico Locale dell'Area Giuliana",
@@ -9090,7 +9035,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Centro Regionale Istruzione Adulti",
@@ -9101,7 +9046,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Centro di Riferimento Oncologico di Aviano",
@@ -9134,7 +9079,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio per il sistema informativo CSI-Piemonte",
@@ -9167,7 +9112,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Universitario Interprovinciale Salentino",
@@ -9178,7 +9123,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ufficio del Commissario Straordinario per La Progettazione Affidamento e Realizzazione Dei Lavori Relativi alla Depurazione Delle Acque Reflue Nei Comuni di Crotone Castrovillari Montebello Ionico Pizzo Ionadi",
@@ -9189,7 +9134,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Deval S.p.A. a Socio Unico",
@@ -9211,7 +9156,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "\"PAGUS Consorzio Intercomunale dei Servizi Sociali Distretto RM 5.2\"",
@@ -9222,7 +9167,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Doccia Service Srl",
@@ -9233,7 +9178,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Dogliola",
@@ -9244,7 +9189,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Liceo Andrea Maffei",
@@ -9255,7 +9200,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente Cattolico dello Stato Terra di Francesco Giuseppe, Colonia di Santa Maria de Finibus Terrae di Giorgio II, Porta e Mare di Kara",
@@ -9266,7 +9211,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Bonefro",
@@ -9277,7 +9222,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ECOSYSTEM OF INNOVATION FOR NEXT GENERATION SARDINIA - SOCIETA' CONSORTILE A RESPONSABILITA' LIMITATA",
@@ -9288,7 +9233,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni dall'Eleuterio a Rocca Busambra",
@@ -9299,7 +9244,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Elini",
@@ -9310,7 +9255,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Emmegi S.R.L.",
@@ -9321,7 +9266,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente di Assistenza per Il Personale dell'Ammnistrazione Penitenziaria",
@@ -9332,7 +9277,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente Provinciale per Il Turismo di Campobasso",
@@ -9343,7 +9288,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUZIONE SCOLASTICA ELIO REINOTTI",
@@ -9354,7 +9299,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente Regionale per Il Patrimonio Culturale della Regione Autonoma Friuli Venezia Giulia - Erpac",
@@ -9387,7 +9332,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Esu Gestioni e Servizi Srl",
@@ -9398,7 +9343,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente tutela patrimonio ittico (ETPI)",
@@ -9420,7 +9365,18 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
+   "name": "Euro.Pa Service Srl",
+   "domain": "europa-service.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente Zona Industriale Trieste - EZIT",
@@ -9431,7 +9387,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Scuola Professionale per L'Economia Domestica e Agroalimentare Teodone e per L'Agricoltura Mair Am Hof Con Sede a Teodone",
@@ -9442,7 +9398,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Scuola Professionale per L'Agricoltura e L'Economia Domestica Salern Con Sede a Varna",
@@ -9453,7 +9409,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Falvaterra",
@@ -9475,7 +9431,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Tribuzio Mobility Srl",
@@ -9486,7 +9442,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Fondo Nazionale di Previdenza per I Lavoratori di Spedizione Corrieri e Delle Agenzie Marittime Racc. e Mediatori Maritt.",
@@ -9508,7 +9464,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "FERROVIE DEL GARGANO S.R.L.",
@@ -9519,7 +9475,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine della professione di Ostetrica della Provincia di Pescara",
@@ -9530,7 +9486,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Federazione Regionale Degli Ordini Dei Dottori Agronomi e Dei Dottori Forestali della Campania",
@@ -9541,7 +9497,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "FONDAZIONE E.U.L.O. - UNIVERSITA' DI BRESCIA",
@@ -9552,7 +9508,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Fondazione Montagna sicura",
@@ -9577,17 +9533,6 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Forli'",
-   "domain": "forli.commercialisti.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
    "name": "COMUNITA' DEL FRIULI ORIENTALE",
    "domain": "friuliorientale.comunitafvg.it",
    "provider": "unknown",
@@ -9597,17 +9542,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Frosinone",
-   "domain": "frosinone.commercialisti.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Busitalia - Sita Nord S.R.L.",
@@ -9640,7 +9574,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Gac Golfo di Termini Imerese Scarl",
@@ -9651,7 +9585,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Gaia S.P.A",
@@ -9673,7 +9607,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ge.Fi.L. S.p.A.",
@@ -9706,7 +9640,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Dei Geometri e Geometri Laureati della Provincia di Bolzano",
@@ -9739,7 +9673,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Territoriale per l'Edilizia Residenziale di Gorizia",
@@ -9747,10 +9681,10 @@
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
-    "no_mx"
+    "gateway_no_primary"
    ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+   "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
    "name": "Ente di Decentramento Regionale di Gorizia",
@@ -9772,7 +9706,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Grumello Cremonese ed Uniti",
@@ -9805,7 +9739,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Grundschulsprengel Klausen II Circolo di Scuola Elementare Chiusa II",
@@ -9816,7 +9750,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Grundschulsprengel Bozen",
@@ -9893,7 +9827,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO COMPRENSIVO - IC 'A.DIAZ '- MEDA",
@@ -9915,7 +9849,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO COMPRENSIVO - I.C. CIVIDATE CAMUNO",
@@ -9937,7 +9871,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Comprensivo Picentia",
@@ -9948,7 +9882,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO COMPRENSIVO - PAOLO E LARISSA PINI - MILANO",
@@ -9970,22 +9904,11 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto di Istruzione Secondaria di II Grado Cesare Battisti",
    "domain": "iisscesarebattisti.edu.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Fondazione per la Promozione dell'Università nel Ponente Ligure (P.U.PO.LI.)",
-   "domain": "imperia.unige.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -10003,7 +9926,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Nazionale Assistenza Sociale",
@@ -10025,7 +9948,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Innovhub SSI Srl",
@@ -10036,7 +9959,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "INRCA - IRCCS Istituto nazionale di ricovero e cura per anziani",
@@ -10058,7 +9981,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ipab Residence Salvatore Bellia San Luigi Gonzaga Costanzo Cutore",
@@ -10069,7 +9992,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Opera Pia Asili Scuole Materne",
@@ -10080,7 +10003,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ipab Domenico Bertone",
@@ -10091,7 +10014,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ipab Ss. Annunziata",
@@ -10102,7 +10025,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Pluricomprensivo Brunico-val Pusteria",
@@ -10113,7 +10036,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto per L'Edilizia Sociale della Provincia Autonoma di Bolzano",
@@ -10135,7 +10058,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Italiano per l'Africa e l'Oriente",
@@ -10157,7 +10080,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto di Istruzione Alcide Degasperi",
@@ -10168,7 +10091,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO DEI CIECHI DELLA SARDEGNA MAURIZIO FALQUI",
@@ -10179,7 +10102,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Istituto Comprensivo di Scuola Primaria e Secondaria di Primo Grado Rovereto - Sud Via Benacense, 32",
@@ -10190,7 +10113,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Opera Pia Istituto Canonico Luigi Calderonio",
@@ -10201,7 +10124,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto di Istruzione Superiore \"Calvi-Dolomieu\"",
@@ -10212,7 +10135,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Domenico Martuscelli",
@@ -10223,7 +10146,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Opera Pia Istituto Regina Margherita",
@@ -10234,7 +10157,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ipab Istituto Sacra Famiglia",
@@ -10245,7 +10168,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto di Santa Margherita",
@@ -10256,7 +10179,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Tempesti per L'Educazione Permanente Dei Giovani Casa di Riposo E. Chiassarini",
@@ -10267,7 +10190,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Antonio Vivaldi del Comune di San Benedetto del Tronto",
@@ -10289,7 +10212,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissariato Generale di Sezione per La Partecipazione Italiana Ad Expo 2020 Dubai",
@@ -10300,7 +10223,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissariato generale di sezione per la partecipazione italiana a Expo 2025 Osaka",
@@ -10311,7 +10234,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "FONDAZIONE PINTA",
@@ -10344,7 +10267,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Zooprofilattico Sperimentale delle Venezie",
@@ -10366,7 +10289,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Scuola Provinciale Alberghiera Kaiserhof",
@@ -10377,7 +10300,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "LA JOHNSON SRL",
@@ -10388,7 +10311,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Lamma",
@@ -10465,7 +10388,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Scolastica Luigi Barone",
@@ -10476,7 +10399,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Liceo Scientifico Edouard Berard",
@@ -10487,7 +10410,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Scolastica Luigi Einaudi",
@@ -10498,7 +10421,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Opera Delle Mura di Lucca",
@@ -10520,7 +10443,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Liceo Artistico Regionale L. e M. Cascio",
@@ -10531,7 +10454,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "LICEO SCIENTIFICO - ISTITUTO D'ISTRUZIONE SUPERIORE C.GOLGI",
@@ -10553,7 +10476,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "LICEO ARTISTICO MUSICALE COREUTICO-PALIZZI",
@@ -10564,7 +10487,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Liceo Antonio Rosmini Trento",
@@ -10575,7 +10498,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Argentina Armea",
@@ -10586,7 +10509,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine della Professione di Ostetrica/o della Provincia di Caserta",
@@ -10597,7 +10520,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Maestri di Sci del Lazio",
@@ -10608,7 +10531,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Azienda Ospedaliero-universitaria Maggiore della Carita",
@@ -10641,7 +10564,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Maniago",
@@ -10655,28 +10578,6 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Mantova",
-   "domain": "mantova.commercialisti.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Unione dei comuni Pizzo Marabito",
-   "domain": "marabito.comune.mezzojuso.pa.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
    "name": "Scuola Prof. G. Marconi e Laimburg",
    "domain": "marconi.fpbz.it",
    "provider": "unknown",
@@ -10685,7 +10586,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Comunale Marsala Schola",
@@ -10696,7 +10597,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Scuola Professionale Provinciale Enrico Mattei - Scuola Professionale per Le Professioni Sociali Emmanuel Levinas",
@@ -10740,7 +10641,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Scolastica Mont Emilius 2",
@@ -10751,18 +10652,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Azienda Speciale Milazzo Servizi",
-   "domain": "milazzo.servizi.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ministero dell'istruzione e del merito",
@@ -10784,7 +10674,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente Provinciale per il Turismo di Isernia",
@@ -10795,7 +10685,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Monrupino Repentabor",
@@ -10806,7 +10696,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Montana Cigno Valle Biferno",
@@ -10817,7 +10707,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Mosema S.P.A.",
@@ -10828,7 +10718,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Scolastica Unite Des Communes Valdotaines Mont Rose A.",
@@ -10839,7 +10729,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Carinola",
@@ -10850,7 +10740,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' di Montagna del Natisone e Torre",
@@ -10862,17 +10752,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "STRUTTURA DEL COMMISSARIO STRAORDINARIO ART. 42 BIS D.L. 23/2020",
-   "domain": "nos.ospedale.siracusa.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Ordine dei Medici Veterinari della Provincia di Nuoro",
@@ -10916,7 +10795,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione scolastica Ottavio Jacquemet",
@@ -10927,18 +10806,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Consorzio del Parco Grazia Deledda",
-   "domain": "old.comune.nuoro.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Provinciale Dei Medici Chirurghi e Degli Odontoiatri di Ravenna",
@@ -10993,7 +10861,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Torretta",
@@ -11004,7 +10872,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Opera Pia Sticca",
@@ -11015,7 +10883,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Opere Pie di Onigo",
@@ -11048,7 +10916,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ORDINE DELLE PROFESSIONI INFERMIERISTICHE DI PARMA",
@@ -11081,7 +10949,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Provinciale Architetti Pianificatori Paesaggisti e Conservatori di Rovigo",
@@ -11092,7 +10960,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine degli Architetti Paesaggisti Pianificatori e Conservatori della Provincia di Perugia",
@@ -11114,7 +10982,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Degli Avvocati di Biella",
@@ -11147,7 +11015,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio dell'Ordine Degli Avvocati di Orvieto",
@@ -11158,18 +11026,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Ordine degli Avvocati di Roma",
-   "domain": "ordineavvocatiroma.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dottori Agronomi e Dottori Forestali della Provincia di Bergamo",
@@ -11180,7 +11037,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dottori Agronomi e Dottori Forestali della Provincia di Chieti",
@@ -11191,7 +11048,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Chimici della Provincia di Ragusa",
@@ -11202,7 +11059,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Interprovinciale Chimici Sicilia",
@@ -11213,7 +11070,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Cremona",
@@ -11224,7 +11081,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ORDINEFARMACISTI DI VIBO VALENTIA",
@@ -11235,7 +11092,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Medici Chirurghi e Degli Odontoiatri della Provincia di Catanzaro",
@@ -11246,7 +11103,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Farmacisti della Valle D'Aosta",
@@ -11334,7 +11191,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Matera",
@@ -11345,7 +11202,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Medici Chirurghi e degli Odontoiatri di Piacenza",
@@ -11411,7 +11268,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Nuoro",
@@ -11422,7 +11279,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Oristano",
@@ -11433,7 +11290,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Ordine Interprovinciale Professione Ostetrica Ascoli Piceno e Fermo",
@@ -11455,7 +11312,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Interprovinciale della Professione di Ostetrica di Modena e Ferrara",
@@ -11466,7 +11323,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine della Professione di Ostetrica della Provincia di Rieti",
@@ -11477,7 +11334,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine della Professione Ostetrica Provincia di Viterbo",
@@ -11488,7 +11345,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Padova",
@@ -11499,7 +11356,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dottori Forestali della Provincia di Pistoia",
@@ -11510,7 +11367,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali di Prato",
@@ -11521,7 +11378,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Degli Psicologi Regione Autonoma Valle D'Aosta",
@@ -11543,7 +11400,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dott. Agronomi e Dei Dott. Forestali della Provincia di Reggio Calabria",
@@ -11554,7 +11411,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dei Dottori Forestali della Provincia di Siena",
@@ -11565,7 +11422,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dottori Forestali della Provincia di Trento",
@@ -11576,7 +11433,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dottori Forestali della Provincia di Treviso",
@@ -11587,7 +11444,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Tecnici Sanitari di Radiologia Medica della Provincia di Lecce",
@@ -11609,7 +11466,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Dottori Forestali di Venezia",
@@ -11620,7 +11477,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Professionale Interprovinciale TSRM PSTRP delle Province di Vercelli Biella",
@@ -11642,7 +11499,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Medici Veterinari della Provincia di Caserta",
@@ -11653,7 +11510,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Medici Veterinari della Provincia di Napoli",
@@ -11664,7 +11521,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Provinciale dei Medici Veterinari di Pordenone",
@@ -11675,7 +11532,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Dottori Agronomi e dei Dottori Forestali della Provincia di Vibo Valentia",
@@ -11686,7 +11543,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Agronomi e Forestali della Prov. Di Vicenza",
@@ -11697,7 +11554,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Dei Dottori Commercialisti Ed Esperti Contabili di Oristano",
@@ -11752,7 +11609,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine della Professione di Ostetrica delle Province di Catanzaro, Cosenza, Crotone e Vibo Valentia",
@@ -11763,7 +11620,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Delle Ostetriche di Benevento",
@@ -11774,7 +11631,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ORDINE DELLA PROFESSIONE DI OSTETRICA INTERPROVINCIALE DI COMO LECCO E SONDRIO",
@@ -11785,7 +11642,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine della Professione di Ostetrica della Provincia di Cosenza",
@@ -11796,7 +11653,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine della Professione di Ostetrica della Provincia di Ferrara",
@@ -11807,7 +11664,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine della Professione Ostetrica della Regione Autonoma Valle D'Aosta",
@@ -11818,7 +11675,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Palermo Ambiente Spa in Liquidazione",
@@ -11829,7 +11686,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "PARCAM SERVIZI S.R.L.",
@@ -11840,7 +11697,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente di Gestione Delle Aree Protette Delle Alpi Cozie",
@@ -11851,7 +11708,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Parco Archeologico di Lilibeo-Marsala",
@@ -11873,7 +11730,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Parco dello Zolfo Delle Marche",
@@ -11884,7 +11741,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente Parco Regionale Veneto Delta del Po",
@@ -11928,7 +11785,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Universita Agraria di Mugnano in Teverina",
@@ -11939,7 +11796,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Ostetrici Enna",
@@ -11950,7 +11807,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Insediamenti Produttivi Torchiara-Prignano Cilento",
@@ -11961,7 +11818,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ambito Territoriale Caccia Roma 2",
@@ -11983,7 +11840,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio dei Servizi Sociali Ambito A4",
@@ -11994,7 +11851,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Montani dell'Alta Val Trebbia",
@@ -12005,7 +11862,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Periti Industriali della Provincia di Bologna",
@@ -12016,7 +11873,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Dei Periti Industriali e Dei Periti Industriali Laureati della Provincia di Mantova",
@@ -12027,7 +11884,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Dei Periti Industriali e Dei Periti Industriali Laureati della Provincia di Potenza",
@@ -12038,7 +11895,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ORDINE DEI PERITI INDUSTRIALI E DEI PERITI INDUSTRIALI LAUREATI DELLA PROVINCIA DI PIACENZA",
@@ -12049,7 +11906,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ORDINE DEI PERITI INDUSTRIALI E DEI PERITI INDUSTRIALI LAUREATI DELLA PROVINCIA DI PISTOIA",
@@ -12071,7 +11928,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio dei Periti Agrari e dei Periti Agrari Laureati di Avellino",
@@ -12082,7 +11939,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio dei Periti Agrari e dei Periti Agrari Laureati della Provincia di Catanzaro Crotone e Vibo Valentia",
@@ -12093,7 +11950,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio dei Periti Agrari e dei Periti Agrari Laureati della Provincia di Campobasso",
@@ -12104,7 +11961,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Provinciale Periti Agrari e Periti Agrari Laureati",
@@ -12115,7 +11972,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Dei Periti Agrari e Periti Agrari Siracusa",
@@ -12126,7 +11983,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Dei Periti Agrari e Dei Periti Agrari Laureati della Provincia di Trapani",
@@ -12137,7 +11994,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio De Periti Industriali e Dei Periti Industriali Laureati della Regione Autonoma della Valle d'Aosta",
@@ -12159,7 +12016,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ordine dei periti industriali e dei periti industriali laureati della provincia di nuoro",
@@ -12170,7 +12027,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Pescara Multiservice Srl",
@@ -12214,7 +12071,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "PIGNATARO PATRIMONIO SRL",
@@ -12236,7 +12093,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "PLATANI MAGAZZOLO AMBIENTE SRL",
@@ -12247,7 +12104,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Plemmirio",
@@ -12269,7 +12126,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio Polizia Locale Isola B.sca",
@@ -12280,7 +12137,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ente di Decentramento Regionale di Pordenone",
@@ -12302,7 +12159,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Postiglione",
@@ -12313,7 +12170,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Pragma Spa",
@@ -12324,7 +12181,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO COMPRENSIVO - PRIMO LEVI",
@@ -12357,7 +12214,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione scolastica Abbé Prosper Duc",
@@ -12368,7 +12225,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Regione Abruzzo - Il Dirigente Responsabile - OCDPC 234/2015",
@@ -12379,7 +12236,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Delegato Ocdpc 256 del 2015",
@@ -12390,7 +12247,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Province D'Italia",
@@ -12401,7 +12258,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Provincia di Bergamo",
@@ -12481,6 +12338,17 @@
    "reason": "MX is trendmicro gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
+   "name": "Provincia di Pistoia",
+   "domain": "provincia.pistoia.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "gateway_no_primary"
+   ],
+   "mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
+   "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
    "name": "Provincia di Prato",
    "domain": "provincia.prato.it",
    "provider": "unknown",
@@ -12544,7 +12412,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ocdpc 630 del 03 Febbraio 2020",
@@ -12555,7 +12423,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Delegato Dirigente Generale Protezione Civile O.C.D.P.C. 257 2015",
@@ -12566,7 +12434,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Delegato O.C.D.P.C. N. 340 2016",
@@ -12577,7 +12445,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Delegato Ex Ocdpc 619_2019",
@@ -12588,7 +12456,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Publicontrolli S.R.L.",
@@ -12599,7 +12467,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Reno Galliera",
@@ -12621,7 +12489,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Rete Ferroviaria Italiana",
@@ -12643,7 +12511,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Riserva Naturale Delle Antiche Citta di Fregellae e Fabrateria Nova e del Lago di S.Giovanni Incarico",
@@ -12654,7 +12522,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "RISERVA NATURALE DEL LAGO DI CANTERNO",
@@ -12665,7 +12533,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Risorse per Roma SpA",
@@ -12676,7 +12544,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Scuola Professionale Provinciale Alberghiera Cesare Ritz di Merano",
@@ -12687,7 +12555,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Riviera Friulana",
@@ -12709,7 +12577,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ministero della Salute",
@@ -12764,7 +12632,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di San Nicolo' di Comelico",
@@ -12775,18 +12643,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Sanremo",
-   "domain": "sanremo.odcec.com",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Azienda Ospedaliera Santobono Pausilipon",
@@ -12798,17 +12655,6 @@
    ],
    "mx": "mx1.hc2068-77.eu.iphmx.com",
    "reason": "MX is cisco-ironport gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Unione Dei Comuni Valle del Tevere Soratte",
-   "domain": "santoreste.rm.gov.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Agenzia Regionale Conservatoria Delle Coste della Sardegna",
@@ -12830,7 +12676,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia Forestale Regionale per Lo Sviluppo del Territorio e dell'Ambiente della Sardegna",
@@ -12852,7 +12698,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "SOCIETA' ACQUEDOTTO VALLE DEL LAMONE SRL",
@@ -12863,7 +12709,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Scuola Professionale Provinciale Alberghiera Savoy Merano",
@@ -12874,7 +12720,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Straordinario per La Realizzazione dell'Intervento Schema Idrico Basento - Bradano Tronco di Acerenza - Distribuzione Iii Lotto",
@@ -12885,7 +12731,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Centro di formazione professionale Silandro - Berufsbildungszentrum Schlanders",
@@ -12896,7 +12742,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Scuola Secondario di I Grado Carlo Gallozzi",
@@ -12907,7 +12753,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Scuola Comunale Professionale a . Lattes - Istituzione del Comune di Cuneo",
@@ -12918,7 +12764,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO SECONDARIO DI I GRADO - S.M.S 'A.DE STEFANO' ERICE C.S.",
@@ -12929,7 +12775,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio per La Scuola Mosaicisti del Friuli",
@@ -12951,7 +12797,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ipab Ente Morale Asilo Monumento",
@@ -12962,7 +12808,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "SOCIETA' DELLA SALUTE FIORENTINA SUD EST",
@@ -12973,7 +12819,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Societa' della Salute Area Pratese",
@@ -12995,7 +12841,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Societa' della Salute dell'Area Socio Sanitaria Versilia",
@@ -13006,7 +12852,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Secinaro",
@@ -13017,7 +12863,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO COMPRENSIVO GUBBIO 2",
@@ -13028,7 +12874,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Modugno",
@@ -13050,7 +12896,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Servizi Comunali Integrati R.S.U. S.P.A.",
@@ -13061,7 +12907,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consorzio dei Servizi Socio Assistenziali del Chierese",
@@ -13072,7 +12918,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Sicilia e Ricerca S.P.A.",
@@ -13083,7 +12929,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "COMMISSARIO STRAORDINARIO DEL GOVERNO PER LA ZONA SPECIALE SICILIA OCCIDENTALE",
@@ -13094,7 +12940,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Straordinario del Governo ZES - Zona Economica Speciale Sicilia Orientale",
@@ -13105,7 +12951,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita' Sile",
@@ -13127,18 +12973,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Ordine dei Dottori Commercialisti e degli Esperti Contabili di  Siracusa",
-   "domain": "siracusa.commercialisti.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ufficio Speciale per La Ricostruzione Post Sisma 2016 per La Regione Abruzzo",
@@ -13149,7 +12984,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ufficio Speciale per La Ricostruzione Post sisma 2016 della Regione Umbria",
@@ -13160,7 +12995,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Sistemi Territoriali S.P.A.",
@@ -13171,7 +13006,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Commissario Delegato Ex O.P.C.M. N.3858 del 12.03.2010",
@@ -13182,7 +13017,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Casa di Riposo Giovanni Xxiii",
@@ -13193,7 +13028,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "San Michele Patrimonio e Servizi Srl",
@@ -13204,7 +13039,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "SOCIETA' RISORSE SPA",
@@ -13270,7 +13105,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "S.R.R. Messina Provincia Soc.Consor.Spa",
@@ -13292,7 +13127,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "S.R.R.-Trapani Provincia Nord",
@@ -13303,7 +13138,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Comprensivo in Lingua Tedesca Bolzano/Europa",
@@ -13325,7 +13160,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Comprensivo in Lingua Tedesca Nova Ponente - Deutschsprachiger Schulsprengel Deutschnofen",
@@ -13347,7 +13182,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Sud Seveso Servizi S.P.A.",
@@ -13358,7 +13193,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comitato Organizzatore della XX edizione dei Giochi del Mediterraneo - Taranto 2026",
@@ -13369,7 +13204,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Teatro Comunale di Bologna Fondazione",
@@ -13380,7 +13215,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Fondazione del Teatro Stabile di Torino",
@@ -13424,7 +13259,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comune di Torre Canavese",
@@ -13457,7 +13292,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Trenitalia S.p.A.",
@@ -13534,7 +13369,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Tecnici Sanitari di Radiologia Medica e delle Professioni Sanitarie Tecniche della Riabilitazione e della Prevenzione delle Provincie di Firenze, Arezzo, Prato, Pistoia, Lucca e Massa Carrara",
@@ -13556,7 +13391,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine dei Tecnici Sanitari di Radiologia Medica e delle Professioni Sanitarie Tecniche, Riabilitative e della Prevenzione delle Province di Catanzaro, Crotone, Vibo Valentia",
@@ -13567,7 +13402,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Collegio Tecnici Radiologia Medica della Provincia di Reggio Calabria",
@@ -13589,7 +13424,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Turismo Torino e Provincia S.C.R.L",
@@ -13656,7 +13491,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "AZIENDA PUBBLICA DI SERVIZI ALLA PERSONA UMBERTO I",
@@ -13678,7 +13513,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Besa",
@@ -13689,7 +13524,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione dei Comuni Union3",
@@ -13700,7 +13535,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Regionale Delle Camere di Commercio, Industria, Artigianato e Agricoltura dell'Abruzzo",
@@ -13711,7 +13546,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Valle del Torto e Dei Feudi",
@@ -13722,7 +13557,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Montana del Catria e Nerone",
@@ -13733,7 +13568,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione dei Comuni delle Terre del Delta",
@@ -13766,7 +13601,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione di Comuni dell'Adige al Fratta",
@@ -13777,7 +13612,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Agora Unione di Comuni",
@@ -13788,7 +13623,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Delle Alpi Orobie Bresciane",
@@ -13821,7 +13656,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Bassa Val D'Arda Fiume Po",
@@ -13832,7 +13667,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni della Bassa Valle Camonica",
@@ -13854,7 +13689,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Castelli Tra Roero e Monferrato",
@@ -13865,7 +13700,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Montani Castello di Gerione",
@@ -13876,7 +13711,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione di Comuni Lombarda Cimbergo Paspardo",
@@ -13920,7 +13755,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni della Brenta",
@@ -13942,7 +13777,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione di Comuni della Messapia",
@@ -13953,7 +13788,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Comprensorio di Naxos e Taormina",
@@ -13964,7 +13799,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni del Sarrabus",
@@ -13975,7 +13810,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni della Teverina",
@@ -13986,7 +13821,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Comuni Valle del Tirreno",
@@ -13997,7 +13832,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni della Via Regia dell' Alcantara",
@@ -14008,7 +13843,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione di Comuni Corone Degli Erei",
@@ -14019,7 +13854,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Area Caserta Sud-ovest",
@@ -14030,7 +13865,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni di Crispiano Massafra Statte",
@@ -14041,7 +13876,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Medio Calore",
@@ -14052,7 +13887,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Pentri",
@@ -14063,7 +13898,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Nebrodi",
@@ -14074,7 +13909,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione di Comuni Montana Lunigiana",
@@ -14085,7 +13920,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione dei Comuni dell'Eridano",
@@ -14096,7 +13931,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "UNIONE DEI COMUNI \"GELA BUTERA NISCEMI\"",
@@ -14107,7 +13942,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni dell'Istmo",
@@ -14129,7 +13964,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni della Media Valle Camonica - Civilta' Delle Pietre",
@@ -14162,7 +13997,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione di Comuni Lombarda Palvareta Nova",
@@ -14184,7 +14019,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Costa del Sinis Terra Dei Giganti",
@@ -14195,7 +14030,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni Terra di Leuca",
@@ -14206,7 +14041,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione di Comuni Lombarda Terrae Nobilis",
@@ -14217,7 +14052,18 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
+   "name": "Unione Terre Dei Peligni",
+   "domain": "unioneterredeipeligni.aq.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni di Francofonte e Licodie Eubea",
@@ -14228,7 +14074,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione di Comuni Valle del Patri",
@@ -14239,7 +14085,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Lombarda Valle del Po",
@@ -14250,7 +14096,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Valle del Sosio",
@@ -14261,7 +14107,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni della Valle del Tammaro",
@@ -14272,7 +14118,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Valle del Tidone",
@@ -14283,7 +14129,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Valli Astigiane",
@@ -14294,7 +14140,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni Valli Dei Nebrodi",
@@ -14305,7 +14151,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni della Valsaviore",
@@ -14338,7 +14184,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituzione Scolastica Valdigne Mont-Blanc",
@@ -14349,7 +14195,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni della Val di Merse",
@@ -14382,7 +14228,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Valvasone Arzene",
@@ -14396,28 +14242,6 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Ordine dei Dottori Commercialisti e degli Esperti Contabili di Verbania",
-   "domain": "verbania.commercialisti.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Ordine Dei Dottori Commercialisti e Degli Esperti Contabili di Vercelli",
-   "domain": "vercelli.commercialisti.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
    "name": "Unione Comuni Vette Dei Nebrodi",
    "domain": "vettedeinebrodi.it",
    "provider": "unknown",
@@ -14426,18 +14250,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
-  },
-  {
-   "name": "Ipab Villa Betania",
-   "domain": "villabetania.agrigento.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "VILLASERVICE SPA IN  LIQUIDAZIONE",
@@ -14448,7 +14261,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Virgilio S.R.L.",
@@ -14459,7 +14272,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Fondazione Musei Civici di Venezia",
@@ -14470,7 +14283,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Voltano S.P.A.",
@@ -14481,7 +14294,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio Notarile Dei Distretti Riuniti di Forli' e Rimini",
@@ -14492,7 +14305,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Consiglio Notarile Dei Distretti Riuniti di La Spezia e Massa",
@@ -14503,7 +14316,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Unione Dei Comuni della Valle dell'Olio",
@@ -14514,7 +14327,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Architetti Pianificatori Paesaggisti e Conservatori della Prov. di Macerata",
@@ -14525,7 +14338,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Ordine Medici Veterinari Messina",
@@ -14536,7 +14349,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Comunita Montana Montagna Sangro Vastese",
@@ -14547,7 +14360,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "CENTRO DI FORMAZIONE PROFESSIONALE DIPL. ING. LUIS ZUEGG MERANO",
@@ -14558,7 +14371,18 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
+   "name": "Azienda di Servizi alla Persona Casa Leandra di Canneto Sull' Oglio",
+   "domain": "asp.canneto.mn.it",
+   "provider": "pa-contractor-private",
+   "confidence": 0.4,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "cloudscan3.ilger.com",
+   "reason": "MX is ilger vendor relay; mail managed by the PA vendor (no primary cloud signal)"
   },
   {
    "name": "Azienda Territoriale Edilizia Residenziale della Provincia di Padova",
@@ -14825,6 +14649,17 @@
    "reason": "MX is ilger gateway; autodiscover points to aruba"
   },
   {
+   "name": "Fondazione per la Promozione dell'Università nel Ponente Ligure (P.U.PO.LI.)",
+   "domain": "imperia.unige.it",
+   "provider": "pa-contractor-private",
+   "confidence": 0.4,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "cloudscan24.ilger.com",
+   "reason": "MX is ilger vendor relay; mail managed by the PA vendor (no primary cloud signal)"
+  },
+  {
    "name": "Agenzia Regionale per La Tecnologia e L'Innovazione della Regione Puglia",
    "domain": "old.arti.puglia.it",
    "provider": "pa-contractor-private",
@@ -14902,6 +14737,17 @@
    "reason": "MX is sophos gateway; autodiscover points to aruba"
   },
   {
+   "name": "Unione Dei Comuni Valle del Tevere Soratte",
+   "domain": "santoreste.rm.gov.it",
+   "provider": "aruba",
+   "confidence": 0.4,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx-01-eu-west-1.prod.hydra.sophos.com",
+   "reason": "MX is sophos gateway; autodiscover points to aruba"
+  },
+  {
    "name": "Consorzio Socio Assistenziale Alba Langhe Roero",
    "domain": "sesaler.it",
    "provider": "aruba",
@@ -14946,6 +14792,17 @@
    "reason": "MX is ilger gateway; autodiscover points to aruba"
   },
   {
+   "name": "Ordine dei Dottori Commercialisti e degli Esperti Contabili di Verbania",
+   "domain": "verbania.commercialisti.it",
+   "provider": "pa-contractor-private",
+   "confidence": 0.4,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.carboniocloud.com",
+   "reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
+  },
+  {
    "name": "Consorzio Gestione Anagrafica Professioni Sanitarie",
    "domain": "wp.cogeaps.it",
    "provider": "pa-contractor-private",
@@ -14977,18 +14834,6 @@
    ],
    "mx": "antispam.halleylombardia.it",
    "reason": "MX is halley gateway; autodiscover points to microsoft"
-  },
-  {
-   "name": "Istituto Superiore per Le Industrie Artistiche di Roma",
-   "domain": "isiaroma.it",
-   "provider": "google",
-   "confidence": 0.44,
-   "anomaly": [
-    "geo_unknown",
-    "low_confidence"
-   ],
-   "mx": "_dc-mx.36a27af53e79.isiaroma.it",
-   "reason": "MX (_dc-mx.36a27af53e79.isiaroma.it) is local gateway; DKIM reveals google backend"
   },
   {
    "name": "Caltaqua Acque di Caltanissetta S.P.A.",
@@ -15057,17 +14902,6 @@
    "reason": "MX is libraesva gateway; autodiscover points to microsoft"
   },
   {
-   "name": "ISTITUTO PROFESSIONALE PER I SERVIZI ALBERGHIERI E RISTORAZIONE - S. SAVIOLI",
-   "domain": "alberghieroriccione.edu.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.alberghieroriccione.edu.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
-  },
-  {
    "name": "Asp 'Casa di Riposo Giuseppe Sirch'",
    "domain": "aspsirch.it",
    "provider": "independent",
@@ -15089,17 +14923,6 @@
    ],
    "mx": "mx1.hostinger.it",
    "reason": "MX (mx1.hostinger.it) is self-hosted"
-  },
-  {
-   "name": "Ordine Interprovinciale Dei Chimici di Cagliari Nuoro Oristano",
-   "domain": "chimicicagliari.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.chimicicagliari.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "Consorzio Interuniversitario Scienze Fisiche Applicate",
@@ -15374,6 +15197,17 @@
    "reason": "MX (relay-rupar-pri.regione.fvg.it, relay-rupar-sec.regione.fvg.it) is self-hosted"
   },
   {
+   "name": "Comune di San Bernardino Verbano",
+   "domain": "comune.sanbernardinoverbano.vb.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mail.comune.sanbernardinoverbano.vb.it",
+   "reason": "MX (mail.comune.sanbernardinoverbano.vb.it) is self-hosted"
+  },
+  {
    "name": "Comune di Scagnello",
    "domain": "comune.scagnello.cn.it",
    "provider": "independent",
@@ -15432,6 +15266,17 @@
    ],
    "mx": "mail.comune.strona.bi.it",
    "reason": "MX (mail.comune.strona.bi.it) is self-hosted"
+  },
+  {
+   "name": "Comune di Summonte",
+   "domain": "comune.summonte.av.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.comune.summonte.av.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "Comune di Tarcento",
@@ -15553,17 +15398,6 @@
    "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
-   "name": "Ente Parco Minerario Floristella Grottacalda",
-   "domain": "enteparcofloristella.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.enteparcofloristella.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
-  },
-  {
    "name": "FRIULI VENEZIA GIULIA STRADE SPA",
    "domain": "fvgstrade.it",
    "provider": "independent",
@@ -15573,6 +15407,28 @@
    ],
    "mx": "mail.fvgstrade.it",
    "reason": "MX (mail.fvgstrade.it) is self-hosted"
+  },
+  {
+   "name": "ISTITUTO COMPRENSIVO - IV NOVEMBRE",
+   "domain": "ic4novembre.edu.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.ic4novembre.edu.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
+  },
+  {
+   "name": "Istituto Comprensivo Garibaldi Leone",
+   "domain": "icgaribaldileone.edu.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.icgaribaldileone.edu.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "ISTITUTO COMPRENSIVO - IST.TO COMPR.VO LACCHIARELLA",
@@ -15585,17 +15441,6 @@
    ],
    "mx": "mail.iclacchiarella.edu.it",
    "reason": "MX (mail.iclacchiarella.edu.it) is self-hosted"
-  },
-  {
-   "name": "ISTITUTO COMPRENSIVO - PIETRAGALLA",
-   "domain": "icpietragalla.edu.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.icpietragalla.edu.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "Istituto Comprensivo G. Puecher",
@@ -15652,17 +15497,6 @@
    ],
    "mx": "mail-a.range-id.it",
    "reason": "MX (mail-a.range-id.it, rmx1.range-id.it) is self-hosted"
-  },
-  {
-   "name": "I.I.S. G.Sulpicio - Veroli",
-   "domain": "iissulpicioveroli.edu.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.iissulpicioveroli.edu.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "Training & Job cooperativa arl",
@@ -15787,17 +15621,6 @@
    "reason": "MX (mx1.lonex.com, mx2.lonex.com) is self-hosted"
   },
   {
-   "name": "Ordine Dei Medici Veterinari Provincia Siracusa",
-   "domain": "ordineveterinarisiracusa.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.ordineveterinarisiracusa.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
-  },
-  {
    "name": "ISTITUTO COMPRENSIVO - IC G.PARINI - CATANIA",
    "domain": "parinict.edu.it",
    "provider": "pa-contractor-private",
@@ -15807,6 +15630,17 @@
    ],
    "mx": "mail.gecomail.net",
    "reason": "MX is gecomail vendor relay; mail managed by the PA vendor (no primary cloud signal)"
+  },
+  {
+   "name": "Collegio dei Periti Agrari e dei Periti Agrari Laureati della Provincia di Bari",
+   "domain": "peritiagrari.bari.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.peritiagrari.bari.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "COMMISSARIO DELEGATO STRAORDINARIO EMERGENZA COVID-19 - REGIONE SICILIANA",
@@ -15819,17 +15653,6 @@
    ],
    "mx": "mail.potenziamentoreteospedaliera.sicilia.it",
    "reason": "MX (mail.potenziamentoreteospedaliera.sicilia.it) is self-hosted"
-  },
-  {
-   "name": "Scuola Secondaria di I Grado Mastro Giorgio Nelli",
-   "domain": "scuolamastrogiorgionelli.edu.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.scuolamastrogiorgionelli.edu.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "Societa' della Salute Zona Fiorentina Nord Ovest",
@@ -15864,17 +15687,6 @@
    ],
    "mx": "mail.parktons.com",
    "reason": "MX (mail.parktons.com) is self-hosted"
-  },
-  {
-   "name": "Unione Terre Dei Peligni",
-   "domain": "unioneterredeipeligni.aq.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.unioneterredeipeligni.aq.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
    "name": "Assemblea Territoriale Idrica di Siracusa",
@@ -15921,6 +15733,17 @@
    "reason": "MX (mail.comune.moiola.cn.it) is self-hosted"
   },
   {
+   "name": "Comune di Rossa",
+   "domain": "comune.rossa.vc.it",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "mail.comune.rossa.vc.it",
+   "reason": "MX (mail.comune.rossa.vc.it) is self-hosted"
+  },
+  {
    "name": "Comune di Quarrata",
    "domain": "comunequarrata.it",
    "provider": "independent",
@@ -15930,6 +15753,17 @@
    ],
    "mx": "posta.ideafutura.com",
    "reason": "MX (posta.ideafutura.com) is self-hosted"
+  },
+  {
+   "name": "Comune di Rotella",
+   "domain": "comunerotella.net",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "mail.comunerotella.net",
+   "reason": "MX (mail.comunerotella.net) is self-hosted"
   },
   {
    "name": "Consorzio per lo Sviluppo del Polo Universitario di Gorizia",
@@ -16119,6 +15953,17 @@
    "reason": "MX (kalatimpianti.it) is self-hosted"
   },
   {
+   "name": "LICEO SCIENTIFICO - LEONARDO - BRESCIA",
+   "domain": "liceoleonardobs.it",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "mail.liceoleonardobs.gov.it",
+   "reason": "MX (mail.liceoleonardobs.gov.it, mail.liceoleonardobs.it) is self-hosted"
+  },
+  {
    "name": "LICEO CLASSICO - RUGGERO SETTIMO",
    "domain": "liceorsettimo.edu.it",
    "provider": "independent",
@@ -16185,6 +16030,17 @@
    "reason": "MX (valle.vallinrete.org) is self-hosted"
   },
   {
+   "name": "Sistema Bibliotecario Territoriale Jonico",
+   "domain": "yahoo.it",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "europe.mta.mail.yahoo.com",
+   "reason": "MX (europe.mta.mail.yahoo.com) is self-hosted"
+  },
+  {
    "name": "Istituto Istruzione Superiore Crescenzi Pacinotti Sirani",
    "domain": "crescenzipacinottisirani.edu.it",
    "provider": "microsoft",
@@ -16227,6 +16083,17 @@
    ],
    "mx": "vareserowing-com.mail.protection.outlook.com",
    "reason": "MX record (vareserowing-com.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "Istituto Comprensivo Futura",
+   "domain": "icfutura.edu.it",
+   "provider": "microsoft",
+   "confidence": 0.94,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "icfutura.edu-it.mail.protection.outlook.com",
+   "reason": "MX record (icfutura.edu-it.mail.protection.outlook.com) matches Microsoft"
   },
   {
    "name": "Istituto Comprensivo Bruno Munari",
