@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-24 16:55 UTC",
+ "generated_at": "2026-11-25 15:19 UTC",
  "country": "IT",
- "total_entities": 22926,
- "anomalies_total": 1459,
- "anomalies_pct": 6.36,
+ "total_entities": 22928,
+ "anomalies_total": 1461,
+ "anomalies_pct": 6.37,
  "by_type": {
   "no_mx": 620,
-  "gateway_no_primary": 684,
+  "gateway_no_primary": 683,
   "low_confidence": 116,
-  "geo_unknown": 80
+  "geo_unknown": 83
  },
  "by_type_label": {
   "no_mx": "Nessun MX",
@@ -17,15 +17,15 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1304,
-  "independent": 94,
+  "unknown": 1303,
+  "independent": 96,
   "aruba": 24,
   "pa-contractor-private": 21,
-  "microsoft": 14,
+  "microsoft": 15,
   "ovh": 1,
   "google": 1
  },
- "classified_but_anomalous": 155,
+ "classified_but_anomalous": 158,
  "entries": [
   {
    "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
@@ -2303,7 +2303,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 4 candidates; none yielded MX"
   },
   {
    "name": "Comune di Argelato",
@@ -2336,7 +2336,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Arsoli",
@@ -2787,7 +2787,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Cairo Montenotte",
@@ -2842,7 +2842,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Campo di Giove",
@@ -3843,7 +3843,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Crognaleto",
@@ -4822,7 +4822,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Marano Lagunare",
@@ -5317,7 +5317,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Niardo",
@@ -6505,7 +6505,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ronchi dei Legionari",
@@ -6528,17 +6528,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Comune di Roppolo",
-   "domain": "comune.roppolo.bi.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Rosa'",
@@ -6945,7 +6934,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Santhia'",
@@ -7077,7 +7066,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Schilpario",
@@ -7309,17 +7298,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Comune di Subiaco",
-   "domain": "comune.subiaco.rm.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sulzano",
@@ -7792,7 +7770,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Varapodio",
@@ -8287,7 +8265,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Picciano",
@@ -9233,7 +9211,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione Dei Comuni dall'Eleuterio a Rocca Busambra",
@@ -9368,17 +9346,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "Euro.Pa Service Srl",
-   "domain": "europa-service.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
    "name": "Ente Zona Industriale Trieste - EZIT",
    "domain": "ezit.ts.it",
    "provider": "unknown",
@@ -9392,6 +9359,17 @@
   {
    "name": "Scuola Professionale per L'Economia Domestica e Agroalimentare Teodone e per L'Agricoltura Mair Am Hof Con Sede a Teodone",
    "domain": "fachschule-dietenheim.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
+   "name": "Scuola Professionale per La Frutti- Viti- e Orticoltura Laimburg Con Sede a Vadena",
+   "domain": "fachschule-laimburg.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -10066,10 +10044,10 @@
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
-    "gateway_no_primary"
+    "no_mx"
    ],
-   "mx": "mx10.antispam.mailspamprotection.com",
-   "reason": "MX is mailspamprotection gateway; no primary signal identifies the backend (gateway_no_primary)"
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "Istituto Nazionale di Neuroscienze",
@@ -10246,6 +10224,17 @@
    ],
    "mx": "mx10.antispam.mailspamprotection.com",
    "reason": "MX is mailspamprotection gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "ITS FONDAZIONE MONACO COSENZA",
+   "domain": "itscosenza.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
   },
   {
    "name": "ISTITUTO TECNICO INDUSTRIALE - ITI-FERMI - FRANCAVILLA F.",
@@ -14995,6 +14984,17 @@
    "reason": "MX (as1.consorzioterrecablate.it, as2.consorzioterrecablate.it) is self-hosted"
   },
   {
+   "name": "Comune di Colledimacine",
+   "domain": "comune.colledimacine.ch.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.comune.colledimacine.ch.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
+  },
+  {
    "name": "Comune di Corno di Rosazzo",
    "domain": "comune.corno-di-rosazzo.ud.it",
    "provider": "independent",
@@ -15521,17 +15521,6 @@
    "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
   },
   {
-   "name": "ITS FONDAZIONE MONACO COSENZA",
-   "domain": "itscosenza.it",
-   "provider": "independent",
-   "confidence": 0.5,
-   "anomaly": [
-    "low_confidence"
-   ],
-   "mx": "mx.itscosenza.it",
-   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
-  },
-  {
    "name": "ITS PER LE NUOVE TECNOLOGIE PER IL MADE IN ITALY EMPORIUM DEL GOLFO",
    "domain": "itsemporiumdelgolfo.it",
    "provider": "independent",
@@ -15689,6 +15678,17 @@
    "reason": "MX (mail.parktons.com) is self-hosted"
   },
   {
+   "name": "Agenzia Regionale per La Lingua Friulana",
+   "domain": "arlef.it",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "mail.arlef.it",
+   "reason": "MX (mail.arlef.it) is self-hosted"
+  },
+  {
    "name": "Assemblea Territoriale Idrica di Siracusa",
    "domain": "atisiracusa.it",
    "provider": "independent",
@@ -15797,6 +15797,17 @@
    ],
    "mx": "localhost",
    "reason": "MX (localhost) is self-hosted"
+  },
+  {
+   "name": "Fondazione Teatro Pirandello - Valle Dei Templi",
+   "domain": "fondazioneteatropirandello.it",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "mail.fondazioneteatropirandello.it",
+   "reason": "MX (mail.fondazioneteatropirandello.it) is self-hosted"
   },
   {
    "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO SUPERIORE STATALE'G. GALILEI'",
@@ -16116,6 +16127,17 @@
    ],
    "mx": "istitutoberenini-edu-it.mail.protection.outlook.com",
    "reason": "MX record (istitutoberenini-edu-it.mail.protection.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "Technologies for Water Services S.p.A.",
+   "domain": "twsacea.com",
+   "provider": "microsoft",
+   "confidence": 0.94,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "twsacea-com.mail.protection.outlook.com",
+   "reason": "MX record (twsacea-com.mail.protection.outlook.com) matches Microsoft"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
-  "n_purged": 501,
+  "n_purged": 503,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -1135,6 +1135,17 @@
       "old_reason": "MX record (comune-napoli-it.mail.protection.outlook.com) matches Microsoft"
     },
     {
+      "id": "IT-C7-isiao",
+      "name": "Istituto Italiano per l'Africa e l'Oriente",
+      "codice_ipa": "isiao",
+      "seed_domain": "isiao.it",
+      "claimed_domain": "comune.roma.it",
+      "reject_reason": "unrelated",
+      "old_mx": "comune-roma-it.mail.protection.outlook.com",
+      "old_provider": "microsoft",
+      "old_reason": "MX record (comune-roma-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
       "id": "IT-C7-nscm",
       "name": "Nuova Scuola Comunale di Musica",
       "codice_ipa": "nscm",
@@ -2233,6 +2244,17 @@
       "old_mx": "comune-brunico-bz-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-brunico-bz-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
+      "id": "IT-L1-splfvo",
+      "name": "Scuola Professionale per La Frutti- Viti- e Orticoltura Laimburg Con Sede a Vadena",
+      "codice_ipa": "splfvo",
+      "seed_domain": "fachschule-laimburg.it",
+      "claimed_domain": "comune.vadena.bz.it",
+      "reject_reason": "unrelated",
+      "old_mx": "es1.gvcc.net",
+      "old_provider": "regional-public",
+      "old_reason": "MX record (es1.gvcc.net, es2.gvcc.net) matches Italian regional public ICT"
     },
     {
       "id": "IT-L1-sppacrm",
@@ -4677,17 +4699,6 @@
       "old_reason": "MX (mx1.comune.cittadellapieve.pg.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
-      "id": "IT-L37-epss",
-      "name": "Euro.Pa Service Srl",
-      "codice_ipa": "epss",
-      "seed_domain": "europa-service.it",
-      "claimed_domain": "comune.legnano.mi.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx.carboniocloud.com",
-      "old_provider": "pa-contractor-private",
-      "old_reason": "MX is carbonio mailbox host (Zimbra/Carbonio farm); mailboxes hosted at the vendor's farm"
-    },
-    {
       "id": "IT-L37-esrl",
       "name": "Emmegi S.R.L.",
       "codice_ipa": "esrl",
@@ -5357,6 +5368,17 @@
       "old_mx": "comune-gardonevaltrompia-bs-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-gardonevaltrompia-bs-it.mail.protection.outlook.com) matches Microsoft"
+    },
+    {
+      "id": "IT-SA-HGG87R59",
+      "name": "ITS FONDAZIONE MONACO COSENZA",
+      "codice_ipa": "hgg87r59",
+      "seed_domain": "itscosenza.it",
+      "claimed_domain": "comune.cosenza.it",
+      "reject_reason": "unrelated",
+      "old_mx": "mx.comune.cosenza.it",
+      "old_provider": "aruba",
+      "old_reason": "MX (mx.comune.cosenza.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-SA-JRRHBYMO",
