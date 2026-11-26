@@ -1,5 +1,5 @@
 {
-  "n_purged": 503,
+  "n_purged": 502,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -559,8 +559,8 @@
       "claimed_domain": "comune.alvito.fr.it",
       "reject_reason": "unrelated",
       "old_mx": "mail.comune.alvito.fr.it",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.comune.alvito.fr.it) hosted on Local ISP (Serverplan (IT))"
+      "old_provider": "independent",
+      "old_reason": "MX (mail.comune.alvito.fr.it) is self-hosted"
     },
     {
       "id": "IT-C14-cpts_079",
@@ -1020,7 +1020,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+      "old_mx": "ms78257242.msv1.invalid",
       "old_provider": "unknown",
       "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
@@ -1342,17 +1342,6 @@
       "old_mx": "comunesolesino-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comunesolesino-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
-      "id": "IT-COM-032002",
-      "name": "Comune di Monrupino Repentabor",
-      "codice_ipa": "c_f378",
-      "seed_domain": "monrupino-repentabor.it",
-      "claimed_domain": "comune.monrupino.ts.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
-      "old_provider": "unknown",
-      "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
     {
       "id": "IT-COM-036047",
@@ -3936,8 +3925,8 @@
       "claimed_domain": "comune.paterno.ct.it",
       "reject_reason": "unrelated",
       "old_mx": "mail.comune.paterno.ct.it",
-      "old_provider": "local-isp",
-      "old_reason": "MX (mail.comune.paterno.ct.it) hosted on Local ISP (Fastweb (IT))"
+      "old_provider": "independent",
+      "old_reason": "MX (mail.comune.paterno.ct.it) is self-hosted"
     },
     {
       "id": "IT-L34-isalt",

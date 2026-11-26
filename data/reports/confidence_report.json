@@ -1,36 +1,37 @@
 {
   "country": "IT",
-  "n": 22928,
+  "n": 22930,
   "mean": 0.809,
   "median": 0.9,
   "mean_nonzero": 0.858,
   "buckets": {
-    "0.90-1.00 (molto alta)": 12108,
-    "0.80-0.89 (alta)": 8103,
-    "0.60-0.79 (media)": 1298,
-    "0.00 (nulla / unknown)": 1303,
+    "0.90-1.00 (molto alta)": 12104,
+    "0.80-0.89 (alta)": 8104,
+    "0.60-0.79 (media)": 1301,
+    "0.00 (nulla / unknown)": 1305,
     "0.01-0.59 (bassa)": 116
   },
   "rules": {
-    "mx_spf": 12108,
-    "dom_mx_spf": 2185,
+    "mx_spf": 12104,
+    "dom_mx_spf": 2187,
     "spf_gw": 278,
-    "mx_only": 5918,
-    "no_mx": 623,
+    "mx_only": 5917,
+    "no_mx": 624,
     "dkim_gw": 7,
-    "gateway_no_primary": 680,
+    "gateway_no_primary": 681,
     "fallback": 48,
-    "frgn_mx_spf": 786,
+    "frgn_mx_spf": 787,
     "dom_mx_only": 227,
-    "frgn_mx_only": 68
+    "frgn_mx_only": 68,
+    "dkim_spf": 2
   },
   "jurisdiction": {
-    "foreign": 11569,
-    "domestic": 10415,
+    "foreign": 11565,
+    "domestic": 10417,
     "mixed": 241,
-    "unknown": 703
+    "unknown": 707
   },
-  "domestic_mx_override": 203,
+  "domestic_mx_override": 201,
   "bounce_candidates": 116,
   "bounce_by_provider": {
     "pa-contractor-private": 21,
@@ -49,7 +50,7 @@
     "independent": 0.716,
     "local-isp": 0.801,
     "unknown": 0.0,
-    "google": 0.871,
+    "google": 0.87,
     "aruba": 0.884,
     "seeweb": 0.842,
     "pa-contractor-private": 0.745,

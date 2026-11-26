@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-25 15:19 UTC",
+ "generated_at": "2026-11-26 14:32 UTC",
  "country": "IT",
- "total_entities": 22928,
- "anomalies_total": 1461,
- "anomalies_pct": 6.37,
+ "total_entities": 22930,
+ "anomalies_total": 1466,
+ "anomalies_pct": 6.39,
  "by_type": {
-  "no_mx": 620,
-  "gateway_no_primary": 683,
+  "no_mx": 621,
+  "gateway_no_primary": 684,
   "low_confidence": 116,
-  "geo_unknown": 83
+  "geo_unknown": 86
  },
  "by_type_label": {
   "no_mx": "Nessun MX",
@@ -17,15 +17,15 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1303,
-  "independent": 96,
+  "unknown": 1305,
+  "independent": 97,
   "aruba": 24,
   "pa-contractor-private": 21,
-  "microsoft": 15,
-  "ovh": 1,
-  "google": 1
+  "microsoft": 16,
+  "google": 2,
+  "ovh": 1
  },
- "classified_but_anomalous": 158,
+ "classified_but_anomalous": 161,
  "entries": [
   {
    "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
@@ -190,7 +190,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 4 candidates; none yielded MX"
   },
   {
    "name": "Agenzia per lo Sviluppo",
@@ -1159,7 +1159,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Azienda Speciale Vola",
@@ -1247,7 +1247,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Consorzio Dei Comuni del Bacino Imbrifero Montano del Piave dell'Alta Valcellina",
@@ -2270,7 +2270,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arbus",
@@ -2303,7 +2303,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 4 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Argelato",
@@ -2336,7 +2336,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arsoli",
@@ -2787,7 +2787,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Cairo Montenotte",
@@ -2842,7 +2842,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Campo di Giove",
@@ -3843,7 +3843,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Crognaleto",
@@ -4284,17 +4284,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Comune di Fumane",
-   "domain": "comune.fumane.vr.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Gaiole in Chianti",
@@ -4954,7 +4943,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Meolo",
@@ -5065,6 +5054,17 @@
    ],
    "mx": "spamtitan.antispamsolution.it",
    "reason": "MX is antispamsolution gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "Comune di Monrupino Repentabor",
+   "domain": "comune.monrupino.ts.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "gateway_no_primary"
+   ],
+   "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
+   "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
    "name": "Comune di Montalcino",
@@ -5713,7 +5713,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Pietrasanta",
@@ -6461,7 +6461,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Roghudi",
@@ -6530,6 +6530,17 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
+   "name": "Comune di Roppolo",
+   "domain": "comune.roppolo.bi.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Rosa'",
    "domain": "comune.rosa.vi.it",
    "provider": "unknown",
@@ -6593,7 +6604,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sagrado",
@@ -6934,7 +6945,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Santhia'",
@@ -7000,7 +7011,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sauris",
@@ -7066,7 +7077,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Schilpario",
@@ -7300,6 +7311,17 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
+   "name": "Comune di Subiaco",
+   "domain": "comune.subiaco.rm.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Sulzano",
    "domain": "comune.sulzano.bs.it",
    "provider": "unknown",
@@ -7375,6 +7397,17 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
+   "name": "Comune di Tavigliano",
+   "domain": "comune.tavigliano.bi.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Teglio Veneto",
@@ -8001,7 +8034,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Zone",
@@ -8298,7 +8331,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ricadi",
@@ -8353,7 +8386,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di San Sebastiano al Vesuvio",
@@ -9167,7 +9200,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Liceo Andrea Maffei",
@@ -9211,7 +9244,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni dall'Eleuterio a Rocca Busambra",
@@ -10668,17 +10701,6 @@
   {
    "name": "Ente Provinciale per il Turismo di Isernia",
    "domain": "moliseturismo.eu",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
-   "name": "Comune di Monrupino Repentabor",
-   "domain": "monrupino-repentabor.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -13799,7 +13821,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni della Teverina",
@@ -15799,6 +15821,17 @@
    "reason": "MX (localhost) is self-hosted"
   },
   {
+   "name": "Parco Lombardo della Valle del Ticino",
+   "domain": "ente.parcoticino.it",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "mail.parcoticino.it",
+   "reason": "MX (mail.parcoticino.it) is self-hosted"
+  },
+  {
    "name": "Fondazione Teatro Pirandello - Valle Dei Templi",
    "domain": "fondazioneteatropirandello.it",
    "provider": "independent",
@@ -16050,6 +16083,28 @@
    ],
    "mx": "europe.mta.mail.yahoo.com",
    "reason": "MX (europe.mta.mail.yahoo.com) is self-hosted"
+  },
+  {
+   "name": "AZIENDA SOCIO SANITARIA LOCALE N. 1 DI SASSARI",
+   "domain": "asl1sassari.it",
+   "provider": "google",
+   "confidence": 0.62,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "mx01.sardegnasalute.it",
+   "reason": "MX (mx01.sardegnasalute.it, mx02.sardegnasalute.it) is local gateway; DKIM reveals google backend"
+  },
+  {
+   "name": "Agenzia Regionale di Protezione Civile Regione Abruzzo",
+   "domain": "protezionecivile.regione.abruzzo.it",
+   "provider": "microsoft",
+   "confidence": 0.64,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "smtp2.regione.abruzzo.it",
+   "reason": "MX (smtp2.regione.abruzzo.it) is local gateway; DKIM reveals microsoft backend"
   },
   {
    "name": "Istituto Istruzione Superiore Crescenzi Pacinotti Sirani",

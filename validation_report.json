@@ -1,5 +1,5 @@
 {
-  "total": 22928,
+  "total": 22930,
   "average_score": 80.6,
   "high_confidence_pct": 73.8,
   "quality_passed": false,
@@ -17687,7 +17687,7 @@
     },
     "IT-C14-odipnu": {
       "name": "Ordine Degli Ingegneri della Provincia di Nuoro",
-      "provider": "local-isp",
+      "provider": "independent",
       "domain": "nuoro.ordingegneri.it",
       "confidence": 88,
       "flags": [
@@ -35758,7 +35758,7 @@
     "IT-COM-006002": {
       "name": "Comune di Albera Ligure",
       "provider": "independent",
-      "domain": "comune.alberaligure.al.it",
+      "domain": "cert.ruparpiemonte.it",
       "confidence": 80,
       "flags": [
         "spf_strict",
@@ -60849,13 +60849,14 @@
     },
     "IT-COM-023035": {
       "name": "Comune di Fumane",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.fumane.vr.it",
-      "confidence": 15,
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-023036": {
@@ -69100,12 +69101,14 @@
     "IT-COM-032002": {
       "name": "Comune di Monrupino Repentabor",
       "provider": "unknown",
-      "domain": "monrupino-repentabor.it",
-      "confidence": 15,
+      "domain": "comune.monrupino.ts.it",
+      "confidence": 85,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "multiple_mx",
+        "spf_strict",
+        "mx_spf_match",
+        "provider_unknown",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-COM-032003": {
@@ -73199,7 +73202,7 @@
     },
     "IT-COM-041067": {
       "name": "Comune di Urbino",
-      "provider": "regional-public",
+      "provider": "independent",
       "domain": "comune.urbino.ps.it",
       "confidence": 90,
       "flags": [
@@ -81529,15 +81532,13 @@
     },
     "IT-COM-058103": {
       "name": "Comune di Subiaco",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "comune.subiaco.rm.it",
-      "confidence": 85,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "multi_provider_spf:aws+hubspot+microsoft",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-058104": {
@@ -108367,14 +108368,13 @@
     },
     "IT-COM-096054": {
       "name": "Comune di Roppolo",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "comune.roppolo.bi.it",
-      "confidence": 95,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-096055": {
@@ -108467,14 +108467,13 @@
     },
     "IT-COM-096066": {
       "name": "Comune di Tavigliano",
-      "provider": "microsoft",
+      "provider": "unknown",
       "domain": "comune.tavigliano.bi.it",
-      "confidence": 95,
+      "confidence": 15,
       "flags": [
-        "spf_strict",
-        "mx_spf_match",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-096067": {
@@ -118300,7 +118299,7 @@
     },
     "IT-CONS-JZXL7734": {
       "name": "Agenzia Regionale di Protezione Civile Regione Abruzzo",
-      "provider": "independent",
+      "provider": "microsoft",
       "domain": "protezionecivile.regione.abruzzo.it",
       "confidence": 80,
       "flags": [
@@ -136443,13 +136442,12 @@
     },
     "IT-L33-AV9ALT9C": {
       "name": "ISTITUTO COMPRENSIVO GIOVANNI XXIII DE AMICIS",
-      "provider": "pa-contractor-private",
-      "domain": "secondocircolotriggiano.edu.it",
-      "confidence": 85,
+      "provider": "aruba",
+      "domain": "icgiovannixxiiiedmondodeamicis.edu.it",
+      "confidence": 50,
       "flags": [
-        "mx_spf_match",
-        "provider_classified",
-        "provider_via_gateway_spf"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-AVUZ73LG": {
@@ -147408,14 +147406,13 @@
     },
     "IT-L33-icsiq": {
       "name": "Istituto Comprensivo Settimo IV",
-      "provider": "istruzione-miur-tenant",
-      "domain": "ddivcircolosettimo.it",
-      "confidence": 80,
+      "provider": "pa-contractor-private",
+      "domain": "icsettimo4.edu.it",
+      "confidence": 85,
       "flags": [
-        "spf_strict",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-icsis_0": {
@@ -158965,12 +158962,10 @@
     "IT-L33-istsc_avis002002": {
       "name": "Istituto Omnicomprensivo Statale Francesco De Sanctis",
       "provider": "google",
-      "domain": "icscomoalbate.edu.it",
-      "confidence": 93,
+      "domain": "desanctislacedonia.edu.it",
+      "confidence": 70,
       "flags": [
         "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -174517,13 +174512,13 @@
     },
     "IT-L33-istsc_fepc01000e": {
       "name": "LICEO CLASSICO - LC LICEO GINNASIO 'G.CEVOLANI'",
-      "provider": "google",
-      "domain": "liceocevolani.it",
-      "confidence": 93,
+      "provider": "istruzione-miur-tenant",
+      "domain": "liceocevolani.edu.it",
+      "confidence": 80,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
+        "spf_strict",
         "mx_spf_match",
+        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -176020,7 +176015,7 @@
     "IT-L33-istsc_fiis00700q": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - ISTITUTO TECNICO AGRARIO STATALE",
       "provider": "google",
-      "domain": "agrariofirenze.eu",
+      "domain": "agrariofirenze.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -190967,13 +190962,12 @@
     },
     "IT-L33-istsc_naic83600q": {
       "name": "ISTITUTO COMPRENSIVO - ANACAPRI - I.C. GEMITO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "istitutocomprensivogemito.gov.it",
-      "confidence": 80,
+      "provider": "local-isp",
+      "domain": "icgemitonievo.edu.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -205610,7 +205604,7 @@
       ]
     },
     "IT-L33-istsc_riic81900a": {
-      "name": "ISTITUTO COMPRENSIVO - ISTITUTO ONNICOMPRENSIVO",
+      "name": "ISTITUTO ONNICOMPRENSIVO STATALE BORGOROSE",
       "provider": "pa-contractor-private",
       "domain": "istitutoonnicomprensivoborgorose.edu.it",
       "confidence": 85,
@@ -214759,13 +214753,13 @@
     },
     "IT-L33-istsc_ssps040001": {
       "name": "LICEO SCIENTIFICO - GIOVANNI SPANO",
-      "provider": "istruzione-miur-tenant",
-      "domain": "liceospanosassari.gov.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "liceospano.edu.it",
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -238004,6 +237998,19 @@
         "autodiscover_confirms"
       ]
     },
+    "IT-L37-80QBFIG2": {
+      "name": "AZIENDA SPECIALE SERVIZI ALLA PERSONA DELL'ASOLANO A.S.P.A.",
+      "provider": "pa-contractor-private",
+      "domain": "aspa-asola.it",
+      "confidence": 95,
+      "flags": [
+        "multiple_mx",
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
+      ]
+    },
     "IT-L37-81J321XP": {
       "name": "VELOCE' INDUSTRY SRL",
       "provider": "aruba",
@@ -239197,7 +239204,7 @@
     },
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
-      "provider": "local-isp",
+      "provider": "independent",
       "domain": "flegrealavoro.com",
       "confidence": 88,
       "flags": [
@@ -249097,7 +249104,7 @@
     },
     "IT-L38-cnz_pvdt": {
       "name": "Parco Lombardo della Valle del Ticino",
-      "provider": "local-isp",
+      "provider": "independent",
       "domain": "ente.parcoticino.it",
       "confidence": 90,
       "flags": [
@@ -254481,7 +254488,7 @@
     },
     "IT-L7-5DNNOS0T": {
       "name": "AZIENDA SOCIO SANITARIA LOCALE N. 1 DI SASSARI",
-      "provider": "independent",
+      "provider": "google",
       "domain": "asl1sassari.it",
       "confidence": 83,
       "flags": [
@@ -262771,6 +262778,18 @@
         "multiple_mx",
         "mx_spf_match",
         "provider_classified"
+      ]
+    },
+    "IT-SA-KXNDPMMG": {
+      "name": "ENAC SERVIZI S.R.L. UNIPERSONALE",
+      "provider": "microsoft",
+      "domain": "enacservizi.it",
+      "confidence": 95,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-SA-KZB0I4V5": {
