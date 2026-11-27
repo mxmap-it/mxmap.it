@@ -1,5 +1,5 @@
 {
-  "total": 22930,
+  "total": 22931,
   "average_score": 80.6,
   "high_confidence_pct": 73.8,
   "quality_passed": false,
@@ -8924,14 +8924,13 @@
     },
     "IT-C14-cpi_za": {
       "name": "ORDINE DEI PERITI INDUSTRIALI E DEI PERITI INDUSTRIALI LAUREATI DELLA PROVINCIA DI FIRENZE",
-      "provider": "aruba",
-      "domain": "periti-industriali.firenze.it",
-      "confidence": 83,
+      "provider": "independent",
+      "domain": "periti-industriali.fi.it",
+      "confidence": 88,
       "flags": [
         "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "mx_spf_match",
+        "provider_classified"
       ]
     },
     "IT-C14-cpia_an": {
@@ -10323,13 +10322,14 @@
     },
     "IT-C14-cptro": {
       "name": "Ordine dei Tecnici Sanitari di Radiologia Medica e delle Professioni Sanitarie Tecniche, della Riabilitazione e della Prevenzione delle Province di Sassari Olbia/Tempio",
-      "provider": "unknown",
-      "domain": "tsrmsassari.it",
-      "confidence": 15,
+      "provider": "aruba",
+      "domain": "tsrmpstrpsassari.it",
+      "confidence": 83,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "independent_mx_with_cloud_spf",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-C14-cpts_021": {
@@ -32158,7 +32158,7 @@
     "IT-COM-004056": {
       "name": "Comune di Castiglione Tinella",
       "provider": "aruba",
-      "domain": "comunecastiglionetinella.it",
+      "domain": "comune.castiglionetinella.cn.it",
       "confidence": 90,
       "flags": [
         "spf_strict",
@@ -47515,7 +47515,7 @@
     },
     "IT-COM-016004": {
       "name": "Comune di Albino",
-      "provider": "aruba",
+      "provider": "independent",
       "domain": "comune.albino.bg.it",
       "confidence": 90,
       "flags": [
@@ -60849,14 +60849,13 @@
     },
     "IT-COM-023035": {
       "name": "Comune di Fumane",
-      "provider": "aruba",
+      "provider": "unknown",
       "domain": "comune.fumane.vr.it",
-      "confidence": 83,
+      "confidence": 15,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-COM-023036": {
@@ -73202,7 +73201,7 @@
     },
     "IT-COM-041067": {
       "name": "Comune di Urbino",
-      "provider": "independent",
+      "provider": "regional-public",
       "domain": "comune.urbino.ps.it",
       "confidence": 90,
       "flags": [
@@ -74859,13 +74858,12 @@
     },
     "IT-COM-045008": {
       "name": "Comune di Fosdinovo",
-      "provider": "unknown",
+      "provider": "independent",
       "domain": "comunefosdinovo.it",
-      "confidence": 15,
+      "confidence": 50,
       "flags": [
-        "no_mx",
         "no_spf",
-        "provider_unknown"
+        "provider_classified"
       ]
     },
     "IT-COM-045009": {
@@ -81532,13 +81530,15 @@
     },
     "IT-COM-058103": {
       "name": "Comune di Subiaco",
-      "provider": "unknown",
+      "provider": "microsoft",
       "domain": "comune.subiaco.rm.it",
-      "confidence": 15,
+      "confidence": 85,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "mx_spf_match",
+        "multi_provider_spf:aws+hubspot+microsoft",
+        "provider_classified",
+        "autodiscover_confirms"
       ]
     },
     "IT-COM-058104": {
@@ -102500,7 +102500,7 @@
     "IT-COM-082008": {
       "name": "Comune di Baucina",
       "provider": "aruba",
-      "domain": "egov.comune.baucina.pa.it",
+      "domain": "comune.baucina.pa.it",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -118299,7 +118299,7 @@
     },
     "IT-CONS-JZXL7734": {
       "name": "Agenzia Regionale di Protezione Civile Regione Abruzzo",
-      "provider": "microsoft",
+      "provider": "independent",
       "domain": "protezionecivile.regione.abruzzo.it",
       "confidence": 80,
       "flags": [
@@ -141729,15 +141729,11 @@
     },
     "IT-L33-ga_bz": {
       "name": "Grundschulsprengel Auer",
-      "provider": "microsoft",
-      "domain": "schule.suedtirol.it",
-      "confidence": 90,
+      "provider": "hetzner",
+      "domain": "gsp-auer.it",
+      "confidence": 70,
       "flags": [
-        "multiple_mx",
-        "spf_strict",
-        "independent_mx_with_cloud_spf",
         "provider_classified",
-        "provider_via_gateway_spf",
         "autodiscover_confirms"
       ]
     },
@@ -164072,15 +164068,12 @@
     },
     "IT-L33-istsc_bopm030005": {
       "name": "ISTITUTO MAGISTRALE - LICEO LAURA BASSI",
-      "provider": "unknown",
-      "domain": "laurabassi.it",
-      "confidence": 83,
+      "provider": "aruba",
+      "domain": "laurabassi.edu.it",
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_unknown",
-        "provider_via_gateway_spf"
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_bops01000v": {
@@ -196091,13 +196084,12 @@
     },
     "IT-L33-istsc_paic8as004": {
       "name": "ISTITUTO COMPRENSIVO STATALE MARGHERITA HACK",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icvittorioemanueleterzo.edu.it",
-      "confidence": 80,
+      "provider": "google",
+      "domain": "icmargheritahackpa.edu.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -197052,7 +197044,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.it",
+      "domain": "liceorespighi.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -218569,14 +218561,15 @@
     },
     "IT-L33-istsc_tpic83700x": {
       "name": "ISTITUTO COMPRENSIVO - I. C. 'D.ALIGHIERI' VALDERICE",
-      "provider": "istruzione-miur-tenant",
-      "domain": "icdantealighierivalderice.it",
-      "confidence": 80,
+      "provider": "unknown",
+      "domain": "icdantealighierivalderice.edu.it",
+      "confidence": 83,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
-        "provider_classified"
+        "provider_unknown",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L33-istsc_tpis002005": {
@@ -220460,14 +220453,13 @@
     },
     "IT-L33-istsc_tvtf04000t": {
       "name": "ISTITUTO TECNICO INDUSTRIALE - ITI PLANCK",
-      "provider": "aruba",
-      "domain": "icsusegana.edu.it",
-      "confidence": 83,
+      "provider": "google",
+      "domain": "maxplanck.edu.it",
+      "confidence": 55,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "multiple_mx",
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_tvtn01000n": {
@@ -236927,7 +236919,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "latina.cri.it",
+      "domain": "cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -236945,6 +236937,17 @@
         "no_mx",
         "no_spf",
         "provider_unknown"
+      ]
+    },
+    "IT-L37-26FS1QC3": {
+      "name": "castellanza servizi e patrimonio srl",
+      "provider": "pa-contractor-private",
+      "domain": "cspcastellanza.it",
+      "confidence": 85,
+      "flags": [
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
       ]
     },
     "IT-L37-28OFOBSV": {
@@ -239204,7 +239207,7 @@
     },
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "flegrealavoro.com",
       "confidence": 88,
       "flags": [
@@ -243772,7 +243775,7 @@
     "IT-L37-asaspa": {
       "name": "PLURES S.P.A.",
       "provider": "microsoft",
-      "domain": "plures.aliaserviziambientali.it",
+      "domain": "aliaserviziambientali.it",
       "confidence": 95,
       "flags": [
         "spf_strict",
@@ -249104,7 +249107,7 @@
     },
     "IT-L38-cnz_pvdt": {
       "name": "Parco Lombardo della Valle del Ticino",
-      "provider": "independent",
+      "provider": "local-isp",
       "domain": "ente.parcoticino.it",
       "confidence": 90,
       "flags": [
@@ -254488,7 +254491,7 @@
     },
     "IT-L7-5DNNOS0T": {
       "name": "AZIENDA SOCIO SANITARIA LOCALE N. 1 DI SASSARI",
-      "provider": "google",
+      "provider": "independent",
       "domain": "asl1sassari.it",
       "confidence": 83,
       "flags": [
@@ -259459,14 +259462,13 @@
     },
     "IT-S01-scshpsrl": {
       "name": "Societa' Caltanissetta Service in House Providing Srl",
-      "provider": "independent",
+      "provider": "unknown",
       "domain": "caltanissettaservice.it",
-      "confidence": 93,
+      "confidence": 15,
       "flags": [
-        "multiple_mx",
-        "spf_softfail",
-        "mx_spf_match",
-        "provider_classified"
+        "no_mx",
+        "no_spf",
+        "provider_unknown"
       ]
     },
     "IT-S01-sdiss": {
@@ -262222,13 +262224,13 @@
     },
     "IT-SA-HGG87R59": {
       "name": "ITS FONDAZIONE MONACO COSENZA",
-      "provider": "unknown",
+      "provider": "google",
       "domain": "itscosenza.it",
-      "confidence": 15,
+      "confidence": 48,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "mx_spf_mismatch",
+        "provider_classified"
       ]
     },
     "IT-SA-HI8F0SKF": {

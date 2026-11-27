@@ -1,5 +1,5 @@
 {
-  "n_purged": 502,
+  "n_purged": 501,
   "items": [
     {
       "id": "IT-C1-m_pi",
@@ -559,8 +559,8 @@
       "claimed_domain": "comune.alvito.fr.it",
       "reject_reason": "unrelated",
       "old_mx": "mail.comune.alvito.fr.it",
-      "old_provider": "independent",
-      "old_reason": "MX (mail.comune.alvito.fr.it) is self-hosted"
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.comune.alvito.fr.it) hosted on Local ISP (Serverplan (IT))"
     },
     {
       "id": "IT-C14-cpts_079",
@@ -1020,7 +1020,7 @@
       "seed_domain": "ordineveterinaripordenone.org",
       "claimed_domain": "comune.pordenone.it",
       "reject_reason": "unrelated",
-      "old_mx": "ms78257242.msv1.invalid",
+      "old_mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
       "old_provider": "unknown",
       "old_reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
     },
@@ -1353,17 +1353,6 @@
       "old_mx": "comune-zocca-mo-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-zocca-mo-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
-      "id": "IT-COM-045008",
-      "name": "Comune di Fosdinovo",
-      "codice_ipa": "c_d735",
-      "seed_domain": "comunefosdinovo.it",
-      "claimed_domain": "comune.fosdinovo.ms.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx.servizi.tix.it",
-      "old_provider": "regional-public",
-      "old_reason": "MX record (mx.servizi.tix.it) matches Italian regional public ICT"
     },
     {
       "id": "IT-COM-054031",
@@ -3925,8 +3914,8 @@
       "claimed_domain": "comune.paterno.ct.it",
       "reject_reason": "unrelated",
       "old_mx": "mail.comune.paterno.ct.it",
-      "old_provider": "independent",
-      "old_reason": "MX (mail.comune.paterno.ct.it) is self-hosted"
+      "old_provider": "local-isp",
+      "old_reason": "MX (mail.comune.paterno.ct.it) hosted on Local ISP (Fastweb (IT))"
     },
     {
       "id": "IT-L34-isalt",
@@ -5337,6 +5326,17 @@
       "old_reason": "MX record (smtp.google.com) matches Google"
     },
     {
+      "id": "IT-S01-scshpsrl",
+      "name": "Societa' Caltanissetta Service in House Providing Srl",
+      "codice_ipa": "scshpsrl",
+      "seed_domain": "caltanissettaservice.it",
+      "claimed_domain": "comune.caltanissetta.it",
+      "reject_reason": "unrelated",
+      "old_mx": "in.arubabusiness.it",
+      "old_provider": "aruba",
+      "old_reason": "MX record (in.arubabusiness.it) matches Aruba"
+    },
+    {
       "id": "IT-SA-0D7QKFH5",
       "name": "PARCAM SERVIZI S.R.L.",
       "codice_ipa": "0d7qkfh5",
@@ -5357,17 +5357,6 @@
       "old_mx": "comune-gardonevaltrompia-bs-it.mail.protection.outlook.com",
       "old_provider": "microsoft",
       "old_reason": "MX record (comune-gardonevaltrompia-bs-it.mail.protection.outlook.com) matches Microsoft"
-    },
-    {
-      "id": "IT-SA-HGG87R59",
-      "name": "ITS FONDAZIONE MONACO COSENZA",
-      "codice_ipa": "hgg87r59",
-      "seed_domain": "itscosenza.it",
-      "claimed_domain": "comune.cosenza.it",
-      "reject_reason": "unrelated",
-      "old_mx": "mx.comune.cosenza.it",
-      "old_provider": "aruba",
-      "old_reason": "MX (mx.comune.cosenza.it) on AS31034 (Aruba.it (IT)) -> aruba (ASN-based override)"
     },
     {
       "id": "IT-SA-JRRHBYMO",

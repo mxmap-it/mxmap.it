@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-26 14:32 UTC",
+ "generated_at": "2026-11-27 14:20 UTC",
  "country": "IT",
- "total_entities": 22930,
- "anomalies_total": 1466,
- "anomalies_pct": 6.39,
+ "total_entities": 22931,
+ "anomalies_total": 1464,
+ "anomalies_pct": 6.38,
  "by_type": {
-  "no_mx": 621,
+  "no_mx": 619,
   "gateway_no_primary": 684,
-  "low_confidence": 116,
-  "geo_unknown": 86
+  "low_confidence": 117,
+  "geo_unknown": 85
  },
  "by_type_label": {
   "no_mx": "Nessun MX",
@@ -17,13 +17,14 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1305,
-  "independent": 97,
+  "unknown": 1303,
+  "independent": 98,
   "aruba": 24,
   "pa-contractor-private": 21,
-  "microsoft": 16,
-  "google": 2,
-  "ovh": 1
+  "microsoft": 15,
+  "ovh": 1,
+  "regional-public": 1,
+  "google": 1
  },
  "classified_but_anomalous": 161,
  "entries": [
@@ -190,7 +191,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 4 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Agenzia per lo Sviluppo",
@@ -1159,7 +1160,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Azienda Speciale Vola",
@@ -1247,7 +1248,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Consorzio Dei Comuni del Bacino Imbrifero Montano del Piave dell'Alta Valcellina",
@@ -1373,6 +1374,17 @@
   {
    "name": "COMMISSARIO STRAORDINARIO DEL GOVERNO DELLA ZES CALABRIA",
    "domain": "calabria.zes.gov.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "cleared by is_legit gate: unrelated"
+  },
+  {
+   "name": "Societa' Caltanissetta Service in House Providing Srl",
+   "domain": "caltanissettaservice.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -2061,7 +2073,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Abbadia San Salvatore",
@@ -2303,7 +2315,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Argelato",
@@ -2787,7 +2799,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Cairo Montenotte",
@@ -2842,7 +2854,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Campo di Giove",
@@ -4286,6 +4298,17 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
+   "name": "Comune di Fumane",
+   "domain": "comune.fumane.vr.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "no_mx"
+   ],
+   "mx": null,
+   "reason": "search engine returned 1 candidates; none yielded MX"
+  },
+  {
    "name": "Comune di Gaiole in Chianti",
    "domain": "comune.gaiole.si.it",
    "provider": "unknown",
@@ -4349,7 +4372,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Gessate",
@@ -4943,7 +4966,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Meolo",
@@ -5713,7 +5736,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Pietrasanta",
@@ -6461,7 +6484,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Roghudi",
@@ -6604,7 +6627,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sagrado",
@@ -6945,7 +6968,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Santhia'",
@@ -7011,7 +7034,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sauris",
@@ -7077,7 +7100,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Schilpario",
@@ -7311,17 +7334,6 @@
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Comune di Subiaco",
-   "domain": "comune.subiaco.rm.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
    "name": "Comune di Sulzano",
    "domain": "comune.sulzano.bs.it",
    "provider": "unknown",
@@ -7451,7 +7463,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Terlizzi",
@@ -7803,7 +7815,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Varapodio",
@@ -8034,7 +8046,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Zone",
@@ -8177,7 +8189,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ruda",
@@ -8215,17 +8227,6 @@
   {
    "name": "Comune di Filacciano",
    "domain": "comunefilaccianorm.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
-   "name": "Comune di Fosdinovo",
-   "domain": "comunefosdinovo.it",
    "provider": "unknown",
    "confidence": 0.0,
    "anomaly": [
@@ -8331,7 +8332,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Ricadi",
@@ -8386,7 +8387,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di San Sebastiano al Vesuvio",
@@ -9200,7 +9201,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Liceo Andrea Maffei",
@@ -9841,6 +9842,17 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
+   "name": "ISTITUTO COMPRENSIVO - I. C. 'D.ALIGHIERI' VALDERICE",
+   "domain": "icdantealighierivalderice.edu.it",
+   "provider": "unknown",
+   "confidence": 0.0,
+   "anomaly": [
+    "gateway_no_primary"
+   ],
+   "mx": "mx10.antispam.mailspamprotection.com",
+   "reason": "MX is mailspamprotection gateway; no primary signal identifies the backend (gateway_no_primary)"
+  },
+  {
    "name": "ISTITUTO COMPRENSIVO - IC 'A.DIAZ '- MEDA",
    "domain": "icdiazmeda.edu.it",
    "provider": "unknown",
@@ -10259,17 +10271,6 @@
    "reason": "MX is mailspamprotection gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "ITS FONDAZIONE MONACO COSENZA",
-   "domain": "itscosenza.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "cleared by is_legit gate: unrelated"
-  },
-  {
    "name": "ISTITUTO TECNICO INDUSTRIALE - ITI-FERMI - FRANCAVILLA F.",
    "domain": "ittfermi.edu.it",
    "provider": "unknown",
@@ -10378,17 +10379,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "ISTITUTO MAGISTRALE - LICEO LAURA BASSI",
-   "domain": "laurabassi.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "gateway_no_primary"
-   ],
-   "mx": "mx1-hosting.jellyfish.systems",
-   "reason": "MX is jellyfish gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
    "name": "Agenzia Lavoro e Sviluppoimpresa",
@@ -13427,17 +13417,6 @@
    "reason": "MX is mailspamprotection gateway; no primary signal identifies the backend (gateway_no_primary)"
   },
   {
-   "name": "Ordine dei Tecnici Sanitari di Radiologia Medica e delle Professioni Sanitarie Tecniche, della Riabilitazione e della Prevenzione delle Province di Sassari Olbia/Tempio",
-   "domain": "tsrmsassari.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
    "name": "Turismo Torino e Provincia S.C.R.L",
    "domain": "turismotorino.org",
    "provider": "unknown",
@@ -13821,7 +13800,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Unione Dei Comuni della Teverina",
@@ -14041,7 +14020,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Unione Dei Comuni Terra di Leuca",
@@ -15385,6 +15364,17 @@
    "reason": "MX (mail.comune.vocca.vc.it) is self-hosted"
   },
   {
+   "name": "Comune di Fosdinovo",
+   "domain": "comunefosdinovo.it",
+   "provider": "independent",
+   "confidence": 0.5,
+   "anomaly": [
+    "low_confidence"
+   ],
+   "mx": "mx.comunefosdinovo.it",
+   "reason": "riclassificato da aws: segnale cloud (tenant/DKIM) presente ma MX in entrata self-hosted domestico (il tenant cloud riflette uso Teams/Share"
+  },
+  {
    "name": "Consiglio di Bacino Dolomiti Bellunesi",
    "domain": "consigliobacinoidrico.belluno.it",
    "provider": "independent",
@@ -15733,6 +15723,17 @@
    "reason": "MX (_dc-mx.059c8f35c67f.campaniaict.it) is self-hosted"
   },
   {
+   "name": "Comune di Albino",
+   "domain": "comune.albino.bg.it",
+   "provider": "independent",
+   "confidence": 0.6,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "lava.ildato.it",
+   "reason": "MX (lava.ildato.it) is self-hosted"
+  },
+  {
    "name": "Comune di Collecorvino",
    "domain": "comune.collecorvino.pe.it",
    "provider": "independent",
@@ -15819,17 +15820,6 @@
    ],
    "mx": "localhost",
    "reason": "MX (localhost) is self-hosted"
-  },
-  {
-   "name": "Parco Lombardo della Valle del Ticino",
-   "domain": "ente.parcoticino.it",
-   "provider": "independent",
-   "confidence": 0.6,
-   "anomaly": [
-    "geo_unknown"
-   ],
-   "mx": "mail.parcoticino.it",
-   "reason": "MX (mail.parcoticino.it) is self-hosted"
   },
   {
    "name": "Fondazione Teatro Pirandello - Valle Dei Templi",
@@ -16085,28 +16075,6 @@
    "reason": "MX (europe.mta.mail.yahoo.com) is self-hosted"
   },
   {
-   "name": "AZIENDA SOCIO SANITARIA LOCALE N. 1 DI SASSARI",
-   "domain": "asl1sassari.it",
-   "provider": "google",
-   "confidence": 0.62,
-   "anomaly": [
-    "geo_unknown"
-   ],
-   "mx": "mx01.sardegnasalute.it",
-   "reason": "MX (mx01.sardegnasalute.it, mx02.sardegnasalute.it) is local gateway; DKIM reveals google backend"
-  },
-  {
-   "name": "Agenzia Regionale di Protezione Civile Regione Abruzzo",
-   "domain": "protezionecivile.regione.abruzzo.it",
-   "provider": "microsoft",
-   "confidence": 0.64,
-   "anomaly": [
-    "geo_unknown"
-   ],
-   "mx": "smtp2.regione.abruzzo.it",
-   "reason": "MX (smtp2.regione.abruzzo.it) is local gateway; DKIM reveals microsoft backend"
-  },
-  {
    "name": "Istituto Istruzione Superiore Crescenzi Pacinotti Sirani",
    "domain": "crescenzipacinottisirani.edu.it",
    "provider": "microsoft",
@@ -16116,6 +16084,17 @@
    ],
    "mx": "ms77336148.msv1.invalid.outlook.com",
    "reason": "MX record (ms77336148.msv1.invalid.outlook.com) matches Microsoft"
+  },
+  {
+   "name": "Comune di Castelfranco In Miscano",
+   "domain": "comune.castefrancoinmiscano.bn.it",
+   "provider": "regional-public",
+   "confidence": 0.9,
+   "anomaly": [
+    "geo_unknown"
+   ],
+   "mx": "mail.asmecam.it",
+   "reason": "MX record (mail.asmecam.it) matches Italian regional public ICT"
   },
   {
    "name": "ISTITUTO COMPRENSIVO STATALE ANTONIO ROSMINI-DANTE ALIGHIERI",

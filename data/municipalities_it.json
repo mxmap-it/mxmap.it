@@ -24657,9 +24657,7 @@
     "district": "Benevento",
     "domain": "comune.casalduni.bn.it",
     "osm_relation_id": 41177,
-    "domain_fallbacks": [
-      "asmpec.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_b873",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "14954",
@@ -29857,11 +29855,9 @@
     "country": "IT",
     "region": "Piemonte",
     "district": "Cuneo",
-    "domain": "comunecastiglionetinella.it",
+    "domain": "comune.castiglionetinella.cn.it",
     "osm_relation_id": 43521,
-    "domain_fallbacks": [
-      "comune.castiglionetinella.cn.it"
-    ],
+    "domain_fallbacks": [],
     "ipa_codice_ipa": "c_c317",
     "ipa_codice_categoria": "L6",
     "ipa_codice_istat": "11118729",
@@ -136260,9 +136256,11 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "periti-industriali.firenze.it",
+    "domain": "periti-industriali.fi.it",
     "osm_relation_id": null,
-    "domain_fallbacks": [],
+    "domain_fallbacks": [
+      "periti-industriali.firenze.it"
+    ],
     "ipa_codice_ipa": "cpi_za",
     "ipa_codice_categoria": "C14",
     "ipa_codice_istat": null,
@@ -138167,7 +138165,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "tsrmsassari.it",
+    "domain": "tsrmpstrpsassari.it",
     "osm_relation_id": null,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "cptro",
@@ -185373,7 +185371,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "schule.suedtirol.it",
+    "domain": "gsp-auer.it",
     "osm_relation_id": null,
     "domain_fallbacks": [],
     "ipa_codice_ipa": "ga_bz",
@@ -216534,7 +216532,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "laurabassi.it",
+    "domain": "laurabassi.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -222101,8 +222099,7 @@
     "domain": "icfgesue.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
-      "istruzione.it",
-      "gmail.com"
+      "istruzione.it"
     ],
     "ipa_codice_ipa": "istsc_ceic869005",
     "ipa_codice_categoria": "L33",
@@ -265102,7 +265099,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icvittorioemanueleterzo.edu.it",
+    "domain": "icmargheritahackpa.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -298894,7 +298891,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icdantealighierivalderice.it",
+    "domain": "icdantealighierivalderice.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -301737,7 +301734,7 @@
     "country": "IT",
     "region": null,
     "district": null,
-    "domain": "icsusegana.edu.it",
+    "domain": "maxplanck.edu.it",
     "osm_relation_id": null,
     "domain_fallbacks": [
       "istruzione.it"
@@ -301745,7 +301742,7 @@
     "ipa_codice_ipa": "istsc_tvtf04000t",
     "ipa_codice_categoria": "L33",
     "ipa_codice_istat": null,
-    "ipa_codice_comune_istat": "026083",
+    "ipa_codice_comune_istat": "026091",
     "domain_source": "sito_istituzionale"
   },
   {
@@ -328214,6 +328211,21 @@
     "ipa_codice_categoria": "L37",
     "ipa_codice_istat": null,
     "ipa_codice_comune_istat": "019035",
+    "domain_source": "sito_istituzionale"
+  },
+  {
+    "id": "IT-L37-26FS1QC3",
+    "name": "castellanza servizi e patrimonio srl",
+    "country": "IT",
+    "region": null,
+    "district": null,
+    "domain": "cspcastellanza.it",
+    "osm_relation_id": null,
+    "domain_fallbacks": [],
+    "ipa_codice_ipa": "26FS1QC3",
+    "ipa_codice_categoria": "L37",
+    "ipa_codice_istat": null,
+    "ipa_codice_comune_istat": "012042",
     "domain_source": "sito_istituzionale"
   },
   {
