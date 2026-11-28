@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-27T14:20:12Z",
+  "generated_at": "2026-11-28T13:47:07Z",
   "run_id": null,
   "license": "CC BY-SA 4.0",
   "source": "https://github.com/mxmap-it/mxmap.it",
   "totals": {
-    "n_entities": 22931,
-    "n_with_mx": 22312,
-    "coverage_pct": 94.32
+    "n_entities": 22934,
+    "n_with_mx": 22317,
+    "coverage_pct": 94.33
   },
   "indices": {
     "isd": 53.42,
     "cloud_act_pct": 46.0,
-    "n_classified": 21628
+    "n_classified": 21633
   },
   "sovereignty": {
     "extra_eu": {
-      "count": 9950,
+      "count": 9953,
       "pct": 43.4,
       "label": "Extra-UE (CLOUD Act)"
     },
@@ -25,12 +25,12 @@
       "label": "Europeo (non italiano)"
     },
     "it": {
-      "count": 11554,
+      "count": 11556,
       "pct": 50.4,
       "label": "Italiano"
     },
     "unknown": {
-      "count": 1303,
+      "count": 1301,
       "pct": 5.7,
       "label": "Sconosciuto"
     }
@@ -38,25 +38,25 @@
   "top_providers": [
     {
       "name": "Provider Italiano",
-      "count": 9783,
+      "count": 9785,
       "pct": 42.7,
       "sovereignty": "it"
     },
     {
       "name": "Google Workspace",
-      "count": 6186,
+      "count": 6190,
       "pct": 27.0,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Microsoft 365",
-      "count": 3757,
+      "count": 3756,
       "pct": 16.4,
       "sovereignty": "extra_eu"
     },
     {
       "name": "Sconosciuto",
-      "count": 1303,
+      "count": 1301,
       "pct": 5.7,
       "sovereignty": "unknown"
     },
@@ -94,13 +94,13 @@
   "by_cluster": [
     {
       "cluster": "Istruzione",
-      "n_entities": 8319,
-      "usa_pct": 77.3,
+      "n_entities": 8320,
+      "usa_pct": 77.2,
       "dominant_provider": "Google Workspace"
     },
     {
       "cluster": "Enti territoriali",
-      "n_entities": 8005,
+      "n_entities": 8006,
       "usa_pct": 18.7,
       "dominant_provider": "Provider Italiano"
     },
@@ -124,8 +124,8 @@
     },
     {
       "cluster": "Stazioni Appaltanti",
-      "n_entities": 627,
-      "usa_pct": 48.6,
+      "n_entities": 628,
+      "usa_pct": 48.9,
       "dominant_provider": "Microsoft 365"
     },
     {
@@ -184,7 +184,7 @@
     }
   ],
   "confidence": {
-    "mean": 0.8088,
-    "high_pct": 88.1
+    "mean": 0.8089,
+    "high_pct": 88.2
   }
 }

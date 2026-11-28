@@ -1,5 +1,5 @@
 {
-  "total": 22931,
+  "total": 22934,
   "average_score": 80.6,
   "high_confidence_pct": 73.8,
   "quality_passed": false,
@@ -30871,13 +30871,13 @@
     },
     "IT-COM-003058": {
       "name": "Comune di Cureggio",
-      "provider": "unknown",
-      "domain": "comune.cureggio.no.it",
-      "confidence": 15,
+      "provider": "independent",
+      "domain": "cert.ruparpiemonte.it",
+      "confidence": 80,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_strict",
+        "independent_mx_with_cloud_spf",
+        "provider_classified"
       ]
     },
     "IT-COM-003060": {
@@ -47515,7 +47515,7 @@
     },
     "IT-COM-016004": {
       "name": "Comune di Albino",
-      "provider": "independent",
+      "provider": "aruba",
       "domain": "comune.albino.bg.it",
       "confidence": 90,
       "flags": [
@@ -90505,13 +90505,12 @@
     },
     "IT-COM-066093": {
       "name": "Comune di Scanno",
-      "provider": "unknown",
+      "provider": "aruba",
       "domain": "comune.scanno.aq.it",
-      "confidence": 15,
+      "confidence": 68,
       "flags": [
-        "no_mx",
-        "no_spf",
-        "provider_unknown"
+        "spf_softfail",
+        "provider_classified"
       ]
     },
     "IT-COM-066094": {
@@ -138610,6 +138609,17 @@
         "provider_classified"
       ]
     },
+    "IT-L33-QWMXCYCJ": {
+      "name": "Circolo Didattico Cesenatico",
+      "provider": "pa-contractor-private",
+      "domain": "circolodidatticocesenatico.edu.it",
+      "confidence": 85,
+      "flags": [
+        "mx_spf_match",
+        "provider_classified",
+        "provider_via_gateway_spf"
+      ]
+    },
     "IT-L33-QXMQZPQ0": {
       "name": "Istituto Comprensivo \"A. Tiraboschi\" di Paladina - Valbrembo - Brembate SP",
       "provider": "google",
@@ -151078,11 +151088,10 @@
     },
     "IT-L33-iisvce": {
       "name": "Istituto Istruzione Superiore Via Emery 97",
-      "provider": "google",
-      "domain": "iisviacemery97.edu.it",
-      "confidence": 55,
+      "provider": "local-isp",
+      "domain": "iisviacemery97.it",
+      "confidence": 50,
       "flags": [
-        "multiple_mx",
         "no_spf",
         "provider_classified"
       ]
@@ -158471,7 +158480,7 @@
       ]
     },
     "IT-L33-istsc_atic81200t": {
-      "name": "ISTITUTO COMPRENSIVO - ISTITUTO COMPRENSIVO COSTIGLIOL",
+      "name": "ISTITUTO COMPRENSIVO COSTIGLIOLE",
       "provider": "google",
       "domain": "iccostigliole.edu.it",
       "confidence": 93,
@@ -163824,14 +163833,13 @@
     },
     "IT-L33-istsc_boic87100r": {
       "name": "ISTITUTO COMPRENSIVO - I.C. SAN GIOVANNI IN PERSICETO",
-      "provider": "aruba",
-      "domain": "icpersiceto.it",
-      "confidence": 83,
+      "provider": "google",
+      "domain": "ic2persiceto.edu.it",
+      "confidence": 55,
       "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
-        "provider_classified",
-        "autodiscover_confirms"
+        "multiple_mx",
+        "no_spf",
+        "provider_classified"
       ]
     },
     "IT-L33-istsc_boic87200l": {
@@ -169626,12 +169634,12 @@
     "IT-L33-istsc_cnis014001": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - SALUZZO - 'C. DENINA'",
       "provider": "google",
-      "domain": "bianchivirginio.it",
-      "confidence": 53,
+      "domain": "denina.it",
+      "confidence": 93,
       "flags": [
         "multiple_mx",
         "spf_softfail",
-        "mx_spf_mismatch",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -196244,11 +196252,11 @@
     "IT-L33-istsc_pais013004": {
       "name": "ISTRUZIONE SECONDARIA SUPERIORE - IISS STENIO",
       "provider": "google",
-      "domain": "stenio.edu.it",
-      "confidence": 55,
+      "domain": "iclipari.edu.it",
+      "confidence": 88,
       "flags": [
-        "multiple_mx",
-        "no_spf",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },
@@ -196918,7 +196926,7 @@
     "IT-L33-istsc_pcic819004": {
       "name": "ISTITUTO COMPRENSIVO - IC BOBBIO-CAPOLUOGO",
       "provider": "google",
-      "domain": "icbobbio.edu.it",
+      "domain": "iobobbio.edu.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -197044,7 +197052,7 @@
     "IT-L33-istsc_pcps02000t": {
       "name": "LICEO SCIENTIFICO - LS LORENZO RESPIGHI",
       "provider": "google",
-      "domain": "liceorespighi.edu.it",
+      "domain": "liceorespighi.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -204276,14 +204284,13 @@
       ]
     },
     "IT-L33-istsc_rcis034004": {
-      "name": "ISTITUTO SUPERIORE - IST. ISTR. SUP.'AUGUSTO RIGHI'",
-      "provider": "istruzione-miur-tenant",
-      "domain": "lnx.itgrighi.gov.it",
-      "confidence": 80,
+      "name": "POLO TECNICO PROFESSIONALE RIGHI-BOCCIONI/FERMI",
+      "provider": "google",
+      "domain": "righiboccionifermi.edu.it",
+      "confidence": 88,
       "flags": [
-        "spf_strict",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -206310,13 +206317,13 @@
     },
     "IT-L33-istsc_rmic85200l": {
       "name": "ISTITUTO COMPRENSIVO - ANTONIO DE CURTIS",
-      "provider": "istruzione-miur-tenant",
+      "provider": "google",
       "domain": "icdecurtis.edu.it",
-      "confidence": 80,
+      "confidence": 93,
       "flags": [
-        "spf_strict",
+        "multiple_mx",
+        "spf_softfail",
         "mx_spf_match",
-        "multi_provider_spf:brevo+microsoft+regional-public",
         "provider_classified"
       ]
     },
@@ -236919,7 +236926,7 @@
     "IT-L37-219TJPHO": {
       "name": "Croce Rossa Italiana - Comitato di Latina - Organizzazione di Volontariato",
       "provider": "google",
-      "domain": "cri.it",
+      "domain": "latina.cri.it",
       "confidence": 93,
       "flags": [
         "multiple_mx",
@@ -239208,7 +239215,7 @@
     "IT-L37-F21ME6OU": {
       "name": "FLEGREA LAVORO SPA",
       "provider": "local-isp",
-      "domain": "flegrealavoro.com",
+      "domain": "flegrealavoro.portaletrasparenza.net",
       "confidence": 88,
       "flags": [
         "spf_softfail",
@@ -242647,7 +242654,7 @@
     "IT-L37-ZV7OSJOH": {
       "name": "UNILAV SCPA",
       "provider": "aruba",
-      "domain": "unilavspa.it",
+      "domain": "unilavspa.portaletrasparenza.net",
       "confidence": 83,
       "flags": [
         "spf_softfail",
@@ -257223,6 +257230,18 @@
         "provider_via_gateway_spf"
       ]
     },
+    "IT-PRO-35154363": {
+      "name": "PROVINCIA DELL'OGLIASTRA",
+      "provider": "microsoft",
+      "domain": "provincia.ogliastra.it",
+      "confidence": 95,
+      "flags": [
+        "spf_strict",
+        "mx_spf_match",
+        "provider_classified",
+        "autodiscover_confirms"
+      ]
+    },
     "IT-PRO-35510666": {
       "name": "Provincia del Sulcis Iglesiente",
       "provider": "unknown",
@@ -261046,6 +261065,18 @@
         "provider_classified"
       ]
     },
+    "IT-SA-8GIDQFN4": {
+      "name": "TERRITORIO ENERGIA AMBIENTE MANTOVA SPA SB",
+      "provider": "google",
+      "domain": "teaspa.it",
+      "confidence": 93,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
+        "provider_classified"
+      ]
+    },
     "IT-SA-8HTD8P8I": {
       "name": "Fondazione Musica per Roma",
       "provider": "aruba",
@@ -262172,17 +262203,6 @@
         "multiple_mx",
         "spf_softfail",
         "mx_spf_mismatch",
-        "provider_classified"
-      ]
-    },
-    "IT-SA-H3KZP4VZ": {
-      "name": "Federazione Italiana Triathlon",
-      "provider": "aruba",
-      "domain": "fitri.it",
-      "confidence": 78,
-      "flags": [
-        "spf_softfail",
-        "independent_mx_with_cloud_spf",
         "provider_classified"
       ]
     },
@@ -263423,6 +263443,18 @@
         "multiple_mx",
         "spf_softfail",
         "independent_mx_with_cloud_spf",
+        "provider_classified"
+      ]
+    },
+    "IT-SA-OV078HWS": {
+      "name": "AqA s.r.l. Società Benefit",
+      "provider": "google",
+      "domain": "aqamantova.it",
+      "confidence": 93,
+      "flags": [
+        "multiple_mx",
+        "spf_softfail",
+        "mx_spf_match",
         "provider_classified"
       ]
     },

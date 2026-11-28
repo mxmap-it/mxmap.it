@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-27 14:20 UTC",
+ "generated_at": "2026-11-28 13:46 UTC",
  "country": "IT",
- "total_entities": 22931,
- "anomalies_total": 1464,
- "anomalies_pct": 6.38,
+ "total_entities": 22934,
+ "anomalies_total": 1460,
+ "anomalies_pct": 6.37,
  "by_type": {
-  "no_mx": 619,
+  "no_mx": 617,
   "gateway_no_primary": 684,
   "low_confidence": 117,
-  "geo_unknown": 85
+  "geo_unknown": 83
  },
  "by_type_label": {
   "no_mx": "Nessun MX",
@@ -17,16 +17,15 @@
   "low_confidence": "Bassa confidenza (<0,60)"
  },
  "by_provider": {
-  "unknown": 1303,
-  "independent": 98,
+  "unknown": 1301,
+  "independent": 97,
   "aruba": 24,
   "pa-contractor-private": 21,
   "microsoft": 15,
   "ovh": 1,
-  "regional-public": 1,
   "google": 1
  },
- "classified_but_anomalous": 161,
+ "classified_but_anomalous": 159,
  "entries": [
   {
    "name": "ISTITUTO COMPRENSIVO  SANTE GIUFFRIDA - DON LA MELA",
@@ -1897,7 +1896,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Collegio Provinciale Geometri e Geometri Laureati di Reggio Calabria",
@@ -2282,7 +2281,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Arbus",
@@ -2799,7 +2798,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Cairo Montenotte",
@@ -3869,17 +3868,6 @@
    "reason": "cleared by is_legit gate: unrelated"
   },
   {
-   "name": "Comune di Cureggio",
-   "domain": "comune.cureggio.no.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
-  },
-  {
    "name": "Comune di Dignano",
    "domain": "comune.dignano.ud.it",
    "provider": "unknown",
@@ -4372,7 +4360,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Gessate",
@@ -4493,7 +4481,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Guiglia",
@@ -4570,7 +4558,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Latisana",
@@ -4658,7 +4646,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Lozio",
@@ -4889,7 +4877,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 1 candidates; none yielded MX"
+   "reason": "search engine returned 6 candidates; none yielded MX"
   },
   {
    "name": "Comune di Martignacco",
@@ -6627,7 +6615,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Sagrado",
@@ -7090,17 +7078,6 @@
    ],
    "mx": "mx-01-eu-central-1.prod.hydra.sophos.com",
    "reason": "MX is sophos gateway; no primary signal identifies the backend (gateway_no_primary)"
-  },
-  {
-   "name": "Comune di Scanno",
-   "domain": "comune.scanno.aq.it",
-   "provider": "unknown",
-   "confidence": 0.0,
-   "anomaly": [
-    "no_mx"
-   ],
-   "mx": null,
-   "reason": "all strategies exhausted (S0 AOO/UO Tier-6, S1 PEC, S2 Wikidata, S3 scrape primary, S4 search engine)"
   },
   {
    "name": "Comune di Schilpario",
@@ -8189,7 +8166,7 @@
     "no_mx"
    ],
    "mx": null,
-   "reason": "search engine returned 6 candidates; none yielded MX"
+   "reason": "search engine returned 1 candidates; none yielded MX"
   },
   {
    "name": "Comune di Ruda",
@@ -15723,17 +15700,6 @@
    "reason": "MX (_dc-mx.059c8f35c67f.campaniaict.it) is self-hosted"
   },
   {
-   "name": "Comune di Albino",
-   "domain": "comune.albino.bg.it",
-   "provider": "independent",
-   "confidence": 0.6,
-   "anomaly": [
-    "geo_unknown"
-   ],
-   "mx": "lava.ildato.it",
-   "reason": "MX (lava.ildato.it) is self-hosted"
-  },
-  {
    "name": "Comune di Collecorvino",
    "domain": "comune.collecorvino.pe.it",
    "provider": "independent",
@@ -16084,17 +16050,6 @@
    ],
    "mx": "ms77336148.msv1.invalid.outlook.com",
    "reason": "MX record (ms77336148.msv1.invalid.outlook.com) matches Microsoft"
-  },
-  {
-   "name": "Comune di Castelfranco In Miscano",
-   "domain": "comune.castefrancoinmiscano.bn.it",
-   "provider": "regional-public",
-   "confidence": 0.9,
-   "anomaly": [
-    "geo_unknown"
-   ],
-   "mx": "mail.asmecam.it",
-   "reason": "MX record (mail.asmecam.it) matches Italian regional public ICT"
   },
   {
    "name": "ISTITUTO COMPRENSIVO STATALE ANTONIO ROSMINI-DANTE ALIGHIERI",
